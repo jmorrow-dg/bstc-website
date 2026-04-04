@@ -7,10 +7,28 @@ import { Send, Mail, MapPin } from "lucide-react";
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
+  const [loading, setLoading] = useState(false);
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: Connect to API route / Resend
-    setSubmitted(true);
+    setLoading(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    try {
+      await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+        }),
+      });
+      setSubmitted(true);
+    } catch {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -63,7 +81,7 @@ export default function ContactPage() {
                       type="text"
                       required
                       className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                      placeholder="Your name"
+                      name="name" placeholder="Your name"
                     />
                   </div>
                   <div>
@@ -74,7 +92,7 @@ export default function ContactPage() {
                       type="email"
                       required
                       className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                      placeholder="you@email.com"
+                      name="email" placeholder="you@email.com"
                     />
                   </div>
                 </div>
@@ -84,6 +102,7 @@ export default function ContactPage() {
                     Subject *
                   </label>
                   <select
+                    name="subject"
                     required
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
                   >
@@ -108,16 +127,17 @@ export default function ContactPage() {
                     required
                     rows={5}
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm resize-none"
-                    placeholder="What's on your mind?"
+                    name="message" placeholder="What's on your mind?"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
+                  disabled={loading}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red disabled:opacity-50"
                 >
-                  Send Message
-                  <Send size={16} />
+                  {loading ? "Sending..." : "Send Message"}
+                  {!loading && <Send size={16} />}
                 </button>
               </form>
             </div>

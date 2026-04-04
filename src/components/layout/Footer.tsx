@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SITE } from "@/lib/constants";
+import NewsletterSignup from "./NewsletterSignup";
 
 export default function Footer() {
   return (
@@ -11,9 +12,11 @@ export default function Footer() {
             <span className="text-brand-red font-bold text-xl tracking-tight">
               BSTC
             </span>
-            <p className="mt-3 text-sm text-brand-grey leading-relaxed">
+            <p className="mt-3 text-sm text-brand-grey leading-relaxed mb-4">
               The largest founder-led tech community in Bali and Southeast Asia.
             </p>
+            <p className="text-xs text-brand-grey mb-2">Stay in the loop:</p>
+            <NewsletterSignup />
           </div>
 
           {/* Community */}

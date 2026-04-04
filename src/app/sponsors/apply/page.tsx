@@ -7,10 +7,31 @@ import { ArrowLeft, Send } from "lucide-react";
 export default function SponsorApplyPage() {
   const [submitted, setSubmitted] = useState(false);
 
+  const [loading, setLoading] = useState(false);
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: Connect to API route / Supabase
-    setSubmitted(true);
+    setLoading(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    try {
+      await fetch("/api/sponsor-inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          company: formData.get("company"),
+          website: formData.get("website"),
+          tier: formData.get("tier"),
+          goal: formData.get("goal"),
+          message: formData.get("message"),
+        }),
+      });
+      setSubmitted(true);
+    } catch {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -69,7 +90,7 @@ export default function SponsorApplyPage() {
                     type="text"
                     required
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                    placeholder="Josh Morrow"
+                    name="name" placeholder="Josh Morrow"
                   />
                 </div>
                 <div>
@@ -80,7 +101,7 @@ export default function SponsorApplyPage() {
                     type="email"
                     required
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                    placeholder="you@company.com"
+                    name="email" placeholder="you@company.com"
                   />
                 </div>
               </div>
@@ -94,7 +115,7 @@ export default function SponsorApplyPage() {
                     type="text"
                     required
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                    placeholder="Company name"
+                    name="company" placeholder="Company name"
                   />
                 </div>
                 <div>
@@ -104,7 +125,7 @@ export default function SponsorApplyPage() {
                   <input
                     type="url"
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                    placeholder="https://company.com"
+                    name="website" placeholder="https://company.com"
                   />
                 </div>
               </div>
@@ -113,7 +134,7 @@ export default function SponsorApplyPage() {
                 <label className="block text-sm font-medium text-brand-grey mb-2">
                   Which tier interests you?
                 </label>
-                <select className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm">
+                <select name="tier" className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm">
                   <option value="">Select a tier</option>
                   <option value="supporting">
                     Supporting Sponsor (Per Event)
@@ -134,6 +155,7 @@ export default function SponsorApplyPage() {
                   What&apos;s your primary goal? *
                 </label>
                 <select
+                  name="goal"
                   required
                   className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
                 >
@@ -155,16 +177,17 @@ export default function SponsorApplyPage() {
                 <textarea
                   rows={4}
                   className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm resize-none"
-                  placeholder="Tell us about your company, your audience, or any specific ideas..."
+                  name="message" placeholder="Tell us about your company, your audience, or any specific ideas..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
+                disabled={loading}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red disabled:opacity-50"
               >
-                Submit Enquiry
-                <Send size={16} />
+                {loading ? "Submitting..." : "Submit Enquiry"}
+                {!loading && <Send size={16} />}
               </button>
             </form>
           </div>
