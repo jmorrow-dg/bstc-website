@@ -52,12 +52,16 @@ export interface BlogFrontmatter {
   slug: string;
   date: string;
   author: string;
-  category: "event-recap" | "founder-story" | "guide" | "tools";
+  authorRole?: string;
+  category: "event-recap" | "founder-story" | "guide" | "tools" | "thought-leadership" | "bali-tech-scene";
   excerpt: string;
   coverImage?: string;
+  tags?: string[];
+  readTime?: string;
   seo?: {
     title: string;
     description: string;
+    keywords?: string[];
   };
 }
 

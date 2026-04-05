@@ -25,10 +25,11 @@ export const STATS = {
 
 export const NAV_LINKS = [
   { label: "Events", href: "/events" },
-  { label: "How I Build with AI", href: "/how-i-build-with-ai" },
+  { label: "How I AI", href: "/how-i-build-with-ai" },
+  { label: "Podcast", href: "/podcast" },
   { label: "Community", href: "/community" },
   { label: "Sponsors", href: "/sponsors" },
-  { label: "About", href: "/about" },
+  { label: "Blog", href: "/blog" },
 ] as const;
 
 export const BRAND = {
