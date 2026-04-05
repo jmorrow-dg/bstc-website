@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, User, Clock, ArrowRight } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getAllBlogPosts, getBlogPostBySlug, ContentItem, BlogFrontmatter } from "@/lib/content";
 import { SITE } from "@/lib/constants";
 
@@ -119,7 +120,14 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <div className="max-w-site mx-auto px-6 pt-8">
+      <div className="max-w-site mx-auto px-6 pt-8 space-y-3">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Blog", href: "/blog" },
+            { label: p.title },
+          ]}
+        />
         <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-sm text-brand-grey hover:text-brand-white transition-colors"

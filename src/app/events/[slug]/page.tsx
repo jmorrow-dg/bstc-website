@@ -11,6 +11,7 @@ import {
   Wrench,
   Star,
 } from "lucide-react";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import {
   getAllEvents,
   getEventBySlug,
@@ -82,8 +83,15 @@ export default async function EventPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
       />
 
-      {/* Back Link */}
-      <div className="max-w-site mx-auto px-6 pt-8">
+      {/* Navigation */}
+      <div className="max-w-site mx-auto px-6 pt-8 space-y-3">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Events", href: "/events" },
+            { label: e.title },
+          ]}
+        />
         <Link
           href="/events"
           className="inline-flex items-center gap-2 text-sm text-brand-grey hover:text-brand-white transition-colors"

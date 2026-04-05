@@ -5,6 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
+import ReadingProgress from "@/components/ui/ReadingProgress";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 import { SITE } from "@/lib/constants";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/schema";
 import "./globals.css";
@@ -85,9 +87,11 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased bg-brand-charcoal text-brand-white">
         <Navbar />
+        <ReadingProgress />
         <main className="min-h-screen pt-16">
           <PageTransition>{children}</PageTransition>
         </main>
+        <ScrollToTop />
         <Footer />
         <Analytics />
         <SpeedInsights />
