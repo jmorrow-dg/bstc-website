@@ -426,8 +426,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Join CTA */}
+      {/* Latest from the Blog */}
       <section className="py-20 md:py-28">
+        <div className="max-w-site mx-auto px-6">
+          <FadeIn className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              Latest from the Blog
+            </h2>
+            <p className="text-brand-grey max-w-xl mx-auto">
+              Thought leadership on Bali&apos;s tech ecosystem, AI, and the
+              future of building in Southeast Asia.
+            </p>
+          </FadeIn>
+
+          <FadeInStagger className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title:
+                  "Bali's Tech Ecosystem in 2026: Why the World's Best Builders Are Moving Here",
+                slug: "bali-tech-ecosystem-2026-guide",
+                category: "Bali Tech Scene",
+                readTime: "8 min read",
+              },
+              {
+                title:
+                  "The State of AI in Southeast Asia: Where the Opportunities Are",
+                slug: "state-of-ai-southeast-asia-2026",
+                category: "Thought Leadership",
+                readTime: "9 min read",
+              },
+              {
+                title:
+                  "How Founders Are Actually Making Money with AI in 2026",
+                slug: "making-money-with-ai-2026",
+                category: "Thought Leadership",
+                readTime: "7 min read",
+              },
+            ].map((post) => (
+              <FadeInItem key={post.slug}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="group block p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all duration-300 h-full"
+                >
+                  <span className="text-xs font-medium uppercase tracking-wider text-brand-red">
+                    {post.category}
+                  </span>
+                  <h3 className="text-base font-semibold text-brand-white group-hover:text-brand-red transition-colors mt-2 mb-3">
+                    {post.title}
+                  </h3>
+                  <span className="text-xs text-brand-grey">
+                    {post.readTime}
+                  </span>
+                </Link>
+              </FadeInItem>
+            ))}
+          </FadeInStagger>
+
+          <FadeIn className="text-center mt-10">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-brand-red hover:text-brand-white font-medium transition-colors"
+            >
+              View All Posts
+              <ArrowRight size={16} />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Join CTA */}
+      <section className="py-20 md:py-28 border-t border-white/5">
         <div className="max-w-site mx-auto px-6 text-center">
           <ScaleIn>
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
