@@ -34,7 +34,7 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
               : "bg-white/5 text-brand-grey"
           }`}
         >
-          {isUpcoming ? "Upcoming" : "Past Event"}
+          {isUpcoming ? "Upcoming": "Past Event"}
         </span>
         <span className="text-xs font-medium uppercase tracking-wider text-brand-grey">
           {formatEventType(e.type)}

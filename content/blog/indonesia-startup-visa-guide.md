@@ -5,7 +5,7 @@ date: "2026-03-25"
 author: Josh Morrow
 authorRole: Co-founder, BSTC
 category: guide
-excerpt: "Planning to build your startup from Bali? Here's the practical guide to visas, company structures, and legal setup that every foreign founder needs — updated for 2026 with the latest on Indonesia's Golden Visa and second home visa."
+excerpt: "Planning to build your startup from Bali? Here's the practical guide to visas, company structures, and legal setup that every foreign founder needs: updated for 2026 with the latest on Indonesia's Golden Visa and second home visa."
 readTime: "8 min read"
 tags:
   - Indonesia visa
@@ -15,7 +15,7 @@ tags:
   - Golden Visa Indonesia
   - digital nomad visa
 seo:
-  title: "Indonesia Startup Visa Guide 2026 — Visas, Entities & Setup for Founders | BSTC"
+  title: "Indonesia Startup Visa Guide 2026: Visas, Entities & Setup for Founders | BSTC"
   description: "Complete guide to visas and company setup for foreign founders in Indonesia. B211A, KITAS, Golden Visa, PT PMA, and practical advice from Bali's tech community."
   keywords:
     - Indonesia startup visa
@@ -31,7 +31,7 @@ seo:
 
 One of the most common questions at BSTC events: "How do I actually set up legally here?" It's a fair question. Indonesia's visa and business landscape has improved dramatically but still requires careful navigation.
 
-This guide covers the practical options for foreign founders building from Bali in 2026. It's not legal advice — always consult a local immigration lawyer for your specific situation — but it's the framework that most founders in our community use.
+This guide covers the practical options for foreign founders building from Bali in 2026. It's not legal advice: always consult a local immigration lawyer for your specific situation: but it's the framework that most founders in our community use.
 
 ## Visa Options for Founders
 
@@ -57,7 +57,7 @@ This guide covers the practical options for foreign founders building from Bali 
 
 **Key notes:**
 - Requires a sponsoring Indonesian company (your PT PMA)
-- Includes IMTA (work permit) — you're legally employed by your own company
+- Includes IMTA (work permit): you're legally employed by your own company
 - Allows you to open Indonesian bank accounts, sign contracts, etc.
 - Annual reporting requirements
 
@@ -74,7 +74,7 @@ This guide covers the practical options for foreign founders building from Bali 
 - **Founders:** Some categories specifically target tech entrepreneurs
 
 **Key notes:**
-- Relatively new — processes are still being refined
+- Relatively new: processes are still being refined
 - Consult a specialist immigration lawyer for current requirements
 - Significant cost but eliminates the annual renewal headache
 
@@ -86,7 +86,7 @@ This guide covers the practical options for foreign founders building from Bali 
 **Good for:** Founders who don't want to set up an Indonesian entity but want long-term residency.
 
 **Key notes:**
-- No work permit included — you'd still work for a non-Indonesian entity
+- No work permit included: you'd still work for a non-Indonesian entity
 - Good for remote founders who just need a stable legal base
 - Simpler than KITAS/PT PMA setup
 
@@ -118,9 +118,9 @@ This guide covers the practical options for foreign founders building from Bali 
 **When to use it:** If you sell globally and don't need to invoice Indonesian customers.
 
 **Common combinations:**
-- **Singapore Pte. Ltd.** — clean corporate structure, tax treaties, VC-friendly. 1-2 weeks to set up.
-- **Australian Pty Ltd** — good for Australian founders maintaining ties.
-- **US LLC/C-Corp** — if raising US venture capital, a Delaware C-Corp is standard.
+- **Singapore Pte. Ltd.**: clean corporate structure, tax treaties, VC-friendly. 1-2 weeks to set up.
+- **Australian Pty Ltd**: good for Australian founders maintaining ties.
+- **US LLC/C-Corp**: if raising US venture capital, a Delaware C-Corp is standard.
 
 **Key considerations:**
 - You still need a valid Indonesian visa
@@ -138,7 +138,7 @@ This guide covers the practical options for foreign founders building from Bali 
 - Use a PT PMA or offshore entity appropriately
 - Keep clean records of days in-country
 
-**We strongly recommend:** Engaging a local tax advisor before you reach the 183-day threshold. The BSTC community has several recommended advisors — ask at any event.
+**We strongly recommend:** Engaging a local tax advisor before you reach the 183-day threshold. The BSTC community has several recommended advisors: ask at any event.
 
 ## Practical Tips from the Community
 
@@ -161,7 +161,7 @@ Based on hundreds of conversations with founders at BSTC events:
 - **Indonesian Immigration (DGIM):** Official visa information
 - **OSS (Online Single Submission):** Business licensing portal
 - **BKPM (Investment Coordinating Board):** Foreign investment guidance
-- **BSTC Community:** Ask in the WhatsApp group — founders share real-time visa and entity advice
+- **BSTC Community:** Ask in the WhatsApp group: founders share real-time visa and entity advice
 
 ---
 

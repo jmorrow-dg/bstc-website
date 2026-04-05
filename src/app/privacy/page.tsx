@@ -32,34 +32,34 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  <strong className="text-brand-white">Name and email</strong> —
+                  <strong className="text-brand-white">Name and email</strong>. 
                   via MeetUp, event registration, and website forms
                 </li>
                 <li>
                   <strong className="text-brand-white">
                     Company and role
                   </strong>{" "}
-                  — for community relevance and aggregated demographics
+                . for community relevance and aggregated demographics
                 </li>
                 <li>
                   <strong className="text-brand-white">
                     Event attendance
                   </strong>{" "}
-                  — via MeetUp RSVP and manual headcount
+                . via MeetUp RSVP and manual headcount
                 </li>
                 <li>
                   <strong className="text-brand-white">
                     Feedback responses
                   </strong>{" "}
-                  — from post-event feedback forms
+                . from post-event feedback forms
                 </li>
                 <li>
                   <strong className="text-brand-white">Photos and videos</strong>{" "}
-                  — taken at events for community content
+                . taken at events for community content
                 </li>
                 <li>
                   <strong className="text-brand-white">Website analytics</strong>{" "}
-                  — anonymous usage data via Vercel Analytics
+                . anonymous usage data via Vercel Analytics
                 </li>
               </ul>
             </section>
@@ -78,7 +78,7 @@ export default function PrivacyPage() {
                   media, website)
                 </li>
                 <li>
-                  Sponsor reporting — aggregated, anonymous data only (e.g.,
+                  Sponsor reporting: aggregated, anonymous data only (e.g.,
                   &ldquo;45 attendees, 40% founders&rdquo;). Never individual
                   data.
                 </li>
@@ -101,7 +101,7 @@ export default function PrivacyPage() {
                   <strong className="text-brand-white">
                     Never share individual member data with sponsors
                   </strong>{" "}
-                  — sponsors receive aggregated demographics only
+                . sponsors receive aggregated demographics only
                 </li>
                 <li>
                   <strong className="text-brand-white">

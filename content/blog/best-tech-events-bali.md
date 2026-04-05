@@ -5,7 +5,7 @@ date: "2026-03-28"
 author: Josh Morrow
 authorRole: Co-founder, BSTC
 category: guide
-excerpt: "Looking for high-signal tech events in Bali? Here's the definitive guide to the meetups, dinners, and sessions that are actually worth your time — plus which ones to skip."
+excerpt: "Looking for high-signal tech events in Bali? Here's the definitive guide to the meetups, dinners, and sessions that are actually worth your time: plus which ones to skip."
 readTime: "5 min read"
 tags:
   - Bali events
@@ -14,7 +14,7 @@ tags:
   - networking Bali
   - founder events
 seo:
-  title: "Best Tech Events in Bali 2026 — The Definitive Guide for Founders | BSTC"
+  title: "Best Tech Events in Bali 2026: The Definitive Guide for Founders | BSTC"
   description: "The definitive guide to tech events in Bali for 2026. Which meetups are worth your time, which ones to skip, and how to get the most value from Bali's tech scene."
   keywords:
     - best tech events Bali
@@ -57,7 +57,7 @@ The flagship event of Bali Startup & Tech Community. What makes it different: th
 **Cost:** Free (initially)
 **Vibe:** Technical, practitioner-led, interactive
 
-BSTC's flagship builder series. A real founder shares their screen and shows how they actually build with AI tools — live, unscripted, with Q&A. Not a talk about AI. A demonstration of AI in action.
+BSTC's flagship builder series. A real founder shares their screen and shows how they actually build with AI tools: live, unscripted, with Q&A. Not a talk about AI. A demonstration of AI in action.
 
 **Who you'll meet:** Technical founders, AI engineers, operators automating with AI.
 
@@ -81,7 +81,7 @@ For founders with $20K+ MRR only. Single topic. Facilitated discussion. No pitch
 
 ## Co-Working Space Events
 
-**Outpost, Dojo, Hubud, and others** run regular events — talks, workshops, and social mixers. Quality varies:
+**Outpost, Dojo, Hubud, and others** run regular events: talks, workshops, and social mixers. Quality varies:
 
 - **Outpost** tends to attract a professional, tech-focused crowd
 - **Dojo** has a strong creative and entrepreneurial community
@@ -94,8 +94,8 @@ For founders with $20K+ MRR only. Single topic. Facilitated discussion. No pitch
 Being honest here:
 
 - **"Crypto meetups"** that are actually pitch sessions for unnamed tokens
-- **Events with 10+ sponsors** who each get stage time — you're attending a commercial, not a meetup
-- **"Networking nights"** with no host, no structure, and 200+ people — too chaotic to be useful
+- **Events with 10+ sponsors** who each get stage time: you're attending a commercial, not a meetup
+- **"Networking nights"** with no host, no structure, and 200+ people: too chaotic to be useful
 - **Any event that charges $50+ entry** but can't tell you who else will be in the room
 
 The signal-to-noise ratio matters. Your time is valuable. Choose events where the organiser has a point of view about quality and enforces it.
@@ -110,4 +110,4 @@ The signal-to-noise ratio matters. Your time is valuable. Choose events where th
 
 ---
 
-*BSTC runs the highest-signal tech events in Bali. [See our event calendar](/events) or [join the community](/join) — 2,500+ founders and builders across Southeast Asia.*
+*BSTC runs the highest-signal tech events in Bali. [See our event calendar](/events) or [join the community](/join): 2,500+ founders and builders across Southeast Asia.*

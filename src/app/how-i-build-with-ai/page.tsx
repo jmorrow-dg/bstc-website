@@ -20,7 +20,7 @@ const HIWA_FAQS = [
   {
     question: "What is 'How I Build with AI'?",
     answer:
-      "It's BSTC's flagship event series where real builders share their actual AI workflows live. No slides, no theory — just practitioners showing how they ship products using AI tools.",
+      "It's BSTC's flagship event series where real builders share their actual AI workflows live. No slides, no theory: just practitioners showing how they ship products using AI tools.",
   },
   {
     question: "Who can attend 'How I Build with AI' events?",
@@ -53,7 +53,7 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
         <div className="text-center">
           <p className="text-brand-red font-bold text-lg">HOW I AI</p>
           <p className="text-brand-grey text-xs mt-1">
-            {isUpcoming ? "Coming Soon" : "Watch Now"}
+            {isUpcoming ? "Coming Soon": "Watch Now"}
           </p>
         </div>
       </div>
@@ -64,10 +64,10 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
             className={`text-xs font-medium uppercase tracking-wider px-2 py-0.5 rounded ${
               isUpcoming
                 ? "bg-brand-red/10 text-brand-red"
-                : "bg-white/5 text-brand-grey"
+               : "bg-white/5 text-brand-grey"
             }`}
           >
-            {isUpcoming ? "Upcoming" : "Episode"}
+            {isUpcoming ? "Upcoming": "Episode"}
           </span>
           <span className="text-xs text-brand-grey">
             {formatEventDate(e.date)}
@@ -123,7 +123,7 @@ export default async function HIWAPage() {
             </h1>
             <p className="text-lg text-brand-grey leading-relaxed mb-8">
               Watch real builders share their actual AI workflows. Live demos.
-              Real tools. Real products. No slides, no theory — just
+              Real tools. Real products. No slides, no theory: just
               practitioners showing how they ship.
             </p>
             <p className="text-sm text-brand-grey">
@@ -145,7 +145,7 @@ export default async function HIWAPage() {
                 <EpisodeCard key={event.frontmatter.slug} event={event} />
               ))}
             </div>
-          ) : (
+          ): (
             <div className="text-center py-16 border border-white/5 rounded-lg bg-white/[0.02]">
               <p className="text-brand-red font-bold text-2xl mb-2">
                 Edition #1 Coming Soon
@@ -185,7 +185,7 @@ export default async function HIWAPage() {
               {
                 time: "0:55",
                 title: "Roundtable",
-                desc: "Open floor — share what you're building with AI.",
+                desc: "Open floor: share what you're building with AI.",
               },
             ].map((step) => (
               <div key={step.time} className="text-center">

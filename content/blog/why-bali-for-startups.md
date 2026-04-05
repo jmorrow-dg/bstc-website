@@ -5,7 +5,7 @@ date: "2026-04-01"
 author: Josh Morrow
 authorRole: Co-founder, BSTC & David & Goliath
 category: bali-tech-scene
-excerpt: "Every founder asks the same question: can I actually build a serious company from Bali? After two years embedded in the ecosystem, here's the honest answer — the advantages, the trade-offs, and who it's actually right for."
+excerpt: "Every founder asks the same question: can I actually build a serious company from Bali? After two years embedded in the ecosystem, here's the honest answer: the advantages, the trade-offs, and who it's actually right for."
 readTime: "7 min read"
 tags:
   - Bali
@@ -30,7 +30,7 @@ seo:
 
 Let's skip the Instagram version. Yes, Bali is beautiful. Yes, you can work from a rice terrace. But the real question founders ask is: **can I build a serious, revenue-generating, venture-backable company from here?**
 
-The answer is yes — with caveats. Here's the honest breakdown.
+The answer is yes: with caveats. Here's the honest breakdown.
 
 ## The Advantages
 
@@ -57,7 +57,7 @@ You'll meet the 50-100 people who matter at a handful of events. The rest of you
 
 Bali attracts a specific type of founder: experienced, self-directed, and focused on building. Many have already built and exited companies elsewhere. The conversations are substantive because the people are substantive.
 
-At BSTC events, it's common to sit next to a YC alum, a former VP of Engineering at a public company, and a founder with $10M+ ARR — at the same table. That density of experience, in a relaxed setting, is hard to find anywhere else.
+At BSTC events, it's common to sit next to a YC alum, a former VP of Engineering at a public company, and a founder with $10M+ ARR: at the same table. That density of experience, in a relaxed setting, is hard to find anywhere else.
 
 ### 4. Time Zone Advantage
 
@@ -70,7 +70,7 @@ If your customers are global, Bali's time zone is an asset, not a limitation.
 
 ### 5. Quality of Life = Sustained Performance
 
-Building a startup takes years. Burnout is the silent company killer. Bali's environment — warm weather, outdoor lifestyle, wellness culture, excellent food, strong community — creates conditions for sustained high performance.
+Building a startup takes years. Burnout is the silent company killer. Bali's environment: warm weather, outdoor lifestyle, wellness culture, excellent food, strong community: creates conditions for sustained high performance.
 
 This isn't about "work-life balance" (a phrase that implies work and life are in conflict). It's about building a life that supports long-term output.
 

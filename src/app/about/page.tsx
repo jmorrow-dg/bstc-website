@@ -32,7 +32,7 @@ export default function AboutPage() {
           <div className="max-w-3xl space-y-6 text-brand-grey leading-relaxed">
             <p className="text-lg">
               BSTC started in October 2023 with a simple idea: Bali had
-              thousands of founders, engineers, and tech operators — but no
+              thousands of founders, engineers, and tech operators: but no
               high-signal community connecting them.
             </p>
             <p>
@@ -45,7 +45,7 @@ export default function AboutPage() {
             <p>
               We ran our first networking night at a restaurant in Canggu. 20
               people showed up. Then 40. Then 60. Word spread because the
-              experience was different — people actually came back.
+              experience was different: people actually came back.
             </p>
             <p>
               Today, BSTC has{" "}
@@ -74,7 +74,7 @@ export default function AboutPage() {
             </p>
             <p>
               We&apos;re based in Canggu, Bali with nodes in Ubud, Sanur, and
-              Uluwatu — and ambitions to become the #1 tech community across
+              Uluwatu: and ambitions to become the #1 tech community across
               Southeast Asia.
             </p>
             <p className="text-brand-white font-medium text-lg">
@@ -142,7 +142,7 @@ export default function AboutPage() {
             Be Part of It
           </h2>
           <p className="text-brand-grey max-w-lg mx-auto mb-8">
-            Whether you&apos;re a founder, engineer, investor, or operator —
+            Whether you&apos;re a founder, engineer, investor, or operator. 
             if you&apos;re building something, you belong here.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

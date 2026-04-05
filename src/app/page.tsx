@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Users,
@@ -139,30 +140,15 @@ export default function Home() {
         <div className="max-w-site mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <SlideInLeft className="order-2 md:order-1">
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-white/10 bg-gradient-to-br from-brand-red/10 via-brand-charcoal to-brand-charcoal flex items-center justify-center">
-                <div className="text-center p-8">
-                  <p
-                    className="text-brand-red font-bold text-3xl tracking-tight mb-1"
-                    style={{ fontFamily: "Impact, sans-serif" }}
-                  >
-                    BSTC
-                  </p>
-                  <p
-                    className="text-brand-white font-bold text-xl tracking-tight mb-4"
-                    style={{ fontFamily: "Impact, sans-serif" }}
-                  >
-                    NETWORKING NIGHT
-                  </p>
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-brand-red/20 flex items-center justify-center">
-                    <span className="text-5xl">&#127758;</span>
-                  </div>
-                  <p className="text-brand-grey text-xs uppercase tracking-widest">
-                    GTA-Style Cover Art Coming Soon
-                  </p>
-                  <p className="text-brand-red text-xs mt-2">
-                    3rd Thursday &middot; Every Month &middot; Yema Kitchen
-                  </p>
-                </div>
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-white/10">
+                <Image
+                  src="/images/events/networking-night.png"
+                  alt="BSTC Monthly Networking Night at Yema Kitchen, Canggu"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </SlideInLeft>
 
@@ -181,10 +167,10 @@ export default function Home() {
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Free entry — always",
-                  "60-second intros — sharp and respectful",
+                  "Free entry: always",
+                  "60-second intros: sharp and respectful",
                   "Host connects you with the right people",
-                  "No hard selling — enforced, not suggested",
+                  "No hard selling: enforced, not suggested",
                 ].map((item) => (
                   <li
                     key={item}
@@ -290,14 +276,14 @@ export default function Home() {
               </h2>
               <p className="text-brand-grey mb-6 leading-relaxed">
                 Watch real builders share their actual AI workflows. Live demos.
-                Real tools. Real products. No slides, no theory — just
+                Real tools. Real products. No slides, no theory: just
                 practitioners showing how they ship.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "AI Intel Drop — top stories, fast and opinionated",
-                  "Builder Spotlights — real tools, real revenue",
-                  "The Money Round — who made money with AI this month?",
+                  "AI Intel Drop: top stories, fast and opinionated",
+                  "Builder Spotlights: real tools, real revenue",
+                  "The Money Round: who made money with AI this month?",
                   "Every session recorded for podcast & video",
                 ].map((item) => (
                   <li
@@ -318,25 +304,72 @@ export default function Home() {
               </Link>
             </SlideInLeft>
             <SlideInRight>
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-white/10 bg-gradient-to-br from-brand-red/5 via-brand-charcoal to-brand-charcoal flex items-center justify-center">
-                <div className="text-center p-8">
-                  <p
-                    className="text-brand-red font-bold text-4xl tracking-tight mb-1"
-                    style={{ fontFamily: "Impact, sans-serif" }}
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-white/10">
+                <Image
+                  src="/images/events/how-i-ai-edition-1.png"
+                  alt="How I AI Edition #1 at Seoul Seoul Project, Canggu"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </SlideInRight>
+          </div>
+        </div>
+      </section>
+
+      {/* Hackathon */}
+      <section className="py-20 md:py-28 border-b border-white/5">
+        <div className="max-w-site mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <SlideInLeft>
+              <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-white/10">
+                <Image
+                  src="/images/events/hackathon-edition-1.png"
+                  alt="BSTC Hackathon Edition #1"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </SlideInLeft>
+            <SlideInRight>
+              <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
+                Coming Soon
+              </p>
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+                BSTC Hackathon
+              </h2>
+              <p className="text-brand-grey mb-6 leading-relaxed">
+                Build something real in one day. BSTC&apos;s first hackathon
+                brings together developers, designers, and founders to ship
+                products, compete for prizes, and prove what&apos;s possible
+                when builders lock in.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Full day of focused building",
+                  "Teams of 2 to 5 (or form one at the event)",
+                  "3-minute demos, community vote + judges",
+                  "Prizes for the best builds",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm text-brand-grey"
                   >
-                    HOW I AI
-                  </p>
-                  <p className="text-brand-white text-sm mb-4">Edition #1</p>
-                  <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-brand-red/20 flex items-center justify-center">
-                    <span className="text-5xl">&#x1F916;</span>
-                  </div>
-                  <p className="text-brand-grey text-xs uppercase tracking-widest">
-                    GTA-Style Cover Art Coming Soon
-                  </p>
-                  <p className="text-brand-red text-xs mt-2">
-                    Seoul Seoul Project &middot; Canggu
-                  </p>
-                </div>
+                    <span className="text-brand-red mt-0.5">&#9656;</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/events/hackathon-edition-1"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm"
+                >
+                  Learn More
+                  <ArrowRight size={14} />
+                </Link>
               </div>
             </SlideInRight>
           </div>

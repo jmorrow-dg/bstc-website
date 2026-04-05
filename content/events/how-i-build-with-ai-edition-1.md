@@ -8,8 +8,8 @@ type: how-i-build-with-ai
 status: upcoming
 capacity: 60
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
-coverImage: ""
-description: "The inaugural edition of BSTC's flagship series. Watch a real builder share their actual AI workflow — live. No slides, no theory. Just a practitioner showing how they ship."
+coverImage: /images/events/how-i-ai-edition-1.png
+description: "The inaugural edition of BSTC's flagship series. Watch a real builder share their actual AI workflow: live. No slides, no theory. Just a practitioner showing how they ship."
 builder:
   name: Josh Morrow
   role: Co-founder
@@ -21,7 +21,7 @@ tools:
   - Apollo.io
   - Vercel
 seo:
-  title: "How I Build with AI: Edition #1 — Josh Morrow | BSTC"
+  title: "How I Build with AI: Edition #1: Josh Morrow | BSTC"
   description: "Watch Josh Morrow live-build an AI-powered workflow using Claude, n8n, and Apollo. Bali Startup & Tech Community's flagship builder series."
   keywords:
     - AI workflow automation
@@ -31,11 +31,11 @@ seo:
     - how to build with AI
 ---
 
-The first edition of **How I Build with AI** — BSTC's flagship practitioner-led event series.
+The first edition of **How I Build with AI**: BSTC's flagship practitioner-led event series.
 
 This isn't a talk about AI. You're about to watch someone actually build with it.
 
-Josh Morrow will share his screen and build a live AI-powered workflow, narrating every decision — tool choices, prompts, and architecture — in real-time.
+Josh Morrow will share his screen and build a live AI-powered workflow, narrating every decision: tool choices, prompts, and architecture: in real-time.
 
 **What you'll see:**
 - A real AI build from zero to working prototype

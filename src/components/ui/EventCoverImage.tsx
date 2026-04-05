@@ -36,7 +36,7 @@ export default function EventCoverImage({
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
         className={`object-cover transition-opacity duration-500 ${
-          loaded ? "opacity-100" : "opacity-0"
+          loaded ? "opacity-100": "opacity-0"
         }`}
         priority={priority}
         onLoad={() => setLoaded(true)}

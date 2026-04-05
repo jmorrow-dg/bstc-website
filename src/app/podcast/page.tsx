@@ -5,7 +5,7 @@ import { SITE } from "@/lib/constants";
 import { getFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Podcast — Signal from Southeast Asia's Builder Community",
+  title: "Podcast: Signal from Southeast Asia's Builder Community",
   description:
     "The BSTC podcast features founders, engineers, and operators building from Bali and Southeast Asia. AI workflows, startup stories, and real revenue numbers.",
   keywords: [
@@ -139,7 +139,7 @@ export default function PodcastPage() {
               </h3>
               <p className="text-sm text-brand-grey">
                 Recordings from &ldquo;How I Build with AI&rdquo; sessions. Hear
-                the live builds, Q&A, and Money Round — even if you
+                the live builds, Q&A, and Money Round: even if you
                 couldn&apos;t be there.
               </p>
             </div>

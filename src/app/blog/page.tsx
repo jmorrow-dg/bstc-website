@@ -4,7 +4,7 @@ import { Calendar, ArrowRight, Clock } from "lucide-react";
 import { getAllBlogPosts, ContentItem, BlogFrontmatter } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Blog — Insights on Bali's Tech Scene, AI, and Startup Culture",
+  title: "Blog: Insights on Bali's Tech Scene, AI, and Startup Culture",
   description:
     "Thought leadership on Bali's growing tech ecosystem, AI trends, founder stories, and community insights from Southeast Asia's largest startup community.",
   keywords: [
@@ -66,7 +66,7 @@ function FeaturedPost({ post }: { post: ContentItem<BlogFrontmatter> }) {
         <span className="text-sm text-brand-grey">
           By {p.author}
           {p.authorRole && (
-            <span className="text-brand-grey/60"> — {p.authorRole}</span>
+            <span className="text-brand-grey/60">: {p.authorRole}</span>
           )}
         </span>
         <span className="inline-flex items-center gap-1 text-sm text-brand-red group-hover:text-brand-white transition-colors">
@@ -165,7 +165,7 @@ export default async function BlogPage() {
           </h2>
           <p className="text-brand-grey max-w-md mx-auto mb-6">
             Get the latest on Bali&apos;s tech scene, AI insights, and
-            community updates. No spam — just signal.
+            community updates. No spam: just signal.
           </p>
           <Link
             href="/join"

@@ -14,7 +14,7 @@ tags:
   - remote founder
   - building from Bali
 seo:
-  title: "Founder Spotlight: Building a Tech Company from Bali — Real Stories | BSTC"
+  title: "Founder Spotlight: Building a Tech Company from Bali: Real Stories | BSTC"
   description: "Three founders share what it's really like building revenue-generating tech companies from Bali. The honest advantages, challenges, and why they chose Bali over SF, London, and Singapore."
   keywords:
     - founder stories Bali
@@ -32,13 +32,13 @@ We spoke with three of them about what it's actually like.
 
 ## "The runway advantage changed everything"
 
-**Founder A** — B2B SaaS, $30K MRR, team of 6 (3 remote, 3 in Bali)
+**Founder A**: B2B SaaS, $30K MRR, team of 6 (3 remote, 3 in Bali)
 
 *Previously: San Francisco*
 
 "In SF, I was burning $15K/month personally before I even looked at business expenses. I was always three months from needing to raise. Every decision was filtered through 'can we afford this before we run out of money?'
 
-In Bali, my personal burn dropped to $3K. Same lifestyle — actually better. I surf before work, eat incredible food, live in a villa that would cost $8K in SF. But the real change was psychological. I stopped making decisions from fear and started making them from strategy.
+In Bali, my personal burn dropped to $3K. Same lifestyle: actually better. I surf before work, eat incredible food, live in a villa that would cost $8K in SF. But the real change was psychological. I stopped making decisions from fear and started making them from strategy.
 
 We found product-market fit six months after moving here. I'm not saying Bali caused that, but having 18 months of runway instead of 6 definitely helped."
 
@@ -46,7 +46,7 @@ We found product-market fit six months after moving here. I'm not saying Bali ca
 
 ## "The community here is absurdly high-quality"
 
-**Founder B** — AI consulting practice, $50K+/month, solo founder with contractors
+**Founder B**: AI consulting practice, $50K+/month, solo founder with contractors
 
 *Previously: London*
 
@@ -58,19 +58,19 @@ Last month, a connection I made at a BSTC networking night introduced me to my b
 
 **Her advice:** "Show up consistently. The first BSTC event is good. The fifth is transformative. The relationships that matter take time to build, even in a small community."
 
-## "I didn't come here for lifestyle — I came for leverage"
+## "I didn't come here for lifestyle: I came for leverage"
 
-**Founder C** — Developer tools, pre-revenue (raised $500K seed), team of 4
+**Founder C**: Developer tools, pre-revenue (raised $500K seed), team of 4
 
 *Previously: Sydney*
 
 "Everyone assumes you move to Bali for the lifestyle. I moved for the leverage. My seed round goes 3x further here than in Sydney. I can hire two brilliant Indonesian engineers for the cost of one junior in Australia. And I'm in the same time zone as my target market (Asia-Pacific).
 
-The lifestyle is a bonus, not the reason. I work harder here than I did in Sydney — partly because there's less distraction, partly because the community keeps me accountable. When you're sitting next to founders with $10M ARR at a BSTC dinner, you don't want to be the person who didn't ship this week.
+The lifestyle is a bonus, not the reason. I work harder here than I did in Sydney: partly because there's less distraction, partly because the community keeps me accountable. When you're sitting next to founders with $10M ARR at a BSTC dinner, you don't want to be the person who didn't ship this week.
 
 The one thing I underestimated: the Indonesian engineering talent. I found two developers through the Bali tech community who are among the best I've ever worked with. And they chose to work with me partly because they wanted to be part of something being built locally, not just outsourced."
 
-**His advice:** "Think of Bali as a lever, not a destination. It multiplies whatever you bring to it — capital, skills, network, ambition. But you have to bring something real."
+**His advice:** "Think of Bali as a lever, not a destination. It multiplies whatever you bring to it: capital, skills, network, ambition. But you have to bring something real."
 
 ## Common Themes
 
@@ -97,7 +97,7 @@ Across dozens of founder conversations at BSTC events, the same themes emerge:
 
 ## Want to Meet These Founders?
 
-Every BSTC event features founders like these — building real companies, sharing real insights, and making real connections. No pitching. No posturing. Just builders.
+Every BSTC event features founders like these: building real companies, sharing real insights, and making real connections. No pitching. No posturing. Just builders.
 
 ---
 

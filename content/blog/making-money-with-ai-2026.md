@@ -14,8 +14,8 @@ tags:
   - founder case studies
   - AI automation
 seo:
-  title: "How Founders Make Money with AI in 2026 — Real Revenue, Real Numbers | BSTC"
-  description: "Real founders share how they generate revenue with AI. Case studies with actual numbers from Bali's tech community. Not theory — real businesses, real tools, real money."
+  title: "How Founders Make Money with AI in 2026: Real Revenue, Real Numbers | BSTC"
+  description: "Real founders share how they generate revenue with AI. Case studies with actual numbers from Bali's tech community. Not theory: real businesses, real tools, real money."
   keywords:
     - making money with AI
     - AI revenue 2026
@@ -29,26 +29,26 @@ seo:
 
 At every BSTC "How I Build with AI" event, we ask the same question: **"Who in this room made money with AI this month?"**
 
-The answers are specific, practical, and often surprising. Not "AI will revolutionise everything" — but "I built this workflow with Claude and n8n, and it generated $4,000 in its first month."
+The answers are specific, practical, and often surprising. Not "AI will revolutionise everything": but "I built this workflow with Claude and n8n, and it generated $4,000 in its first month."
 
 Here's a snapshot of the real revenue models working for founders in our community.
 
 ## Model 1: AI-Powered Services (Agency / Consulting)
 
-**The play:** Offer a service that humans used to do manually, but deliver it faster and cheaper using AI — while charging near-human rates.
+**The play:** Offer a service that humans used to do manually, but deliver it faster and cheaper using AI: while charging near-human rates.
 
 **Real example from BSTC community:**
-One member built an AI-powered content operation for B2B SaaS clients. Using Claude for research and drafting, n8n for workflow orchestration, and human editors for quality control, they produce 4x the output of a traditional content agency at 60% of the cost — while maintaining the same margins.
+One member built an AI-powered content operation for B2B SaaS clients. Using Claude for research and drafting, n8n for workflow orchestration, and human editors for quality control, they produce 4x the output of a traditional content agency at 60% of the cost: while maintaining the same margins.
 
 **Revenue range:** $5K-$50K/month depending on client base.
 
 **Why it works:** Clients buy outcomes, not tools. They don't care if you used AI or a team of 50 people. They care that the work is good, on time, and moves the needle.
 
-**Key insight:** The margin advantage doesn't come from replacing humans entirely — it comes from amplifying fewer humans to produce more.
+**Key insight:** The margin advantage doesn't come from replacing humans entirely: it comes from amplifying fewer humans to produce more.
 
 ## Model 2: AI Features Inside Existing Products
 
-**The play:** Add AI capabilities to a product that already has customers. The AI isn't the product — it's the multiplier.
+**The play:** Add AI capabilities to a product that already has customers. The AI isn't the product: it's the multiplier.
 
 **Real example:** A SaaS founder in our community added AI-powered analytics summaries to their dashboard product. Instead of users reading charts, the product now tells them what the data means in plain language. Customer retention improved, and they introduced a premium tier with the AI features at 2x the price.
 
@@ -58,7 +58,7 @@ One member built an AI-powered content operation for B2B SaaS clients. Using Cla
 
 ## Model 3: Automated Outreach & Lead Generation
 
-**The play:** Build AI-powered pipelines that prospect, qualify, personalise, and follow up — with minimal human intervention.
+**The play:** Build AI-powered pipelines that prospect, qualify, personalise, and follow up: with minimal human intervention.
 
 **Real example:** Using Apollo.io for data, Claude for personalisation, and n8n for orchestration, one BSTC member built a system that generates 50+ qualified meetings per month for their consulting practice. The system runs 24/7 with human review only at the decision points.
 
@@ -70,11 +70,11 @@ One member built an AI-powered content operation for B2B SaaS clients. Using Cla
 
 **The play:** Create content (articles, videos, social posts, newsletters) using AI, monetise through ads, sponsorships, or lead generation.
 
-**Real example:** A founder in our community runs a niche newsletter for a specific industry vertical. Using Claude for research and drafting, they publish 5 issues per week (a pace that would require 2-3 full-time writers). The newsletter has grown to 15,000 subscribers with $3,000/month in sponsorship revenue — and the only cost is the AI subscription and their editorial time.
+**Real example:** A founder in our community runs a niche newsletter for a specific industry vertical. Using Claude for research and drafting, they publish 5 issues per week (a pace that would require 2-3 full-time writers). The newsletter has grown to 15,000 subscribers with $3,000/month in sponsorship revenue: and the only cost is the AI subscription and their editorial time.
 
 **Revenue:** $3K/month and growing. At 50,000 subscribers, they project $10-15K/month.
 
-**Why it works:** AI removes the production bottleneck. The scarce resource isn't writing ability — it's editorial judgment, audience understanding, and distribution. AI handles the former; the founder handles the latter.
+**Why it works:** AI removes the production bottleneck. The scarce resource isn't writing ability: it's editorial judgment, audience understanding, and distribution. AI handles the former; the founder handles the latter.
 
 ## Model 5: Productised AI Workflows (Build Once, Sell Many)
 

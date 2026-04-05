@@ -155,7 +155,7 @@ export default async function BlogPostPage({
                 <User size={14} />
                 {p.author}
                 {p.authorRole && (
-                  <span className="text-brand-grey/60">— {p.authorRole}</span>
+                  <span className="text-brand-grey/60">: {p.authorRole}</span>
                 )}
               </span>
               <span className="flex items-center gap-2">

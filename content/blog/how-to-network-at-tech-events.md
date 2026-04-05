@@ -14,7 +14,7 @@ tags:
   - community
   - soft skills
 seo:
-  title: "How to Network at Tech Events — The Builder's Playbook | BSTC"
+  title: "How to Network at Tech Events: The Builder's Playbook | BSTC"
   description: "After 34+ events and thousands of introductions, here's what actually works at tech networking events. Stop pitching, start connecting."
   keywords:
     - how to network at tech events
@@ -26,7 +26,7 @@ seo:
 
 # How to Network at Tech Events Without Being That Person
 
-After hosting 34+ BSTC events and watching thousands of introductions, we've identified a clear pattern: the people who get the most value from events aren't the best networkers — they're the best connectors.
+After hosting 34+ BSTC events and watching thousands of introductions, we've identified a clear pattern: the people who get the most value from events aren't the best networkers: they're the best connectors.
 
 Here's what we've learned.
 
@@ -37,8 +37,8 @@ At BSTC events, everyone gets 60 seconds. Not 5 minutes. Not "just one more thin
 **The formula that works:**
 
 1. **Your name** (2 seconds)
-2. **What you're building** — not your company history, not your funding round. What does your product do, in one sentence? (10 seconds)
-3. **What you need** — a co-founder, an engineer, an intro to a specific type of person, feedback on a specific problem (10 seconds)
+2. **What you're building**: not your company history, not your funding round. What does your product do, in one sentence? (10 seconds)
+3. **What you need**: a co-founder, an engineer, an intro to a specific type of person, feedback on a specific problem (10 seconds)
 4. **Done.** (38 seconds left for the next person)
 
 **The formula that fails:**
@@ -55,7 +55,7 @@ At BSTC events, everyone gets 60 seconds. Not 5 minutes. Not "just one more thin
 The single biggest predictor of long-term networking success: how much value you create for others before asking for anything.
 
 **In practice:**
-- "You should talk to Sarah — she's building something similar and might have insights on your pricing model."
+- "You should talk to Sarah: she's building something similar and might have insights on your pricing model."
 - "I read an article about exactly this problem last week, let me send it to you."
 - "My friend at [Company] is hiring for that exact role. Want me to make an intro?"
 
@@ -78,7 +78,7 @@ The introduction at the event is the beginning, not the end. Within 24 hours:
 
 - Connect on LinkedIn with a personal note: "Great chatting at BSTC last night about [specific topic]."
 - If you promised to send something (article, intro, resource), send it immediately.
-- If you want to continue the conversation: "Would love to grab coffee this week — I had a thought about what you said about [topic]."
+- If you want to continue the conversation: "Would love to grab coffee this week: I had a thought about what you said about [topic]."
 
 48 hours after the event, the connection is cold. 24 hours is warm. Same day is hot.
 
@@ -96,7 +96,7 @@ The more specific your ask, the more likely someone can actually help you.
 ## What Doesn't Work
 
 ### The Pitch Assault
-Walking up to someone, interrupting their conversation, and launching into your company pitch. This is the fastest way to be remembered — negatively.
+Walking up to someone, interrupting their conversation, and launching into your company pitch. This is the fastest way to be remembered: negatively.
 
 ### The Card Pusher
 Handing out business cards to everyone in the room. Nobody wants a stack of cards from people they didn't connect with. Exchange details only when there's a real reason to stay in touch.

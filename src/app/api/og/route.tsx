@@ -98,7 +98,7 @@ export async function GET(request: NextRequest) {
         <h1
           style={{
             color: textColor,
-            fontSize: title.length > 40 ? "48px" : "56px",
+            fontSize: title.length > 40 ? "48px": "56px",
             fontWeight: 700,
             lineHeight: 1.15,
             marginBottom: "20px",

@@ -110,10 +110,10 @@ export default async function EventPage({
                 className={`text-xs font-medium uppercase tracking-wider px-2 py-1 rounded ${
                   isUpcoming
                     ? "bg-brand-red/10 text-brand-red"
-                    : "bg-white/5 text-brand-grey"
+                   : "bg-white/5 text-brand-grey"
                 }`}
               >
-                {isUpcoming ? "Upcoming" : "Past Event"}
+                {isUpcoming ? "Upcoming": "Past Event"}
               </span>
               <span className="text-xs font-medium uppercase tracking-wider text-brand-grey">
                 {formatEventType(e.type)}
@@ -144,7 +144,7 @@ export default async function EventPage({
                 <Users size={16} className="text-brand-red" />
                 {hasRecap
                   ? `${e.recap!.attendees} attended`
-                  : `${e.capacity} spots`}
+                 : `${e.capacity} spots`}
               </span>
             </div>
 
@@ -170,7 +170,7 @@ export default async function EventPage({
           <div className="max-w-site mx-auto px-6">
             <div className="max-w-3xl p-6 rounded-lg border border-white/5 bg-white/[0.02]">
               <h3 className="text-xs font-medium uppercase tracking-wider text-brand-grey mb-4">
-                {isUpcoming ? "Featured Builder" : "Builder"}
+                {isUpcoming ? "Featured Builder": "Builder"}
               </h3>
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full bg-brand-red/20 flex items-center justify-center text-brand-red font-bold flex-shrink-0">
@@ -304,18 +304,18 @@ export default async function EventPage({
       <section className="py-16 border-t border-white/5">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl font-display font-bold mb-4">
-            {isUpcoming ? "See You There" : "Join the Next One"}
+            {isUpcoming ? "See You There": "Join the Next One"}
           </h2>
           <p className="text-brand-grey mb-6">
             {isUpcoming
               ? "RSVP on MeetUp to secure your spot."
-              : "Don't miss the next BSTC event."}
+             : "Don't miss the next BSTC event."}
           </p>
           <Link
             href={isUpcoming ? e.rsvpUrl : "/events"}
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
           >
-            {isUpcoming ? "RSVP Now" : "See Upcoming Events"}
+            {isUpcoming ? "RSVP Now": "See Upcoming Events"}
           </Link>
         </div>
       </section>

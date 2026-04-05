@@ -20,7 +20,7 @@ function NavLink({
     <Link href={href} className="relative py-1 group">
       <span
         className={`text-sm transition-colors ${
-          isActive ? "text-brand-white" : "text-brand-grey group-hover:text-brand-white"
+          isActive ? "text-brand-white": "text-brand-grey group-hover:text-brand-white"
         }`}
       >
         {label}
@@ -28,7 +28,7 @@ function NavLink({
       {/* Animated underline */}
       <span
         className={`absolute -bottom-1 left-0 h-[2px] bg-brand-red transition-all duration-300 ${
-          isActive ? "w-full" : "w-0 group-hover:w-full"
+          isActive ? "w-full": "w-0 group-hover:w-full"
         }`}
       />
     </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
                   className={`block transition-colors ${
                     pathname.startsWith(link.href)
                       ? "text-brand-white"
-                      : "text-brand-grey hover:text-brand-white"
+                     : "text-brand-grey hover:text-brand-white"
                   }`}
                   onClick={() => setMobileOpen(false)}
                 >

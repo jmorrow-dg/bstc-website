@@ -182,7 +182,7 @@ export default function CommunityPage() {
             Your Journey
           </h2>
           <p className="text-brand-grey text-center mb-12 max-w-xl mx-auto">
-            From first event to community leader — there&apos;s a path for
+            From first event to community leader: there&apos;s a path for
             everyone.
           </p>
           <div className="grid md:grid-cols-5 gap-4 max-w-5xl mx-auto">

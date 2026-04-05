@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     // await resend.emails.send({
     //   from: "BSTC <noreply@bstc.community>",
     //   to: "hello@bstc.community",
-    //   subject: `[BSTC Sponsor Inquiry] ${data.company} — ${data.name}`,
+    //   subject: `[BSTC Sponsor Inquiry] ${data.company}: ${data.name}`,
     //   text: `Name: ${data.name}\nEmail: ${data.email}\nCompany: ${data.company}\nWebsite: ${data.website}\nTier: ${data.tier}\nGoal: ${data.goal}\n\n${data.message}`,
     // });
 

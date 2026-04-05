@@ -10,7 +10,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Join BSTC",
   description:
-    "Join Bali Startup & Tech Community — 2,500+ founders, engineers, and operators. Free to join. Three steps: WhatsApp, MeetUp, Show up.",
+    "Join Bali Startup & Tech Community: 2,500+ founders, engineers, and operators. Free to join. Three steps: WhatsApp, MeetUp, Show up.",
 };
 
 export default function JoinPage() {
@@ -74,7 +74,7 @@ export default function JoinPage() {
                 RSVP on MeetUp
               </h3>
               <p className="text-sm text-brand-grey mb-6">
-                Our events are listed on MeetUp. RSVP to secure your spot — it
+                Our events are listed on MeetUp. RSVP to secure your spot: it
                 helps us plan capacity and means you won&apos;t miss out.
               </p>
               <a
@@ -124,7 +124,7 @@ export default function JoinPage() {
             {[
               {
                 title: "Arrive a few minutes early",
-                desc: "Events start on time. Grab a drink and find the host — they'll be near the entrance welcoming people.",
+                desc: "Events start on time. Grab a drink and find the host: they'll be near the entrance welcoming people.",
               },
               {
                 title: "Grab a name tag",
@@ -136,7 +136,7 @@ export default function JoinPage() {
               },
               {
                 title: "Let the host connect you",
-                desc: "The host will float around making introductions. If you're stuck, just ask — they'll connect you with someone relevant.",
+                desc: "The host will float around making introductions. If you're stuck, just ask: they'll connect you with someone relevant.",
               },
               {
                 title: "No hard selling",

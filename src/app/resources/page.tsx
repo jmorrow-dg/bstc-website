@@ -12,9 +12,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Resources — Tools & Stack Used by BSTC Founders",
+  title: "Resources: Tools & Stack Used by BSTC Founders",
   description:
-    "The tools, platforms, and resources used by 2,500+ founders in the BSTC community. AI, development, automation, sales, design — curated from real builder workflows.",
+    "The tools, platforms, and resources used by 2,500+ founders in the BSTC community. AI, development, automation, sales, design: curated from real builder workflows.",
   keywords: [
     "founder tools",
     "startup tools 2026",
@@ -81,7 +81,7 @@ const TOOL_CATEGORIES = [
       {
         name: "Supabase",
         description:
-          "Open-source Firebase alternative. PostgreSQL database, auth, storage, and realtime — all managed.",
+          "Open-source Firebase alternative. PostgreSQL database, auth, storage, and realtime: all managed.",
         url: "https://supabase.com",
       },
       {
@@ -249,7 +249,7 @@ export default function ResourcesPage() {
           </h1>
           <p className="text-brand-grey max-w-2xl text-lg">
             The tools, platforms, and resources used by 2,500+ founders in the
-            BSTC community. Curated from real workflows — not sponsored lists.
+            BSTC community. Curated from real workflows: not sponsored lists.
           </p>
         </div>
       </section>
@@ -286,7 +286,7 @@ export default function ResourcesPage() {
           </h2>
           <p className="text-brand-grey max-w-md mx-auto mb-8">
             Every &ldquo;How I Build with AI&rdquo; session features founders
-            demonstrating these tools live — with real workflows and real
+            demonstrating these tools live: with real workflows and real
             revenue.
           </p>
           <Link

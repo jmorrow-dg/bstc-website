@@ -287,18 +287,18 @@ export default async function HIWAEpisodePage({
       <section className="py-16 border-t border-white/5">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl font-display font-bold mb-4">
-            {isUpcoming ? "Be There" : "Catch the Next One"}
+            {isUpcoming ? "Be There": "Catch the Next One"}
           </h2>
           <p className="text-brand-grey mb-6">
             {isUpcoming
               ? "This is live, in-person, and unrepeatable. RSVP now."
-              : "Every edition features a different builder, different tools, different build."}
+             : "Every edition features a different builder, different tools, different build."}
           </p>
           <Link
             href={isUpcoming ? e.rsvpUrl : "/how-i-build-with-ai"}
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
           >
-            {isUpcoming ? "RSVP Now" : "See All Episodes"}
+            {isUpcoming ? "RSVP Now": "See All Episodes"}
           </Link>
         </div>
       </section>

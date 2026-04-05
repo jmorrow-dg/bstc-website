@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     // await resend.emails.send({
     //   from: "BSTC <noreply@bstc.community>",
     //   to: "hello@bstc.community",
-    //   subject: `[BSTC Contact] ${data.subject} — ${data.name}`,
+    //   subject: `[BSTC Contact] ${data.subject}: ${data.name}`,
     //   text: `Name: ${data.name}\nEmail: ${data.email}\nSubject: ${data.subject}\n\n${data.message}`,
     // });
 

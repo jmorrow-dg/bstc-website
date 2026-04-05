@@ -186,7 +186,7 @@ export default function SponsorApplyPage() {
                 disabled={loading}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red disabled:opacity-50"
               >
-                {loading ? "Submitting..." : "Submit Enquiry"}
+                {loading ? "Submitting...": "Submit Enquiry"}
                 {!loading && <Send size={16} />}
               </button>
             </form>

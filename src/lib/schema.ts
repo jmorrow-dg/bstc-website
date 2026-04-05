@@ -57,7 +57,7 @@ export function getEventSchema(event: {
     eventStatus:
       event.status === "completed"
         ? "https://schema.org/EventScheduled"
-        : "https://schema.org/EventScheduled",
+       : "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
       "@type": "Place",

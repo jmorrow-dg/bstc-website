@@ -39,7 +39,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
               >
                 {item.label}
               </Link>
-            ) : (
+            ): (
               <span className="text-brand-grey/70">{item.label}</span>
             )}
           </span>

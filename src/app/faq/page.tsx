@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { getFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "FAQ — Everything You Need to Know About BSTC",
+  title: "FAQ: Everything You Need to Know About BSTC",
   description:
     "Frequently asked questions about Bali Startup & Tech Community. Events, membership, sponsorship, Bali's tech scene, and how to get involved.",
   keywords: [
@@ -48,7 +48,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What makes BSTC different from other tech meetups?",
         answer:
-          "Three things: (1) No hard selling — pitching and aggressive networking are banned and enforced. (2) Curated audience — our community is ex-FAANG engineers, funded founders, VCs, and senior operators. (3) High-signal formats — structured events designed for real value, not just socialising.",
+          "Three things: (1) No hard selling: pitching and aggressive networking are banned and enforced. (2) Curated audience: our community is ex-FAANG engineers, funded founders, VCs, and senior operators. (3) High-signal formats: structured events designed for real value, not just socialising.",
       },
     ],
   },
@@ -83,7 +83,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What events does BSTC run?",
         answer:
-          "We run four core event formats: (1) Networking Night — monthly, 40-80 people, free, open mic + networking. (2) How I Build with AI — live AI demos by real builders. (3) Founder Roundtable — max 20, $20K+ MRR founders only, confidential. (4) Builder Sessions — tactical workshops and talks.",
+          "We run four core event formats: (1) Networking Night: monthly, 40-80 people, free, open mic + networking. (2) How I Build with AI: live AI demos by real builders. (3) Founder Roundtable: max 20, $20K+ MRR founders only, confidential. (4) Builder Sessions: tactical workshops and talks.",
       },
       {
         question: "When and where are BSTC events?",
@@ -93,17 +93,17 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What is 'How I Build with AI'?",
         answer:
-          "It's BSTC's flagship event series where real builders share their actual AI workflows live. The format includes an AI Intel Drop (top AI news), Builder Spotlights (10-minute demos with Q&A), and the Money Round (who made money with AI this month). No slides, no theory — just practitioners showing how they ship.",
+          "It's BSTC's flagship event series where real builders share their actual AI workflows live. The format includes an AI Intel Drop (top AI news), Builder Spotlights (10-minute demos with Q&A), and the Money Round (who made money with AI this month). No slides, no theory: just practitioners showing how they ship.",
       },
       {
         question: "What should I expect at my first BSTC event?",
         answer:
-          "Arrive on time, grab a name tag, and prepare a 60-second intro (name, what you're building, what you need). The host will welcome everyone and make introductions. No pitching or hard selling. Dress code is Bali casual. Submit feedback after — we take it seriously.",
+          "Arrive on time, grab a name tag, and prepare a 60-second intro (name, what you're building, what you need). The host will welcome everyone and make introductions. No pitching or hard selling. Dress code is Bali casual. Submit feedback after: we take it seriously.",
       },
       {
         question: "Can I speak or present at a BSTC event?",
         answer:
-          "Yes. If you're building something interesting with AI or running a tech company, reach out via our contact page. We look for practitioners with real results — not product demos or sales pitches.",
+          "Yes. If you're building something interesting with AI or running a tech company, reach out via our contact page. We look for practitioners with real results: not product demos or sales pitches.",
       },
     ],
   },
@@ -123,7 +123,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Can sponsors pitch or sell at events?",
         answer:
-          "No. Our 'no hard selling' rule applies to everyone, including sponsors. Sponsors get a 60-second mention and optional table presence — but stage takeovers, product demos without approval, and aggressive sales are not permitted. This protects the community trust that makes sponsoring BSTC valuable in the first place.",
+          "No. Our 'no hard selling' rule applies to everyone, including sponsors. Sponsors get a 60-second mention and optional table presence: but stage takeovers, product demos without approval, and aggressive sales are not permitted. This protects the community trust that makes sponsoring BSTC valuable in the first place.",
       },
     ],
   },
@@ -133,7 +133,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Is Bali a real tech hub?",
         answer:
-          "Yes. Bali is home to thousands of tech founders, engineers, and operators from 40+ countries. The ecosystem includes co-working spaces with fibre internet, regular tech events, active VC interest from Singapore, and a growing Indonesian tech talent pool. It's not trying to be Silicon Valley — it offers a different value proposition: lower cost, high quality of life, concentrated community, and excellent time zone for global teams.",
+          "Yes. Bali is home to thousands of tech founders, engineers, and operators from 40+ countries. The ecosystem includes co-working spaces with fibre internet, regular tech events, active VC interest from Singapore, and a growing Indonesian tech talent pool. It's not trying to be Silicon Valley: it offers a different value proposition: lower cost, high quality of life, concentrated community, and excellent time zone for global teams.",
       },
       {
         question: "What kind of tech companies are built from Bali?",
@@ -168,7 +168,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How can I be a guest on the BSTC podcast?",
         answer:
-          "If you're building something interesting with AI or running a tech company from Southeast Asia, reach out via our contact page. We look for practitioners with real results — revenue numbers, real tools, honest stories.",
+          "If you're building something interesting with AI or running a tech company from Southeast Asia, reach out via our contact page. We look for practitioners with real results: revenue numbers, real tools, honest stories.",
       },
     ],
   },
