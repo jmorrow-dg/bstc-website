@@ -27,6 +27,13 @@ export async function generateMetadata({
       type: "article",
       publishedTime: p.date,
       authors: [p.author],
+      images: [
+        {
+          url: `/api/og?title=${encodeURIComponent(p.title)}&subtitle=${encodeURIComponent(p.excerpt.slice(0, 100))}&type=blog`,
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
   };
 }

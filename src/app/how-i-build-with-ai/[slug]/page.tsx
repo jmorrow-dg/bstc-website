@@ -43,6 +43,13 @@ export async function generateMetadata({
       title: e.seo?.title || e.title,
       description: e.seo?.description || e.description,
       type: "article",
+      images: [
+        {
+          url: e.coverImage || `/api/og?title=${encodeURIComponent(e.title)}&subtitle=${encodeURIComponent(e.description.slice(0, 100))}&type=hiwa`,
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
   };
 }
