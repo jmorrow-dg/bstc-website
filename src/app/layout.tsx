@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import PageTransition from "@/components/layout/PageTransition";
 import { SITE } from "@/lib/constants";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/schema";
 import "./globals.css";
@@ -84,7 +85,9 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased bg-brand-charcoal text-brand-white">
         <Navbar />
-        <main className="min-h-screen pt-16">{children}</main>
+        <main className="min-h-screen pt-16">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
         <Analytics />
         <SpeedInsights />

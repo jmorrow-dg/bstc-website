@@ -2,39 +2,69 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 
+function NavLink({
+  href,
+  label,
+  isActive,
+}: {
+  href: string;
+  label: string;
+  isActive: boolean;
+}) {
+  return (
+    <Link href={href} className="relative py-1 group">
+      <span
+        className={`text-sm transition-colors ${
+          isActive ? "text-brand-white" : "text-brand-grey group-hover:text-brand-white"
+        }`}
+      >
+        {label}
+      </span>
+      {/* Animated underline */}
+      <span
+        className={`absolute -bottom-1 left-0 h-[2px] bg-brand-red transition-all duration-300 ${
+          isActive ? "w-full" : "w-0 group-hover:w-full"
+        }`}
+      />
+    </Link>
+  );
+}
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-charcoal/90 backdrop-blur-md border-b border-white/5">
       <div className="max-w-site mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-brand-red font-bold text-xl tracking-tight">
+          <span className="text-brand-red font-bold text-xl tracking-tight group-hover:text-brand-red-glow transition-colors">
             BSTC
           </span>
-          <span className="hidden sm:inline text-brand-grey text-sm">
+          <span className="hidden sm:inline text-brand-grey text-sm group-hover:text-brand-white transition-colors">
             Bali Startup & Tech
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {NAV_LINKS.map((link) => (
-            <Link
+            <NavLink
               key={link.href}
               href={link.href}
-              className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-            >
-              {link.label}
-            </Link>
+              label={link.label}
+              isActive={pathname.startsWith(link.href)}
+            />
           ))}
           <Link
             href="/join"
-            className="text-sm font-medium px-4 py-2 bg-brand-red hover:bg-brand-red-dark text-brand-white rounded transition-colors"
+            className="text-sm font-medium px-4 py-2 bg-brand-red hover:bg-brand-red-dark text-brand-white rounded transition-all hover:shadow-[0_0_15px_rgba(200,30,30,0.3)]"
           >
             Join Community
           </Link>
@@ -42,7 +72,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-brand-grey hover:text-brand-white"
+          className="md:hidden text-brand-grey hover:text-brand-white transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -51,27 +81,41 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-brand-charcoal border-t border-white/5 px-6 py-4 space-y-4">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="block text-brand-grey hover:text-brand-white transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="/join"
-            className="block text-center font-medium px-4 py-2 bg-brand-red hover:bg-brand-red-dark text-brand-white rounded transition-colors"
-            onClick={() => setMobileOpen(false)}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="md:hidden bg-brand-charcoal border-t border-white/5 overflow-hidden"
           >
-            Join Community
-          </Link>
-        </div>
-      )}
+            <div className="px-6 py-4 space-y-4">
+              {NAV_LINKS.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`block transition-colors ${
+                    pathname.startsWith(link.href)
+                      ? "text-brand-white"
+                      : "text-brand-grey hover:text-brand-white"
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="/join"
+                className="block text-center font-medium px-4 py-2 bg-brand-red hover:bg-brand-red-dark text-brand-white rounded transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                Join Community
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
