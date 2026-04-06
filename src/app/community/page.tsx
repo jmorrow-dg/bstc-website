@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import {
   ArrowRight,
@@ -224,6 +225,38 @@ export default function CommunityPage() {
                   {item.title}
                 </h3>
                 <p className="text-xs text-brand-grey">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+        <div className="max-w-site mx-auto px-6">
+          <h2 className="text-3xl font-display font-bold mb-12 text-center">
+            Scenes from the Community
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {[
+              { src: "/images/photos/events/2024-11_bstc_atmospheric-venue.jpg", alt: "BSTC event at tropical venue in Bali" },
+              { src: "/images/photos/events/2024-05_bstc_packed-venue-networking.jpg", alt: "Packed venue at BSTC networking night" },
+              { src: "/images/photos/events/2024-08_bstc_full-venue-wide.jpg", alt: "Full venue wide shot at BSTC event" },
+              { src: "/images/photos/events/2024-05_bstc_people-laughing.jpg", alt: "BSTC members laughing and socialising" },
+              { src: "/images/photos/events/2024-11_bstc_packed-house.jpg", alt: "Packed house at BSTC presentation" },
+              { src: "/images/photos/events/2024-08_bstc_startup-pitch.jpg", alt: "Founder pitching at BSTC event" },
+            ].map((photo, i) => (
+              <div
+                key={i}
+                className="relative aspect-[3/2] rounded-lg overflow-hidden border border-white/10 group"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
               </div>
             ))}
           </div>

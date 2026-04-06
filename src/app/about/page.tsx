@@ -32,7 +32,7 @@ export default function AboutPage() {
           <div className="max-w-3xl space-y-6 text-brand-grey leading-relaxed">
             <p className="text-lg">
               BSTC started in October 2023 with a simple idea: Bali had
-              thousands of founders, engineers, and tech operators: but no
+              thousands of founders, engineers, and tech operators — but no
               high-signal community connecting them.
             </p>
             <p>
@@ -74,7 +74,7 @@ export default function AboutPage() {
             </p>
             <p>
               We&apos;re based in Canggu, Bali with nodes in Ubud, Sanur, and
-              Uluwatu: and ambitions to become the #1 tech community across
+              Uluwatu, and ambitions to become the #1 tech community across
               Southeast Asia.
             </p>
             <p className="text-brand-white font-medium text-lg">

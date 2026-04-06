@@ -140,7 +140,7 @@ export default function SponsorsPage() {
                 className={`p-6 rounded-lg border ${
                   tier.featured
                     ? "border-brand-red/30 bg-brand-red/5"
-                   : "border-white/5 bg-white/[0.02]"
+                    : "border-white/5 bg-white/[0.02]"
                 } flex flex-col`}
               >
                 {tier.featured && (

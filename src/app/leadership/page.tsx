@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Leadership",
   description:
-    "Meet the leaders behind BSTC. Our tiered leadership model recognises contribution and consistency: not titles.",
+    "Meet the leaders behind BSTC. Our tiered leadership model recognises contribution and consistency, not titles.",
 };
 
 const FOUNDERS = [
@@ -73,7 +73,7 @@ export default function LeadershipPage() {
             Earned Through Contribution
           </h1>
           <p className="text-brand-grey max-w-2xl text-lg">
-            Leadership at BSTC is earned through contribution and consistency. 
+            Leadership at BSTC is earned through contribution and consistency, 
             not titles. We are stewards of culture, operators of experience, and
             protectors of signal.
           </p>

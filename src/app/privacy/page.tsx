@@ -32,7 +32,7 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc pl-5 space-y-1">
                 <li>
-                  <strong className="text-brand-white">Name and email</strong>. 
+                  <strong className="text-brand-white">Name and email</strong> — 
                   via MeetUp, event registration, and website forms
                 </li>
                 <li>
