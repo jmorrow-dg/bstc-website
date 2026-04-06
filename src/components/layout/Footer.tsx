@@ -57,6 +57,14 @@ export default function Footer() {
                   Leadership
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/podcast"
+                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
+                >
+                  Podcast
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -137,6 +145,30 @@ export default function Footer() {
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >
                   Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources"
+                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
+                >
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
+                >
+                  Blog
                 </Link>
               </li>
             </ul>

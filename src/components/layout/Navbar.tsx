@@ -91,14 +91,14 @@ export default function Navbar() {
             className="md:hidden bg-brand-charcoal border-t border-white/5 overflow-hidden"
           >
             <div className="px-6 py-4 space-y-4">
-              {NAV_LINKS.map((link) => (
+              {[...NAV_LINKS, { label: "About", href: "/about" }, { label: "FAQ", href: "/faq" }].map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`block transition-colors ${
                     pathname.startsWith(link.href)
                       ? "text-brand-white"
-                     : "text-brand-grey hover:text-brand-white"
+                      : "text-brand-grey hover:text-brand-white"
                   }`}
                   onClick={() => setMobileOpen(false)}
                 >
