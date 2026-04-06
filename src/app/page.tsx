@@ -156,13 +156,15 @@ export default function Home() {
                 image: "/images/events/networking-night.png",
                 href: "/events/flagship-networking-night-may-2026",
                 badge: "Monthly",
+                imagePosition: "object-center",
               },
               {
                 title: "How I AI",
                 desc: "Live AI builds by real practitioners. Intel Drop. Builder Spotlights. The Money Round. Real tools, real revenue.",
                 image: "/images/events/how-i-ai-edition-1.png",
                 href: "/how-i-build-with-ai",
-                badge: "Flagship Series",
+                badge: "New Series",
+                imagePosition: "object-[center_60%]",
               },
               {
                 title: "Hackathon",
@@ -170,6 +172,7 @@ export default function Home() {
                 image: "/images/events/hackathon-edition-1.png",
                 href: "/events/hackathon-edition-1",
                 badge: "Coming Soon",
+                imagePosition: "object-center",
               },
             ].map((event) => (
               <FadeInItem key={event.title}>
@@ -182,7 +185,7 @@ export default function Home() {
                       src={event.image}
                       alt={event.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className={`object-cover group-hover:scale-105 transition-transform duration-500 ${event.imagePosition}`}
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     <div className="absolute top-3 left-3">
