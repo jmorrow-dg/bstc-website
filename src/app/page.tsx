@@ -292,32 +292,54 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               From the Community
             </h2>
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <div className="flex gap-0.5">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <span key={star} className={`text-lg ${star <= 4 ? "text-brand-red" : "text-brand-red/40"}`}>
+                    &#9733;
+                  </span>
+                ))}
+              </div>
+              <span className="text-sm text-brand-grey">
+                4.6/5 from 116 reviews on MeetUp
+              </span>
+            </div>
           </FadeIn>
 
-          <FadeInStagger className="grid md:grid-cols-3 gap-8">
+          <FadeInStagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 quote:
-                  "The highest-signal tech community I've been part of. No fluff, just real builders helping each other.",
-                name: "Community Member",
-                role: "Startup Founder",
+                  "This is the first time I've eaten fish in 15 years. Thanks for hosting the night.",
+                name: "Tom",
+                role: "LinkedIn Agency, $50K+ MRR",
+                context: "At a BSTC private dinner",
               },
               {
                 quote:
-                  "I've met more relevant connections at one BSTC event than six months of conferences.",
-                name: "Community Member",
-                role: "Software Engineer",
+                  "The quality of people in the room is unmatched. I've met more relevant connections at one BSTC event than six months of conferences.",
+                name: "BSTC Member",
+                role: "SaaS Founder, Series A",
+                context: "Networking Night",
               },
               {
                 quote:
-                  "The 'no hard selling' rule makes all the difference. You can actually have real conversations here.",
-                name: "Community Member",
-                role: "VC Partner",
+                  "The 'no hard selling' rule changes everything. You can have real conversations without watching your back. This is how tech events should be.",
+                name: "BSTC Member",
+                role: "Angel Investor",
+                context: "Networking Night",
+              },
+              {
+                quote:
+                  "Best tech community I've been part of anywhere in the world. The signal-to-noise ratio is unreal.",
+                name: "BSTC Member",
+                role: "Ex-FAANG Engineer",
+                context: "Regular attendee",
               },
             ].map((testimonial, i) => (
               <FadeInItem key={i}>
-                <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-brand-red/20 transition-all duration-300">
-                  <p className="text-brand-grey text-sm leading-relaxed mb-4">
+                <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-brand-red/20 transition-all duration-300 h-full flex flex-col">
+                  <p className="text-brand-grey text-sm leading-relaxed mb-4 flex-grow">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
                   <div>
@@ -327,6 +349,11 @@ export default function Home() {
                     <p className="text-xs text-brand-grey">
                       {testimonial.role}
                     </p>
+                    {testimonial.context && (
+                      <p className="text-[10px] text-brand-red mt-1">
+                        {testimonial.context}
+                      </p>
+                    )}
                   </div>
                 </div>
               </FadeInItem>

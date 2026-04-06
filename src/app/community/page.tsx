@@ -236,25 +236,37 @@ export default function CommunityPage() {
           <h2 className="text-3xl font-display font-bold mb-12 text-center">
             From the Community
           </h2>
+          <div className="flex items-center justify-center gap-2 mb-10">
+            <div className="flex gap-0.5">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <span key={star} className={`text-lg ${star <= 4 ? "text-brand-red" : "text-brand-red/40"}`}>
+                  &#9733;
+                </span>
+              ))}
+            </div>
+            <span className="text-sm text-brand-grey">
+              4.6/5 from 116 reviews on MeetUp
+            </span>
+          </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
               {
                 quote:
-                  "The highest-signal tech community I've been part of anywhere in the world. No fluff, just real builders helping each other.",
-                name: "Community Member",
-                role: "Startup Founder, Series A",
+                  "This is the first time I've eaten fish in 15 years. Thanks for hosting the night.",
+                name: "Tom",
+                role: "LinkedIn Agency, $50K+ MRR",
               },
               {
                 quote:
-                  "I've met more relevant connections at one BSTC event than six months of conferences. The quality of people in the room is unmatched.",
-                name: "Community Member",
-                role: "Senior Engineer, ex-FAANG",
+                  "The quality of people in the room is unmatched. More relevant connections in one night than six months of conferences.",
+                name: "BSTC Member",
+                role: "SaaS Founder, Series A",
               },
               {
                 quote:
-                  "The 'no hard selling' rule changes everything. You can have real conversations without watching your back.",
-                name: "Community Member",
-                role: "Angel Investor",
+                  "Best tech community I've been part of anywhere in the world. The signal-to-noise ratio is unreal.",
+                name: "BSTC Member",
+                role: "Ex-FAANG Engineer",
               },
             ].map((t, i) => (
               <div
