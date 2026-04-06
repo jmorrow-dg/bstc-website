@@ -16,7 +16,9 @@ recap:
     - "Strong turnout with 15+ first-timers from the digital nomad community"
     - "Three founders connected on a potential collaboration in AI-powered logistics"
     - "Venue worked well: good acoustics for the open mic segment"
-  photos: []
+  photos:
+    - /images/photos/events/2024-11_bstc_packed-house.jpg
+    - /images/photos/events/2024-05_bstc_packed-venue-networking.jpg
 seo:
   title: "BSTC Networking Night Recap: March 2026 | Bali Tech Events"
   description: "52 founders, engineers, and VCs gathered at Yema Kitchen for BSTC's March networking night. See the recap and key connections made."

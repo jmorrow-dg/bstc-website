@@ -16,7 +16,9 @@ recap:
     - "Strong developer turnout with 8 engineers from funded startups"
     - "Two VCs from Singapore attended specifically for deal flow"
     - "Open mic featured a founder who just closed a $2M seed round, sharing lessons learned"
-  photos: []
+  photos:
+    - /images/photos/events/2024-08_bstc_full-venue-wide.jpg
+    - /images/photos/events/2024-07_bstc_crowd-watching-speaker.jpg
 seo:
   title: "BSTC Networking Night Recap: February 2026 | Bali Tech Events"
   description: "48 founders, engineers, and VCs gathered at Yema Kitchen for BSTC's February networking night. Developer-heavy crowd with Singapore VC attendance."

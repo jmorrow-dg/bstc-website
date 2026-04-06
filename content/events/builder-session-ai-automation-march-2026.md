@@ -16,7 +16,9 @@ recap:
     - "Highest-rated BSTC event to date at 4.8/5.0"
     - "Live demo of an AI-powered lead qualification pipeline built in 45 minutes"
     - "15 attendees built their first n8n workflow during the hands-on segment"
-  photos: []
+  photos:
+    - /images/photos/events/2024-08_bstc_startup-pitch.jpg
+    - /images/photos/events/2024-08_bstc_audience-engagement.jpg
 seo:
   title: "Builder Session Recap: AI Automation for Founders | BSTC Bali"
   description: "35 founders and engineers built AI automation workflows live at BSTC's March builder session. n8n, Claude API, and real business use cases."

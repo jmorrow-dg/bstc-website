@@ -277,6 +277,31 @@ export default async function EventPage({
                 </div>
               )}
 
+              {/* Event Photos */}
+              {e.recap.photos && e.recap.photos.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-sm font-medium uppercase tracking-wider text-brand-grey mb-3">
+                    Event Photos
+                  </h3>
+                  <div className="grid grid-cols-2 gap-3">
+                    {e.recap.photos.map((photo, i) => (
+                      <div
+                        key={i}
+                        className="relative aspect-[3/2] rounded-lg overflow-hidden border border-white/10"
+                      >
+                        <Image
+                          src={photo}
+                          alt={`${e.title} photo ${i + 1}`}
+                          fill
+                          className="object-cover hover:scale-105 transition-transform duration-500"
+                          sizes="(max-width: 768px) 50vw, 400px"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Video */}
               {e.recap.videoUrl && (
                 <a

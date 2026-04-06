@@ -16,7 +16,9 @@ recap:
     - "Many new faces after the holiday season, 12 first-timers"
     - "Energy was high with founders sharing 2026 goals and targets"
     - "First event where we tested the new structured networking format"
-  photos: []
+  photos:
+    - /images/photos/events/2024-11_bstc_atmospheric-venue.jpg
+    - /images/photos/events/2024-05_bstc_people-laughing.jpg
 seo:
   title: "BSTC Networking Night Recap: January 2026 | Bali Tech Events"
   description: "42 builders kicked off 2026 at BSTC's January networking night. New year energy with 12 first-timers and founders sharing ambitious goals."

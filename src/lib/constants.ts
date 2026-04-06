@@ -9,9 +9,9 @@ export const SITE = {
   altDomain: "bstc.community",
   email: "hello@bstc.community",
   meetup: "https://www.meetup.com/bali-start-ups-tech-community/",
-  whatsapp: "#", // TODO: Add WhatsApp group link
-  linkedin: "#", // TODO: Add LinkedIn page URL
-  instagram: "#", // TODO: Add Instagram handle URL
+  whatsapp: "https://chat.whatsapp.com/GkG5rXQsBcfIBGuuJSkjxm",
+  linkedin: "https://www.linkedin.com/groups/14424020/",
+  instagram: "https://www.instagram.com/bali_tech_community/",
   founded: "2023",
   location: "Canggu, Bali, Indonesia",
 };
