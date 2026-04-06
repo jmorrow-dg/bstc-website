@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -43,8 +44,15 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-charcoal/90 backdrop-blur-md border-b border-white/5">
       <div className="max-w-site mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-brand-red font-bold text-xl tracking-tight group-hover:text-brand-red-glow transition-colors">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <Image
+            src="/images/logo.png"
+            alt="BSTC"
+            width={32}
+            height={32}
+            className="group-hover:brightness-110 transition-all"
+          />
+          <span className="text-brand-red font-bold text-lg tracking-tight group-hover:text-brand-red-glow transition-colors">
             BSTC
           </span>
           <span className="hidden sm:inline text-brand-grey text-sm group-hover:text-brand-white transition-colors">

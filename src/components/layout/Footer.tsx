@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SITE } from "@/lib/constants";
 import NewsletterSignup from "./NewsletterSignup";
 
@@ -9,9 +10,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
-            <span className="text-brand-red font-bold text-xl tracking-tight">
-              BSTC
-            </span>
+            <div className="flex items-center gap-2.5">
+              <Image
+                src="/images/logo.png"
+                alt="BSTC"
+                width={28}
+                height={28}
+              />
+              <span className="text-brand-red font-bold text-xl tracking-tight">
+                BSTC
+              </span>
+            </div>
             <p className="mt-3 text-sm text-brand-grey leading-relaxed mb-4">
               The largest founder-led tech community in Bali and Southeast Asia.
             </p>
