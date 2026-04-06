@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   Calendar,
@@ -83,8 +84,24 @@ export default async function EventPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
       />
 
+      {/* Hero Cover Image */}
+      {e.coverImage && (
+        <div className="max-w-site mx-auto px-6 pt-8">
+          <div className="relative aspect-[3/2] rounded-lg overflow-hidden border border-white/10">
+            <Image
+              src={e.coverImage}
+              alt={e.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1200px"
+              priority
+            />
+          </div>
+        </div>
+      )}
+
       {/* Navigation */}
-      <div className="max-w-site mx-auto px-6 pt-8 space-y-3">
+      <div className="max-w-site mx-auto px-6 pt-6 space-y-3">
         <Breadcrumbs
           items={[
             { label: "Home", href: "/" },

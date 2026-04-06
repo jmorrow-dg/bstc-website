@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   Calendar,
@@ -84,8 +85,24 @@ export default async function HIWAEpisodePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
       />
 
+      {/* Hero Cover Image */}
+      {e.coverImage && (
+        <div className="max-w-site mx-auto px-6 pt-8">
+          <div className="relative aspect-[3/2] rounded-lg overflow-hidden border border-white/10">
+            <Image
+              src={e.coverImage}
+              alt={e.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 1200px"
+              priority
+            />
+          </div>
+        </div>
+      )}
+
       {/* Back */}
-      <div className="max-w-site mx-auto px-6 pt-8">
+      <div className="max-w-site mx-auto px-6 pt-6">
         <Link
           href="/how-i-build-with-ai"
           className="inline-flex items-center gap-2 text-sm text-brand-grey hover:text-brand-white transition-colors"
