@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
 import {
@@ -24,8 +25,28 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
   return (
     <Link
       href={`/events/${e.slug}`}
-      className="group block p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all"
+      className="group block rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all overflow-hidden"
     >
+      {/* Cover image */}
+      {e.coverImage ? (
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <Image
+            src={e.coverImage}
+            alt={e.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+      ) : (
+        <div className="aspect-[16/9] bg-gradient-to-br from-brand-red/10 via-brand-charcoal to-brand-charcoal flex items-center justify-center">
+          <span className="text-brand-red/40 font-display font-bold text-2xl">
+            {formatEventType(e.type)}
+          </span>
+        </div>
+      )}
+
+      <div className="p-6">
       <div className="flex items-start justify-between gap-4 mb-4">
         <span
           className={`text-xs font-medium uppercase tracking-wider px-2 py-1 rounded ${
@@ -82,6 +103,7 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
           </div>
         </div>
       )}
+      </div>
     </Link>
   );
 }

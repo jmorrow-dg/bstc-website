@@ -6,7 +6,6 @@ import {
   ArrowRight,
   Users,
   Calendar,
-  Globe,
   Zap,
   Shield,
   MessageCircle,
@@ -18,8 +17,6 @@ import {
   FadeIn,
   FadeInStagger,
   FadeInItem,
-  SlideInLeft,
-  SlideInRight,
   ScaleIn,
 } from "@/components/ui/AnimatedSection";
 
@@ -135,244 +132,120 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Flagship Networking Night */}
-      <section className="py-20 md:py-28 border-b border-white/5">
+      {/* Flagship Events */}
+      <section className="py-20 md:py-28">
         <div className="max-w-site mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <SlideInLeft className="order-2 md:order-1">
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-white/10">
-                <Image
-                  src="/images/events/networking-night.png"
-                  alt="BSTC Monthly Networking Night at Yema Kitchen, Canggu"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-            </SlideInLeft>
+          <FadeIn className="text-center mb-16">
+            <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
+              Our Events
+            </p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              Three Ways to Connect
+            </h2>
+            <p className="text-brand-grey max-w-xl mx-auto">
+              Monthly networking. Live AI builds. Full-day hackathons. Every
+              format designed for signal over noise.
+            </p>
+          </FadeIn>
 
-            <SlideInRight className="order-1 md:order-2">
-              <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
-                Flagship Monthly Event
-              </p>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                Networking Night
-              </h2>
-              <p className="text-brand-grey mb-6 leading-relaxed">
-                The beating heart of BSTC. Every 3rd Thursday, 40-80 founders,
-                engineers, investors, and operators gather at Yema Kitchen in
-                Canggu. Open mic intros, host-facilitated connections, and the
-                highest-signal room in Bali.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Free entry: always",
-                  "60-second intros: sharp and respectful",
-                  "Host connects you with the right people",
-                  "No hard selling: enforced, not suggested",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 text-sm text-brand-grey"
-                  >
-                    <span className="text-brand-red mt-0.5">&#9656;</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href="https://www.meetup.com/bali-start-ups-tech-community/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm"
-                >
-                  <Calendar size={16} />
-                  RSVP on MeetUp
-                </a>
+          <FadeInStagger className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Networking Night",
+                desc: "40-80 founders, engineers, and VCs. Open mic intros. Host-facilitated connections. Every 3rd Thursday.",
+                image: "/images/events/networking-night.png",
+                href: "/events/flagship-networking-night-may-2026",
+                badge: "Monthly",
+              },
+              {
+                title: "How I AI",
+                desc: "Live AI builds by real practitioners. Intel Drop. Builder Spotlights. The Money Round. Real tools, real revenue.",
+                image: "/images/events/how-i-ai-edition-1.png",
+                href: "/how-i-build-with-ai",
+                badge: "Flagship Series",
+              },
+              {
+                title: "Hackathon",
+                desc: "Build something real in one day. Teams compete to ship products, demo in 3 minutes, and win prizes.",
+                image: "/images/events/hackathon-edition-1.png",
+                href: "/events/hackathon-edition-1",
+                badge: "Coming Soon",
+              },
+            ].map((event) => (
+              <FadeInItem key={event.title}>
                 <Link
-                  href="/events/flagship-networking-night-may-2026"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
+                  href={event.href}
+                  className="group block rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all overflow-hidden"
                 >
-                  Learn More
-                  <ArrowRight size={14} />
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <Image
+                      src={event.image}
+                      alt={event.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="text-[10px] font-medium uppercase tracking-wider bg-brand-red/90 text-brand-white px-2 py-1 rounded">
+                        {event.badge}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-semibold text-brand-white group-hover:text-brand-red transition-colors mb-2">
+                      {event.title}
+                    </h3>
+                    <p className="text-sm text-brand-grey line-clamp-3">
+                      {event.desc}
+                    </p>
+                  </div>
                 </Link>
-              </div>
-            </SlideInRight>
-          </div>
+              </FadeInItem>
+            ))}
+          </FadeInStagger>
+
+          <FadeIn className="text-center mt-10">
+            <Link
+              href="/events"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+            >
+              See All Events
+              <ArrowRight size={16} />
+            </Link>
+          </FadeIn>
         </div>
       </section>
 
       {/* Who's in the Room */}
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
         <div className="max-w-site mx-auto px-6">
-          <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <FadeIn className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
               Who&apos;s in the Room
             </h2>
-            <p className="text-brand-grey max-w-xl mx-auto">
+            <p className="text-brand-grey text-sm max-w-lg mx-auto">
               This isn&apos;t a casual meetup. The people who show up are
               building real things.
             </p>
           </FadeIn>
 
-          <FadeInStagger className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <FadeInStagger className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
-              {
-                icon: Zap,
-                label: "Startup Founders",
-                detail: "Pre-seed to Series C",
-                pct: "40%",
-              },
-              {
-                icon: Globe,
-                label: "Engineers & Devs",
-                detail: "Including ex-FAANG",
-                pct: "25%",
-              },
-              {
-                icon: Users,
-                label: "Investors",
-                detail: "VCs, Angels, Family Offices",
-                pct: "10%",
-              },
-              {
-                icon: Shield,
-                label: "Operators",
-                detail: "C-suite & VP-level",
-                pct: "25%",
-              },
+              { label: "Startup Founders", pct: "40%" },
+              { label: "Engineers & Devs", pct: "25%" },
+              { label: "Investors & VCs", pct: "10%" },
+              { label: "Operators", pct: "25%" },
             ].map((role) => (
               <FadeInItem key={role.label}>
-                <div className="text-center p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-brand-red/20 transition-all duration-300">
-                  <role.icon className="w-6 h-6 text-brand-red mx-auto mb-3" />
-                  <div className="text-2xl font-display font-bold text-brand-red mb-1">
+                <div className="text-center p-4 rounded-lg border border-white/5 bg-white/[0.02]">
+                  <div className="text-xl font-display font-bold text-brand-red mb-1">
                     {role.pct}
                   </div>
-                  <div className="font-medium text-brand-white text-sm">
-                    {role.label}
-                  </div>
-                  <div className="text-xs text-brand-grey mt-1">
-                    {role.detail}
-                  </div>
+                  <div className="text-xs text-brand-grey">{role.label}</div>
                 </div>
               </FadeInItem>
             ))}
           </FadeInStagger>
-        </div>
-      </section>
-
-      {/* How I Build with AI Feature */}
-      <section className="py-20 md:py-28 bg-white/[0.01] border-y border-white/5">
-        <div className="max-w-site mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <SlideInLeft>
-              <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
-                Flagship Series
-              </p>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                How I Build with AI
-              </h2>
-              <p className="text-brand-grey mb-6 leading-relaxed">
-                Watch real builders share their actual AI workflows. Live demos.
-                Real tools. Real products. No slides, no theory: just
-                practitioners showing how they ship.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "AI Intel Drop: top stories, fast and opinionated",
-                  "Builder Spotlights: real tools, real revenue",
-                  "The Money Round: who made money with AI this month?",
-                  "Every session recorded for podcast & video",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 text-sm text-brand-grey"
-                  >
-                    <span className="text-brand-red mt-0.5">&#9656;</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/how-i-build-with-ai"
-                className="inline-flex items-center gap-2 text-brand-red hover:text-brand-white font-medium transition-colors"
-              >
-                View All Episodes
-                <ArrowRight size={16} />
-              </Link>
-            </SlideInLeft>
-            <SlideInRight>
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-white/10">
-                <Image
-                  src="/images/events/how-i-ai-edition-1.png"
-                  alt="How I AI Edition #1 at Seoul Seoul Project, Canggu"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </SlideInRight>
-          </div>
-        </div>
-      </section>
-
-      {/* Hackathon */}
-      <section className="py-20 md:py-28 border-b border-white/5">
-        <div className="max-w-site mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <SlideInLeft>
-              <div className="relative aspect-[4/5] rounded-lg overflow-hidden border border-white/10">
-                <Image
-                  src="/images/events/hackathon-edition-1.png"
-                  alt="BSTC Hackathon Edition #1"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </SlideInLeft>
-            <SlideInRight>
-              <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
-                Coming Soon
-              </p>
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                BSTC Hackathon
-              </h2>
-              <p className="text-brand-grey mb-6 leading-relaxed">
-                Build something real in one day. BSTC&apos;s first hackathon
-                brings together developers, designers, and founders to ship
-                products, compete for prizes, and prove what&apos;s possible
-                when builders lock in.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Full day of focused building",
-                  "Teams of 2 to 5 (or form one at the event)",
-                  "3-minute demos, community vote + judges",
-                  "Prizes for the best builds",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 text-sm text-brand-grey"
-                  >
-                    <span className="text-brand-red mt-0.5">&#9656;</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/events/hackathon-edition-1"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm"
-                >
-                  Learn More
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-            </SlideInRight>
-          </div>
         </div>
       </section>
 

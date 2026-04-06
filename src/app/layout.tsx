@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
 import ReadingProgress from "@/components/ui/ReadingProgress";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import WhatsAppCTA from "@/components/ui/WhatsAppCTA";
 import { SITE } from "@/lib/constants";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/schema";
 import "./globals.css";
@@ -92,6 +93,7 @@ export default function RootLayout({
           <PageTransition>{children}</PageTransition>
         </main>
         <ScrollToTop />
+        <WhatsAppCTA />
         <Footer />
         <Analytics />
         <SpeedInsights />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { ArrowRight, Wrench } from "lucide-react";
 import {
@@ -48,15 +49,27 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
       href={`/how-i-build-with-ai/${e.slug}`}
       className="group block rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all overflow-hidden"
     >
-      {/* Cover placeholder */}
-      <div className="aspect-[16/9] bg-gradient-to-br from-brand-red/10 to-brand-charcoal flex items-center justify-center border-b border-white/5">
-        <div className="text-center">
-          <p className="text-brand-red font-bold text-lg">HOW I AI</p>
-          <p className="text-brand-grey text-xs mt-1">
-            {isUpcoming ? "Coming Soon": "Watch Now"}
-          </p>
+      {/* Cover image */}
+      {e.coverImage ? (
+        <div className="relative aspect-[16/9] overflow-hidden">
+          <Image
+            src={e.coverImage}
+            alt={e.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
         </div>
-      </div>
+      ) : (
+        <div className="aspect-[16/9] bg-gradient-to-br from-brand-red/10 to-brand-charcoal flex items-center justify-center border-b border-white/5">
+          <div className="text-center">
+            <p className="text-brand-red font-bold text-lg">HOW I AI</p>
+            <p className="text-brand-grey text-xs mt-1">
+              {isUpcoming ? "Coming Soon" : "Watch Now"}
+            </p>
+          </div>
+        </div>
+      )}
 
       <div className="p-6">
         <div className="flex items-center gap-3 mb-3">
