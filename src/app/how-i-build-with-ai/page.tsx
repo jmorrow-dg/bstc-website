@@ -51,7 +51,7 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
     >
       {/* Cover image */}
       {e.coverImage ? (
-        <div className="relative aspect-[3/2] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={e.coverImage}
             alt={e.title}
@@ -61,7 +61,7 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
           />
         </div>
       ) : (
-        <div className="aspect-[3/2] bg-gradient-to-br from-brand-red/10 to-brand-charcoal flex items-center justify-center border-b border-white/5">
+        <div className="aspect-[4/3] bg-gradient-to-br from-brand-red/10 to-brand-charcoal flex items-center justify-center border-b border-white/5">
           <div className="text-center">
             <p className="text-brand-red font-bold text-lg">HOW I AI</p>
             <p className="text-brand-grey text-xs mt-1">

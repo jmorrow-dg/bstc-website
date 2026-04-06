@@ -29,7 +29,7 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
     >
       {/* Cover image */}
       {e.coverImage ? (
-        <div className="relative aspect-[3/2] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={e.coverImage}
             alt={e.title}
@@ -39,7 +39,7 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
           />
         </div>
       ) : (
-        <div className="aspect-[3/2] bg-gradient-to-br from-brand-red/10 via-brand-charcoal to-brand-charcoal flex items-center justify-center">
+        <div className="aspect-[4/3] bg-gradient-to-br from-brand-red/10 via-brand-charcoal to-brand-charcoal flex items-center justify-center">
           <span className="text-brand-red/40 font-display font-bold text-2xl">
             {formatEventType(e.type)}
           </span>

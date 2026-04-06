@@ -180,7 +180,7 @@ export default function Home() {
                   href={event.href}
                   className="group block rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all overflow-hidden"
                 >
-                  <div className="relative aspect-[3/2] overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
                       src={event.image}
                       alt={event.title}

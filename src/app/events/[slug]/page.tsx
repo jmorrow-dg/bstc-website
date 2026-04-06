@@ -87,7 +87,7 @@ export default async function EventPage({
       {/* Hero Cover Image */}
       {e.coverImage && (
         <div className="max-w-site mx-auto px-6 pt-8">
-          <div className="relative aspect-[3/2] rounded-lg overflow-hidden border border-white/10">
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10">
             <Image
               src={e.coverImage}
               alt={e.title}
@@ -287,7 +287,7 @@ export default async function EventPage({
                     {e.recap.photos.map((photo, i) => (
                       <div
                         key={i}
-                        className="relative aspect-[3/2] rounded-lg overflow-hidden border border-white/10"
+                        className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10"
                       >
                         <Image
                           src={photo}
