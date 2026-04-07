@@ -11,7 +11,7 @@ import {
   Globe,
   Calendar,
 } from "lucide-react";
-import { STATS } from "@/lib/constants";
+import { STATS, SITE } from "@/lib/constants";
 import { getFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -259,6 +259,37 @@ export default function CommunityPage() {
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Member Directory CTA */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-site mx-auto px-6">
+          <div className="max-w-3xl mx-auto p-8 md:p-12 rounded-lg border border-brand-red/20 bg-gradient-to-br from-brand-red/10 via-brand-charcoal to-brand-charcoal text-center">
+            <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
+              Get Discovered
+            </p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              Join the BSTC Member Directory
+            </h2>
+            <p className="text-brand-grey max-w-xl mx-auto mb-8 leading-relaxed">
+              Add yourself to our public member directory. Get discovered by
+              fellow founders, investors, and operators in the community. Share
+              what you&apos;re building and what you&apos;re looking for.
+            </p>
+            <a
+              href={SITE.memberDirectory}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-all glow-red"
+            >
+              Add Me to the Directory
+              <ArrowRight size={16} />
+            </a>
+            <p className="text-xs text-brand-grey mt-4">
+              Free for all BSTC community members &middot; Takes 2 minutes
+            </p>
           </div>
         </div>
       </section>

@@ -10,6 +10,7 @@ export const SITE = {
   email: "hello@bstc.community",
   meetup: "https://www.meetup.com/bali-start-ups-tech-community/",
   whatsapp: "https://chat.whatsapp.com/GkG5rXQsBcfIBGuuJSkjxm",
+  memberDirectory: "https://tally.so/r/KY5AMM",
   linkedin: "https://www.linkedin.com/groups/14424020/",
   instagram: "https://www.instagram.com/bali_tech_community/",
   founded: "2023",

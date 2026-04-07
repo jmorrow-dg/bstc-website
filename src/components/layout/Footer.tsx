@@ -74,6 +74,16 @@ export default function Footer() {
                   Podcast
                 </Link>
               </li>
+              <li>
+                <a
+                  href={SITE.memberDirectory}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
+                >
+                  Member Directory
+                </a>
+              </li>
             </ul>
           </div>
 

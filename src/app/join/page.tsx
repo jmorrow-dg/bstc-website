@@ -166,8 +166,36 @@ export default function JoinPage() {
         </div>
       </section>
 
-      {/* Connect */}
+      {/* Member Directory */}
       <section className="py-16 md:py-24">
+        <div className="max-w-site mx-auto px-6">
+          <div className="max-w-3xl mx-auto p-8 md:p-10 rounded-lg border border-brand-red/20 bg-gradient-to-br from-brand-red/10 via-brand-charcoal to-brand-charcoal text-center">
+            <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-3">
+              Optional: Get Discovered
+            </p>
+            <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
+              Add Yourself to the Member Directory
+            </h2>
+            <p className="text-brand-grey max-w-lg mx-auto mb-6 leading-relaxed">
+              Want fellow founders, investors, and operators to find you? Add
+              yourself to our member directory. Share what you&apos;re building
+              and what you&apos;re looking for.
+            </p>
+            <a
+              href={SITE.memberDirectory}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-all glow-red text-sm"
+            >
+              Join the Directory
+              <ArrowRight size={14} />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Connect */}
+      <section className="py-16 md:py-24 border-t border-white/5">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-3xl font-display font-bold mb-4">
             Stay Connected
