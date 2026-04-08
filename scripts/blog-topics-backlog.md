@@ -18,7 +18,7 @@ How this works: the scheduled content agent picks the **topmost unchecked topic*
 
 ## Queue (top of list runs next)
 
-- [ ] How much does it cost to live in Bali as a founder in 2026 (real numbers from BSTC members)
+- [x] How much does it cost to live in Bali as a founder in 2026 (real numbers from BSTC members)
 - [ ] Bali vs Chiang Mai vs Lisbon for founders: an honest comparison
 - [ ] The Bali founder's tax guide: residency, NHR alternatives, and how to stay compliant
 - [ ] How to find a technical co-founder in Bali
@@ -56,3 +56,4 @@ How this works: the scheduled content agent picks the **topmost unchecked topic*
 
 - 2026-04-08 — best-coworking-spaces-bali-founders-2026
 - 2026-04-08 — hiring-developers-indonesia-founders-guide-2026
+- 2026-04-08 — cost-of-living-bali-founder-2026
