@@ -1,0 +1,258 @@
+// Programmatic SEO data: Bali vs {city} comparisons.
+// Each entry generates a static page at /bali-vs-{slug}.
+// To add a new comparison: add an entry below and ship it.
+
+export type CityComparison = {
+  slug: string;
+  city: string;
+  country: string;
+  monthlyCost: number; // USD, comfortable founder budget
+  founderDensity: "Very high" | "High" | "Moderate" | "Low";
+  infrastructure: "Excellent" | "Good" | "Mixed" | "Improving";
+  timezoneUtc: string;
+  visaFriction: "Low" | "Moderate" | "High";
+  englishFluency: "Excellent" | "High" | "Moderate" | "Low";
+  taxNote: string;
+  bestFor: string;
+  worstFor: string;
+  whyChooseBali: string[];
+  whyChooseCity: string[];
+  whoShouldChooseBali: string;
+  whoShouldChooseCity: string;
+  metaDescription: string;
+};
+
+export const CITY_COMPARISONS: CityComparison[] = [
+  {
+    slug: "chiang-mai",
+    city: "Chiang Mai",
+    country: "Thailand",
+    monthlyCost: 2800,
+    founderDensity: "Moderate",
+    infrastructure: "Good",
+    timezoneUtc: "UTC+7",
+    visaFriction: "Low",
+    englishFluency: "Moderate",
+    taxNote: "Thailand has the LTR (Long-Term Resident) visa and Smart Visa, both offering clean tax structures for qualifying founders. Less ambiguity than Indonesia.",
+    bestFor: "Bootstrapped solo founders who want the lowest sustainable burn",
+    worstFor: "Founders who need high in-person community density",
+    whyChooseBali: [
+      "Higher founder density: more in-person events and serious operators per square mile",
+      "Better infrastructure for hosting investors, calls, and team offsites",
+      "More mature B2B SaaS and AI-native community",
+      "No burning season (Chiang Mai's air quality drops badly Feb to April)",
+    ],
+    whyChooseCity: [
+      "Lower cost of living (~$700/month less for the same comfort level)",
+      "Cleaner visa landscape (LTR and Smart Visa)",
+      "Quieter, less party energy, easier deep focus",
+      "More mature long-stay nomad infrastructure",
+    ],
+    whoShouldChooseBali: "Funded or revenue-generating founders who value community, lifestyle leverage, and being around other serious operators in person.",
+    whoShouldChooseCity: "Bootstrapped solo founders or small remote teams optimising for low burn and deep focus over networking density.",
+    metaDescription: "Bali vs Chiang Mai for founders in 2026: cost, community, infrastructure, time zones, and which hub fits your stage. Honest comparison from operators who've lived in both.",
+  },
+  {
+    slug: "lisbon",
+    city: "Lisbon",
+    country: "Portugal",
+    monthlyCost: 4500,
+    founderDensity: "High",
+    infrastructure: "Excellent",
+    timezoneUtc: "UTC+0",
+    visaFriction: "Low",
+    englishFluency: "High",
+    taxNote: "Portugal's NHR ended for new applicants in 2024 but the IFICI replacement scheme still offers meaningful tax advantages for qualifying founders. Talk to a Portuguese tax advisor before assuming.",
+    bestFor: "Funded founders selling to EU customers who need EU/US time zone overlap",
+    worstFor: "Founders optimising for cost or building Asia-facing companies",
+    whyChooseBali: [
+      "30 to 50 percent cheaper for the same lifestyle quality",
+      "Higher founder density per square mile in Canggu than anywhere in Lisbon",
+      "Year-round warm climate, no European winter",
+      "More AI-native and B2B SaaS founder concentration",
+    ],
+    whyChooseCity: [
+      "EU/US time zone overlap (UTC+0) makes selling globally much easier",
+      "EU passport access via Schengen and eventual residency pathways",
+      "World-class infrastructure: banking, healthcare, transit, internet",
+      "Two-hour flights to London, Paris, Berlin, Madrid for sales and fundraising",
+    ],
+    whoShouldChooseBali: "Founders selling globally or to Asia, building AI products, prioritising community density and lifestyle over EU access.",
+    whoShouldChooseCity: "Funded founders selling to EU customers, founders pursuing EU residency or citizenship, founders who need the time zone overlap.",
+    metaDescription: "Bali vs Lisbon for founders in 2026: cost, community, time zones, taxes. Which European or Southeast Asian hub fits your startup stage. Honest founder comparison.",
+  },
+  {
+    slug: "singapore",
+    city: "Singapore",
+    country: "Singapore",
+    monthlyCost: 7500,
+    founderDensity: "Very high",
+    infrastructure: "Excellent",
+    timezoneUtc: "UTC+8",
+    visaFriction: "Moderate",
+    englishFluency: "Excellent",
+    taxNote: "Singapore has 17 percent corporate tax with effective rates often lower for small companies, no capital gains tax, and clean treaty-friendly structures. The gold standard for SEA founders.",
+    bestFor: "Funded founders building for the SEA market with institutional capital",
+    worstFor: "Bootstrapped or early-stage founders sensitive to burn",
+    whyChooseBali: [
+      "Roughly half the cost of living for similar productivity",
+      "Higher founder-to-cost ratio (more access to other founders per dollar spent)",
+      "Better lifestyle leverage (villa with pool vs apartment)",
+      "Less corporate energy, more builder energy",
+    ],
+    whyChooseCity: [
+      "World-class infrastructure: banking, legal, talent, internet, healthcare",
+      "The clearest tax and incorporation structure in Asia",
+      "Direct access to SEA VCs, family offices, and institutional capital",
+      "Talent density: ex-Grab, ex-Sea, ex-Shopee, ex-Gojek operators on every street",
+    ],
+    whoShouldChooseBali: "Pre-PMF founders, bootstrapped operators, founders prioritising community and lifestyle over corporate infrastructure.",
+    whoShouldChooseCity: "Funded founders raising from SEA VCs, founders selling to enterprises, founders who need the credibility of a Singapore base.",
+    metaDescription: "Bali vs Singapore for founders in 2026: cost, community, talent, infrastructure, tax. Which Southeast Asian hub fits your stage. Honest comparison from operators in both.",
+  },
+  {
+    slug: "ho-chi-minh-city",
+    city: "Ho Chi Minh City",
+    country: "Vietnam",
+    monthlyCost: 2200,
+    founderDensity: "Moderate",
+    infrastructure: "Mixed",
+    timezoneUtc: "UTC+7",
+    visaFriction: "Moderate",
+    englishFluency: "Moderate",
+    taxNote: "Vietnam has tightened tax residency rules. Foreign founders earning income in Vietnam are generally taxed at progressive rates up to 35 percent. Less founder-friendly structures than Singapore or Bali.",
+    bestFor: "Founders building products targeted specifically at the Vietnam market",
+    worstFor: "Founders selling globally who don't need Vietnamese local presence",
+    whyChooseBali: [
+      "Higher English fluency in the founder community",
+      "More established expat founder ecosystem",
+      "Cleaner visa structures via Indonesia's KITAS and Golden Visa",
+      "Better lifestyle infrastructure for long stays",
+    ],
+    whyChooseCity: [
+      "Lower cost of living than Bali",
+      "Direct access to Vietnam's fast-growing tech and engineering talent pool",
+      "Closer to enterprise customers in HCMC and Hanoi",
+      "Lower scooter traffic friction than Canggu (mostly)",
+    ],
+    whoShouldChooseBali: "Founders building globally-facing products, prioritising founder community density, and valuing English-language operations.",
+    whoShouldChooseCity: "Founders specifically targeting the Vietnamese market, hiring Vietnamese engineering talent locally, or pursuing Vietnam-specific opportunities.",
+    metaDescription: "Bali vs Ho Chi Minh City for founders in 2026: cost, community, talent, infrastructure. Which Southeast Asian hub fits your startup. Honest founder comparison.",
+  },
+  {
+    slug: "dubai",
+    city: "Dubai",
+    country: "UAE",
+    monthlyCost: 6500,
+    founderDensity: "High",
+    infrastructure: "Excellent",
+    timezoneUtc: "UTC+4",
+    visaFriction: "Low",
+    englishFluency: "Excellent",
+    taxNote: "UAE introduced 9 percent corporate tax in 2023 but still has zero personal income tax. Real substance is now required for free zone companies. Clean structure for founders willing to commit to actual UAE residency.",
+    bestFor: "Founders optimising for tax efficiency and willing to spend real time in the UAE",
+    worstFor: "Founders who want lifestyle leverage and community density at low cost",
+    whyChooseBali: [
+      "Roughly half the cost for a comparable lifestyle",
+      "Real founder community density and weekly in-person events",
+      "More builder energy, less corporate sales energy",
+      "Better lifestyle (climate, food, nature) vs Dubai's heat and concrete",
+    ],
+    whyChooseCity: [
+      "Zero personal income tax (with proper UAE residency)",
+      "Direct flights to almost everywhere globally",
+      "World-class infrastructure: banking, legal, transit",
+      "Closer time zone overlap with both Asia and Europe",
+    ],
+    whoShouldChooseBali: "Founders prioritising community, lifestyle, and cost over tax optimisation. Pre-exit founders who don't yet need a UAE structure.",
+    whoShouldChooseCity: "Founders with real liquidity events approaching, willing to establish actual UAE residency, prioritising tax efficiency.",
+    metaDescription: "Bali vs Dubai for founders in 2026: cost, tax, community, lifestyle. Which hub fits your stage. Honest comparison from founders who have considered both.",
+  },
+  {
+    slug: "mexico-city",
+    city: "Mexico City",
+    country: "Mexico",
+    monthlyCost: 3800,
+    founderDensity: "High",
+    infrastructure: "Good",
+    timezoneUtc: "UTC-6",
+    visaFriction: "Low",
+    englishFluency: "Moderate",
+    taxNote: "Mexico has clear tax residency rules and reasonable rates for foreign founders. Many US founders use Mexico for proximity without US tax burden, though US persons remain taxed on worldwide income.",
+    bestFor: "Founders selling to US customers who want time zone overlap without US tax exposure",
+    worstFor: "Founders building Asia-facing companies or prioritising Asian market access",
+    whyChooseBali: [
+      "Higher founder density in Canggu than Roma/Condesa",
+      "Lower cost of living for similar lifestyle quality",
+      "Stronger AI-native and B2B SaaS founder community",
+      "Better climate year-round, no high altitude",
+    ],
+    whyChooseCity: [
+      "US Pacific and Central time zone overlap (UTC-6)",
+      "Direct flights to most major US cities in 4 to 6 hours",
+      "Easier travel for US founders (no visa friction, short flights home)",
+      "World-class food scene and growing startup community",
+    ],
+    whoShouldChooseBali: "Founders selling globally or to Asia, prioritising founder community density, building AI or B2B SaaS for non-US-only markets.",
+    whoShouldChooseCity: "Founders selling primarily to US customers, US founders who need to fly home regularly, founders prioritising US time zone overlap.",
+    metaDescription: "Bali vs Mexico City for founders in 2026: cost, time zones, community, US access. Which hub fits your startup stage. Honest comparison from operators in both.",
+  },
+  {
+    slug: "tbilisi",
+    city: "Tbilisi",
+    country: "Georgia",
+    monthlyCost: 2400,
+    founderDensity: "Moderate",
+    infrastructure: "Good",
+    timezoneUtc: "UTC+4",
+    visaFriction: "Low",
+    englishFluency: "Moderate",
+    taxNote: "Georgia offers a 1 percent small business tax for individual entrepreneurs earning under ~$155,000/year. One of the cleanest founder tax structures in the world for solo operators.",
+    bestFor: "Solo founders optimising for low tax and low cost",
+    worstFor: "Founders who need a large in-person community or warm climate",
+    whyChooseBali: [
+      "Significantly larger founder community and weekly in-person events",
+      "Year-round warm climate, beach lifestyle",
+      "Better English fluency in the founder community",
+      "More AI-native and product-focused operators",
+    ],
+    whyChooseCity: [
+      "1 percent small business tax for individual entrepreneurs (one of the lowest globally)",
+      "Lower cost of living than Bali",
+      "Visa-free stays of up to 365 days for most nationalities",
+      "Closer to European customers and time zones",
+    ],
+    whoShouldChooseBali: "Founders who want community density, warm climate, and lifestyle leverage over pure tax optimisation.",
+    whoShouldChooseCity: "Solo founders optimising for the lowest legitimate tax burden globally, willing to trade community density for fiscal efficiency.",
+    metaDescription: "Bali vs Tbilisi for founders in 2026: cost, tax, community, lifestyle. Two underrated founder hubs compared. Honest founder comparison.",
+  },
+  {
+    slug: "medellin",
+    city: "Medellín",
+    country: "Colombia",
+    monthlyCost: 2600,
+    founderDensity: "Moderate",
+    infrastructure: "Good",
+    timezoneUtc: "UTC-5",
+    visaFriction: "Low",
+    englishFluency: "Moderate",
+    taxNote: "Colombia has tax residency at 183 days. Foreign-source income for non-residents is generally not taxed. Reasonable structure for founders staying under the threshold.",
+    bestFor: "Founders selling to US customers prioritising cost and US time zone overlap",
+    worstFor: "Founders prioritising Asian market access or community size",
+    whyChooseBali: [
+      "Larger and more mature founder community",
+      "Better infrastructure for hosting investors and team offsites",
+      "Stronger B2B SaaS and AI founder concentration",
+      "Cleaner visa structures for long stays",
+    ],
+    whyChooseCity: [
+      "US East Coast time zone overlap (UTC-5)",
+      "Lower cost of living than Bali",
+      "Direct flights to most major US cities in 4 to 6 hours",
+      "Spring-like climate year-round, no humidity",
+    ],
+    whoShouldChooseBali: "Founders selling globally or to Asia, prioritising founder community density, valuing English-language operations.",
+    whoShouldChooseCity: "Founders selling to US customers, prioritising US time zone overlap and proximity, comfortable operating in Spanish-language local environment.",
+    metaDescription: "Bali vs Medellín for founders in 2026: cost, time zones, community, US access. Which hub fits your stage. Honest founder comparison.",
+  },
+];

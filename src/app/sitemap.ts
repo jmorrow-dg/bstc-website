@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllEvents, getAllBlogPosts } from "@/lib/content";
+import { CITY_COMPARISONS } from "@/data/city-comparisons";
 
 const BASE_URL = "https://balistartupandtech.com";
 
@@ -45,5 +46,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...eventPages, ...hiwaPages, ...blogPages];
+  const comparisonPages: MetadataRoute.Sitemap = CITY_COMPARISONS.map((c) => ({
+    url: `${BASE_URL}/bali-vs/${c.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...eventPages, ...hiwaPages, ...blogPages, ...comparisonPages];
 }

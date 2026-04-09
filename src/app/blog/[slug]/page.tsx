@@ -64,10 +64,34 @@ function getArticleSchema(post: BlogFrontmatter) {
   };
 }
 
-function RelatedPosts({ posts, currentSlug }: { posts: ContentItem<BlogFrontmatter>[]; currentSlug: string }) {
-  const related = posts
+function RelatedPosts({
+  posts,
+  currentSlug,
+  currentTags,
+  currentCategory,
+}: {
+  posts: ContentItem<BlogFrontmatter>[];
+  currentSlug: string;
+  currentTags?: string[];
+  currentCategory?: string;
+}) {
+  // Score every post by tag overlap + category match, then take top 3.
+  // Falls back to most-recent if no overlap exists.
+  const tagSet = new Set((currentTags || []).map((t) => t.toLowerCase()));
+  const scored = posts
     .filter((p) => p.frontmatter.slug !== currentSlug)
-    .slice(0, 3);
+    .map((p) => {
+      const tags = (p.frontmatter.tags || []).map((t) => t.toLowerCase());
+      const tagScore = tags.reduce((n, t) => (tagSet.has(t) ? n + 2 : n), 0);
+      const catScore = p.frontmatter.category === currentCategory ? 1 : 0;
+      return { post: p, score: tagScore + catScore };
+    })
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return new Date(b.post.frontmatter.date).getTime() - new Date(a.post.frontmatter.date).getTime();
+    });
+
+  const related = scored.slice(0, 3).map((s) => s.post);
 
   if (related.length === 0) return null;
 
@@ -221,7 +245,12 @@ export default async function BlogPostPage({
       </article>
 
       {/* Related Posts */}
-      <RelatedPosts posts={allPosts} currentSlug={p.slug} />
+      <RelatedPosts
+        posts={allPosts}
+        currentSlug={p.slug}
+        currentTags={p.tags}
+        currentCategory={p.category}
+      />
 
       {/* CTA */}
       <section className="py-16 border-t border-white/5">
