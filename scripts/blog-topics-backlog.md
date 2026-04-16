@@ -24,7 +24,7 @@ How this works: the scheduled content agent picks the **topmost unchecked topic*
 - [x] How to find a technical co-founder in Bali
 - [x] Setting up a PT PMA in Indonesia: the real founder playbook
 - [x] Best Bali villas for founder retreats and team offsites
-- [ ] How to run a hackathon in Bali: lessons from BSTC Hackathon Edition #1
+- [x] How to run a hackathon in Bali: lessons from BSTC Hackathon Edition #1
 - [ ] Bali angel investors: who's actually writing cheques in 2026
 - [ ] The state of crypto and Web3 in Bali (2026)
 - [ ] How to raise a pre-seed round from Southeast Asia
@@ -62,3 +62,4 @@ How this works: the scheduled content agent picks the **topmost unchecked topic*
 - 2026-04-10 — find-technical-cofounder-bali
 - 2026-04-14 — pt-pma-indonesia-founder-playbook-2026
 - 2026-04-15 — best-bali-villas-founder-retreats-team-offsites-2026
+- 2026-04-16 — how-to-run-tech-hackathon-bali-operator-playbook
