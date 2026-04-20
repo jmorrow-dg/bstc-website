@@ -1,9 +1,9 @@
 export const SITE = {
   name: "BSTC",
   fullName: "Bali Startup & Tech Community",
-  tagline: "Where Southeast Asia's Builders Connect",
+  tagline: "Southeast Asia's Largest Tech Community",
   description:
-    "The largest founder-led tech community in Bali and Southeast Asia. Connecting founders, engineers, investors, and builders through high-signal events.",
+    "Southeast Asia's largest founder-led tech community. Built in Bali with 2,500+ members from 40+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.",
   url: "https://balistartupandtech.com",
   domain: "balistartupandtech.com",
   altDomain: "bstc.community",

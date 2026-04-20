@@ -65,7 +65,8 @@ export default function Home() {
               className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6"
             >
               Where Southeast Asia&apos;s{" "}
-              <span className="text-brand-red">Builders</span> Connect
+              <span className="text-brand-red">Best Builders</span> Actually
+              Show Up
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}

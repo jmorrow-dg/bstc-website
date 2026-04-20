@@ -37,8 +37,13 @@ export default function AboutPage() {
               About BSTC
             </p>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              The Story
+              Building Southeast Asia&apos;s #1 Tech Community
             </h1>
+            <p className="text-brand-grey text-lg max-w-2xl">
+              It started with 20 founders in a Canggu restaurant. Today, 2,500+
+              builders from 40+ countries. The goal hasn&apos;t changed: the
+              highest-signal tech community in Southeast Asia.
+            </p>
           </div>
         </div>
       </section>
@@ -48,9 +53,10 @@ export default function AboutPage() {
         <div className="max-w-site mx-auto px-6">
           <div className="max-w-3xl space-y-6 text-brand-grey leading-relaxed">
             <p className="text-lg">
-              BSTC started in October 2023 with a simple idea: Bali had
-              thousands of founders, engineers, and tech operators — but no
-              high-signal community connecting them.
+              BSTC started in October 2023 with a simple idea: Southeast Asia
+              had thousands of founders, engineers, and tech operators, but no
+              high-signal community connecting them. We started in Bali because
+              that is where the density was.
             </p>
             <p>
               The meetups that existed were either too casual (no structure, no
@@ -90,9 +96,10 @@ export default function AboutPage() {
               . The community is international, professional, and builder-first.
             </p>
             <p>
-              We&apos;re based in Canggu, Bali with nodes in Ubud, Sanur, and
-              Uluwatu, and ambitions to become the #1 tech community across
-              Southeast Asia.
+              We&apos;re based in Canggu, Bali with active nodes in Ubud,
+              Sanur, and Uluwatu. We are the largest founder-led tech community
+              in Southeast Asia, and every event we run is built to keep it
+              that way.
             </p>
             <p className="text-brand-white font-medium text-lg">
               Signal over noise. Builders first. Always.
