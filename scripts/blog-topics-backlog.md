@@ -26,7 +26,7 @@ How this works: the scheduled content agent picks the **topmost unchecked topic*
 - [x] Best Bali villas for founder retreats and team offsites
 - [x] How to run a hackathon in Bali: lessons from BSTC Hackathon Edition #1
 - [ ] Bali angel investors: who's actually writing cheques in 2026
-- [ ] The SEA founder's guide to Singapore VCs: who invests, cheque sizes, how to pitch
+- [x] The SEA founder's guide to Singapore VCs: who invests, cheque sizes, how to pitch
 - [x] Jakarta vs Bali for founders in 2026: capital, talent, and lifestyle compared
 - [ ] Bangkok for tech founders: the honest 2026 guide (cost, visas, ecosystem)
 - [ ] Manila vs Cebu: where should English-speaking founders build in the Philippines
@@ -77,3 +77,4 @@ How this works: the scheduled content agent picks the **topmost unchecked topic*
 - 2026-04-15 — best-bali-villas-founder-retreats-team-offsites-2026
 - 2026-04-16 — how-to-run-tech-hackathon-bali-operator-playbook
 - 2026-04-20 — bali-vs-jakarta-for-founders-2026
+- 2026-04-20 — singapore-vcs-guide-southeast-asia-founders-2026
