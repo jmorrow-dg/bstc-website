@@ -1,11 +1,21 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
+import { getPersonSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Leadership",
   description:
-    "Meet the leaders behind BSTC. Our tiered leadership model recognises contribution and consistency, not titles.",
+    "Meet the leaders behind BSTC: Lachlan McRitchie, Josh Morrow, and Matthew Carr. Our tiered leadership model recognises contribution and consistency, not titles.",
+  keywords: [
+    "BSTC founders",
+    "Bali Startup and Tech Community leadership",
+    "Lachlan McRitchie",
+    "Josh Morrow BSTC",
+    "Matthew Carr BSTC",
+    "Southeast Asia tech community leaders",
+    "Bali tech community organisers",
+  ],
 };
 
 const FOUNDERS = [
@@ -61,8 +71,17 @@ const TIERS = [
 ];
 
 export default function LeadershipPage() {
+  const personSchemas = FOUNDERS.map((f) =>
+    getPersonSchema({ name: f.name, role: f.role, bio: f.bio })
+  );
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchemas) }}
+      />
+
       {/* Hero */}
       <section className="py-16 md:py-24">
         <div className="max-w-site mx-auto px-6">

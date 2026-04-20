@@ -15,7 +15,25 @@ import {
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Upcoming and past events from Bali Startup & Tech Community. Networking nights, founder roundtables, builder sessions, and How I Build with AI.",
+    "Upcoming and past events from Bali Startup & Tech Community. Networking nights, founder roundtables, builder sessions, hackathons, and our flagship How I Build with AI series across Bali and Southeast Asia.",
+  keywords: [
+    "Bali tech events",
+    "startup events Bali",
+    "Southeast Asia founder events",
+    "Canggu networking events",
+    "tech meetups Bali",
+    "founder roundtable Bali",
+    "How I Build with AI",
+    "Bali hackathons",
+    "BSTC events",
+    "AI events Southeast Asia",
+  ],
+  openGraph: {
+    title: "Events | Bali Startup & Tech Community",
+    description:
+      "Networking nights, founder roundtables, builder sessions, and the How I Build with AI flagship series. Signal over noise.",
+    type: "website",
+  },
 };
 
 function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {

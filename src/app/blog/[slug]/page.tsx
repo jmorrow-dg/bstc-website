@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, User, Clock, ArrowRight } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getAllBlogPosts, getBlogPostBySlug, ContentItem, BlogFrontmatter } from "@/lib/content";
 import { SITE } from "@/lib/constants";
+import { getBreadcrumbSchema } from "@/lib/schema";
 
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
@@ -136,12 +137,19 @@ export default async function BlogPostPage({
   const allPosts = await getAllBlogPosts();
   const { frontmatter: p, htmlContent } = post;
   const articleSchema = getArticleSchema(p);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Blog", url: "/blog" },
+    { name: p.title, url: `/blog/${p.slug}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([articleSchema, breadcrumbSchema]),
+        }}
       />
 
       <div className="max-w-site mx-auto px-6 pt-8 space-y-3">

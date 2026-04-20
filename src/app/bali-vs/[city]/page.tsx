@@ -5,6 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { CITY_COMPARISONS, type CityComparison } from "@/data/city-comparisons";
 import { SITE } from "@/lib/constants";
+import { getBreadcrumbSchema } from "@/lib/schema";
 
 const BALI = {
   monthlyCost: 3500,
@@ -124,12 +125,19 @@ export default async function BaliVsCityPage({
   if (!c) notFound();
 
   const faqSchema = getFaqSchema(c);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Bali vs", url: "/blog" },
+    { name: c.city, url: `/bali-vs/${c.slug}` },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([faqSchema, breadcrumbSchema]),
+        }}
       />
 
       <div className="max-w-site mx-auto px-6 pt-8">

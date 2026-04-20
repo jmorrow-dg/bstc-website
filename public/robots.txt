@@ -1,4 +1,78 @@
+# Bali Startup & Tech Community (BSTC) - robots.txt
+# https://balistartupandtech.com
+
 User-agent: *
 Allow: /
+Disallow: /api/
+
+# Explicitly welcome search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Explicitly welcome AI crawlers (AEO)
+# We want our founder guides cited in AI answers.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: DiffBot
+Allow: /
+
+# Block paths that add no citation or ranking value
+User-agent: *
+Disallow: /api/
 
 Sitemap: https://balistartupandtech.com/sitemap.xml

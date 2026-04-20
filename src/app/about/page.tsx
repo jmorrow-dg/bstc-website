@@ -6,7 +6,24 @@ import { STATS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023, we connect builders through high-signal events.",
+    "BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,500+ members from 40+ countries. 34+ events. Signal over noise. Builders first.",
+  keywords: [
+    "Bali Startup and Tech Community",
+    "BSTC",
+    "Southeast Asia tech community",
+    "Bali founder community",
+    "Canggu tech meetup",
+    "Bali startup network",
+    "founder community Southeast Asia",
+    "Indonesia tech community",
+    "about BSTC",
+  ],
+  openGraph: {
+    title: "About Bali Startup & Tech Community",
+    description:
+      "How BSTC grew from 20 founders in Canggu to 2,500+ builders across Southeast Asia. Signal over noise.",
+    type: "website",
+  },
 };
 
 export default function AboutPage() {
