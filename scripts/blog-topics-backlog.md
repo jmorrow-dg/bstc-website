@@ -26,6 +26,19 @@ How this works: the scheduled content agent picks the **topmost unchecked topic*
 - [x] Best Bali villas for founder retreats and team offsites
 - [x] How to run a hackathon in Bali: lessons from BSTC Hackathon Edition #1
 - [ ] Bali angel investors: who's actually writing cheques in 2026
+- [ ] The SEA founder's guide to Singapore VCs: who invests, cheque sizes, how to pitch
+- [ ] Jakarta vs Bali for founders in 2026: capital, talent, and lifestyle compared
+- [ ] Bangkok for tech founders: the honest 2026 guide (cost, visas, ecosystem)
+- [ ] Manila vs Cebu: where should English-speaking founders build in the Philippines
+- [ ] Kuala Lumpur for founders: the underrated SEA hub (MDEC, tax, visas)
+- [ ] Ho Chi Minh City vs Hanoi: two founder hubs, two very different plays
+- [ ] Da Nang for founders: Vietnam's quiet builder city
+- [ ] How to hire engineers in Vietnam in 2026 (salaries, channels, EOR vs entity)
+- [ ] How to hire engineers in the Philippines in 2026 (Cebu, Manila, remote)
+- [ ] Tax residency playbook for SEA founders: Indonesia, Singapore, Thailand compared
+- [ ] The state of Southeast Asia VC: who's deploying, what stage, what thesis
+- [ ] Pre-seed to Series A in Southeast Asia: a 2026 founder's playbook
+- [ ] Cross-border team setup in Southeast Asia: PT PMA vs Singapore Pte Ltd vs EOR
 - [ ] The state of crypto and Web3 in Bali (2026)
 - [ ] How to raise a pre-seed round from Southeast Asia
 - [ ] Building an AI agency in Bali: the BSTC operator playbook
