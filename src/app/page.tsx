@@ -78,6 +78,9 @@ export default async function Home() {
     getAllEvents(),
   ]);
   const latestPosts = allPosts.slice(0, 3);
+  const latestSignal = allPosts.find(
+    (p) => p.frontmatter.category === "thought-leadership"
+  );
   const upcomingEvents = getUpcomingEvents(allEvents).slice(0, 3);
   const faqSchema = getFAQSchema(HOMEPAGE_FAQS);
 
@@ -165,6 +168,55 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* This Week's Signal */}
+      {latestSignal && (
+        <section className="border-b border-white/5 bg-gradient-to-b from-brand-red/[0.04] via-transparent to-transparent">
+          <div className="max-w-site mx-auto px-6 py-14 md:py-20">
+            <FadeIn>
+              <Link
+                href={`/blog/${latestSignal.frontmatter.slug}`}
+                className="group block"
+              >
+                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12">
+                  <div className="md:w-1/3 md:pt-1">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-60" />
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red" />
+                      </span>
+                      <p className="text-brand-red text-xs font-medium uppercase tracking-widest">
+                        This Week&apos;s Signal
+                      </p>
+                    </div>
+                    <p className="text-xs text-brand-grey">
+                      {new Date(latestSignal.frontmatter.date).toLocaleDateString(
+                        "en-US",
+                        { year: "numeric", month: "long", day: "numeric" }
+                      )}
+                      {latestSignal.frontmatter.readTime
+                        ? ` · ${latestSignal.frontmatter.readTime}`
+                        : ""}
+                    </p>
+                  </div>
+                  <div className="md:w-2/3">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-display font-bold text-brand-white group-hover:text-brand-red transition-colors mb-4 leading-tight">
+                      {latestSignal.frontmatter.title}
+                    </h2>
+                    <p className="text-sm md:text-base text-brand-grey leading-relaxed mb-5 line-clamp-3">
+                      {latestSignal.frontmatter.excerpt}
+                    </p>
+                    <span className="inline-flex items-center gap-1.5 text-sm text-brand-red group-hover:gap-2.5 transition-all font-medium">
+                      Read the full signal
+                      <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </FadeIn>
+          </div>
+        </section>
+      )}
 
       {/* Credibility band */}
       <section className="py-16 md:py-20 border-b border-white/5">
