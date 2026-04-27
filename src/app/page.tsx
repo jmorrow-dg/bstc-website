@@ -500,9 +500,9 @@ export default async function Home() {
               },
               {
                 quote:
-                  "Best tech community I've been part of anywhere in the world. The signal-to-noise ratio is unreal.",
-                name: "BSTC Member",
-                role: "Ex-FAANG Engineer",
+                  "Thank you very much Bali Startup and Tech for being one of the best tech communities in Bali. You meet such awesome people who are genuinely building great things, it's a super social and community vibe and it's so needed especially when everyone is scaling with AI. Love these events!",
+                name: "Mia",
+                role: "Founder / CEO",
                 context: "Regular attendee",
               },
             ].map((testimonial, i) => (
