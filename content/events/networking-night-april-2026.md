@@ -5,7 +5,7 @@ date: "2026-04-17"
 time: "18:30"
 venue: Yema Kitchen, Canggu
 type: networking
-status: upcoming
+status: completed
 capacity: 80
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
 description: "Our monthly networking night. Relaxed vibes, optional open mic, and the highest-signal room in Bali. 3rd Thursday of every month."

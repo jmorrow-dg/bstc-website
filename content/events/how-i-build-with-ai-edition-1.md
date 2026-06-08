@@ -5,7 +5,7 @@ date: "2026-05-15"
 time: "18:30"
 venue: Yema Kitchen, Canggu
 type: how-i-build-with-ai
-status: upcoming
+status: completed
 capacity: 60
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
 coverImage: /images/events/how-i-ai-edition-1.png
