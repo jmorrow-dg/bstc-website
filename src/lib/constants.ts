@@ -19,7 +19,7 @@ export const SITE = {
 
 export const STATS = {
   members: 2500,
-  events: 34,
+  events: 37,
   rating: 4.6,
   countries: 40,
 };
