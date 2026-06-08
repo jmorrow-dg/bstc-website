@@ -58,6 +58,7 @@ export interface BlogFrontmatter {
   coverImage?: string;
   tags?: string[];
   readTime?: string;
+  keyTakeaways?: string[];
   faq?: { question: string; answer: string }[];
   seo?: {
     title: string;
