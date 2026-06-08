@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Calendar, User, Clock, ArrowRight } from "lucide-react";
+import { ArrowLeft, Calendar, User, Clock, ArrowRight, Check } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import NewsletterSignup from "@/components/layout/NewsletterSignup";
 import { getAllBlogPosts, getBlogPostBySlug, ContentItem, BlogFrontmatter } from "@/lib/content";
 import { SITE } from "@/lib/constants";
 import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schema";
@@ -229,6 +230,26 @@ export default async function BlogPostPage({
               {p.excerpt}
             </p>
 
+            {/* Key Takeaways — AEO answer block */}
+            {p.keyTakeaways && p.keyTakeaways.length > 0 && (
+              <div className="mb-10 p-6 rounded-lg border border-brand-red/20 bg-brand-red/5">
+                <p className="text-xs font-medium uppercase tracking-wider text-brand-red mb-3">
+                  Key takeaways
+                </p>
+                <ul className="space-y-2.5">
+                  {p.keyTakeaways.map((point, i) => (
+                    <li key={i} className="flex gap-2.5 text-brand-grey">
+                      <Check
+                        size={18}
+                        className="text-brand-red shrink-0 mt-1"
+                      />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             {/* Content */}
             <div
               className="prose prose-invert prose-headings:font-display prose-headings:text-brand-white prose-p:text-brand-grey prose-p:leading-relaxed prose-strong:text-brand-white prose-li:text-brand-grey prose-a:text-brand-red prose-a:no-underline hover:prose-a:text-brand-white prose-h1:text-2xl prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-blockquote:border-brand-red prose-blockquote:text-brand-grey"
@@ -255,6 +276,24 @@ export default async function BlogPostPage({
           </div>
         </div>
       </article>
+
+      {/* Newsletter capture — email conversion path */}
+      <section className="py-12 border-t border-white/5">
+        <div className="max-w-site mx-auto px-6">
+          <div className="max-w-xl mx-auto text-center">
+            <h2 className="text-xl font-display font-bold mb-2">
+              Get the BSTC briefing
+            </h2>
+            <p className="text-sm text-brand-grey mb-5">
+              The Bali tech scene, founder resources, and event invites —
+              straight to your inbox. No spam, unsubscribe anytime.
+            </p>
+            <div className="max-w-md mx-auto">
+              <NewsletterSignup />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Related Posts */}
       <RelatedPosts
