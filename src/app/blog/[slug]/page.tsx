@@ -5,7 +5,7 @@ import { ArrowLeft, Calendar, User, Clock, ArrowRight } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { getAllBlogPosts, getBlogPostBySlug, ContentItem, BlogFrontmatter } from "@/lib/content";
 import { SITE } from "@/lib/constants";
-import { getBreadcrumbSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schema";
 
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
@@ -142,13 +142,17 @@ export default async function BlogPostPage({
     { name: "Blog", url: "/blog" },
     { name: p.title, url: `/blog/${p.slug}` },
   ]);
+  const faqSchema =
+    p.faq && p.faq.length > 0 ? getFAQSchema(p.faq) : null;
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([articleSchema, breadcrumbSchema]),
+          __html: JSON.stringify(
+            [articleSchema, breadcrumbSchema, faqSchema].filter(Boolean)
+          ),
         }}
       />
 
