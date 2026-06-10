@@ -8,6 +8,7 @@ import PageTransition from "@/components/layout/PageTransition";
 import ReadingProgress from "@/components/ui/ReadingProgress";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import WhatsAppCTA from "@/components/ui/WhatsAppCTA";
+import AttributionTracker from "@/components/AttributionTracker";
 import { SITE } from "@/lib/constants";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/schema";
 import "./globals.css";
@@ -90,6 +91,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased bg-brand-charcoal text-brand-white">
+        <AttributionTracker />
         <Navbar />
         <ReadingProgress />
         <main className="min-h-screen pt-16">

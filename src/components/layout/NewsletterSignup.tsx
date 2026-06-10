@@ -1,9 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { track } from "@vercel/analytics";
 import { Send } from "lucide-react";
+import { getAttribution } from "@/lib/attribution";
 
-export default function NewsletterSignup() {
+export default function NewsletterSignup({
+  source = "newsletter",
+}: {
+  source?: "newsletter" | "events-notify" | "slide-in";
+}) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
@@ -15,8 +21,9 @@ export default function NewsletterSignup() {
       await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source, attribution: getAttribution() }),
       });
+      track("newsletter_subscribed", { source });
       setStatus("success");
       setEmail("");
     } catch {

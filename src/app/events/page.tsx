@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
 import { Calendar, MapPin, Users, ArrowRight } from "lucide-react";
+import NewsletterSignup from "@/components/layout/NewsletterSignup";
 import {
   getAllEvents,
   getUpcomingEvents,
@@ -189,17 +190,18 @@ export default async function EventsPage() {
             Never Miss an Event
           </h2>
           <p className="text-brand-grey mb-8">
-            Join our MeetUp group to get notified when new events are posted.
+            Get every new event in your inbox the moment it&apos;s announced.
           </p>
-          <a
-            href="https://www.meetup.com/bali-start-ups-tech-community/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+          <div className="max-w-md mx-auto mb-6">
+            <NewsletterSignup source="events-notify" />
+          </div>
+          <Link
+            href="/join"
+            className="inline-flex items-center gap-2 text-sm text-brand-red hover:text-brand-white font-medium transition-colors"
           >
-            Join on MeetUp
-            <ArrowRight size={16} />
-          </a>
+            Or join the full community
+            <ArrowRight size={14} />
+          </Link>
         </div>
       </section>
     </>

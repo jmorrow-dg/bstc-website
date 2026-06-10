@@ -13,6 +13,7 @@ import {
   Star,
 } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import EventRsvpCapture from "@/components/forms/EventRsvpCapture";
 import {
   getAllEvents,
   getEventBySlug,
@@ -165,17 +166,15 @@ export default async function EventPage({
               </span>
             </div>
 
-            {/* RSVP Button */}
+            {/* RSVP Capture */}
             {isUpcoming && (
-              <a
-                href={e.rsvpUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
-              >
-                RSVP on MeetUp
-                <ExternalLink size={16} />
-              </a>
+              <div id="rsvp">
+                <EventRsvpCapture
+                  eventSlug={e.slug}
+                  eventTitle={e.title}
+                  rsvpUrl={e.rsvpUrl}
+                />
+              </div>
             )}
           </div>
         </div>
@@ -350,11 +349,11 @@ export default async function EventPage({
           </h2>
           <p className="text-brand-grey mb-6">
             {isUpcoming
-              ? "RSVP on MeetUp to secure your spot."
+              ? "Save your spot and we'll send you a reminder."
              : "Don't miss the next BSTC event."}
           </p>
           <Link
-            href={isUpcoming ? e.rsvpUrl : "/events"}
+            href={isUpcoming ? "#rsvp" : "/events"}
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
           >
             {isUpcoming ? "RSVP Now": "See Upcoming Events"}

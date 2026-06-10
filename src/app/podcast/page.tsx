@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight, Mic, Headphones, Radio } from "lucide-react";
-import { SITE } from "@/lib/constants";
+import NewsletterSignup from "@/components/layout/NewsletterSignup";
 import { getFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -84,22 +84,15 @@ export default function PodcastPage() {
               The BSTC podcast is in production. Subscribe to be the first to
               know when the first episode drops.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href={SITE.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm"
-              >
-                Get Notified via WhatsApp
-              </a>
-              <Link
-                href="/join"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
-              >
-                Join the Community
-              </Link>
+            <div className="max-w-md mx-auto mb-4">
+              <NewsletterSignup />
             </div>
+            <Link
+              href="/join"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
+            >
+              Join the Community
+            </Link>
           </div>
         </div>
       </section>

@@ -1,11 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { captureLead, notifyLead } from "@/lib/leads";
+import { attributionSchema } from "@/lib/validation";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
   subject: z.string().min(1, "Subject is required"),
   message: z.string().min(10, "Message must be at least 10 characters"),
+  attribution: attributionSchema,
 });
 
 export async function POST(request: NextRequest) {
@@ -13,16 +16,20 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const data = contactSchema.parse(body);
 
-    // TODO: Send email via Resend
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: "BSTC <noreply@bstc.community>",
-    //   to: "hello@bstc.community",
-    //   subject: `[BSTC Contact] ${data.subject}: ${data.name}`,
-    //   text: `Name: ${data.name}\nEmail: ${data.email}\nSubject: ${data.subject}\n\n${data.message}`,
-    // });
+    await captureLead({
+      email: data.email,
+      name: data.name,
+      source: "contact",
+      attribution: data.attribution,
+      fields: { "Contact Topic": data.subject },
+    });
 
-    console.log("Contact form submission:", data);
+    await notifyLead(`New contact message: ${data.subject}`, {
+      Name: data.name,
+      Email: data.email,
+      Subject: data.subject,
+      Message: data.message,
+    });
 
     return NextResponse.json(
       { success: true, message: "Message sent successfully" },

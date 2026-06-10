@@ -3,47 +3,52 @@ import { z } from "zod";
 import { captureLead, notifyLead } from "@/lib/leads";
 import { attributionSchema, optionalUrl } from "@/lib/validation";
 
-const sponsorSchema = z.object({
+const startupSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
   company: z.string().min(1, "Company is required"),
   website: optionalUrl,
-  tier: z.string().optional(),
-  goal: z.string().min(1, "Goal is required"),
-  message: z.string().optional(),
+  linkedinUrl: optionalUrl,
+  stage: z.string().min(1, "Stage is required"),
+  raising: z.string().min(1, "Raising status is required"),
+  pitch: z.string().optional(),
   attribution: attributionSchema,
 });
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const data = sponsorSchema.parse(body);
+    const data = startupSchema.parse(body);
 
     await captureLead({
       email: data.email,
       name: data.name,
+      linkedinUrl: data.linkedinUrl || undefined,
+      role: "founder",
       company: data.company,
-      source: "sponsor",
+      source: "startup",
       attribution: data.attribution,
       fields: {
-        ...(data.tier && { "Sponsor Tier": data.tier }),
-        "Sponsor Goal": data.goal,
+        Stage: data.stage,
+        Raising: data.raising,
         ...(data.website && { Website: data.website }),
       },
+      sendWelcomeEmail: true,
     });
 
-    await notifyLead("💰 New sponsor inquiry", {
+    await notifyLead("🚀 New startup signup", {
       Name: data.name,
       Email: data.email,
       Company: data.company,
       Website: data.website || undefined,
-      Tier: data.tier,
-      Goal: data.goal,
-      Message: data.message,
+      Stage: data.stage,
+      Raising: data.raising,
+      Pitch: data.pitch,
+      LinkedIn: data.linkedinUrl || undefined,
     });
 
     return NextResponse.json(
-      { success: true, message: "Inquiry received" },
+      { success: true, message: "You're in" },
       { status: 200 }
     );
   } catch (error) {

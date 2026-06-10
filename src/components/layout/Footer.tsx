@@ -104,14 +104,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={SITE.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/join"
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >
-                  WhatsApp
-                </a>
+                  WhatsApp Community
+                </Link>
               </li>
               <li>
                 <a
@@ -148,6 +146,22 @@ export default function Footer() {
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >
                   Become a Sponsor
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/investors"
+                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
+                >
+                  For Investors
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/startups"
+                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
+                >
+                  For Startups
                 </Link>
               </li>
               <li>

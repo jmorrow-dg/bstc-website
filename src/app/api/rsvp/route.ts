@@ -3,28 +3,33 @@ import { z } from "zod";
 import { captureLead } from "@/lib/leads";
 import { attributionSchema } from "@/lib/validation";
 
-const newsletterSchema = z.object({
+const rsvpSchema = z.object({
   email: z.string().email("Invalid email"),
-  source: z
-    .enum(["newsletter", "events-notify", "whatsapp-cta", "slide-in"])
-    .optional(),
+  name: z.string().optional(),
+  eventSlug: z.string().min(1, "Event is required"),
+  eventTitle: z.string().optional(),
   attribution: attributionSchema,
 });
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const data = newsletterSchema.parse(body);
+    const data = rsvpSchema.parse(body);
 
     await captureLead({
       email: data.email,
-      source: data.source ?? "newsletter",
-      attribution: data.attribution,
+      name: data.name,
+      source: "event-rsvp",
+      attribution: {
+        ...data.attribution,
+        utmCampaign: data.eventSlug,
+      },
+      fields: { Event: data.eventTitle || data.eventSlug },
       sendWelcomeEmail: true,
     });
 
     return NextResponse.json(
-      { success: true, message: "Subscribed successfully" },
+      { success: true, message: "You're on the list" },
       { status: 200 }
     );
   } catch (error) {

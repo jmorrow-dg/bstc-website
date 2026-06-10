@@ -27,8 +27,8 @@ export const STATS = {
 export const NAV_LINKS = [
   { label: "Events", href: "/events" },
   { label: "How I AI", href: "/how-i-build-with-ai" },
-  { label: "Podcast", href: "/podcast" },
   { label: "Community", href: "/community" },
+  { label: "Investors", href: "/investors" },
   { label: "Sponsors", href: "/sponsors" },
   { label: "Blog", href: "/blog" },
 ] as const;

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Send } from "lucide-react";
+import { getAttribution } from "@/lib/attribution";
 
 export default function SponsorApplyPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -26,6 +27,7 @@ export default function SponsorApplyPage() {
           tier: formData.get("tier"),
           goal: formData.get("goal"),
           message: formData.get("message"),
+          attribution: getAttribution(),
         }),
       });
       setSubmitted(true);

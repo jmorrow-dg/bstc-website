@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Send, Mail, MapPin } from "lucide-react";
+import { getAttribution } from "@/lib/attribution";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -23,6 +24,7 @@ export default function ContactPage() {
           email: formData.get("email"),
           subject: formData.get("subject"),
           message: formData.get("message"),
+          attribution: getAttribution(),
         }),
       });
       setSubmitted(true);

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, User, Clock, ArrowRight, Check } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import NewsletterSignup from "@/components/layout/NewsletterSignup";
+import NewsletterSlideIn from "@/components/ui/NewsletterSlideIn";
 import { getAllBlogPosts, getBlogPostBySlug, ContentItem, BlogFrontmatter } from "@/lib/content";
 import { SITE } from "@/lib/constants";
 import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schema";
@@ -294,6 +295,8 @@ export default async function BlogPostPage({
           </div>
         </div>
       </section>
+
+      <NewsletterSlideIn />
 
       {/* Related Posts */}
       <RelatedPosts

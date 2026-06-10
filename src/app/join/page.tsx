@@ -1,114 +1,89 @@
 import { Metadata } from "next";
-import {
-  MessageCircle,
-  Calendar,
-  ArrowRight,
-  CheckCircle,
-} from "lucide-react";
-import { SITE } from "@/lib/constants";
+import { ArrowRight, Inbox, MessageCircle, Users } from "lucide-react";
+import JoinForm from "@/components/forms/JoinForm";
+import { SITE, STATS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Join BSTC",
   description:
-    "Join Bali Startup & Tech Community: 2,500+ founders, engineers, and operators. Free to join. Three steps: WhatsApp, MeetUp, Show up.",
+    "Join Bali Startup & Tech Community: 2,500+ founders, engineers, and operators. Free to join. One form, 60 seconds, and your WhatsApp invite lands in your inbox.",
 };
 
 export default function JoinPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero + Form */}
       <section className="py-16 md:py-24">
         <div className="max-w-site mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center mb-12">
             <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
               Join Us
             </p>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              Three Steps.
+              One Form.
               <br />
-              <span className="text-brand-red">That&apos;s It.</span>
+              <span className="text-brand-red">60 Seconds.</span>
             </h1>
             <p className="text-lg text-brand-grey">
-              No application form. No membership fee. No gatekeeping. If
-              you&apos;re building something, you belong here.
+              No membership fee. No gatekeeping. Tell us who you are and your
+              WhatsApp invite, event calendar, and the weekly briefing land
+              straight in your inbox.
             </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <JoinForm />
           </div>
         </div>
       </section>
 
-      {/* Steps */}
+      {/* What happens next */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-site mx-auto px-6">
+          <h2 className="text-3xl font-display font-bold mb-12 text-center">
+            What Happens Next
+          </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {/* Step 1 */}
             <div className="text-center p-8 rounded-lg border border-white/5 bg-white/[0.02]">
               <div className="text-brand-red font-mono text-sm mb-4">
                 Step 01
               </div>
-              <MessageCircle className="w-8 h-8 text-brand-red mx-auto mb-4" />
+              <Inbox className="w-8 h-8 text-brand-red mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-brand-white mb-3">
-                Join WhatsApp
+                Check Your Inbox
               </h3>
-              <p className="text-sm text-brand-grey mb-6">
-                Our WhatsApp community is where ongoing conversations happen.
-                Event announcements, community highlights, and real connections.
+              <p className="text-sm text-brand-grey">
+                Your invite arrives instantly: the WhatsApp community link, the
+                event calendar, and everything you need for your first event.
               </p>
-              <a
-                href={SITE.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm"
-              >
-                Join WhatsApp
-                <ArrowRight size={14} />
-              </a>
             </div>
 
-            {/* Step 2 */}
             <div className="text-center p-8 rounded-lg border border-white/5 bg-white/[0.02]">
               <div className="text-brand-red font-mono text-sm mb-4">
                 Step 02
               </div>
-              <Calendar className="w-8 h-8 text-brand-red mx-auto mb-4" />
+              <MessageCircle className="w-8 h-8 text-brand-red mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-brand-white mb-3">
-                RSVP on MeetUp
+                Join the Conversation
               </h3>
-              <p className="text-sm text-brand-grey mb-6">
-                Our events are listed on MeetUp. RSVP to secure your spot: it
-                helps us plan capacity and means you won&apos;t miss out.
+              <p className="text-sm text-brand-grey">
+                Jump into WhatsApp where {STATS.members.toLocaleString()}+
+                members share event announcements, intros, and real-time help.
               </p>
-              <a
-                href={SITE.meetup}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
-              >
-                Join MeetUp
-                <ArrowRight size={14} />
-              </a>
             </div>
 
-            {/* Step 3 */}
             <div className="text-center p-8 rounded-lg border border-white/5 bg-white/[0.02]">
               <div className="text-brand-red font-mono text-sm mb-4">
                 Step 03
               </div>
-              <CheckCircle className="w-8 h-8 text-brand-red mx-auto mb-4" />
+              <Users className="w-8 h-8 text-brand-red mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-brand-white mb-3">
                 Show Up
               </h3>
-              <p className="text-sm text-brand-grey mb-6">
-                Come on time, wear your name tag, do your 60-second intro. The
-                host will make sure you meet the right people. No pitch decks
-                needed.
+              <p className="text-sm text-brand-grey">
+                RSVP to your first event, wear your name tag, do your 60-second
+                intro. The host will make sure you meet the right people.
               </p>
-              <a
-                href="/events"
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
-              >
-                See Events
-                <ArrowRight size={14} />
-              </a>
             </div>
           </div>
         </div>
@@ -220,14 +195,6 @@ export default function JoinPage() {
               className="px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
             >
               Instagram
-            </a>
-            <a
-              href={SITE.meetup}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
-            >
-              MeetUp
             </a>
           </div>
         </div>

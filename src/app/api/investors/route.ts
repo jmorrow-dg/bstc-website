@@ -3,47 +3,50 @@ import { z } from "zod";
 import { captureLead, notifyLead } from "@/lib/leads";
 import { attributionSchema, optionalUrl } from "@/lib/validation";
 
-const sponsorSchema = z.object({
+const investorSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
-  company: z.string().min(1, "Company is required"),
-  website: optionalUrl,
-  tier: z.string().optional(),
-  goal: z.string().min(1, "Goal is required"),
-  message: z.string().optional(),
+  linkedinUrl: optionalUrl,
+  firm: z.string().optional(),
+  investorType: z.string().min(1, "Investor type is required"),
+  checkSize: z.string().optional(),
+  focus: z.string().optional(),
   attribution: attributionSchema,
 });
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const data = sponsorSchema.parse(body);
+    const data = investorSchema.parse(body);
 
     await captureLead({
       email: data.email,
       name: data.name,
-      company: data.company,
-      source: "sponsor",
+      linkedinUrl: data.linkedinUrl || undefined,
+      role: "investor",
+      company: data.firm,
+      source: "investor",
       attribution: data.attribution,
       fields: {
-        ...(data.tier && { "Sponsor Tier": data.tier }),
-        "Sponsor Goal": data.goal,
-        ...(data.website && { Website: data.website }),
+        ...(data.investorType && { "Investor Type": data.investorType }),
+        ...(data.checkSize && { "Check Size": data.checkSize }),
+        ...(data.focus && { "Investment Focus": data.focus }),
       },
+      sendWelcomeEmail: true,
     });
 
-    await notifyLead("💰 New sponsor inquiry", {
+    await notifyLead("🔥 New investor signup", {
       Name: data.name,
       Email: data.email,
-      Company: data.company,
-      Website: data.website || undefined,
-      Tier: data.tier,
-      Goal: data.goal,
-      Message: data.message,
+      Firm: data.firm,
+      Type: data.investorType,
+      "Check Size": data.checkSize,
+      Focus: data.focus,
+      LinkedIn: data.linkedinUrl || undefined,
     });
 
     return NextResponse.json(
-      { success: true, message: "Inquiry received" },
+      { success: true, message: "You're in" },
       { status: 200 }
     );
   } catch (error) {

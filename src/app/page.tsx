@@ -68,7 +68,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "How do I join BSTC?",
     answer:
-      "Three steps. (1) Join the WhatsApp community to get event announcements. (2) RSVP to your first Networking Night on MeetUp. (3) Show up, introduce yourself, and add value. There is no application process and no membership fee.",
+      "One form at balistartupandtech.com/join — it takes 60 seconds and is free. Your WhatsApp community invite and event calendar arrive instantly by email. Then RSVP to your first Networking Night, show up, introduce yourself, and add value.",
   },
 ];
 
@@ -590,24 +590,20 @@ export default async function Home() {
               from Southeast Asia.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={SITE.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/join"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
               >
                 <MessageCircle size={18} />
-                Join WhatsApp
-              </a>
-              <a
-                href={SITE.meetup}
-                target="_blank"
-                rel="noopener noreferrer"
+                Join the Community — Free
+              </Link>
+              <Link
+                href="/events"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors"
               >
                 <Calendar size={18} />
-                RSVP on MeetUp
-              </a>
+                See Upcoming Events
+              </Link>
             </div>
           </ScaleIn>
         </div>
