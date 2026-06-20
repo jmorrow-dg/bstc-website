@@ -190,3 +190,56 @@ export function formatEventType(type: string): string {
   };
   return labels[type] || type;
 }
+
+// ---- Member resource hub content ----
+
+export interface PromptFrontmatter {
+  title: string;
+  slug: string;
+  category: "sales" | "marketing" | "product" | "fundraising" | "operations" | "ai-workflow";
+  excerpt: string;
+  useCase?: string;
+  tags?: string[];
+  author?: string;
+  date: string;
+}
+
+export interface PerkFrontmatter {
+  title: string;
+  slug: string;
+  partner?: string;
+  category: "local" | "software";
+  offer: string;
+  url?: string;
+  code?: string;
+  logo?: string;
+  status?: "live" | "coming-soon";
+  date: string;
+}
+
+export async function getAllPrompts(): Promise<ContentItem<PromptFrontmatter>[]> {
+  const prompts = await getAllContent<PromptFrontmatter>("members/prompts");
+  return prompts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
+  );
+}
+
+export async function getPromptBySlug(
+  slug: string
+): Promise<ContentItem<PromptFrontmatter> | null> {
+  return getContentBySlug<PromptFrontmatter>("members/prompts", slug);
+}
+
+export async function getAllPerks(): Promise<ContentItem<PerkFrontmatter>[]> {
+  const perks = await getAllContent<PerkFrontmatter>("members/perks");
+  // Live perks first, then coming-soon; newest within each group.
+  return perks.sort((a, b) => {
+    const rank = (s?: string) => (s === "coming-soon" ? 1 : 0);
+    const diff = rank(a.frontmatter.status) - rank(b.frontmatter.status);
+    if (diff !== 0) return diff;
+    return (
+      new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()
+    );
+  });
+}

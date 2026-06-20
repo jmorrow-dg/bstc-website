@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { Resend } from "resend";
 
 const newsletterSchema = z.object({
   email: z.string().email("Invalid email"),
@@ -10,14 +11,23 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const data = newsletterSchema.parse(body);
 
-    // TODO: Add to Resend audience or Beehiiv
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.contacts.create({
-    //   email: data.email,
-    //   audienceId: process.env.RESEND_AUDIENCE_ID,
-    // });
-
-    console.log("Newsletter signup:", data.email);
+    const apiKey = process.env.RESEND_API_KEY;
+    const audienceId = process.env.RESEND_AUDIENCE_ID;
+    if (apiKey && audienceId) {
+      try {
+        const resend = new Resend(apiKey);
+        await resend.contacts.create({
+          email: data.email,
+          unsubscribed: false,
+          audienceId,
+        });
+      } catch (err) {
+        // Best-effort — never fail the signup if Resend hiccups.
+        console.error("Newsletter Resend error:", err);
+      }
+    } else {
+      console.log("Newsletter signup (no backend configured):", data.email);
+    }
 
     return NextResponse.json(
       { success: true, message: "Subscribed successfully" },
