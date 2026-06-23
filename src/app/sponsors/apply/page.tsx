@@ -1,21 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { ArrowLeft, Send } from "lucide-react";
 
-export default function SponsorApplyPage() {
-  const [submitted, setSubmitted] = useState(false);
+function SponsorApplyForm() {
+  const searchParams = useSearchParams();
+  const initialTier = searchParams.get("tier") ?? "";
 
+  const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setError(null);
     const form = e.currentTarget;
     const formData = new FormData(form);
     try {
-      await fetch("/api/sponsor-inquiry", {
+      const res = await fetch("/api/sponsor-inquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -28,8 +33,10 @@ export default function SponsorApplyPage() {
           message: formData.get("message"),
         }),
       });
+      if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
     } catch {
+      setError("Something went wrong. Please email hello@bstc.community.");
       setLoading(false);
     }
   }
@@ -40,7 +47,7 @@ export default function SponsorApplyPage() {
         <div className="max-w-site mx-auto px-6 text-center">
           <div className="text-brand-red text-5xl mb-6">&#10003;</div>
           <h1 className="text-3xl font-display font-bold mb-4">
-            Thanks for Your Interest
+            Thanks for your interest
           </h1>
           <p className="text-brand-grey max-w-md mx-auto mb-8">
             We&apos;ve received your enquiry and will be in touch within 48
@@ -90,7 +97,8 @@ export default function SponsorApplyPage() {
                     type="text"
                     required
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                    name="name" placeholder="Josh Morrow"
+                    name="name"
+                    placeholder="Josh Morrow"
                   />
                 </div>
                 <div>
@@ -101,7 +109,8 @@ export default function SponsorApplyPage() {
                     type="email"
                     required
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                    name="email" placeholder="you@company.com"
+                    name="email"
+                    placeholder="you@company.com"
                   />
                 </div>
               </div>
@@ -115,7 +124,8 @@ export default function SponsorApplyPage() {
                     type="text"
                     required
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                    name="company" placeholder="Company name"
+                    name="company"
+                    placeholder="Company name"
                   />
                 </div>
                 <div>
@@ -125,7 +135,8 @@ export default function SponsorApplyPage() {
                   <input
                     type="url"
                     className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-                    name="website" placeholder="https://company.com"
+                    name="website"
+                    placeholder="https://company.com"
                   />
                 </div>
               </div>
@@ -134,7 +145,11 @@ export default function SponsorApplyPage() {
                 <label className="block text-sm font-medium text-brand-grey mb-2">
                   Which tier interests you?
                 </label>
-                <select name="tier" className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm">
+                <select
+                  name="tier"
+                  defaultValue={initialTier}
+                  className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
+                >
                   <option value="">Select a tier</option>
                   <option value="supporting">
                     Supporting Sponsor (Per Event)
@@ -177,16 +192,21 @@ export default function SponsorApplyPage() {
                 <textarea
                   rows={4}
                   className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm resize-none"
-                  name="message" placeholder="Tell us about your company, your audience, or any specific ideas..."
+                  name="message"
+                  placeholder="Tell us about your company, your audience, or any specific ideas..."
                 />
               </div>
+
+              {error && (
+                <p className="text-sm text-brand-red">{error}</p>
+              )}
 
               <button
                 type="submit"
                 disabled={loading}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red disabled:opacity-50"
               >
-                {loading ? "Submitting...": "Submit Enquiry"}
+                {loading ? "Submitting..." : "Submit Enquiry"}
                 {!loading && <Send size={16} />}
               </button>
             </form>
@@ -194,5 +214,13 @@ export default function SponsorApplyPage() {
         </div>
       </section>
     </>
+  );
+}
+
+export default function SponsorApplyPage() {
+  return (
+    <Suspense fallback={null}>
+      <SponsorApplyForm />
+    </Suspense>
   );
 }

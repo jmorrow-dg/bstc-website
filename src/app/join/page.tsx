@@ -47,19 +47,20 @@ export default function JoinPage() {
               </div>
               <MessageCircle className="w-8 h-8 text-brand-red mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-brand-white mb-3">
-                Join WhatsApp
+                Register
               </h3>
               <p className="text-sm text-brand-grey mb-6">
-                Our WhatsApp community is where ongoing conversations happen.
-                Event announcements, community highlights, and real connections.
+                A quick 30-second form: tell us what you&apos;re building and what
+                you&apos;re looking for. Then you&apos;ll get the link to our
+                WhatsApp community.
               </p>
               <a
-                href={SITE.whatsapp}
+                href={SITE.joinForm}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm"
               >
-                Join WhatsApp
+                Register Now
                 <ArrowRight size={14} />
               </a>
             </div>

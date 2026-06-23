@@ -105,12 +105,12 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={SITE.whatsapp}
+                  href={SITE.joinForm}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >
-                  WhatsApp
+                  Join
                 </a>
               </li>
               <li>

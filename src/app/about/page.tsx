@@ -6,7 +6,7 @@ import { STATS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,500+ members from 40+ countries. 34+ events. Signal over noise. Builders first.",
+    "BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,500+ members from 40+ countries. 50+ events. Signal over noise. Builders first.",
   keywords: [
     "Bali Startup and Tech Community",
     "BSTC",
@@ -137,7 +137,7 @@ export default function AboutPage() {
               {
                 date: "2025",
                 event:
-                  '2,500+ members. 34+ events hosted. "How I Build with AI" series announced.',
+                  '2,500+ members. 50+ events hosted. "How I Build with AI" series announced.',
               },
               {
                 date: "2026",

@@ -14,7 +14,7 @@ export default function WhatsAppCTA() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (dismissed || SITE.whatsapp === "#") return null;
+  if (dismissed || !SITE.joinForm) return null;
 
   return (
     <AnimatePresence>
@@ -36,17 +36,17 @@ export default function WhatsAppCTA() {
               <X size={10} />
             </button>
             <p className="text-xs text-brand-grey leading-relaxed">
-              Join 2,500+ builders in our WhatsApp community
+              Join 2,500+ builders in our community
             </p>
           </div>
 
           {/* Button */}
           <a
-            href={SITE.whatsapp}
+            href={SITE.joinForm}
             target="_blank"
             rel="noopener noreferrer"
             className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white flex items-center justify-center shadow-lg hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all"
-            aria-label="Join WhatsApp Community"
+            aria-label="Join the community"
           >
             <MessageCircle size={24} />
           </a>

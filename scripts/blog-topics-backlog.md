@@ -29,7 +29,7 @@ How this works: two queues.
 - [x] Setting up a PT PMA in Indonesia: the real founder playbook
 - [x] Best Bali villas for founder retreats and team offsites
 - [x] How to run a hackathon in Bali: lessons from BSTC Hackathon Edition #1
-- [ ] Bali angel investors: who's actually writing cheques in 2026
+- [x] Bali angel investors: who's actually writing cheques in 2026
 - [x] The SEA founder's guide to Singapore VCs: who invests, cheque sizes, how to pitch
 - [x] Jakarta vs Bali for founders in 2026: capital, talent, and lifestyle compared
 - [ ] Bangkok for tech founders: the honest 2026 guide (cost, visas, ecosystem)
