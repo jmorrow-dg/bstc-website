@@ -14,6 +14,9 @@ export const SITE = {
   // bypass registration.
   joinForm: "https://tally.so/r/KY5AMM",
   memberDirectory: "https://tally.so/r/KY5AMM",
+  // Chat invite. Only rendered on the member hub AFTER a successful signup
+  // (behind the cookie gate), so it isn't a public registration bypass.
+  whatsapp: "https://chat.whatsapp.com/GkG5rXQsBcfIBGuuJSkjxm",
   linkedin: "https://www.linkedin.com/groups/14424020/",
   instagram: "https://www.instagram.com/bali_tech_community/",
   founded: "2023",
