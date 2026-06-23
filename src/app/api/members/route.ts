@@ -3,79 +3,95 @@ import { z } from "zod";
 import { MEMBER_COOKIE } from "@/lib/members";
 
 const memberSchema = z.object({
+  fullName: z.string().min(1, "Name is required"),
   email: z.string().email("Please enter a valid email"),
-  name: z.string().min(1, "Name is required"),
-  company: z.string().optional(),
-  building: z.string().optional(),
-  role: z.string().optional(),
+  whatsapp: z.string().min(1, "WhatsApp number is required"),
   linkedin: z.string().optional(),
-  website: z.string().optional(),
-  interests: z.array(z.string()).optional(),
+  companyStage: z.string().optional(),
+  openTo: z.array(z.string()).optional(),
+  building: z.string().optional(),
   // Honeypot — real users never fill this. Bots do.
   companyWebsite: z.string().optional(),
 });
 
 type MemberData = z.infer<typeof memberSchema>;
 
-// Sink 1 — Google Sheet (Lachlan's copy), via a Google Apps Script Web App that appends a row.
-// No-ops if unconfigured.
-async function addToGoogleSheet(data: MemberData) {
-  const webhook = process.env.GOOGLE_SHEET_WEBHOOK_URL;
-  if (!webhook) return;
-  const res = await fetch(webhook, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      email: data.email,
-      name: data.name,
-      company: data.company || "",
-      building: data.building || "",
-      role: data.role || "",
-      linkedin: data.linkedin || "",
-      website: data.website || "",
-      interests: (data.interests || []).join(", "),
-      source: "Website member hub",
-    }),
-  });
-  if (!res.ok) throw new Error(`Google Sheet webhook ${res.status}`);
+// Maps our form to Josh's Airtable column names. Empty optionals are omitted
+// (single/multi-selects reject empty values).
+function airtableFields(d: MemberData): Record<string, unknown> {
+  const f: Record<string, unknown> = {
+    "Full Name": d.fullName,
+    "Email address": d.email,
+    "WhatsApp Number (with country code)": d.whatsapp,
+  };
+  if (d.linkedin) f["LinkedIn Profile URL"] = d.linkedin;
+  if (d.companyStage) f["Company Stage"] = d.companyStage;
+  if (d.openTo && d.openTo.length) f["What are you open to right now?"] = d.openTo;
+  if (d.building) f["What are you building?"] = d.building;
+  return f;
 }
 
-// Sink 2 — Airtable (Josh's copy). Upserts on Email. No-ops if unconfigured.
-// Members table columns: Email, Name, Company, Building, Role, LinkedIn, Website, Interests, Source.
-async function addToAirtable(data: MemberData) {
+// Sink 1 — Airtable (Josh's copy). Upserts on the email column. Fault-tolerant: if a column
+// name doesn't exist in Josh's table, Airtable 422s naming the field — we drop it and retry so
+// the rest of the record still saves. No-ops if unconfigured.
+async function addToAirtable(d: MemberData) {
   const token = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID;
   const table = process.env.AIRTABLE_MEMBERS_TABLE || "Members";
   if (!token || !baseId) return;
 
   const url = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(table)}`;
-  const res = await fetch(url, {
-    method: "PATCH",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-    },
+  const fields = airtableFields(d);
+
+  for (let attempt = 0; attempt < 6; attempt++) {
+    const res = await fetch(url, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        performUpsert: { fieldsToMergeOn: ["Email address"] },
+        typecast: true,
+        records: [{ fields }],
+      }),
+    });
+    if (res.ok) return;
+
+    const body = await res.text();
+    if (res.status === 422 && body.includes("UNKNOWN_FIELD_NAME")) {
+      let bad = "";
+      try {
+        const msg = (JSON.parse(body)?.error?.message as string) || "";
+        bad = msg.match(/Unknown field name:\s*"(.+)"\s*$/)?.[1] || "";
+      } catch {
+        /* fall through */
+      }
+      if (bad && bad in fields) {
+        delete fields[bad];
+        continue; // retry without the offending field
+      }
+    }
+    throw new Error(`Airtable ${res.status}: ${body}`);
+  }
+}
+
+// Sink 2 — Google Sheet (Lachlan's copy), via a Google Apps Script Web App. No-ops if unconfigured.
+async function addToGoogleSheet(d: MemberData) {
+  const webhook = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+  if (!webhook) return;
+  const res = await fetch(webhook, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      performUpsert: { fieldsToMergeOn: ["Email"] },
-      typecast: true,
-      records: [
-        {
-          fields: {
-            Email: data.email,
-            Name: data.name,
-            Company: data.company || "",
-            Building: data.building || "",
-            Role: data.role || "",
-            LinkedIn: data.linkedin || "",
-            Website: data.website || "",
-            Interests: (data.interests || []).join(", "),
-            Source: "Website member hub",
-          },
-        },
-      ],
+      fullName: d.fullName,
+      email: d.email,
+      whatsapp: d.whatsapp,
+      linkedin: d.linkedin || "",
+      companyStage: d.companyStage || "",
+      openTo: (d.openTo || []).join(", "),
+      building: d.building || "",
+      source: "Website member form",
     }),
   });
-  if (!res.ok) throw new Error(`Airtable ${res.status}: ${await res.text()}`);
+  if (!res.ok) throw new Error(`Google Sheet webhook ${res.status}`);
 }
 
 export async function POST(request: NextRequest) {
@@ -88,16 +104,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true, message: "You're in." }, { status: 200 });
     }
 
-    const hasBackend = Boolean(process.env.GOOGLE_SHEET_WEBHOOK_URL || process.env.AIRTABLE_API_KEY);
+    const hasBackend = Boolean(process.env.AIRTABLE_API_KEY || process.env.GOOGLE_SHEET_WEBHOOK_URL);
     if (hasBackend) {
-      // Write to both owned stores. Best-effort — one sink failing must not block the signup,
-      // and a member captured in either store is not lost.
-      const results = await Promise.allSettled([addToGoogleSheet(data), addToAirtable(data)]);
+      // Both owned stores, best-effort — one failing never blocks the signup or the cookie.
+      const results = await Promise.allSettled([addToAirtable(data), addToGoogleSheet(data)]);
       results.forEach((r) => {
         if (r.status === "rejected") console.error("Member signup sink error:", r.reason);
       });
     } else {
-      console.log("Member signup (no backend configured):", data.email, "—", data.name);
+      console.log("Member signup (no backend configured):", data.email, "—", data.fullName);
     }
 
     const response = NextResponse.json(

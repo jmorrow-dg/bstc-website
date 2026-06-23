@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { BookOpen, Users, MapPin, Scale, Tag, ArrowRight, Check, Lock } from "lucide-react";
+import { BookOpen, Users, MapPin, Scale, Tag, ArrowRight, Check, Lock, MessageCircle } from "lucide-react";
 import { isMember } from "@/lib/members";
+import { SITE } from "@/lib/constants";
 import MemberUnlockForm from "@/components/members/MemberUnlockForm";
 
 export const metadata: Metadata = {
@@ -82,6 +83,16 @@ export default function MembersPage() {
                 ? "Everything the community has built for you, in one place. Dive in below."
                 : "Join the community to unlock the AI Prompt Library, a member-maintained resource hub, the BSTC guide to Bali, member discounts, and legal & setup guides. Free to join."}
             </p>
+            {member && (
+              <a
+                href={SITE.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 px-5 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+              >
+                <MessageCircle size={18} /> Join the WhatsApp community
+              </a>
+            )}
           </div>
         </div>
       </section>
@@ -135,10 +146,10 @@ export default function MembersPage() {
 
               <div className="rounded-lg border border-brand-red/20 bg-brand-red/5 p-6 md:p-8">
                 <h2 className="font-display font-bold text-xl text-brand-white mb-2">
-                  Claim your free membership
+                  Join the BSTC community
                 </h2>
                 <p className="text-sm text-brand-grey mb-6">
-                  Drop your details to unlock the hub. Takes 10 seconds.
+                  Sign up to get added to the community and unlock the member hub.
                 </p>
                 <MemberUnlockForm />
                 <ul className="mt-6 space-y-2">
