@@ -182,9 +182,19 @@ export default function CommunityPage() {
           <h2 className="text-3xl font-display font-bold mb-4 text-center">
             Your Journey
           </h2>
-          <p className="text-brand-grey text-center mb-12 max-w-xl mx-auto">
+          <p className="text-brand-grey text-center mb-4 max-w-xl mx-auto">
             From first event to community leader: there&apos;s a path for
             everyone.
+          </p>
+          <p className="text-center text-sm text-brand-grey mb-12">
+            Just landed in Bali?{" "}
+            <Link
+              href="/welcome"
+              className="text-brand-red hover:text-brand-red-glow transition-colors font-medium"
+            >
+              Start with the Welcome to Bali guide
+            </Link>
+            .
           </p>
           <div className="grid md:grid-cols-5 gap-4 max-w-5xl mx-auto">
             {[

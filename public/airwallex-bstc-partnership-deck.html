@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<title>Airwallex × BSTC — Partnership Proposal</title>
+<style>
+  @page { size: 13.333in 7.5in; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg:    #0E0E0E;
+    --panel: #181818;
+    --line:  rgba(255,255,255,0.10);
+    --line2: rgba(255,255,255,0.18);
+    --white: #F5F5F5;
+    --grey:  #9A9A9A;
+    --grey2: #6E6E6E;
+    --red:   #C81E1E;
+    --red2:  #FF3B3B;
+    --aw:    #FF8A3D;  /* Airwallex orange */
+    --amber: #E8B04B;  /* placeholder figures to fill */
+  }
+  html, body { background:#000; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  .serif { font-family:"Playfair Display", Georgia, "Bodoni 72", serif; }
+  .sans  { font-family:"Inter","Helvetica Neue",Arial,sans-serif; }
+  .mono  { font-family:"SF Mono",Menlo,"Courier New",monospace; }
+
+  .slide {
+    position: relative;
+    width: 13.333in; height: 7.5in;
+    background: var(--bg); color: var(--white);
+    padding: 0.8in 0.9in 0.7in;
+    overflow: hidden; display:flex; flex-direction:column;
+    break-after: page;
+    font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .slide:last-child { break-after: auto; }
+
+  .glow { position:absolute; border-radius:50%; pointer-events:none; }
+  .glow.red { width:9in; height:9in; right:-3in; top:-3in;
+    background: radial-gradient(circle, rgba(200,30,30,0.16), rgba(200,30,30,0) 65%); }
+  .glow.aw { width:8in; height:8in; left:-3in; bottom:-3.5in;
+    background: radial-gradient(circle, rgba(255,138,61,0.14), rgba(255,138,61,0) 65%); }
+
+  .top { display:flex; justify-content:space-between; align-items:center;
+    font-family:"SF Mono",Menlo,monospace; font-size:8.5pt; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--grey); }
+  .top .x { color:var(--red); }
+  .foot { margin-top:auto; display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid var(--line); padding-top:0.18in;
+    font-family:"SF Mono",Menlo,monospace; font-size:7.5pt; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--grey2); }
+
+  .kicker { font-family:"SF Mono",Menlo,monospace; font-size:9pt; letter-spacing:0.28em;
+    text-transform:uppercase; color:var(--red); }
+  h1 { font-family:"Playfair Display",Georgia,serif; font-weight:700; color:var(--white);
+    font-size:33pt; line-height:1.06; letter-spacing:-0.3pt; }
+  h1 .r { color:var(--red); } h1 em { font-style:italic; font-weight:400; }
+  .lead { font-size:13.5pt; line-height:1.55; color:#cfcfcf; max-width:9.2in; }
+  .body { font-size:11.5pt; line-height:1.5; color:var(--grey); }
+  .aw { color:var(--aw); } .red { color:var(--red); }
+  .content { display:flex; flex-direction:column; gap:0.28in; margin-top:0.34in; }
+
+  /* cover */
+  .cover { justify-content:space-between; }
+  .cobrand { display:flex; align-items:center; gap:0.5in; margin-bottom:0.42in; }
+  .awlogo { height:0.5in; width:auto; display:block; }
+  .cx { font-family:"Playfair Display",Georgia,serif; font-size:30pt; color:var(--grey2); font-style:italic; }
+  .bstc { display:flex; align-items:center; gap:0.22in; }
+  .badge { width:0.66in; height:0.66in; border-radius:50%; overflow:hidden; display:block; border:1px solid var(--line); flex:0 0 0.66in; }
+  .badge img { width:100%; height:100%; object-fit:cover; display:block; }
+  .bstc-txt { display:flex; flex-direction:column; line-height:1; }
+  .bstc-txt b { font-family:"Playfair Display",Georgia,serif; font-size:27pt; font-weight:700; color:var(--white); }
+  .bstc-txt small { font-family:"SF Mono",Menlo,monospace; font-size:7pt; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--grey); margin-top:0.07in; }
+  .covh1 { font-family:"Playfair Display",Georgia,serif; font-weight:700; font-size:40pt; line-height:1.02; }
+  .covh1 .r { color:var(--red); }
+  .cover .meta { display:flex; gap:0.8in; margin-top:0.46in; }
+  .cover .meta .l { font-family:"SF Mono",Menlo,monospace; font-size:7.5pt; letter-spacing:0.22em;
+    text-transform:uppercase; color:var(--grey2); }
+  .cover .meta .v { font-family:"Playfair Display",Georgia,serif; font-size:13pt; font-weight:700; margin-top:0.06in; }
+
+  /* stats */
+  .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:0.3in; margin-top:0.4in; }
+  .stat { border:1px solid var(--line); background:rgba(255,255,255,0.02); padding:0.3in 0.32in; }
+  .stat .n { font-family:"Playfair Display",Georgia,serif; font-weight:700; font-size:38pt; line-height:1; color:var(--white); }
+  .stat .n .red { color:var(--red); }
+  .stat .lbl { margin-top:0.12in; font-size:10.5pt; line-height:1.35; color:var(--grey); }
+  .ph { color:var(--amber); }  /* placeholder figure to fill */
+
+  /* three columns */
+  .cols { display:grid; grid-template-columns:repeat(3,1fr); gap:0.34in; margin-top:0.38in; }
+  .col .h { font-family:"SF Mono",Menlo,monospace; font-size:8pt; letter-spacing:0.18em;
+    text-transform:uppercase; color:var(--red); margin-bottom:0.14in; }
+  .col h3 { font-family:"Playfair Display",Georgia,serif; font-size:16pt; font-weight:700; margin-bottom:0.12in; }
+  .col p { font-size:10.5pt; line-height:1.5; color:var(--grey); }
+  .sbars { display:flex; align-items:flex-end; gap:0.1in; height:0.95in; margin-top:0.16in; }
+  .sbars .sb { flex:1; background:var(--red); min-height:0.06in; position:relative; }
+  .sbars .sb.dim { background:var(--grey2); }
+  .sbars .sb i { position:absolute; bottom:-0.2in; left:-0.06in; right:-0.06in; text-align:center;
+    font-family:"SF Mono",Menlo,monospace; font-size:6.5pt; font-style:normal; color:var(--grey); }
+
+  /* bullet list */
+  ul.ticks { list-style:none; margin-top:0.3in; display:flex; flex-direction:column; gap:0.16in; }
+  ul.ticks li { position:relative; padding-left:0.42in; font-size:12.5pt; line-height:1.45; color:#cfcfcf; max-width:9.5in; }
+  ul.ticks li::before { content:""; position:absolute; left:0; top:0.07in; width:0.18in; height:0.18in;
+    background:var(--red); }
+  ul.ticks li b { color:var(--white); font-weight:600; }
+
+  /* growth bars */
+  .bars { display:flex; align-items:flex-end; gap:0.22in; height:2.1in; margin-top:0.4in; padding-left:0.1in; }
+  .bars .bar { flex:1; background:linear-gradient(180deg, var(--red), rgba(200,30,30,0.25)); position:relative; }
+  .bars .bar span { position:absolute; bottom:-0.3in; left:0; right:0; text-align:center;
+    font-family:"SF Mono",Menlo,monospace; font-size:7.5pt; color:var(--grey); }
+
+  /* roadmap */
+  .road { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:0.45in; }
+  .road .step { padding-right:0.3in; position:relative; }
+  .road .step::before { content:""; position:absolute; left:0; top:0.09in; width:0.18in; height:0.18in;
+    border-radius:50%; background:var(--red); }
+  .road .step.future::before { background:var(--aw); }
+  .road .step .when { padding-left:0.34in; font-family:"SF Mono",Menlo,monospace; font-size:8.5pt;
+    letter-spacing:0.12em; text-transform:uppercase; color:var(--grey); }
+  .road .step .what { padding-left:0.34in; margin-top:0.12in; font-family:"Playfair Display",Georgia,serif;
+    font-size:15pt; font-weight:700; }
+  .road .step .d { padding-left:0.34in; margin-top:0.08in; font-size:9.5pt; line-height:1.4; color:var(--grey); }
+  .roadline { height:1px; background:var(--line2); margin:0.45in 0 0; position:relative; }
+
+  /* exclusivity / what's included */
+  .incl { display:grid; grid-template-columns:repeat(3,1fr); gap:0.22in; margin-top:0.38in; }
+  .incl .i { border:1px solid var(--line); padding:0.24in 0.26in; }
+  .incl .i .t { font-weight:600; font-size:11.5pt; color:var(--white); margin-bottom:0.08in; }
+  .incl .i .s { font-size:9.5pt; line-height:1.4; color:var(--grey); }
+
+  /* packages */
+  .packs { display:grid; grid-template-columns:1fr 1.25fr; gap:0.34in; margin-top:0.4in; }
+  .pack { border:1px solid var(--line2); padding:0.4in 0.42in; display:flex; flex-direction:column; }
+  .pack.hero { border-color:rgba(200,30,30,0.55); background:linear-gradient(160deg, rgba(200,30,30,0.10), rgba(255,255,255,0.01)); }
+  .pack .tag { font-family:"SF Mono",Menlo,monospace; font-size:8pt; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--grey); }
+  .pack.hero .tag { color:var(--red); }
+  .pack h3 { font-family:"Playfair Display",Georgia,serif; font-size:21pt; font-weight:700; margin:0.1in 0 0.06in; }
+  .pack .term { font-size:10pt; color:var(--grey); margin-bottom:0.2in; }
+  .pack .price { font-family:"Playfair Display",Georgia,serif; font-weight:700; font-size:26pt; margin-bottom:0.2in; }
+  .pack .price small { font-family:"Inter",sans-serif; font-weight:400; font-size:11pt; color:var(--grey); }
+  .pack ul { list-style:none; display:flex; flex-direction:column; gap:0.1in; }
+  .pack ul li { font-size:10pt; line-height:1.4; color:#cfcfcf; padding-left:0.26in; position:relative; }
+  .pack ul li::before { content:"+"; position:absolute; left:0; color:var(--red); font-weight:700; }
+
+  /* close */
+  .close h1 { font-size:42pt; }
+  .cta { display:flex; gap:0.7in; margin-top:0.5in; }
+  .cta .b { font-size:8pt; font-family:"SF Mono",Menlo,monospace; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--grey2); }
+  .cta .v { font-family:"Playfair Display",Georgia,serif; font-size:15pt; font-weight:700; margin-top:0.08in; color:var(--white); }
+</style>
+</head>
+<body>
+
+<!-- 1 · COVER -->
+<section class="slide cover">
+  <div class="glow red"></div><div class="glow aw"></div>
+  <div class="top"><span>Partnership Proposal</span><span>June 2026 &middot; Confidential</span></div>
+  <div style="margin-top:auto;">
+    <p class="kicker" style="margin-bottom:0.36in;">A category-exclusive partnership</p>
+    <div class="cobrand">
+      <img class="awlogo" src="images/airwallex-logo.png" alt="Airwallex">
+      <span class="cx">&times;</span>
+      <span class="bstc">
+        <span class="badge"><img src="images/logo.png" alt="BSTC"></span>
+        <span class="bstc-txt"><b>BSTC</b><small>Bali Startups &amp; Tech Community</small></span>
+      </span>
+    </div>
+    <h1 class="covh1">Own the finance category in<br><span class="r">Bali's founder ecosystem.</span></h1>
+    <div class="meta">
+      <div><div class="l">Prepared for</div><div class="v">Dushyant, Airwallex</div></div>
+      <div><div class="l">From</div><div class="v">BSTC</div></div>
+      <div><div class="l">Meeting</div><div class="v">Tuesday, 3:00pm</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>Airwallex <span class="x" style="color:var(--red)">&times;</span> BSTC</span><span>01</span></div>
+</section>
+
+<!-- 2 · WHY NOW (MACRO TIMING) -->
+<section class="slide">
+  <div class="glow aw"></div>
+  <div class="top"><span>Why now</span><span>Airwallex <span class="x">&times;</span> BSTC</span></div>
+  <p class="kicker" style="margin-top:0.1in;">The timing</p>
+  <h1 style="margin-top:0.16in;">The cost of starting a company <span class="r">just collapsed.</span></h1>
+  <p class="lead" style="margin-top:0.22in;">AI has democratised building. A single founder can now design, build and ship what used to take a funded team, and a new wave of early-stage founders is the result. It is accelerating, and they are making their first financial decisions right now.</p>
+  <div class="cols">
+    <div class="col">
+      <div class="h">Democratised building</div>
+      <h3>Anyone can ship</h3>
+      <p>AI and no-code tools have removed the technical barrier. An idea becomes a live product without a dev team.</p>
+    </div>
+    <div class="col">
+      <div class="h">An AI-native wave</div>
+      <h3>More builders than ever</h3>
+      <p>Solo founders and small teams use AI to go from idea to launch in weeks, not quarters. The volume is rising fast.</p>
+    </div>
+    <div class="col">
+      <div class="h">The last six months</div>
+      <h3>About <span class="red">10x</span> the requests</h3>
+      <div class="sbars">
+        <div class="sb dim" style="height:9%"><i>10</i></div>
+        <div class="sb dim" style="height:7%"><i>8</i></div>
+        <div class="sb dim" style="height:12%"><i>14</i></div>
+        <div class="sb" style="height:89%"><i>104</i></div>
+        <div class="sb" style="height:84%"><i>98</i></div>
+        <div class="sb" style="height:100%"><i>117</i></div>
+      </div>
+      <p style="margin-top:0.32in;">New member requests / month, last six months.</p>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:0.3in;">They go global from day one, and they are choosing their financial stack now. The window to become their default is open.</p>
+  <div class="foot"><span>Why now</span><span>02</span></div>
+</section>
+
+<!-- 3 · THE FIT -->
+<section class="slide">
+  <div class="glow red"></div>
+  <div class="top"><span>Why this works</span><span>Airwallex <span class="x">&times;</span> BSTC</span></div>
+  <div class="content">
+    <p class="kicker">The thesis</p>
+    <h1>You back founders building <em>borderless</em> businesses.<br><span class="r">So do we.</span></h1>
+    <p class="lead">Bali has quietly become a real hub for global-first startups. BSTC is its centre of gravity: 2,500+ founders, engineers and operators, most of them running cross-border, multi-currency businesses from day one. That is your customer, in one room, every month.</p>
+  </div>
+  <div class="foot"><span>The fit</span><span>03</span></div>
+</section>
+
+<!-- 4 · THE COMMUNITY (SIZE) -->
+<section class="slide">
+  <div class="glow red"></div>
+  <div class="top"><span>The community</span><span>Airwallex <span class="x">&times;</span> BSTC</span></div>
+  <p class="kicker" style="margin-top:0.1in;">Size &amp; reach</p>
+  <h1 style="margin-top:0.16in;">Bali's founder community, <span class="r">in one place</span></h1>
+  <div class="stats">
+    <div class="stat"><div class="n">2,500<span class="red">+</span></div><div class="lbl">Founders, engineers &amp; operators in the community</div></div>
+    <div class="stat"><div class="n">37</div><div class="lbl">Monthly flagship networking nights, and counting</div></div>
+    <div class="stat"><div class="n">40&ndash;80</div><div class="lbl">High-signal attendees at every flagship night</div></div>
+    <div class="stat"><div class="n">4</div><div class="lbl">Event formats: networking, How I Build with AI, builder sessions, roundtables</div></div>
+    <div class="stat"><div class="n">10<span class="red">+</span></div><div class="lbl">Editions of the How I Build with AI series</div></div>
+    <div class="stat"><div class="n"><span class="ph">[ ]</span></div><div class="lbl">Events run in the last 12 months <span class="aw">(confirm)</span></div></div>
+  </div>
+  <div class="foot"><span>The community</span><span>04</span></div>
+</section>
+
+<!-- 5 · GROWTH -->
+<section class="slide">
+  <div class="glow red"></div>
+  <div class="top"><span>Momentum</span><span>Airwallex <span class="x">&times;</span> BSTC</span></div>
+  <p class="kicker" style="margin-top:0.1in;">Growth</p>
+  <h1 style="margin-top:0.16in;">Compounding every month, <span class="r">with zero paid acquisition</span></h1>
+  <div style="display:grid; grid-template-columns:1.1fr 1fr; gap:0.5in; margin-top:0.1in;">
+    <ul class="ticks">
+      <li><b>3+ years of monthly flagships</b>, now on edition 37, never missed a month.</li>
+      <li><b>Word-of-mouth only.</b> Growth is organic, driven by the quality of the room, not ad spend.</li>
+      <li><b>An owned audience.</b> Every member now flows into our CRM with email and consent, not just a WhatsApp number.</li>
+    </ul>
+    <div>
+      <div style="font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:56pt; line-height:1; color:var(--red);">240%</div>
+      <div style="font-family:'SF Mono',Menlo,monospace; font-size:8.5pt; letter-spacing:0.12em; text-transform:uppercase; color:var(--grey); margin-top:0.1in;">Member growth, year on year</div>
+      <div class="bars" style="height:1.4in; margin-top:0.4in;">
+        <div class="bar" style="height:18%"><span>2023</span></div>
+        <div class="bar" style="height:38%"><span>2024</span></div>
+        <div class="bar" style="height:62%"><span>2025</span></div>
+        <div class="bar" style="height:100%"><span>2026</span></div>
+      </div>
+      <p class="body" style="margin-top:0.45in; font-size:9pt;">Directional trajectory &middot; members year on year.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Growth</span><span>05</span></div>
+</section>
+
+<!-- 6 · AUDIENCE = YOUR CUSTOMERS -->
+<section class="slide">
+  <div class="glow aw"></div>
+  <div class="top"><span>The fit for Airwallex</span><span>Airwallex <span class="x">&times;</span> BSTC</span></div>
+  <p class="kicker" style="margin-top:0.1in;">Why Airwallex, specifically</p>
+  <h1 style="margin-top:0.16in;">Exactly who <span class="aw">Airwallex</span> is built for</h1>
+  <div class="cols">
+    <div class="col">
+      <div class="h">Who they are</div>
+      <h3>Global-first founders</h3>
+      <p>Founders and operators building from Bali but selling worldwide. Remote teams, international clients, multi-currency from launch.</p>
+    </div>
+    <div class="col">
+      <div class="h">What they need</div>
+      <h3>Borderless finance</h3>
+      <p>Cross-border payments, multi-currency accounts, global payroll and FX. The exact problems Airwallex solves, felt daily.</p>
+    </div>
+    <div class="col">
+      <div class="h">Where you fit</div>
+      <h3>The trusted answer</h3>
+      <p>Be the finance partner the community learns from and defaults to, through the scaling series you proposed and member perks.</p>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:0.4in;">Your email named it: educational workshops on financial best practices for global operations. That is a perfect fit, and the start of something bigger.</p>
+  <div class="foot"><span>The audience</span><span>06</span></div>
+</section>
+
+<!-- 7 · VISION -->
+<section class="slide">
+  <div class="glow red"></div>
+  <div class="top"><span>Where we're going</span><span>Airwallex <span class="x">&times;</span> BSTC</span></div>
+  <p class="kicker" style="margin-top:0.1in;">Vision</p>
+  <h1 style="margin-top:0.16in;">From monthly meetups to <span class="r">the region's flagship</span></h1>
+  <div class="roadline"></div>
+  <div class="road">
+    <div class="step"><div class="when">Now</div><div class="what">Monthly flagships</div><div class="d">2,500+ members, four event formats, every month in Canggu.</div></div>
+    <div class="step future"><div class="when">2026</div><div class="what">The Podcast</div><div class="d">Launching soon. Founder stories and operator playbooks, with partner segments.</div></div>
+    <div class="step future"><div class="when">2026</div><div class="what">Owned insights</div><div class="d">Aggregated, anonymised ecosystem data from our member CRM.</div></div>
+    <div class="step future"><div class="when">2027</div><div class="what">Annual Conference</div><div class="d">Bali's flagship startup &amp; tech conference. The headline stage.</div></div>
+  </div>
+  <p class="lead" style="margin-top:0.5in;">A partner who joins now grows with us, from the monthly room to the podcast feed to the 2027 conference stage.</p>
+  <div class="foot"><span>Vision</span><span>07</span></div>
+</section>
+
+<!-- 8 · THE PARTNERSHIP / EXCLUSIVITY -->
+<section class="slide">
+  <div class="glow aw"></div>
+  <div class="top"><span>The proposal</span><span>Airwallex <span class="x">&times;</span> BSTC</span></div>
+  <p class="kicker" style="margin-top:0.1in;">Category exclusivity</p>
+  <h1 style="margin-top:0.16in;">Own the category. Be our <span class="r">only</span> finance partner.</h1>
+  <p class="lead" style="margin-top:0.24in;"><span class="aw">Airwallex</span> as the sole payments and finance brand across every BSTC surface for the term: events, workshops, podcast and the 2027 conference. No competing fintech in the room.</p>
+  <div class="incl">
+    <div class="i"><div class="t">Flagship event sponsorship</div><div class="s">Your brand on the monthly room that defines the scene.</div></div>
+    <div class="i"><div class="t">The scaling series</div><div class="s">Co-built workshops on global financial best practice.</div></div>
+    <div class="i"><div class="t">Founder perks</div><div class="s">Tailored Airwallex offers in our member guide and WhatsApp.</div></div>
+    <div class="i"><div class="t">Podcast presence</div><div class="s">Partner segments and host reads as the show launches.</div></div>
+    <div class="i"><div class="t">Conference 2027</div><div class="s">Headline finance partner of Bali's flagship event.</div></div>
+    <div class="i"><div class="t">Ecosystem insights</div><div class="s">Aggregated, anonymised data on how Bali founders scale.</div></div>
+  </div>
+  <div class="foot"><span>The partnership</span><span>08</span></div>
+</section>
+
+<!-- 9 · WAYS TO PARTNER (exploratory, no pricing) -->
+<section class="slide">
+  <div class="glow red"></div>
+  <div class="top"><span>Ways to partner</span><span>Airwallex <span class="x">&times;</span> BSTC</span></div>
+  <p class="kicker" style="margin-top:0.1in;">The shape of it</p>
+  <h1 style="margin-top:0.16in;">Two ways to partner. <span class="r">Annual goes deepest.</span></h1>
+  <div class="packs">
+    <div class="pack">
+      <div class="tag">Quarterly</div>
+      <h3>Category Partner</h3>
+      <div class="term">Exclusive finance partner &middot; one quarter</div>
+      <ul>
+        <li>Category exclusivity for the quarter</li>
+        <li>Flagship event sponsorship</li>
+        <li>One scaling-series workshop</li>
+        <li>Founder perks in the member guide</li>
+      </ul>
+    </div>
+    <div class="pack hero">
+      <div class="tag">Recommended &middot; Annual</div>
+      <h3>Strategic Partner</h3>
+      <div class="term">Exclusive finance partner &middot; the full year</div>
+      <ul>
+        <li>Category exclusivity for the full year</li>
+        <li>Every flagship night, all four formats</li>
+        <li>Full scaling-series workshop track</li>
+        <li>Podcast presence as it launches</li>
+        <li>Headline finance partner, Conference 2027</li>
+        <li>Aggregated ecosystem insights</li>
+      </ul>
+    </div>
+  </div>
+  <p class="body" style="margin-top:0.28in; font-size:9.5pt;">Scope and investment are a conversation for when the fit is clear. This is a starting point, not a pitch.</p>
+  <div class="foot"><span>Ways to partner</span><span>09</span></div>
+</section>
+
+<!-- 10 · CLOSE -->
+<section class="slide close">
+  <div class="glow red"></div><div class="glow aw"></div>
+  <div class="top"><span>Next steps</span><span>Airwallex <span class="x">&times;</span> BSTC</span></div>
+  <div class="content" style="margin-top:auto;">
+    <p class="kicker">Let's build it</p>
+    <h1>Be the name Bali's founders<br>reach for when they <em>scale</em>.</h1>
+    <p class="lead">You offered to support the community without a rigid sales pitch. We are offering you the whole category, for a year, including the stage we are building for 2027. Let's lock the shape of it on Tuesday.</p>
+  </div>
+  <div class="cta">
+    <div><div class="b">The ask</div><div class="v">Annual category exclusivity</div></div>
+    <div><div class="b">The meeting</div><div class="v">Tuesday, 3:00pm</div></div>
+    <div><div class="b">Contact</div><div class="v">BSTC</div></div>
+  </div>
+  <div class="foot"><span>Airwallex <span class="x" style="color:var(--red)">&times;</span> BSTC &middot; Partnership Proposal</span><span>10</span></div>
+</section>
+
+</body>
+</html>

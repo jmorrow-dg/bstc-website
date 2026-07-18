@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+<defs>
+  <radialGradient id="bg" cx="50%" cy="40%" r="80%">
+    <stop offset="0%" stop-color="#191711"/><stop offset="55%" stop-color="#121212"/><stop offset="100%" stop-color="#0B0B0B"/>
+  </radialGradient>
+  <radialGradient id="disc" cx="50%" cy="38%" r="75%">
+    <stop offset="0%" stop-color="#1F1F1F"/><stop offset="100%" stop-color="#151515"/>
+  </radialGradient>
+  <radialGradient id="hub" cx="50%" cy="36%" r="80%">
+    <stop offset="0%" stop-color="#1C1B18"/><stop offset="100%" stop-color="#121212"/>
+  </radialGradient>
+  <linearGradient id="goldring" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#E0B040"/><stop offset="100%" stop-color="#8C6E2E"/>
+  </linearGradient>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<rect width="1280" height="720" fill="url(#bg)"/>
+<text x="64" y="54" font-family="Inter" font-size="14" font-weight="600" letter-spacing="3" fill="#C9A24A">THE AI-NATIVE ORGANISATION</text>
+<line x1="560" y1="112" x2="640" y2="372" stroke="#C9A24A" stroke-opacity="0.20" stroke-width="1.25"/>
+<line x1="560" y1="632" x2="640" y2="372" stroke="#C9A24A" stroke-opacity="0.20" stroke-width="1.25"/>
+<line x1="300" y1="372" x2="640" y2="372" stroke="#C9A24A" stroke-opacity="0.20" stroke-width="1.25"/>
+<line x1="980" y1="372" x2="640" y2="372" stroke="#C9A24A" stroke-opacity="0.20" stroke-width="1.25"/>
+<circle cx="640" cy="372" r="206" fill="none" stroke="#C9A24A" stroke-opacity="0.10" stroke-width="1" stroke-dasharray="2 7"/>
+<circle cx="640" cy="372" r="168" fill="none" stroke="#C9A24A" stroke-width="5" opacity="0.22" filter="url(#glow)"/>
+<circle cx="640" cy="372" r="165" fill="url(#hub)" stroke="url(#goldring)" stroke-width="2.2"/>
+<text x="640" y="258" text-anchor="middle" font-family="Inter" font-size="44" font-weight="800" fill="#F4F1E9" letter-spacing="1">AI</text>
+<text x="640" y="286" text-anchor="middle" font-family="Inter" font-size="15" font-weight="600" letter-spacing="6" fill="#C9A24A">SYSTEMS</text>
+<rect x="525.0" y="302" width="230" height="40" rx="9" fill="#1B1B1B" stroke="#C9A24A" stroke-opacity="0.45" stroke-width="1"/>
+<rect x="535.0" y="312.0" width="3.2" height="20" rx="1.5" fill="#C9A24A"/>
+<text x="648" y="327.0" text-anchor="middle" font-family="Inter" font-size="14.5" font-weight="500" letter-spacing="0.3" fill="#EFEADF">Skills &amp; Context</text>
+<rect x="525.0" y="352" width="230" height="40" rx="9" fill="#1B1B1B" stroke="#C9A24A" stroke-opacity="0.45" stroke-width="1"/>
+<rect x="535.0" y="362.0" width="3.2" height="20" rx="1.5" fill="#C9A24A"/>
+<text x="648" y="377.0" text-anchor="middle" font-family="Inter" font-size="14.5" font-weight="500" letter-spacing="0.3" fill="#EFEADF">Models &amp; Tools</text>
+<rect x="525.0" y="402" width="230" height="40" rx="9" fill="#1E1714" stroke="#C03A2B" stroke-opacity="0.85" stroke-width="1"/>
+<rect x="535.0" y="412.0" width="3.2" height="20" rx="1.5" fill="#C03A2B"/>
+<text x="648" y="427.0" text-anchor="middle" font-family="Inter" font-size="14.5" font-weight="500" letter-spacing="0.3" fill="#EFEADF">Security &amp; Governance</text>
+<circle cx="560" cy="112" r="52" fill="none" stroke="#C9A24A" stroke-width="3" opacity="0.22" filter="url(#glow)"/><circle cx="560" cy="112" r="50" fill="url(#disc)" stroke="#C9A24A" stroke-width="1.4"/><circle cx="560" cy="112" r="50" fill="none" stroke="#000" stroke-opacity="0.25" stroke-width="0.6"/><g transform="translate(540.00,92.00) scale(1.6667)" fill="none" stroke="#EAE3D2" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></g>
+<circle cx="300" cy="372" r="52" fill="none" stroke="#C9A24A" stroke-width="3" opacity="0.22" filter="url(#glow)"/><circle cx="300" cy="372" r="50" fill="url(#disc)" stroke="#C9A24A" stroke-width="1.4"/><circle cx="300" cy="372" r="50" fill="none" stroke="#000" stroke-opacity="0.25" stroke-width="0.6"/><g transform="translate(280.00,352.00) scale(1.6667)" fill="none" stroke="#EAE3D2" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></g>
+<circle cx="980" cy="372" r="52" fill="none" stroke="#C9A24A" stroke-width="3" opacity="0.22" filter="url(#glow)"/><circle cx="980" cy="372" r="50" fill="url(#disc)" stroke="#C9A24A" stroke-width="1.4"/><circle cx="980" cy="372" r="50" fill="none" stroke="#000" stroke-opacity="0.25" stroke-width="0.6"/><g transform="translate(960.00,352.00) scale(1.6667)" fill="none" stroke="#EAE3D2" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></g>
+<circle cx="560" cy="632" r="52" fill="none" stroke="#C9A24A" stroke-width="3" opacity="0.22" filter="url(#glow)"/><circle cx="560" cy="632" r="50" fill="url(#disc)" stroke="#C9A24A" stroke-width="1.4"/><circle cx="560" cy="632" r="50" fill="none" stroke="#000" stroke-opacity="0.25" stroke-width="0.6"/><g transform="translate(540.00,612.00) scale(1.6667)" fill="none" stroke="#EAE3D2" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></g>
+<text x="700" y="100" text-anchor="start" font-family="Inter" font-size="19" font-weight="700" letter-spacing="2.5" fill="#CDB36A">LEADERSHIP</text>
+<text x="700" y="126" text-anchor="start" font-family="Inter" font-size="13.5" font-weight="400" letter-spacing="0.2" fill="#9A958C"><tspan x="700" dy="0">Sets direction, aligns strategy, and empowers the organisation.</tspan></text>
+<text x="700" y="622" text-anchor="start" font-family="Inter" font-size="19" font-weight="700" letter-spacing="2.5" fill="#CDB36A">OPERATIONS</text>
+<text x="700" y="648" text-anchor="start" font-family="Inter" font-size="13.5" font-weight="400" letter-spacing="0.2" fill="#9A958C"><tspan x="700" dy="0">Executes efficiently, optimises processes, and scales effectively.</tspan></text>
+<text x="232" y="356" text-anchor="end" font-family="Inter" font-size="19" font-weight="700" letter-spacing="2.5" fill="#CDB36A">DELIGHT</text>
+<text x="232" y="382" text-anchor="end" font-family="Inter" font-size="13.5" font-weight="400" letter-spacing="0.2" fill="#9A958C"><tspan x="232" dy="0">Understands needs, builds</tspan><tspan x="232" dy="20">meaningful experiences,</tspan><tspan x="232" dy="20">and earns loyalty.</tspan></text>
+<text x="1048" y="356" text-anchor="start" font-family="Inter" font-size="19" font-weight="700" letter-spacing="2.5" fill="#CDB36A">GROWTH</text>
+<text x="1048" y="382" text-anchor="start" font-family="Inter" font-size="13.5" font-weight="400" letter-spacing="0.2" fill="#9A958C"><tspan x="1048" dy="0">Drives innovation, expands</tspan><tspan x="1048" dy="20">opportunities, and</tspan><tspan x="1048" dy="20">creates value.</tspan></text>
+</svg>

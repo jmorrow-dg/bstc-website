@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<title>BSTC x TAP Canggu — Free Beer Sundays</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+
+  :root {
+    --cream:   #ECE8E0;
+    --ink:     #141414;
+    --taupe:   #8A8077;
+    --greige:  #6B6359;
+    --stone:   #C9C2B6;
+    --red:     #C81E1E;
+    --cream-2: #E3DED4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: #cfcabf;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    background: var(--cream);
+    color: var(--ink);
+    padding: 13mm 13mm 11mm;
+    overflow: hidden;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* subtle print grain */
+  .grain {
+    position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    opacity: 0.5; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.22'/></svg>");
+  }
+
+  /* big faint padel-racquet watermark behind the masthead */
+  .watermark {
+    position: absolute; z-index: 1; pointer-events: none;
+    top: 26mm; right: -16mm;
+    width: 120mm; height: auto;
+    opacity: 0.16;
+    transform: rotate(18deg);
+    color: var(--greige);
+  }
+
+  /* halftone dot block, echoes the TAP dotted logo */
+  .halftone {
+    position: absolute; z-index: 1; pointer-events: none;
+    left: 11mm; bottom: 44mm; width: 30mm; height: 30mm;
+    opacity: 0.18; color: var(--ink);
+    background-image: radial-gradient(currentColor 1.1px, transparent 1.3px);
+    background-size: 3.1mm 3.1mm;
+  }
+
+  .layer { position: relative; z-index: 3; }
+
+  /* ---------- co-brand bar ---------- */
+  .cobrand {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 9.5pt; letter-spacing: 0.22em; text-transform: uppercase;
+    border-top: 1.4pt solid var(--ink);
+    border-bottom: 1.4pt solid var(--ink);
+    padding: 2.4mm 0;
+  }
+  .cobrand .x { color: var(--red); font-weight: 700; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: 6mm 0 5mm; }
+  .kicker {
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 9pt; letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--greige); margin-bottom: 5mm;
+  }
+  h1 {
+    font-family: "Didot", "Bodoni 72", "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    font-size: 52pt; line-height: 0.92; letter-spacing: -0.5pt;
+  }
+  h1 em { font-style: italic; font-weight: 400; }
+  h1 .beer { display: block; }
+  .subhead {
+    margin-top: 6mm;
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 10.5pt; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink);
+  }
+  .howto {
+    margin-top: 3.5mm; max-width: 150mm;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10.5pt; line-height: 1.5; color: #423f3a;
+  }
+
+  /* ---------- exclusive perk (red) ---------- */
+  .perk {
+    position: relative;
+    background: var(--red); color: var(--cream);
+    margin-top: 5mm; padding: 6.5mm 9mm 7mm;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .perk h2 {
+    font-family: "Didot", "Bodoni 72", Georgia, serif;
+    font-weight: 700; font-size: 27pt; line-height: 1; margin-bottom: 4mm;
+  }
+  .perk p {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11pt; line-height: 1.55; max-width: 132mm;
+  }
+  .stamp {
+    position: absolute; top: 6mm; right: 7mm;
+    transform: rotate(8deg);
+    border: 2pt solid var(--cream); color: var(--cream);
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 8.5pt; font-weight: 700; letter-spacing: 0.18em; text-align: center;
+    text-transform: uppercase; line-height: 1.25; padding: 2.4mm 3mm;
+    opacity: 0.92;
+  }
+
+  /* ---------- details (taupe) ---------- */
+  .details {
+    background: var(--taupe); color: var(--cream);
+    margin-top: 5mm; padding: 5.5mm 9mm;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4mm 9mm;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .det .lbl {
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 8pt; letter-spacing: 0.26em; text-transform: uppercase;
+    color: #efece6; opacity: 0.85;
+  }
+  .det .val {
+    font-family: "Didot", "Bodoni 72", Georgia, serif;
+    font-size: 16pt; font-weight: 700; line-height: 1.15; margin-top: 1mm;
+  }
+  .nexttag {
+    grid-column: 1 / -1;
+    display: inline-flex; align-self: start; gap: 2mm; align-items: baseline;
+    background: var(--ink); color: var(--cream);
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 8.5pt; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 1.8mm 3mm; width: max-content;
+  }
+  .nexttag b { color: #ffffff; }
+
+  /* ---------- what you get ---------- */
+  .gets {
+    margin-top: 5mm;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 5mm;
+  }
+  .get {
+    border: 1.3pt solid var(--ink); padding: 4mm 4mm 4.5mm;
+    text-align: center;
+  }
+  .get svg { width: 13mm; height: 13mm; color: var(--ink); }
+  .get .gt {
+    margin-top: 3mm;
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 10pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .get .gs {
+    margin-top: 1.5mm;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9pt; color: #4a4742;
+  }
+  .get.lead { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+  .get.lead svg, .get.lead .gt { color: var(--cream); }
+  .get.lead .gs { color: #d8d3c9; }
+  .get.lead .gt { color: #ffd9b0; }
+
+  /* ---------- price + cta row ---------- */
+  .footrow {
+    margin-top: 5mm; display: grid; grid-template-columns: 1fr 1.25fr; gap: 5mm;
+    align-items: stretch;
+  }
+  .price {
+    background: var(--greige); color: var(--cream);
+    padding: 6mm 6mm; display: flex; flex-direction: column; justify-content: center;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .price .pl {
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 8.5pt; letter-spacing: 0.26em; text-transform: uppercase; opacity: 0.85;
+  }
+  .price .pv {
+    font-family: "Didot", "Bodoni 72", Georgia, serif;
+    font-weight: 700; font-size: 26pt; line-height: 1; margin-top: 2mm;
+  }
+  .price .pn {
+    margin-top: 2.5mm;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 8.5pt; color: #efece6; opacity: 0.85;
+  }
+  .cta {
+    background: var(--ink); color: var(--cream);
+    padding: 6mm; display: grid; grid-template-columns: 1fr auto; gap: 5mm; align-items: center;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .cta .ck {
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 8.5pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--stone);
+  }
+  .cta .cbig {
+    font-family: "Didot", "Bodoni 72", Georgia, serif;
+    font-weight: 700; font-size: 21pt; line-height: 1.04; margin-top: 2mm;
+  }
+  .cta .cbig em { font-style: italic; font-weight: 400; color: #ff8a5b; }
+  .cta .csmall {
+    margin-top: 3mm;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9pt; line-height: 1.45; color: #cfcabf;
+  }
+  .qr {
+    width: 28mm; height: 28mm; border: 1.4pt dashed var(--stone);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; color: var(--stone);
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 7pt; letter-spacing: 0.14em; text-transform: uppercase; gap: 2mm;
+  }
+  .qr svg { width: 9mm; height: 9mm; color: var(--stone); }
+
+  /* ---------- footer ---------- */
+  footer {
+    margin-top: auto; padding-top: 4mm;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1.4pt solid var(--ink);
+    font-family: "American Typewriter", "Courier New", monospace;
+    font-size: 8pt; letter-spacing: 0.16em; text-transform: uppercase; color: #4a4742;
+  }
+  footer .r { text-align: right; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="grain"></div>
+
+    <!-- watermark: padel racquet -->
+    <svg class="watermark" viewBox="0 0 200 320" fill="none" stroke="currentColor" stroke-width="5">
+      <path d="M100 8 C46 8 14 52 14 108 C14 158 50 196 100 196 C150 196 186 158 186 108 C186 52 154 8 100 8 Z"/>
+      <line x1="84" y1="196" x2="84" y2="300"/>
+      <line x1="116" y1="196" x2="116" y2="300"/>
+      <path d="M76 300 h48 a8 8 0 0 1 8 8 v6 h-64 v-6 a8 8 0 0 1 8 -8 Z"/>
+      <g stroke-width="0" fill="currentColor">
+        <circle cx="70" cy="80" r="6"/><circle cx="100" cy="70" r="6"/><circle cx="130" cy="80" r="6"/>
+        <circle cx="60" cy="112" r="6"/><circle cx="100" cy="104" r="6"/><circle cx="140" cy="112" r="6"/>
+        <circle cx="72" cy="146" r="6"/><circle cx="100" cy="150" r="6"/><circle cx="128" cy="146" r="6"/>
+      </g>
+    </svg>
+
+    <div class="halftone"></div>
+
+    <div class="layer" style="display:flex;flex-direction:column;height:100%;">
+
+      <header class="cobrand">
+        <span>BSTC <span class="x">&#10005;</span> TAP CLUB</span>
+        <span>Canggu &middot; Bali</span>
+      </header>
+
+      <section class="hero">
+        <p class="kicker">An exclusive BSTC community session</p>
+        <h1><span class="beer">Free Beer</span><em>Sundays</em></h1>
+        <p class="subhead">BSTC &times; TAP Canggu &middot; Beginner Padel Americano</p>
+        <p class="howto">An Americano rotates partners every few games, so you play with half the crew and share a beer with the rest. No experience needed, just turn up.</p>
+      </section>
+
+      <section class="perk">
+        <div class="stamp">Exclusive<br>BSTC perk</div>
+        <h2>The beer&rsquo;s on us.</h2>
+        <p>We organised an exclusive perk for the BSTC community. A cold one for every member who plays. No kickbacks, no markup, all rolled straight back into the community.</p>
+      </section>
+
+      <section class="details">
+        <div class="det"><div class="lbl">When</div><div class="val">Sundays, 10:00am to 12:00pm</div></div>
+        <div class="det"><div class="lbl">Where</div><div class="val">TAP Club, Canggu</div></div>
+        <div class="det"><div class="lbl">Level</div><div class="val">Beginner, 0.0 to 1.5</div></div>
+        <div class="det"><div class="lbl">Format</div><div class="val">Americano, rotating partners</div></div>
+        <span class="nexttag">Next session &middot; <b>Sun 28 June</b></span>
+      </section>
+
+      <section class="gets">
+        <div class="get lead">
+          <!-- beer -->
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M13 16 h20 v24 a3 3 0 0 1 -3 3 H16 a3 3 0 0 1 -3 -3 Z"/>
+            <path d="M33 20 h5 a3 3 0 0 1 3 3 v8 a3 3 0 0 1 -3 3 h-5"/>
+            <path d="M13 16 c0 -5 4 -7 10 -7 c6 0 10 2 10 7"/>
+            <line x1="19" y1="24" x2="19" y2="38"/><line x1="24" y1="24" x2="24" y2="38"/><line x1="29" y1="24" x2="29" y2="38"/>
+          </svg>
+          <div class="gt">Free Beer</div>
+          <div class="gs">BSTC exclusive</div>
+        </div>
+        <div class="get">
+          <!-- racquet + ball -->
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <ellipse cx="20" cy="17" rx="12" ry="13"/>
+            <line x1="15" y1="27" x2="10" y2="40"/><line x1="25" y1="27" x2="20" y2="40"/>
+            <path d="M9 40 h13 l-2 4 h-9 z"/>
+            <circle cx="20" cy="17" r="2"/><circle cx="14" cy="13" r="2"/><circle cx="26" cy="13" r="2"/><circle cx="14" cy="21" r="2"/><circle cx="26" cy="21" r="2"/>
+            <circle cx="37" cy="34" r="6"/>
+          </svg>
+          <div class="gt">100k Voucher</div>
+          <div class="gs">Coaching session</div>
+        </div>
+        <div class="get">
+          <!-- coconut -->
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+            <circle cx="24" cy="27" r="13"/>
+            <circle cx="20" cy="24" r="1.6" fill="currentColor" stroke="none"/>
+            <circle cx="28" cy="24" r="1.6" fill="currentColor" stroke="none"/>
+            <circle cx="24" cy="30" r="1.6" fill="currentColor" stroke="none"/>
+            <path d="M24 14 c0 -5 4 -7 8 -7"/>
+            <path d="M24 14 c0 -4 -4 -6 -8 -5"/>
+          </svg>
+          <div class="gt">Fresh Coconut</div>
+          <div class="gs">On the house</div>
+        </div>
+      </section>
+
+      <section class="footrow">
+        <div class="price">
+          <div class="pl">Per session</div>
+          <div class="pv">Rp 260,000</div>
+          <div class="pn">Beer, coconut &amp; coaching voucher included.</div>
+        </div>
+        <div class="cta">
+          <div>
+            <div class="ck">Book on Playtomic</div>
+            <div class="cbig">Lock your <em>spot</em></div>
+            <div class="csmall">Spots are capped and fill fast. Play, meet the crew, cold one after.</div>
+          </div>
+          <div class="qr">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm10 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-4 4h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg>
+            Scan to book
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <span>Bali Startup &amp; Tech Community</span>
+        <span class="r">TAP Club Canggu</span>
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>

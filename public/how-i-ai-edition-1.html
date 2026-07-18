@@ -1,0 +1,2045 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How I AI | Edition 1 — BSTC</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --charcoal: #111111;
+        --white: #f5f5f5;
+        --red: #c81e1e;
+        --red-dark: #8b1a1a;
+        --red-glow: #ff2e2e;
+        --grey: #888888;
+        --grey-dark: #333333;
+        --grey-border: #222222;
+      }
+
+      body {
+        background: var(--charcoal);
+        color: var(--white);
+        font-family: "Inter", sans-serif;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .slide {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        padding: 60px 80px;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slide.active {
+        display: flex;
+      }
+
+      .slide::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -30%;
+        width: 80%;
+        height: 80%;
+        background: radial-gradient(
+          circle,
+          rgba(200, 30, 30, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .slide-number {
+        position: absolute;
+        bottom: 30px;
+        right: 40px;
+        font-size: 14px;
+        color: var(--grey);
+        font-weight: 500;
+        letter-spacing: 2px;
+      }
+
+      .bstc-watermark {
+        position: absolute;
+        bottom: 30px;
+        left: 40px;
+        font-size: 12px;
+        color: var(--grey-dark);
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 72px;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 54px;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: var(--white);
+      }
+
+      .subtitle {
+        font-size: 22px;
+        color: var(--grey);
+        font-weight: 400;
+        line-height: 1.6;
+        max-width: 700px;
+      }
+
+      .red {
+        color: var(--red);
+      }
+      .red-glow {
+        color: var(--red);
+        text-shadow: 0 0 20px rgba(200, 30, 30, 0.3);
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #c81e1e, #8b1a1a);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .accent-line {
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, #c81e1e, #8b1a1a);
+        margin-bottom: 32px;
+        border-radius: 2px;
+      }
+
+      .tag {
+        display: inline-block;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 20px;
+      }
+
+      .stat-huge {
+        font-family: "Playfair Display", serif;
+        font-size: 140px;
+        font-weight: 900;
+        line-height: 1;
+        background: linear-gradient(135deg, #c81e1e, #ff2e2e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .stat-label {
+        font-size: 20px;
+        color: var(--grey);
+        margin-top: 8px;
+        font-weight: 400;
+      }
+
+      .signal-card {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 12px;
+        padding: 28px 32px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        transition: all 0.3s ease;
+      }
+
+      .signal-card:hover {
+        border-color: var(--red);
+        box-shadow: 0 0 20px rgba(200, 30, 30, 0.1);
+      }
+
+      .signal-number {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        font-weight: 900;
+        color: var(--red);
+        min-width: 50px;
+      }
+
+      .signal-content h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+
+      .signal-content p {
+        font-size: 16px;
+        color: var(--grey);
+        line-height: 1.5;
+      }
+
+      .tier-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 24px;
+        margin-top: 32px;
+      }
+
+      .tier-card {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 12px;
+        padding: 32px 28px;
+      }
+
+      .tier-card h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+
+      .tier-card .tier-label {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 12px;
+      }
+
+      .tier-card ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .tier-card li {
+        font-size: 16px;
+        color: var(--grey);
+        line-height: 1.7;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .tier-card li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--red);
+      }
+
+      .workflow-step {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 20px;
+      }
+
+      .workflow-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #c81e1e, #8b1a1a);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        flex-shrink: 0;
+      }
+
+      .workflow-text h3 {
+        font-size: 20px;
+        margin-bottom: 4px;
+      }
+
+      .workflow-text p {
+        font-size: 15px;
+        color: var(--grey);
+      }
+
+      .break-slide {
+        align-items: center;
+        text-align: center;
+      }
+
+      .break-slide h1 {
+        font-size: 80px;
+      }
+
+      .break-slide .subtitle {
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .social-grid {
+        display: flex;
+        gap: 32px;
+        margin-top: 32px;
+        justify-content: center;
+      }
+
+      .social-card {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 12px;
+        padding: 24px 36px;
+        text-align: center;
+        min-width: 180px;
+      }
+
+      .social-card .platform {
+        font-size: 14px;
+        color: var(--grey);
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .social-card .handle {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--white);
+      }
+
+      .next-week {
+        margin-top: 48px;
+        padding: 32px 40px;
+        background: var(--grey-dark);
+        border: 1px solid var(--red);
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 0 30px rgba(200, 30, 30, 0.1);
+      }
+
+      .next-week .tag {
+        margin-bottom: 12px;
+      }
+
+      .arrow-connector {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin: 20px 0;
+      }
+
+      .arrow-connector .arrow {
+        font-size: 28px;
+        color: var(--red);
+      }
+
+      .arrow-connector .step {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 8px;
+        padding: 12px 20px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--white);
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      .controls-hint {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        color: var(--grey-dark);
+        z-index: 100;
+        pointer-events: none;
+      }
+
+      /* Speaker notes panel */
+      .notes-panel {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        border-top: 2px solid var(--red);
+        padding: 20px 40px;
+        max-height: 30vh;
+        overflow-y: auto;
+        z-index: 200;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--grey);
+      }
+
+      .notes-panel.visible {
+        display: block;
+      }
+      .notes-panel strong {
+        color: var(--white);
+      }
+      .notes-panel em {
+        color: var(--red);
+        font-style: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- SLIDE 1: Title -->
+    <div
+      class="slide active"
+      data-notes="Welcome everyone to the first ever How I AI. Tonight is about one thing: showing each other how we actually use AI to make money. Not theory, not hype. Real workflows, real revenue. Quick housekeeping: we will do a money round first where everyone gets 60 seconds, then I will do a 15-minute intel drop on what happened in AI this week, then dinner, then two builder spotlights. Let's get into it."
+    >
+      <div class="tag">Bali Start-ups &amp; Tech Community Presents</div>
+      <h1>How I <span class="red-glow">AI</span></h1>
+      <p
+        class="subtitle"
+        style="
+          font-size: 32px;
+          font-weight: 600;
+          color: var(--white);
+          margin-bottom: 12px;
+        "
+      >
+        Edition 1
+      </p>
+      <p class="subtitle">Seoul Soul Project, Canggu &mdash; 15 April 2026</p>
+      <div style="margin-top: 40px">
+        <p style="font-size: 16px; color: var(--grey)">
+          Builders show tools. Operators share workflows. Everyone leaves
+          sharper.
+        </p>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">01 / 15</span>
+    </div>
+
+    <!-- SLIDE 2: My Background -->
+    <div
+      class="slide"
+      data-notes="Quick background on me so you know who is talking. I have spent 5 plus years in B2B technology. I studied AI programmes at Oxford and MIT, and I have a legal background which helps with compliance and contracts. I co-founded Bali Start-ups and Tech Community, which is this group, now over 3,000 members across Meetup and WhatsApp. David and Goliath is my AI systems firm. We are Australia-founded, globally minded, and we build operating AI infrastructure across revenue, capacity, and AI security for ambitious teams. On the security side, I work closely with Oligo Security, who were selected as a runtime AI security vendor in the AWS Security Hub. We are working with security leaders at some of APAC's largest companies. So I sit across the builder side and the security side, which gives me a unique lens on what is happening in AI right now."
+    >
+      <div class="tag">My Background</div>
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 40px;
+          align-items: start;
+          margin-top: 16px;
+        "
+      >
+        <!-- Column 1: Josh Morrow -->
+        <div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              margin-bottom: 24px;
+            "
+          >
+            <div
+              style="
+                width: 56px;
+                height: 56px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #c81e1e, #8b1a1a);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                font-weight: 900;
+                color: white;
+              "
+            >
+              JM
+            </div>
+            <h2
+              style="
+                font-family: &quot;Playfair Display&quot;, serif;
+                font-size: 32px;
+                font-weight: 800;
+              "
+            >
+              Josh Morrow
+            </h2>
+          </div>
+          <ul style="list-style: none; padding: 0">
+            <li
+              style="
+                font-size: 17px;
+                color: var(--grey);
+                line-height: 1.8;
+                padding-left: 20px;
+                position: relative;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  top: 10px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: var(--red);
+                  display: inline-block;
+                "
+              ></span
+              >5+ years in B2B technology
+            </li>
+            <li
+              style="
+                font-size: 17px;
+                color: var(--grey);
+                line-height: 1.8;
+                padding-left: 20px;
+                position: relative;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  top: 10px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: var(--red);
+                  display: inline-block;
+                "
+              ></span
+              >Oxford/MIT AI Programmes / Legal Background
+            </li>
+            <li
+              style="
+                font-size: 17px;
+                color: var(--grey);
+                line-height: 1.8;
+                padding-left: 20px;
+                position: relative;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  top: 10px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: var(--red);
+                  display: inline-block;
+                "
+              ></span
+              >Co-Founder of Bali Start-Up &amp; Tech (3k+ folks on Meetup/WA)
+            </li>
+          </ul>
+        </div>
+        <!-- Column 2: David & Goliath -->
+        <div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              margin-bottom: 24px;
+            "
+          >
+            <div
+              style="
+                width: 56px;
+                height: 56px;
+                border-radius: 12px;
+                background: var(--grey-dark);
+                border: 1px solid var(--grey-border);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                font-weight: 900;
+                color: var(--red);
+              "
+            >
+              D&amp;G
+            </div>
+            <h2
+              style="
+                font-family: &quot;Playfair Display&quot;, serif;
+                font-size: 32px;
+                font-weight: 800;
+              "
+            >
+              David <span class="red">&amp;</span> Goliath
+            </h2>
+          </div>
+          <ul style="list-style: none; padding: 0">
+            <li
+              style="
+                font-size: 17px;
+                color: var(--grey);
+                line-height: 1.8;
+                padding-left: 20px;
+                position: relative;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  top: 10px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: var(--red);
+                  display: inline-block;
+                "
+              ></span
+              >AI systems firm for ambitious teams
+            </li>
+            <li
+              style="
+                font-size: 17px;
+                color: var(--grey);
+                line-height: 1.8;
+                padding-left: 20px;
+                position: relative;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  top: 10px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: var(--red);
+                  display: inline-block;
+                "
+              ></span
+              >Australia founded and globally minded
+            </li>
+            <li
+              style="
+                font-size: 17px;
+                color: var(--grey);
+                line-height: 1.8;
+                padding-left: 20px;
+                position: relative;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  top: 10px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: var(--red);
+                  display: inline-block;
+                "
+              ></span
+              >We build operating AI infrastructure across revenue, capacity
+              &amp; AI security
+            </li>
+          </ul>
+        </div>
+        <!-- Column 3: Oligo Security -->
+        <div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              margin-bottom: 24px;
+            "
+          >
+            <div
+              style="
+                width: 56px;
+                height: 56px;
+                border-radius: 12px;
+                background: var(--grey-dark);
+                border: 1px solid var(--grey-border);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                color: var(--red);
+              "
+            >
+              &#9671;
+            </div>
+            <h2
+              style="
+                font-family: &quot;Playfair Display&quot;, serif;
+                font-size: 32px;
+                font-weight: 800;
+              "
+            >
+              Oligo Security
+            </h2>
+          </div>
+          <ul style="list-style: none; padding: 0">
+            <li
+              style="
+                font-size: 17px;
+                color: var(--grey);
+                line-height: 1.8;
+                padding-left: 20px;
+                position: relative;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  top: 10px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: var(--red);
+                  display: inline-block;
+                "
+              ></span
+              >Oligo Security, selected as runtime AI security vendor in AWS
+              Security Hub
+            </li>
+            <li
+              style="
+                font-size: 17px;
+                color: var(--grey);
+                line-height: 1.8;
+                padding-left: 20px;
+                position: relative;
+              "
+            >
+              <span
+                style="
+                  position: absolute;
+                  left: 0;
+                  top: 10px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: var(--red);
+                  display: inline-block;
+                "
+              ></span
+              >Working with security leaders at APAC's largest companies
+            </li>
+          </ul>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">02 / 15</span>
+    </div>
+
+    <!-- SLIDE 3: Money Round -->
+    <div
+      class="slide"
+      data-notes="This is the energy setter for the night. Go around the room. Everyone gets 60 seconds max. The prompt is simple: tell us one way AI made you money, saved you money, or saved you serious time this week or this month. No pitches, no life stories. Just the tool, the workflow, and the result. I will go first to set the bar. Keep it tight, keep it real. If someone goes over 60 seconds, we clap them off. This is meant to be fun."
+    >
+      <div class="tag">6:30 PM</div>
+      <h1>Money Round</h1>
+      <div class="accent-line"></div>
+      <p
+        class="subtitle"
+        style="font-size: 28px; color: var(--white); margin-bottom: 16px"
+      >
+        60-second intros
+      </p>
+      <p class="subtitle" style="max-width: 800px">
+        One way AI made you money, saved you money,<br />or saved you serious
+        time. No pitches. Just results.
+      </p>
+      <div style="margin-top: 48px; display: flex; gap: 40px">
+        <div>
+          <p style="font-size: 48px; font-weight: 900; color: var(--red)">
+            60s
+          </p>
+          <p
+            style="
+              font-size: 14px;
+              color: var(--grey);
+              letter-spacing: 2px;
+              text-transform: uppercase;
+            "
+          >
+            Per Person
+          </p>
+        </div>
+        <div>
+          <p style="font-size: 48px; font-weight: 900; color: var(--white)">
+            3
+          </p>
+          <p
+            style="
+              font-size: 14px;
+              color: var(--grey);
+              letter-spacing: 2px;
+              text-transform: uppercase;
+            "
+          >
+            Parts: Tool / Workflow / Result
+          </p>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">03 / 15</span>
+    </div>
+
+    <!-- SLIDE 3: AI Intel Drop Intro -->
+    <div
+      class="slide"
+      data-notes="Transition into the intel drop. This week was massive in AI. I track signals daily through an automated system that scans 50+ sources and scores them on importance, practicality, enterprise relevance, and novelty. I am going to give you the top 5 signals from the last 7 days and tell you exactly what each one means for people in this room. Let's go."
+    >
+      <div class="tag">7:00 PM &mdash; AI Intel Drop</div>
+      <h2>This Week in <span class="red">AI</span></h2>
+      <div class="accent-line"></div>
+      <p class="subtitle">
+        The 5 signals that matter most from the last 7 days.<br />What happened,
+        and what it means for you.
+      </p>
+      <div style="margin-top: 48px; display: flex; gap: 16px">
+        <div class="arrow-connector">
+          <span class="step">50+ Sources</span>
+          <span class="arrow">&rarr;</span>
+          <span class="step">Signal Scoring</span>
+          <span class="arrow">&rarr;</span>
+          <span class="step">Top 5 Tonight</span>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">04 / 15</span>
+    </div>
+
+    <!-- SLIDE 4: Signal 1 — Stanford AI Index -->
+    <div
+      class="slide"
+      data-notes="This is the biggest signal of the week and possibly the quarter. Stanford released their annual AI Index report. Last year, AI agents could only complete tasks successfully 20% of the time. This year, that number jumped to 77.3%. That is not incremental improvement, that is a phase change. What this means for you: if you tried AI agents six months ago and they felt flaky, unreliable, not ready, it is time to try again. The window to be an early adopter is closing fast. Also from the same report: generative AI reached 53% population adoption in just 3 years. For context, smartphones took 7 years to hit that number. This is moving faster than any technology in history."
+    >
+      <div class="tag">Signal 01</div>
+      <div class="two-col">
+        <div>
+          <h2 style="font-size: 42px">Stanford AI Index 2026</h2>
+          <div class="accent-line"></div>
+          <p class="subtitle">
+            AI agent task success rate jumped from 20% to 77% in 12 months.
+            GenAI hit 53% population adoption in 3 years.
+          </p>
+          <div
+            style="
+              margin-top: 32px;
+              padding: 20px 24px;
+              background: var(--grey-dark);
+              border-left: 3px solid var(--red);
+              border-radius: 0 8px 8px 0;
+            "
+          >
+            <p style="font-size: 16px; color: var(--white); font-weight: 600">
+              What this means for you:
+            </p>
+            <p style="font-size: 15px; color: var(--grey); margin-top: 8px">
+              If you tried AI agents 6 months ago and they felt unreliable, try
+              again. The reliability gap just closed. The early-mover window is
+              shrinking.
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <p style="font-size: 18px; color: var(--grey); margin-bottom: 8px">
+            Agent Success Rate
+          </p>
+          <div
+            style="
+              display: flex;
+              align-items: flex-end;
+              gap: 32px;
+              margin-top: 16px;
+            "
+          >
+            <div>
+              <div
+                style="
+                  width: 80px;
+                  height: 80px;
+                  background: var(--grey-dark);
+                  border-radius: 8px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span
+                  style="font-size: 28px; font-weight: 800; color: var(--grey)"
+                  >20%</span
+                >
+              </div>
+              <p style="font-size: 13px; color: var(--grey); margin-top: 8px">
+                2025
+              </p>
+            </div>
+            <div
+              style="font-size: 32px; color: var(--red); margin-bottom: 20px"
+            >
+              &rarr;
+            </div>
+            <div>
+              <div
+                style="
+                  width: 120px;
+                  height: 120px;
+                  background: linear-gradient(135deg, #c81e1e, #8b1a1a);
+                  border-radius: 12px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  box-shadow: 0 0 30px rgba(200, 30, 30, 0.3);
+                "
+              >
+                <span style="font-size: 40px; font-weight: 900; color: white"
+                  >77%</span
+                >
+              </div>
+              <p style="font-size: 13px; color: var(--grey); margin-top: 8px">
+                2026
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">05 / 15</span>
+    </div>
+
+    <!-- SLIDE 5: Signal 2 — Project Glasswing -->
+    <div
+      class="slide"
+      data-notes="This one is a wake-up call. Anthropic, the company behind Claude, built a model so capable at finding security vulnerabilities that they decided not to release it publicly. It is called Project Glasswing, codename Mythos Preview. This model autonomously found tens of thousands of zero-day vulnerabilities across real software, with an 83% first-attempt exploit success rate. They withheld it because in the wrong hands, it would be devastating. Why this matters to you: the security landscape just changed permanently. If you are building anything connected to the internet, your patch management and security hygiene just became existential. The defenders have a window right now, but it will not stay open forever because equivalent capability will eventually reach bad actors."
+    >
+      <div class="tag">Signal 02</div>
+      <h2 style="font-size: 42px">
+        Anthropic's Model Too<br />Dangerous to Release
+      </h2>
+      <div class="accent-line"></div>
+      <div style="display: flex; gap: 48px; margin-top: 16px">
+        <div style="flex: 1">
+          <p class="subtitle">
+            Project Glasswing: first frontier model deliberately withheld from
+            public release due to offensive security capability.
+          </p>
+          <div
+            style="
+              margin-top: 24px;
+              padding: 20px 24px;
+              background: var(--grey-dark);
+              border-left: 3px solid var(--red);
+              border-radius: 0 8px 8px 0;
+            "
+          >
+            <p style="font-size: 16px; color: var(--white); font-weight: 600">
+              What this means for you:
+            </p>
+            <p style="font-size: 15px; color: var(--grey); margin-top: 8px">
+              Security hygiene is no longer optional. Patch management is
+              existential. The defender window is open but finite.
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            min-width: 280px;
+          "
+        >
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 10px;
+              padding: 20px 24px;
+              text-align: center;
+            "
+          >
+            <p style="font-size: 36px; font-weight: 900; color: var(--red)">
+              83%
+            </p>
+            <p style="font-size: 13px; color: var(--grey); margin-top: 4px">
+              First-attempt exploit success
+            </p>
+          </div>
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 10px;
+              padding: 20px 24px;
+              text-align: center;
+            "
+          >
+            <p style="font-size: 36px; font-weight: 900; color: var(--red)">
+              10,000+
+            </p>
+            <p style="font-size: 13px; color: var(--grey); margin-top: 4px">
+              Zero-days found autonomously
+            </p>
+          </div>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">06 / 15</span>
+    </div>
+
+    <!-- SLIDE 8: And Just This Week — Glasswing Deep Dive -->
+    <div
+      class="slide"
+      data-notes="Let me go deeper on this one because it is genuinely unprecedented. Anthropic sandboxed their newest model, Mythos, and essentially told it to escape. It chained together multiple vulnerabilities, broke containment, and got out. That is not science fiction, that happened this month. Mythos has uncovered thousands of zero-day vulnerabilities across every major operating system and browser. Not theoretical vulnerabilities, real exploitable ones with an 83 percent first-attempt success rate. Anthropic's response was remarkable: they refused to release it publicly. Instead, they launched Project Glasswing as a defensive-only coalition with Apple, Google, Nvidia, and others. The takeaway here is that Anthropic's new model literally broke out of its sandbox. We are in a new era of AI capability and the security implications are massive."
+    >
+      <div class="tag">Latest Developments</div>
+      <h2
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          font-size: 56px;
+          font-style: italic;
+        "
+      >
+        And just this week...
+      </h2>
+      <div
+        style="display: flex; gap: 48px; margin-top: 32px; align-items: start"
+      >
+        <!-- Left: Tweet embed recreation -->
+        <div
+          style="
+            background: #000;
+            border: 1px solid var(--grey-border);
+            border-radius: 16px;
+            padding: 20px;
+            min-width: 340px;
+            max-width: 380px;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 12px;
+              margin-bottom: 16px;
+            "
+          >
+            <div
+              style="
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #c81e1e, #8b1a1a);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 16px;
+                font-weight: 800;
+                color: white;
+              "
+            >
+              A
+            </div>
+            <div>
+              <p style="font-size: 15px; font-weight: 700; color: var(--white)">
+                Anthropic <span style="color: var(--red)">&#10004;</span>
+              </p>
+              <p style="font-size: 13px; color: var(--grey)">@AnthropicAI</p>
+            </div>
+          </div>
+          <p
+            style="
+              font-size: 15px;
+              color: var(--white);
+              line-height: 1.5;
+              margin-bottom: 16px;
+            "
+          >
+            Introducing Project Glasswing: an urgent initiative to help secure
+            the world's most critical software.
+          </p>
+          <p
+            style="
+              font-size: 15px;
+              color: var(--white);
+              line-height: 1.5;
+              margin-bottom: 20px;
+            "
+          >
+            It's powered by our newest frontier model, Claude Mythos Preview,
+            which can find software vulnerabilities better than all but the most
+            skilled humans.
+          </p>
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 12px;
+              padding: 16px;
+              margin-bottom: 16px;
+            "
+          >
+            <p
+              style="
+                font-size: 22px;
+                font-weight: 900;
+                color: var(--white);
+                line-height: 1.2;
+              "
+            >
+              Project<br />Glasswing
+            </p>
+            <p style="font-size: 12px; color: var(--grey); margin-top: 8px">
+              Securing critical software for the AI era
+            </p>
+          </div>
+          <p style="font-size: 12px; color: var(--grey)">
+            2:06 AM &middot; Apr 8, 2026 &middot;
+            <span style="color: var(--white); font-weight: 600"
+              >14.4M Views</span
+            >
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 24px;
+              margin-top: 12px;
+              font-size: 13px;
+              color: var(--grey);
+            "
+          >
+            <span>1.2K replies</span>
+            <span>7K reposts</span>
+            <span>28K likes</span>
+          </div>
+        </div>
+        <!-- Right: Key points -->
+        <div
+          style="
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding-top: 8px;
+          "
+        >
+          <div style="display: flex; align-items: start; gap: 16px">
+            <span style="color: var(--red); font-size: 24px; margin-top: 2px"
+              >&#8226;</span
+            >
+            <p style="font-size: 20px; color: var(--white); line-height: 1.5">
+              Anthropic sandboxed its new model "Mythos" and told it to escape,
+              it chained vulnerabilities, broke containment and got out
+            </p>
+          </div>
+          <div style="display: flex; align-items: start; gap: 16px">
+            <span style="color: var(--red); font-size: 24px; margin-top: 2px"
+              >&#8226;</span
+            >
+            <p style="font-size: 20px; color: var(--white); line-height: 1.5">
+              Mythos has uncovered "thousands" of zero-days across every major
+              OS and browser
+            </p>
+          </div>
+          <div style="display: flex; align-items: start; gap: 16px">
+            <span style="color: var(--red); font-size: 24px; margin-top: 2px"
+              >&#8226;</span
+            >
+            <p style="font-size: 20px; color: var(--white); line-height: 1.5">
+              Anthropic is refusing public release and launching Glasswing, a
+              defensive-only coalition with Apple, Google, Nvidia etc
+            </p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 32px; text-align: center">
+        <p style="font-size: 18px; font-weight: 600; color: var(--red)">
+          Anthropic's new model broke out of its sandbox
+        </p>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">07 / 15</span>
+    </div>
+
+    <!-- SLIDE 9: Signal 3 — DeepSeek V4 -->
+    <div
+      class="slide"
+      data-notes="DeepSeek just dropped their V4 model. One trillion parameters, Mixture-of-Experts architecture, and here is the kicker: they trained it for 5.2 million dollars. For context, frontier models from OpenAI and Google cost hundreds of millions to train. And the pricing? 28 cents per million input tokens versus 2 dollars plus for western models. Performance is near-frontier level. What this means practically: your AI budget assumptions from even 6 months ago are already stale. The cost of world-class AI is collapsing. This is great news for builders and operators in this room because it means you can do more with less. The barriers to entry just got dramatically lower."
+    >
+      <div class="tag">Signal 03</div>
+      <div class="two-col">
+        <div>
+          <h2 style="font-size: 42px">DeepSeek V4</h2>
+          <div class="accent-line"></div>
+          <p class="subtitle">
+            Near-frontier performance. Fraction of the cost. One trillion
+            parameters trained for $5.2M.
+          </p>
+          <div
+            style="
+              margin-top: 24px;
+              padding: 20px 24px;
+              background: var(--grey-dark);
+              border-left: 3px solid var(--red);
+              border-radius: 0 8px 8px 0;
+            "
+          >
+            <p style="font-size: 16px; color: var(--white); font-weight: 600">
+              What this means for you:
+            </p>
+            <p style="font-size: 15px; color: var(--grey); margin-top: 8px">
+              Your AI cost assumptions from 6 months ago are stale. Frontier
+              capability is getting dramatically cheaper. Barriers to entry are
+              collapsing.
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+          "
+        >
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 10px;
+              padding: 24px;
+              text-align: center;
+            "
+          >
+            <p
+              style="
+                font-size: 14px;
+                color: var(--grey);
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin-bottom: 8px;
+              "
+            >
+              Cost Per Million Tokens
+            </p>
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 24px;
+              "
+            >
+              <div>
+                <p
+                  style="
+                    font-size: 32px;
+                    font-weight: 800;
+                    color: var(--grey);
+                    text-decoration: line-through;
+                  "
+                >
+                  $2.00+
+                </p>
+                <p style="font-size: 12px; color: var(--grey)">
+                  Western Models
+                </p>
+              </div>
+              <span style="font-size: 24px; color: var(--red)">&rarr;</span>
+              <div>
+                <p style="font-size: 40px; font-weight: 900; color: var(--red)">
+                  $0.28
+                </p>
+                <p style="font-size: 12px; color: var(--grey)">DeepSeek V4</p>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 10px;
+              padding: 20px 24px;
+              text-align: center;
+            "
+          >
+            <p style="font-size: 40px; font-weight: 900; color: var(--white)">
+              1T
+            </p>
+            <p style="font-size: 13px; color: var(--grey)">
+              Parameters (Mixture-of-Experts)
+            </p>
+          </div>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">08 / 15</span>
+    </div>
+
+    <!-- SLIDE 7: Signal 4 — Google AI Mode -->
+    <div
+      class="slide"
+      data-notes="Google launched AI Mode in Search. What this means is that when someone searches for something, Google now often gives them the complete answer directly, synthesised by AI, without the user ever clicking through to your website. If your business depends on organic search traffic, this is a structural threat. It is not coming, it is here. The shift is from SEO, search engine optimisation, to AEO, answer engine optimisation. The question is no longer 'how do I rank on page one?' It is 'how do I get cited in the AI answer?' This requires structured data, authoritative content, and being the definitive source on your topic. If you are building content or running a business that depends on web traffic, this should be top of mind."
+    >
+      <div class="tag">Signal 04</div>
+      <h2 style="font-size: 42px">
+        Google AI Mode Is<br />Eating Your Traffic
+      </h2>
+      <div class="accent-line"></div>
+      <div style="display: flex; gap: 48px; margin-top: 16px">
+        <div style="flex: 1">
+          <p class="subtitle">
+            Google now answers questions directly with AI. Users get what they
+            need without clicking through to your site.
+          </p>
+          <div
+            style="
+              margin-top: 24px;
+              padding: 20px 24px;
+              background: var(--grey-dark);
+              border-left: 3px solid var(--red);
+              border-radius: 0 8px 8px 0;
+            "
+          >
+            <p style="font-size: 16px; color: var(--white); font-weight: 600">
+              What this means for you:
+            </p>
+            <p style="font-size: 15px; color: var(--grey); margin-top: 8px">
+              The game changed from ranking on page one to being cited in the AI
+              answer. SEO is becoming AEO (Answer Engine Optimisation).
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+          "
+        >
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 12px;
+              padding: 24px 32px;
+              width: 100%;
+              text-align: center;
+            "
+          >
+            <p
+              style="
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--grey);
+                text-decoration: line-through;
+              "
+            >
+              SEO
+            </p>
+            <p style="font-size: 13px; color: var(--grey)">
+              Search Engine Optimisation
+            </p>
+          </div>
+          <span style="font-size: 28px; color: var(--red)">&darr;</span>
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--red);
+              border-radius: 12px;
+              padding: 24px 32px;
+              width: 100%;
+              text-align: center;
+              box-shadow: 0 0 20px rgba(200, 30, 30, 0.15);
+            "
+          >
+            <p style="font-size: 24px; font-weight: 800; color: var(--red)">
+              AEO
+            </p>
+            <p style="font-size: 13px; color: var(--grey)">
+              Answer Engine Optimisation
+            </p>
+          </div>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">09 / 15</span>
+    </div>
+
+    <!-- SLIDE 8: Signal 5 — Shopify AI Toolkit -->
+    <div
+      class="slide"
+      data-notes="Shopify just launched their AI Toolkit and this is a big deal because it is the first major SaaS platform to ship agent-native infrastructure. Not a chatbot overlay, not a copilot sidebar, but actual infrastructure where AI agents can manage your store: inventory, pricing, analytics, customer service, all through real APIs with live validation. It supports Claude Code, Codex, Cursor, and Gemini CLI via MCP server architecture. What this means: a single operator can now manage store operations that previously required a whole team. And Shopify is just the template. Every SaaS platform will follow. If you are building on any SaaS platform, watch for their agent toolkit because it is coming."
+    >
+      <div class="tag">Signal 05</div>
+      <h2 style="font-size: 42px">Shopify Ships<br />Agent-Native Commerce</h2>
+      <div class="accent-line"></div>
+      <div style="display: flex; gap: 48px; margin-top: 16px">
+        <div style="flex: 1">
+          <p class="subtitle">
+            First major SaaS platform to ship infrastructure where AI agents
+            manage your store directly. Not a chatbot overlay. Real agent
+            infrastructure.
+          </p>
+          <div
+            style="
+              margin-top: 24px;
+              padding: 20px 24px;
+              background: var(--grey-dark);
+              border-left: 3px solid var(--red);
+              border-radius: 0 8px 8px 0;
+            "
+          >
+            <p style="font-size: 16px; color: var(--white); font-weight: 600">
+              What this means for you:
+            </p>
+            <p style="font-size: 15px; color: var(--grey); margin-top: 8px">
+              One operator can now do what required a team. Every SaaS platform
+              will follow Shopify's lead. Watch for agent toolkits from your
+              vendors.
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            justify-content: center;
+          "
+        >
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 8px;
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+            "
+          >
+            <span style="color: var(--red); font-size: 18px">&#9654;</span>
+            <span style="font-size: 15px; font-weight: 600">Claude Code</span>
+          </div>
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 8px;
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+            "
+          >
+            <span style="color: var(--red); font-size: 18px">&#9654;</span>
+            <span style="font-size: 15px; font-weight: 600">OpenAI Codex</span>
+          </div>
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 8px;
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+            "
+          >
+            <span style="color: var(--red); font-size: 18px">&#9654;</span>
+            <span style="font-size: 15px; font-weight: 600">Cursor</span>
+          </div>
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 8px;
+              padding: 14px 20px;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+            "
+          >
+            <span style="color: var(--red); font-size: 18px">&#9654;</span>
+            <span style="font-size: 15px; font-weight: 600">Gemini CLI</span>
+          </div>
+          <p
+            style="
+              font-size: 12px;
+              color: var(--grey);
+              text-align: center;
+              margin-top: 4px;
+            "
+          >
+            Via MCP Server Architecture
+          </p>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">10 / 15</span>
+    </div>
+
+    <!-- SLIDE 9: Getting Started -->
+    <div
+      class="slide"
+      data-notes="Now, I know not everyone in this room is at the same level, so here is a quick framework for wherever you are. Tier 1, if you have never really used AI seriously: pick one thing you do every day, email, research, writing, and commit to using AI for that one thing for two weeks straight. Use the free tier of ChatGPT, Claude, or Gemini. The goal is to build the muscle. Tier 2, if you are using AI but not systematically: build a personal AI stack. Different tools for different jobs. Claude for deep thinking and writing, ChatGPT for quick answers, Perplexity for research. And start saving your best prompts. Your prompts are your intellectual property. Tier 3, if you are ready to build: look at agent frameworks like Claude Code, Cursor, MCP servers. The 77% success rate from that Stanford report means agents are production-ready. Start with internal operations, not customer-facing, to build your confidence."
+    >
+      <div class="tag">How to Get Started</div>
+      <h2>Pick Your <span class="red">Level</span></h2>
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-label">Tier 1: Explorer</div>
+          <h3>Never Used AI Seriously</h3>
+          <ul>
+            <li>Pick one daily task (email, research, writing)</li>
+            <li>Use free tier: ChatGPT, Claude, or Gemini</li>
+            <li>Commit to 2 weeks straight</li>
+            <li>Goal: build the muscle</li>
+          </ul>
+        </div>
+        <div
+          class="tier-card"
+          style="
+            border-color: var(--red);
+            box-shadow: 0 0 20px rgba(200, 30, 30, 0.1);
+          "
+        >
+          <div class="tier-label">Tier 2: Operator</div>
+          <h3>Using AI, Not Systematically</h3>
+          <ul>
+            <li>Build a personal AI stack</li>
+            <li>
+              Claude for deep work, ChatGPT for quick answers, Perplexity for
+              research
+            </li>
+            <li>Start saving your best prompts</li>
+            <li>Your prompts are your IP</li>
+          </ul>
+        </div>
+        <div class="tier-card">
+          <div class="tier-label">Tier 3: Builder</div>
+          <h3>Ready to Build</h3>
+          <ul>
+            <li>Agent frameworks: Claude Code, Cursor, MCP</li>
+            <li>77% success rate = production ready</li>
+            <li>Start with internal ops, not customer-facing</li>
+            <li>Build confidence, then scale</li>
+          </ul>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">11 / 15</span>
+    </div>
+
+    <!-- SLIDE 13: Token Optimisation Setup -->
+    <div
+      class="slide"
+      data-notes="Here is a practical tip you can take home tonight. If you are using Claude Code, or any AI coding tool, you are probably burning tokens on the most expensive model for every single task. Here is the setup I use: run your daily Claude Code session with Sonnet as the default executor. That gives you 90 percent of the intelligence at about 20 percent of the cost. Then in your project's CLAUDE.md file, you add a rule that says when facing architectural decisions, ambiguous requirements, multi-file refactors, or complex debugging, use the Agent tool with model Opus to reason through the approach before executing. For everything else, file reads, edits, grep, tests, single-file changes, Sonnet handles them directly. The Opus advisor reads the same shared context as Sonnet, so there is no loss of continuity. This is the advisor strategy that Anthropic themselves just announced. Take a photo of this slide. It will save you a lot of money."
+    >
+      <h2
+        style="
+          font-family: &quot;Playfair Display&quot;, serif;
+          font-size: 48px;
+        "
+      >
+        Token optimisation setup
+        <span
+          style="
+            font-size: 24px;
+            color: var(--grey);
+            font-family: &quot;Inter&quot;, sans-serif;
+            font-weight: 400;
+          "
+          >(take a photo)</span
+        >
+      </h2>
+      <div
+        style="display: flex; gap: 48px; margin-top: 28px; align-items: start"
+      >
+        <!-- Left: Setup instructions -->
+        <div style="flex: 1">
+          <p
+            style="
+              font-size: 16px;
+              color: var(--red);
+              font-style: italic;
+              margin-bottom: 8px;
+            "
+          >
+            The prompt that sets Sonnet default and Opus for complex tasks:
+          </p>
+          <p
+            style="
+              font-size: 22px;
+              font-weight: 800;
+              color: var(--red);
+              margin-bottom: 24px;
+            "
+          >
+            90% intelligence at 20% cost
+          </p>
+          <p
+            style="
+              font-size: 17px;
+              color: var(--white);
+              line-height: 1.6;
+              margin-bottom: 20px;
+            "
+          >
+            Run your daily Claude Code session with Sonnet as the default
+            executor:
+            <code
+              style="
+                background: var(--grey-dark);
+                padding: 3px 8px;
+                border-radius: 4px;
+                font-size: 15px;
+                color: var(--red);
+                border: 1px solid var(--grey-border);
+              "
+              >claude --model claude-sonnet-4-6</code
+            >. Then in your project's
+            <code
+              style="
+                background: var(--grey-dark);
+                padding: 3px 8px;
+                border-radius: 4px;
+                font-size: 15px;
+                color: var(--red);
+                border: 1px solid var(--grey-border);
+              "
+              >CLAUDE.md</code
+            >, add:
+          </p>
+          <div
+            style="
+              background: #0a0a0a;
+              border: 1px solid var(--grey-border);
+              border-radius: 10px;
+              padding: 20px 24px;
+              font-family: monospace;
+              font-size: 14px;
+              line-height: 1.7;
+              color: var(--grey);
+            "
+          >
+            <span style="color: var(--white)"
+              >"When facing architectural decisions, ambiguous requirements,
+              multi-file refactors, or complex debugging, use the Agent tool
+              with</span
+            >
+            <span style="color: var(--red)">model: "opus"</span>
+            <span style="color: var(--white)"
+              >to reason through the approach before executing. For all other
+              tasks (file reads, edits, grep, tests, single-file changes),
+              handle them directly without escalating. The Opus advisor reads
+              the same shared context, so there is no loss of continuity."</span
+            >
+          </div>
+        </div>
+        <!-- Right: Advisor strategy visual -->
+        <div style="min-width: 340px">
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 16px;
+              padding: 24px;
+              margin-bottom: 16px;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 16px;
+              "
+            >
+              <div
+                style="
+                  width: 36px;
+                  height: 36px;
+                  border-radius: 50%;
+                  background: linear-gradient(135deg, #c81e1e, #8b1a1a);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 14px;
+                  font-weight: 900;
+                  color: white;
+                "
+              >
+                C
+              </div>
+              <div>
+                <p
+                  style="font-size: 14px; font-weight: 700; color: var(--white)"
+                >
+                  Claude <span style="color: var(--red)">&#10004;</span>
+                </p>
+                <p style="font-size: 12px; color: var(--grey)">@claudeai</p>
+              </div>
+            </div>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--white);
+                line-height: 1.5;
+                font-weight: 700;
+              "
+            >
+              We're bringing the advisor strategy to the Claude Platform.
+            </p>
+            <p
+              style="
+                font-size: 14px;
+                color: var(--grey);
+                line-height: 1.5;
+                margin-top: 8px;
+              "
+            >
+              Pair Opus as an advisor with Sonnet or Haiku as an executor, and
+              get near Opus-level intelligence in your agents at a fraction of
+              the cost.
+            </p>
+          </div>
+          <!-- Advisor strategy diagram -->
+          <div
+            style="
+              background: var(--grey-dark);
+              border: 1px solid var(--grey-border);
+              border-radius: 12px;
+              padding: 20px;
+            "
+          >
+            <p
+              style="
+                font-size: 13px;
+                color: var(--grey);
+                text-align: center;
+                margin-bottom: 16px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+              "
+            >
+              The Advisor Strategy
+            </p>
+            <div
+              style="
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                gap: 16px;
+              "
+            >
+              <div style="text-align: center">
+                <div
+                  style="
+                    background: linear-gradient(135deg, #c81e1e, #8b1a1a);
+                    border-radius: 8px;
+                    padding: 12px 20px;
+                    margin-bottom: 8px;
+                  "
+                >
+                  <p style="font-size: 14px; font-weight: 800; color: white">
+                    Executor
+                  </p>
+                  <p style="font-size: 11px; color: rgba(255, 255, 255, 0.7)">
+                    Sonnet
+                  </p>
+                </div>
+                <p style="font-size: 11px; color: var(--grey)">
+                  Runs every turn
+                </p>
+              </div>
+              <div style="font-size: 20px; color: var(--red)">&#8644;</div>
+              <div style="text-align: center">
+                <div
+                  style="
+                    background: linear-gradient(135deg, #c81e1e, #8b1a1a);
+                    border-radius: 8px;
+                    padding: 12px 20px;
+                    margin-bottom: 8px;
+                  "
+                >
+                  <p style="font-size: 14px; font-weight: 800; color: white">
+                    Advisor
+                  </p>
+                  <p style="font-size: 11px; color: rgba(255, 255, 255, 0.7)">
+                    Opus
+                  </p>
+                </div>
+                <p style="font-size: 11px; color: var(--grey)">On demand</p>
+              </div>
+            </div>
+            <div
+              style="
+                text-align: center;
+                margin-top: 16px;
+                padding-top: 12px;
+                border-top: 1px solid var(--grey-border);
+              "
+            >
+              <p style="font-size: 12px; color: var(--grey)">
+                Shared context &mdash; no loss of continuity
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">12 / 15</span>
+    </div>
+
+    <!-- SLIDE 14: Dinner Break -->
+    <div
+      class="slide break-slide"
+      data-notes="Dinner break. Encourage people to order food and drinks. This is mandatory. Use this time to mingle. The best conversations happen over food. We will reconvene at 7:30 sharp for the builder spotlights. Remind people to think about what they want to ask the builders."
+    >
+      <div class="tag">7:15 PM</div>
+      <h1>Dinner &amp; Drinks</h1>
+      <div class="accent-line" style="margin: 24px auto"></div>
+      <p class="subtitle" style="font-size: 24px">
+        Order up. Best conversations happen over food.
+      </p>
+      <p class="subtitle" style="font-size: 18px; margin-top: 16px">
+        Builder Spotlights start at 7:30 sharp.
+      </p>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">13 / 15</span>
+    </div>
+
+    <!-- SLIDE 11: Builder Spotlights -->
+    <div
+      class="slide break-slide"
+      data-notes="Introduce the builder spotlights segment. Two builders, 10 minutes each, plus 5 minutes Q and A. The format: show us what you built, how you built it, and what it does for your business or your clients. Keep it practical. The audience can ask questions after each presentation. Introduce each builder by name and what they are working on."
+    >
+      <div class="tag">7:30 PM</div>
+      <h1>Builder <span class="red">Spotlights</span></h1>
+      <div class="accent-line" style="margin: 24px auto"></div>
+      <div
+        style="
+          display: flex;
+          gap: 40px;
+          justify-content: center;
+          margin-top: 32px;
+        "
+      >
+        <div
+          style="
+            background: var(--grey-dark);
+            border: 1px solid var(--grey-border);
+            border-radius: 12px;
+            padding: 32px 40px;
+            text-align: center;
+            min-width: 260px;
+          "
+        >
+          <p style="font-size: 48px; font-weight: 900; color: var(--red)">01</p>
+          <p
+            style="
+              font-size: 18px;
+              color: var(--white);
+              font-weight: 600;
+              margin-top: 8px;
+            "
+          >
+            10 min + 5 min Q&amp;A
+          </p>
+          <p style="font-size: 14px; color: var(--grey); margin-top: 8px">
+            What you built. How you built it.<br />What it does for your
+            business.
+          </p>
+        </div>
+        <div
+          style="
+            background: var(--grey-dark);
+            border: 1px solid var(--grey-border);
+            border-radius: 12px;
+            padding: 32px 40px;
+            text-align: center;
+            min-width: 260px;
+          "
+        >
+          <p style="font-size: 48px; font-weight: 900; color: var(--red)">02</p>
+          <p
+            style="
+              font-size: 18px;
+              color: var(--white);
+              font-weight: 600;
+              margin-top: 8px;
+            "
+          >
+            10 min + 5 min Q&amp;A
+          </p>
+          <p style="font-size: 14px; color: var(--grey); margin-top: 8px">
+            What you built. How you built it.<br />What it does for your
+            business.
+          </p>
+        </div>
+      </div>
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">14 / 15</span>
+    </div>
+
+    <!-- SLIDE 12: Close / Socials / Next Week -->
+    <div
+      class="slide break-slide"
+      data-notes="Closing slide. Thank everyone for coming to the first ever How I AI. This is going to be a recurring series and it only gets better from here. Point people to Josh's socials for more AI content between events. Then tease next week's edition: we are going deep on Paperclip and Hermes workflows. Paperclip is about turning conversations into revenue, and Hermes is the messaging and outreach layer. If you want to see how operators are using these tools to automate entire revenue pipelines, do not miss Edition 2. Remind people to RSVP on the BSTC Meetup page. Thank Seoul Soul Project for hosting. Networking continues from here."
+    >
+      <div class="tag">Thank You</div>
+      <h1 style="font-size: 64px">
+        See You at<br />Edition <span class="red">2</span>
+      </h1>
+      <div class="accent-line" style="margin: 24px auto"></div>
+
+      <div class="social-grid">
+        <div class="social-card">
+          <p class="platform">YouTube</p>
+          <p class="handle">@joshbuildswithai</p>
+        </div>
+        <div class="social-card">
+          <p class="platform">Instagram</p>
+          <p class="handle">@joshbuildswithai</p>
+        </div>
+        <div class="social-card">
+          <p class="platform">TikTok</p>
+          <p class="handle">@joshbuildswithai</p>
+        </div>
+      </div>
+
+      <div class="next-week">
+        <div class="tag">Next Week &mdash; Edition 2</div>
+        <h3 style="font-size: 28px; margin-top: 8px">
+          Paperclip &amp; Hermes Workflows
+        </h3>
+        <p style="font-size: 16px; color: var(--grey); margin-top: 8px">
+          Turning conversations into revenue. Automating outreach at scale.
+        </p>
+      </div>
+
+      <span class="bstc-watermark">BSTC</span>
+      <span class="slide-number">15 / 15</span>
+    </div>
+
+    <!-- Notes panel -->
+    <div class="notes-panel" id="notesPanel"></div>
+    <div class="controls-hint">
+      Arrow keys to navigate &middot; N to toggle speaker notes &middot; F for
+      fullscreen
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const notesPanel = document.getElementById("notesPanel");
+      let currentSlide = 0;
+      let notesVisible = false;
+
+      function showSlide(index) {
+        slides.forEach((s) => s.classList.remove("active"));
+        slides[index].classList.add("active");
+        currentSlide = index;
+        if (notesVisible) {
+          notesPanel.innerHTML =
+            slides[index].getAttribute("data-notes") ||
+            "No notes for this slide.";
+        }
+      }
+
+      function toggleNotes() {
+        notesVisible = !notesVisible;
+        notesPanel.classList.toggle("visible", notesVisible);
+        if (notesVisible) {
+          notesPanel.innerHTML =
+            slides[currentSlide].getAttribute("data-notes") ||
+            "No notes for this slide.";
+        }
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === " ") {
+          e.preventDefault();
+          if (currentSlide < slides.length - 1) showSlide(currentSlide + 1);
+        } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+          e.preventDefault();
+          if (currentSlide > 0) showSlide(currentSlide - 1);
+        } else if (e.key === "n" || e.key === "N") {
+          toggleNotes();
+        } else if (e.key === "f" || e.key === "F") {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+          } else {
+            document.exitFullscreen();
+          }
+        }
+      });
+
+      // Touch support for mobile/tablet
+      let touchStartX = 0;
+      document.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+      });
+      document.addEventListener("touchend", (e) => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0 && currentSlide < slides.length - 1)
+            showSlide(currentSlide + 1);
+          else if (diff < 0 && currentSlide > 0) showSlide(currentSlide - 1);
+        }
+      });
+    </script>
+  </body>
+</html>

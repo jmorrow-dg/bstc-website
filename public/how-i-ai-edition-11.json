@@ -1,0 +1,83 @@
+{
+  "edition": 11,
+  "date": "24 June 2026",
+  "venue": "Seoul Soul Project, Canggu",
+  "next_edition_date": "1 JULY",
+  "source_count": "50+",
+  "theme_intro": "Four signals from the last ten days. What happened, and what it means for you.\nThe theme this week: the model race is cooling. The fight has moved to the rails around the model, implementation, governance, distribution, power and trust. Own your slice.",
+  "jargon": [
+    ["Ambient agent", "An agent that acts on its own initiative, following a channel and flagging what matters without being asked. Claude Tag's new mode."],
+    ["Systems integrator", "A firm that builds and delivers technology for other companies. OpenAI just enlisted the biggest ones to ship its AI."],
+    ["Capex", "Capital expenditure, the money spent building long-term assets like data centres. Microsoft is committing around $190 billion of it to AI."],
+    ["Show cause order", "A regulator's demand that you justify the existing rules or propose new ones. FERC just aimed six of them at the power grid."],
+    ["Export controls", "Government rules that restrict which AI models can be sold across borders. The backdrop to Anthropic's push into Asia."]
+  ],
+  "signals": [
+    {
+      "headline": "Claude Tag: AI Joins\nYour Team in Slack",
+      "blurb": "Today Anthropic launched Claude Tag, an evolution of Claude Code that joins Slack as a proactive team member with its own identity and memory. Tag it into a channel and it breaks a request into stages, works through them with the tools you grant it, and replies in the thread, writing or merging pull requests, running analysis or helping resolve an incident. One Claude per channel builds shared context, so any teammate can pick up exactly where you left off, and with ambient mode on it follows quiet threads and flags what matters on its own. Anthropic says 65 percent of its product team's code now comes from the internal version.",
+      "date_tag": "LAUNCHED TODAY · 24 JUNE 2026",
+      "link": "https://x.com/claudeai/status/2069468693017268244",
+      "link_text": "See the launch thread on X →",
+      "takeaway": "This is what the model becoming a teammate actually looks like, and it is live where your team already works. The skill is shifting from using a chatbot to delegating to an agent that has memory, tools and a seat in your channels. Start treating AI as a team member you brief and supervise, not a tab you visit. Decide which channels and tools it gets, hand it one real task this week, and review what it ships.",
+      "cards": [["65%", "Of Anthropic's product code, internal build"], ["Multiplayer", "One Claude per channel, shared memory"], ["Ambient", "It follows up on quiet threads itself"]],
+      "title_size": 42
+    },
+    {
+      "headline": "OpenAI Bets $150M That\nImplementation Beats Models",
+      "blurb": "On 14 June OpenAI launched its Partner Network, a $150 million programme to train and certify 300,000 consultants who build and deliver AI on its models. The launch cohort reads like a who's who of services: Accenture, Bain, BCG, McKinsey and PwC. Partners earn specialisations in Codex, cybersecurity and agents, and climb three tiers gated by real deployments. The message under the money is blunt: the model is no longer the bottleneck to value, delivery is.",
+      "date_tag": "LAUNCHED 14 JUNE 2026",
+      "takeaway": "The most valuable AI company in the world just said out loud that capability is not the edge any more, implementation is. That is the whole game for a room like this. You do not need to train a model to win. You need to be the person who takes one and turns it into a result a business will pay for. In Bali that is a service you can sell from Monday.",
+      "cards": [["$150M", "To enable the partner ecosystem"], ["300K", "Certified consultants targeted this year"], ["Delivery", "Is the new moat, not the model"]],
+      "title_size": 40
+    },
+    {
+      "headline": "Anthropic Opens Seoul as\nKorea Goes All In on Claude",
+      "blurb": "On 17 June Anthropic opened a Seoul office as NAVER, Samsung SDS and LG CNS moved to deploy Claude across their enterprises. Claude Code usage in Korea has grown six times in four months. The expansion is as much about government and enterprise relationships as it is about the model, in a region living under the shadow of export controls. The frontier labs are now competing on distribution and trust in Asia, not just on benchmarks.",
+      "date_tag": "OPENED 17 JUNE 2026",
+      "takeaway": "The action in AI is moving to our part of the world, and the winners are deciding it on relationships and local presence, not model scores. For founders in Bali that is a door, not a headline. Asian enterprises are actively buying AI delivery right now. Being close, trusted and able to implement is worth more here than being the cleverest engineer on a benchmark.",
+      "cards": [["3", "NAVER, Samsung SDS, LG CNS on board"], ["6x", "Claude Code growth in Korea, 4 months"], ["APAC", "Where the next land grab is"]],
+      "title_size": 40
+    },
+    {
+      "headline": "The Real AI Bottleneck\nIs Now the Power Grid",
+      "blurb": "On 18 June the US energy regulator FERC issued show cause orders to all six regional grid operators, forcing them to defend or reform the rules that decide how fast AI data centres can plug into the grid. It bypasses the usual years-long process. Behind it sit eye-watering build plans: Microsoft near $190 billion in AI capex and Google between $175 and $185 billion. The constraint on AI has quietly shifted from chips and models to electricity.",
+      "date_tag": "ORDERS ISSUED 18 JUNE 2026",
+      "takeaway": "When the bottleneck is power, not capability, two things follow for you. Inference will stay metered and priced like the scarce resource it is, so discipline in how you call models is a real edge, not a nicety. And the durable opportunities are the unglamorous ones around the boom, energy, efficiency and the picks and shovels, not just another chat wrapper.",
+      "cards": [["6", "US grid operators put on notice"], ["$190B", "Microsoft AI capex plan"], ["Power", "The new limit on AI, not chips"]],
+      "title_size": 44
+    }
+  ],
+  "action": {
+    "title": "Audit the Rails You Own",
+    "body": "Every signal tonight points the same way. The model is the rented, commoditised part. Your durable edge is the rails you build around it: how you implement, govern, distribute and earn trust. Most teams over-invest in picking a model and under-invest in one of these. Find your weakest rail this week and shore it up.",
+    "time_caption": "To run the audit",
+    "steps": [
+      ["01", "List", "Write your four rails: implementation, governance, distribution, trust"],
+      ["02", "Score", "Rate each out of ten on how strong and defensible it is today"],
+      ["03", "Pick", "Take your lowest score, the rail a competitor could beat you on"],
+      ["04", "Fix one", "Ship a single concrete improvement to that rail this week"]
+    ],
+    "takeaway": "The model you use will be matched or beaten within weeks, on whatever is cheapest and still online. The rails around it are what compound and what a buyer actually pays for. Spend less energy on which model and more on the implementation, governance, distribution and trust that no one can copy with a download. That is the moat."
+  },
+  "tiers": [
+    {
+      "label": "TIER 1, EXPLORER",
+      "heading": "Pick the cheap model",
+      "bullets": ["Try a low-cost frontier model through a provider you already use this week", "Notice you can swap models without changing how you work", "Stop paying premium prices for a capability that is now a commodity"],
+      "goal": "Goal: feel models become interchangeable parts"
+    },
+    {
+      "label": "TIER 2, OPERATOR",
+      "heading": "Sell the implementation",
+      "bullets": ["Package one AI workflow you have nailed as a service you can deliver", "Lead with the result and the delivery, not the model underneath", "Treat OpenAI's 300,000-consultant bet as your market signal"],
+      "goal": "Goal: get paid for delivery, not for the model"
+    },
+    {
+      "label": "TIER 3, BUILDER",
+      "heading": "Build the governance in",
+      "bullets": ["Add an action log to every agent: what it did, for whom, against what", "Put a human approve-or-block switch on anything that touches the real world", "Route across two providers so no single model can take you down"],
+      "goal": "Goal: governance that lets you sell to serious buyers"
+    }
+  ]
+}

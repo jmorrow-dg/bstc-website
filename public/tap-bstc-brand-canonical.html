@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<title>BSTC x TAP Canggu — Brand Canonical</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+
+  :root {
+    --cream:  #ECE8E0;
+    --ink:    #141414;
+    --taupe:  #8A8077;
+    --greige: #6B6359;
+    --stone:  #C9C2B6;
+    --red:    #C81E1E;
+    --amber:  #C8881E;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: #cfcabf;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .serif { font-family: "Didot","Bodoni 72","Playfair Display",Georgia,serif; }
+  .mono  { font-family: "American Typewriter","Courier New",monospace; }
+  .sans  { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+
+  .page {
+    position: relative;
+    width: 210mm; height: 297mm;
+    margin: 0 auto;
+    background: var(--cream); color: var(--ink);
+    padding: 16mm 16mm 13mm;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    break-after: page;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page:last-child { break-after: auto; }
+
+  .grain {
+    position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    opacity: 0.42; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.2'/></svg>");
+  }
+  .layer { position: relative; z-index: 3; display: flex; flex-direction: column; height: 100%; }
+
+  /* running header / footer */
+  .runhead {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: "American Typewriter","Courier New",monospace;
+    font-size: 8pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--greige);
+    border-bottom: 1pt solid rgba(20,20,20,0.25); padding-bottom: 3mm;
+  }
+  .runhead .x { color: var(--red); }
+  .pagefoot {
+    margin-top: auto;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1pt solid rgba(20,20,20,0.25); padding-top: 3mm;
+    font-family: "American Typewriter","Courier New",monospace;
+    font-size: 7.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--greige);
+  }
+
+  .sectnum {
+    font-family: "Didot","Bodoni 72",Georgia,serif;
+    font-size: 13pt; color: var(--red); font-weight: 700; letter-spacing: 1pt;
+  }
+  .h2 {
+    font-family: "Didot","Bodoni 72",Georgia,serif;
+    font-weight: 700; font-size: 23pt; line-height: 1.05; margin: 1.5mm 0 1mm;
+  }
+  .rule { width: 18mm; height: 2.4pt; background: var(--ink); margin: 3.5mm 0 6mm; }
+  .lede {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 11pt; line-height: 1.55; color: #3a3833; max-width: 150mm;
+  }
+  .body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 10pt; line-height: 1.55; color: #3a3833; }
+  .kicker {
+    font-family: "American Typewriter","Courier New",monospace;
+    font-size: 8.5pt; letter-spacing: 0.26em; text-transform: uppercase; color: var(--greige);
+  }
+
+  /* ===== COVER ===== */
+  .cover { justify-content: space-between; }
+  .cover .top { display: flex; justify-content: space-between; align-items: center;
+    font-family: "American Typewriter","Courier New",monospace;
+    font-size: 9.5pt; letter-spacing: 0.22em; text-transform: uppercase;
+    border-top: 1.4pt solid var(--ink); border-bottom: 1.4pt solid var(--ink); padding: 2.6mm 0; }
+  .cover .top .x { color: var(--red); font-weight: 700; }
+  .cover h1 {
+    font-family: "Didot","Bodoni 72",Georgia,serif; font-weight: 700;
+    font-size: 56pt; line-height: 0.95; letter-spacing: -0.5pt;
+  }
+  .cover h1 em { font-style: italic; font-weight: 400; }
+  .cover .sub {
+    margin-top: 6mm; font-family: "American Typewriter","Courier New",monospace;
+    font-size: 11pt; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .cover .meta-row { display: flex; gap: 14mm; margin-top: 8mm; }
+  .cover .meta-row .lbl { font-family: "American Typewriter","Courier New",monospace; font-size: 7.5pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--greige); }
+  .cover .meta-row .val { font-family: "Didot","Bodoni 72",Georgia,serif; font-size: 13pt; font-weight: 700; margin-top: 1.5mm; }
+
+  .watermark {
+    position: absolute; z-index: 2; pointer-events: none;
+    top: 120mm; right: -22mm; width: 150mm; height: auto;
+    opacity: 0.14; transform: rotate(16deg); color: var(--greige);
+  }
+
+  /* ===== two-column section blocks ===== */
+  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; margin-top: 2mm; }
+  .block .bnum { font-family: "American Typewriter","Courier New",monospace; font-size: 8pt; letter-spacing: 0.24em; color: var(--red); text-transform: uppercase; }
+  .block h3 { font-family: "Didot","Bodoni 72",Georgia,serif; font-size: 16pt; font-weight: 700; margin: 1.5mm 0 2.5mm; }
+  .block p { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 9.5pt; line-height: 1.5; color: #3a3833; }
+  ul.tick { list-style: none; margin-top: 2mm; }
+  ul.tick li { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 9.5pt; line-height: 1.5; color: #3a3833; padding-left: 6mm; position: relative; margin-bottom: 1.5mm; }
+  ul.tick li::before { content: "\2014"; position: absolute; left: 0; color: var(--red); }
+
+  /* ===== colour swatches ===== */
+  .swatches { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 2mm; }
+  .swatch { display: flex; gap: 5mm; align-items: stretch; border: 1pt solid rgba(20,20,20,0.18); padding: 4mm; }
+  .chip { width: 22mm; flex: 0 0 22mm; border: 1pt solid rgba(20,20,20,0.15); }
+  .swatch .sm-name { font-family: "Didot","Bodoni 72",Georgia,serif; font-size: 13pt; font-weight: 700; }
+  .swatch .sm-hex { font-family: "American Typewriter","Courier New",monospace; font-size: 9pt; letter-spacing: 0.1em; color: var(--greige); margin: 1mm 0 2mm; }
+  .swatch .sm-role { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 8.5pt; line-height: 1.4; color: #3a3833; }
+  .accentnote { margin-top: 5mm; background: var(--red); color: var(--cream); padding: 5mm 6mm;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 9.5pt; line-height: 1.5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .accentnote b { font-family: "American Typewriter","Courier New",monospace; letter-spacing: 0.1em; }
+
+  /* ===== type specimens ===== */
+  .specimen { border: 1pt solid rgba(20,20,20,0.18); padding: 6mm; margin-bottom: 5mm; }
+  .specimen .role { font-family: "American Typewriter","Courier New",monospace; font-size: 8pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--red); }
+  .specimen .stack { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 8.5pt; color: var(--greige); margin-top: 1mm; }
+  .specimen .big-serif { font-family: "Didot","Bodoni 72",Georgia,serif; font-size: 34pt; line-height: 1; margin-top: 4mm; font-weight: 700; }
+  .specimen .big-serif em { font-style: italic; font-weight: 400; }
+  .specimen .mono-spec { font-family: "American Typewriter","Courier New",monospace; font-size: 13pt; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 4mm; }
+  .specimen .body-spec { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 10pt; line-height: 1.55; margin-top: 4mm; color: #3a3833; max-width: 150mm; }
+  .glyphs { font-family: "Didot","Bodoni 72",Georgia,serif; font-size: 12pt; letter-spacing: 1pt; color: var(--greige); margin-top: 3mm; }
+
+  /* ===== motifs grid ===== */
+  .motifs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; margin-top: 2mm; }
+  .motif { border: 1pt solid rgba(20,20,20,0.18); padding: 0; overflow: hidden; }
+  .motif .demo { height: 30mm; position: relative; display: flex; align-items: center; justify-content: center; }
+  .motif .cap { padding: 3mm 4mm 4mm; }
+  .motif .cap .t { font-family: "American Typewriter","Courier New",monospace; font-size: 8.5pt; letter-spacing: 0.12em; text-transform: uppercase; }
+  .motif .cap .d { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 8pt; line-height: 1.4; color: #3a3833; margin-top: 1.5mm; }
+  .d-halftone { background: var(--cream); }
+  .d-halftone::after { content:""; position: absolute; inset: 0; color: var(--ink); opacity: 0.6;
+    background-image: radial-gradient(currentColor 1.4px, transparent 1.6px); background-size: 3.4mm 3.4mm; }
+  .d-blocks { flex-direction: column; gap: 0; }
+  .d-blocks i { display: block; width: 100%; height: 10mm; }
+  .d-stamp { background: var(--cream); }
+  .stampbox { transform: rotate(8deg); border: 2pt solid var(--red); color: var(--red);
+    font-family: "American Typewriter","Courier New",monospace; font-size: 8pt; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; text-align: center; line-height: 1.25; padding: 2.4mm 3mm; }
+  .d-grain { background: var(--greige); }
+
+  /* ===== layout wireframe ===== */
+  .wirewrap { display: grid; grid-template-columns: 62mm 1fr; gap: 9mm; margin-top: 2mm; align-items: start; }
+  .wire { border: 1pt solid var(--ink); padding: 3mm; display: flex; flex-direction: column; gap: 2mm; background: #f4f1ea; }
+  .wire .wb { font-family: "American Typewriter","Courier New",monospace; font-size: 6.5pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cream); padding: 2mm 2.5mm; text-align: center; }
+  .wire .wb.ink { background: var(--ink); } .wire .wb.red { background: var(--red); }
+  .wire .wb.taupe { background: var(--taupe); } .wire .wb.greige { background: var(--greige); }
+  .wire .wb.stone { background: var(--stone); color: var(--ink); }
+  .wire .wb.tall { padding: 6mm 2.5mm; }
+  ol.steps { list-style: none; counter-reset: s; }
+  ol.steps li { counter-increment: s; position: relative; padding-left: 9mm; margin-bottom: 2.6mm;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 9.5pt; line-height: 1.45; color: #3a3833; }
+  ol.steps li::before { content: counter(s,decimal-leading-zero); position: absolute; left: 0; top: 0;
+    font-family: "American Typewriter","Courier New",monospace; font-size: 8.5pt; color: var(--red); font-weight: 700; }
+  ol.steps li b { font-family: "Helvetica Neue"; color: var(--ink); }
+
+  /* ===== copy blocks ===== */
+  .copygrid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 9mm; margin-top: 2mm; }
+  .copyitem { border-left: 2.4pt solid var(--red); padding-left: 5mm; }
+  .copyitem .cl { font-family: "American Typewriter","Courier New",monospace; font-size: 7.5pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--greige); }
+  .copyitem .cv { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 9.5pt; line-height: 1.5; color: var(--ink); margin-top: 1.5mm; }
+  .copyitem .cv.head { font-family: "Didot","Bodoni 72",Georgia,serif; font-size: 15pt; font-weight: 700; }
+  .copyitem .cv em { font-style: italic; }
+
+  /* ===== hard rules ===== */
+  .rules { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 2mm; }
+  .rulecard { border: 1pt solid var(--ink); padding: 4.5mm 5mm; display: flex; gap: 4mm; align-items: flex-start; }
+  .rulecard .no { font-family: "Didot","Bodoni 72",Georgia,serif; font-size: 18pt; font-weight: 700; color: var(--red); line-height: 1; }
+  .rulecard p { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 9.5pt; line-height: 1.45; color: #3a3833; }
+  .rulecard p b { color: var(--ink); }
+  .signoff { margin-top: auto; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 · COVER ============ -->
+<section class="page cover">
+  <div class="grain"></div>
+  <svg class="watermark" viewBox="0 0 200 320" fill="none" stroke="currentColor" stroke-width="5">
+    <path d="M100 8 C46 8 14 52 14 108 C14 158 50 196 100 196 C150 196 186 158 186 108 C186 52 154 8 100 8 Z"/>
+    <line x1="84" y1="196" x2="84" y2="300"/><line x1="116" y1="196" x2="116" y2="300"/>
+    <path d="M76 300 h48 a8 8 0 0 1 8 8 v6 h-64 v-6 a8 8 0 0 1 8 -8 Z"/>
+    <g stroke-width="0" fill="currentColor">
+      <circle cx="70" cy="80" r="6"/><circle cx="100" cy="70" r="6"/><circle cx="130" cy="80" r="6"/>
+      <circle cx="60" cy="112" r="6"/><circle cx="100" cy="104" r="6"/><circle cx="140" cy="112" r="6"/>
+      <circle cx="72" cy="146" r="6"/><circle cx="100" cy="150" r="6"/><circle cx="128" cy="146" r="6"/>
+    </g>
+  </svg>
+  <div class="layer">
+    <div class="top"><span>BSTC <span class="x">&#10005;</span> TAP CLUB</span><span>Canggu &middot; Bali</span></div>
+    <div style="margin-top:auto;">
+      <p class="kicker">Brand Canonical</p>
+      <h1 style="margin-top:5mm;">Free Beer <em>Sundays</em></h1>
+      <p class="sub">One-pager promotion system &middot; BSTC &times; TAP Canggu</p>
+      <div class="meta-row">
+        <div><div class="lbl">Version</div><div class="val">1.0</div></div>
+        <div><div class="lbl">Issued</div><div class="val">June 2026</div></div>
+        <div><div class="lbl">Owner</div><div class="val">BSTC</div></div>
+      </div>
+    </div>
+    <div class="pagefoot"><span>Brand &amp; design guidelines</span><span>For Claude Design &amp; partners</span></div>
+  </div>
+</section>
+
+<!-- ============ PAGE 2 · BRIEF + CO-BRAND ============ -->
+<section class="page">
+  <div class="grain"></div>
+  <div class="layer">
+    <div class="runhead"><span>BSTC <span class="x">&times;</span> TAP &middot; Brand Canonical</span><span>The brief</span></div>
+    <div style="margin-top:8mm;">
+      <span class="sectnum">01</span>
+      <h2 class="h2">The brief</h2>
+      <div class="rule"></div>
+      <p class="lede">Design a single-page promotional flyer for a recurring Sunday padel session at TAP Club, Canggu, co-presented by the Bali Startup &amp; Tech Community. The hero hook is a free beer, an exclusive perk BSTC organised for its community. The mood is vintage sports-club meets editorial print flyer. Tactile, premium, and warm, never a discount blast.</p>
+      <div class="twocol" style="margin-top:7mm;">
+        <div class="block">
+          <div class="bnum">Primary format</div>
+          <h3>A4 portrait</h3>
+          <p>210 &times; 297mm, print-ready at 300dpi. The master artwork.</p>
+        </div>
+        <div class="block">
+          <div class="bnum">Also export</div>
+          <h3>Social crops</h3>
+          <p>4:5 feed (1080 &times; 1350) and 9:16 story (1080 &times; 1920) for WhatsApp and Instagram.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:13mm;">
+      <span class="sectnum">02</span>
+      <h2 class="h2">Co-brand relationship</h2>
+      <div class="rule"></div>
+      <div class="twocol">
+        <div class="block">
+          <div class="bnum">TAP Club</div>
+          <h3>The visual host</h3>
+          <p>The venue. Its editorial flyer style is the canvas the whole system sits on.</p>
+        </div>
+        <div class="block">
+          <div class="bnum">BSTC</div>
+          <h3>The presenter</h3>
+          <p>The community presenting the session and gifting the beer. Carried by the red accent.</p>
+        </div>
+      </div>
+      <p class="body" style="margin-top:5mm;">Lockup reads <b>BSTC &times; TAP CLUB</b>, top of every asset, equal weight, monospace caps. The multiply sign stays red.</p>
+    </div>
+    <div class="pagefoot"><span>BSTC &times; TAP Canggu</span><span>02</span></div>
+  </div>
+</section>
+
+<!-- ============ PAGE 3 · COLOUR ============ -->
+<section class="page">
+  <div class="grain"></div>
+  <div class="layer">
+    <div class="runhead"><span>BSTC <span class="x">&times;</span> TAP &middot; Brand Canonical</span><span>Colour</span></div>
+    <div style="margin-top:8mm;">
+      <span class="sectnum">03</span>
+      <h2 class="h2">Colour palette</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#ECE8E0"></div><div><div class="sm-name">Cream</div><div class="sm-hex">#ECE8E0</div><div class="sm-role">Page base. The newsprint ground.</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#141414"></div><div><div class="sm-name">Ink</div><div class="sm-hex">#141414</div><div class="sm-role">Headlines, body, dark panels.</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#8A8077"></div><div><div class="sm-name">Taupe</div><div class="sm-hex">#8A8077</div><div class="sm-role">Primary colour-block panels.</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#6B6359"></div><div><div class="sm-name">Greige</div><div class="sm-hex">#6B6359</div><div class="sm-role">Secondary and price panels.</div></div></div>
+      <div class="swatch"><div class="chip" style="background:#C9C2B6"></div><div><div class="sm-name">Stone</div><div class="sm-hex">#C9C2B6</div><div class="sm-role">Tertiary blocks, watermark fills.</div></div></div>
+      <div class="swatch" style="border-color:var(--red);"><div class="chip" style="background:#C81E1E"></div><div><div class="sm-name" style="color:var(--red)">BSTC Red</div><div class="sm-hex">#C81E1E</div><div class="sm-role">Accent only. Perk, CTA, stamp.</div></div></div>
+    </div>
+    <div class="accentnote">
+      <b>ONE ACCENT, USED RARELY.</b><br>
+      Red does the heavy lifting and earns attention by being scarce. Reserve #C81E1E for the free-beer perk, the call to action, and the exclusive stamp. Blocks stay muted. An optional amber #C8881E may cue the beer motif, sparingly, never as a second brand colour.
+    </div>
+    <div class="pagefoot"><span>BSTC &times; TAP Canggu</span><span>03</span></div>
+  </div>
+</section>
+
+<!-- ============ PAGE 4 · TYPOGRAPHY ============ -->
+<section class="page">
+  <div class="grain"></div>
+  <div class="layer">
+    <div class="runhead"><span>BSTC <span class="x">&times;</span> TAP &middot; Brand Canonical</span><span>Typography</span></div>
+    <div style="margin-top:8mm;">
+      <span class="sectnum">04</span>
+      <h2 class="h2">Typography</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="specimen">
+      <div class="role">Masthead &middot; display</div>
+      <div class="stack">Didot &middot; fallback Bodoni 72, Playfair Display. High-contrast serif, mix upright and italic.</div>
+      <div class="big-serif">Free Beer <em>Sundays</em></div>
+      <div class="glyphs">A B C a b c &amp; 0 1 2 &middot; <em>italic accent</em></div>
+    </div>
+    <div class="specimen">
+      <div class="role">Labels &middot; meta &middot; tags</div>
+      <div class="stack">American Typewriter &middot; fallback Courier New. Uppercase, wide tracking (+0.15em).</div>
+      <div class="mono-spec">Book your spot &middot; Per session</div>
+    </div>
+    <div class="specimen">
+      <div class="role">Body &middot; running text</div>
+      <div class="stack">Helvetica Neue &middot; fallback Inter, Arial. Regular weight, kept minimal.</div>
+      <div class="body-spec">An Americano rotates partners every few games, so you play with half the crew and share a beer with the rest. No experience needed, just turn up.</div>
+    </div>
+    <div class="pagefoot"><span>BSTC &times; TAP Canggu</span><span>04</span></div>
+  </div>
+</section>
+
+<!-- ============ PAGE 5 · VISUAL STYLE ============ -->
+<section class="page">
+  <div class="grain"></div>
+  <div class="layer">
+    <div class="runhead"><span>BSTC <span class="x">&times;</span> TAP &middot; Brand Canonical</span><span>Visual style</span></div>
+    <div style="margin-top:8mm;">
+      <span class="sectnum">05</span>
+      <h2 class="h2">Visual style &amp; motifs</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="motifs">
+      <div class="motif"><div class="demo d-halftone"></div><div class="cap"><div class="t">Halftone dots</div><div class="d">Bitmap dot texture echoing the TAP logo.</div></div></div>
+      <div class="motif"><div class="demo" style="background:var(--stone)"><svg viewBox="0 0 200 320" width="44" fill="none" stroke="#6B6359" stroke-width="7"><path d="M100 8 C46 8 14 52 14 108 C14 158 50 196 100 196 C150 196 186 158 186 108 C186 52 154 8 100 8 Z"/><line x1="92" y1="196" x2="92" y2="300"/><line x1="108" y1="196" x2="108" y2="300"/></svg></div><div class="cap"><div class="t">Racquet mark</div><div class="d">Single-weight line-art watermark, low opacity.</div></div></div>
+      <div class="motif"><div class="demo d-blocks"><i style="background:var(--taupe)"></i><i style="background:var(--greige)"></i><i style="background:var(--ink)"></i></div><div class="cap"><div class="t">Stacked blocks</div><div class="d">Hard 90&deg; corners. No rounds, no shadows.</div></div></div>
+      <div class="motif"><div class="demo d-stamp"><div class="stampbox">Exclusive<br>BSTC perk</div></div><div class="cap"><div class="t">Red stamp</div><div class="d">Angled rubber-stamp badge for the perk.</div></div></div>
+      <div class="motif"><div class="demo d-grain"><div class="grain" style="opacity:0.7"></div></div><div class="cap"><div class="t">Print grain</div><div class="d">Subtle risograph texture, off-press feel.</div></div></div>
+      <div class="motif"><div class="demo" style="background:var(--cream)"><span class="mono" style="font-size:9pt;letter-spacing:0.2em;border:1.4pt solid var(--ink);padding:2mm 3mm;">PER EVENT</span></div><div class="cap"><div class="t">Typewriter labels</div><div class="d">Boxed mono caps for meta and tags.</div></div></div>
+    </div>
+    <p class="body" style="margin-top:6mm;">Composition follows an event-flyer / ticket-stub logic: clear horizontal bands, each a discrete block. White space is structural, not a gap to fill.</p>
+    <div class="pagefoot"><span>BSTC &times; TAP Canggu</span><span>05</span></div>
+  </div>
+</section>
+
+<!-- ============ PAGE 6 · LAYOUT ============ -->
+<section class="page">
+  <div class="grain"></div>
+  <div class="layer">
+    <div class="runhead"><span>BSTC <span class="x">&times;</span> TAP &middot; Brand Canonical</span><span>Layout</span></div>
+    <div style="margin-top:8mm;">
+      <span class="sectnum">06</span>
+      <h2 class="h2">Layout structure</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="wirewrap">
+      <div class="wire">
+        <div class="wb ink">BSTC &times; TAP &middot; lockup</div>
+        <div class="wb stone tall">Masthead &middot; racquet watermark</div>
+        <div class="wb red">Exclusive perk &middot; the beer</div>
+        <div class="wb taupe">Details &middot; when / where / level</div>
+        <div class="wb stone">What you get &middot; 3-up</div>
+        <div class="wb greige">Price</div>
+        <div class="wb ink">CTA &middot; Playtomic + QR</div>
+        <div class="wb" style="background:#f4f1ea;color:var(--greige);border:1pt solid var(--ink)">Footer &middot; handles</div>
+      </div>
+      <ol class="steps">
+        <li><b>Co-brand bar.</b> BSTC &times; TAP CLUB, with Canggu right-aligned.</li>
+        <li><b>Masthead.</b> Free Beer Sundays, italic accent, racquet behind.</li>
+        <li><b>Sub-line.</b> Beginner Padel Americano, mono caps.</li>
+        <li><b>Hero perk panel.</b> Red. The beer is on us, plus the no-kickbacks line and stamp.</li>
+        <li><b>Details panel.</b> Taupe. Date, time, venue, level as label-value pairs.</li>
+        <li><b>What you get.</b> Three boxes: free beer (lead), coaching voucher, coconut.</li>
+        <li><b>Price panel.</b> Greige. Per session, Rp 260,000.</li>
+        <li><b>Call to action.</b> Book on Playtomic, with a QR code.</li>
+        <li><b>Footer.</b> BSTC and TAP handles.</li>
+      </ol>
+    </div>
+    <div class="pagefoot"><span>BSTC &times; TAP Canggu</span><span>06</span></div>
+  </div>
+</section>
+
+<!-- ============ PAGE 7 · COPY ============ -->
+<section class="page">
+  <div class="grain"></div>
+  <div class="layer">
+    <div class="runhead"><span>BSTC <span class="x">&times;</span> TAP &middot; Brand Canonical</span><span>Copy</span></div>
+    <div style="margin-top:8mm;">
+      <span class="sectnum">07</span>
+      <h2 class="h2">Copy blocks</h2>
+      <div class="rule"></div>
+      <p class="body" style="margin-bottom:5mm;">Verbatim and ready to place. Australian English, no dashes.</p>
+    </div>
+    <div class="copygrid">
+      <div class="copyitem"><div class="cl">Masthead</div><div class="cv head">Free Beer <em>Sundays</em></div></div>
+      <div class="copyitem"><div class="cl">Sub-line</div><div class="cv">BSTC &times; TAP Canggu &middot; Beginner Padel Americano</div></div>
+      <div class="copyitem" style="grid-column:1 / -1;"><div class="cl">Hero perk</div><div class="cv">The beer&rsquo;s on us. We organised an exclusive perk for the BSTC community. A cold one for every member who plays. No kickbacks, no markup, all rolled straight back into the community.</div></div>
+      <div class="copyitem" style="grid-column:1 / -1;"><div class="cl">Why come</div><div class="cv">An Americano rotates partners every few games, so you play with half the crew and share a beer with the rest. No experience needed.</div></div>
+      <div class="copyitem"><div class="cl">Details</div><div class="cv">When &middot; Sundays, 10:00am to 12:00pm<br>Where &middot; TAP Club, Canggu<br>Level &middot; Beginner, 0.0 to 1.5<br>Format &middot; Americano, rotating partners</div></div>
+      <div class="copyitem"><div class="cl">What you get</div><div class="cv">Free beer (BSTC exclusive)<br>100k coaching voucher<br>Fresh coconut</div></div>
+      <div class="copyitem"><div class="cl">Price</div><div class="cv">Rp 260,000 per session</div></div>
+      <div class="copyitem"><div class="cl">CTA &middot; sign-off</div><div class="cv">Book your spot on Playtomic.<br>Play, meet the crew, cold one after.</div></div>
+    </div>
+    <div class="pagefoot"><span>BSTC &times; TAP Canggu</span><span>07</span></div>
+  </div>
+</section>
+
+<!-- ============ PAGE 8 · HARD RULES ============ -->
+<section class="page">
+  <div class="grain"></div>
+  <div class="layer">
+    <div class="runhead"><span>BSTC <span class="x">&times;</span> TAP &middot; Brand Canonical</span><span>Hard rules</span></div>
+    <div style="margin-top:8mm;">
+      <span class="sectnum">08</span>
+      <h2 class="h2">Hard rules</h2>
+      <div class="rule"></div>
+      <p class="body" style="margin-bottom:5mm;">Non-negotiable. These keep every asset on-system.</p>
+    </div>
+    <div class="rules">
+      <div class="rulecard"><div class="no">1</div><p><b>Australian English throughout.</b> Organised, colour, centre, optimise.</p></div>
+      <div class="rulecard"><div class="no">2</div><p><b>No em or en dashes anywhere.</b> Use commas, full stops, or a middot.</p></div>
+      <div class="rulecard"><div class="no">3</div><p><b>Red is reserved.</b> Perk, CTA and stamp only. Never decorative.</p></div>
+      <div class="rulecard"><div class="no">4</div><p><b>Hard edges only.</b> No rounded corners, no gradients, no gloss or 3D.</p></div>
+      <div class="rulecard"><div class="no">5</div><p><b>One page.</b> Keep the master to a single A4. Crops come after.</p></div>
+      <div class="rulecard"><div class="no">6</div><p><b>White space is a feature.</b> Let the blocks breathe, do not fill every gap.</p></div>
+    </div>
+
+    <div class="signoff">
+      <div class="rule" style="margin-bottom:4mm;"></div>
+      <p class="kicker">In one line</p>
+      <p class="serif" style="font-size:19pt;font-weight:700;line-height:1.2;margin-top:3mm;max-width:150mm;">Vintage sports-club warmth, editorial discipline, and one loud red perk. <em>Play, meet the crew, cold one after.</em></p>
+    </div>
+    <div class="pagefoot"><span>BSTC &times; TAP Canggu &middot; Brand Canonical v1.0</span><span>08</span></div>
+  </div>
+</section>
+
+</body>
+</html>

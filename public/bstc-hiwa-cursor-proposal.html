@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>BSTC × Cursor — HIWA Founding Partner Proposal</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --charcoal: #111111;
+        --white: #f5f5f5;
+        --red: #c81e1e;
+        --red-dark: #8b1a1a;
+        --red-glow: #ff2e2e;
+        --grey: #888888;
+        --grey-light: #aaaaaa;
+        --grey-dark: #1a1a1a;
+        --grey-border: #222222;
+      }
+
+      html,
+      body {
+        background: var(--charcoal);
+        color: var(--white);
+        font-family: "Inter", sans-serif;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .slide {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        padding: 60px 80px;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slide.active {
+        display: flex;
+      }
+
+      .slide::before {
+        content: "";
+        position: absolute;
+        top: -40%;
+        right: -25%;
+        width: 75%;
+        height: 80%;
+        background: radial-gradient(
+          circle,
+          rgba(200, 30, 30, 0.07) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .slide > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .slide-number {
+        position: absolute;
+        bottom: 30px;
+        right: 40px;
+        font-size: 13px;
+        color: var(--grey);
+        font-weight: 500;
+        letter-spacing: 2px;
+        z-index: 2;
+      }
+
+      .watermark {
+        position: absolute;
+        bottom: 30px;
+        left: 40px;
+        font-size: 11px;
+        color: var(--grey-dark);
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        z-index: 2;
+      }
+
+      .draft-tag {
+        position: absolute;
+        top: 30px;
+        right: 40px;
+        font-size: 10px;
+        color: var(--red);
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        padding: 6px 10px;
+        border: 1px solid rgba(200, 30, 30, 0.4);
+        border-radius: 4px;
+        z-index: 2;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 84px;
+        font-weight: 900;
+        line-height: 1.05;
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 56px;
+        font-weight: 800;
+        line-height: 1.12;
+        margin-bottom: 28px;
+        max-width: 1100px;
+      }
+
+      h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--white);
+      }
+
+      p {
+        font-size: 18px;
+        color: var(--grey-light);
+        line-height: 1.6;
+        max-width: 800px;
+      }
+
+      .red {
+        color: var(--red);
+      }
+
+      .accent-line {
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(135deg, var(--red), var(--red-dark));
+        margin-bottom: 28px;
+        border-radius: 2px;
+      }
+
+      .tag {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 24px;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #c81e1e, #ff2e2e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* ===== COVER (Slide 1) ===== */
+      .cover {
+        align-items: flex-start;
+      }
+
+      .cover-tag {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 32px;
+      }
+
+      .cover h1 {
+        font-size: 110px;
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+
+      .cover .presented-by {
+        font-size: 32px;
+        color: var(--grey-light);
+        font-weight: 300;
+        margin-bottom: 36px;
+        font-style: italic;
+      }
+
+      .cover .presented-by strong {
+        color: var(--white);
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      .cover-sub {
+        font-size: 22px;
+        color: var(--grey-light);
+        font-weight: 400;
+        line-height: 1.5;
+        max-width: 720px;
+        margin-bottom: 56px;
+      }
+
+      .lockup {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-family: "Playfair Display", serif;
+        font-weight: 800;
+        font-size: 28px;
+        letter-spacing: 1px;
+      }
+
+      .lockup .x {
+        color: var(--red);
+        font-size: 24px;
+      }
+
+      .lockup .brand {
+        color: var(--white);
+      }
+
+      /* ===== STATS GRID (Slide 2) ===== */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 8px;
+        margin-bottom: 40px;
+      }
+
+      .stat-card {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 12px;
+        padding: 28px 24px;
+      }
+
+      .stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 56px;
+        font-weight: 900;
+        line-height: 1;
+        background: linear-gradient(135deg, #c81e1e, #ff2e2e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 8px;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        color: var(--grey);
+        font-weight: 500;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-top: 16px;
+      }
+
+      .info-card {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 12px;
+        padding: 28px 32px;
+      }
+
+      .info-card .label {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 18px;
+      }
+
+      .info-card ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .info-card li {
+        font-size: 16px;
+        color: var(--grey-light);
+        line-height: 1.8;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .info-card li .pct {
+        color: var(--red);
+        font-weight: 700;
+      }
+
+      .audience-strip {
+        margin-top: 32px;
+        padding: 18px 24px;
+        background: rgba(200, 30, 30, 0.04);
+        border-left: 3px solid var(--red);
+        border-radius: 4px;
+        font-size: 14px;
+        color: var(--grey-light);
+        letter-spacing: 0.5px;
+      }
+
+      .audience-strip strong {
+        color: var(--white);
+      }
+
+      /* ===== FORMAT (Slide 3) ===== */
+      .format-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 36px;
+      }
+
+      .format-card {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 12px;
+        padding: 32px 28px;
+      }
+
+      .format-card .num {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        font-weight: 900;
+        color: var(--red);
+        margin-bottom: 12px;
+      }
+
+      .format-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .format-card p {
+        font-size: 15px;
+        color: var(--grey);
+        line-height: 1.6;
+      }
+
+      /* ===== DELIVERABLES GRID (Slide 4) ===== */
+      .deliverables-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        margin-top: 28px;
+      }
+
+      .deliverable {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 12px;
+        padding: 24px 26px;
+        transition: border-color 0.3s ease;
+      }
+
+      .deliverable:hover {
+        border-color: var(--red);
+      }
+
+      .deliverable .icon {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      .deliverable h3 {
+        font-size: 17px;
+        margin-bottom: 6px;
+      }
+
+      .deliverable p {
+        font-size: 14px;
+        color: var(--grey);
+        line-height: 1.5;
+      }
+
+      .caption-strip {
+        margin-top: 24px;
+        font-size: 14px;
+        color: var(--grey);
+        font-style: italic;
+        text-align: center;
+      }
+
+      /* ===== MOCKUP GRID (Slide 5) ===== */
+      .mockup-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 16px;
+        margin-top: 28px;
+      }
+
+      .mockup {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 8px;
+        padding: 16px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .mockup-label {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        font-size: 9px;
+        color: var(--grey-dark);
+        background: rgba(245, 245, 245, 0.06);
+        padding: 3px 7px;
+        border-radius: 3px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--grey);
+      }
+
+      .mockup .pres {
+        font-size: 9px;
+        color: var(--red);
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+
+      .mockup .title-text {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1.2;
+        color: var(--white);
+        margin-bottom: 10px;
+      }
+
+      .mockup .meta {
+        font-size: 11px;
+        color: var(--grey);
+        margin-top: auto;
+      }
+
+      .mockup .logo-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        border-top: 1px solid var(--grey-border);
+        margin-top: 14px;
+      }
+
+      .mockup .logo-row .bstc-mark,
+      .mockup .logo-row .partner-mark {
+        font-family: "Playfair Display", serif;
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      .mockup .logo-row .partner-mark {
+        color: var(--white);
+      }
+
+      .mockup .logo-row .bstc-mark {
+        color: var(--grey);
+      }
+
+      .mockup-yt {
+        background: linear-gradient(
+          135deg,
+          rgba(200, 30, 30, 0.12),
+          var(--grey-dark)
+        );
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mockup-yt .play-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(245, 245, 245, 0.95);
+        color: var(--charcoal);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+
+      .mockup-podcast {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mockup-podcast .ep-num {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        font-weight: 900;
+        color: var(--red);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+
+      .mockup-blog {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mockup-linkedin {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mockup-linkedin .li-bar {
+        height: 6px;
+        background: var(--grey-border);
+        border-radius: 3px;
+        margin-bottom: 8px;
+      }
+
+      .mockup-linkedin .li-bar.short {
+        width: 60%;
+      }
+
+      .mockup-ig {
+        background: linear-gradient(
+          135deg,
+          rgba(200, 30, 30, 0.18),
+          rgba(139, 26, 26, 0.06)
+        );
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mockup-wa {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mockup-wa .wa-tag {
+        display: inline-block;
+        font-size: 9px;
+        background: rgba(37, 211, 102, 0.15);
+        color: #25d366;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        align-self: flex-start;
+      }
+
+      /* ===== REACH TABLE (Slide 6) ===== */
+      .reach-table {
+        width: 100%;
+        margin-top: 24px;
+        border-collapse: collapse;
+        font-size: 16px;
+      }
+
+      .reach-table thead th {
+        text-align: left;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--red);
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--grey-border);
+      }
+
+      .reach-table thead th:not(:first-child) {
+        text-align: right;
+      }
+
+      .reach-table tbody td {
+        padding: 16px;
+        border-bottom: 1px solid var(--grey-border);
+        color: var(--grey-light);
+      }
+
+      .reach-table tbody td:first-child {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      .reach-table tbody td:not(:first-child) {
+        text-align: right;
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .reach-caveat {
+        margin-top: 28px;
+        font-size: 14px;
+        color: var(--grey);
+        font-style: italic;
+        max-width: 800px;
+        line-height: 1.6;
+      }
+
+      /* ===== EXCLUSIVITY (Slide 7) ===== */
+      .slot-table {
+        width: 100%;
+        margin-top: 24px;
+        border-collapse: separate;
+        border-spacing: 0 8px;
+      }
+
+      .slot-table tr td {
+        padding: 18px 24px;
+        background: var(--grey-dark);
+        border-top: 1px solid var(--grey-border);
+        border-bottom: 1px solid var(--grey-border);
+        font-size: 16px;
+      }
+
+      .slot-table tr td:first-child {
+        border-left: 1px solid var(--grey-border);
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      .slot-table tr td:last-child {
+        border-right: 1px solid var(--grey-border);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        text-align: right;
+        color: var(--grey);
+      }
+
+      .slot-table tr td:nth-child(2) {
+        text-align: center;
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: var(--white);
+      }
+
+      .slot-table tr.highlight td {
+        background: rgba(200, 30, 30, 0.08);
+        border-color: var(--red);
+      }
+
+      .slot-table tr.highlight td:first-child {
+        color: var(--white);
+      }
+
+      .slot-table tr.highlight td:last-child {
+        color: var(--red);
+        font-weight: 700;
+      }
+
+      .exclusivity-footer {
+        margin-top: 28px;
+        font-size: 14px;
+        color: var(--grey);
+        font-style: italic;
+      }
+
+      .exclusivity-footer strong {
+        color: var(--white);
+        font-style: normal;
+      }
+
+      /* ===== INVESTMENT (Slide 8) ===== */
+      .investment-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 24px;
+        margin-top: 28px;
+      }
+
+      .price-card {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 12px;
+        padding: 32px;
+        position: relative;
+      }
+
+      .price-card.featured {
+        border-color: var(--red);
+        background: rgba(200, 30, 30, 0.06);
+      }
+
+      .price-card.featured::before {
+        content: "FOUNDING PARTNER";
+        position: absolute;
+        top: -12px;
+        left: 24px;
+        background: var(--red);
+        color: var(--white);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        padding: 5px 12px;
+        border-radius: 4px;
+      }
+
+      .price-card .label {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--grey);
+        margin-bottom: 18px;
+      }
+
+      .price-card .price {
+        font-family: "Playfair Display", serif;
+        font-size: 56px;
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .price-card.featured .price {
+        background: linear-gradient(135deg, #c81e1e, #ff2e2e);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .price-card .price-period {
+        font-size: 14px;
+        color: var(--grey);
+        margin-bottom: 18px;
+      }
+
+      .price-card .strike {
+        font-size: 16px;
+        color: var(--grey);
+        text-decoration: line-through;
+        margin-bottom: 8px;
+      }
+
+      .price-card .per-session {
+        font-size: 13px;
+        color: var(--grey);
+        padding-top: 16px;
+        border-top: 1px solid var(--grey-border);
+        margin-top: 8px;
+      }
+
+      .price-card.featured .per-session strong {
+        color: var(--red);
+      }
+
+      .investment-extras {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 16px;
+        font-size: 13px;
+        color: var(--grey-light);
+      }
+
+      .investment-extras .extras-card {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 8px;
+        padding: 16px 20px;
+      }
+
+      .investment-extras .extras-card .extra-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 8px;
+      }
+
+      .investment-extras ul {
+        list-style: none;
+        padding: 0;
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .investment-extras li::before {
+        content: "▸ ";
+        color: var(--red);
+      }
+
+      /* ===== NEXT STEP (Slide 9) ===== */
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 36px;
+        margin-bottom: 56px;
+      }
+
+      .timeline-step {
+        background: var(--grey-dark);
+        border: 1px solid var(--grey-border);
+        border-radius: 12px;
+        padding: 28px;
+        position: relative;
+      }
+
+      .timeline-step .step-num {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        font-weight: 900;
+        color: var(--red);
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+
+      .timeline-step h3 {
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+
+      .timeline-step p {
+        font-size: 14px;
+        color: var(--grey);
+        line-height: 1.5;
+      }
+
+      .contact-block {
+        background: rgba(200, 30, 30, 0.04);
+        border: 1px solid rgba(200, 30, 30, 0.2);
+        border-radius: 12px;
+        padding: 32px 36px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .contact-block .left h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 4px;
+      }
+
+      .contact-block .left p {
+        font-size: 14px;
+        color: var(--grey);
+      }
+
+      .contact-block .right {
+        text-align: right;
+      }
+
+      .contact-block .right a {
+        color: var(--red);
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .contact-block .right .secondary {
+        font-size: 13px;
+        color: var(--grey);
+      }
+
+      /* ===== NOTES & CONTROLS ===== */
+      .notes-panel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        color: var(--white);
+        padding: 24px 60px;
+        font-size: 14px;
+        line-height: 1.6;
+        max-height: 35vh;
+        overflow-y: auto;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        border-top: 2px solid var(--red);
+        z-index: 100;
+      }
+
+      .notes-panel.visible {
+        transform: translateY(0);
+      }
+
+      .controls-hint {
+        position: fixed;
+        top: 30px;
+        left: 40px;
+        font-size: 11px;
+        color: var(--grey-dark);
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        z-index: 50;
+      }
+
+      /* ===== PRINT STYLES ===== */
+      @media print {
+        @page {
+          size: 1920px 1080px;
+          margin: 0;
+        }
+        html,
+        body {
+          overflow: visible;
+        }
+        .slide {
+          display: flex !important;
+          page-break-after: always;
+          page-break-inside: avoid;
+        }
+        .controls-hint,
+        .notes-panel {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ SLIDE 1: COVER ============ -->
+    <section
+      class="slide active cover"
+      data-notes="OPENING. The cover is the first ownership signal — Cursor's name on the asset they'd be buying. Don't talk through this slide; let it land. Wait 3 seconds before advancing."
+    >
+      <span class="draft-tag">Draft · for discussion</span>
+
+      <div class="cover-tag">Founding Partner Proposal</div>
+
+      <h1 class="gradient-text">How I Build<br />with AI.</h1>
+      <div class="presented-by">
+        — presented by <strong>Cursor</strong>
+      </div>
+
+      <p class="cover-sub">
+        A founding partner slot for the AI-builder category in
+        Southeast Asia&apos;s largest founder-led tech community.
+      </p>
+
+      <div class="lockup">
+        <span class="brand">BSTC</span>
+        <span class="x">×</span>
+        <span class="brand">Cursor</span>
+      </div>
+
+      <span class="watermark">BSTC × CURSOR · APRIL 2026</span>
+      <span class="slide-number">01 / 09</span>
+    </section>
+
+    <!-- ============ SLIDE 2: WHO'S IN THE ROOM ============ -->
+    <section
+      class="slide"
+      data-notes="ICP fit slide. Lead with the 4 stats. Then walk audience composition. The audience strip at the bottom anonymizes specific company names — replace once we have permissioned logos. Goal: kill the 'is this the right audience?' objection."
+    >
+      <div class="tag">Audience</div>
+      <h2>
+        100+ founders. Weekly.<br />
+        Mostly <span class="red">shipping with AI</span>.
+      </h2>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">2,500+</div>
+          <div class="stat-label">Community members</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100+</div>
+          <div class="stat-label">In the room weekly</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">700+</div>
+          <div class="stat-label">On WhatsApp daily</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4.6★</div>
+          <div class="stat-label">Across 116 MeetUp reviews</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="info-card">
+          <div class="label">Who attends</div>
+          <ul>
+            <li><span>Startup founders</span><span class="pct">40%</span></li>
+            <li><span>Senior engineers / PMs</span><span class="pct">25%</span></li>
+            <li><span>Operators &amp; advisors</span><span class="pct">20%</span></li>
+            <li><span>Investors &amp; angels</span><span class="pct">15%</span></li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="label">What they do</div>
+          <ul style="display: block;">
+            <li style="display: list-item; line-height: 1.9;">Pre-seed → Series B founders</li>
+            <li style="display: list-item; line-height: 1.9;">SaaS, AI, fintech, dev tools, e-commerce</li>
+            <li style="display: list-item; line-height: 1.9;">$50K – $5M+ MRR brackets</li>
+            <li style="display: list-item; line-height: 1.9;">Building for SEA + global markets</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="audience-strip">
+        Founders from <strong>Series A SaaS</strong> · <strong>ex-FAANG engineers</strong> ·
+        <strong>YC alumni</strong> · <strong>AI-native startups</strong> ·
+        <strong>funded SEA tech operators</strong>. 40+ countries represented.
+      </div>
+
+      <span class="watermark">BSTC × CURSOR · APRIL 2026</span>
+      <span class="slide-number">02 / 09</span>
+    </section>
+
+    <!-- ============ SLIDE 3: THE FORMAT ============ -->
+    <section
+      class="slide"
+      data-notes="Differentiate from 'just another sponsorship.' The key line: 'with the tools in hand.' Cursor literally gets used on stage every session. Reinforce that this is a working session, not a panel."
+    >
+      <div class="tag">Format</div>
+      <h2>
+        Founders demo what they&apos;re shipping.<br />
+        <span class="red">Live</span>, with the tools in hand.
+      </h2>
+      <p style="font-size: 19px; max-width: 900px;">
+        Not a talk. Not a panel. A monthly working session where SEA&apos;s
+        most ambitious founders show — line by line — how they ship with AI.
+      </p>
+
+      <div class="format-grid">
+        <div class="format-card">
+          <div class="num">45<span style="font-size: 18px; color: var(--grey);">min</span></div>
+          <h3>Walkthrough + live build</h3>
+          <p>Founder demos their stack, walks the codebase, ships a feature live with Q&amp;A.</p>
+        </div>
+        <div class="format-card">
+          <div class="num">5<span style="font-size: 18px; color: var(--grey);">+ assets</span></div>
+          <h3>Full content cut</h3>
+          <p>Each session becomes a video, podcast episode, blog case study, and social cuts.</p>
+        </div>
+        <div class="format-card">
+          <div class="num">12<span style="font-size: 18px; color: var(--grey);">/yr</span></div>
+          <h3>Monthly cadence</h3>
+          <p>Compounds across 12 sessions per year — an entire content year of co-branding.</p>
+        </div>
+      </div>
+
+      <span class="watermark">BSTC × CURSOR · APRIL 2026</span>
+      <span class="slide-number">03 / 09</span>
+    </section>
+
+    <!-- ============ SLIDE 4: WHAT YOU GET ============ -->
+    <section
+      class="slide"
+      data-notes="The deliverables list. This is the slide Finance scans. Every bullet is a measurable asset. Don't oversell — the bundle sells itself."
+    >
+      <div class="tag">Sponsorship Deliverables</div>
+      <h2>A bundle, <span class="red">not a banner</span>.</h2>
+
+      <div class="deliverables-grid">
+        <div class="deliverable">
+          <div class="icon">🎤</div>
+          <h3>In-room</h3>
+          <p>Presenting sponsor billing every session. 100+ founders weekly.</p>
+        </div>
+        <div class="deliverable">
+          <div class="icon">📹</div>
+          <h3>Video</h3>
+          <p>12 long-form episodes + 24+ short clips. All co-branded.</p>
+        </div>
+        <div class="deliverable">
+          <div class="icon">🎙</div>
+          <h3>Podcast</h3>
+          <p>Every session as a podcast episode. Pre-roll all year.</p>
+        </div>
+        <div class="deliverable">
+          <div class="icon">📝</div>
+          <h3>Blog</h3>
+          <p>Co-authored case study per session. Permanent SEO assets.</p>
+        </div>
+        <div class="deliverable">
+          <div class="icon">📲</div>
+          <h3>Community</h3>
+          <p>Newsletter + WhatsApp announce. 2,500+ members reached.</p>
+        </div>
+        <div class="deliverable">
+          <div class="icon">🍽</div>
+          <h3>Founder dinner</h3>
+          <p>Co-hosted founder dinner per quarter (4 / year).</p>
+        </div>
+      </div>
+
+      <p class="caption-strip">
+        Plus everything in the BSTC Strategic Partner tier — quarterly
+        strategy sessions, annual summit presence, custom activations.
+      </p>
+
+      <span class="watermark">BSTC × CURSOR · APRIL 2026</span>
+      <span class="slide-number">04 / 09</span>
+    </section>
+
+    <!-- ============ SLIDE 5: THE COMPOUNDING WEDGE ============ -->
+    <section
+      class="slide"
+      data-notes="THE WOW SLIDE. Mockups all carry 'presented by Cursor.' The math: 12 sessions × 6 assets ≈ 70 pieces of content with their name on it. Pause here — let them feel the volume."
+    >
+      <div class="tag">Content Output</div>
+      <h2>
+        Your logo. On video, podcast, blog,<br />
+        social, dinner. <span class="red">For 12 months.</span>
+      </h2>
+      <p style="font-size: 17px;">
+        Every session ships 5–7 co-branded assets.
+        12 sessions × 6 assets ≈ <strong style="color: var(--white);">~70 pieces of content</strong>
+        carrying Cursor through the year.
+      </p>
+
+      <div class="mockup-grid">
+        <!-- YouTube -->
+        <div class="mockup mockup-yt">
+          <span class="mockup-label">YouTube</span>
+          <div class="play-icon">▶</div>
+          <div class="pres">Presented by Cursor</div>
+          <div class="title-text">How I Build with AI · Ep 06</div>
+          <div class="meta">12:48 · BSTC</div>
+          <div class="logo-row">
+            <span class="bstc-mark">BSTC</span>
+            <span class="partner-mark">CURSOR</span>
+          </div>
+        </div>
+
+        <!-- Podcast -->
+        <div class="mockup mockup-podcast">
+          <span class="mockup-label">Podcast</span>
+          <div class="ep-num">06</div>
+          <div class="pres">Presented by Cursor</div>
+          <div class="title-text">Shipping a SaaS with Cursor</div>
+          <div class="meta">38 min · BSTC</div>
+          <div class="logo-row">
+            <span class="bstc-mark">BSTC</span>
+            <span class="partner-mark">CURSOR</span>
+          </div>
+        </div>
+
+        <!-- Blog -->
+        <div class="mockup mockup-blog">
+          <span class="mockup-label">Blog</span>
+          <div class="pres" style="margin-top: 14px;">Case study · presented by Cursor</div>
+          <div class="title-text">From idea to revenue: a Cursor build</div>
+          <div class="meta">8 min read · BSTC.community</div>
+          <div class="logo-row">
+            <span class="bstc-mark">BSTC</span>
+            <span class="partner-mark">CURSOR</span>
+          </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="mockup mockup-linkedin">
+          <span class="mockup-label">LinkedIn</span>
+          <div class="pres" style="margin-top: 14px;">Presented by Cursor</div>
+          <div class="title-text">5 lessons from HIWA Ep 06</div>
+          <div class="li-bar"></div>
+          <div class="li-bar"></div>
+          <div class="li-bar short"></div>
+          <div class="logo-row">
+            <span class="bstc-mark">BSTC</span>
+            <span class="partner-mark">CURSOR</span>
+          </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="mockup mockup-ig">
+          <span class="mockup-label">Reels</span>
+          <div class="pres" style="margin-top: 14px;">Presented by Cursor</div>
+          <div class="title-text">"This is how I ship in 4 hours."</div>
+          <div class="meta">90 sec · BSTC reels</div>
+          <div class="logo-row">
+            <span class="bstc-mark">BSTC</span>
+            <span class="partner-mark">CURSOR</span>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="mockup mockup-wa">
+          <span class="mockup-label">WhatsApp</span>
+          <span class="wa-tag">EVENT TONIGHT</span>
+          <div class="pres">Presented by Cursor</div>
+          <div class="title-text">HIWA Ep 06 · Tonight 7pm</div>
+          <div class="meta">700+ members notified</div>
+          <div class="logo-row">
+            <span class="bstc-mark">BSTC</span>
+            <span class="partner-mark">CURSOR</span>
+          </div>
+        </div>
+      </div>
+
+      <span class="watermark">BSTC × CURSOR · APRIL 2026</span>
+      <span class="slide-number">05 / 09</span>
+    </section>
+
+    <!-- ============ SLIDE 6: REACH MATH ============ -->
+    <section
+      class="slide"
+      data-notes="Hard numbers slide. Don't promise conversion — quote audience density. Conservative ranges flagged where we don't have actuals yet. Total annualized: ~50K–75K targeted impressions."
+    >
+      <div class="tag">Reach</div>
+      <h2>
+        ~50,000+ targeted impressions / year.<br />
+        <span class="red">Founders, not eyeballs.</span>
+      </h2>
+
+      <table class="reach-table">
+        <thead>
+          <tr>
+            <th>Channel</th>
+            <th>Per session</th>
+            <th>Annualized</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>In-room (SEA founders, decision-makers)</td>
+            <td>100+</td>
+            <td>1,200+</td>
+          </tr>
+          <tr>
+            <td>Video views (long-form + clips)</td>
+            <td>500 – 2,000</td>
+            <td>6K – 24K</td>
+          </tr>
+          <tr>
+            <td>Podcast plays</td>
+            <td>300 – 1,000</td>
+            <td>3.6K – 12K</td>
+          </tr>
+          <tr>
+            <td>Newsletter (BSTC Weekly)</td>
+            <td>2,500+</td>
+            <td>30,000+</td>
+          </tr>
+          <tr>
+            <td>WhatsApp + community announce</td>
+            <td>700+</td>
+            <td>8,400+</td>
+          </tr>
+          <tr>
+            <td>Blog SEO long-tail</td>
+            <td>compounding</td>
+            <td>compounding</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="reach-caveat">
+        We don&apos;t quote conversion. We quote audience density.
+        The room is pre-seed → Series B founders making stack
+        decisions <em>this quarter</em>.
+      </p>
+
+      <span class="watermark">BSTC × CURSOR · APRIL 2026</span>
+      <span class="slide-number">06 / 09</span>
+    </section>
+
+    <!-- ============ SLIDE 7: CATEGORY EXCLUSIVITY ============ -->
+    <section
+      class="slide"
+      data-notes="The FOMO slide. One AI-builder partner per year. When Cursor signs, Replit/Bolt/Lovable/Windsurf are out. Soft framing — text-only competitor list at the bottom, no greyed-out logos to keep the deck shareable internally."
+    >
+      <div class="tag">Exclusivity</div>
+      <h2>
+        One AI-builder partner.<br />
+        <span class="red">Per year.</span>
+      </h2>
+      <p style="font-size: 18px;">
+        When Cursor signs, the AI-builder-tool category is locked
+        for HIWA for 12 months. Other categories run on separate
+        slots — no overlap with yours.
+      </p>
+
+      <table class="slot-table">
+        <tr class="highlight">
+          <td>AI builder tools</td>
+          <td>1 / year</td>
+          <td>Open — founding partner slot</td>
+        </tr>
+        <tr>
+          <td>Infrastructure / cloud</td>
+          <td>1 / year</td>
+          <td>Open</td>
+        </tr>
+        <tr>
+          <td>Founder ops (payroll, banking, EOR)</td>
+          <td>1 / year</td>
+          <td>Open</td>
+        </tr>
+        <tr>
+          <td>VC platform / accelerator</td>
+          <td>1 / year</td>
+          <td>Open</td>
+        </tr>
+      </table>
+
+      <p class="exclusivity-footer">
+        Category examples: <strong>Cursor, Replit, Bolt, Lovable, Windsurf, Cognition</strong>.
+        One signs — the rest are out for 12 months.
+      </p>
+
+      <span class="watermark">BSTC × CURSOR · APRIL 2026</span>
+      <span class="slide-number">07 / 09</span>
+    </section>
+
+    <!-- ============ SLIDE 8: INVESTMENT ============ -->
+    <section
+      class="slide"
+      data-notes="Pricing slide. Anchor: $36K founding partner / $150K standard. The struck-through standard rate makes the founding partner price feel like the real deal. Validity: May 31, 2026 (~30 days from today)."
+    >
+      <div class="tag">Investment</div>
+      <h2>
+        Founding partner <span class="red">pricing</span>.
+      </h2>
+      <p style="font-size: 17px;">
+        First AI-builder tool to sign gets the founding partner rate.
+        Standard rate applies to every partner after.
+      </p>
+
+      <div class="investment-grid">
+        <div class="price-card featured">
+          <div class="label" style="color: var(--red);">Annual · 12 sessions</div>
+          <div class="strike">$150,000 standard rate</div>
+          <div class="price">$36,000</div>
+          <div class="price-period">/ year — founding partner only</div>
+          <div class="per-session">
+            Per-session equivalent: <strong>$3,000</strong>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="label">Per season · 6 sessions</div>
+          <div class="strike">$75,000 standard rate</div>
+          <div class="price">$18,000</div>
+          <div class="price-period">/ season — founding partner only</div>
+          <div class="per-session">
+            Per-session equivalent: $3,000
+          </div>
+        </div>
+      </div>
+
+      <div class="investment-extras">
+        <div class="extras-card">
+          <div class="extra-label">Included</div>
+          <ul>
+            <li>All 6 channels (slide 4)</li>
+            <li>Category exclusivity, 12 months</li>
+            <li>Founding partner credit in every recap, in perpetuity</li>
+            <li>Year 2 right-of-first-refusal at the same rate</li>
+          </ul>
+        </div>
+        <div class="extras-card">
+          <div class="extra-label">Payment</div>
+          <ul>
+            <li>50% on signature</li>
+            <li>50% on activation</li>
+          </ul>
+        </div>
+        <div class="extras-card">
+          <div class="extra-label">Validity</div>
+          <ul>
+            <li>Rate held for first AI-builder tool to sign before <strong style="color: var(--white);">May 31, 2026</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="watermark">BSTC × CURSOR · APRIL 2026</span>
+      <span class="slide-number">08 / 09</span>
+    </section>
+
+    <!-- ============ SLIDE 9: NEXT STEP ============ -->
+    <section
+      class="slide"
+      data-notes="Close slide. Three concrete steps and a single CTA. Activation kicks off in May/June, first sponsored session in July (HIWA Edition 6)."
+    >
+      <div class="tag">Next Step</div>
+      <h2>Reserve <span class="red">the slot</span>.</h2>
+
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="step-num">01</div>
+          <h3>Sign</h3>
+          <p>Founding partner agreement + 50% deposit. Lock category exclusivity for 12 months.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-num">02</div>
+          <h3>Activate</h3>
+          <p>Brand integration + content roadmap. Week 1: announcement to community + press.</p>
+        </div>
+        <div class="timeline-step">
+          <div class="step-num">03</div>
+          <h3>First session</h3>
+          <p>HIWA Edition 6 · July 2026. First "presented by Cursor" episode goes live.</p>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <div class="left">
+          <h3>Josh Morrow</h3>
+          <p>Founder, BSTC — Bali Startup &amp; Tech Community</p>
+        </div>
+        <div class="right">
+          <a href="mailto:hello@bstc.community">hello@bstc.community</a>
+          <span class="secondary">balistartupandtech.com · Reply to schedule a 20-min call</span>
+        </div>
+      </div>
+
+      <span class="watermark">BSTC × CURSOR · APRIL 2026</span>
+      <span class="slide-number">09 / 09</span>
+    </section>
+
+    <!-- Notes panel -->
+    <div class="notes-panel" id="notesPanel"></div>
+    <div class="controls-hint">
+      ← → to navigate · N for speaker notes · F for fullscreen
+    </div>
+
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      const notesPanel = document.getElementById("notesPanel");
+      let currentSlide = 0;
+      let notesVisible = false;
+
+      function showSlide(index) {
+        slides.forEach((s) => s.classList.remove("active"));
+        slides[index].classList.add("active");
+        currentSlide = index;
+        if (notesVisible) {
+          notesPanel.innerHTML =
+            slides[index].getAttribute("data-notes") ||
+            "No notes for this slide.";
+        }
+      }
+
+      function toggleNotes() {
+        notesVisible = !notesVisible;
+        notesPanel.classList.toggle("visible", notesVisible);
+        if (notesVisible) {
+          notesPanel.innerHTML =
+            slides[currentSlide].getAttribute("data-notes") ||
+            "No notes for this slide.";
+        }
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === " ") {
+          e.preventDefault();
+          if (currentSlide < slides.length - 1) showSlide(currentSlide + 1);
+        } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+          e.preventDefault();
+          if (currentSlide > 0) showSlide(currentSlide - 1);
+        } else if (e.key === "n" || e.key === "N") {
+          toggleNotes();
+        } else if (e.key === "f" || e.key === "F") {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+          } else {
+            document.exitFullscreen();
+          }
+        }
+      });
+
+      // Touch support
+      let touchStartX = 0;
+      document.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+      });
+      document.addEventListener("touchend", (e) => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0 && currentSlide < slides.length - 1)
+            showSlide(currentSlide + 1);
+          else if (diff < 0 && currentSlide > 0)
+            showSlide(currentSlide - 1);
+        }
+      });
+    </script>
+  </body>
+</html>

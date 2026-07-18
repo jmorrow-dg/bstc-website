@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Governance & Regulatory Landscape: 2026 Briefing</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #111;
+        color: #f5f5f5;
+        font-family: "Inter", sans-serif;
+        line-height: 1.7;
+        padding: 40px 60px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+      h2 {
+        font-size: 26px;
+        font-weight: 700;
+        margin-top: 48px;
+        margin-bottom: 16px;
+        color: #c81e1e;
+      }
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 32px;
+        margin-bottom: 12px;
+      }
+      h4 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        color: #c81e1e;
+      }
+      p,
+      li {
+        font-size: 15px;
+        color: #ccc;
+        margin-bottom: 8px;
+      }
+      ul,
+      ol {
+        padding-left: 24px;
+        margin-bottom: 16px;
+      }
+      li {
+        margin-bottom: 6px;
+      }
+      strong {
+        color: #f5f5f5;
+      }
+      em {
+        color: #c81e1e;
+        font-style: normal;
+        font-weight: 600;
+      }
+      a {
+        color: #c81e1e;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .subtitle {
+        font-size: 18px;
+        color: #888;
+        margin-bottom: 32px;
+      }
+      .accent-line {
+        width: 60px;
+        height: 4px;
+        background: #c81e1e;
+        margin: 16px 0 32px;
+        border-radius: 2px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0 28px;
+        font-size: 14px;
+      }
+      th {
+        background: #222;
+        color: #c81e1e;
+        text-align: left;
+        padding: 12px 16px;
+        font-weight: 700;
+        border-bottom: 2px solid #333;
+      }
+      td {
+        padding: 10px 16px;
+        border-bottom: 1px solid #222;
+        color: #ccc;
+        vertical-align: top;
+      }
+      tr:hover td {
+        background: #1a1a1a;
+      }
+      .callout {
+        background: #1a1a1a;
+        border-left: 4px solid #c81e1e;
+        padding: 20px 24px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .callout p {
+        margin-bottom: 4px;
+      }
+      .badge {
+        display: inline-block;
+        background: #c81e1e;
+        color: white;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-right: 8px;
+      }
+      .badge.grey {
+        background: #333;
+        color: #888;
+      }
+      .badge.green {
+        background: #1a5c2a;
+        color: #6fcf8a;
+      }
+      .toc {
+        background: #1a1a1a;
+        border: 1px solid #222;
+        border-radius: 12px;
+        padding: 24px 32px;
+        margin: 24px 0 40px;
+      }
+      .toc h3 {
+        margin-top: 0;
+        color: #f5f5f5;
+      }
+      .toc ol {
+        padding-left: 20px;
+      }
+      .toc li {
+        color: #888;
+        margin-bottom: 4px;
+      }
+      .toc a {
+        color: #f5f5f5;
+        font-weight: 500;
+      }
+      .meta {
+        font-size: 12px;
+        color: #555;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid #222;
+      }
+      @media print {
+        body {
+          background: white;
+          color: #111;
+        }
+        h2 {
+          color: #c81e1e;
+        }
+        td,
+        p,
+        li {
+          color: #333;
+        }
+      }
+      .print-btn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #c81e1e;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        z-index: 100;
+      }
+      .print-btn:hover {
+        background: #8b1a1a;
+      }
+      @media print {
+        .print-btn {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="print-btn" onclick="window.print()">Export / Print</button>
+
+    <p class="subtitle" style="margin-bottom: 4px">D&G Intelligence Briefing</p>
+    <h1>AI Governance & Regulatory Landscape: 2026</h1>
+    <p class="subtitle">Prepared 16 April 2026</p>
+    <div class="accent-line"></div>
+
+    <div class="toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#dates">The Three Big Dates</a></li>
+        <li><a href="#eu">EU AI Act (2 August 2026)</a></li>
+        <li>
+          <a href="#us">United States: No Federal Law, State Patchwork</a>
+        </li>
+        <li><a href="#au">Australia (D&G Home Market)</a></li>
+        <li><a href="#apac">Asia-Pacific</a></li>
+        <li><a href="#canada">Canada</a></li>
+        <li><a href="#uk">United Kingdom</a></li>
+        <li><a href="#china">China</a></li>
+        <li><a href="#compare">Key Differences at a Glance</a></li>
+        <li><a href="#timeline">Full Timeline</a></li>
+        <li><a href="#impact">Impact on SMBs & AI Service Providers</a></li>
+      </ol>
+    </div>
+
+    <!-- ============================================ -->
+    <h2 id="dates">1. The Three Big Dates</h2>
+
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>What</th>
+        <th>Impact</th>
+      </tr>
+      <tr>
+        <td><strong>30 June 2026</strong></td>
+        <td>Colorado AI Act takes effect</td>
+        <td>
+          US's most comprehensive state AI law: impact assessments, consumer
+          notification for "consequential decisions"
+        </td>
+      </tr>
+      <tr>
+        <td><strong>2 August 2026</strong></td>
+        <td>EU AI Act main enforcement</td>
+        <td>
+          High-risk AI systems fully regulated. Penalties up to 7% global
+          turnover. Extraterritorial reach.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>10 December 2026</strong></td>
+        <td>Australia Privacy Act ADM amendments</td>
+        <td>
+          Must disclose automated decision-making that significantly affects
+          individuals
+        </td>
+      </tr>
+    </table>
+
+    <!-- ============================================ -->
+    <h2 id="eu">2. EU AI Act (2 August 2026)</h2>
+
+    <h3>What Already Took Effect</h3>
+
+    <h4>2 February 2025: Prohibited AI Practices (Article 5)</h4>
+    <p>Eight categories of AI systems became outright banned:</p>
+    <ul>
+      <li>
+        Untargeted scraping of the internet or CCTV to build facial recognition
+        databases
+      </li>
+      <li>Emotion recognition in workplaces and educational institutions</li>
+      <li>
+        Biometric categorisation to deduce race, political opinions, sexual
+        orientation, religious beliefs
+      </li>
+      <li>
+        Social scoring systems evaluating people based on social behaviour over
+        time
+      </li>
+      <li>
+        AI deploying subliminal, manipulative, or deceptive techniques to
+        distort behaviour
+      </li>
+      <li>
+        AI exploiting vulnerabilities (age, disability, socio-economic status)
+      </li>
+      <li>
+        Real-time remote biometric identification by law enforcement (with
+        narrow exceptions)
+      </li>
+      <li>Predictive policing based solely on profiling</li>
+    </ul>
+    <p>
+      Also from February 2025: <strong>AI Literacy obligations</strong> took
+      effect, requiring organisations deploying AI to ensure staff have
+      sufficient understanding of the systems they use.
+    </p>
+
+    <h4>2 August 2025: General-Purpose AI (GPAI) Model Obligations</h4>
+    <ul>
+      <li>GPAI providers must maintain detailed technical documentation</li>
+      <li>Must publish summaries of training data content</li>
+      <li>Must comply with EU copyright law</li>
+      <li>
+        Models posing <strong>systemic risk</strong> (trained with compute
+        exceeding 10<sup>25</sup> FLOPs) face adversarial testing and incident
+        reporting within two weeks
+      </li>
+      <li>
+        GPAI models placed on market before Aug 2025 get until
+        <strong>August 2, 2027</strong> to comply
+      </li>
+    </ul>
+
+    <h3>What Happens on 2 August 2026</h3>
+
+    <div class="callout">
+      <p>
+        <strong
+          >This is when the bulk of the EU AI Act becomes enforceable.</strong
+        >
+      </p>
+    </div>
+
+    <h4>
+      High-Risk AI Systems (Annex III) become fully regulated across 8 domains:
+    </h4>
+    <ol>
+      <li>Biometrics and biometrics-based systems</li>
+      <li>
+        Critical infrastructure management (energy, transport, water, digital)
+      </li>
+      <li>
+        Education and vocational training (student assessment, admissions)
+      </li>
+      <li>
+        Employment and worker management (recruitment, performance evaluation,
+        task allocation, termination)
+      </li>
+      <li>
+        Access to essential services (credit scoring, insurance risk assessment,
+        emergency services)
+      </li>
+      <li>
+        Law enforcement (evidence reliability, crime analytics, polygraph
+        alternatives)
+      </li>
+      <li>Migration, asylum, and border control</li>
+      <li>Administration of justice and democratic processes</li>
+    </ol>
+
+    <h4>Obligations for high-risk AI operators:</h4>
+    <ul>
+      <li>Conformity assessments completed</li>
+      <li>Risk management systems implemented</li>
+      <li>Data governance and training data quality standards met</li>
+      <li>Technical documentation finalised</li>
+      <li>Logging and record-keeping systems operational</li>
+      <li>Transparency and information provision to users</li>
+      <li>Human oversight mechanisms in place</li>
+      <li>Accuracy, robustness, and cybersecurity requirements met</li>
+      <li>CE marking affixed</li>
+      <li>Registration in the EU database</li>
+      <li>Post-market monitoring systems established</li>
+    </ul>
+
+    <h4>Transparency obligations (Article 50) for all AI systems:</h4>
+    <ul>
+      <li>
+        AI-generated content must be labelled (deepfakes, synthetic text,
+        images, audio)
+      </li>
+      <li>Users must be informed when interacting with AI chatbots</li>
+      <li>
+        Emotion recognition and biometric categorisation systems must disclose
+        their operation
+      </li>
+    </ul>
+
+    <h4>Member State requirements:</h4>
+    <ul>
+      <li>
+        Every EU Member State must have at least one operational AI regulatory
+        sandbox
+      </li>
+      <li>National competent authorities must be designated and operational</li>
+    </ul>
+
+    <h4>2 August 2027: What comes next</h4>
+    <p>
+      Article 6(1) takes effect: AI systems that are safety components of
+      products regulated under existing EU harmonisation legislation (medical
+      devices, toys, machinery, motor vehicles, etc.) become subject to the Act.
+    </p>
+
+    <h3>Penalties (Three-Tier Structure)</h3>
+    <table>
+      <tr>
+        <th>Violation</th>
+        <th>Maximum Fine</th>
+      </tr>
+      <tr>
+        <td>Prohibited practices (Article 5)</td>
+        <td><strong>EUR 35 million or 7% of global annual turnover</strong></td>
+      </tr>
+      <tr>
+        <td>High-risk system non-compliance</td>
+        <td>EUR 15 million or 3% of global annual turnover</td>
+      </tr>
+      <tr>
+        <td>Misleading information to authorities</td>
+        <td>EUR 7.5 million or 1% of global annual turnover</td>
+      </tr>
+    </table>
+    <p>
+      For SMEs and startups, fines are capped proportionally and authorities
+      must consider economic viability.
+    </p>
+
+    <div class="callout">
+      <p>
+        <strong>Extraterritorial Reach:</strong> The EU AI Act applies to any
+        provider placing AI systems on the EU market or whose AI system output
+        is used in the EU, regardless of where the provider is established.
+        Australian companies serving EU customers must comply.
+      </p>
+    </div>
+
+    <!-- ============================================ -->
+    <h2 id="us">3. United States: No Federal Law, State Patchwork</h2>
+
+    <h3>Federal Level</h3>
+    <p>
+      No comprehensive federal AI law as of April 2026. The landscape is shaped
+      by executive action:
+    </p>
+
+    <h4>December 2025 Executive Order</h4>
+    <ul>
+      <li>Revokes Biden-era AI safety EO 14110</li>
+      <li>
+        Establishes an <strong>AI Litigation Task Force</strong> within the DOJ
+        to challenge state AI laws
+      </li>
+      <li>
+        Directs FTC to issue policy statement on how the FTC Act applies to AI
+      </li>
+      <li>
+        Conditions $42 billion in broadband infrastructure funding on states
+        repealing "onerous" AI regulations
+      </li>
+      <li>
+        Philosophy: pro-innovation, anti-regulation, federal preemption of state
+        law
+      </li>
+    </ul>
+
+    <h4>March 2026: White House National Policy Framework for AI</h4>
+    <p>
+      Legislative recommendations to Congress proposing broad preemption of
+      state AI laws. No comprehensive federal bill has passed yet.
+    </p>
+
+    <p>
+      Only AI-specific federal statute: <strong>TAKE IT DOWN Act</strong> (May
+      2025), criminalising nonconsensual distribution of intimate AI-generated
+      images.
+    </p>
+
+    <h3>State-Level Laws (Active and Forthcoming)</h3>
+
+    <h4>Effective January 1, 2026:</h4>
+
+    <p>
+      <span class="badge">Illinois</span> <strong>HB 3773:</strong> Amends the
+      Human Rights Act to prohibit employer use of discriminatory AI. Requires
+      notice when AI is used for recruitment, hiring, promotion, disciplinary
+      actions. Includes a <em>private right of action</em>.
+    </p>
+
+    <p>
+      <span class="badge">Texas</span> <strong>RAIGA:</strong> Prohibits AI for
+      "restricted purposes" (encouraging self-harm, violence, CSAM, unlawful
+      deepfakes, impersonating minors).
+    </p>
+
+    <p>
+      <span class="badge">California</span> Multiple laws: Frontier AI
+      transparency (models trained >10<sup>26</sup> FLOPs), training data
+      disclosure (AB 2013), AI labelling (SB 942). Penalties up to $1M per
+      violation. Governor Newsom signed AI Vendor Certification for state
+      procurement in April 2026.
+    </p>
+
+    <h4>Effective June 30, 2026:</h4>
+
+    <p>
+      <span class="badge">Colorado</span> <strong>SB 24-205:</strong> The most
+      comprehensive US state AI law. Applies to high-risk AI making
+      "consequential decisions" in employment, housing, financial services,
+      insurance, education, healthcare.
+    </p>
+    <ul>
+      <li>Risk management policy and programme</li>
+      <li>Impact assessments (at least annually)</li>
+      <li>Consumer notification before adverse AI-driven decisions</li>
+      <li>AG-exclusive enforcement, $20,000 per consumer per transaction</li>
+      <li>No private right of action</li>
+    </ul>
+    <p>
+      <em>Note:</em> In March 2026, a Work Group proposed a replacement
+      framework (ADMT) potentially effective January 1, 2027.
+    </p>
+
+    <!-- ============================================ -->
+    <h2 id="au">4. Australia (D&G Home Market)</h2>
+
+    <div class="callout">
+      <p>
+        <strong>Mandatory AI guardrails were abandoned in late 2025.</strong>
+        The September 2024 proposal for 10 mandatory guardrails for high-risk AI
+        was dropped. Australia relies on existing technology-neutral laws.
+      </p>
+    </div>
+
+    <h3>Key 2026 Developments</h3>
+
+    <p>
+      <span class="badge green">Launched</span>
+      <strong>AI Safety Institute</strong> (AUD $29.9 million): Tests AI
+      systems, assesses risks, and recommends targeted reforms.
+    </p>
+
+    <p>
+      <span class="badge">10 Dec 2026</span>
+      <strong>Privacy Act Automated Decision-Making Amendments:</strong>
+    </p>
+    <ul>
+      <li>
+        Businesses using a "computer program" (including AI/ML) to make
+        decisions that could "reasonably be expected to significantly affect the
+        rights or interests of an individual" must disclose this in their
+        privacy policy
+      </li>
+      <li>
+        Covers decisions about benefits, contractual rights, access to
+        significant services (healthcare, finance, housing)
+      </li>
+      <li>
+        "Computer program" is deliberately broad: covers rule-based systems, AI,
+        and ML
+      </li>
+      <li>OAIC can issue infringement and compliance notices</li>
+      <li>Civil penalties apply</li>
+    </ul>
+
+    <p>
+      No AI-specific legislation expected in 2026. Voluntary guidance (AI Ethics
+      Framework, National AI Strategy) supplements but does not compel.
+    </p>
+
+    <!-- ============================================ -->
+    <h2 id="apac">5. Asia-Pacific</h2>
+
+    <h3>Singapore</h3>
+    <p>
+      <span class="badge green">Live Jan 2026</span>
+      <strong>World's first Agentic AI governance framework</strong> (IMDA).
+      Four dimensions:
+    </p>
+    <ul>
+      <li>Risk assessment and bounding upfront</li>
+      <li>
+        Technical safeguards (limiting agent access, SOPs, offline fallback)
+      </li>
+      <li>Clear responsibility allocation across the AI lifecycle</li>
+      <li>Ongoing monitoring and accountability</li>
+    </ul>
+    <p>
+      <strong>Voluntary</strong>, but organisations remain legally accountable
+      for their agents' behaviours.
+    </p>
+
+    <h3>South Korea</h3>
+    <p>
+      <span class="badge green">Effective Jan 2026</span>
+      <strong>AI Framework Act</strong>: First comprehensive AI law in APAC.
+    </p>
+    <ul>
+      <li>
+        Mandatory obligations for "high-impact" AI in 11 domains (healthcare,
+        energy, public services, etc.)
+      </li>
+      <li>Transparency disclosures, impact assessments, risk management</li>
+      <li>Mandatory labelling for generative AI</li>
+      <li>Fines up to KRW 30 million (~USD 22,000)</li>
+      <li>Presidential committee for AI oversight</li>
+    </ul>
+
+    <h3>Japan</h3>
+    <p>
+      <span class="badge grey">Enacted May 2025</span>
+      <strong>AI Promotion Act</strong>: Most permissive major economy.
+    </p>
+    <ul>
+      <li>No fines, no banned applications, no pre-launch approvals</li>
+      <li>
+        Government can publicly name companies that use AI to violate human
+        rights
+      </li>
+      <li>Encourages voluntary cooperation</li>
+    </ul>
+
+    <h3>Indonesia</h3>
+    <p>Directly relevant for D&G (Bali operations):</p>
+    <ul>
+      <li>
+        AI National Strategy 2020-2045 and ethics framework being formalised as
+        <strong>Presidential Regulations</strong>
+      </li>
+      <li>National Data and AI Ethics Council planned for launch</li>
+      <li>
+        Sector-specific regulations coming for finance, healthcare, and HR
+      </li>
+      <li>Legal liability provisions for AI-caused harm under development</li>
+      <li>
+        Draft frameworks expected to become
+        <strong>binding rules in 2026</strong>
+      </li>
+    </ul>
+
+    <h3>ASEAN</h3>
+    <p>
+      Updated AI Governance and Ethics Guide (2025) covering generative AI.
+      Seven principles: transparency, fairness, security, reliability,
+      human-centricity, privacy, accountability.
+      <strong>Voluntary only.</strong>
+    </p>
+
+    <!-- ============================================ -->
+    <h2 id="canada">6. Canada</h2>
+    <div class="callout">
+      <p>
+        <strong>AIDA is dead.</strong> Canada's Artificial Intelligence and Data
+        Act died on the order paper when Parliament was prorogued on January 5,
+        2025. No replacement AI-specific legislation on the horizon. AI will be
+        regulated through privacy and sector-specific laws.
+      </p>
+    </div>
+
+    <!-- ============================================ -->
+    <h2 id="uk">7. United Kingdom</h2>
+    <p>
+      The UK has deliberately chosen <strong>not</strong> to enact a
+      comprehensive AI Act. Instead:
+    </p>
+    <ul>
+      <li>
+        <strong>Five cross-sector AI principles</strong> delegated to existing
+        regulators (FCA, Ofcom, ICO, CMA):
+        <ol>
+          <li>Safety, security, and robustness</li>
+          <li>Appropriate transparency and explainability</li>
+          <li>Fairness</li>
+          <li>Accountability and governance</li>
+          <li>Contestability and redress</li>
+        </ol>
+      </li>
+      <li>No dedicated AI regulator</li>
+      <li>
+        <strong>AI Growth Lab</strong> proposed: cross-economy sandboxes for
+        testing AI
+      </li>
+      <li>
+        AI-specific bill expected <strong>no earlier than H2 2026</strong>,
+        likely focused on copyright and regulation of powerful models
+      </li>
+    </ul>
+
+    <!-- ============================================ -->
+    <h2 id="china">8. China</h2>
+    <p>
+      World's most granular and enforcement-ready AI regulations, implemented
+      through sector-specific rules:
+    </p>
+    <ul>
+      <li>
+        <strong>Deep Synthesis Regulations (2022):</strong> Comprehensive
+        deepfake rules
+      </li>
+      <li>
+        <strong>Generative AI Service Regulations (2023):</strong> Content
+        labelling, copyright compliance, security assessments before public
+        release
+      </li>
+      <li>
+        <strong>Mandatory AI Content Labelling (September 2025):</strong>
+        Watermark labelling of all AI-generated content
+      </li>
+      <li>
+        <strong>Amended Cybersecurity Law (January 2026):</strong> AI security
+        reviews, data localisation, strengthened penalties
+      </li>
+      <li>
+        High-risk systems (healthcare, education, law enforcement) face
+        mandatory regular audits
+      </li>
+      <li>
+        All AI models must undergo government security assessments before
+        deployment
+      </li>
+    </ul>
+
+    <!-- ============================================ -->
+    <h2 id="compare">9. Key Differences at a Glance</h2>
+
+    <table>
+      <tr>
+        <th>Dimension</th>
+        <th>EU</th>
+        <th>US (Federal)</th>
+        <th>US (States)</th>
+        <th>UK</th>
+        <th>Australia</th>
+        <th>China</th>
+        <th>Singapore</th>
+        <th>South Korea</th>
+        <th>Japan</th>
+      </tr>
+      <tr>
+        <td><strong>Approach</strong></td>
+        <td>Prescriptive, risk-based</td>
+        <td>Deregulatory</td>
+        <td>Patchwork</td>
+        <td>Principles-based</td>
+        <td>Tech-neutral</td>
+        <td>Enforcement-first</td>
+        <td>Voluntary</td>
+        <td>Risk-based</td>
+        <td>Promotion-first</td>
+      </tr>
+      <tr>
+        <td><strong>Risk Classification</strong></td>
+        <td>4 tiers</td>
+        <td>None</td>
+        <td>Varies</td>
+        <td>Delegated</td>
+        <td>None explicit</td>
+        <td>Sector-specific</td>
+        <td>Voluntary</td>
+        <td>11 domains</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <td><strong>Enforcement</strong></td>
+        <td>National + Commission</td>
+        <td>DOJ task force (against states)</td>
+        <td>AG enforcement</td>
+        <td>Existing regulators</td>
+        <td>OAIC</td>
+        <td>Govt security reviews</td>
+        <td>Voluntary</td>
+        <td>Presidential committee</td>
+        <td>Govt naming</td>
+      </tr>
+      <tr>
+        <td><strong>Penalties</strong></td>
+        <td>Up to 7% turnover</td>
+        <td>None</td>
+        <td>Up to $20K/consumer</td>
+        <td>Existing powers</td>
+        <td>Civil penalties</td>
+        <td>Strengthened fines</td>
+        <td>None</td>
+        <td>KRW 30M</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <td><strong>Extraterritorial</strong></td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>State-by-state</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>TBD</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td><strong>Private Right of Action</strong></td>
+        <td>Via national law</td>
+        <td>No</td>
+        <td>Illinois only</td>
+        <td>Via existing law</td>
+        <td>Via Privacy Act</td>
+        <td>No</td>
+        <td>No</td>
+        <td>TBD</td>
+        <td>No</td>
+      </tr>
+    </table>
+
+    <!-- ============================================ -->
+    <h2 id="timeline">10. Full Timeline</h2>
+
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Event</th>
+      </tr>
+      <tr>
+        <td><span class="badge grey">Feb 2025</span></td>
+        <td>
+          EU prohibited AI practices + AI literacy obligations take effect
+        </td>
+      </tr>
+      <tr>
+        <td><span class="badge grey">May 2025</span></td>
+        <td>Japan AI Promotion Act enacted; US TAKE IT DOWN Act signed</td>
+      </tr>
+      <tr>
+        <td><span class="badge grey">Aug 2025</span></td>
+        <td>EU GPAI obligations take effect</td>
+      </tr>
+      <tr>
+        <td><span class="badge grey">Sep 2025</span></td>
+        <td>China mandatory AI content labelling</td>
+      </tr>
+      <tr>
+        <td><span class="badge grey">Jan 2026</span></td>
+        <td>
+          US state laws (IL, TX, CA) take effect; China amended Cybersecurity
+          Law; Singapore Agentic AI Framework; South Korea AI Framework Act
+        </td>
+      </tr>
+      <tr>
+        <td><span class="badge">30 Jun 2026</span></td>
+        <td>Colorado AI Act takes effect (unless replaced)</td>
+      </tr>
+      <tr>
+        <td><span class="badge">2 Aug 2026</span></td>
+        <td>
+          <strong
+            >EU AI Act main enforcement: high-risk systems, transparency,
+            sandboxes, Commission GPAI enforcement</strong
+          >
+        </td>
+      </tr>
+      <tr>
+        <td><span class="badge">10 Dec 2026</span></td>
+        <td>Australia Privacy Act ADM transparency amendments</td>
+      </tr>
+      <tr>
+        <td><span class="badge grey">H2 2026</span></td>
+        <td>
+          UK AI bill possible; Indonesia presidential regulations expected
+        </td>
+      </tr>
+      <tr>
+        <td><span class="badge grey">Jan 2027</span></td>
+        <td>
+          Colorado ADMT replacement (if passed); potential new US state laws
+        </td>
+      </tr>
+      <tr>
+        <td><span class="badge grey">Aug 2027</span></td>
+        <td>EU AI Act Article 6(1): AI in regulated products</td>
+      </tr>
+      <tr>
+        <td><span class="badge grey">2027+</span></td>
+        <td>
+          Australia AI Safety Institute reform recommendations; potential Canada
+          privacy-led AI rules
+        </td>
+      </tr>
+    </table>
+
+    <!-- ============================================ -->
+    <h2 id="impact">11. Impact on SMBs & AI Service Providers</h2>
+
+    <h3>Direct Compliance Obligations</h3>
+    <ul>
+      <li>
+        <strong>If serving EU clients or deploying AI in the EU:</strong> Full
+        EU AI Act compliance required by August 2, 2026. High-risk system
+        operators need conformity assessments, technical documentation, CE
+        marking, and registration.
+      </li>
+      <li>
+        <strong>If serving Australian clients:</strong> Privacy Act ADM
+        transparency obligations from December 10, 2026. Update privacy policies
+        to disclose all automated decision-making.
+      </li>
+      <li>
+        <strong>If serving US clients:</strong> State-by-state compliance
+        analysis required. Illinois (employment AI) and Colorado (consequential
+        decisions) are immediate priorities.
+      </li>
+    </ul>
+
+    <h3>Key Risks</h3>
+    <ul>
+      <li>
+        SMBs are disproportionately exposed because they often rely on
+        off-the-shelf AI tools without auditing them
+      </li>
+      <li>
+        AI service providers may inherit compliance obligations as "deployers"
+        under the EU AI Act or "developers" under Colorado's framework
+      </li>
+      <li>
+        The US federal preemption push creates uncertainty: state laws may be
+        challenged in court but remain enforceable until struck down
+      </li>
+      <li>
+        Documentation burden is real: impact assessments, risk management
+        programmes, and training data provenance are required across multiple
+        jurisdictions
+      </li>
+    </ul>
+
+    <h3>Opportunity</h3>
+    <ul>
+      <li>
+        <strong>Compliance advisory is a growth market.</strong>
+        Multi-jurisdictional complexity creates demand for firms that can
+        navigate it.
+      </li>
+      <li>
+        Singapore's Agentic AI Framework signals that autonomous AI agents are
+        the next regulatory frontier. Early expertise here is valuable.
+      </li>
+      <li>
+        EU AI Act SME proportionality provisions and regulatory sandbox access
+        offer competitive advantage for smaller players who engage early.
+      </li>
+    </ul>
+
+    <div class="meta">
+      <p>
+        <strong>D&G Intelligence Briefing</strong> | Prepared 16 April 2026 |
+        Research conducted via web sources including DLA Piper, Orrick,
+        Kennedys, King & Spalding, Baker Botts, Taylor Wessing, White & Case,
+        Sidley, Ropes & Gray, Mayer Brown, K&L Gates, FPF, Norton Rose
+        Fulbright, Wilson Sonsini, and primary legislative texts.
+      </p>
+      <p>
+        This document is for informational purposes and does not constitute
+        legal advice.
+      </p>
+    </div>
+  </body>
+</html>

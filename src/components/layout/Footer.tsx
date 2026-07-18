@@ -36,6 +36,14 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
+                  href="/welcome"
+                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
+                >
+                  Welcome to Bali
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/events"
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >

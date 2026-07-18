@@ -112,6 +112,17 @@ export default function JoinPage() {
               </a>
             </div>
           </div>
+
+          <p className="text-center text-sm text-brand-grey mt-12">
+            New to Bali?{" "}
+            <a
+              href="/welcome"
+              className="text-brand-red hover:text-brand-red-glow transition-colors font-medium"
+            >
+              Read the Welcome to Bali guide
+            </a>{" "}
+            for where the community works, eats, and trains.
+          </p>
         </div>
       </section>
 

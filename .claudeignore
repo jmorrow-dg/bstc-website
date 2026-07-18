@@ -1,0 +1,17 @@
+# Secrets and credentials — never read or edit in any session
+.env
+.env.*
+.env.local
+.env.production
+secrets/
+*.key
+*.pem
+*.p12
+
+# Auth tokens
+vercel.json
+.vercel/
+
+# Sensitive local data
+.DS_Store
+Thumbs.db

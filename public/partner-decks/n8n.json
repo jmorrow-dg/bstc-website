@@ -1,0 +1,61 @@
+{
+  "partner": {
+    "name": "n8n",
+    "slug": "n8n",
+    "accent": "#EA4B71",
+    "logo": "public/images/n8n-logo.png",
+    "logo_height": 0.6,
+    "category": "automation"
+  },
+  "cover": {
+    "headline": [[["Own the automation category in", "white"]], [["Bali's builder ecosystem.", "red"]]],
+    "meta": [["Prepared for", "The n8n team"], ["From", "BSTC"], ["Re", "Community partnership"]]
+  },
+  "why_now": {
+    "headline": [[["The cost of building a company ", "white"], ["just collapsed.", "red"]]],
+    "lead": "AI has democratised building. A single founder can now design, build and automate what used to take a funded team, and a new wave of AI-native builders is the result. It is accelerating, and they are wiring up their tooling right now.",
+    "cols": [
+      ["Democratised building", "Anyone can ship", "AI and no-code tools have removed the technical barrier. An idea becomes a live, automated product without a dev team."],
+      ["An AI-native wave", "Everyone automates now", "Solo founders and small teams wire tools together and orchestrate AI agents to do the work of ten. The volume is rising fast."]
+    ],
+    "punchline": "They automate from day one, and they are choosing their tooling stack now. The window to become their default is open."
+  },
+  "thesis": {
+    "headline": [[["You power the builders ", "white"], ["automating", "white", true], [" their work.", "white"]], [["So do we.", "red"]]],
+    "lead": "Bali has quietly become a real hub for global-first builders. BSTC is its centre of gravity: 2,500+ founders, engineers and operators, most of them automating everything they can and building with AI from day one. That is your user, in one room, every month."
+  },
+  "community_headline": [[["Bali's builder community, ", "white"], ["in one place", "red"]]],
+  "fit": {
+    "kicker": "Why n8n, specifically",
+    "title": [[["Exactly who ", "white"], ["n8n", "accent"], [" is built for", "white"]]],
+    "cols": [
+      ["Who they are", "AI-native builders", "Founders, engineers and operators who automate everything and build with AI. n8n is already in their stack, or about to be."],
+      ["What they need", "Workflow & AI automation", "Connecting tools, orchestrating AI agents, automating ops end to end. The exact problems n8n solves, felt daily."],
+      ["Where you fit", "The default tool", "Be the automation platform the community learns hands-on and defaults to, through workshops and the How I Build with AI series."]
+    ],
+    "lead": "Our How I Build with AI series is a natural home for n8n. Hands-on automation workshops turn the room into power users, and power users into advocates."
+  },
+  "exclusivity": {
+    "headline": [[["Own the category. Be our ", "white"], ["only", "red"], [" automation partner.", "white"]]],
+    "lead_runs": [["n8n", "accent"], [" as the sole automation and workflow brand across every BSTC surface for the term: events, workshops, podcast and the 2027 conference. No competing automation tool in the room.", "soft"]],
+    "incl": [
+      ["Flagship event sponsorship", "Your brand on the monthly room that defines the scene."],
+      ["Hands-on n8n workshops", "The How I Build with AI series, built around n8n."],
+      ["Builder perks", "n8n Cloud credits, Pro seats and setup support for members."],
+      ["Podcast presence", "Partner segments and host reads as the show launches."],
+      ["Conference 2027", "Headline automation partner of Bali's flagship event."],
+      ["Ecosystem insights", "Aggregated, anonymised data on how Bali builders build."]
+    ]
+  },
+  "packages": {
+    "term": "Exclusive automation partner",
+    "quarterly_items": ["Category exclusivity for the quarter", "Flagship event sponsorship", "One hands-on n8n workshop", "Builder perks in the member guide"],
+    "annual_items": ["Category exclusivity for the full year", "Every flagship night, all four formats", "Full n8n workshop track, How I Build with AI", "Podcast presence as it launches", "Headline automation partner, Conference 2027", "Aggregated ecosystem insights"],
+    "note": "Scope and investment are a conversation for when the fit is clear. This is a starting point, not a pitch."
+  },
+  "close": {
+    "headline": [[["Be the tool Bali's builders", "white"]], [["reach for when they ", "white"], ["automate.", "white", true]]],
+    "lead": "The builders wiring up their stack are already in our community, learning with AI every month. We are offering you the whole automation category, for a year, including the stage we are building for 2027. Let's find the shape that fits.",
+    "cta": [["The ask", "Annual category exclusivity"], ["The next step", "An intro call"], ["Contact", "BSTC"]]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "edition": 10,
+  "date": "17 June 2026",
+  "venue": "Seoul Soul Project, Canggu",
+  "next_edition_date": "24 JUNE",
+  "source_count": "50+",
+  "theme_intro": "Six signals from the last fortnight. What happened, and what it means for you.\nThe theme this week: the frontier is consolidating. You will always rent the model. The edge is the learning loop you own.",
+  "special_slide": {
+    "tag": "TODAY IN BALI  ·  17 JUNE 2026",
+    "title": "Selamat Hari Galungan",
+    "photo": "galungan.jpg",
+    "caption": "Penjor lining a Balinese village street during Galungan.",
+    "body": [
+      "Today Bali celebrates Galungan, one of the most important holy days in Balinese culture.",
+      "It marks the start of ten sacred days when families honour their ancestors and celebrate the victory of dharma over adharma, good over evil.",
+      "Across the island you will see the penjor, the tall curved bamboo poles lining every street. Their arch honours Gunung Agung, Bali's holiest mountain, and gives thanks for the Earth's bounty. The celebration runs through to Kuningan on 27 June.",
+      "We are guests on this island. Before we look at the week ahead in AI, we pay respect to the culture that hosts us."
+    ],
+    "signoff": "Selamat Hari Galungan."
+  },
+  "jargon": [
+    ["Natural-language coding", "Describing software in plain English and letting an agent write it. Cursor's whole thesis."],
+    ["Mythos-class", "Anthropic's top capability tier. Claude Fable 5 is the first one released to the public."],
+    ["Export Directive", "A government order that can restrict or pull a model from sale. The reason Fable 5 went offline."],
+    ["Token Capital", "Nadella's term: the AI capability a firm builds and owns, sitting alongside its human capital."],
+    ["Workspace Agent", "A shared team agent that owns a whole workflow, with admins setting which actions it can take."]
+  ],
+  "signals": [
+    {
+      "headline": "SpaceX Buys Cursor\nfor $60 Billion",
+      "blurb": "SpaceX signed an agreement to acquire Anysphere, the maker of Cursor, in an all-stock deal worth around $60 billion, filed with the SEC on 16 June. Cursor is the fastest-growing coding tool in the world, near $2.6 billion in annual revenue. Its whole thesis is that you describe software in plain English and an agent writes it. The deal is expected to close in the third quarter.",
+      "date_tag": "FILED 16 JUNE 2026  ·  CLOSES Q3 2026",
+      "takeaway": "Coding in plain English just got a rocket-sized backer, and the frontier is consolidating into a few giants. The skill that matters is no longer syntax. It is describing what you want clearly enough for an agent to build it. Everyone in this room can now ship software.",
+      "cards": [["$60B", "All-stock acquisition of Anysphere"], ["$2.6B", "Cursor annual revenue, from a 2023 start"], ["Plain English", "Is becoming the way you write software"]],
+      "title_size": 46
+    },
+    {
+      "headline": "Claude Fable 5 Ships\nto Everyone, Then Vanishes",
+      "blurb": "On 9 June Anthropic released Claude Fable 5, its first Mythos-class model available to the public and the most capable it has ever shipped, scoring more than 10 percent above Opus 4.8 on some benchmarks and free on every paid plan. Within three days a United States export directive forced it temporarily offline.",
+      "date_tag": "RELEASED 9 JUNE 2026  ·  PULLED WITHIN 3 DAYS",
+      "takeaway": "Frontier capability is now a default-tier commodity, not a premium pilot. But model availability is now a geopolitical variable. Do not hard-wire your stack to one model or endpoint. Build for portability and keep a fallback model wired in.",
+      "cards": [["10%+", "Above Opus 4.8 on some benchmarks"], ["Free", "On every paid plan, through 22 June"], ["3 days", "From launch to export-forced offline"]],
+      "title_size": 40
+    },
+    {
+      "headline": "Apple Lets You Pick\nYour AI on iPhone",
+      "blurb": "At WWDC on 8 June, Apple opened iOS 27 with Extensions, a marketplace that lets you set Claude, ChatGPT, Gemini or Grok as your default AI across Apple Intelligence. Siri itself is being rebuilt on Google Gemini, running through Apple's Private Cloud Compute. Betas land in July, with a full launch later in the year.",
+      "date_tag": "WWDC 8 JUNE 2026  ·  BETA JULY, LAUNCH LATER IN 2026",
+      "takeaway": "The model layer is being commoditised at the operating-system level. Distribution flows to whoever owns the surface, and the phone is the biggest surface there is. If you build on AI, stay model-agnostic and meet people inside the tools they already open.",
+      "cards": [["4", "Providers you can set as default"], ["1B+", "iPhones in the marketplace"], ["Gemini", "Now powers the new Siri"]],
+      "title_size": 44
+    },
+    {
+      "headline": "Nadella: A Frontier\nWithout an Ecosystem",
+      "blurb": "In a long post that drew more than 28 million views on 14 June, Microsoft's Satya Nadella argued the prize is not picking the best model. It is building a learning loop on top of models where human capital, the judgement and pattern recognition of your people, and token capital, the AI capability you own, compound together. You can offload a task, but you can never offload your learning.",
+      "date_tag": "POSTED 14 JUNE 2026  ·  28M+ VIEWS",
+      "takeaway": "Your moat is not the model you rent. It is the institutional knowledge you encode into systems that improve every time you use them. Capture your judgement, run private evals on outcomes that matter, and keep the company-veteran expertise even when you swap the generalist model underneath.",
+      "cards": [["Human Capital", "Judgement, relationships, pattern recognition"], ["Token Capital", "The AI capability you build and own"], ["The Loop", "Where the two compound is your IP"]],
+      "title_size": 42
+    },
+    {
+      "headline": "ChatGPT Becomes a\nTeam Operating Surface",
+      "blurb": "OpenAI is turning ChatGPT into a superapp: agents, Codex coding tools, image generation and partner apps like Canva and Booking.com inside one interface, reported on 7 June. For teams, new Workspace Agents let a shared agent own a whole workflow, with admins setting which actions it can take and watching its usage.",
+      "date_tag": "REPORTED 7 JUNE 2026  ·  ROLLING OUT NOW",
+      "takeaway": "The assistant is becoming the place your team works, not a chatbot you visit. The question stops being which chatbot is best and becomes which workflows you hand over, and what guardrails you set before you do.",
+      "cards": [["Superapp", "Agents, Codex, images, partner apps"], ["Workspace", "A shared agent owns a workflow"], ["Admin", "Set allowed actions, watch usage"]],
+      "title_size": 42
+    },
+    {
+      "headline": "Grok Adds a Cockpit\nfor Many Agents at Once",
+      "blurb": "xAI shipped an Agent Dashboard for Grok Build, a single screen to run many coding-agent sessions in parallel, track what is blocked, reply inline and dispatch new work without switching windows. It landed alongside Grok 4.20, tuned to close the factuality gap on current events using X's real-time stream.",
+      "date_tag": "MID JUNE 2026",
+      "takeaway": "Working with one agent is last year's skill. The new one is supervising a fleet of them at once. The bottleneck shifts from doing the work to reviewing and unblocking several agents running in parallel. Set up your own cockpit before you have ten agents and no way to watch them.",
+      "cards": [["Many", "Agent sessions on one screen"], ["Inline", "Reply and unblock without switching"], ["Real-time", "Grok 4.20 reads current events from X"]],
+      "title_size": 44
+    }
+  ],
+  "deep_dive": {
+    "tag": "THE THROUGHLINE · SATYA NADELLA",
+    "title": "Models Are Not the Moat. The Loop Is.",
+    "thesis": "Every signal tonight rhymes with Nadella's post this week. Everyone rents the same models. Your edge is the learning loop you build on top, where your people's judgement and your AI compound every time work gets done.",
+    "left": {"label": "HUMAN CAPITAL", "body": "Judgement, taste, relationships and pattern recognition. The expertise that lives, undocumented, in your best people's heads."},
+    "right": {"label": "TOKEN CAPITAL", "body": "The AI capability you build and own. Your agents, context, prompts and evals. Not the rented model underneath."},
+    "connector": "Build the loop every model plugs into. The value is in the loop between them, not either one alone.",
+    "punchline": "You can offload a task. You can never offload your learning.",
+    "punchline_sub": "Capture corrections, run private evals on outcomes that matter, and swap the model without losing the company veteran. The loop compounds. That is the moat."
+  },
+  "action": {
+    "title": "Start Your Own Learning Loop",
+    "body": "Every signal tonight says the same thing. The model is the rented part. Your durable edge is the workflow and judgement you turn into a system that improves each time you use it. Start one this week.",
+    "time_caption": "To capture the first one",
+    "steps": [
+      ["01", "Pick", "One workflow you repeat: a proposal, a research digest, a code review"],
+      ["02", "Capture", "Write down the judgement you apply: good examples, rules, the gotchas"],
+      ["03", "Encode", "Turn it into a prompt, skill or agent that any model can run"],
+      ["04", "Compound", "Save every correction back in. Each run makes the next one better"]
+    ],
+    "takeaway": "You can offload a task, but you can never offload your learning. The teams that win are not the ones renting the best model. They are the ones whose systems get smarter every week, on whatever model is best, cheapest, or simply still online. That loop is your moat."
+  },
+  "tiers": [
+    {
+      "label": "TIER 1, EXPLORER",
+      "heading": "Notice your judgement",
+      "bullets": ["Next time AI helps you, write down what you had to correct or add", "Keep a running note of the prompts that actually worked", "Reuse one of them next week instead of starting from scratch"],
+      "goal": "Goal: see your expertise as something you can capture"
+    },
+    {
+      "label": "TIER 2, OPERATOR",
+      "heading": "Encode one workflow",
+      "bullets": ["Pick a weekly task and write the rules and examples you apply", "Turn it into a saved prompt or skill the whole team can run", "Make it model-agnostic so you can swap providers in a click"],
+      "goal": "Goal: turn tacit knowledge into a system that improves"
+    },
+    {
+      "label": "TIER 3, BUILDER",
+      "heading": "Build the loop",
+      "bullets": ["Stand up a workflow where every correction feeds back as training signal", "Run private evals on outcomes that matter, not public benchmarks", "Swap the generalist model without losing your company-veteran expertise"],
+      "goal": "Goal: a hill-climbing machine that compounds"
+    }
+  ]
+}

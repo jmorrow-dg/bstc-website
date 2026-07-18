@@ -1,0 +1,61 @@
+{
+  "partner": {
+    "name": "Airwallex",
+    "slug": "airwallex",
+    "accent": "#FF8A3D",
+    "logo": "public/images/airwallex-logo.png",
+    "logo_height": 0.5,
+    "category": "finance"
+  },
+  "cover": {
+    "headline": [[["Own the finance category in", "white"]], [["Bali's founder ecosystem.", "red"]]],
+    "meta": [["Prepared for", "Dushyant, Airwallex"], ["From", "BSTC"], ["Meeting", "Tuesday, 3:00pm"]]
+  },
+  "why_now": {
+    "headline": [[["The cost of starting a company ", "white"], ["just collapsed.", "red"]]],
+    "lead": "AI has democratised building. A single founder can now design, build and ship what used to take a funded team, and a new wave of early-stage founders is the result. It is accelerating, and they are making their first financial decisions right now.",
+    "cols": [
+      ["Democratised building", "Anyone can ship", "AI and no-code tools have removed the technical barrier. An idea becomes a live product without a dev team."],
+      ["An AI-native wave", "More builders than ever", "Solo founders and small teams use AI to go from idea to launch in weeks, not quarters. The volume is rising fast."]
+    ],
+    "punchline": "They go global from day one, and they are choosing their financial stack now. The window to become their default is open."
+  },
+  "thesis": {
+    "headline": [[["You back founders building ", "white"], ["borderless", "white", true], [" businesses.", "white"]], [["So do we.", "red"]]],
+    "lead": "Bali has quietly become a real hub for global-first startups. BSTC is its centre of gravity: 2,500+ founders, engineers and operators, most of them running cross-border, multi-currency businesses from day one. That is your customer, in one room, every month."
+  },
+  "community_headline": [[["Bali's founder community, ", "white"], ["in one place", "red"]]],
+  "fit": {
+    "kicker": "Why Airwallex, specifically",
+    "title": [[["Exactly who ", "white"], ["Airwallex", "accent"], [" is built for", "white"]]],
+    "cols": [
+      ["Who they are", "Global-first founders", "Founders and operators building from Bali but selling worldwide. Remote teams, international clients, multi-currency from launch."],
+      ["What they need", "Borderless finance", "Cross-border payments, multi-currency accounts, global payroll and FX. The exact problems Airwallex solves, felt daily."],
+      ["Where you fit", "The trusted answer", "Be the finance partner the community learns from and defaults to, through the scaling series you proposed and member perks."]
+    ],
+    "lead": "Your email named it: educational workshops on financial best practices for global operations. That is a perfect fit, and the start of something bigger."
+  },
+  "exclusivity": {
+    "headline": [[["Own the category. Be our ", "white"], ["only", "red"], [" finance partner.", "white"]]],
+    "lead_runs": [["Airwallex", "accent"], [" as the sole payments and finance brand across every BSTC surface for the term: events, workshops, podcast and the 2027 conference. No competing fintech in the room.", "soft"]],
+    "incl": [
+      ["Flagship event sponsorship", "Your brand on the monthly room that defines the scene."],
+      ["The scaling series", "Co-built workshops on global financial best practice."],
+      ["Founder perks", "Tailored Airwallex offers in our member guide and WhatsApp."],
+      ["Podcast presence", "Partner segments and host reads as the show launches."],
+      ["Conference 2027", "Headline finance partner of Bali's flagship event."],
+      ["Ecosystem insights", "Aggregated, anonymised data on how Bali founders scale."]
+    ]
+  },
+  "packages": {
+    "term": "Exclusive finance partner",
+    "quarterly_items": ["Category exclusivity for the quarter", "Flagship event sponsorship", "One scaling-series workshop", "Founder perks in the member guide"],
+    "annual_items": ["Category exclusivity for the full year", "Every flagship night, all four formats", "Full scaling-series workshop track", "Podcast presence as it launches", "Headline finance partner, Conference 2027", "Aggregated ecosystem insights"],
+    "note": "Scope and investment are a conversation for when the fit is clear. This is a starting point, not a pitch."
+  },
+  "close": {
+    "headline": [[["Be the name Bali's founders", "white"]], [["reach for when they ", "white"], ["scale.", "white", true]]],
+    "lead": "You offered to support the community without a rigid sales pitch. We are offering you the whole category, for a year, including the stage we are building for 2027. Let's lock the shape of it on Tuesday.",
+    "cta": [["The ask", "Annual category exclusivity"], ["The meeting", "Tuesday, 3:00pm"], ["Contact", "BSTC"]]
+  }
+}
