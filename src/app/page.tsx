@@ -592,8 +592,6 @@ export default async function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={SITE.joinForm}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
               >
                 <MessageCircle size={18} />

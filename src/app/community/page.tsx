@@ -280,8 +280,6 @@ export default function CommunityPage() {
             </p>
             <a
               href={SITE.memberDirectory}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-all glow-red"
             >
               Add Me to the Directory

@@ -77,8 +77,6 @@ export default function Footer() {
               <li>
                 <a
                   href={SITE.memberDirectory}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >
                   Member Directory
@@ -106,8 +104,6 @@ export default function Footer() {
               <li>
                 <a
                   href={SITE.joinForm}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >
                   Join

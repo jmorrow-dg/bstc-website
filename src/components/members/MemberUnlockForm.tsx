@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Loader2 } from "lucide-react";
+import { LOCATIONS, INTERESTS } from "@/lib/community-groups";
 
 const STAGES = [
   "Idea / Pre-Product",
@@ -30,6 +31,7 @@ type FormState = {
   email: string;
   whatsapp: string;
   linkedin: string;
+  location: string;
   companyStage: string;
   building: string;
   companyWebsite: string; // honeypot
@@ -39,11 +41,13 @@ export default function MemberUnlockForm() {
   const router = useRouter();
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [openTo, setOpenTo] = useState<string[]>([]);
+  const [interests, setInterests] = useState<string[]>([]);
   const [form, setForm] = useState<FormState>({
     fullName: "",
     email: "",
     whatsapp: "",
     linkedin: "",
+    location: "",
     companyStage: "",
     building: "",
     companyWebsite: "",
@@ -54,8 +58,10 @@ export default function MemberUnlockForm() {
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
       setForm((f) => ({ ...f, [key]: e.target.value }));
 
-  const toggleOpenTo = (o: string) =>
-    setOpenTo((prev) => (prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]));
+  const toggle = (set: React.Dispatch<React.SetStateAction<string[]>>) => (o: string) =>
+    set((prev) => (prev.includes(o) ? prev.filter((x) => x !== o) : [...prev, o]));
+  const toggleOpenTo = toggle(setOpenTo);
+  const toggleInterest = toggle(setInterests);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -65,7 +71,7 @@ export default function MemberUnlockForm() {
       const res = await fetch("/api/members", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, openTo }),
+        body: JSON.stringify({ ...form, openTo, interests }),
       });
       if (!res.ok) throw new Error("Request failed");
       // Cookie is set by the response; re-render the server component to reveal the hub.
@@ -115,6 +121,19 @@ export default function MemberUnlockForm() {
 
       <select
         className={`${inputClass} appearance-none`}
+        value={form.location}
+        onChange={update("location")}
+      >
+        <option value="">Where are you based? (routes you to the right rooms)</option>
+        {LOCATIONS.map((l) => (
+          <option key={l} value={l}>
+            {l}
+          </option>
+        ))}
+      </select>
+
+      <select
+        className={`${inputClass} appearance-none`}
         value={form.companyStage}
         onChange={update("companyStage")}
       >
@@ -136,6 +155,30 @@ export default function MemberUnlockForm() {
                 type="button"
                 key={o}
                 onClick={() => toggleOpenTo(o)}
+                aria-pressed={on}
+                className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                  on
+                    ? "bg-brand-red border-brand-red text-brand-white"
+                    : "border-white/10 text-brand-grey hover:border-brand-red/40"
+                }`}
+              >
+                {o}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div>
+        <p className="text-xs text-brand-grey mb-2">What are you into? (picks your rooms)</p>
+        <div className="flex flex-wrap gap-2">
+          {INTERESTS.map((o) => {
+            const on = interests.includes(o);
+            return (
+              <button
+                type="button"
+                key={o}
+                onClick={() => toggleInterest(o)}
                 aria-pressed={on}
                 className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
                   on

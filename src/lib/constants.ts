@@ -9,13 +9,16 @@ export const SITE = {
   altDomain: "bstc.community",
   email: "hello@bstc.community",
   meetup: "https://www.meetup.com/bali-start-ups-tech-community/",
-  // Public join gate (Tally). The chat invite lives only on the form's
-  // thank-you page, so it never appears in public code and can't be used to
-  // bypass registration.
-  joinForm: "https://tally.so/r/KY5AMM",
-  memberDirectory: "https://tally.so/r/KY5AMM",
-  // Chat invite. Only rendered on the member hub AFTER a successful signup
-  // (behind the cookie gate), so it isn't a public registration bypass.
+  // Native join gate: the /members form captures the lead (Airtable + Sheet)
+  // and reveals WhatsApp room invites only after signup. The old Tally gate
+  // (https://tally.so/r/KY5AMM) is retired — its thank-you page hands out the
+  // invite to the main chat, which is full at WhatsApp's 1,024 cap.
+  joinForm: "/members",
+  memberDirectory: "/members",
+  // Community-wide invite, shown post-signup only when no room invite env
+  // vars are set yet (see WA_INVITE_* in .env.example). NOTE: this link is the
+  // capped main chat — replace it with the new WhatsApp Community invite once
+  // the Community is created.
   whatsapp: "https://chat.whatsapp.com/GkG5rXQsBcfIBGuuJSkjxm",
   linkedin: "https://www.linkedin.com/groups/14424020/",
   instagram: "https://www.instagram.com/bali_tech_community/",

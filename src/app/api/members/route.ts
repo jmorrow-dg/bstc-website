@@ -1,14 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { MEMBER_COOKIE } from "@/lib/members";
+import { MEMBER_COOKIE, ROOMS_COOKIE } from "@/lib/members";
+import { matchGroupIds } from "@/lib/community-groups";
 
 const memberSchema = z.object({
   fullName: z.string().min(1, "Name is required"),
   email: z.string().email("Please enter a valid email"),
   whatsapp: z.string().min(1, "WhatsApp number is required"),
   linkedin: z.string().optional(),
+  location: z.string().optional(),
   companyStage: z.string().optional(),
   openTo: z.array(z.string()).optional(),
+  interests: z.array(z.string()).optional(),
   building: z.string().optional(),
   // Honeypot — real users never fill this. Bots do.
   companyWebsite: z.string().optional(),
@@ -25,8 +28,10 @@ function airtableFields(d: MemberData): Record<string, unknown> {
     "WhatsApp Number (with country code)": d.whatsapp,
   };
   if (d.linkedin) f["LinkedIn Profile URL"] = d.linkedin;
+  if (d.location) f["Location"] = d.location;
   if (d.companyStage) f["Company Stage"] = d.companyStage;
   if (d.openTo && d.openTo.length) f["What are you open to right now?"] = d.openTo;
+  if (d.interests && d.interests.length) f["Interests"] = d.interests;
   if (d.building) f["What are you building?"] = d.building;
   return f;
 }
@@ -85,8 +90,10 @@ async function addToGoogleSheet(d: MemberData) {
       email: d.email,
       whatsapp: d.whatsapp,
       linkedin: d.linkedin || "",
+      location: d.location || "",
       companyStage: d.companyStage || "",
       openTo: (d.openTo || []).join(", "),
+      interests: (d.interests || []).join(", "),
       building: d.building || "",
       source: "Website member form",
     }),
@@ -119,13 +126,16 @@ export async function POST(request: NextRequest) {
       { success: true, message: "You're in. Welcome to BSTC." },
       { status: 200 }
     );
-    response.cookies.set(MEMBER_COOKIE, "1", {
+    const cookieOpts = {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      sameSite: "lax" as const,
       path: "/",
       maxAge: 60 * 60 * 24 * 365,
-    });
+    };
+    response.cookies.set(MEMBER_COOKIE, "1", cookieOpts);
+    // Which WhatsApp rooms this member matched — /members renders these.
+    response.cookies.set(ROOMS_COOKIE, matchGroupIds(data).join(","), cookieOpts);
     return response;
   } catch (error) {
     if (error instanceof z.ZodError) {

@@ -43,8 +43,6 @@ export default function WhatsAppCTA() {
           {/* Button */}
           <a
             href={SITE.joinForm}
-            target="_blank"
-            rel="noopener noreferrer"
             className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white flex items-center justify-center shadow-lg hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all"
             aria-label="Join the community"
           >
