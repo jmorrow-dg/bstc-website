@@ -147,11 +147,20 @@ export async function getBlogPostBySlug(
   return getContentBySlug<BlogFrontmatter>("blog", slug);
 }
 
+// An event still counts as upcoming on the day it runs, so compare dates only.
+function hasPassed(dateStr: string): boolean {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return new Date(dateStr).getTime() < today.getTime();
+}
+
 export function getUpcomingEvents(
   events: ContentItem<EventFrontmatter>[]
 ): ContentItem<EventFrontmatter>[] {
   return events
-    .filter((e) => e.frontmatter.status === "upcoming")
+    .filter(
+      (e) => e.frontmatter.status === "upcoming" && !hasPassed(e.frontmatter.date)
+    )
     .sort(
       (a, b) =>
         new Date(a.frontmatter.date).getTime() -
@@ -162,7 +171,9 @@ export function getUpcomingEvents(
 export function getPastEvents(
   events: ContentItem<EventFrontmatter>[]
 ): ContentItem<EventFrontmatter>[] {
-  return events.filter((e) => e.frontmatter.status === "completed");
+  return events.filter(
+    (e) => e.frontmatter.status === "completed" || hasPassed(e.frontmatter.date)
+  );
 }
 
 export function getHIWAEvents(
