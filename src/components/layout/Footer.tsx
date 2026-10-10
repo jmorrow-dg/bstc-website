@@ -75,14 +75,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a
+                <Link
                   href={SITE.memberDirectory}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >
-                  Member Directory
-                </a>
+                  Add Your Member Profile
+                </Link>
               </li>
             </ul>
           </div>

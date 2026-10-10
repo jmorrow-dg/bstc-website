@@ -18,7 +18,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm text-brand-grey mb-12">
-            Last updated: 4 April 2026
+            Last updated: 10 October 2026
           </p>
 
           <div className="space-y-10 text-sm text-brand-grey leading-relaxed">
@@ -61,6 +61,13 @@ export default function PrivacyPage() {
                   <strong className="text-brand-white">Website analytics</strong>{" "}
                 . anonymous usage data via Vercel Analytics
                 </li>
+                <li>
+                  Website community registration: your connection to Bali,
+                  optional WhatsApp display name and phone number, location,
+                  website, interests, what you are building, help requested or
+                  offered, referral information and preferred channel. We also
+                  record your consent choices, submission time and form version.
+                </li>
               </ul>
             </section>
 
@@ -84,6 +91,16 @@ export default function PrivacyPage() {
                 </li>
                 <li>Website analytics (anonymous, aggregated traffic data)</li>
               </ul>
+              <p className="mt-3">
+                Website signup details are stored in a private Google Sheet for
+                authorised community organisers. Optional WhatsApp details help
+                us match pending join requests. Email updates require a separate
+                opt-in. Directory participation also requires a separate opt-in;
+                only opted-in members may receive shared profiles, and phone
+                numbers and email addresses are never included. A signup does
+                not automatically add you to any chat, event or directory.
+                Contact us to change these preferences or request deletion.
+              </p>
             </section>
 
             <section>
@@ -208,3 +225,4 @@ export default function PrivacyPage() {
     </section>
   );
 }
+

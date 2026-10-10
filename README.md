@@ -37,19 +37,22 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Community rollout
 
-The community join page lives at `/join`. Shared join buttons point there, while
-the member directory remains optional. Channel links stay in an honest
-“Opening soon” state until verified public entry points are configured.
+The `/join` page contains the native community form. Registrations and standalone
+newsletter opt-ins append directly to a private Google Sheet. Chat invitations
+are server-only and returned after a confirmed save; email and directory choices
+are independent. No form-service subscription is needed for capture.
 
-See [the rollout guide](docs/community-rollout.md) for channel setup, environment
-variables, activation checks, and the event publishing workflow. Start from
-`.env.example`; keep real credentials in your hosting provider's secret settings.
+See [Google Sheets setup](docs/google-sheets-signups.md) for the one-time service
+account connection and [the rollout guide](docs/community-rollout.md) for channel
+setup and the event publishing workflow. Start from `.env.example`; store actual
+credentials only in hosting secrets, never in this repository.
 
-Run focused event-date and newsletter tests with Node.js 22.18+ (or Node.js 24):
+Run focused event-date, signup validation and mocked Google API tests using
+Node.js 22.18+ (or Node.js 24):
 
 ```bash
 npm test
 ```
 
-The tests mock newsletter provider calls and never create real subscriptions.
-After installing dependencies, validate the full application with `npm run build`.
+Tests never write real signup rows. After installing dependencies, validate the
+full application with `npm run build`.

@@ -4,55 +4,27 @@ The permanent public joining destination is `https://www.balistartupandtech.com/
 The website prepares the joining flow; admins still create and moderate the chats
 in WhatsApp and Telegram. No group creation or invitations are automated here.
 
-## Activate the joining options
+## Activate signup capture and joining options
 
-1. Create **BSTC — General 2**, appoint moderators and enable join approval.
+1. Follow [the Google Sheets setup guide](google-sheets-signups.md) to connect the
+   native website form to the private signup sheet. All signup code lives here;
+   there is no external form builder in the joining flow.
+2. Create **BSTC — General 2**, appoint moderators and enable join approval.
    Check the existing WhatsApp Community's total capacity before adding it there.
-2. Update the approved Tally registration flow so its thank-you page directs
-   eligible applicants to General 2. Preserve the existing registration gate;
-   do not publish private WhatsApp invitations in source code. Check existing
-   directory consent separately from registration and newsletter consent.
 3. Create the Telegram community and **BSTC — Events & Updates** WhatsApp Channel.
    On Telegram, restrict adding community chats to admins. Use an announcements
    channel and a separate Topics group, connected with pinned links. Topics
    cannot be combined with Telegram's native linked channel-comment group.
-4. Test every destination with a non-admin account. Verify identity, join approval,
-   capacity, welcome text and that the registration form directs to the right chat.
-5. Set these public environment variables in the existing Vercel project:
-
-   | Variable | Value |
-   | --- | --- |
-   | `NEXT_PUBLIC_BSTC_WHATSAPP_JOIN_URL` | Approved public registration gate, after its destination is updated |
-   | `NEXT_PUBLIC_BSTC_TELEGRAM_URL` | Verified public Telegram community/group entry point |
-   | `NEXT_PUBLIC_BSTC_UPDATES_URL` | Verified WhatsApp Updates Channel link |
-
-   Empty or invalid values render “Opening soon”, with no dead button. Only HTTPS
-   links without embedded credentials are accepted. `NEXT_PUBLIC_` values are
-   public and read during the Next.js build: redeploy after changing them.
-6. Replace promotional links on Meetup, social profiles and partner materials with
-   the permanent `/join` URL. Existing General 1 members can stay where they are.
-
-## Connect email updates
-
-Configure `RESEND_API_KEY` and `RESEND_SEGMENT_ID` as server-only hosting secrets.
-An existing `RESEND_AUDIENCE_ID` is accepted as a fallback for migrated accounts.
-The API key must permit reading/creating contacts and adding segment memberships.
-
-The form requires an unchecked consent checkbox. The route validates email and
-consent before persisting the contact in Resend. It reuses existing contacts,
-does not override existing opt-outs, and reports success only after provider
-confirmation. Missing configuration returns 503; provider failures return 502.
-Provider bodies, addresses and keys are not logged or returned as errors.
-
-Before enabling recruitment, test with an address controlled by an organiser:
-verify it appears in the intended segment, repeat the signup, and verify an opted-out
-address is not silently subscribed again. Ensure actual campaign messages include
-Resend's unsubscribe mechanism. This implementation saves subscriptions; it does
-not send newsletters or invitations by itself. Directory membership does not
-create an email subscription.
-
-API reference: [Resend audience migration](https://resend.com/docs/dashboard/contacts/migrating-from-audiences-to-segments)
-and [adding a contact to a segment](https://resend.com/docs/api-reference/contacts/add-contact-to-segment).
+4. Test each destination with a non-admin account. Set the server-only
+   `BSTC_WHATSAPP_INVITE_URL`, `BSTC_TELEGRAM_URL` and `BSTC_UPDATES_URL` variables
+   in Vercel. These links appear only after the server confirms a signup save.
+   Missing links are omitted; registration does not guarantee group capacity.
+5. Verify registration and newsletter opt-ins in the private sheet. Neither form
+   sends emails. Use explicit consent and preserve existing unsubscribe records
+   when connecting a campaign sender later. Directory consent is independent.
+6. Replace promotional links on Meetup, social profiles and partner materials
+   with `/join` after the production check passes. Existing General 1 members
+   can stay where they are. Ask Josh for the old form export before retiring it.
 
 ## Recover the pending requests
 
@@ -113,12 +85,12 @@ Jobs & Collaborations, and Show & Tell.
 
 ## Release checks
 
-- `npm test` passes on Node.js 22.18+ or 24; provider requests are mocked.
-- `npm run build` succeeds with installed dependencies and the existing image assets.
+- `npm test` passes on Node.js 22.18+ or 24; Google requests are mocked.
+- `npm run build` succeeds with installed dependencies and existing image assets.
 - Check `/join`, `/events`, the homepage and a past event on mobile and desktop.
-- Missing channel URLs produce no clickable placeholders; real entry points work
-  signed out and preserve the WhatsApp registration gate.
+- Validate a real organiser-controlled test signup in the private sheet after
+  hosting configuration. Verify both opt-in choices and the newsletter-only row.
+- Confirm errors do not display success or expose joining links.
+- Confirm every available chat link works signed out and respects join approval.
 - Past events do not offer RSVP buttons or current ticket offers in structured data.
-- Newsletter errors remain errors in the UI; a test opt-in is actually persisted.
-- Update the Tally thank-you page and verify hosting environment configuration
-  before sharing the public relaunch announcement.
+- Verify production capture before sharing the public relaunch announcement.

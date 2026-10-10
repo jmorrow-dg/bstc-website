@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { ArrowRight, Calendar, MessageCircle, Users } from "lucide-react";
 import { SITE } from "@/lib/constants";
 import { COMMUNITY_CHANNELS } from "@/lib/community";
+import CommunitySignup from "@/components/community/CommunitySignup";
 
 export const metadata: Metadata = {
   title: "Join BSTC",
@@ -40,12 +41,13 @@ export default function JoinPage() {
             <p className="text-sm text-brand-grey leading-relaxed">
               Our original WhatsApp discussion group has reached its 1,024-person
               limit. We are opening General 2 and new ways to stay connected.
-              Available joining links appear below as they are ready.
+              Register below to see the joining options that are ready.
             </p>
             <p className="text-sm text-brand-grey leading-relaxed mt-3">
-              Already requested access? You do not need to submit the same
-              request again. Keep your existing request while our admins work
-              through the waiting list. Existing members can stay in General 1.
+              Waiting for WhatsApp access? Register here with your WhatsApp
+              display name so our admins can match your request. A saved signup
+              does not guarantee a place in a full group. Existing members can
+              stay in General 1.
             </p>
           </div>
         </div>
@@ -64,18 +66,20 @@ export default function JoinPage() {
                 <p className="text-xs font-medium uppercase tracking-wider text-brand-grey mb-2">{channel.purpose}</p>
                 <h3 className="text-xl font-semibold mb-3">{channel.name}</h3>
                 <p className="text-sm text-brand-grey leading-relaxed mb-6 flex-1">{channel.description}</p>
-                {channel.url ? (
-                  <a href={channel.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm">
-                    {channel.action}<ArrowRight size={16} aria-hidden="true" />
-                  </a>
-                ) : (
-                  <p className="text-sm text-brand-grey border-t border-white/10 pt-4">
-                    Opening soon — the joining link will appear here.
-                  </p>
-                )}
+                <a href="#register" className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm">
+                  Register for joining options<ArrowRight size={16} aria-hidden="true" />
+                </a>
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="register" className="pb-16 md:pb-24 scroll-mt-24" aria-labelledby="register-title">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 id="register-title" className="text-3xl font-display font-bold mb-3">Join the community</h2>
+          <p className="text-brand-grey mb-8">Tell us a little about yourself. You choose which chats to join and whether to receive emails or share a member profile.</p>
+          <CommunitySignup />
         </div>
       </section>
 
@@ -99,15 +103,16 @@ export default function JoinPage() {
             <h2 className="text-2xl font-display font-bold mb-3">Help people find you</h2>
             <p className="text-brand-grey text-sm leading-relaxed mb-4">
               Add what you are building, what you need and how you can help to
-              the member directory. The directory is shared with members who
-              opt in; phone numbers and email addresses are not published.
+              your profile. You can opt in to sharing it with other opted-in
+              members when the directory is available. Phone numbers and email
+              addresses are not published.
             </p>
             <p className="text-brand-grey text-sm leading-relaxed mb-6">
               Directory participation is optional and separate from email
               updates. It does not guarantee a place in a full chat group.
             </p>
-            <a href={SITE.memberDirectory} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-brand-red hover:text-brand-white font-medium text-sm">
-              Join the member directory<ArrowRight size={16} aria-hidden="true" />
+            <a href="#register" className="inline-flex items-center gap-2 text-brand-red hover:text-brand-white font-medium text-sm">
+              Add your profile<ArrowRight size={16} aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -116,7 +121,7 @@ export default function JoinPage() {
       <section className="py-16 md:py-24">
         <div className="max-w-site mx-auto px-6">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-3xl font-display font-bold mb-4">A good place to start</h2>
+            <h2 id="community-guidelines" className="text-3xl font-display font-bold mb-4 scroll-mt-24">A good place to start</h2>
             <p className="text-brand-grey leading-relaxed mb-8">
               Introduce yourself with your name, what you are building or
               working on, and one thing you would like help with—or can help

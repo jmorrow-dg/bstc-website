@@ -271,22 +271,21 @@ export default function CommunityPage() {
               Get Discovered
             </p>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Join the BSTC Member Directory
+              Share what you&apos;re building
             </h2>
             <p className="text-brand-grey max-w-xl mx-auto mb-8 leading-relaxed">
-              Add yourself to our public member directory. Get discovered by
-              fellow founders, investors, and operators in the community. Share
-              what you&apos;re building and what you&apos;re looking for.
+              Add an optional profile when you register. You can choose to share
+              what you&apos;re building and what you need with other opted-in
+              members when the directory is available. Email and phone fields
+              stay private.
             </p>
-            <a
+            <Link
               href={SITE.memberDirectory}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-all glow-red"
             >
-              Add Me to the Directory
+              Add My Profile
               <ArrowRight size={16} />
-            </a>
+            </Link>
             <p className="text-xs text-brand-grey mt-4">
               Free for all BSTC community members &middot; Takes 2 minutes
             </p>

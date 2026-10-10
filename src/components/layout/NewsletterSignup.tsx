@@ -1,10 +1,11 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useRef, useState } from "react";
 import Link from "next/link";
 
 export default function NewsletterSignup() {
   const id = useId();
+  const submissionId = useRef<string>();
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -16,10 +17,11 @@ export default function NewsletterSignup() {
     setStatus("loading");
     setMessage("");
     try {
+      submissionId.current ??= crypto.randomUUID();
       const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim(), consent }),
+        body: JSON.stringify({ email: email.trim(), consent, submissionId: submissionId.current }),
       });
       const result = await response.json();
       if (!response.ok || result?.success !== true) {
@@ -32,7 +34,7 @@ export default function NewsletterSignup() {
         return;
       }
       setStatus("success");
-      setMessage("You’re on the list for BSTC event and community updates.");
+      setMessage("Your email preference has been saved for BSTC event and community updates.");
       setEmail("");
     } catch {
       setStatus("error");
