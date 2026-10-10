@@ -34,3 +34,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Community rollout
+
+The `/join` page contains the native community form. Registrations and standalone
+newsletter opt-ins append directly to a private Google Sheet. Chat invitations
+are server-only and returned after a confirmed save; email and directory choices
+are independent. No form-service subscription is needed for capture.
+
+See [Google Sheets setup](docs/google-sheets-signups.md) for the one-time service
+account connection and [the rollout guide](docs/community-rollout.md) for channel
+setup and the event publishing workflow. Start from `.env.example`; store actual
+credentials only in hosting secrets, never in this repository.
+
+Run focused event-date, signup validation and mocked Google API tests using
+Node.js 22.18+ (or Node.js 24):
+
+```bash
+npm test
+```
+
+Tests never write real signup rows. After installing dependencies, validate the
+full application with `npm run build`.

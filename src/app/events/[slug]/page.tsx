@@ -21,6 +21,9 @@ import {
 } from "@/lib/content";
 import { getEventSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
+import { canRsvpToEvent, getEventState } from "@/lib/event-status";
+
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const events = await getAllEvents();
@@ -63,7 +66,10 @@ export default async function EventPage({
   if (!event) notFound();
 
   const { frontmatter: e, htmlContent } = event;
-  const isUpcoming = e.status === "upcoming";
+  const now = new Date();
+  const eventState = getEventState(e, now);
+  const isUpcoming = eventState === "upcoming";
+  const canRsvp = canRsvpToEvent(e, now);
   const hasRecap = e.status === "completed" && e.recap;
 
   const eventSchema = getEventSchema({
@@ -75,14 +81,17 @@ export default async function EventPage({
     url: `${SITE.url}/events/${e.slug}`,
     image: e.coverImage,
     status: e.status,
-  });
+    rsvpUrl: e.rsvpUrl,
+  }, now);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
-      />
+      {eventSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
+      )}
 
       {/* Hero Cover Image */}
       {e.coverImage && (
@@ -130,7 +139,7 @@ export default async function EventPage({
                    : "bg-white/5 text-brand-grey"
                 }`}
               >
-                {isUpcoming ? "Upcoming": "Past Event"}
+                {isUpcoming ? "Upcoming" : eventState === "past" ? "Past Listing" : "Details to be confirmed"}
               </span>
               <span className="text-xs font-medium uppercase tracking-wider text-brand-grey">
                 {formatEventType(e.type)}
@@ -157,16 +166,18 @@ export default async function EventPage({
                 <MapPin size={16} className="text-brand-red" />
                 {e.venue}
               </span>
-              <span className="flex items-center gap-2">
-                <Users size={16} className="text-brand-red" />
-                {hasRecap
-                  ? `${e.recap!.attendees} attended`
-                 : `${e.capacity} spots`}
-              </span>
+              {(hasRecap || isUpcoming) && (
+                <span className="flex items-center gap-2">
+                  <Users size={16} className="text-brand-red" />
+                  {hasRecap
+                    ? `${e.recap!.attendees} attended`
+                    : `${e.capacity} spots`}
+                </span>
+              )}
             </div>
 
             {/* RSVP Button */}
-            {isUpcoming && (
+            {canRsvp && (
               <a
                 href={e.rsvpUrl}
                 target="_blank"
@@ -335,6 +346,13 @@ export default async function EventPage({
       {/* Content Body */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-site mx-auto px-6">
+          {!isUpcoming && (
+            <p className="max-w-3xl mb-6 rounded-lg border border-white/10 bg-white/[0.03] p-4 text-sm text-brand-grey">
+              {eventState === "past"
+                ? "This is an archived event listing. Registration is closed; any RSVP instructions in the original description below are historical."
+                : "The details for this event are awaiting confirmation. Registration is not available."}
+            </p>
+          )}
           <div
             className="max-w-3xl prose prose-invert prose-sm prose-headings:font-display prose-headings:text-brand-white prose-p:text-brand-grey prose-strong:text-brand-white prose-li:text-brand-grey prose-a:text-brand-red"
             dangerouslySetInnerHTML={{ __html: htmlContent }}
@@ -346,21 +364,22 @@ export default async function EventPage({
       <section className="py-16 border-t border-white/5">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl font-display font-bold mb-4">
-            {isUpcoming ? "See You There": "Join the Next One"}
+            {canRsvp ? "See You There" : isUpcoming ? "Registration details coming soon" : "Join the Next One"}
           </h2>
           <p className="text-brand-grey mb-6">
-            {isUpcoming
+            {canRsvp
               ? "RSVP on MeetUp to secure your spot."
              : "Don't miss the next BSTC event."}
           </p>
           <Link
-            href={isUpcoming ? e.rsvpUrl : "/events"}
+            href={canRsvp ? e.rsvpUrl : "/events"}
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
           >
-            {isUpcoming ? "RSVP Now": "See Upcoming Events"}
+            {canRsvp ? "RSVP Now" : "See Upcoming Events"}
           </Link>
         </div>
       </section>
     </>
   );
 }
+

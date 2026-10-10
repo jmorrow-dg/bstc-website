@@ -9,11 +9,8 @@ export const SITE = {
   altDomain: "bstc.community",
   email: "hello@bstc.community",
   meetup: "https://www.meetup.com/bali-start-ups-tech-community/",
-  // Public join gate (Tally). The chat invite lives only on the form's
-  // thank-you page, so it never appears in public code and can't be used to
-  // bypass registration.
-  joinForm: "https://tally.so/r/KY5AMM",
-  memberDirectory: "https://tally.so/r/KY5AMM",
+  joinPath: "/join",
+  memberDirectory: "/join#register",
   linkedin: "https://www.linkedin.com/groups/14424020/",
   instagram: "https://www.instagram.com/bali_tech_community/",
   founded: "2023",
@@ -73,3 +70,4 @@ export const SPONSOR_CONFIG = {
     annual: { price: 36000, period: "per year" },
   },
 } as const;
+

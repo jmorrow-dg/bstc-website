@@ -19,6 +19,8 @@ import {
   ScaleIn,
 } from "@/components/ui/AnimatedSection";
 
+export const revalidate = 3600;
+
 function ValueCard({
   icon: Icon,
   title,
@@ -63,12 +65,12 @@ const HOMEPAGE_FAQS = [
   {
     question: "What events does BSTC run?",
     answer:
-      "Three core formats. (1) Networking Nights: 40 to 80 builders, every third Thursday. (2) How I Build with AI: live AI builds from real practitioners with Intel Drops and Builder Spotlights. (3) Hackathons: one-day builds with team demos and prizes. Cadence is 4 to 6 events per month.",
+      "Our formats include networking nights, live AI demonstrations and practical builder sessions. Check the Events page for confirmed dates, venues and registration details as the programme returns.",
   },
   {
     question: "How do I join BSTC?",
     answer:
-      "Three steps. (1) Join the WhatsApp community to get event announcements. (2) RSVP to your first Networking Night on MeetUp. (3) Show up, introduce yourself, and add value. There is no application process and no membership fee.",
+      "Visit our Join page for available discussion groups, announcements and the optional member directory. Our original WhatsApp discussion group is full, so we are opening more ways to connect. You do not need to join every platform. Community membership is free.",
   },
 ];
 
@@ -186,7 +188,7 @@ export default async function Home() {
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red" />
                       </span>
                       <p className="text-brand-red text-xs font-medium uppercase tracking-widest">
-                        This Week&apos;s Signal
+                        Latest Signal
                       </p>
                     </div>
                     <p className="text-xs text-brand-grey">
@@ -384,6 +386,18 @@ export default async function Home() {
                 </FadeInItem>
               ))}
             </FadeInStagger>
+          </div>
+        </section>
+      )}
+
+      {upcomingEvents.length === 0 && (
+        <section className="py-12 border-y border-white/5 bg-white/[0.01]">
+          <div className="max-w-site mx-auto px-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div>
+              <h2 className="text-2xl font-display font-bold mb-3">The next chapter of BSTC</h2>
+              <p className="text-brand-grey max-w-2xl">We are preparing more ways to connect and a return to local events. Find the latest joining options and confirmed event details here.</p>
+            </div>
+            <Link href="/join" className="inline-flex items-center gap-2 text-brand-red hover:text-brand-white font-medium shrink-0">Explore the community<ArrowRight size={16} /></Link>
           </div>
         </section>
       )}
@@ -590,15 +604,13 @@ export default async function Home() {
               from Southeast Asia.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={SITE.joinForm}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={SITE.joinPath}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
               >
                 <MessageCircle size={18} />
                 Join the Community
-              </a>
+              </Link>
               <a
                 href={SITE.meetup}
                 target="_blank"
@@ -615,3 +627,4 @@ export default async function Home() {
     </>
   );
 }
+

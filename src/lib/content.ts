@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { formatBaliEventDate, getEventState, isValidEventDate } from "./event-status";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -117,11 +118,9 @@ export async function getAllContent<T>(
 
 export async function getAllEvents(): Promise<ContentItem<EventFrontmatter>[]> {
   const events = await getAllContent<EventFrontmatter>("events");
-  return events.sort(
-    (a, b) =>
-      new Date(b.frontmatter.date).getTime() -
-      new Date(a.frontmatter.date).getTime()
-  );
+  return events
+    .filter((event) => isValidEventDate(event.frontmatter.date))
+    .sort((a, b) => b.frontmatter.date.localeCompare(a.frontmatter.date));
 }
 
 export async function getEventBySlug(
@@ -148,21 +147,21 @@ export async function getBlogPostBySlug(
 }
 
 export function getUpcomingEvents(
-  events: ContentItem<EventFrontmatter>[]
+  events: ContentItem<EventFrontmatter>[],
+  now: Date = new Date()
 ): ContentItem<EventFrontmatter>[] {
   return events
-    .filter((e) => e.frontmatter.status === "upcoming")
-    .sort(
-      (a, b) =>
-        new Date(a.frontmatter.date).getTime() -
-        new Date(b.frontmatter.date).getTime()
-    );
+    .filter((e) => getEventState(e.frontmatter, now) === "upcoming")
+    .sort((a, b) => a.frontmatter.date.localeCompare(b.frontmatter.date));
 }
 
 export function getPastEvents(
-  events: ContentItem<EventFrontmatter>[]
+  events: ContentItem<EventFrontmatter>[],
+  now: Date = new Date()
 ): ContentItem<EventFrontmatter>[] {
-  return events.filter((e) => e.frontmatter.status === "completed");
+  return events
+    .filter((e) => getEventState(e.frontmatter, now) === "past")
+    .sort((a, b) => b.frontmatter.date.localeCompare(a.frontmatter.date));
 }
 
 export function getHIWAEvents(
@@ -172,13 +171,7 @@ export function getHIWAEvents(
 }
 
 export function formatEventDate(dateStr: string): string {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  return formatBaliEventDate(dateStr);
 }
 
 export function formatEventType(type: string): string {
@@ -190,3 +183,4 @@ export function formatEventType(type: string): string {
   };
   return labels[type] || type;
 }
+

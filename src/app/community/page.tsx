@@ -24,7 +24,7 @@ const COMMUNITY_FAQS = [
   {
     question: "How do I join BSTC?",
     answer:
-      "Join our WhatsApp group for community updates, RSVP on MeetUp for events, and show up. It's free to join and attend most events.",
+      "Visit our Join page for the latest ways to connect, then check Events for confirmed dates and registration details. Community membership is free, and you do not need to join every platform.",
   },
   {
     question: "Is BSTC only for people in Bali?",
@@ -271,22 +271,21 @@ export default function CommunityPage() {
               Get Discovered
             </p>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Join the BSTC Member Directory
+              Share what you&apos;re building
             </h2>
             <p className="text-brand-grey max-w-xl mx-auto mb-8 leading-relaxed">
-              Add yourself to our public member directory. Get discovered by
-              fellow founders, investors, and operators in the community. Share
-              what you&apos;re building and what you&apos;re looking for.
+              Add an optional profile when you register. You can choose to share
+              what you&apos;re building and what you need with other opted-in
+              members when the directory is available. Email and phone fields
+              stay private.
             </p>
-            <a
+            <Link
               href={SITE.memberDirectory}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-all glow-red"
             >
-              Add Me to the Directory
+              Add My Profile
               <ArrowRight size={16} />
-            </a>
+            </Link>
             <p className="text-xs text-brand-grey mt-4">
               Free for all BSTC community members &middot; Takes 2 minutes
             </p>
@@ -379,7 +378,7 @@ export default function CommunityPage() {
             Ready to Join?
           </h2>
           <p className="text-brand-grey max-w-lg mx-auto mb-8">
-            It takes 30 seconds. Join WhatsApp, RSVP on MeetUp, and show up.
+            Choose your preferred way to connect, meet other builders and find the next event.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -402,3 +401,4 @@ export default function CommunityPage() {
     </>
   );
 }
+
