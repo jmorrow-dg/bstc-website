@@ -1,38 +1,43 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { subscribeNewsletter } from "@/lib/newsletter";
 
 const newsletterSchema = z.object({
-  email: z.string().email("Invalid email"),
+  email: z.string().trim().max(254).email("Enter a valid email address").toLowerCase(),
+  consent: z.literal(true),
 });
 
 export async function POST(request: NextRequest) {
+  let body: unknown;
   try {
-    const body = await request.json();
-    const data = newsletterSchema.parse(body);
-
-    // TODO: Add to Resend audience or Beehiiv
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.contacts.create({
-    //   email: data.email,
-    //   audienceId: process.env.RESEND_AUDIENCE_ID,
-    // });
-
-    console.log("Newsletter signup:", data.email);
-
+    body = await request.json();
+  } catch {
     return NextResponse.json(
-      { success: true, message: "Subscribed successfully" },
-      { status: 200 }
-    );
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json(
-        { success: false, errors: error.issues },
-        { status: 400 }
-      );
-    }
-    return NextResponse.json(
-      { success: false, message: "Something went wrong" },
-      { status: 500 }
+      { success: false, message: "Please submit a valid signup form." },
+      { status: 400 }
     );
   }
+
+  const parsed = newsletterSchema.safeParse(body);
+  if (!parsed.success) {
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Enter a valid email address and agree to receive BSTC updates.",
+      },
+      { status: 400 }
+    );
+  }
+
+  const result = await subscribeNewsletter(parsed.data.email, {
+    apiKey: process.env.RESEND_API_KEY,
+    segmentId:
+      process.env.RESEND_SEGMENT_ID?.trim() || process.env.RESEND_AUDIENCE_ID,
+  });
+
+  return NextResponse.json(
+    { success: result.success, message: result.message },
+    { status: result.status, headers: { "Cache-Control": "no-store" } }
+  );
 }
+

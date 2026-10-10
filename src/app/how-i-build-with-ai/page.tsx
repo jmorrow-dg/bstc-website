@@ -10,6 +10,9 @@ import {
   EventFrontmatter,
 } from "@/lib/content";
 import { getFAQSchema } from "@/lib/schema";
+import { getEventState } from "@/lib/event-status";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "How I Build with AI",
@@ -36,13 +39,14 @@ const HIWA_FAQS = [
   {
     question: "Are 'How I Build with AI' sessions recorded?",
     answer:
-      "Yes. Every session is recorded and published as a podcast episode and video. Transcripts and key takeaways are published on our website.",
+      "When a recording or podcast is available, you'll find its link on the event page alongside any published recap and key takeaways.",
   },
 ];
 
-function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
+function EpisodeCard({ event, now }: { event: ContentItem<EventFrontmatter>; now: Date }) {
   const { frontmatter: e } = event;
-  const isUpcoming = e.status === "upcoming";
+  const isUpcoming = getEventState(e, now) === "upcoming";
+  const hasRecording = e.status === "completed" && Boolean(e.recap?.videoUrl);
 
   return (
     <Link
@@ -65,7 +69,7 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
           <div className="text-center">
             <p className="text-brand-red font-bold text-lg">HOW I AI</p>
             <p className="text-brand-grey text-xs mt-1">
-              {isUpcoming ? "Coming Soon" : "Watch Now"}
+              {isUpcoming ? "Coming Soon" : hasRecording ? "Watch Recording" : "Event Details"}
             </p>
           </div>
         </div>
@@ -80,7 +84,7 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
                : "bg-white/5 text-brand-grey"
             }`}
           >
-            {isUpcoming ? "Upcoming": "Episode"}
+            {isUpcoming ? "Upcoming" : "Past Listing"}
           </span>
           <span className="text-xs text-brand-grey">
             {formatEventDate(e.date)}
@@ -111,7 +115,10 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
 
 export default async function HIWAPage() {
   const allEvents = await getAllEvents();
-  const hiwaEvents = getHIWAEvents(allEvents);
+  const now = new Date();
+  const hiwaEvents = getHIWAEvents(allEvents).filter(
+    (event) => getEventState(event.frontmatter, now) !== "unavailable"
+  );
 
   return (
     <>
@@ -155,7 +162,7 @@ export default async function HIWAPage() {
           {hiwaEvents.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {hiwaEvents.map((event) => (
-                <EpisodeCard key={event.frontmatter.slug} event={event} />
+                <EpisodeCard key={event.frontmatter.slug} event={event} now={now} />
               ))}
             </div>
           ): (
@@ -261,3 +268,4 @@ export default async function HIWAPage() {
     </>
   );
 }
+

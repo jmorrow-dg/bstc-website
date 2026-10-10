@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X } from "lucide-react";
@@ -14,7 +16,7 @@ export default function WhatsAppCTA() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (dismissed || !SITE.joinForm) return null;
+  if (dismissed) return null;
 
   return (
     <AnimatePresence>
@@ -36,22 +38,21 @@ export default function WhatsAppCTA() {
               <X size={10} />
             </button>
             <p className="text-xs text-brand-grey leading-relaxed">
-              Join 2,500+ builders in our community
+              Find your way into the BSTC community
             </p>
           </div>
 
           {/* Button */}
-          <a
-            href={SITE.joinForm}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white flex items-center justify-center shadow-lg hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all"
+          <Link
+            href={SITE.joinPath}
+            className="w-14 h-14 rounded-full bg-brand-red hover:bg-brand-red-dark text-white flex items-center justify-center shadow-lg hover:shadow-[0_0_20px_rgba(200,30,30,0.4)] transition-all"
             aria-label="Join the community"
           >
             <MessageCircle size={24} />
-          </a>
+          </Link>
         </motion.div>
       )}
     </AnimatePresence>
   );
 }
+

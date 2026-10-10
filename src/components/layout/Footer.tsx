@@ -104,14 +104,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={SITE.joinForm}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={SITE.joinPath}
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >
                   Join
-                </a>
+                </Link>
               </li>
               <li>
                 <a
@@ -208,3 +206,4 @@ export default function Footer() {
     </footer>
   );
 }
+

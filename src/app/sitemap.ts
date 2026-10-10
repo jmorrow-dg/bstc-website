@@ -1,6 +1,9 @@
 import { MetadataRoute } from "next";
 import { getAllEvents, getAllBlogPosts } from "@/lib/content";
+import { getEventState } from "@/lib/event-status";
 import { CITY_COMPARISONS } from "@/data/city-comparisons";
+
+export const revalidate = 3600;
 
 const BASE_URL = "https://balistartupandtech.com";
 
@@ -26,7 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const eventPages: MetadataRoute.Sitemap = events.map((event) => ({
     url: `${BASE_URL}/events/${event.frontmatter.slug}`,
     lastModified: new Date(event.frontmatter.date),
-    changeFrequency: event.frontmatter.status === "upcoming" ? "weekly" as const : "monthly" as const,
+    changeFrequency: getEventState(event.frontmatter) === "upcoming" ? "weekly" as const : "monthly" as const,
     priority: 0.7,
   }));
 
@@ -55,3 +58,4 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticPages, ...eventPages, ...hiwaPages, ...blogPages, ...comparisonPages];
 }
+

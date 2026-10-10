@@ -1,55 +1,105 @@
 "use client";
 
-import { useState } from "react";
-import { Send } from "lucide-react";
+import { useId, useState } from "react";
+import Link from "next/link";
 
 export default function NewsletterSignup() {
+  const id = useId();
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [consent, setConsent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email) return;
+    if (!email.trim() || !consent || status === "loading") return;
     setStatus("loading");
+    setMessage("");
     try {
-      await fetch("/api/newsletter", {
+      const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: email.trim(), consent }),
       });
+      const result = await response.json();
+      if (!response.ok || result?.success !== true) {
+        setStatus("error");
+        setMessage(
+          typeof result?.message === "string"
+            ? result.message
+            : "We couldn’t complete your signup. Please try again later."
+        );
+        return;
+      }
       setStatus("success");
+      setMessage("You’re on the list for BSTC event and community updates.");
       setEmail("");
     } catch {
-      setStatus("idle");
+      setStatus("error");
+      setMessage("We couldn’t complete your signup. Please try again later.");
     }
   }
 
-  if (status === "success") {
-    return (
-      <p className="text-sm text-brand-red">
-        You&apos;re in. Watch your inbox.
-      </p>
-    );
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="you@email.com"
-        required
-        className="flex-1 px-3 py-2 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-      />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="px-3 py-2 bg-brand-red hover:bg-brand-red-dark text-brand-white rounded transition-colors disabled:opacity-50"
-        aria-label="Subscribe"
+    <div>
+      {status !== "success" && (
+        <form onSubmit={handleSubmit} className="space-y-3" aria-busy={status === "loading"}>
+          <label htmlFor={`${id}-email`} className="sr-only">
+            Email address for BSTC updates
+          </label>
+          <input
+            id={`${id}-email`}
+            name="email"
+            type="email"
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@email.com"
+            required
+            maxLength={254}
+            disabled={status === "loading"}
+            aria-describedby={`${id}-message`}
+            className="w-full min-w-0 px-3 py-2 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
+          />
+          <label className="flex items-start gap-2 text-xs text-brand-grey leading-relaxed">
+            <input
+              name="consent"
+              type="checkbox"
+              checked={consent}
+              onChange={(e) => setConsent(e.target.checked)}
+              required
+              disabled={status === "loading"}
+              className="mt-0.5 accent-brand-red"
+            />
+            <span>I agree to receive BSTC event and community emails. I can unsubscribe anytime.</span>
+          </label>
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className="w-full px-3 py-2 bg-brand-red hover:bg-brand-red-dark text-brand-white rounded transition-colors disabled:opacity-50 text-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red"
+          >
+            {status === "loading" ? "Signing up…" : "Get email updates"}
+          </button>
+          <Link href="/privacy" className="inline-block text-xs text-brand-grey underline hover:text-brand-white">
+            Privacy policy
+          </Link>
+        </form>
+      )}
+      <p
+        id={`${id}-message`}
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="mt-2 text-sm text-brand-white"
       >
-        <Send size={14} />
-      </button>
-    </form>
+        {message}
+      </p>
+      {status === "error" && (
+        <Link href="/join" className="text-xs text-brand-grey underline hover:text-brand-white">
+          Other ways to connect
+        </Link>
+      )}
+    </div>
   );
 }
+

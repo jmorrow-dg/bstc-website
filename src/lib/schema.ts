@@ -1,4 +1,5 @@
 import { SITE, STATS } from "./constants";
+import { canRsvpToEvent, isValidEventDate } from "./event-status";
 
 export function getOrganizationSchema() {
   return {
@@ -118,7 +119,10 @@ export function getEventSchema(event: {
   url: string;
   image?: string;
   status?: string;
-}) {
+  rsvpUrl?: string;
+}, now: Date = new Date()) {
+  if (!isValidEventDate(event.date)) return null;
+
   const statusMap: Record<string, string> = {
     upcoming: "https://schema.org/EventScheduled",
     completed: "https://schema.org/EventScheduled",
@@ -130,7 +134,9 @@ export function getEventSchema(event: {
     "@type": "Event",
     name: event.title,
     description: event.description,
-    startDate: `${event.date}T${event.time}:00+08:00`,
+    startDate: /^([01]\d|2[0-3]):[0-5]\d$/.test(event.time)
+      ? `${event.date}T${event.time}:00+08:00`
+      : event.date,
     eventStatus: statusMap[event.status || "upcoming"] || statusMap.upcoming,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
@@ -150,14 +156,15 @@ export function getEventSchema(event: {
     },
     image: event.image ? `${SITE.url}${event.image}` : undefined,
     url: event.url,
-    offers: {
-      "@type": "Offer",
-      url: event.url,
-      price: "0",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      validFrom: event.date,
-    },
+    ...(canRsvpToEvent(event, now) && {
+      offers: {
+        "@type": "Offer",
+        url: event.rsvpUrl,
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+    }),
   };
 }
 
@@ -238,3 +245,4 @@ export function getItemListSchema(params: {
     })),
   };
 }
+

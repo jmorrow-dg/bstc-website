@@ -13,6 +13,7 @@ export const SITE = {
   // thank-you page, so it never appears in public code and can't be used to
   // bypass registration.
   joinForm: "https://tally.so/r/KY5AMM",
+  joinPath: "/join",
   memberDirectory: "https://tally.so/r/KY5AMM",
   linkedin: "https://www.linkedin.com/groups/14424020/",
   instagram: "https://www.instagram.com/bali_tech_community/",
@@ -73,3 +74,4 @@ export const SPONSOR_CONFIG = {
     annual: { price: 36000, period: "per year" },
   },
 } as const;
+

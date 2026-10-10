@@ -34,3 +34,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Community rollout
+
+The community join page lives at `/join`. Shared join buttons point there, while
+the member directory remains optional. Channel links stay in an honest
+“Opening soon” state until verified public entry points are configured.
+
+See [the rollout guide](docs/community-rollout.md) for channel setup, environment
+variables, activation checks, and the event publishing workflow. Start from
+`.env.example`; keep real credentials in your hosting provider's secret settings.
+
+Run focused event-date and newsletter tests with Node.js 22.18+ (or Node.js 24):
+
+```bash
+npm test
+```
+
+The tests mock newsletter provider calls and never create real subscriptions.
+After installing dependencies, validate the full application with `npm run build`.

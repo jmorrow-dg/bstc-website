@@ -58,7 +58,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How do I join BSTC?",
         answer:
-          "Three steps: (1) Join our WhatsApp community for updates. (2) RSVP on MeetUp for the next event. (3) Show up. There's no application form and no membership fee for joining the community.",
+          "Visit /join for available discussion groups, announcements and our optional member directory. The original WhatsApp discussion group is full and more joining options are being prepared. You can choose your preferred platform; community membership is free.",
       },
       {
         question: "Is BSTC free to join?",
@@ -88,7 +88,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "When and where are BSTC events?",
         answer:
-          "Our flagship Networking Night is every 3rd Thursday at Yema Kitchen in Canggu. 'How I Build with AI' events are at Seoul Seoul Project in Canggu. Other events rotate across Canggu, Ubud, Sanur, and Uluwatu. All events are listed on our MeetUp page.",
+          "Check /events for confirmed dates, venues and registration links. We are preparing to bring events back with local hosts and venues. Historical event listings are kept separately from upcoming events.",
       },
       {
         question: "What is 'How I Build with AI'?",
@@ -261,3 +261,4 @@ export default function FAQPage() {
     </>
   );
 }
+

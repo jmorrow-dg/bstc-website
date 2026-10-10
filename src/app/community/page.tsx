@@ -24,7 +24,7 @@ const COMMUNITY_FAQS = [
   {
     question: "How do I join BSTC?",
     answer:
-      "Join our WhatsApp group for community updates, RSVP on MeetUp for events, and show up. It's free to join and attend most events.",
+      "Visit our Join page for the latest ways to connect, then check Events for confirmed dates and registration details. Community membership is free, and you do not need to join every platform.",
   },
   {
     question: "Is BSTC only for people in Bali?",
@@ -379,7 +379,7 @@ export default function CommunityPage() {
             Ready to Join?
           </h2>
           <p className="text-brand-grey max-w-lg mx-auto mb-8">
-            It takes 30 seconds. Join WhatsApp, RSVP on MeetUp, and show up.
+            Choose your preferred way to connect, meet other builders and find the next event.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -402,3 +402,4 @@ export default function CommunityPage() {
     </>
   );
 }
+

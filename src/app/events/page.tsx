@@ -11,6 +11,9 @@ import {
   EventFrontmatter,
   ContentItem,
 } from "@/lib/content";
+import { getEventState } from "@/lib/event-status";
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Events",
@@ -36,9 +39,9 @@ export const metadata: Metadata = {
   },
 };
 
-function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
+function EventCard({ event, now }: { event: ContentItem<EventFrontmatter>; now: Date }) {
   const { frontmatter: e } = event;
-  const isUpcoming = e.status === "upcoming";
+  const isUpcoming = getEventState(e, now) === "upcoming";
 
   return (
     <Link
@@ -73,7 +76,7 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
               : "bg-white/5 text-brand-grey"
           }`}
         >
-          {isUpcoming ? "Upcoming": "Past Event"}
+          {isUpcoming ? "Upcoming" : "Past Listing"}
         </span>
         <span className="text-xs font-medium uppercase tracking-wider text-brand-grey">
           {formatEventType(e.type)}
@@ -128,8 +131,9 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
 
 export default async function EventsPage() {
   const allEvents = await getAllEvents();
-  const upcoming = getUpcomingEvents(allEvents);
-  const past = getPastEvents(allEvents);
+  const now = new Date();
+  const upcoming = getUpcomingEvents(allEvents, now);
+  const past = getPastEvents(allEvents, now);
 
   return (
     <>
@@ -143,15 +147,15 @@ export default async function EventsPage() {
             Where Builders Gather
           </h1>
           <p className="text-brand-grey max-w-2xl text-lg">
-            Monthly networking nights, founder roundtables, builder sessions,
-            and our flagship &ldquo;How I Build with AI&rdquo; series. Every
-            event is designed for signal over noise.
+            Founder conversations, practical AI demos, and useful connections
+            with the people building in Bali. Find confirmed dates and details
+            here as the next events are announced.
           </p>
         </div>
       </section>
 
       {/* Upcoming Events */}
-      {upcoming.length > 0 && (
+      {upcoming.length > 0 ? (
         <section className="pb-16 md:pb-24">
           <div className="max-w-site mx-auto px-6">
             <h2 className="text-2xl font-display font-bold mb-8">
@@ -159,8 +163,33 @@ export default async function EventsPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {upcoming.map((event) => (
-                <EventCard key={event.frontmatter.slug} event={event} />
+                <EventCard key={event.frontmatter.slug} event={event} now={now} />
               ))}
+            </div>
+          </div>
+        </section>
+      ) : (
+        <section className="pb-16 md:pb-24">
+          <div className="max-w-site mx-auto px-6">
+            <div className="rounded-lg border border-brand-red/20 bg-brand-red/5 p-8 md:p-10">
+              <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-3">
+                Events are coming back
+              </p>
+              <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
+                Reconnecting Bali&apos;s founders and builders
+              </h2>
+              <p className="text-brand-grey max-w-2xl leading-relaxed mb-6">
+                We&apos;re preparing events from 21 October 2026 onward with local
+                people, teams, and venues connected to BSTC. Confirmed dates,
+                locations, and registration details will be published here shortly.
+              </p>
+              <Link
+                href="/join"
+                className="inline-flex items-center gap-2 text-brand-red hover:text-brand-white transition-colors"
+              >
+                Get community updates
+                <ArrowRight size={16} />
+              </Link>
             </div>
           </div>
         </section>
@@ -175,7 +204,7 @@ export default async function EventsPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {past.map((event) => (
-                <EventCard key={event.frontmatter.slug} event={event} />
+                <EventCard key={event.frontmatter.slug} event={event} now={now} />
               ))}
             </div>
           </div>
@@ -205,3 +234,4 @@ export default async function EventsPage() {
     </>
   );
 }
+
