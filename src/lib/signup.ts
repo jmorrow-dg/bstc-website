@@ -160,7 +160,7 @@ export function parseSignup(
       !body.interests.every((interest) => INTEREST_OPTIONS.includes(interest))
     ) {
       fieldErrors.interests = "Choose interests from the list.";
-    } else data.interests = [...new Set(body.interests)] as SignupInterest[];
+    } else data.interests = Array.from(new Set(body.interests)) as SignupInterest[];
 
     if (data.website) {
       try {
