@@ -41,7 +41,7 @@ function ValueCard({
 }) {
   return (
     <FadeInItem>
-      <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all duration-300">
+      <div className="p-6 rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all duration-300">
         <Icon className="w-5 h-5 text-brand-red mb-4" />
         <h3 className="font-semibold text-brand-white mb-2">{title}</h3>
         <p className="text-sm text-brand-grey leading-relaxed">{description}</p>
@@ -135,14 +135,14 @@ export default async function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/join"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red"
                 >
                   Join the Community
                   <ArrowRight size={18} />
                 </Link>
                 <Link
                   href="/events"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
                 >
                   See Upcoming Events
                 </Link>
@@ -153,7 +153,7 @@ export default async function Home() {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-y border-white/5 bg-white/[0.01]">
+      <section className="border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <AnimatedCounter
@@ -182,7 +182,7 @@ export default async function Home() {
 
       {/* This Week's Signal */}
       {latestSignal && (
-        <section className="border-b border-white/5 bg-gradient-to-b from-brand-red/[0.04] via-transparent to-transparent">
+        <section className="border-b border-ink/10 bg-gradient-to-b from-brand-red/[0.04] via-transparent to-transparent">
           <div className="max-w-site mx-auto px-6 py-14 md:py-20">
             <FadeIn>
               <Link
@@ -230,7 +230,7 @@ export default async function Home() {
       )}
 
       {/* Credibility band */}
-      <section className="py-16 md:py-20 border-b border-white/5">
+      <section className="py-16 md:py-20 border-b border-ink/10">
         <div className="max-w-site mx-auto px-6">
           <FadeIn className="text-center mb-8">
             <p className="text-xs font-medium uppercase tracking-widest text-brand-grey">
@@ -258,7 +258,7 @@ export default async function Home() {
             ))}
           </FadeInStagger>
           <FadeIn className="text-center mt-8">
-            <p className="text-xs text-brand-grey/60 italic">
+            <p className="text-xs text-brand-grey italic">
               Representing the career backgrounds of active BSTC members.
             </p>
           </FadeIn>
@@ -311,7 +311,7 @@ export default async function Home() {
               <FadeInItem key={event.title}>
                 <Link
                   href={event.href}
-                  className="group block rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all overflow-hidden"
+                  className="group block rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all overflow-hidden"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
@@ -322,7 +322,7 @@ export default async function Home() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     <div className="absolute top-3 left-3">
-                      <span className="text-[10px] font-medium uppercase tracking-wider bg-brand-red/90 text-brand-white px-2 py-1 rounded">
+                      <span className="text-[10px] font-medium uppercase tracking-wider bg-brand-red/90 text-white px-2 py-1 rounded">
                         {event.badge}
                       </span>
                     </div>
@@ -343,7 +343,7 @@ export default async function Home() {
           <FadeIn className="text-center mt-10">
             <Link
               href="/events"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
             >
               See All Events
               <ArrowRight size={16} />
@@ -354,7 +354,7 @@ export default async function Home() {
 
       {/* Upcoming Events (dynamic) */}
       {upcomingEvents.length > 0 && (
-        <section className="py-16 md:py-20 border-y border-white/5 bg-white/[0.01]">
+        <section className="py-16 md:py-20 border-y border-ink/10 bg-white/40">
           <div className="max-w-site mx-auto px-6">
             <FadeIn className="flex items-end justify-between mb-10 flex-wrap gap-4">
               <div>
@@ -377,7 +377,7 @@ export default async function Home() {
                 <FadeInItem key={e.frontmatter.slug}>
                   <Link
                     href={`/events/${e.frontmatter.slug}`}
-                    className="group block p-5 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all h-full"
+                    className="group block p-5 rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all h-full"
                   >
                     <span className="text-xs font-medium uppercase tracking-wider text-brand-red">
                       {new Date(e.frontmatter.date).toLocaleDateString("en-US", {
@@ -400,7 +400,7 @@ export default async function Home() {
       )}
 
       {/* Who's in the Room */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <FadeIn className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
@@ -420,7 +420,7 @@ export default async function Home() {
               { label: "Operators", pct: "25%" },
             ].map((role) => (
               <FadeInItem key={role.label}>
-                <div className="text-center p-4 rounded-lg border border-white/5 bg-white/[0.02]">
+                <div className="text-center p-4 rounded-lg border border-ink/10 bg-white/70">
                   <div className="text-xl font-display font-bold text-brand-red mb-1">
                     {role.pct}
                   </div>
@@ -466,7 +466,7 @@ export default async function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 md:py-28 bg-white/[0.01] border-y border-white/5">
+      <section className="py-20 md:py-28 bg-white/40 border-y border-ink/10">
         <div className="max-w-site mx-auto px-6">
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
@@ -518,7 +518,7 @@ export default async function Home() {
               },
             ].map((testimonial, i) => (
               <FadeInItem key={i}>
-                <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-brand-red/20 transition-all duration-300 h-full flex flex-col">
+                <div className="p-6 rounded-lg border border-ink/10 bg-white/70 hover:border-brand-red/20 transition-all duration-300 h-full flex flex-col">
                   <p className="text-brand-grey text-sm leading-relaxed mb-4 flex-grow">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
@@ -559,7 +559,7 @@ export default async function Home() {
               <FadeInItem key={post.frontmatter.slug}>
                 <Link
                   href={`/blog/${post.frontmatter.slug}`}
-                  className="group block p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all duration-300 h-full"
+                  className="group block p-6 rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all duration-300 h-full"
                 >
                   <span className="text-xs font-medium uppercase tracking-wider text-brand-red">
                     {post.frontmatter.category.replace(/-/g, " ")}
@@ -590,7 +590,7 @@ export default async function Home() {
       </section>
 
       {/* Join CTA */}
-      <section className="py-20 md:py-28 border-t border-white/5">
+      <section className="py-20 md:py-28 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6 text-center">
           <ScaleIn>
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
@@ -605,7 +605,7 @@ export default async function Home() {
                 href={SITE.joinForm}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red"
               >
                 <MessageCircle size={18} />
                 Join the Community
@@ -614,7 +614,7 @@ export default async function Home() {
                 href={SITE.meetup}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
               >
                 <Calendar size={18} />
                 RSVP on MeetUp

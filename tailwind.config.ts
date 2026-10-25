@@ -9,20 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Global league "Season" kit (25 Oct 2026). The old token names are
+        // kept so every page restyles without a rewrite: `charcoal` is now
+        // the page ground (paper), `white` is the text colour (navy), and
+        // `grey` is a navy-tinted slate (6.9:1 on paper).
         brand: {
-          charcoal: "#111111",
-          red: "#C81E1E",
-          "red-dark": "#8B1A1A",
-          "red-glow": "#FF2E2E",
-          white: "#F5F5F5",
-          grey: "#888888",
-          "grey-dark": "#333333",
-          "grey-border": "#222222",
+          charcoal: "#F4F4F1",
+          red: "#B5241F",
+          "red-dark": "#7E1714",
+          "red-glow": "#7E1714",
+          white: "#13213C",
+          grey: "#4A5468",
+          "grey-dark": "#3F4859",
+          "grey-border": "#DCDAD3",
+          paper: "#F4F4F1",
+          navy: "#13213C",
+          chalk: "#DCDAD3",
+          crest: "#1A1A1A",
+          "red-deep": "#7E1714",
         },
+        // Navy for translucent rules and panels on paper (replaces the old
+        // `white/x` utilities, which disappear on a light ground).
+        ink: "#13213C",
       },
       fontFamily: {
-        display: ["var(--font-display)", "serif"],
-        body: ["var(--font-body)", "sans-serif"],
+        display: ["var(--font-display)", "Arial Narrow", "sans-serif"],
+        body: ["var(--font-body)", "Helvetica Neue", "Arial", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
       maxWidth: {

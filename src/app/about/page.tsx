@@ -110,7 +110,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-12 text-center">
             Milestones
@@ -148,7 +148,7 @@ export default function AboutPage() {
             ].map((milestone) => (
               <div
                 key={milestone.date}
-                className="flex gap-6 items-start p-4 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="flex gap-6 items-start p-4 rounded-lg border border-ink/10 bg-white/70"
               >
                 <span className="text-brand-red font-mono text-sm flex-shrink-0 w-20">
                   {milestone.date}
@@ -173,14 +173,14 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/join"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
             >
               Join the Community
               <ArrowRight size={16} />
             </Link>
             <Link
               href="/leadership"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
             >
               Meet the Leaders
             </Link>

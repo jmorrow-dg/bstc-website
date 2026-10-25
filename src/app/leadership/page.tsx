@@ -108,7 +108,7 @@ export default function LeadershipPage() {
             {FOUNDERS.map((person) => (
               <div
                 key={person.name}
-                className="p-6 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="p-6 rounded-lg border border-ink/10 bg-white/70"
               >
                 <div className="w-14 h-14 rounded-full bg-brand-red/20 flex items-center justify-center text-brand-red font-bold text-lg mb-4">
                   {person.name
@@ -133,7 +133,7 @@ export default function LeadershipPage() {
       </section>
 
       {/* Tier System */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-4 text-center">
             Leadership Tiers
@@ -148,7 +148,7 @@ export default function LeadershipPage() {
             {TIERS.map((tier, i) => (
               <div
                 key={tier.name}
-                className="p-6 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="p-6 rounded-lg border border-ink/10 bg-white/70"
               >
                 <div className="text-brand-red font-mono text-xs mb-3">
                   Tier {i + 1}
@@ -179,7 +179,7 @@ export default function LeadershipPage() {
           </p>
           <Link
             href="/join"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
           >
             Join the Community First
             <ArrowRight size={16} />

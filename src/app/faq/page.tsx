@@ -209,14 +209,14 @@ export default function FAQPage() {
           <div className="max-w-3xl">
             {FAQ_SECTIONS.map((section) => (
               <div key={section.title} className="mb-16">
-                <h2 className="text-xl font-display font-bold text-brand-white mb-6 pb-3 border-b border-white/10">
+                <h2 className="text-xl font-display font-bold text-brand-white mb-6 pb-3 border-b border-ink/15">
                   {section.title}
                 </h2>
                 <div className="space-y-4">
                   {section.faqs.map((faq) => (
                     <div
                       key={faq.question}
-                      className="p-5 rounded-lg border border-white/5 bg-white/[0.02] hover:border-brand-red/10 transition-colors"
+                      className="p-5 rounded-lg border border-ink/10 bg-white/70 hover:border-brand-red/10 transition-colors"
                     >
                       <h3 className="font-semibold text-brand-white mb-2 text-sm">
                         {faq.question}
@@ -234,7 +234,7 @@ export default function FAQPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
             Still Have Questions?
@@ -245,14 +245,14 @@ export default function FAQPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
             >
               Contact Us
               <ArrowRight size={16} />
             </Link>
             <Link
               href="/join"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
             >
               Join the Community
             </Link>

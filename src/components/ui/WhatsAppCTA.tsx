@@ -27,10 +27,10 @@ export default function WhatsAppCTA() {
           className="fixed bottom-8 left-8 z-40 flex items-end gap-3"
         >
           {/* Tooltip */}
-          <div className="hidden sm:block bg-brand-charcoal border border-white/10 rounded-lg p-3 shadow-xl max-w-[200px] relative">
+          <div className="hidden sm:block bg-brand-charcoal border border-ink/15 rounded-lg p-3 shadow-xl max-w-[200px] relative">
             <button
               onClick={() => setDismissed(true)}
-              className="absolute -top-2 -right-2 w-5 h-5 bg-brand-charcoal border border-white/10 rounded-full flex items-center justify-center text-brand-grey hover:text-brand-white transition-colors"
+              className="absolute -top-2 -right-2 w-5 h-5 bg-brand-charcoal border border-ink/15 rounded-full flex items-center justify-center text-brand-grey hover:text-brand-white transition-colors"
               aria-label="Dismiss"
             >
               <X size={10} />

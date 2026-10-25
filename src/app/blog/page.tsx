@@ -70,7 +70,7 @@ function FeaturedPost({ post }: { post: ContentItem<BlogFrontmatter> }) {
         <span className="text-sm text-brand-grey">
           By {p.author}
           {p.authorRole && (
-            <span className="text-brand-grey/60">: {p.authorRole}</span>
+            <span className="text-brand-grey">: {p.authorRole}</span>
           )}
         </span>
         <span className="inline-flex items-center gap-1 text-sm text-brand-red group-hover:text-brand-white transition-colors">
@@ -86,7 +86,7 @@ function BlogCard({ post }: { post: ContentItem<BlogFrontmatter> }) {
   return (
     <Link
       href={`/blog/${p.slug}`}
-      className="group block p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all"
+      className="group block p-6 rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all"
     >
       <div className="flex items-center gap-3 mb-3">
         <span className="text-xs font-medium uppercase tracking-wider text-brand-red">
@@ -162,7 +162,7 @@ export default async function BlogPage() {
       )}
 
       {/* Newsletter CTA */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
             Stay in the Loop
@@ -173,7 +173,7 @@ export default async function BlogPage() {
           </p>
           <Link
             href="/join"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
           >
             Join the Community
             <ArrowRight size={16} />

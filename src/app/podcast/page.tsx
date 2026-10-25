@@ -90,13 +90,13 @@ export default function PodcastPage() {
                 href={SITE.joinForm}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors text-sm"
               >
                 Join the Community
               </a>
               <Link
                 href="/join"
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors text-sm"
               >
                 Join the Community
               </Link>
@@ -106,13 +106,13 @@ export default function PodcastPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-12 text-center">
             What to Expect
           </h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+            <div className="text-center p-6 rounded-lg border border-ink/10 bg-white/70">
               <Mic className="w-6 h-6 text-brand-red mx-auto mb-4" />
               <h3 className="font-semibold text-brand-white mb-2">
                 Builder Interviews
@@ -122,7 +122,7 @@ export default function PodcastPage() {
                 with AI. Their stack, their revenue, their lessons.
               </p>
             </div>
-            <div className="text-center p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+            <div className="text-center p-6 rounded-lg border border-ink/10 bg-white/70">
               <Radio className="w-6 h-6 text-brand-red mx-auto mb-4" />
               <h3 className="font-semibold text-brand-white mb-2">
                 AI Intel Drops
@@ -133,7 +133,7 @@ export default function PodcastPage() {
                 attention to.
               </p>
             </div>
-            <div className="text-center p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+            <div className="text-center p-6 rounded-lg border border-ink/10 bg-white/70">
               <Headphones className="w-6 h-6 text-brand-red mx-auto mb-4" />
               <h3 className="font-semibold text-brand-white mb-2">
                 Live Event Audio
@@ -172,7 +172,7 @@ export default function PodcastPage() {
                 <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+            <div className="p-6 rounded-lg border border-ink/10 bg-white/70">
               <h3 className="text-xs font-medium uppercase tracking-wider text-brand-grey mb-4">
                 Audience Profile
               </h3>
@@ -200,7 +200,7 @@ export default function PodcastPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-8 text-center">
             FAQ
@@ -209,7 +209,7 @@ export default function PodcastPage() {
             {PODCAST_FAQS.map((faq) => (
               <div
                 key={faq.question}
-                className="p-6 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="p-6 rounded-lg border border-ink/10 bg-white/70"
               >
                 <h3 className="font-semibold text-brand-white mb-2">
                   {faq.question}

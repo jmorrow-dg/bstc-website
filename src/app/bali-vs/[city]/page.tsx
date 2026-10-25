@@ -108,7 +108,7 @@ function Row({
   city: string;
 }) {
   return (
-    <div className="grid grid-cols-3 gap-4 py-3 border-b border-white/5 text-sm">
+    <div className="grid grid-cols-3 gap-4 py-3 border-b border-ink/10 text-sm">
       <div className="text-brand-grey">{label}</div>
       <div className="text-brand-white font-medium">{bali}</div>
       <div className="text-brand-white font-medium">{city}</div>
@@ -171,7 +171,7 @@ export default async function BaliVsCityPage({
                 </div>
                 <p className="text-brand-white">{c.whoShouldChooseBali}</p>
               </div>
-              <div className="p-6 rounded-lg border border-white/10 bg-white/[0.02]">
+              <div className="p-6 rounded-lg border border-ink/15 bg-white/70">
                 <div className="text-xs uppercase tracking-wider text-brand-grey mb-2">
                   Choose {c.city} if
                 </div>
@@ -183,8 +183,8 @@ export default async function BaliVsCityPage({
             <h2 className="text-2xl font-display font-bold mb-4">
               Side-by-side comparison
             </h2>
-            <div className="rounded-lg border border-white/10 bg-white/[0.02] p-4 mb-12">
-              <div className="grid grid-cols-3 gap-4 pb-3 border-b border-white/10 text-xs uppercase tracking-wider text-brand-grey">
+            <div className="rounded-lg border border-ink/15 bg-white/70 p-4 mb-12">
+              <div className="grid grid-cols-3 gap-4 pb-3 border-b border-ink/15 text-xs uppercase tracking-wider text-brand-grey">
                 <div></div>
                 <div>Bali (Canggu)</div>
                 <div>{c.city}</div>
@@ -325,7 +325,7 @@ export default async function BaliVsCityPage({
       </article>
 
       {/* Other comparisons */}
-      <section className="py-16 border-t border-white/5">
+      <section className="py-16 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-8">
             Compare Bali to other founder hubs
@@ -335,7 +335,7 @@ export default async function BaliVsCityPage({
               <Link
                 key={other.slug}
                 href={`/bali-vs/${other.slug}`}
-                className="group block p-5 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all"
+                className="group block p-5 rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all"
               >
                 <h3 className="font-semibold text-brand-white group-hover:text-brand-red transition-colors">
                   Bali vs {other.city}
@@ -350,7 +350,7 @@ export default async function BaliVsCityPage({
       </section>
 
       {/* CTA */}
-      <section className="py-16 border-t border-white/5">
+      <section className="py-16 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl font-display font-bold mb-4">
             Talk to founders who have chosen Bali
@@ -361,7 +361,7 @@ export default async function BaliVsCityPage({
           </p>
           <Link
             href="/community"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
           >
             Join BSTC
             <ArrowRight size={16} />
