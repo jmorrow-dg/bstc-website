@@ -356,7 +356,7 @@ export default async function BaliVsCityPage({
             Talk to founders who have chosen Bali
           </h2>
           <p className="text-brand-grey mb-6">
-            2,500+ builders in the BSTC community can tell you what it&apos;s
+            2,700+ builders in the BSTC community can tell you what it&apos;s
             actually like.
           </p>
           <Link

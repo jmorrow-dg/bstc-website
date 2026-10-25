@@ -243,7 +243,7 @@ export default function SponsorsPage() {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-xs text-brand-grey">
               <span className="flex items-center gap-1">
                 <span className="text-brand-red">★★★★★</span>
-                <span>{STATS.rating}/5 from 116 MeetUp reviews</span>
+                <span>{STATS.rating} from {STATS.ratingCount} ratings on Meetup</span>
               </span>
               <span>·</span>
               <span>100+ attendees / week</span>
@@ -262,7 +262,7 @@ export default function SponsorsPage() {
               { num: `${STATS.members.toLocaleString()}+`, label: "Community Members" },
               { num: "1,200+", label: "WhatsApp Members" },
               { num: "100+", label: "Per-Week Attendance" },
-              { num: `${STATS.rating}★`, label: "/116 MeetUp Reviews" },
+              { num: `${STATS.rating}★`, label: `from ${STATS.ratingCount} Meetup ratings` },
             ].map((s) => (
               <FadeInItem key={s.label}>
                 <div className="p-6 rounded-lg border border-ink/10 bg-white/70 text-center hover:border-brand-red/20 transition-colors h-full">

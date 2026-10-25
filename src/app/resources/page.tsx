@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Resources: Tools & Stack Used by BSTC Founders",
   description:
-    "The tools, platforms, and resources used by 2,500+ founders in the BSTC community. AI, development, automation, sales, design: curated from real builder workflows.",
+    "The tools, platforms, and resources used by 2,700+ founders in the BSTC community. AI, development, automation, sales, design: curated from real builder workflows.",
   keywords: [
     "founder tools",
     "startup tools 2026",
@@ -191,7 +191,7 @@ const TOOL_CATEGORIES = [
       {
         name: "WhatsApp",
         description:
-          "Primary community communication. 2,500+ members across community and leader channels.",
+          "Primary community communication. 2,700+ members across community and leader channels.",
         url: "https://whatsapp.com",
         tag: "We use this",
       },
@@ -249,7 +249,7 @@ export default function ResourcesPage() {
             The Builder&apos;s Toolkit
           </h1>
           <p className="text-brand-grey max-w-2xl text-lg">
-            The tools, platforms, and resources used by 2,500+ founders in the
+            The tools, platforms, and resources used by 2,700+ founders in the
             BSTC community. Curated from real workflows: not sponsored lists.
           </p>
         </div>

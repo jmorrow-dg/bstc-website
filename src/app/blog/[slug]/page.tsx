@@ -311,7 +311,7 @@ export default async function BlogPostPage({
             Join the Conversation
           </h2>
           <p className="text-brand-grey mb-6">
-            2,500+ builders discussing AI, startups, and technology in
+            2,700+ builders discussing AI, startups, and technology in
             Southeast Asia.
           </p>
           <Link

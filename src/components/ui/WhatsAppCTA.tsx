@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X } from "lucide-react";
-import { SITE } from "@/lib/constants";
+import { SITE, STATS } from "@/lib/constants";
 
 export default function WhatsAppCTA() {
   const [show, setShow] = useState(false);
@@ -36,7 +36,7 @@ export default function WhatsAppCTA() {
               <X size={10} />
             </button>
             <p className="text-xs text-brand-grey leading-relaxed">
-              Join 2,500+ builders in our community
+              Join {STATS.members.toLocaleString()}+ builders in our community
             </p>
           </div>
 

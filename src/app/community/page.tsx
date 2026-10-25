@@ -17,7 +17,7 @@ import { getFAQSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Community",
   description:
-    "Join 2,500+ founders, engineers, and operators in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.",
+    "Join 2,700+ founders, engineers, and operators in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.",
   alternates: { canonical: "/community" },
 };
 
@@ -310,7 +310,7 @@ export default function CommunityPage() {
               ))}
             </div>
             <span className="text-sm text-brand-grey">
-              4.6/5 from 116 reviews on MeetUp
+              {STATS.rating} from {STATS.ratingCount} ratings on Meetup
             </span>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">

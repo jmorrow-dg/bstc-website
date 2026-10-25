@@ -20,7 +20,7 @@ export const SITE = {
   fullName: "Bali Startup & Tech Community",
   tagline: "Southeast Asia's Largest Tech Community",
   description:
-    "Southeast Asia's largest founder-led tech community. Built in Bali with 2,500+ members from 40+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.",
+    "Southeast Asia's largest founder-led tech community. Built in Bali with 2,700+ members from 40+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.",
   url: "https://balistartupandtech.com",
   domain: "balistartupandtech.com",
   altDomain: "bstc.community",
@@ -38,10 +38,16 @@ export const SITE = {
 
 // One source for community stats. Hardcoded copy (incl. public/llms.txt) must
 // match these values.
+// Source: the BSTC Meetup group page
+// (https://www.meetup.com/bali-start-ups-tech-community/), fetched 25 Oct 2026
+// (evening WITA): 2,734 members, rating 4.7 from 155 ratings, 54 past events.
+// Shown rounded down: members "2,700+", events "50+".
 export const STATS = {
-  members: 2500,
+  members: 2700,
   events: 50,
-  rating: 4.6,
+  rating: 4.7,
+  ratingCount: 155,
+  // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
   countries: 40,
 };
 

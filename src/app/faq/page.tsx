@@ -29,12 +29,12 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "What is BSTC?",
         answer:
-          "BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We connect 2,500+ founders, engineers, investors, and operators through high-signal events, a private WhatsApp community, and curated content.",
+          "BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We connect 2,700+ founders, engineers, investors, and operators through high-signal events, a private WhatsApp community, and curated content.",
       },
       {
         question: "Who founded BSTC?",
         answer:
-          "BSTC was founded in October 2023 by Lachlan McRitchie, Josh Morrow, and Matthew Carr. It started with a 20-person networking night in Canggu and has grown to 2,500+ members.",
+          "BSTC was founded in October 2023 by Lachlan McRitchie, Josh Morrow, and Matthew Carr. It started with a 20-person networking night in Canggu and has grown to 2,700+ members.",
       },
       {
         question: "Is BSTC only for people in Bali?",
