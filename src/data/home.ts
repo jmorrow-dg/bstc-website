@@ -117,6 +117,14 @@ export const TESTIMONIALS = [
 // still appears, under "More guides", so new posts never drop off the hub.
 export const GUIDE_TOPICS: { title: string; slugs: string[] }[] = [
   {
+    title: "Finding your people in Bali",
+    slugs: [
+      "tech-communities-in-bali",
+      "meet-founders-in-bali",
+      "digital-nomad-community-bali",
+    ],
+  },
+  {
     title: "Living in Bali",
     slugs: [
       "living-in-bali",
