@@ -26,7 +26,7 @@ This is not legal advice. Hire an Indonesian corporate lawyer or a reputable set
 
 - **Total cost to set up:** $1,500 to $4,500 depending on agent and complexity
 - **Total timeline:** 6 to 10 weeks from start to fully operational
-- **Minimum paid-up capital (realistic):** IDR 2.5 to 10 billion (~USD $160K to $640K) declared, but only a portion typically paid in immediately
+- **Minimum paid-up capital:** IDR 2.5 billion (~USD $150K to $160K) since 2 October 2025, held in the company account for at least 12 months; the total investment plan must still exceed IDR 10 billion (see Step 2)
 - **Corporate tax rate:** 22 percent on net profit
 - **When PT PMA makes sense:** You have local operations, local customers, local hires, or need KITAS for yourself. If you don't, consider offshore structures instead (see our [Bali founder tax guide](/blog/bali-founder-tax-guide-2026)).
 
@@ -77,14 +77,19 @@ You need:
 
 **Capital requirements in 2026:**
 
-Officially, Indonesia's BKPM requires a declared investment plan of **IDR 10 billion (~USD $640K) excluding land and buildings** for most sectors. In practice, this is a paper declaration, not cash that must sit in the bank.
+*Updated 26 October 2026 with the sources below. Not legal advice.*
 
-The realistic numbers most BSTC members use:
-- **Declared authorised capital:** IDR 10 billion (required)
-- **Declared paid-up capital:** typically IDR 2.5 to 3 billion (~USD $160K to $190K) on paper
-- **Cash actually wired in at setup:** often IDR 25 to 50 million (~USD $1,600 to $3,200) for initial operations, with the rest "paid in" via future operations and retained earnings
+The rules changed on **2 October 2025** under BKPM (Minister of Investment) Regulation No. 5 of 2025:
 
-This grey-area approach is standard and widely practised, but **talk to your agent and lawyer**. Rules tighten periodically and what was acceptable in 2024 may be scrutinised harder in 2027.
+- **Minimum paid-up capital: IDR 2.5 billion** (~USD $150K to $160K), down from IDR 10 billion (Article 26(10)).
+- **It stays in the company's bank account for at least 12 months** after it's deposited (Article 27(1)). You can still spend it on operating costs, assets and building, but you can't move it out.
+- **Total investment plan: still more than IDR 10 billion** (~USD $640K) per KBLI code and location, generally excluding land and buildings. Property, rental and accommodation businesses can count land and buildings towards it.
+- **Enforcement:** non-compliance can bring warnings, licence suspension or withdrawal of incentives (ASEAN Briefing).
+- **Existing companies:** a PT PMA already set up with IDR 10 billion stays compliant, and can apply to amend its capital down to IDR 2.5 billion (Emerhub).
+
+Older advice, including earlier versions of this guide, described declaring paid-up capital on paper and wiring in only a small part. The 2025 rule ties the minimum to money held in the company account, so budget for depositing the full IDR 2.5 billion. Neither source states a deposit deadline, so confirm timing with your agent and lawyer.
+
+Sources (read 26 October 2026): [Emerhub, updated 20 Jun 2026](https://emerhub.com/news/indonesia-lowers-minimum-paid-up-capital-for-foreign-owned-companies/), [ASEAN Briefing, 6 Oct 2025](https://www.aseanbriefing.com/news/indonesia-lowers-paid-up-capital-for-foreign-investors-to-idr-2-5-billion/), [Withers](https://www.withersworldwide.com/en-gb/insight/read/indonesia-eases-foreign-capital-rules-key-takeaways-from-bkpm-regulation-no-5-of-2025).
 
 ### Step 3: Notarial deed and company incorporation (week 2 to 3)
 
@@ -117,7 +122,7 @@ Most software and consulting businesses only need the NIB. If you're in a regula
 
 If you (as a foreign founder) will work for the PT PMA in Indonesia, you need a KITAS (work and residence permit). The PT PMA sponsors it.
 
-- **KITAS investor:** for shareholders with minimum IDR 10 billion paid-up capital. No work restrictions.
+- **KITAS investor (E28A):** your shares must be worth at least IDR 10 billion **in your own name**, each applicant needs their own stake, and you serve as director or commissioner ([Emerhub](https://emerhub.com/bali/visas/investor-kitas/), read 26 Oct 2026). This is separate from the company's IDR 2.5 billion paid-up minimum; a minority of guides cite lower figures, so confirm with your agent.
 - **KITAS work (RPTKA-based):** for directors/employees. Requires the PT PMA to commit to local employment (typically 1 Indonesian hire per foreign KITAS).
 
 Timeline: 4 to 6 weeks from approval to hand on passport. Covered in detail in our [Indonesia startup visa guide](/blog/indonesia-startup-visa-guide).
