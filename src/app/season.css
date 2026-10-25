@@ -32,7 +32,7 @@
 .gl-h { font-family: var(--gl-display); font-weight: 800; line-height: 0.9; letter-spacing: 0; }
 .gl-page { font-family: var(--gl-text); font-size: 17px; line-height: 1.55; color: var(--gl-navy); }
 .gl-page h1, .gl-page h2, .gl-page h3, .gl-page h4 { font-family: var(--gl-display); font-weight: 800; line-height: 0.9; letter-spacing: 0; }
-.gl-page a { color: inherit; }
+:where(.gl-page a) { color: inherit; }
 
 /* Buttons */
 .gl-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; font: 600 16px/1 var(--gl-text); text-decoration: none; border: var(--gl-rule) solid transparent; cursor: pointer; text-align: center; transition: background-color .15s, color .15s, border-color .15s; }
