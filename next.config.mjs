@@ -16,6 +16,15 @@ const nextConfig = {
     { source: "/join", destination: "https://bstc-join.vercel.app/join" },
     { source: "/join/:path*", destination: "https://bstc-join.vercel.app/join/:path*" },
   ],
+  redirects: async () => [
+    // Duplicate of the 18 Jun 2026 flagship networking night (same date,
+    // time, venue and RSVP link); removed in favour of the fuller listing.
+    {
+      source: "/events/networking-night-june-2026",
+      destination: "/events/flagship-networking-night-june-2026",
+      permanent: true,
+    },
+  ],
   headers: async () => [
     {
       source: "/(.*)",

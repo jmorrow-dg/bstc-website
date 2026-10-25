@@ -1,9 +1,10 @@
 import { Metadata } from "next";
-import { SITE } from "@/lib/constants";
+import { CONTACT_EMAIL, SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `Privacy policy for ${SITE.fullName}. How we collect, use, and protect your data.`,
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -131,7 +132,7 @@ export default function PrivacyPage() {
                 <strong className="text-brand-white">Opt out:</strong> Tell the
                 host or photographer before the event. If you appear in a
                 published photo, you can request removal at any time by emailing{" "}
-                {SITE.email}.
+                {CONTACT_EMAIL}.
               </p>
             </section>
 
@@ -177,10 +178,10 @@ export default function PrivacyPage() {
                 You can request access to, correction of, or deletion of your
                 personal data at any time by emailing{" "}
                 <a
-                  href={`mailto:${SITE.email}`}
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="text-brand-red hover:text-brand-white transition-colors"
                 >
-                  {SITE.email}
+                  {CONTACT_EMAIL}
                 </a>
                 . We will respond within 48 hours and complete deletion within
                 30 days (except where legal retention is required).
@@ -194,10 +195,10 @@ export default function PrivacyPage() {
               <p>
                 For any privacy-related questions or requests, contact us at{" "}
                 <a
-                  href={`mailto:${SITE.email}`}
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="text-brand-red hover:text-brand-white transition-colors"
                 >
-                  {SITE.email}
+                  {CONTACT_EMAIL}
                 </a>
                 .
               </p>

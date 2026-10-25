@@ -1,9 +1,10 @@
-import { SITE, STATS } from "./constants";
+import { CONTACT_EMAIL, EVENT_ORGANIZER, SITE, STATS } from "./constants";
+import { canRsvpToEvent, isValidEventDate } from "./event-status";
 
 export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
+    "@type": "Organization",
     "@id": `${SITE.url}#organization`,
     name: SITE.fullName,
     alternateName: [SITE.name, "Bali Tech Community", "BSTC Community"],
@@ -23,7 +24,7 @@ export function getOrganizationSchema() {
       { "@type": "Person", name: "Josh Morrow", jobTitle: "Co-founder & Growth Lead" },
       { "@type": "Person", name: "Matthew Carr", jobTitle: "Co-founder & Community Lead" },
     ],
-    email: SITE.email,
+    email: CONTACT_EMAIL,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Canggu",
@@ -65,13 +66,6 @@ export function getOrganizationSchema() {
     sameAs: [SITE.meetup, SITE.linkedin, SITE.instagram].filter(
       (url) => url !== "#"
     ),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: STATS.rating,
-      ratingCount: 116,
-      bestRating: 5,
-      worstRating: 1,
-    },
     interactionStatistic: [
       {
         "@type": "InteractionCounter",
@@ -98,14 +92,6 @@ export function getWebSiteSchema() {
     description: SITE.description,
     inLanguage: "en",
     publisher: { "@id": `${SITE.url}#organization` },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE.url}/blog?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -118,7 +104,12 @@ export function getEventSchema(event: {
   url: string;
   image?: string;
   status?: string;
-}) {
+  rsvpUrl?: string;
+  organizer?: { name: string; url?: string };
+}, now: Date = new Date()) {
+  if (!isValidEventDate(event.date)) return null;
+
+  const organizer = event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
   const statusMap: Record<string, string> = {
     upcoming: "https://schema.org/EventScheduled",
     completed: "https://schema.org/EventScheduled",
@@ -130,7 +121,9 @@ export function getEventSchema(event: {
     "@type": "Event",
     name: event.title,
     description: event.description,
-    startDate: `${event.date}T${event.time}:00+08:00`,
+    startDate: /^([01]\d|2[0-3]):[0-5]\d$/.test(event.time)
+      ? `${event.date}T${event.time}:00+08:00`
+      : event.date,
     eventStatus: statusMap[event.status || "upcoming"] || statusMap.upcoming,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
@@ -143,21 +136,25 @@ export function getEventSchema(event: {
         addressCountry: "ID",
       },
     },
-    organizer: {
-      "@type": "Organization",
-      name: SITE.fullName,
-      url: SITE.url,
-    },
+    ...(organizer.name && {
+      organizer: {
+        "@type": "Organization",
+        name: organizer.name,
+        ...(organizer.url && { url: organizer.url }),
+      },
+    }),
     image: event.image ? `${SITE.url}${event.image}` : undefined,
     url: event.url,
-    offers: {
-      "@type": "Offer",
-      url: event.url,
-      price: "0",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      validFrom: event.date,
-    },
+    // Only open, future events advertise an available (free) ticket.
+    ...(canRsvpToEvent(event, now) && {
+      offers: {
+        "@type": "Offer",
+        url: event.rsvpUrl,
+        price: "0",
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+      },
+    }),
   };
 }
 

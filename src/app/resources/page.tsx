@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "builder stack",
     "tech stack founders",
   ],
+  alternates: { canonical: "/resources" },
 };
 
 interface Tool {

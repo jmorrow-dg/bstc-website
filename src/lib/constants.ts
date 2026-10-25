@@ -1,3 +1,20 @@
+// Single source for the public contact address (site copy, schema, forms).
+// TODO(josh): hello@bstc.community is UNDELIVERABLE as of 25 Oct 2026:
+// bstc.community returns no MX/A/NS records. Replace with a working,
+// BSTC-owned inbox, then update public/llms.txt to match.
+export const CONTACT_EMAIL = "hello@bstc.community";
+
+// Organiser of record for events, used in Event schema `organizer`.
+// Events now run with a local Indonesian host partner as the organiser of
+// record, so BSTC must not be named as organiser.
+// TODO(josh): fill in the host partner's name (and URL). While `name` is
+// empty, Event schema omits `organizer` rather than naming BSTC. An event can
+// override this with an `organizer:` block in its frontmatter.
+export const EVENT_ORGANIZER: { name: string; url?: string } = {
+  name: "",
+  url: "",
+};
+
 export const SITE = {
   name: "BSTC",
   fullName: "Bali Startup & Tech Community",
@@ -7,7 +24,6 @@ export const SITE = {
   url: "https://balistartupandtech.com",
   domain: "balistartupandtech.com",
   altDomain: "bstc.community",
-  email: "hello@bstc.community",
   meetup: "https://www.meetup.com/bali-start-ups-tech-community/",
   // Public join gate (Tally). The chat invite lives only on the form's
   // thank-you page, so it never appears in public code and can't be used to
@@ -20,6 +36,8 @@ export const SITE = {
   location: "Canggu, Bali, Indonesia",
 };
 
+// One source for community stats. Hardcoded copy (incl. public/llms.txt) must
+// match these values.
 export const STATS = {
   members: 2500,
   events: 50,

@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ArrowLeft, Send } from "lucide-react";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 function SponsorApplyForm() {
   const searchParams = useSearchParams();
@@ -36,7 +37,7 @@ function SponsorApplyForm() {
       if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please email hello@bstc.community.");
+      setError(`Something went wrong. Please email ${CONTACT_EMAIL}.`);
       setLoading(false);
     }
   }

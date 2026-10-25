@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "Southeast Asia tech community leaders",
     "Bali tech community organisers",
   ],
+  alternates: { canonical: "/leadership" },
 };
 
 const FOUNDERS = [

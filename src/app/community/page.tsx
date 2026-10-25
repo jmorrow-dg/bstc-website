@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Community",
   description:
     "Join 2,500+ founders, engineers, and operators in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.",
+  alternates: { canonical: "/community" },
 };
 
 const COMMUNITY_FAQS = [

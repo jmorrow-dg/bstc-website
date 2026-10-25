@@ -15,6 +15,10 @@ export const metadata: Metadata = {
     "founder stories Bali",
     "startup ecosystem Indonesia",
   ],
+  alternates: {
+    canonical: "/blog",
+    types: { "application/rss+xml": "/feed.xml" },
+  },
 };
 
 function formatDate(dateStr: string): string {

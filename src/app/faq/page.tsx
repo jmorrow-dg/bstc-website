@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "how to join BSTC",
     "tech community Bali questions",
   ],
+  alternates: { canonical: "/faq" },
 };
 
 interface FAQSection {

@@ -11,6 +11,10 @@ import {
   EventFrontmatter,
   ContentItem,
 } from "@/lib/content";
+import { getEventState } from "@/lib/event-status";
+
+// Upcoming vs past is derived from the current Bali date, so re-render hourly.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Events",
@@ -34,11 +38,12 @@ export const metadata: Metadata = {
       "Networking nights, founder roundtables, builder sessions, and the How I Build with AI flagship series. Signal over noise.",
     type: "website",
   },
+  alternates: { canonical: "/events" },
 };
 
-function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
+function EventCard({ event, now }: { event: ContentItem<EventFrontmatter>; now: Date }) {
   const { frontmatter: e } = event;
-  const isUpcoming = e.status === "upcoming";
+  const isUpcoming = getEventState(e, now) === "upcoming";
 
   return (
     <Link
@@ -128,8 +133,9 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
 
 export default async function EventsPage() {
   const allEvents = await getAllEvents();
-  const upcoming = getUpcomingEvents(allEvents);
-  const past = getPastEvents(allEvents);
+  const now = new Date();
+  const upcoming = getUpcomingEvents(allEvents, now);
+  const past = getPastEvents(allEvents, now);
 
   return (
     <>
@@ -159,7 +165,7 @@ export default async function EventsPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {upcoming.map((event) => (
-                <EventCard key={event.frontmatter.slug} event={event} />
+                <EventCard key={event.frontmatter.slug} event={event} now={now} />
               ))}
             </div>
           </div>
@@ -175,7 +181,7 @@ export default async function EventsPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {past.map((event) => (
-                <EventCard key={event.frontmatter.slug} event={event} />
+                <EventCard key={event.frontmatter.slug} event={event} now={now} />
               ))}
             </div>
           </div>

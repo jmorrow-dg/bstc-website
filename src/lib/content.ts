@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { getEventState } from "./event-status";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -29,6 +30,12 @@ export interface EventFrontmatter {
   sponsor?: {
     name: string;
     logo: string;
+  };
+  // Organiser of record for this event. Falls back to EVENT_ORGANIZER in
+  // constants.ts when omitted.
+  organizer?: {
+    name: string;
+    url?: string;
   };
   recap?: {
     attendees: number;
@@ -148,10 +155,11 @@ export async function getBlogPostBySlug(
 }
 
 export function getUpcomingEvents(
-  events: ContentItem<EventFrontmatter>[]
+  events: ContentItem<EventFrontmatter>[],
+  now: Date = new Date()
 ): ContentItem<EventFrontmatter>[] {
   return events
-    .filter((e) => e.frontmatter.status === "upcoming")
+    .filter((e) => getEventState(e.frontmatter, now) === "upcoming")
     .sort(
       (a, b) =>
         new Date(a.frontmatter.date).getTime() -
@@ -160,9 +168,10 @@ export function getUpcomingEvents(
 }
 
 export function getPastEvents(
-  events: ContentItem<EventFrontmatter>[]
+  events: ContentItem<EventFrontmatter>[],
+  now: Date = new Date()
 ): ContentItem<EventFrontmatter>[] {
-  return events.filter((e) => e.frontmatter.status === "completed");
+  return events.filter((e) => getEventState(e.frontmatter, now) === "past");
 }
 
 export function getHIWAEvents(

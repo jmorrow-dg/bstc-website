@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -18,6 +19,16 @@ import {
   FadeInItem,
   ScaleIn,
 } from "@/components/ui/AnimatedSection";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    types: { "application/rss+xml": "/feed.xml" },
+  },
+};
+
+// Upcoming events are derived from the current Bali date, so re-render hourly.
+export const revalidate = 3600;
 
 function ValueCard({
   icon: Icon,
