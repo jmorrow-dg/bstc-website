@@ -5,7 +5,7 @@ date: "2026-06-10"
 time: "18:00"
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
-status: upcoming
+status: completed
 capacity: 60
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
 description: "Builders share the AI tools, workflows, and revenue behind their products. Open floor, Intel Drop, and two Builder Spotlights. Real numbers, no theory."
