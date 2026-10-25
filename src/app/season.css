@@ -262,9 +262,9 @@
 .gl-signal-meta { display: grid; gap: 10px; align-content: start; }
 .gl-signal-meta .gl-tag { justify-self: start; }
 .gl-signal-meta p { font-size: 15px; font-weight: 600; }
-.gl-page .gl-signal h3 { font-size: clamp(32px, 3.4vw, 52px); font-weight: 900; max-width: 24ch; }
-.gl-signal h3 a { text-decoration: none; }
-.gl-signal h3 a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+.gl-page .gl-signal .gl-signal-title { font-size: clamp(32px, 3.4vw, 52px); font-weight: 900; max-width: 24ch; }
+.gl-signal .gl-signal-title a { text-decoration: none; }
+.gl-signal .gl-signal-title a:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
 .gl-signal-body { display: grid; gap: 16px; }
 .gl-signal-body p { max-width: 64ch; }
 .gl-signal-body .gl-link { justify-self: start; }

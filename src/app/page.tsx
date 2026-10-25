@@ -280,7 +280,7 @@ export default async function Home() {
           <div className="gl-sec-head">
             <div>
               <p className="gl-eyebrow">Home fixtures</p>
-              <h2 id="fx-title">Upcoming events</h2>
+              <h2 id="fx-title">Next up in the community</h2>
             </div>
             <p>
               The next events on the calendar, soonest first. Times are Bali time
@@ -636,11 +636,11 @@ export default async function Home() {
                 <p>By {latestSignal.frontmatter.author}</p>
               </div>
               <div className="gl-signal-body">
-                <h3 id="signal-title">
+                <h2 id="signal-title" className="gl-signal-title">
                   <Link href={`/blog/${latestSignal.frontmatter.slug}`}>
                     {latestSignal.frontmatter.title}
                   </Link>
-                </h3>
+                </h2>
                 <p>{latestSignal.frontmatter.excerpt}</p>
                 <Link className="gl-link" href={`/blog/${latestSignal.frontmatter.slug}`}>
                   Read the full signal
