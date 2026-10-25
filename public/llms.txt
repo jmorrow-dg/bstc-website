@@ -25,6 +25,8 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 - [Leadership](https://balistartupandtech.com/leadership): Founders and leadership tier system.
 - [Events](https://balistartupandtech.com/events): Upcoming events, past events, event formats.
 - [Join](https://balistartupandtech.com/join): How to join the community (MeetUp + WhatsApp).
+- [Member perks](https://balistartupandtech.com/perks): 66 startup programmes open to apply for now (each checked on the vendor's own page on 25 Oct 2026), plus 62 example member deals BSTC is negotiating, each labelled Example.
+- [Members](https://balistartupandtech.com/#members): the co-founders and where each is based. The full member directory is at https://remotebuilders.io/directory/.
 
 ### Founder infrastructure in Bali / Indonesia
 - [Setting Up a PT PMA in Indonesia (2026)](https://balistartupandtech.com/blog/pt-pma-indonesia-founder-playbook-2026): Real cost, timeline, KBLI codes, founder traps.
