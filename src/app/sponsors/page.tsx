@@ -248,6 +248,7 @@ export default function SponsorsPage() {
               <span>·</span>
               <span>100+ attendees / week</span>
               <span>·</span>
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               <span>{STATS.countries}+ countries represented</span>
             </div>
           </FadeIn>
@@ -404,6 +405,7 @@ export default function SponsorsPage() {
                 <li>SaaS, AI, fintech, e-commerce, dev tools</li>
                 <li>$50k–$5M+ MRR brackets</li>
                 <li>Building for SEA + global markets</li>
+                {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
                 <li>Based across {STATS.countries}+ countries</li>
               </ul>
             </div>

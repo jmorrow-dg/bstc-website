@@ -182,6 +182,7 @@ export default function ContactPage() {
                   Canggu, Bali, Indonesia
                 </p>
                 <p className="text-xs text-brand-grey mt-1">
+                  {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
                   Events across Canggu, Ubud, Sanur & Uluwatu
                 </p>
               </div>

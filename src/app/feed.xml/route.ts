@@ -35,6 +35,7 @@ export async function GET() {
 
   const allItems = [...postItems, ...eventItems].join("\n");
 
+  // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>

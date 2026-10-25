@@ -6,6 +6,7 @@ import { getAllBlogPosts, ContentItem, BlogFrontmatter } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Blog: Insights on Bali's Tech Scene, AI, and Startup Culture",
   description:
+    // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
     "Thought leadership on Bali's growing tech ecosystem, AI trends, founder stories, and community insights from Southeast Asia's largest startup community.",
   keywords: [
     "Bali tech scene",

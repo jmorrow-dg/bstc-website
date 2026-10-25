@@ -18,8 +18,10 @@ export const EVENT_ORGANIZER: { name: string; url?: string } = {
 export const SITE = {
   name: "BSTC",
   fullName: "Bali Startup & Tech Community",
+  // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
   tagline: "Southeast Asia's Largest Tech Community",
   description:
+    // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
     "Southeast Asia's largest founder-led tech community. Built in Bali with 2,700+ members from 40+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.",
   url: "https://balistartupandtech.com",
   domain: "balistartupandtech.com",

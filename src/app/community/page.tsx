@@ -95,6 +95,7 @@ export default function CommunityPage() {
               <span className="text-brand-red">for Builders</span>
             </h1>
             <p className="text-lg text-brand-grey leading-relaxed">
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               BSTC is the largest founder-led tech community in Bali and
               Southeast Asia. We connect founders, engineers, investors, and
               operators through high-signal events and a private community
@@ -126,6 +127,7 @@ export default function CommunityPage() {
               label="Avg Rating"
               icon={Star}
             />
+            {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
             <StatBlock
               value={STATS.countries}
               suffix="+"
@@ -331,6 +333,7 @@ export default function CommunityPage() {
                 quote:
                   "Best tech community I've been part of anywhere in the world. The signal-to-noise ratio is unreal.",
                 name: "BSTC Member",
+                // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
                 role: "Ex-FAANG Engineer",
               },
             ].map((t, i) => (

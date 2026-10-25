@@ -6,6 +6,7 @@ import { STATS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About",
   description:
+    // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
     `BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,700+ members from 40+ countries. ${STATS.events}+ events. Signal over noise. Builders first.`,
   keywords: [
     "Bali Startup and Tech Community",
@@ -38,9 +39,11 @@ export default function AboutPage() {
               About BSTC
             </p>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               Building Southeast Asia&apos;s #1 Tech Community
             </h1>
             <p className="text-brand-grey text-lg max-w-2xl">
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               It started with 20 founders in a Canggu restaurant. Today, 2,700+
               builders from 40+ countries. The goal hasn&apos;t changed: the
               highest-signal tech community in Southeast Asia.
@@ -89,6 +92,7 @@ export default function AboutPage() {
               series.
             </p>
             <p>
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               Our audience includes ex-FAANG engineers, funded startup founders,
               VCs, angel investors, and senior operators from{" "}
               <span className="text-brand-white font-medium">
@@ -97,6 +101,7 @@ export default function AboutPage() {
               . The community is international, professional, and builder-first.
             </p>
             <p>
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               We&apos;re based in Canggu, Bali with active nodes in Ubud,
               Sanur, and Uluwatu. We are the largest founder-led tech community
               in Southeast Asia, and every event we run is built to keep it
@@ -128,6 +133,7 @@ export default function AboutPage() {
               {
                 date: "Mid 2024",
                 event:
+                  // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
                   "1,000+ members. Expanded to 4 event formats. Pilot nodes in Ubud and Sanur.",
               },
               {

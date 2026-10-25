@@ -27,6 +27,7 @@ const FAQ_SECTIONS: FAQSection[] = [
     title: "About BSTC",
     faqs: [
       {
+        // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "What is BSTC?",
         answer:
           "BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We connect 2,700+ founders, engineers, investors, and operators through high-signal events, a private WhatsApp community, and curated content.",
@@ -37,6 +38,7 @@ const FAQ_SECTIONS: FAQSection[] = [
           "BSTC was founded in October 2023 by Lachlan McRitchie, Josh Morrow, and Matthew Carr. It started with a 20-person networking night in Canggu and has grown to 2,700+ members.",
       },
       {
+        // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "Is BSTC only for people in Bali?",
         answer:
           "Our events are in Bali (Canggu, Ubud, Sanur, Uluwatu), but our WhatsApp community includes members from across Southeast Asia and globally. If you're visiting Bali, you're welcome at any event.",
@@ -47,6 +49,7 @@ const FAQ_SECTIONS: FAQSection[] = [
           "It's our core philosophy. Every interaction should add value. We focus on substance over hype, real builders over talkers, and genuine connections over transactional networking. This principle is actively enforced at events.",
       },
       {
+        // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "What makes BSTC different from other tech meetups?",
         answer:
           "Three things: (1) No hard selling: pitching and aggressive networking are banned and enforced. (2) Curated audience: our community is ex-FAANG engineers, funded founders, VCs, and senior operators. (3) High-signal formats: structured events designed for real value, not just socialising.",
@@ -82,11 +85,13 @@ const FAQ_SECTIONS: FAQSection[] = [
     title: "Events",
     faqs: [
       {
+        // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "What events does BSTC run?",
         answer:
           "We run four core event formats: (1) Networking Night: monthly, 40-80 people, free, open mic + networking. (2) How I Build with AI: live AI demos by real builders. (3) Founder Roundtable: max 20, $20K+ MRR founders only, confidential. (4) Builder Sessions: tactical workshops and talks.",
       },
       {
+        // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "When and where are BSTC events?",
         answer:
           "Our flagship Networking Night is every 3rd Thursday at Yema Kitchen in Canggu. 'How I Build with AI' events are at Seoul Seoul Project in Canggu. Other events rotate across Canggu, Ubud, Sanur, and Uluwatu. All events are listed on our MeetUp page.",
@@ -132,6 +137,7 @@ const FAQ_SECTIONS: FAQSection[] = [
     title: "Bali's Tech Scene",
     faqs: [
       {
+        // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "Is Bali a real tech hub?",
         answer:
           "Yes. Bali is home to thousands of tech founders, engineers, and operators from 40+ countries. The ecosystem includes co-working spaces with fibre internet, regular tech events, active VC interest from Singapore, and a growing Indonesian tech talent pool. It's not trying to be Silicon Valley: it offers a different value proposition: lower cost, high quality of life, concentrated community, and excellent time zone for global teams.",
