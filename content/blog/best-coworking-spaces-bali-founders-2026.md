@@ -10,11 +10,11 @@ tags: ["coworking", "bali", "founders", "remote work", "canggu", "ubud"]
 excerpt: "Looking for the best coworking space in Bali? We tested 12 across Canggu, Ubud, Sanur and Uluwatu over 6 months - here's where Bali's most serious founders actually work, why, and what you'll pay."
 faq:
   - question: "What is the best coworking space in Bali?"
-    answer: "For founder density and deep work, Tropical Nomad in Canggu ranks #1, followed by B Work (Canggu) and Outpost Ubud for quiet focus. The best choice depends on whether you optimise for founder density (Canggu) or focus (Ubud or Sanur)."
+    answer: "For founder density and deep work, Tropical Nomad in Canggu ranks #1 (confirm it's open first: its website was down on 25 October 2026), followed by BWork (Canggu and Uluwatu) and Outpost Ubud for quiet focus. The best choice depends on whether you optimise for founder density (Canggu) or focus (Ubud)."
   - question: "How much does coworking cost in Bali?"
-    answer: "Unlimited monthly access runs roughly $140-$220 at the top spaces. Day passes are typically $12-$20 almost everywhere. Renting monthly is far better value than day passes if you're staying more than a couple of weeks."
+    answer: "On their own websites (25 October 2026), BWork charges Rp299K for a day pass and Rp3,850K for a month of unlimited access across Canggu and Uluwatu, and Outpost Ubud charges IDR 258,000 a day (USD 15) or IDR 2,678,000 a month (USD 149). Monthly is far better value than day passes if you're staying more than a couple of weeks."
   - question: "Where do digital nomads and founders work in Canggu?"
-    answer: "The highest founder density is at Tropical Nomad and B Work in Canggu. Genesis is the budget option and Dojo Bali runs the best community events. Many founders mix two or three days at a coworking space with cafe days at Crate, Milu or Quince."
+    answer: "The highest founder density is at Tropical Nomad and BWork. Dojo Bali closed in December 2022, and Outpost no longer lists a Canggu location, although both still appear on some 2026 lists. Many founders mix two or three days at a coworking space with cafe days at Crate, Milu or Quince."
   - question: "Is coworking in Bali worth it versus working from a cafe?"
     answer: "Yes, if you take calls or want to meet other builders. A good coworking space gives you reliable redundant wifi, quiet call booths and high founder density - the main reasons to pay for one over a cafe."
 seo:
@@ -31,21 +31,28 @@ We've spent six months sitting in twelve different coworking spaces across Cangg
 
 This is the honest version. No affiliate links. No paid placements.
 
-> **Update, 26 October 2026:** two 2026 coworking guides report that **Dojo Bali** and the original **Outpost Canggu** coworking floor have closed ([Finns, updated 21 Jul 2026](https://finnsbeachclub.com/guides/best-coworking-in-canggu/); [Tunextravels, 4 Jul 2026](https://www.tunextravels.com/canggu-digital-nomad-guide-coworking-villa-rentals-2026/)). Check a space is open before you go. For spaces confirmed open this year, see [how to meet founders in Bali](/blog/meet-founders-in-bali).
+> **Update, 26 October 2026:** **Dojo Bali** and the original **Outpost Canggu** coworking floor have closed, as two 2026 coworking guides first reported and each space's own site now confirms ([Finns, updated 21 Jul 2026](https://finnsbeachclub.com/guides/best-coworking-in-canggu/); [Tunextravels, 4 Jul 2026](https://www.tunextravels.com/canggu-digital-nomad-guide-coworking-villa-rentals-2026/)). Check a space is open before you go. For spaces confirmed open this year, see [how to meet founders in Bali](/blog/meet-founders-in-bali).
 
 ## The TL;DR ranking
 
-| Rank | Space | Area | Best For | Monthly |
-|------|-------|------|----------|---------|
-| 1 | **Tropical Nomad** | Canggu | Founder density, deep work | ~$220 |
-| 2 | **B Work** | Canggu | All-rounder, fast wifi | ~$190 |
-| 3 | **Outpost Ubud** | Ubud | Quiet focus, longer stays | ~$200 |
-| 4 | **Genesis** | Canggu | Hot desks, casual | ~$140 |
-| 5 | **Dojo Bali** | Canggu | Community events | ~$180 |
-| 6 | **Outpost Canggu** | Canggu | Hybrid work + lifestyle | ~$210 |
-| 7 | **Biliq Sanur** | Sanur | Quiet, family-friendly | ~$160 |
+*Updated 26 October 2026: statuses and prices checked against each space's own website on 25 October 2026 (sources at the end). Several spaces that still appear on other 2026 lists have closed.*
 
-Prices are USD-equivalent for unlimited monthly access. Day passes run $12 to $20 almost everywhere.
+| Rank | Space | Area | Best For | Price (own site, 25 Oct 2026) |
+|------|-------|------|----------|---------|
+| 1 | **Tropical Nomad** | Canggu | Founder density, deep work | Check directly: its website was down on 25 Oct 2026 |
+| 2 | **BWork** | Canggu and Uluwatu | All-rounder, fast wifi | Unlimited Rp3,850K a month (both sites); day pass Rp299K |
+| 3 | **Outpost Ubud** | Ubud (Nyuh Kuning and Penestanan) | Quiet focus, longer stays | IDR 2,678,000 a month (USD 149); day pass IDR 258,000 (USD 15) |
+| 4 | **Biliq** | Seminyak and Sunset Road | Quiet, professional | From IDR 500 a minute (own site) |
+
+Prices are as each space publishes them, in IDR. Check before you go: they change often.
+
+### Closed or changed (checked 25 October 2026)
+
+- **Dojo Bali (Canggu):** closed in December 2022. Its old site still carries pre-closure copy under the "officially closed Dec '22" banner.
+- **Outpost Canggu:** no longer on Outpost's own list of locations (Ubud, Ubud Penestanan and Weligama Bay only).
+- **Genesis (Canggu):** coworking appears discontinued. Its coworking page returns "not found" and its booking portal is suspended.
+- **Karya Coworking (Berawa):** paused, with no reopening date on its own site.
+- **Kinship Studio (Berawa):** listed as permanently closed on Wanderlog, which mirrors Google Maps data. We couldn't confirm on its own site.
 
 ## What actually matters when picking a coworking space
 
@@ -70,10 +77,11 @@ Canggu is where most of the BSTC community is based. It's also where the founder
 - **Founder density:** Very high. We met four BSTC members on a single Tuesday.
 - **Vibe:** Focused, quiet, slightly intense. People are here to work.
 - **Downside:** Books up. Reserve a desk in advance during high season (July to September).
+- **Check first:** guides from July and August 2026 list it as open, but its own website wasn't loading on 25 October 2026. Message them before you go.
 
-### 2. B Work
+### 2. BWork
 
-The all-rounder. Newer than Tropical Nomad, slightly more polished, similar wifi quality. Fewer phone booths but more open desk space.
+The all-rounder. Newer than Tropical Nomad, slightly more polished, similar wifi quality. Fewer phone booths but more open desk space. Its second site in Uluwatu opened by February 2026, and one monthly unlimited pass covers both (bwork.id).
 
 - **Wifi:** Excellent.
 - **Founder density:** High.
@@ -81,6 +89,8 @@ The all-rounder. Newer than Tropical Nomad, slightly more polished, similar wifi
 - **Downside:** Can get loud near the cafe area in the afternoon.
 
 ### 4. Genesis
+
+*Coworking appears discontinued: its coworking page returns "not found" and its booking portal is suspended (checked 25 October 2026). Kept here for the record.*
 
 The casual option. Cheaper, smaller, less of a "scene." Good if you mostly need a desk and decent wifi without paying premium rates.
 
@@ -90,7 +100,7 @@ The casual option. Cheaper, smaller, less of a "scene." Good if you mostly need 
 
 ### 5. Dojo Bali
 
-*Reported closed in 2026 guides (see the update at the top). Kept here for the record.*
+*Closed in December 2022, per the "officially closed Dec '22" banner on its own site (checked 25 October 2026). Kept here for the record.*
 
 The original. Dojo built the Bali coworking scene and still runs the best community programming (events, intros, talks). Less suited for deep focus, more suited for the social side of building.
 
@@ -104,20 +114,20 @@ If you're optimising for focus over founder density, Ubud is the move. It's quie
 
 ### 3. Outpost Ubud
 
-Outpost's Ubud location is the best deep-work space on the island. Set in the rice fields, fast wifi, quiet rooms, and a community of long-stay founders building serious things.
+Outpost's Ubud locations (Nyuh Kuning and Penestanan) are the best deep-work spaces on the island. Set in the rice fields, fast wifi, quiet rooms, and a community of long-stay founders building serious things.
 
 - **Wifi:** Excellent.
 - **Founder density:** Moderate, but high quality.
 - **Vibe:** Calm, focused, intentional.
 - **Downside:** Ubud is 45 minutes from the Canggu founder scene. Pick one.
 
-## Sanur
+## Seminyak and Sunset Road
 
-Sanur is the underrated Bali founder zone. Quieter, less party energy, and increasingly popular with founders who have families or who just want to focus without distraction.
+Quieter than Canggu for work, with less party energy in the daytime and easy access to the airport side of the island.
 
-### 7. Biliq Sanur
+### 4. Biliq
 
-Small, friendly, family-oriented. Not a scene, which is the point.
+Small, friendly, professional. Not a scene, which is the point. Earlier versions of this guide placed Biliq in Sanur; its own site lists Seminyak and Sunset Road (checked 25 October 2026).
 
 - **Wifi:** Good.
 - **Founder density:** Low but growing.
@@ -137,9 +147,9 @@ We won't name them, but a few patterns to watch for:
 Here is the decision tree we give every new BSTC member:
 
 1. **Are you here for less than 30 days?** Buy day passes at 2 or 3 spaces and try them.
-2. **Are you here for 1 to 6 months?** Get a monthly pass at Tropical Nomad or B Work in Canggu.
+2. **Are you here for 1 to 6 months?** Get a monthly pass at BWork, or Tropical Nomad once you've confirmed it's open.
 3. **Are you here long-term and want focus over scene?** Outpost Ubud.
-4. **Are you on a budget?** Genesis in Canggu, or work from a cafe two days a week and a coworking space three days.
+4. **Are you on a budget?** Work from a cafe two days a week and a coworking space three days.
 
 ## What this guide does not cover
 
@@ -150,13 +160,13 @@ Here is the decision tree we give every new BSTC member:
 ## Frequently asked questions
 
 ### What is the best coworking space in Bali?
-For founder density and deep work, Tropical Nomad in Canggu ranks #1, followed by B Work (Canggu) and Outpost Ubud for quiet focus. The best choice depends on whether you optimise for founder density (Canggu) or focus (Ubud or Sanur).
+For founder density and deep work, Tropical Nomad in Canggu ranks #1 (confirm it's open first: its website was down on 25 October 2026), followed by BWork (Canggu and Uluwatu) and Outpost Ubud for quiet focus. The best choice depends on whether you optimise for founder density (Canggu) or focus (Ubud).
 
 ### How much does coworking cost in Bali?
-Unlimited monthly access runs roughly $140-$220 at the top spaces. Day passes are typically $12-$20 almost everywhere. Renting monthly is far better value than day passes if you're staying more than a couple of weeks.
+On their own websites (25 October 2026), BWork charges Rp299K for a day pass and Rp3,850K for a month of unlimited access across Canggu and Uluwatu, and Outpost Ubud charges IDR 258,000 a day (USD 15) or IDR 2,678,000 a month (USD 149). Monthly is far better value than day passes if you're staying more than a couple of weeks.
 
 ### Where do digital nomads and founders work in Canggu?
-The highest founder density is at Tropical Nomad and B Work in Canggu. Genesis is the budget option and Dojo Bali runs the best community events. Many founders mix two or three days at a coworking space with cafe days at Crate, Milu or Quince.
+The highest founder density is at Tropical Nomad and BWork. Dojo Bali closed in December 2022, and Outpost no longer lists a Canggu location, although both still appear on some 2026 lists. Many founders mix two or three days at a coworking space with cafe days at Crate, Milu or Quince.
 
 ### Is coworking in Bali worth it versus working from a cafe?
 Yes, if you take calls or want to meet other builders. A good coworking space gives you reliable redundant wifi, quiet call booths and high founder density - the main reasons to pay for one over a cafe.
@@ -165,4 +175,16 @@ Yes, if you take calls or want to meet other builders. A good coworking space gi
 
 If you want to skip the trial-and-error and meet other founders in Bali immediately, join the BSTC community. Our monthly Networking Night brings 60 to 80 founders into one room, and our Builder Sessions go deeper with 30 to 40 operators sharing what they're shipping.
 
-[See upcoming events](/events) — or join the [WhatsApp community](/community) to see where everyone is working this week.
+[See upcoming events](/events), or [join the community](/join) to see where everyone is working this week.
+
+## Sources (read 25 October 2026)
+
+- BWork: [bwork.id](https://bwork.id/), [Canggu prices](https://bwork.id/membership/canggu), [Uluwatu opening, Industry.co.id, 12 Feb 2026](https://www.industry.co.id/read/147945/dari-canggu-ke-uluwatu-bwork-bali-rayakan-5-tahun-perjalanan-dan-perluas-komunitas-digital-nomad)
+- Outpost: [Ubud prices](https://destinationoutpost.co/cowork-in-ubud/), [locations](https://destinationoutpost.co/location/)
+- Tropical Nomad: [own site](https://www.tropicalnomad.org/) (not loading); [Finns Beach Club, updated 21 Jul 2026](https://finnsbeachclub.com/guides/best-coworking-in-canggu/)
+- Biliq: [biliqbali.com](https://www.biliqbali.com/)
+- Dojo Bali: [dojobali.org](https://dojobali.org/)
+- Genesis: [inspireatgenesis.com](https://www.inspireatgenesis.com/)
+- Karya: [karyacoworking.com](https://karyacoworking.com/)
+- Kinship: [Wanderlog](https://wanderlog.com/place/details/1974391/kinship-studio-bali)
+- [Cabo Bali, updated Aug 2026](https://www.cabobali.com/blog/best-coworking-spaces-canggu)
