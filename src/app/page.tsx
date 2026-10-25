@@ -1,24 +1,37 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ArrowRight,
-  Users,
-  Calendar,
-  Zap,
-  Shield,
-  MessageCircle,
-} from "lucide-react";
 import { SITE, STATS } from "@/lib/constants";
 import { getAllBlogPosts, getUpcomingEvents, getAllEvents } from "@/lib/content";
 import { getFAQSchema } from "@/lib/schema";
-import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import {
-  FadeIn,
-  FadeInStagger,
-  FadeInItem,
-  ScaleIn,
-} from "@/components/ui/AnimatedSection";
+  fixtureLabel,
+  fixtureWhen,
+  formatLongDate,
+  formatReadTime,
+  toFixture,
+  type Fixture,
+} from "@/lib/fixtures";
+import {
+  EXAMPLE_PERKS,
+  OPEN_PERKS,
+  PERKS_CHECKED,
+  formatChecked,
+  pickPerks,
+} from "@/lib/perks";
+import { CITY_COMPARISONS } from "@/data/city-comparisons";
+import { FOUNDERS, initials } from "@/data/founders";
+import {
+  CREDIBILITY,
+  FORMATS,
+  GUIDE_TOPICS,
+  ROOM_MIX,
+  TEASER_EXAMPLE_PERKS,
+  TEASER_OPEN_PERKS,
+  TESTIMONIALS,
+  VALUES,
+} from "@/data/home";
+import LiveClock, { TimeDiff, VisitorClock } from "@/components/season/LiveClock";
 
 export const metadata: Metadata = {
   alternates: {
@@ -30,26 +43,11 @@ export const metadata: Metadata = {
 // Upcoming events are derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
 
-function ValueCard({
-  icon: Icon,
-  title,
-  description,
-}: {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-}) {
-  return (
-    <FadeInItem>
-      <div className="p-6 rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all duration-300">
-        <Icon className="w-5 h-5 text-brand-red mb-4" />
-        <h3 className="font-semibold text-brand-white mb-2">{title}</h3>
-        <p className="text-sm text-brand-grey leading-relaxed">{description}</p>
-      </div>
-    </FadeInItem>
-  );
-}
-
+// UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
+// (answers 1, 3, 4 and 5: "Southeast Asia's largest", "2,500+ funded founders",
+// "ex-FAANG", "40+ countries", "40 to 80", "active nodes in Ubud, Sanur, and
+// Uluwatu", "every third Thursday"). Rendered visibly below and as FAQPage
+// schema, both from this one list, so they always match.
 const HOMEPAGE_FAQS = [
   {
     question: "What is BSTC?",
@@ -83,6 +81,58 @@ const HOMEPAGE_FAQS = [
   },
 ];
 
+const MEETUP_CHECKED = "25 Oct 2026";
+
+function categoryLabel(category: string): string {
+  const text = category.replace(/-/g, " ");
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function FixtureRow({ fixture, isNext }: { fixture: Fixture; isNext: boolean }) {
+  const classes = ["gl-fx"];
+  if (isNext) classes.push("gl-is-next");
+  else if (fixture.isDinner) classes.push("gl-fx--dinner");
+  const label = fixtureLabel(fixture).replace(/\.$/, "");
+  return (
+    <li className={classes.join(" ")}>
+      <p className="gl-fx-num">
+        <small>{fixture.numberLabel}</small>
+        {fixture.number}
+      </p>
+      <span className="gl-fx-flag">Next up</span>
+      <p className="gl-fx-date">
+        <time dateTime={fixture.isoStart}>{fixture.shortDate}</time>
+      </p>
+      <h3 className="gl-fx-title">
+        <Link href={`/events/${fixture.slug}`}>{fixture.name}</Link>
+      </h3>
+      <p className="gl-fx-where">{fixture.venue}</p>
+      <p className="gl-fx-time">{fixture.time ? `${fixture.time}, Bali time` : "Time to be confirmed"}</p>
+      <div className="gl-fx-cta">
+        {fixture.rsvpUrl ? (
+          <a
+            className="gl-btn gl-btn-line"
+            href={fixture.rsvpUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`RSVP for ${label}, ${fixture.longDate} (opens in a new tab)`}
+          >
+            RSVP
+          </a>
+        ) : (
+          <Link
+            className="gl-btn gl-btn-line"
+            href={`/events/${fixture.slug}`}
+            aria-label={`Details for ${label}, ${fixture.longDate}`}
+          >
+            Details
+          </Link>
+        )}
+      </div>
+    </li>
+  );
+}
+
 export default async function Home() {
   const [allPosts, allEvents] = await Promise.all([
     getAllBlogPosts(),
@@ -92,537 +142,656 @@ export default async function Home() {
   const latestSignal = allPosts.find(
     (p) => p.frontmatter.category === "thought-leadership"
   );
-  const upcomingEvents = getUpcomingEvents(allEvents).slice(0, 3);
+  const fixtures = getUpcomingEvents(allEvents)
+    .map(toFixture)
+    .filter((f): f is Fixture => f !== null);
+  const next = fixtures[0];
   const faqSchema = getFAQSchema(HOMEPAGE_FAQS);
 
+  // Guides hub: every post, grouped by topic; unlisted posts go last.
+  const postBySlug = new Map(allPosts.map((p) => [p.frontmatter.slug, p]));
+  const listed = new Set(GUIDE_TOPICS.flatMap((t) => t.slugs));
+  const guideGroups = GUIDE_TOPICS.map((topic) => ({
+    title: topic.title,
+    posts: topic.slugs
+      .map((slug) => postBySlug.get(slug))
+      .filter((p): p is NonNullable<typeof p> => Boolean(p)),
+  }));
+  const otherPosts = allPosts.filter((p) => !listed.has(p.frontmatter.slug));
+  if (otherPosts.length) guideGroups.push({ title: "More guides", posts: otherPosts });
+  const cityGroup = guideGroups.find((g) => g.title === "City comparisons");
+
+  const teaserOpen = pickPerks(TEASER_OPEN_PERKS);
+  const teaserExamples = pickPerks(TEASER_EXAMPLE_PERKS);
+  const members = `${STATS.members.toLocaleString("en-US")}+`;
+
   return (
-    <>
+    <div className="gl-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-red/5 via-transparent to-transparent" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-red/10 rounded-full blur-[120px] opacity-30" />
-
-        <div className="relative max-w-site mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-          <div className="max-w-3xl">
-            <FadeIn delay={0.1}>
-              <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
-                {SITE.fullName}
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6">
-                Where Southeast Asia&apos;s{" "}
-                <span className="text-brand-red">Best Builders</span> Actually
-                Show Up
-              </h1>
-            </FadeIn>
-            <FadeIn delay={0.35}>
-              <p className="text-lg md:text-xl text-brand-grey max-w-2xl mb-8 leading-relaxed">
-                2,500+ founders, engineers, and operators building the future
-                from Bali. High-signal events. Zero noise. The community that{" "}
-                <span className="text-brand-white">
-                  ex-FAANG engineers, funded founders, and VCs
-                </span>{" "}
-                actually show up to.
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.5}>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/join"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red"
-                >
-                  Join the Community
-                  <ArrowRight size={18} />
-                </Link>
-                <Link
-                  href="/events"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
-                >
-                  See Upcoming Events
-                </Link>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Bar */}
-      <section className="border-y border-ink/10 bg-white/40">
-        <div className="max-w-site mx-auto px-6 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <AnimatedCounter
-              value={STATS.members}
-              suffix="+"
-              label="Community Members"
-            />
-            <AnimatedCounter
-              value={STATS.events}
-              suffix="+"
-              label="Events Hosted"
-            />
-            <AnimatedCounter
-              value={STATS.rating}
-              suffix="/5"
-              label="Average Rating"
-            />
-            <AnimatedCounter
-              value={STATS.countries}
-              suffix="+"
-              label="Countries Represented"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* This Week's Signal */}
-      {latestSignal && (
-        <section className="border-b border-ink/10 bg-gradient-to-b from-brand-red/[0.04] via-transparent to-transparent">
-          <div className="max-w-site mx-auto px-6 py-14 md:py-20">
-            <FadeIn>
-              <Link
-                href={`/blog/${latestSignal.frontmatter.slug}`}
-                className="group block"
-              >
-                <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-12">
-                  <div className="md:w-1/3 md:pt-1">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-60" />
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-red" />
-                      </span>
-                      <p className="text-brand-red text-xs font-medium uppercase tracking-widest">
-                        This Week&apos;s Signal
-                      </p>
-                    </div>
-                    <p className="text-xs text-brand-grey">
-                      {new Date(latestSignal.frontmatter.date).toLocaleDateString(
-                        "en-US",
-                        { year: "numeric", month: "long", day: "numeric" }
-                      )}
-                      {latestSignal.frontmatter.readTime
-                        ? ` · ${latestSignal.frontmatter.readTime}`
-                        : ""}
-                    </p>
-                  </div>
-                  <div className="md:w-2/3">
-                    <h2 className="text-xl md:text-2xl lg:text-3xl font-display font-bold text-brand-white group-hover:text-brand-red transition-colors mb-4 leading-tight">
-                      {latestSignal.frontmatter.title}
-                    </h2>
-                    <p className="text-sm md:text-base text-brand-grey leading-relaxed mb-5 line-clamp-3">
-                      {latestSignal.frontmatter.excerpt}
-                    </p>
-                    <span className="inline-flex items-center gap-1.5 text-sm text-brand-red group-hover:gap-2.5 transition-all font-medium">
-                      Read the full signal
-                      <ArrowRight size={14} />
-                    </span>
-                  </div>
-                </div>
+      {/* 1. Hero: the home field */}
+      <section className="gl-hero gl-on-red" id="top" aria-labelledby="hero-title">
+        <div className="gl-hero-grid">
+          <div className="gl-hero-copy">
+            <p className="gl-est">Est. October 2023 in Canggu, Bali</p>
+            <h1 id="hero-title">Home ground in Bali. Members everywhere.</h1>
+            <p className="gl-hero-lede">
+              <strong>
+                Bali Startup &amp; Tech is the community for founders,
+                entrepreneurs and remote builders in Bali, and wherever you build
+                from next.
+              </strong>{" "}
+              Meet at our events in Canggu, join the chat, and keep your place in
+              it when you move on. High-signal events. Zero noise.
+            </p>
+            <div className="gl-hero-ctas">
+              <Link className="gl-btn gl-btn-paper" href="/join">
+                Join the community
               </Link>
-            </FadeIn>
+              <a className="gl-link" href="#fixtures">
+                See upcoming events
+              </a>
+            </div>
           </div>
-        </section>
-      )}
-
-      {/* Credibility band */}
-      <section className="py-16 md:py-20 border-b border-ink/10">
-        <div className="max-w-site mx-auto px-6">
-          <FadeIn className="text-center mb-8">
-            <p className="text-xs font-medium uppercase tracking-widest text-brand-grey">
-              Members building at
-            </p>
-          </FadeIn>
-          <FadeInStagger className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 opacity-60 hover:opacity-80 transition-opacity">
-            {[
-              "Ex-Google",
-              "Ex-Meta",
-              "Ex-Stripe",
-              "Ex-Shopify",
-              "Ex-Uber",
-              "Ex-Grab",
-              "Ex-Sea",
-              "Ex-Gojek",
-              "YC Alumni",
-              "Techstars",
-            ].map((org) => (
-              <FadeInItem key={org}>
-                <span className="text-sm md:text-base font-medium text-brand-white/70 tracking-wide">
-                  {org}
-                </span>
-              </FadeInItem>
-            ))}
-          </FadeInStagger>
-          <FadeIn className="text-center mt-8">
-            <p className="text-xs text-brand-grey italic">
-              Representing the career backgrounds of active BSTC members.
-            </p>
-          </FadeIn>
+          <figure className="gl-duo">
+            <Image
+              src="/images/photos/events/2024-11_bstc_atmospheric-venue.jpg"
+              alt="A packed garden venue at night in Canggu, the crowd facing a speaker and screen under trees and hanging lamps."
+              fill
+              priority
+              sizes="(max-width: 760px) 100vw, 43vw"
+            />
+            <figcaption className="gl-home-clock">
+              <span>
+                <LiveClock tz="Asia/Makassar" fallback="Bali time" longDay />
+              </span>
+              <p>WITA in Canggu right now</p>
+            </figcaption>
+          </figure>
         </div>
-      </section>
-
-      {/* Flagship Events */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-site mx-auto px-6">
-          <FadeIn className="text-center mb-16">
-            <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
-              Our Events
-            </p>
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Three Ways to Connect
-            </h2>
-            <p className="text-brand-grey max-w-xl mx-auto">
-              Monthly networking. Live AI builds. Full-day hackathons. Every
-              format designed for signal over noise.
-            </p>
-          </FadeIn>
-
-          <FadeInStagger className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Networking Night",
-                desc: "40-80 founders, engineers, and VCs. Open mic intros. Host-facilitated connections. Every 3rd Thursday.",
-                image: "/images/events/networking-night.png",
-                href: "/events/flagship-networking-night-may-2026",
-                badge: "Monthly",
-                imagePosition: "object-center",
-              },
-              {
-                title: "How I AI",
-                desc: "Live AI builds by real practitioners. Intel Drop. Builder Spotlights. The Money Round. Real tools, real revenue.",
-                image: "/images/events/how-i-ai-edition-1.png",
-                href: "/how-i-build-with-ai",
-                badge: "New Series",
-                imagePosition: "object-[center_60%]",
-              },
-              {
-                title: "Hackathon",
-                desc: "Build something real in one day. Teams compete to ship products, demo in 3 minutes, and win prizes.",
-                image: "/images/events/hackathon-edition-1.png",
-                href: "/events/hackathon-edition-1",
-                badge: "Coming Soon",
-                imagePosition: "object-center",
-              },
-            ].map((event) => (
-              <FadeInItem key={event.title}>
-                <Link
-                  href={event.href}
-                  className="group block rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all overflow-hidden"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={event.image}
-                      alt={event.title}
-                      fill
-                      className={`object-cover group-hover:scale-105 transition-transform duration-500 ${event.imagePosition}`}
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute top-3 left-3">
-                      <span className="text-[10px] font-medium uppercase tracking-wider bg-brand-red/90 text-white px-2 py-1 rounded">
-                        {event.badge}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-semibold text-brand-white group-hover:text-brand-red transition-colors mb-2">
-                      {event.title}
-                    </h3>
-                    <p className="text-sm text-brand-grey line-clamp-3">
-                      {event.desc}
-                    </p>
-                  </div>
-                </Link>
-              </FadeInItem>
-            ))}
-          </FadeInStagger>
-
-          <FadeIn className="text-center mt-10">
-            <Link
-              href="/events"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
-            >
-              See All Events
-              <ArrowRight size={16} />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Upcoming Events (dynamic) */}
-      {upcomingEvents.length > 0 && (
-        <section className="py-16 md:py-20 border-y border-ink/10 bg-white/40">
-          <div className="max-w-site mx-auto px-6">
-            <FadeIn className="flex items-end justify-between mb-10 flex-wrap gap-4">
-              <div>
-                <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-2">
-                  On the calendar
+        <div className="gl-next-strip gl-on-navy">
+          <div className="gl-wrap">
+            <span className="gl-tag">Next home fixture</span>
+            {next ? (
+              <>
+                <p>
+                  <strong>{fixtureLabel(next)}</strong> {fixtureWhen(next)}
                 </p>
-                <h2 className="text-2xl md:text-3xl font-display font-bold">
-                  Next up in the community
-                </h2>
-              </div>
-              <Link
-                href="/events"
-                className="text-sm text-brand-red hover:text-brand-white font-medium inline-flex items-center gap-1"
-              >
-                All events <ArrowRight size={14} />
-              </Link>
-            </FadeIn>
-            <FadeInStagger className="grid md:grid-cols-3 gap-6">
-              {upcomingEvents.map((e) => (
-                <FadeInItem key={e.frontmatter.slug}>
-                  <Link
-                    href={`/events/${e.frontmatter.slug}`}
-                    className="group block p-5 rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all h-full"
-                  >
-                    <span className="text-xs font-medium uppercase tracking-wider text-brand-red">
-                      {new Date(e.frontmatter.date).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </span>
-                    <h3 className="text-base font-semibold text-brand-white group-hover:text-brand-red transition-colors mt-2 mb-2">
-                      {e.frontmatter.title}
-                    </h3>
-                    <p className="text-sm text-brand-grey line-clamp-2">
-                      {e.frontmatter.description}
-                    </p>
+                {next.rsvpUrl ? (
+                  <a className="gl-link" href={next.rsvpUrl} target="_blank" rel="noopener noreferrer">
+                    RSVP<span className="gl-vh"> for {fixtureLabel(next)} (opens in a new tab)</span>
+                  </a>
+                ) : (
+                  <Link className="gl-link" href={`/events/${next.slug}`}>
+                    Event details
                   </Link>
-                </FadeInItem>
-              ))}
-            </FadeInStagger>
+                )}
+              </>
+            ) : (
+              <>
+                <p>New fixtures are on the way. Join the community to hear first.</p>
+                <Link className="gl-link" href="/join">
+                  Join to hear first
+                </Link>
+              </>
+            )}
           </div>
-        </section>
-      )}
-
-      {/* Who's in the Room */}
-      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
-        <div className="max-w-site mx-auto px-6">
-          <FadeIn className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold mb-3">
-              Who&apos;s in the Room
-            </h2>
-            <p className="text-brand-grey text-sm max-w-lg mx-auto">
-              This isn&apos;t a casual meetup. The people who show up are
-              building real things.
-            </p>
-          </FadeIn>
-
-          <FadeInStagger className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            {[
-              { label: "Startup Founders", pct: "40%" },
-              { label: "Engineers & Devs", pct: "25%" },
-              { label: "Investors & VCs", pct: "10%" },
-              { label: "Operators", pct: "25%" },
-            ].map((role) => (
-              <FadeInItem key={role.label}>
-                <div className="text-center p-4 rounded-lg border border-ink/10 bg-white/70">
-                  <div className="text-xl font-display font-bold text-brand-red mb-1">
-                    {role.pct}
-                  </div>
-                  <div className="text-xs text-brand-grey">{role.label}</div>
-                </div>
-              </FadeInItem>
-            ))}
-          </FadeInStagger>
         </div>
       </section>
 
-      {/* Community Values */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-site mx-auto px-6">
-          <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              What We Stand For
-            </h2>
-            <p className="text-brand-grey max-w-xl mx-auto">
-              These aren&apos;t just words. They&apos;re enforced at every
-              event.
-            </p>
-          </FadeIn>
-
-          <FadeInStagger className="grid md:grid-cols-3 gap-6">
-            <ValueCard
-              icon={Zap}
-              title="Signal > Noise"
-              description="Every interaction should add value. We focus on substance over hype, builders over talkers."
-            />
-            <ValueCard
-              icon={Shield}
-              title="No Hard Selling"
-              description="Build relationships, not transactions. Leave the pitch at the door. Connect authentically."
-            />
-            <ValueCard
-              icon={Users}
-              title="Builders First"
-              description="We prioritise founders and operators who are actually building things. Doers, not dreamers."
-            />
-          </FadeInStagger>
+      {/* 2. Stats bar, as a scoreboard */}
+      <section className="gl-score-sec" aria-labelledby="score-title">
+        <div className="gl-wrap">
+          <h2 className="gl-vh" id="score-title">
+            The community in numbers
+          </h2>
+          <dl className="gl-score">
+            <div>
+              <dt>members on Meetup</dt>
+              <dd>{members}</dd>
+            </div>
+            <div>
+              <dt>events hosted since October 2023</dt>
+              <dd>{STATS.events}+</dd>
+            </div>
+            <div>
+              <dt>average rating on Meetup, from {STATS.ratingCount} ratings</dt>
+              <dd className="gl-red">{STATS.rating}</dd>
+            </div>
+            <div>
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+              <dt>countries represented</dt>
+              <dd>{STATS.countries}+</dd>
+            </div>
+          </dl>
+          <p className="gl-score-note">
+            Meetup figures checked {MEETUP_CHECKED}: 2,734 members, rated{" "}
+            {STATS.rating} from {STATS.ratingCount} ratings.
+          </p>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 md:py-28 bg-white/40 border-y border-ink/10">
-        <div className="max-w-site mx-auto px-6">
-          <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              From the Community
-            </h2>
-            <div className="flex items-center justify-center gap-2 mt-4">
-              <div className="flex gap-0.5">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <span key={star} className={`text-lg ${star <= 4 ? "text-brand-red" : "text-brand-red/40"}`}>
-                    &#9733;
-                  </span>
+      {/* 6. Upcoming events, as the fixture board */}
+      <section className="gl-sec" id="fixtures" aria-labelledby="fx-title">
+        <div className="gl-wrap">
+          <div className="gl-sec-head">
+            <div>
+              <p className="gl-eyebrow">Home fixtures</p>
+              <h2 id="fx-title">Upcoming events</h2>
+            </div>
+            <p>
+              The next events on the calendar, soonest first. Times are Bali time
+              (WITA). RSVP so we can plan the room.
+            </p>
+          </div>
+          {fixtures.length > 0 ? (
+            <ol className="gl-board">
+              {fixtures.map((f, i) => (
+                <FixtureRow fixture={f} isNext={i === 0} key={f.slug} />
+              ))}
+            </ol>
+          ) : (
+            <p className="gl-board-done">
+              No events are listed right now. Join the community to hear about the
+              next one first.
+            </p>
+          )}
+          <div className="gl-board-foot">
+            <p>Join the community to get every new event in the chat.</p>
+            <Link className="gl-link" href="/events">
+              All events, past and upcoming
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Three ways to connect, at the home ground */}
+      <section className="gl-sec gl-sec-tight" id="home-ground" aria-labelledby="hg-title">
+        <div className="gl-wrap">
+          <div className="gl-sec-head">
+            <div>
+              <p className="gl-eyebrow">The home ground</p>
+              <h2 id="hg-title">Three ways to connect</h2>
+            </div>
+            <p>
+              Monthly networking. Live AI builds. Full-day hackathons. Every format
+              designed for signal over noise.
+            </p>
+          </div>
+          <div className="gl-rooms">
+            <figure className="gl-room gl-room-a">
+              <Image
+                src="/images/photos/events/2024-11_bstc_packed-house.jpg"
+                alt="A packed crowd standing under a timber roof in Canggu, facing a presentation screen."
+                fill
+                sizes="(max-width: 760px) 100vw, 66vw"
+              />
+              <figcaption className="gl-stat">
+                <b>{STATS.events}+</b>
+                <span>events since October 2023</span>
+              </figcaption>
+            </figure>
+            <figure className="gl-room gl-room-b">
+              <Image
+                src="/images/photos/events/2024-10_bstc_speaker-presentation.jpg"
+                alt="A speaker with a microphone presenting a slide under string lights."
+                fill
+                sizes="(max-width: 760px) 100vw, 33vw"
+              />
+              <figcaption className="gl-stat">
+                <b>{STATS.rating}</b>
+                <span>on Meetup, from {STATS.ratingCount} ratings</span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div className="gl-ways">
+            <ul className="gl-formats">
+              {FORMATS.map((format) => (
+                <li className="gl-fmt" key={format.title}>
+                  <figure className="gl-fmt-poster">
+                    <Image
+                      src={format.image}
+                      alt={format.alt}
+                      fill
+                      sizes="(max-width: 760px) 100vw, 33vw"
+                      style={{ objectPosition: format.imagePosition }}
+                    />
+                    <figcaption className="gl-tag">{format.badge}</figcaption>
+                  </figure>
+                  <h3>{format.title}</h3>
+                  {/* Networking Night: UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+                  <p>{format.desc}</p>
+                  <Link className="gl-link" href={format.href}>
+                    {format.linkLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="gl-ways-foot">
+              <Link className="gl-btn gl-btn-line" href="/events">
+                See all events
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 7 + 8. Who's in the room, and what we stand for */}
+      <section className="gl-sec gl-sec-tight" id="the-room" aria-label="Who's in the room and what we stand for">
+        <div className="gl-wrap gl-room-grid">
+          <div>
+            {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+            <h2 id="room-title">Who&apos;s in the room</h2>
+            <p>
+              This isn&apos;t a casual meetup. The people who show up are building
+              real things.
+            </p>
+            <div className="gl-mix">
+              <div className="gl-mix-bar" aria-hidden="true">
+                {ROOM_MIX.map((role) => (
+                  <span
+                    key={role.label}
+                    className={role.className}
+                    style={{ width: `${role.pct}%` }}
+                  />
                 ))}
               </div>
-              <span className="text-sm text-brand-grey">
-                4.6/5 from 116 reviews on MeetUp
-              </span>
+              <ul className="gl-mix-key">
+                {ROOM_MIX.map((role) => (
+                  <li key={role.label}>
+                    <i className={role.className} />
+                    <b>{role.pct}%</b>
+                    <span>{role.label}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </FadeIn>
-
-          <FadeInStagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                quote:
-                  "This is the first time I've eaten fish in 15 years. Thanks for hosting the night.",
-                name: "Tom",
-                role: "LinkedIn Agency, $50K+ MRR",
-                context: "At a BSTC private dinner",
-              },
-              {
-                quote:
-                  "The quality of people in the room is unmatched. I've met more relevant connections at one BSTC event than six months of conferences.",
-                name: "BSTC Member",
-                role: "SaaS Founder, Series A",
-                context: "Networking Night",
-              },
-              {
-                quote:
-                  "The 'no hard selling' rule changes everything. You can have real conversations without watching your back. This is how tech events should be.",
-                name: "BSTC Member",
-                role: "Angel Investor",
-                context: "Networking Night",
-              },
-              {
-                quote:
-                  "Thank you very much Bali Startup and Tech for being one of the best tech communities in Bali. You meet such awesome people who are genuinely building great things, it's a super social and community vibe and it's so needed especially when everyone is scaling with AI. Love these events!",
-                name: "Mia",
-                role: "Founder / CEO",
-                context: "Regular attendee",
-              },
-            ].map((testimonial, i) => (
-              <FadeInItem key={i}>
-                <div className="p-6 rounded-lg border border-ink/10 bg-white/70 hover:border-brand-red/20 transition-all duration-300 h-full flex flex-col">
-                  <p className="text-brand-grey text-sm leading-relaxed mb-4 flex-grow">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                  <div>
-                    <p className="text-sm font-medium text-brand-white">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-xs text-brand-grey">
-                      {testimonial.role}
-                    </p>
-                    {testimonial.context && (
-                      <p className="text-[10px] text-brand-red mt-1">
-                        {testimonial.context}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </FadeInItem>
-            ))}
-          </FadeInStagger>
+          </div>
+          <div>
+            <h2 id="values-title">What we stand for</h2>
+            <p>These aren&apos;t just words. They&apos;re enforced at every event.</p>
+            <ul className="gl-values">
+              {VALUES.map((value) => (
+                <li key={value.title}>
+                  <h3>{value.title}</h3>
+                  <p>{value.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* Latest from the Blog (dynamic) */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-site mx-auto px-6">
-          <FadeIn className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Latest from the Blog
-            </h2>
-            <p className="text-brand-grey max-w-xl mx-auto">
-              Operator-written guides on building from Bali and Southeast Asia.
-            </p>
-          </FadeIn>
+      {/* 4. Credibility band */}
+      <section className="gl-cred" aria-labelledby="cred-title">
+        <div className="gl-wrap">
+          {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+          <h2 id="cred-title">Members building at</h2>
+          <ul className="gl-cred-list">
+            {CREDIBILITY.map((org) => (
+              <li key={org}>{org}</li>
+            ))}
+          </ul>
+          <p className="gl-cred-cap">
+            Representing the career backgrounds of active BSTC members.
+          </p>
+        </div>
+      </section>
 
-          <FadeInStagger className="grid md:grid-cols-3 gap-6">
-            {latestPosts.map((post) => (
-              <FadeInItem key={post.frontmatter.slug}>
-                <Link
-                  href={`/blog/${post.frontmatter.slug}`}
-                  className="group block p-6 rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all duration-300 h-full"
-                >
-                  <span className="text-xs font-medium uppercase tracking-wider text-brand-red">
-                    {post.frontmatter.category.replace(/-/g, " ")}
-                  </span>
-                  <h3 className="text-base font-semibold text-brand-white group-hover:text-brand-red transition-colors mt-2 mb-3">
-                    {post.frontmatter.title}
-                  </h3>
-                  {post.frontmatter.readTime && (
-                    <span className="text-xs text-brand-grey">
-                      {post.frontmatter.readTime}
+      {/* New: Members, as a team sheet */}
+      <section className="gl-sec gl-members gl-on-navy" id="members" aria-labelledby="mem-title">
+        <div className="gl-wrap">
+          <div className="gl-sec-head">
+            <h2 id="mem-title">Members</h2>
+            <p>
+              The co-founders who run Bali Startup &amp; Tech, with the time where
+              each one is based right now. Members find each other in the member
+              directory after the night ends, wherever they&apos;ve moved since.
+            </p>
+          </div>
+
+          <ul className="gl-squad">
+            {FOUNDERS.map((person) => (
+              <li className="gl-player" key={person.name}>
+                <span className="gl-initials" aria-hidden="true">
+                  {initials(person.name)}
+                </span>
+                <span className="gl-tier">{person.tier}</span>
+                <h3>{person.name}</h3>
+                <p className="gl-role">{person.role}</p>
+                <div className="gl-p-city">
+                  <span>{person.city}</span>
+                  <p className="gl-clock">
+                    <LiveClock tz={person.timeZone} fallback={person.utcLabel} />
+                  </p>
+                  {person.homeGround ? (
+                    <span className="gl-home-tag">Home ground</span>
+                  ) : (
+                    <span className="gl-diff">
+                      <TimeDiff tz={person.timeZone} fallback="Local time" />
                     </span>
                   )}
-                </Link>
-              </FadeInItem>
+                </div>
+                <p className="gl-bio">{person.bio}</p>
+                <p className="gl-p-links">
+                  <a href={person.profileUrl} aria-label={`${person.name}'s full profile`}>
+                    Full profile
+                  </a>
+                  <Link href="/leadership">Leadership</Link>
+                </p>
+              </li>
             ))}
-          </FadeInStagger>
+          </ul>
 
-          <FadeIn className="text-center mt-10">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 text-brand-red hover:text-brand-white font-medium transition-colors"
-            >
-              View All Posts
-              <ArrowRight size={16} />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Join CTA */}
-      <section className="py-20 md:py-28 border-t border-ink/10">
-        <div className="max-w-site mx-auto px-6 text-center">
-          <ScaleIn>
-            <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
-              Ready to Join?
-            </h2>
-            <p className="text-brand-grey max-w-lg mx-auto mb-8">
-              Join 2,500+ founders, engineers, and operators building the future
-              from Southeast Asia.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={SITE.joinForm}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red"
-              >
-                <MessageCircle size={18} />
-                Join the Community
-              </a>
-              <a
-                href={SITE.meetup}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
-              >
-                <Calendar size={18} />
-                RSVP on MeetUp
+          <div className="gl-spot">
+            <div>
+              <h3>Your spot in Members</h3>
+              <p>
+                Join and you get your own page in the member directory: your photo,
+                your company, what you&apos;re building and a link to your site. It
+                goes live once you&apos;ve joined, wherever you&apos;re building
+                from.
+              </p>
+              <VisitorClock />
+            </div>
+            <div className="gl-spot-actions">
+              <Link className="gl-btn gl-btn-paper" href="/join">
+                Join and get your page
+              </Link>
+              <a className="gl-link" href="https://remotebuilders.io/directory/">
+                See the member directory
               </a>
             </div>
-          </ScaleIn>
+          </div>
         </div>
       </section>
-    </>
+
+      {/* 9. Testimonials */}
+      <section className="gl-sec" id="reviews" aria-labelledby="rev-title">
+        <div className="gl-wrap">
+          <div className="gl-sec-head">
+            <h2 id="rev-title">From the community</h2>
+            <p className="gl-rating">
+              <b>{STATS.rating}</b>
+              <span>from {STATS.ratingCount} ratings on Meetup</span>
+            </p>
+          </div>
+          <ul className="gl-quotes">
+            {TESTIMONIALS.map((t, i) => (
+              <li className={i === 0 ? "gl-q gl-q--lead" : "gl-q"} key={t.quote}>
+                <blockquote>
+                  <p>&ldquo;{t.quote}&rdquo;</p>
+                </blockquote>
+                <p className="gl-q-who">
+                  <b>{t.name}</b>
+                  <span>{t.role}</span>
+                  <span className="gl-ctx">{t.context}</span>
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* New: perks teaser */}
+      <section className="gl-sec gl-sec-tight" id="perks" aria-labelledby="perks-title">
+        <div className="gl-wrap">
+          <div className="gl-sec-head">
+            <h2 id="perks-title">Perks that travel with you</h2>
+            <p>
+              Software perks work wherever you build from. {OPEN_PERKS.length}{" "}
+              startup programmes are open to apply for now, each checked on the
+              vendor&apos;s own page on {formatChecked(PERKS_CHECKED)}. Another{" "}
+              {EXAMPLE_PERKS.length} are examples of members-only deals we&apos;re
+              negotiating with founder tools and Bali partners. None of those are
+              agreed yet, so they&apos;re labelled Example.
+            </p>
+          </div>
+          <div className="gl-perks">
+            <div className="gl-perk-col">
+              <h3>Open now</h3>
+              <p>
+                Public startup programmes. You apply direct and the vendor decides
+                who&apos;s eligible.
+              </p>
+              <ul className="gl-perk-list">
+                {teaserOpen.map((perk) => (
+                  <li className="gl-perk" key={perk.id}>
+                    <span className="gl-mark" aria-hidden="true">
+                      {perk.company.charAt(0)}
+                    </span>
+                    <div>
+                      <p className="gl-perk-co">{perk.company}</p>
+                      <p className="gl-perk-offer">{perk.headline || perk.offer}</p>
+                      <p className="gl-perk-cat">{perk.category}</p>
+                    </div>
+                    {perk.claim_url && (
+                      <a className="gl-link" href={perk.claim_url} target="_blank" rel="noopener">
+                        Apply
+                        <span className="gl-vh">
+                          {" "}
+                          for {perk.programme || perk.company} (opens in a new tab)
+                        </span>
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="gl-ex-box">
+              <h3>Member deals</h3>
+              <p>Examples of the members-only deals we&apos;re negotiating. None are live yet.</p>
+              <ul className="gl-perk-list">
+                {teaserExamples.map((perk) => (
+                  <li className="gl-perk gl-perk--ex" key={perk.id}>
+                    <span className="gl-mark" aria-hidden="true">
+                      {perk.company.charAt(0)}
+                    </span>
+                    <div>
+                      <p className="gl-perk-co">
+                        {perk.company} <span className="gl-ex">Example</span>
+                      </p>
+                      <p className="gl-perk-offer">{perk.offer}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="gl-perk-foot">
+            <Link className="gl-perk-all" href="/perks">
+              See all {OPEN_PERKS.length + EXAMPLE_PERKS.length} perks
+            </Link>
+            <Link className="gl-btn gl-btn-red" href="/join">
+              Join to get member deals
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 3 + 10. Latest from the blog, led by this week's signal */}
+      <section className="gl-sec gl-sec-tight" id="blog" aria-labelledby="blog-title">
+        <div className="gl-wrap">
+          <div className="gl-sec-head">
+            <h2 id="blog-title">Latest from the blog</h2>
+            <p>Operator-written guides on building from Bali and Southeast Asia.</p>
+          </div>
+
+          {latestSignal && (
+            <article className="gl-signal" aria-labelledby="signal-title">
+              <div className="gl-signal-meta">
+                <span className="gl-tag">This week&apos;s signal</span>
+                <p>
+                  <time dateTime={latestSignal.frontmatter.date}>
+                    {formatLongDate(latestSignal.frontmatter.date)}
+                  </time>
+                  {latestSignal.frontmatter.readTime
+                    ? `, ${formatReadTime(latestSignal.frontmatter.readTime)}`
+                    : ""}
+                </p>
+                <p>By {latestSignal.frontmatter.author}</p>
+              </div>
+              <div className="gl-signal-body">
+                <h3 id="signal-title">
+                  <Link href={`/blog/${latestSignal.frontmatter.slug}`}>
+                    {latestSignal.frontmatter.title}
+                  </Link>
+                </h3>
+                <p>{latestSignal.frontmatter.excerpt}</p>
+                <Link className="gl-link" href={`/blog/${latestSignal.frontmatter.slug}`}>
+                  Read the full signal
+                </Link>
+              </div>
+            </article>
+          )}
+
+          <ul className="gl-latest" aria-label="Latest posts">
+            {latestPosts.map((post) => (
+              <li key={post.frontmatter.slug}>
+                <p className="gl-post-cat">{categoryLabel(post.frontmatter.category)}</p>
+                <h3>
+                  <Link href={`/blog/${post.frontmatter.slug}`}>{post.frontmatter.title}</Link>
+                </h3>
+                <p>
+                  <time dateTime={post.frontmatter.date}>
+                    {formatLongDate(post.frontmatter.date)}
+                  </time>
+                  {post.frontmatter.readTime
+                    ? `, ${formatReadTime(post.frontmatter.readTime)}`
+                    : ""}
+                </p>
+              </li>
+            ))}
+          </ul>
+          <p className="gl-blog-foot">
+            <Link className="gl-btn gl-btn-line" href="/blog">
+              View all posts
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* New: guides hub */}
+      <section className="gl-sec gl-white" id="guides" aria-labelledby="guides-title">
+        <div className="gl-wrap">
+          <div className="gl-sec-head">
+            <h2 id="guides-title">Guides for building from Bali</h2>
+            <p>
+              Everything we&apos;ve written for founders and remote builders: moving
+              here, setting up a company, hiring, AI, raising money, and how Bali
+              compares with the other places you might build from.
+            </p>
+          </div>
+          <div className="gl-guides">
+            {guideGroups.map((group) => (
+              <div className="gl-guide-group" key={group.title}>
+                <h3>{group.title}</h3>
+                <ul>
+                  {group.posts.map((post) => (
+                    <li key={post.frontmatter.slug}>
+                      <Link href={`/blog/${post.frontmatter.slug}`}>
+                        {post.frontmatter.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                {group === cityGroup && (
+                  <div className="gl-cities-vs" aria-label="Bali compared with other cities for founders">
+                    {CITY_COMPARISONS.map((c) => (
+                      <Link key={c.slug} href={`/bali-vs/${c.slug}`}>
+                        Bali vs {c.city}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="gl-more">
+            <Link href="/how-i-build-with-ai">
+              <b>How I AI archive</b>
+              <span>Every edition of the How I AI builder series.</span>
+            </Link>
+            <Link href="/events">
+              <b>Past events</b>
+              <span>Earlier events, with recaps where we have them.</span>
+            </Link>
+            <Link href="/resources">
+              <b>Resources</b>
+              <span>Tools, platforms and resources members use.</span>
+            </Link>
+            <Link href="/blog">
+              <b>All posts</b>
+              <span>The full blog, newest first.</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. Homepage FAQ, visible, with the same answers as the schema */}
+      <section className="gl-sec" id="faq" aria-labelledby="faq-title">
+        <div className="gl-wrap">
+          <div className="gl-sec-head">
+            <h2 id="faq-title">Questions people ask</h2>
+            <p>
+              The short answers. There&apos;s more on the{" "}
+              <Link className="gl-link" href="/faq">
+                FAQ page
+              </Link>
+              .
+            </p>
+          </div>
+          {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+          <dl className="gl-faq">
+            {HOMEPAGE_FAQS.map((faq) => (
+              <div key={faq.question}>
+                <dt>{faq.question}</dt>
+                <dd>{faq.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      {/* New: partners band */}
+      <section className="gl-partner" id="partners" aria-labelledby="partner-title">
+        <div className="gl-wrap">
+          <h2 id="partner-title">Partners and sponsors</h2>
+          <p>
+            Back our events, or offer members a deal on your product, and put your
+            company in front of the founders, engineers and operators in the room
+            and in the chat.
+          </p>
+          <Link className="gl-btn gl-btn-line" href="/sponsors">
+            Partner with BSTC
+          </Link>
+        </div>
+      </section>
+
+      {/* 12. Join CTA */}
+      <section className="gl-final gl-on-red" id="join" aria-labelledby="final-title">
+        <div className="gl-wrap">
+          <span className="gl-crest" aria-hidden="true" />
+          <p className="gl-pre">Join from anywhere</p>
+          <h2 id="final-title">Ready to join?</h2>
+          <p>
+            Join {members} founders, engineers, and operators building the future
+            from Southeast Asia.
+          </p>
+          <div className="gl-final-ctas">
+            <Link className="gl-btn gl-btn-paper" href="/join">
+              Join the community
+            </Link>
+            <a className="gl-link" href={SITE.meetup} target="_blank" rel="noopener noreferrer">
+              RSVP on Meetup
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

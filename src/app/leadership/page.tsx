@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { getPersonSchema } from "@/lib/schema";
+import { FOUNDERS, initials } from "@/data/founders";
 
 export const metadata: Metadata = {
   title: "Leadership",
@@ -18,27 +19,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/leadership" },
 };
-
-const FOUNDERS = [
-  {
-    name: "Lachlan McRitchie",
-    role: "Co-founder & Primary Organiser",
-    bio: "Built BSTC from the ground up. Runs community operations, governance, and brand strategy.",
-    tier: "Founder",
-  },
-  {
-    name: "Josh Morrow",
-    role: "Co-founder & Growth Lead",
-    bio: "Leads revenue, sponsorships, and the 'How I Build with AI' flagship series. Also runs David & Goliath, an AI growth agency.",
-    tier: "Founder",
-  },
-  {
-    name: "Matthew Carr",
-    role: "Co-founder & Community Lead",
-    bio: "Manages community engagement and event operations across Bali nodes.",
-    tier: "Founder",
-  },
-];
 
 const TIERS = [
   {
@@ -111,10 +91,7 @@ export default function LeadershipPage() {
                 className="p-6 rounded-lg border border-ink/10 bg-white/70"
               >
                 <div className="w-14 h-14 rounded-full bg-brand-red/20 flex items-center justify-center text-brand-red font-bold text-lg mb-4">
-                  {person.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
+                  {initials(person.name)}
                 </div>
                 <span className="text-xs font-medium uppercase tracking-wider text-brand-red">
                   {person.tier}
