@@ -315,7 +315,7 @@ export default async function BlogPostPage({
             Southeast Asia.
           </p>
           <Link
-            href="/join"
+            href={`/join?src=blog-${p.slug}`}
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
           >
             Join BSTC

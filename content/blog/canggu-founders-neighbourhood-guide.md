@@ -101,4 +101,4 @@ The concentration of founders per square kilometre is what makes it work. In a c
 
 ---
 
-*[Join the BSTC community](/join) to plug into Canggu's tech scene from day one.*
+*[Join the BSTC community](/join?src=blog-canggu-founders-neighbourhood-guide-inline) to plug into Canggu's tech scene from day one.*

@@ -54,7 +54,7 @@ All rows last checked 25 Oct 2026. Details and sources below.
 - **How often:** How I AI runs weekly in seasons. Season 2 runs every Wednesday from 4 November to 9 December 2026, 6 to 9pm, free ([event page](/events/how-i-ai-season-2-edition-18)). The networking drinks and dinner runs roughly monthly; #39 is on Thursday 12 November 2026 at 6:30pm ([event page](/events/networking-drinks-dinner-canggu-39)).
 - **Size:** 2,700+ members on Meetup, rated 4.7 from 155 ratings, 54 past Meetup events ([Meetup group](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026).
 - **Most recent dated event:** How I AI Edition 17, Wednesday 29 July (2026) at Seoul Soul Project. Meetup also lists six upcoming events, starting with How I AI Season 2 Edition 18 on 4 November 2026 ([Meetup group](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026).
-- **Join:** [balistartupandtech.com/join](/join?src=guide-tech-communities). The Telegram link arrives after you sign up.
+- **Join:** [balistartupandtech.com/join](/join?src=blog-tech-communities-in-bali-inline). The Telegram link arrives after you sign up.
 - **Last checked 25 Oct 2026.**
 
 ## GDG Bali (Google Developer Group)
@@ -165,4 +165,4 @@ Every group shows its "last checked" date. If you run a Bali tech group and some
 
 ## Join BSTC
 
-If you're building something in Bali, sign up at [balistartupandtech.com/join](/join?src=guide-tech-communities). It takes a minute, and the Telegram link arrives straight after you sign up, along with the next event dates.
+If you're building something in Bali, sign up at [balistartupandtech.com/join](/join?src=blog-tech-communities-in-bali-inline). It takes a minute, and the Telegram link arrives straight after you sign up, along with the next event dates.

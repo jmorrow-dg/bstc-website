@@ -188,7 +188,7 @@ export default async function Home() {
               it when you move on. High-signal events. Zero noise.
             </p>
             <div className="gl-hero-ctas">
-              <Link className="gl-btn gl-btn-paper" href="/join">
+              <Link className="gl-btn gl-btn-paper" href="/join?src=home-hero">
                 Join the community
               </Link>
               <a className="gl-link" href="#fixtures">
@@ -233,7 +233,7 @@ export default async function Home() {
             ) : (
               <>
                 <p>New fixtures are on the way. Join the community to hear first.</p>
-                <Link className="gl-link" href="/join">
+                <Link className="gl-link" href="/join?src=home-fixtures-empty">
                   Join to hear first
                 </Link>
               </>
@@ -499,7 +499,7 @@ export default async function Home() {
               <VisitorClock />
             </div>
             <div className="gl-spot-actions">
-              <Link className="gl-btn gl-btn-paper" href="/join">
+              <Link className="gl-btn gl-btn-paper" href="/join?src=home-members">
                 Join and get your page
               </Link>
               <a className="gl-link" href="https://remotebuilders.io/directory/">
@@ -606,7 +606,7 @@ export default async function Home() {
             <Link className="gl-perk-all" href="/perks">
               See all {OPEN_PERKS.length + EXAMPLE_PERKS.length} perks
             </Link>
-            <Link className="gl-btn gl-btn-red" href="/join">
+            <Link className="gl-btn gl-btn-red" href="/join?src=home-perks">
               Join to get member deals
             </Link>
           </div>
@@ -783,7 +783,7 @@ export default async function Home() {
             from Southeast Asia.
           </p>
           <div className="gl-final-ctas">
-            <Link className="gl-btn gl-btn-paper" href="/join">
+            <Link className="gl-btn gl-btn-paper" href="/join?src=home-final">
               Join the community
             </Link>
             <a className="gl-link" href={SITE.meetup} target="_blank" rel="noopener noreferrer">

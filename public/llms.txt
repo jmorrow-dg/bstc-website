@@ -24,7 +24,7 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 - [About BSTC](https://balistartupandtech.com/about): Founding story, leadership, milestones.
 - [Leadership](https://balistartupandtech.com/leadership): Founders and leadership tier system.
 - [Events](https://balistartupandtech.com/events): Upcoming events, past events, event formats.
-- [Join](https://balistartupandtech.com/join): How to join the community (MeetUp + WhatsApp).
+- [Join](https://balistartupandtech.com/join): Join the community. Sign up on this page and the community chat link (Telegram) arrives after signup; events are on Meetup and Luma.
 - [Member perks](https://balistartupandtech.com/perks): 66 startup programmes open to apply for now (each checked on the vendor's own page on 25 Oct 2026), plus 62 example member deals BSTC is negotiating, each labelled Example.
 - [Members](https://balistartupandtech.com/#members): the co-founders and where each is based. The full member directory is at https://remotebuilders.io/directory/.
 

@@ -257,7 +257,7 @@ export default function FAQPage() {
               <ArrowRight size={16} />
             </Link>
             <Link
-              href="/join"
+              href="/join?src=faq"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
             >
               Join the Community

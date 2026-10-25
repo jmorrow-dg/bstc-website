@@ -104,4 +104,4 @@ Every "How I Build with AI" session features founders showing their actual reven
 
 ---
 
-*[See upcoming sessions](/how-i-build-with-ai) or [join the BSTC community](/join) to connect with founders building real AI businesses.*
+*[See upcoming sessions](/how-i-build-with-ai) or [join the BSTC community](/join?src=blog-making-money-with-ai-2026-inline) to connect with founders building real AI businesses.*

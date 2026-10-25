@@ -90,4 +90,4 @@ The AI agency model is one of the fastest paths from "I know how to use AI" to "
 
 ---
 
-*[Join the BSTC community](/join) to connect with founders building AI agencies and service businesses from Bali.*
+*[Join the BSTC community](/join?src=blog-rise-of-ai-agencies-bali-inline) to connect with founders building AI agencies and service businesses from Bali.*

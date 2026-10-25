@@ -71,7 +71,7 @@ It depends on what you're building and who you sell to. Bali runs on WITA (UTC+8
 
 ## Your first two weeks as a builder
 
-1. Sign up at [/join](/join?src=guide-digital-nomad) before you land so you're in the chat on day one.
+1. Sign up at [/join](/join?src=blog-digital-nomad-community-bali-inline) before you land so you're in the chat on day one.
 2. Go to How I AI on Wednesday. Go again the next Wednesday.
 3. Work from a coworking space a few days a week rather than your villa.
 4. Go to the next monthly dinner (Thursday 12 November 2026 at Yema Kitchen, Canggu, 6:30pm, per the [event page](/events/networking-drinks-dinner-canggu-39)).
@@ -103,4 +103,4 @@ Canggu has the weekly builder events, and Finns' guide (updated 21 July 2026) li
 
 ## Join BSTC
 
-If you're building a business from Bali, sign up at [balistartupandtech.com/join](/join?src=guide-digital-nomad). The Telegram link arrives straight after you sign up, and you'll get the next event dates with it.
+If you're building a business from Bali, sign up at [balistartupandtech.com/join](/join?src=blog-digital-nomad-community-bali-inline). The Telegram link arrives straight after you sign up, and you'll get the next event dates with it.

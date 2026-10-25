@@ -50,7 +50,7 @@ All dates checked against the event pages on 25 October 2026.
 
 This assumes you land early in the week and base yourself in or near Canggu.
 
-1. **Before you land:** sign up at [/join](/join?src=guide-meet-founders) so you're in the Telegram chat from day one, and RSVP for the next How I AI on the [events page](/events). Write one line on what you're building and one line on what you need. You'll use it all week.
+1. **Before you land:** sign up at [/join](/join?src=blog-meet-founders-in-bali-inline) so you're in the Telegram chat from day one, and RSVP for the next How I AI on the [events page](/events). Write one line on what you're building and one line on what you need. You'll use it all week.
 2. **Day 1 to 2:** pick a coworking space (see below) and buy a few day passes rather than a month. Say hello in the community chat with your two lines.
 3. **Wednesday:** go to How I AI. Arrive at 6pm when doors open. It's the easiest hour to talk to people, before the programme starts. In the Money Round, say what you've built this week in one minute.
 4. **Thursday or Friday:** message the two or three people you had a real conversation with. Suggest a coffee or a coworking day, not a call.
@@ -124,4 +124,4 @@ Not as a hard sell. BSTC's rules are no hard selling and 60-second intros. How I
 
 ## Join BSTC
 
-Sign up at [balistartupandtech.com/join](/join?src=guide-meet-founders). The Telegram link arrives straight after you sign up, so you can say hello before your first Wednesday.
+Sign up at [balistartupandtech.com/join](/join?src=blog-meet-founders-in-bali-inline). The Telegram link arrives straight after you sign up, so you can say hello before your first Wednesday.

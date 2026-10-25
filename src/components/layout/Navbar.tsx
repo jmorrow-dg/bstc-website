@@ -51,7 +51,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <Link href="/join" className="gl-btn gl-btn-red gl-top-join">
+        <Link href="/join?src=nav" className="gl-btn gl-btn-red gl-top-join">
           Join the community
         </Link>
 
@@ -87,7 +87,7 @@ export default function Navbar() {
             ))}
           </ul>
           <Link
-            href="/join"
+            href="/join?src=nav-mobile"
             className="gl-btn gl-btn-red"
             onClick={() => setMobileOpen(false)}
           >

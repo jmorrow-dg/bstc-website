@@ -174,7 +174,7 @@ export default function PerksPage() {
               working on.
             </p>
             <div className="gl-head-ctas">
-              <Link className="gl-btn gl-btn-paper" href="/join">
+              <Link className="gl-btn gl-btn-paper" href="/join?src=perks-head">
                 Join the community
               </Link>
               <a className="gl-link" href="#finder">
@@ -316,7 +316,7 @@ export default function PerksPage() {
             Join free. You get the chat, every event, and each member deal as soon
             as it&apos;s signed.
           </p>
-          <Link className="gl-btn gl-btn-paper" href="/join">
+          <Link className="gl-btn gl-btn-paper" href="/join?src=perks-foot">
             Join the community
           </Link>
         </div>
