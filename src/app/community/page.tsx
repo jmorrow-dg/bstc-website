@@ -282,9 +282,7 @@ export default function CommunityPage() {
               what you&apos;re building and what you&apos;re looking for.
             </p>
             <a
-              href={SITE.memberDirectory}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`${SITE.joinForm}?src=community-directory`}
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-all glow-red"
             >
               Add Me to the Directory
@@ -387,7 +385,7 @@ export default function CommunityPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/join"
+              href="/join?src=community"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red"
             >
               <MessageCircle size={18} />

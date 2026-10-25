@@ -19,7 +19,7 @@ const COMMUNITY: FooterLink[] = [
 
 const CONNECT: FooterLink[] = [
   { label: "Meetup", href: SITE.meetup, external: true },
-  { label: "Join", href: SITE.joinForm, external: true },
+  { label: "Join", href: `${SITE.joinForm}?src=footer` },
   { label: "LinkedIn", href: SITE.linkedin, external: true },
   { label: "Instagram", href: SITE.instagram, external: true },
   { label: "Remote Builders", href: "https://remotebuilders.io", external: true },

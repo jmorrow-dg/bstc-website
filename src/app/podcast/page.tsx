@@ -87,15 +87,13 @@ export default function PodcastPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href={SITE.joinForm}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`${SITE.joinForm}?src=podcast`}
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors text-sm"
               >
                 Join the Community
               </a>
               <Link
-                href="/join"
+                href="/join?src=podcast-secondary"
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors text-sm"
               >
                 Join the Community

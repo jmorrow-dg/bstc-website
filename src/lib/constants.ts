@@ -27,11 +27,13 @@ export const SITE = {
   domain: "balistartupandtech.com",
   altDomain: "bstc.community",
   meetup: "https://www.meetup.com/bali-start-ups-tech-community/",
-  // Public join gate (Tally). The chat invite lives only on the form's
-  // thank-you page, so it never appears in public code and can't be used to
-  // bypass registration.
-  joinForm: "https://tally.so/r/KY5AMM",
-  memberDirectory: "https://tally.so/r/KY5AMM",
+  // Public join gate: the native /join form (rewritten to bstc-join), which
+  // saves each member before showing the chat link, so the invite never
+  // appears in public code. Call sites add ?src=<placement> for attribution.
+  // Replaced the Tally form (https://tally.so/r/KY5AMM) on 26 Oct 2026.
+  joinForm: "/join",
+  // Public member directory (Remote Builders); joining via /join adds a profile.
+  memberDirectory: "https://remotebuilders.io/directory/",
   linkedin: "https://www.linkedin.com/groups/14424020/",
   instagram: "https://www.instagram.com/bali_tech_community/",
   founded: "2023",
