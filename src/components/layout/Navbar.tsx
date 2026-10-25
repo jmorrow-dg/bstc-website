@@ -1,129 +1,100 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 
-function NavLink({
-  href,
-  label,
-  isActive,
-}: {
-  href: string;
-  label: string;
-  isActive: boolean;
-}) {
-  return (
-    <Link href={href} className="relative py-1 group">
-      <span
-        className={`text-sm transition-colors ${
-          isActive ? "text-brand-white": "text-brand-grey group-hover:text-brand-white"
-        }`}
-      >
-        {label}
-      </span>
-      {/* Animated underline */}
-      <span
-        className={`absolute -bottom-1 left-0 h-[2px] bg-brand-red transition-all duration-300 ${
-          isActive ? "w-full": "w-0 group-hover:w-full"
-        }`}
-      />
-    </Link>
-  );
+// Mobile menu keeps the two extra links the old mobile menu carried.
+const MOBILE_LINKS = [
+  ...NAV_LINKS,
+  { label: "About", href: "/about" },
+  { label: "FAQ", href: "/faq" },
+];
+
+function isActive(pathname: string, href: string) {
+  if (href.includes("#")) return false;
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname() || "/";
+
+  // Close the mobile menu on navigation.
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-charcoal/90 backdrop-blur-md border-b border-white/5">
-      <div className="max-w-site mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <Image
-            src="/images/logo.png"
-            alt="BSTC"
-            width={32}
-            height={32}
-            className="group-hover:brightness-110 transition-all"
-          />
-          <span className="text-brand-red font-bold text-lg tracking-tight group-hover:text-brand-red-glow transition-colors">
-            BSTC
-          </span>
-          <span className="hidden sm:inline text-brand-grey text-sm group-hover:text-brand-white transition-colors">
-            Bali Startup & Tech
-          </span>
+    <header className="gl-top">
+      <div className="gl-wrap gl-top-row">
+        <Link
+          href="/"
+          className="gl-brand"
+          aria-label="Bali Startup and Tech, home"
+        >
+          <span className="gl-crest" aria-hidden="true" />
+          <span className="gl-brand-name">Bali Startup &amp; Tech</span>
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-7">
+        <nav className="gl-nav" aria-label="Main">
           {NAV_LINKS.map((link) => (
-            <NavLink
+            <Link
               key={link.href}
               href={link.href}
-              label={link.label}
-              isActive={pathname.startsWith(link.href)}
-            />
+              aria-current={isActive(pathname, link.href) ? "page" : undefined}
+            >
+              {link.label}
+            </Link>
           ))}
-          <Link
-            href="/join"
-            className="text-sm font-medium px-4 py-2 bg-brand-red hover:bg-brand-red-dark text-brand-white rounded transition-all hover:shadow-[0_0_15px_rgba(200,30,30,0.3)]"
-          >
-            Join Community
-          </Link>
-        </div>
+        </nav>
 
-        {/* Mobile Toggle */}
+        <Link href="/join" className="gl-btn gl-btn-red gl-top-join">
+          Join the community
+        </Link>
+
         <button
-          className="md:hidden text-brand-grey hover:text-brand-white transition-colors"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
+          type="button"
+          className="gl-menu-btn"
+          onClick={() => setMobileOpen((open) => !open)}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
+          Menu
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="md:hidden bg-brand-charcoal border-t border-white/5 overflow-hidden"
-          >
-            <div className="px-6 py-4 space-y-4">
-              {[...NAV_LINKS, { label: "About", href: "/about" }, { label: "FAQ", href: "/faq" }].map((link) => (
+      {mobileOpen && (
+        <nav
+          id="mobile-menu"
+          className="gl-wrap gl-menu-panel"
+          aria-label="Main (mobile)"
+        >
+          <ul>
+            {MOBILE_LINKS.map((link) => (
+              <li key={link.href}>
                 <Link
-                  key={link.href}
                   href={link.href}
-                  className={`block transition-colors ${
-                    pathname.startsWith(link.href)
-                      ? "text-brand-white"
-                      : "text-brand-grey hover:text-brand-white"
-                  }`}
+                  aria-current={isActive(pathname, link.href) ? "page" : undefined}
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
-              ))}
-              <Link
-                href="/join"
-                className="block text-center font-medium px-4 py-2 bg-brand-red hover:bg-brand-red-dark text-brand-white rounded transition-colors"
-                onClick={() => setMobileOpen(false)}
-              >
-                Join Community
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/join"
+            className="gl-btn gl-btn-red"
+            onClick={() => setMobileOpen(false)}
+          >
+            Join the community
+          </Link>
+        </nav>
+      )}
+    </header>
   );
 }

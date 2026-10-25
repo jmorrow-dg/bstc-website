@@ -48,21 +48,25 @@ export const STATS = {
 export const NAV_LINKS = [
   { label: "Events", href: "/events" },
   { label: "How I AI", href: "/how-i-build-with-ai" },
+  { label: "Members", href: "/#members" },
+  { label: "Perks", href: "/perks" },
   { label: "Podcast", href: "/podcast" },
   { label: "Community", href: "/community" },
   { label: "Sponsors", href: "/sponsors" },
   { label: "Blog", href: "/blog" },
 ] as const;
 
+// Global league "Season" kit (25 Oct 2026). Mirrors tailwind.config.ts.
 export const BRAND = {
   colors: {
-    charcoal: "#111111",
-    red: "#C81E1E",
-    redDark: "#8B1A1A",
-    redGlow: "#FF2E2E",
-    white: "#F5F5F5",
-    grey: "#888888",
-    greyDark: "#333333",
+    paper: "#F4F4F1",
+    red: "#B5241F",
+    redDeep: "#7E1714",
+    navy: "#13213C",
+    chalk: "#DCDAD3",
+    crest: "#1A1A1A",
+    white: "#FFFFFF",
+    slate: "#4A5468",
   },
 } as const;
 
