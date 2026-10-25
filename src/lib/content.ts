@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import html from "remark-html";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
@@ -74,7 +75,8 @@ export interface ContentItem<T> {
 }
 
 async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await remark().use(html).process(markdown);
+  // remark-gfm: without it, markdown tables render as raw "| a | b |" text.
+  const result = await remark().use(remarkGfm).use(html).process(markdown);
   return result.toString();
 }
 
