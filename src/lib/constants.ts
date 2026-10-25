@@ -52,6 +52,7 @@ export const SITE = {
 export const STATS = {
   members: 2700,
   events: 50,
+  // Meetup group page, read 26 Oct 2026: 4.7 from 155 ratings, 2,734 members.
   rating: 4.7,
   ratingCount: 155,
   // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
@@ -100,6 +101,13 @@ export const SPONSOR_CONFIG = {
   // Logo wall. Add objects to render. Empty until partners are confirmed.
   // Anthropic pending global-partnership-program approval — do not add until approved.
   partners: [] as { name: string; url?: string; logoSrc?: string }[],
+
+  // Sponsor contact shown on /sponsors and /sponsors/apply. hello@bstc.community has no
+  // mail records (checked 25 Oct 2026), so sponsors who email it bounce.
+  contactEmail: "hello@remotebuilders.io",
+
+  // Shown before every price. Confirm the currency before merging.
+  currency: "US$",
 
   // 20%-off pricing. Update here, not in the page component.
   tiers: {
