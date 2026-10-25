@@ -5,7 +5,7 @@ date: "2026-06-14"
 time: "09:00"
 venue: TBA, Canggu
 type: builder-session
-status: upcoming
+status: completed
 capacity: 50
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
 coverImage: /images/events/hackathon-edition-1.png
