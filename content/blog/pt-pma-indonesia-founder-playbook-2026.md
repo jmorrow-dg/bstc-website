@@ -115,7 +115,7 @@ Most software and consulting businesses only need the NIB. If you're in a regula
 ### Step 5: Tax registration and bank accounts (week 5 to 7)
 
 - **Register for VAT (PKN)** if you expect turnover above IDR 4.8 billion/year
-- **Open corporate bank accounts:** BCA, Mandiri, and Jenius for Business are the most foreign-founder-friendly. Expect 2 to 4 weeks and multiple in-person visits.
+- **Open corporate bank accounts:** BCA and Mandiri are worth asking first. Jenius often gets mentioned too, but its help pages verify identity with an Indonesian KTP and we couldn't confirm that it opens business accounts for foreign founders (checked 26 October 2026), so ask before you plan around it. Expect 2 to 4 weeks and multiple in-person visits. Our [banking guide for foreigners in Bali](/blog/banking-in-bali-for-foreigners) covers personal accounts.
 - **Set up BPJS Kesehatan and Ketenagakerjaan** (mandatory social security) once you hire employees
 
 ### Step 6: KITAS for foreign directors (week 7 to 10)
