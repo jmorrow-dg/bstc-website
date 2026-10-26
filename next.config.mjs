@@ -24,6 +24,15 @@ const nextConfig = {
       destination: "/events/flagship-networking-night-june-2026",
       permanent: true,
     },
+    // Short link for partners (coworking spaces, visa agents, villa managers)
+    // to hand newcomers: /new-to-bali?src=partner-<slug>. The query string is
+    // kept, and JoinSrcCarry credits a later signup to that partner.
+    // Temporary, so the target can change later.
+    {
+      source: "/new-to-bali",
+      destination: "/blog/new-to-bali-first-week-checklist",
+      permanent: false,
+    },
   ],
   headers: async () => [
     {

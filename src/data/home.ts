@@ -117,6 +117,16 @@ export const TESTIMONIALS = [
 // still appears, under "More guides", so new posts never drop off the hub.
 export const GUIDE_TOPICS: { title: string; slugs: string[] }[] = [
   {
+    // Arrival funnel: partners link newcomers to /new-to-bali (the checklist).
+    title: "New to Bali",
+    slugs: [
+      "new-to-bali-first-week-checklist",
+      "banking-in-bali-for-foreigners",
+      "running-an-agency-from-bali",
+      "ecommerce-business-from-bali",
+    ],
+  },
+  {
     title: "Finding your people in Bali",
     slugs: [
       "tech-communities-in-bali",
