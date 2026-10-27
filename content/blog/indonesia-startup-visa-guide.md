@@ -20,7 +20,7 @@ faq:
     answer: "Yes. Indonesia's Remote Worker Visa (E33G), often called the digital nomad visa, asks for an employment agreement with a company set up outside Indonesia and at least US$60,000 a year in salary or income, and costs IDR 7,000,000 for a year. Whether a company owner who signs their own contract qualifies is unconfirmed, so check with a licensed visa agent. Shorter stays use the C1 or C2 visit visa, which doesn't list remote work as a permitted activity. Checked on Indonesia's immigration site, 26 October 2026."
   - question: "What visa do I need to work remotely from Bali?"
     answer: "If you have an employment agreement with a non-Indonesian company and earn at least US$60,000 a year, the Remote Worker Visa (E33G) is the one built for it; any Indonesian income is outside that permit. Whether owner-directors of their own overseas company qualify is unconfirmed. If you own and direct an Indonesian PT PMA, guides point to the Investor KITAS (E28A) instead. The C1 and C2 visit visas don't list remote work and bar pay from anyone in Indonesia. Checked 26 October 2026; not legal advice."
-  - question: "How long can I stay in Bali on a C1 or C2 visit visa?"
+  - question: "How long can I stay in Bali on a C1 or C2 visit visa (formerly B211A)?"
     answer: "Both start at 60 days and can be extended up to 180 days in total. The government fee is IDR 1,000,000 for the C1 (tourism, visits, attending meetings) and IDR 2,000,000 for the C2 business visit visa (meetings, negotiations, buying goods, checking goods at a factory). Neither lists remote work as a permitted activity, both bar selling goods or services or taking pay from anyone in Indonesia, and C1 holders can't appear as a speaker at an event. Older guides call these the B211A. Checked on Indonesia's immigration site, 26 October 2026."
   - question: "Do I need a PT PMA to live and work in Bali?"
     answer: "Only if you want to operate commercially in Indonesia, hire local staff or invoice Indonesian clients. Many founders run an offshore entity (Singapore, US, Australia) for 1-2 years and only set up a PT PMA when they have a specific local business need."
@@ -47,7 +47,7 @@ This guide covers the practical options for foreign founders building from Bali 
 
 ## Visa Options for Founders
 
-### C1 and C2 Visit Visas (Most Common Starting Point)
+### C1 and C2 Visit Visas, formerly B211A (Most Common Starting Point)
 
 *Updated 26 October 2026 from Indonesia's immigration pages. Older guides still call these the B211A.*
 
@@ -201,7 +201,7 @@ Yes. Indonesia's Remote Worker Visa (E33G), often called the digital nomad visa,
 ### What visa do I need to work remotely from Bali?
 If you have an employment agreement with a non-Indonesian company and earn at least US$60,000 a year, the Remote Worker Visa (E33G) is the one built for it; any Indonesian income is outside that permit. Whether owner-directors of their own overseas company qualify is unconfirmed. If you own and direct an Indonesian PT PMA, guides point to the Investor KITAS (E28A) instead. The C1 and C2 visit visas don't list remote work and bar pay from anyone in Indonesia. Checked 26 October 2026; not legal advice.
 
-### How long can I stay in Bali on a C1 or C2 visit visa?
+### How long can I stay in Bali on a C1 or C2 visit visa (formerly B211A)?
 Both start at 60 days and can be extended up to 180 days in total. The government fee is IDR 1,000,000 for the C1 (tourism, visits, attending meetings) and IDR 2,000,000 for the C2 business visit visa (meetings, negotiations, buying goods, checking goods at a factory). Neither lists remote work as a permitted activity, both bar selling goods or services or taking pay from anyone in Indonesia, and C1 holders can't appear as a speaker at an event. Older guides call these the B211A. Checked on Indonesia's immigration site, 26 October 2026.
 
 ### Do I need a PT PMA to live and work in Bali?
