@@ -138,7 +138,7 @@ export async function GET(request: NextRequest) {
             &middot;
           </span>
           <span style={{ color: greyColor, fontSize: "16px" }}>
-            2,500+ Members
+            2,700+ Members
           </span>
           <span style={{ color: greyColor, fontSize: "16px" }}>
             &middot;

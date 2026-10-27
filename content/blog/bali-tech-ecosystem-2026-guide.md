@@ -107,4 +107,4 @@ If you're building in tech and you haven't spent time in Bali's ecosystem, you'r
 
 ---
 
-*BSTC runs monthly events for founders, engineers, and operators in Bali. [Join the community](/join) to connect with the builders shaping Southeast Asia's tech future.*
+*BSTC runs monthly events for founders, engineers, and operators in Bali. [Join the community](/join?src=blog-bali-tech-ecosystem-2026-guide-inline) to connect with the builders shaping Southeast Asia's tech future.*

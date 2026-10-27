@@ -202,4 +202,4 @@ Only if you want to operate commercially in Indonesia, hire local staff or invoi
 
 ---
 
-*This guide is informational, not legal advice. Always consult a qualified immigration lawyer and tax advisor for your specific situation. [Join the BSTC community](/join) to connect with founders who've navigated the process.*
+*This guide is informational, not legal advice. Always consult a qualified immigration lawyer and tax advisor for your specific situation. [Join the BSTC community](/join?src=blog-indonesia-startup-visa-guide-inline) to connect with founders who've navigated the process.*

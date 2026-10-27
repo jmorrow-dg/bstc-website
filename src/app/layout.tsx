@@ -1,25 +1,30 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Archivo, Big_Shoulders_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
+import MotionProvider from "@/components/layout/MotionProvider";
 import ReadingProgress from "@/components/ui/ReadingProgress";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import WhatsAppCTA from "@/components/ui/WhatsAppCTA";
 import { SITE } from "@/lib/constants";
 import { getOrganizationSchema, getWebSiteSchema } from "@/lib/schema";
 import "./globals.css";
+import "./season.css";
 
-const inter = Inter({
+// Global league type: Archivo for text, Big Shoulders Display for display.
+const archivo = Archivo({
   subsets: ["latin"],
+  weight: ["400", "600"],
   variable: "--font-body",
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const bigShoulders = Big_Shoulders_Display({
   subsets: ["latin"],
+  weight: ["800", "900"],
   variable: "--font-display",
   display: "swap",
 });
@@ -80,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${archivo.variable} ${bigShoulders.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -92,15 +97,20 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-body antialiased bg-brand-charcoal text-brand-white">
-        <Navbar />
-        <ReadingProgress />
-        <main className="min-h-screen pt-16">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <ScrollToTop />
-        <WhatsAppCTA />
-        <Footer />
+      <body className="font-body antialiased bg-brand-paper text-brand-navy">
+        <MotionProvider>
+          <a className="gl-skip" href="#main">
+            Skip to content
+          </a>
+          <Navbar />
+          <ReadingProgress />
+          <main id="main" className="min-h-screen">
+            <PageTransition>{children}</PageTransition>
+          </main>
+          <ScrollToTop />
+          <WhatsAppCTA />
+          <Footer />
+        </MotionProvider>
         <Analytics />
         <SpeedInsights />
       </body>

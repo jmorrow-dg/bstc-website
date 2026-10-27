@@ -136,4 +136,4 @@ And many of them are doing it from Bali.
 
 ---
 
-*BSTC connects 2,500+ founders and builders across Southeast Asia. [Join the community](/join) to be part of the conversation shaping AI in the region.*
+*BSTC connects 2,500+ founders and builders across Southeast Asia. [Join the community](/join?src=blog-state-of-ai-southeast-asia-2026-inline) to be part of the conversation shaping AI in the region.*

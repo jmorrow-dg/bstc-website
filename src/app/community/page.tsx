@@ -17,7 +17,7 @@ import { getFAQSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Community",
   description:
-    "Join 2,500+ founders, engineers, and operators in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.",
+    "Join 2,700+ founders, engineers, and operators in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.",
   alternates: { canonical: "/community" },
 };
 
@@ -61,7 +61,7 @@ function StatBlock({
   icon: React.ElementType;
 }) {
   return (
-    <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02] text-center">
+    <div className="p-6 rounded-lg border border-ink/10 bg-white/70 text-center">
       <Icon className="w-5 h-5 text-brand-red mx-auto mb-3" />
       <div className="text-3xl font-display font-bold text-brand-white">
         {value.toLocaleString()}
@@ -95,6 +95,7 @@ export default function CommunityPage() {
               <span className="text-brand-red">for Builders</span>
             </h1>
             <p className="text-lg text-brand-grey leading-relaxed">
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               BSTC is the largest founder-led tech community in Bali and
               Southeast Asia. We connect founders, engineers, investors, and
               operators through high-signal events and a private community
@@ -126,6 +127,7 @@ export default function CommunityPage() {
               label="Avg Rating"
               icon={Star}
             />
+            {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
             <StatBlock
               value={STATS.countries}
               suffix="+"
@@ -137,7 +139,7 @@ export default function CommunityPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-3xl font-display font-bold mb-12 text-center">
             What We Stand For
@@ -217,7 +219,7 @@ export default function CommunityPage() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="p-4 rounded-lg border border-white/5 bg-white/[0.02] text-center"
+                className="p-4 rounded-lg border border-ink/10 bg-white/70 text-center"
               >
                 <div className="text-brand-red font-mono text-sm mb-2">
                   {item.step}
@@ -233,7 +235,7 @@ export default function CommunityPage() {
       </section>
 
       {/* Photo Gallery */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-3xl font-display font-bold mb-12 text-center">
             Scenes from the Community
@@ -249,7 +251,7 @@ export default function CommunityPage() {
             ].map((photo, i) => (
               <div
                 key={i}
-                className="relative aspect-[3/2] rounded-lg overflow-hidden border border-white/10 group"
+                className="relative aspect-[3/2] rounded-lg overflow-hidden border border-ink/15 group"
               >
                 <Image
                   src={photo.src}
@@ -281,7 +283,7 @@ export default function CommunityPage() {
             </p>
             <a
               href={`${SITE.joinForm}?src=community-directory`}
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-all glow-red"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-all glow-red"
             >
               Add Me to the Directory
               <ArrowRight size={16} />
@@ -294,7 +296,7 @@ export default function CommunityPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-3xl font-display font-bold mb-12 text-center">
             From the Community
@@ -308,7 +310,7 @@ export default function CommunityPage() {
               ))}
             </div>
             <span className="text-sm text-brand-grey">
-              4.6/5 from 116 reviews on MeetUp
+              {STATS.rating} from {STATS.ratingCount} ratings on Meetup
             </span>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -329,12 +331,13 @@ export default function CommunityPage() {
                 quote:
                   "Best tech community I've been part of anywhere in the world. The signal-to-noise ratio is unreal.",
                 name: "BSTC Member",
+                // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
                 role: "Ex-FAANG Engineer",
               },
             ].map((t, i) => (
               <div
                 key={i}
-                className="p-6 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="p-6 rounded-lg border border-ink/10 bg-white/70"
               >
                 <p className="text-sm text-brand-grey leading-relaxed mb-4">
                   &ldquo;{t.quote}&rdquo;
@@ -357,7 +360,7 @@ export default function CommunityPage() {
             {COMMUNITY_FAQS.map((faq) => (
               <div
                 key={faq.question}
-                className="p-6 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="p-6 rounded-lg border border-ink/10 bg-white/70"
               >
                 <h3 className="font-semibold text-brand-white mb-2">
                   {faq.question}
@@ -372,7 +375,7 @@ export default function CommunityPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Ready to Join?
@@ -382,15 +385,15 @@ export default function CommunityPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/join"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
+              href="/join?src=community"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red"
             >
               <MessageCircle size={18} />
               Join the Community
             </Link>
             <Link
               href="/events"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
             >
               See Upcoming Events
               <ArrowRight size={16} />

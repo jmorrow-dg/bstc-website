@@ -99,7 +99,7 @@ export default async function HIWAEpisodePage({
       {/* Hero Cover Image */}
       {e.coverImage && (
         <div className="max-w-site mx-auto px-6 pt-8">
-          <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-white/10">
+          <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-ink/15">
             <Image
               src={e.coverImage}
               alt={e.title}
@@ -156,7 +156,7 @@ export default async function HIWAEpisodePage({
                   href={e.rsvpUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red"
                 >
                   RSVP on MeetUp
                   <ExternalLink size={16} />
@@ -167,7 +167,7 @@ export default async function HIWAEpisodePage({
             {/* Sidebar: Builder + Tools */}
             <div className="space-y-6">
               {e.builder && (
-                <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+                <div className="p-6 rounded-lg border border-ink/10 bg-white/70">
                   <h3 className="text-xs font-medium uppercase tracking-wider text-brand-grey mb-4">
                     Builder
                   </h3>
@@ -206,7 +206,7 @@ export default async function HIWAEpisodePage({
               )}
 
               {e.tools && e.tools.length > 0 && (
-                <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+                <div className="p-6 rounded-lg border border-ink/10 bg-white/70">
                   <h3 className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-brand-grey mb-4">
                     <Wrench size={12} />
                     Tools Used
@@ -215,7 +215,7 @@ export default async function HIWAEpisodePage({
                     {e.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="px-3 py-1 text-sm rounded-full border border-white/10 text-brand-grey bg-white/[0.03]"
+                        className="px-3 py-1 text-sm rounded-full border border-ink/15 text-brand-grey bg-white"
                       >
                         {tool}
                       </span>
@@ -225,7 +225,7 @@ export default async function HIWAEpisodePage({
               )}
 
               {hasRecap && e.recap && (
-                <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+                <div className="p-6 rounded-lg border border-ink/10 bg-white/70">
                   <h3 className="text-xs font-medium uppercase tracking-wider text-brand-grey mb-4">
                     Results
                   </h3>
@@ -246,7 +246,7 @@ export default async function HIWAEpisodePage({
                       </span>
                     </div>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-white/5 space-y-2">
+                  <div className="mt-4 pt-4 border-t border-ink/10 space-y-2">
                     {e.recap.videoUrl && (
                       <a
                         href={e.recap.videoUrl}
@@ -305,21 +305,21 @@ export default async function HIWAEpisodePage({
       <section className="pb-16 md:pb-24">
         <div className="max-w-site mx-auto px-6">
           {eventState === "past" && (
-            <p className="max-w-3xl mb-6 rounded-lg border border-white/10 bg-white/[0.03] p-4 text-sm text-brand-grey">
+            <p className="max-w-3xl mb-6 rounded-lg border border-ink/15 bg-white p-4 text-sm text-brand-grey">
               This is an archived event listing. Registration is closed; any
               RSVP instructions in the original description below are
               historical.
             </p>
           )}
           <div
-            className="max-w-3xl prose prose-invert prose-sm prose-headings:font-display prose-headings:text-brand-white prose-p:text-brand-grey prose-strong:text-brand-white prose-li:text-brand-grey prose-a:text-brand-red"
+            className="max-w-3xl prose prose-sm prose-headings:font-display prose-headings:text-brand-white prose-p:text-brand-grey prose-strong:text-brand-white prose-li:text-brand-grey prose-a:text-brand-red"
             dangerouslySetInnerHTML={{ __html: htmlContent }}
           />
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 border-t border-white/5">
+      <section className="py-16 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl font-display font-bold mb-4">
             {canRsvp ? "Be There": "Catch the Next One"}
@@ -331,7 +331,7 @@ export default async function HIWAEpisodePage({
           </p>
           <Link
             href={canRsvp ? e.rsvpUrl : "/how-i-build-with-ai"}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
           >
             {canRsvp ? "RSVP Now": "See All Episodes"}
           </Link>

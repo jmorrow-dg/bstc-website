@@ -6,7 +6,8 @@ import { STATS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About",
   description:
-    `BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,500+ members from 40+ countries. ${STATS.events}+ events. Signal over noise. Builders first.`,
+    // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
+    `BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,700+ members from 40+ countries. ${STATS.events}+ events. Signal over noise. Builders first.`,
   keywords: [
     "Bali Startup and Tech Community",
     "BSTC",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Bali Startup & Tech Community",
     description:
-      "How BSTC grew from 20 founders in Canggu to 2,500+ builders across Southeast Asia. Signal over noise.",
+      "How BSTC grew from 20 founders in Canggu to 2,700+ builders across Southeast Asia. Signal over noise.",
     type: "website",
   },
   alternates: { canonical: "/about" },
@@ -38,10 +39,12 @@ export default function AboutPage() {
               About BSTC
             </p>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               Building Southeast Asia&apos;s #1 Tech Community
             </h1>
             <p className="text-brand-grey text-lg max-w-2xl">
-              It started with 20 founders in a Canggu restaurant. Today, 2,500+
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+              It started with 20 founders in a Canggu restaurant. Today, 2,700+
               builders from 40+ countries. The goal hasn&apos;t changed: the
               highest-signal tech community in Southeast Asia.
             </p>
@@ -89,6 +92,7 @@ export default function AboutPage() {
               series.
             </p>
             <p>
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               Our audience includes ex-FAANG engineers, funded startup founders,
               VCs, angel investors, and senior operators from{" "}
               <span className="text-brand-white font-medium">
@@ -97,6 +101,7 @@ export default function AboutPage() {
               . The community is international, professional, and builder-first.
             </p>
             <p>
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               We&apos;re based in Canggu, Bali with active nodes in Ubud,
               Sanur, and Uluwatu. We are the largest founder-led tech community
               in Southeast Asia, and every event we run is built to keep it
@@ -110,7 +115,7 @@ export default function AboutPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-12 text-center">
             Milestones
@@ -128,6 +133,7 @@ export default function AboutPage() {
               {
                 date: "Mid 2024",
                 event:
+                  // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
                   "1,000+ members. Expanded to 4 event formats. Pilot nodes in Ubud and Sanur.",
               },
               {
@@ -148,7 +154,7 @@ export default function AboutPage() {
             ].map((milestone) => (
               <div
                 key={milestone.date}
-                className="flex gap-6 items-start p-4 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="flex gap-6 items-start p-4 rounded-lg border border-ink/10 bg-white/70"
               >
                 <span className="text-brand-red font-mono text-sm flex-shrink-0 w-20">
                   {milestone.date}
@@ -172,15 +178,15 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/join"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+              href="/join?src=about"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
             >
               Join the Community
               <ArrowRight size={16} />
             </Link>
             <Link
               href="/leadership"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
             >
               Meet the Leaders
             </Link>

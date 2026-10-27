@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Resources: Tools & Stack Used by BSTC Founders",
   description:
-    "The tools, platforms, and resources used by 2,500+ founders in the BSTC community. AI, development, automation, sales, design: curated from real builder workflows.",
+    "The tools, platforms, and resources used by 2,700+ founders in the BSTC community. AI, development, automation, sales, design: curated from real builder workflows.",
   keywords: [
     "founder tools",
     "startup tools 2026",
@@ -191,7 +191,7 @@ const TOOL_CATEGORIES = [
       {
         name: "WhatsApp",
         description:
-          "Primary community communication. 2,500+ members across community and leader channels.",
+          "Primary community communication. 2,700+ members across community and leader channels.",
         url: "https://whatsapp.com",
         tag: "We use this",
       },
@@ -211,7 +211,7 @@ function ToolCard({ tool }: { tool: Tool }) {
       href={tool.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block p-5 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all"
+      className="group block p-5 rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all"
     >
       <div className="flex items-start justify-between mb-2">
         <h3 className="font-semibold text-brand-white group-hover:text-brand-red transition-colors text-sm">
@@ -249,7 +249,7 @@ export default function ResourcesPage() {
             The Builder&apos;s Toolkit
           </h1>
           <p className="text-brand-grey max-w-2xl text-lg">
-            The tools, platforms, and resources used by 2,500+ founders in the
+            The tools, platforms, and resources used by 2,700+ founders in the
             BSTC community. Curated from real workflows: not sponsored lists.
           </p>
         </div>
@@ -280,7 +280,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
             See These Tools in Action
@@ -292,7 +292,7 @@ export default function ResourcesPage() {
           </p>
           <Link
             href="/how-i-build-with-ai"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
           >
             Watch Builder Sessions
             <ArrowRight size={16} />

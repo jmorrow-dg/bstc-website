@@ -185,6 +185,6 @@ Either way, you are in Indonesia, and Indonesia is the largest digital economy i
 
 ## Next steps
 
-Want to talk to founders who have actually built in both Bali and Jakarta in 2025 and 2026? The BSTC community has 2,500+ members across Southeast Asia, including funded founders, engineers, and investors operating in both cities. [Join the community](/join) to get weekly intel on who is doing what, where, and what is actually working.
+Want to talk to founders who have actually built in both Bali and Jakarta in 2025 and 2026? The BSTC community has 2,500+ members across Southeast Asia, including funded founders, engineers, and investors operating in both cities. [Join the community](/join?src=blog-bali-vs-jakarta-for-founders-2026-inline) to get weekly intel on who is doing what, where, and what is actually working.
 
 If you are specifically weighing Bali against other SEA hubs, see our ongoing comparison series at [Bali vs Jakarta](/bali-vs/jakarta), [Bali vs Singapore](/bali-vs/singapore), [Bali vs Ho Chi Minh City](/bali-vs/ho-chi-minh-city), and [Bali vs Bangkok](/bali-vs/bangkok).

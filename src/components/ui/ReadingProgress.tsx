@@ -19,7 +19,7 @@ export default function ReadingProgress() {
 
   return (
     <motion.div
-      className="fixed top-16 left-0 right-0 z-40 h-[2px] bg-brand-charcoal"
+      className="fixed top-0 left-0 right-0 z-40 h-[2px] bg-brand-charcoal"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >

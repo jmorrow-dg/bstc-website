@@ -31,6 +31,8 @@ We've spent six months sitting in twelve different coworking spaces across Cangg
 
 This is the honest version. No affiliate links. No paid placements.
 
+> **Update, 26 October 2026:** two 2026 coworking guides report that **Dojo Bali** and the original **Outpost Canggu** coworking floor have closed ([Finns, updated 21 Jul 2026](https://finnsbeachclub.com/guides/best-coworking-in-canggu/); [Tunextravels, 4 Jul 2026](https://www.tunextravels.com/canggu-digital-nomad-guide-coworking-villa-rentals-2026/)). Check a space is open before you go. For spaces confirmed open this year, see [how to meet founders in Bali](/blog/meet-founders-in-bali).
+
 ## The TL;DR ranking
 
 | Rank | Space | Area | Best For | Monthly |
@@ -87,6 +89,8 @@ The casual option. Cheaper, smaller, less of a "scene." Good if you mostly need 
 - **Vibe:** Relaxed. Younger crowd.
 
 ### 5. Dojo Bali
+
+*Reported closed in 2026 guides (see the update at the top). Kept here for the record.*
 
 The original. Dojo built the Bali coworking scene and still runs the best community programming (events, intros, talks). Less suited for deep focus, more suited for the social side of building.
 

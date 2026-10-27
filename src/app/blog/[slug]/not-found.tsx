@@ -16,7 +16,7 @@ export default function BlogPostNotFound() {
         </p>
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
         >
           <ArrowLeft size={16} />
           See All Posts

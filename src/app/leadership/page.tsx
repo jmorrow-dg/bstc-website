@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { getPersonSchema } from "@/lib/schema";
+import { FOUNDERS, initials } from "@/data/founders";
 
 export const metadata: Metadata = {
   title: "Leadership",
@@ -18,27 +19,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/leadership" },
 };
-
-const FOUNDERS = [
-  {
-    name: "Lachlan McRitchie",
-    role: "Co-founder & Primary Organiser",
-    bio: "Built BSTC from the ground up. Runs community operations, governance, and brand strategy.",
-    tier: "Founder",
-  },
-  {
-    name: "Josh Morrow",
-    role: "Co-founder & Growth Lead",
-    bio: "Leads revenue, sponsorships, and the 'How I Build with AI' flagship series. Also runs David & Goliath, an AI growth agency.",
-    tier: "Founder",
-  },
-  {
-    name: "Matthew Carr",
-    role: "Co-founder & Community Lead",
-    bio: "Manages community engagement and event operations across Bali nodes.",
-    tier: "Founder",
-  },
-];
 
 const TIERS = [
   {
@@ -108,13 +88,10 @@ export default function LeadershipPage() {
             {FOUNDERS.map((person) => (
               <div
                 key={person.name}
-                className="p-6 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="p-6 rounded-lg border border-ink/10 bg-white/70"
               >
                 <div className="w-14 h-14 rounded-full bg-brand-red/20 flex items-center justify-center text-brand-red font-bold text-lg mb-4">
-                  {person.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
+                  {initials(person.name)}
                 </div>
                 <span className="text-xs font-medium uppercase tracking-wider text-brand-red">
                   {person.tier}
@@ -133,7 +110,7 @@ export default function LeadershipPage() {
       </section>
 
       {/* Tier System */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-4 text-center">
             Leadership Tiers
@@ -148,7 +125,7 @@ export default function LeadershipPage() {
             {TIERS.map((tier, i) => (
               <div
                 key={tier.name}
-                className="p-6 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="p-6 rounded-lg border border-ink/10 bg-white/70"
               >
                 <div className="text-brand-red font-mono text-xs mb-3">
                   Tier {i + 1}
@@ -178,8 +155,8 @@ export default function LeadershipPage() {
             event. Get approved by founders. It starts with showing up.
           </p>
           <Link
-            href="/join"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+            href="/join?src=leadership"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
           >
             Join the Community First
             <ArrowRight size={16} />

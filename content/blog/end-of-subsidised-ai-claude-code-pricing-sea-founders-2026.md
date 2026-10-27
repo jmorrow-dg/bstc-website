@@ -172,4 +172,4 @@ For SEA founders, that is useful information. The cheapest AI is probably behind
 
 ---
 
-*Building something AI-native in Southeast Asia? [Join BSTC](/join) and plug into the community of operators figuring this out together in Bali, Singapore, Jakarta, and across the region.*
+*Building something AI-native in Southeast Asia? [Join BSTC](/join?src=blog-end-of-subsidised-ai-claude-code-pricing-sea-founders-2026-inline) and plug into the community of operators figuring this out together in Bali, Singapore, Jakarta, and across the region.*
