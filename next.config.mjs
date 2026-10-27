@@ -33,6 +33,14 @@ const nextConfig = {
       destination: "/blog/new-to-bali-first-week-checklist",
       permanent: false,
     },
+    // /chapters is the short link for chapter leads (shared in the WhatsApp and
+    // Telegram groups). The form lives on remotebuilders.io/chapters/, where
+    // ?src=bstc-chapters tags each application as coming from BSTC.
+    {
+      source: "/chapters",
+      destination: "https://remotebuilders.io/chapters/?src=bstc-chapters#host",
+      permanent: false,
+    },
   ],
   headers: async () => [
     {
