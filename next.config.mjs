@@ -16,6 +16,16 @@ const nextConfig = {
     { source: "/join", destination: "https://bstc-join.vercel.app/join" },
     { source: "/join/:path*", destination: "https://bstc-join.vercel.app/join/:path*" },
   ],
+  // /chapters is the short link for chapter leads (shared in the WhatsApp and
+  // Telegram groups). The form lives on remotebuilders.io/chapters/, where
+  // ?src=bstc-chapters tags each application as coming from BSTC.
+  redirects: async () => [
+    {
+      source: "/chapters",
+      destination: "https://remotebuilders.io/chapters/?src=bstc-chapters#host",
+      permanent: false,
+    },
+  ],
   headers: async () => [
     {
       source: "/(.*)",

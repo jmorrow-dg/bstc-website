@@ -294,6 +294,39 @@ export default function CommunityPage() {
         </div>
       </section>
 
+      {/* Chapters: members taking BSTC home */}
+      <section className="pb-16 md:pb-24">
+        <div className="max-w-site mx-auto px-6">
+          <div className="max-w-3xl mx-auto p-8 md:p-12 rounded-lg border border-white/10 bg-white/[0.02] text-center">
+            <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
+              Chapters
+            </p>
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              Leaving Bali? Take BSTC home.
+            </h2>
+            <p className="text-brand-grey max-w-xl mx-auto mb-8 leading-relaxed">
+              We&apos;re looking for chapter leads in cities around the world.
+              Run a monthly builder night where you live and we&apos;ll set up
+              your city&apos;s own Telegram group or Slack channel, send you the
+              format and run sheet from our Bali nights, plus door posters and
+              table cards with your city&apos;s join link. Not ready to host?
+              Register your city and we&apos;ll tell you when it opens.
+            </p>
+            <a
+              href="/chapters"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-all glow-red"
+            >
+              <Globe size={18} />
+              Lead or register your city
+            </a>
+            <p className="text-xs text-brand-grey mt-4">
+              Free to attend, volunteer-run &middot; Chapters run as Remote
+              Builders, the global community we started from BSTC
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
         <div className="max-w-site mx-auto px-6">
