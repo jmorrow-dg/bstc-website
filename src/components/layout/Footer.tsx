@@ -105,9 +105,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={SITE.joinForm}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`${SITE.joinForm}?src=footer`}
                   className="text-sm text-brand-grey hover:text-brand-white transition-colors"
                 >
                   Join
