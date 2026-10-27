@@ -50,7 +50,7 @@ The AI agency model works especially well from Bali for three reasons:
 
 **Operating costs are minimal.** Your biggest expenses are AI API costs ($200-500/month), a co-working desk ($150/month), and your living expenses ($2-3K/month). Total overhead: under $4K/month. In SF, the same founder would burn $15K before making their first dollar.
 
-**The talent ecosystem is right.** Bali's tech community (BSTC has 2,500+ members) includes people who've built these exact pipelines. The knowledge sharing at events like "How I Build with AI" accelerates learning dramatically.
+**The talent ecosystem is right.** Bali's tech community (BSTC has 2,700+ members) includes people who've built these exact pipelines. The knowledge sharing at events like "How I Build with AI" accelerates learning dramatically.
 
 **Time zone covers global clients.** Most AI agency clients are in the US or Europe. UTC+8 means you can deliver overnight: client sends a brief at 5pm EST, your AI pipeline processes it while they sleep, you QC it in your morning, and it's in their inbox when they arrive at work.
 

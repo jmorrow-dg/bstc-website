@@ -43,7 +43,7 @@ Here's the honest guide to what's worth your time.
 
 The flagship event of Bali Startup & Tech Community. What makes it different: the "no hard selling" rule is actively enforced. The host floats the room making introductions, not letting people corner each other with pitches. 60-second intro format keeps energy high.
 
-**Who you'll meet:** Funded founders, ex-FAANG engineers, VCs, senior operators. The room averages 40+ nationalities.
+**Who you'll meet:** Founders, engineers, VCs and senior operators, from all over the world.
 
 **Best for:** Genuine networking. If you're looking for co-founders, advisors, investors, or just smart people to talk to, this is the room.
 
@@ -110,4 +110,4 @@ The signal-to-noise ratio matters. Your time is valuable. Choose events where th
 
 ---
 
-*BSTC runs the highest-signal tech events in Bali. [See our event calendar](/events) or [join the community](/join?src=blog-best-tech-events-bali-inline): 2,500+ founders and builders across Southeast Asia.*
+*BSTC runs the highest-signal tech events in Bali. [See our event calendar](/events) or [join the community](/join?src=blog-best-tech-events-bali-inline): 2,700+ members across Southeast Asia.*

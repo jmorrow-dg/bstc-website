@@ -16,7 +16,7 @@ seo:
 
 # Bali vs Jakarta for Founders in 2026: Capital, Talent, and the Honest Trade-Offs
 
-If you are building a company in Indonesia in 2026, you will eventually have to answer this question. Bali or Jakarta. Founders ask it in BSTC WhatsApp at least once a week, usually after their third week of scooter traffic in one or meetings-that-could-have-been-emails in the other.
+If you are building a company in Indonesia in 2026, you will eventually have to answer this question. Bali or Jakarta. Founders ask it in the BSTC member chat all the time, usually after their third week of scooter traffic in one or meetings-that-could-have-been-emails in the other.
 
 There is no universal right answer. There are two very different cities that suit very different stages and go-to-market motions. This is the honest 2026 comparison, drawn from BSTC members who have spent real time running teams out of both, and from public data on capital, talent, and infrastructure.
 
@@ -185,6 +185,6 @@ Either way, you are in Indonesia, and Indonesia is the largest digital economy i
 
 ## Next steps
 
-Want to talk to founders who have actually built in both Bali and Jakarta in 2025 and 2026? The BSTC community has 2,500+ members across Southeast Asia, including funded founders, engineers, and investors operating in both cities. [Join the community](/join?src=blog-bali-vs-jakarta-for-founders-2026-inline) to get weekly intel on who is doing what, where, and what is actually working.
+Want to talk to founders who have actually built in both Bali and Jakarta in 2025 and 2026? The BSTC community has 2,700+ members across Southeast Asia, including funded founders, engineers, and investors operating in both cities. [Join the community](/join?src=blog-bali-vs-jakarta-for-founders-2026-inline) to get weekly intel on who is doing what, where, and what is actually working.
 
 If you are specifically weighing Bali against other SEA hubs, see our ongoing comparison series at [Bali vs Jakarta](/bali-vs/jakarta), [Bali vs Singapore](/bali-vs/singapore), [Bali vs Ho Chi Minh City](/bali-vs/ho-chi-minh-city), and [Bali vs Bangkok](/bali-vs/bangkok).

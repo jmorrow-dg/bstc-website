@@ -155,7 +155,7 @@ This pattern works. It requires willingness to travel and discipline in the pre-
 
 ## Next steps
 
-If you are preparing to raise from Singapore VCs in the next 12 months, the highest-leverage work is not the deck. It is the 10-to-15 warm-intro pipeline you build in the 12 months before the raise. BSTC has 2,500+ members across Southeast Asia including founders who have raised from every fund listed above, operators who can make warm intros, and angel investors writing SEA cheques in 2026.
+If you are preparing to raise from Singapore VCs in the next 12 months, the highest-leverage work is not the deck. It is the 10-to-15 warm-intro pipeline you build in the 12 months before the raise. BSTC has 2,700+ members across Southeast Asia including founders who have raised from every fund listed above, operators who can make warm intros, and angel investors writing SEA cheques in 2026.
 
 [Join the community](/join?src=blog-singapore-vcs-guide-southeast-asia-founders-2026-inline) to get access to the weekly intel, warm-intro asks, and pre-raise prep sessions that happen across our WhatsApp groups and in-person events.
 

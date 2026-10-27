@@ -10,14 +10,16 @@ import {
   MessageCircle,
   Globe,
   Calendar,
+  BookOpen,
 } from "lucide-react";
 import { STATS, SITE } from "@/lib/constants";
 import { getFAQSchema } from "@/lib/schema";
+import { getAllBlogPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Community",
   description:
-    "Join 2,700+ founders, engineers, and operators in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.",
+    "Join 2,700+ Meetup members: founders, engineers and operators building from Bali. Learn about our values, events, and how to get involved.",
   alternates: { canonical: "/community" },
 };
 
@@ -25,12 +27,12 @@ const COMMUNITY_FAQS = [
   {
     question: "How do I join BSTC?",
     answer:
-      "Join our WhatsApp group for community updates, RSVP on MeetUp for events, and show up. It's free to join and attend most events.",
+      "Sign up at balistartupandtech.com/join and you'll get the Telegram community link straight after. Then RSVP on Meetup for events and show up. It's free to join and attend most events.",
   },
   {
     question: "Is BSTC only for people in Bali?",
     answer:
-      "Our events are in Bali, but our WhatsApp community includes members from across Southeast Asia and globally. If you're visiting Bali, you're welcome at any event.",
+      "Our events are in Bali, but our Telegram community includes members from across Southeast Asia and globally. If you're visiting Bali, you're welcome at any event.",
   },
   {
     question: "Do I need to be a founder to join?",
@@ -72,7 +74,8 @@ function StatBlock({
   );
 }
 
-export default function CommunityPage() {
+export default async function CommunityPage() {
+  const guideCount = (await getAllBlogPosts()).length;
   return (
     <>
       <script
@@ -96,8 +99,8 @@ export default function CommunityPage() {
             </h1>
             <p className="text-lg text-brand-grey leading-relaxed">
               {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
-              BSTC is the largest founder-led tech community in Bali and
-              Southeast Asia. We connect founders, engineers, investors, and
+              BSTC is a founder-led tech community based in Bali, with members
+              across Southeast Asia. We connect founders, engineers, investors, and
               operators through high-signal events and a private community
               network. No fluff. No noise. Just builders helping builders.
             </p>
@@ -127,12 +130,11 @@ export default function CommunityPage() {
               label="Avg Rating"
               icon={Star}
             />
-            {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
             <StatBlock
-              value={STATS.countries}
-              suffix="+"
-              label="Countries"
-              icon={Globe}
+              value={guideCount}
+              suffix=""
+              label="Founder Guides"
+              icon={BookOpen}
             />
           </div>
         </div>
@@ -194,7 +196,7 @@ export default function CommunityPage() {
               {
                 step: "01",
                 title: "Discover",
-                desc: "Find us on MeetUp, WhatsApp, or through a friend",
+                desc: "Find us on Meetup, Luma, Telegram, or through a friend",
               },
               {
                 step: "02",
@@ -365,7 +367,7 @@ export default function CommunityPage() {
                   "Best tech community I've been part of anywhere in the world. The signal-to-noise ratio is unreal.",
                 name: "BSTC Member",
                 // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
-                role: "Ex-FAANG Engineer",
+                role: "Engineer",
               },
             ].map((t, i) => (
               <div
@@ -414,7 +416,7 @@ export default function CommunityPage() {
             Ready to Join?
           </h2>
           <p className="text-brand-grey max-w-lg mx-auto mb-8">
-            It takes 30 seconds. Join WhatsApp, RSVP on MeetUp, and show up.
+            Sign up, get the Telegram link straight after, RSVP on Meetup, and show up.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -90,7 +90,7 @@ The good news: these gaps are being actively addressed. The Indonesian governmen
 This is Bali's real unfair advantage. The tech community here isn't passive: it's active, organised, and high-signal.
 
 **What exists:**
-- **BSTC (Bali Startup & Tech Community)**: 2,500+ members. Monthly networking nights, founder roundtables, builder sessions, and the "How I Build with AI" series. The largest founder-led tech community on the island.
+- **BSTC (Bali Startup & Tech Community)**: 2,700+ members on Meetup (27 Oct 2026). Monthly networking nights, founder roundtables, builder sessions, and the "How I Build with AI" series. A founder-led tech community based in Canggu.
 - **Co-working communities**: Outpost, Dojo, and Hubud each have their own ecosystems of events, workshops, and member networks.
 - **Informal founder dinners**: Weekly gatherings where funded founders share deal flow, hiring leads, and strategic advice.
 - **VC visits**: Singapore, Jakarta, and Australian VCs regularly visit Bali specifically to attend community events and meet founders.

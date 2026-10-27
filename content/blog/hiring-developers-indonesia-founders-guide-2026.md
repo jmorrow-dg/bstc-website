@@ -76,7 +76,7 @@ Underused in Indonesia compared to Western markets, but the quality of senior ca
 
 ### 5. Community referrals
 
-The highest-signal channel. BSTC members regularly refer engineers from their networks. If you're a community member, post a hiring brief in our WhatsApp and you will get 5 to 10 warm referrals within 48 hours, almost always better than what you get from job boards.
+The highest-signal channel. BSTC members regularly refer engineers from their networks. If you're a community member, post a hiring brief in the Telegram member chat for warm referrals, almost always better than what you get from job boards.
 
 ## How to vet
 
@@ -159,7 +159,7 @@ The founders who do it right pay slightly above market, hire senior engineers as
 
 The fastest way to short-circuit the learning curve is to talk to founders who have already done it.
 
-- Join the [BSTC community](/community) and post a hiring question in WhatsApp
+- Join the [BSTC community](/community) and post a hiring question in the Telegram member chat
 - Come to the next [Builder Session](/events) where we regularly cover hiring topics
 - Read our related guides on [building a remote team from Bali](/blog/remote-team-management-from-bali) and the [Indonesia startup visa setup](/blog/indonesia-startup-visa-guide)
 

@@ -173,7 +173,7 @@ Real BSTC examples (anonymised). These are not legal recommendations. They're de
 
 ## Where to get real help
 
-- Talk to other founders in the BSTC community who have already navigated this. The [WhatsApp community](/community) is the fastest way to get warm referrals to trusted Indonesian tax advisors and international tax specialists.
+- Talk to other founders in the BSTC community who have already navigated this. The [Telegram member chat](/community) is the fastest way to get warm referrals to trusted Indonesian tax advisors and international tax specialists.
 - Read our companion guides on the [Indonesia startup visa setup](/blog/indonesia-startup-visa-guide) and the [hiring developers in Indonesia playbook](/blog/hiring-developers-indonesia-founders-guide-2026).
 - Come to the next [Builder Session](/events) where founder tax structuring is a topic that comes up regularly.
 

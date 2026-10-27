@@ -16,7 +16,7 @@ tags:
   - Southeast Asia
 seo:
   title: "Why Build Your Startup in Bali? The Honest Case | BSTC"
-  description: "Can you build a real company from Bali? Honest breakdown of the advantages, trade-offs, and who Bali is right for. From the founders of Bali's largest tech community."
+  description: "Can you build a real company from Bali? Honest breakdown of the advantages, trade-offs, and who Bali is right for. From the founders of Bali Startup & Tech (BSTC)."
   keywords:
     - why Bali for startups
     - build startup from Bali
@@ -132,4 +132,4 @@ The founders who thrive here aren't the ones who came for the lifestyle. They're
 
 ---
 
-*BSTC connects 2,500+ founders, engineers, and operators building from Bali and Southeast Asia. [Join the community](/join?src=blog-why-bali-for-startups-inline) or [attend an event](/events) to experience the ecosystem firsthand.*
+*BSTC connects 2,700+ members, engineers, and operators building from Bali and Southeast Asia. [Join the community](/join?src=blog-why-bali-for-startups-inline) or [attend an event](/events) to experience the ecosystem firsthand.*

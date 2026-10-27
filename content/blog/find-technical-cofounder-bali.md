@@ -16,7 +16,7 @@ seo:
 
 # How to Find a Technical Co-founder in Bali
 
-The good news: Bali has one of the highest concentrations of senior engineers, ex-FAANG builders, and technical founders of any city in Southeast Asia. On any given Tuesday in Canggu, there are dozens of people who could build your product sitting in coworking spaces within a 2km radius.
+The good news: Bali has a deep pool of senior engineers and technical founders. On any given Tuesday in Canggu, there are dozens of people who could build your product sitting in coworking spaces within a 2km radius.
 
 The bad news: they are all building their own things. And the pitch they hear most often, "I have an idea, I just need a developer," is the one they've learned to walk away from fastest.
 
@@ -47,7 +47,7 @@ The key word is consistently. Dropping in for one day and scanning the room for 
 
 ### 3. Niche online groups
 
-The BSTC WhatsApp community has 2,500+ members. There are also smaller, higher-signal groups on Telegram and Discord focused on specific stacks (AI/ML, Web3, SaaS infra). These groups are where engineers share what they are working on and occasionally signal openness to new projects.
+BSTC has 2,700+ members on Meetup (27 Oct 2026) and a Telegram member chat. There are also smaller, higher-signal groups on Telegram and Discord focused on specific stacks (AI/ML, Web3, SaaS infra). These groups are where engineers share what they are working on and occasionally signal openness to new projects.
 
 **How to find them:** Ask at BSTC events. The people who know about these groups are the people who attend in person.
 
@@ -140,7 +140,7 @@ This works because you arrive at the co-founder conversation with proof that the
 
 ## What to do this week
 
-1. **Join the BSTC WhatsApp** at [/community](/community) and introduce yourself. Say what you are working on. Do not pitch.
+1. **Join BSTC** at [/join](/join?src=blog-find-technical-cofounder-bali-inline) and introduce yourself in the Telegram member chat. Say what you are working on. Do not pitch.
 2. **RSVP for the next event** at [/events](/events). Plan to attend at least 3 events before you think about approaching anyone.
 3. **Read the companion guides:** [best coworking spaces in Bali](/blog/best-coworking-spaces-bali-founders-2026) for where to sit, and [why Bali for startups](/blog/why-bali-for-startups) for the broader context.
 4. **Get your traction in order.** Before you look for a co-founder, make sure you have something to show. Revenue, waitlist, LOIs, domain expertise, customer interviews. Something real.

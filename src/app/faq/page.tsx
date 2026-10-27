@@ -30,7 +30,7 @@ const FAQ_SECTIONS: FAQSection[] = [
         // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "What is BSTC?",
         answer:
-          "BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We connect 2,700+ founders, engineers, investors, and operators through high-signal events, a private WhatsApp community, and curated content.",
+          "BSTC (Bali Startup & Tech Community) is a founder-led tech community in Bali with 2,700+ members on Meetup (27 Oct 2026). We connect founders, engineers, investors, and operators through high-signal events, a Telegram member chat, and curated content.",
       },
       {
         question: "Who founded BSTC?",
@@ -52,7 +52,7 @@ const FAQ_SECTIONS: FAQSection[] = [
         // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "What makes BSTC different from other tech meetups?",
         answer:
-          "Three things: (1) No hard selling: pitching and aggressive networking are banned and enforced. (2) Curated audience: our community is ex-FAANG engineers, funded founders, VCs, and senior operators. (3) High-signal formats: structured events designed for real value, not just socialising.",
+          "Three things: (1) No hard selling: pitching and aggressive networking are banned and enforced. (2) Curated audience: our community is engineers, founders, VCs, and senior operators who are actively building. (3) High-signal formats: structured events designed for real value, not just socialising.",
       },
     ],
   },
@@ -140,7 +140,7 @@ const FAQ_SECTIONS: FAQSection[] = [
         // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "Is Bali a real tech hub?",
         answer:
-          "Yes. Bali is home to thousands of tech founders, engineers, and operators from 40+ countries. The ecosystem includes co-working spaces with fibre internet, regular tech events, active VC interest from Singapore, and a growing Indonesian tech talent pool. It's not trying to be Silicon Valley: it offers a different value proposition: lower cost, high quality of life, concentrated community, and excellent time zone for global teams.",
+          "Yes. Bali is home to thousands of tech founders, engineers, and operators from all over the world. The ecosystem includes co-working spaces with fibre internet, regular tech events, active VC interest from Singapore, and a growing Indonesian tech talent pool. It's not trying to be Silicon Valley: it offers a different value proposition: lower cost, high quality of life, concentrated community, and excellent time zone for global teams.",
       },
       {
         question: "What kind of tech companies are built from Bali?",

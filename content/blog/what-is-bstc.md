@@ -1,22 +1,22 @@
 ---
-title: "What is BSTC? Inside Bali's Largest Startup & Tech Community"
+title: "What is BSTC? Inside Bali's Founder-Led Startup & Tech Community"
 slug: what-is-bstc
 date: "2026-04-04"
 author: Josh Morrow
 category: guide
-excerpt: "2,500+ founders, engineers, and VCs. Monthly events. Zero noise. Here's what BSTC is, how it works, and why builders keep coming back."
+excerpt: "2,700+ Meetup members: founders, engineers and VCs. Monthly events. Zero noise. Here's what BSTC is, how it works, and why builders keep coming back."
 seo:
-  title: "What is BSTC? Bali's Largest Startup & Tech Community Explained"
-  description: "Discover BSTC: Bali Startup & Tech Community. 2,500+ members, monthly events, and the highest-signal founder network in Southeast Asia."
+  title: "What is BSTC? Bali's Founder-Led Startup & Tech Community Explained"
+  description: "Discover BSTC: Bali Startup & Tech Community. 2,700+ members, monthly events, and the highest-signal founder network in Southeast Asia."
 ---
 
 # What is BSTC?
 
-**BSTC (Bali Startup & Tech Community)** is the largest founder-led tech community in Bali and Southeast Asia. Founded in October 2023, we've grown to 2,500+ members across MeetUp and WhatsApp.
+**BSTC (Bali Startup & Tech Community)** is a founder-led tech community in Bali. Founded in October 2023, we've grown to 2,700+ members on Meetup (27 Oct 2026), plus a Telegram member chat.
 
 ## Who's in the community?
 
-Our members include ex-FAANG engineers, funded startup founders (pre-seed to Series C), VCs, angel investors, and senior operators. 40+ nationalities represented. The common thread: they're all building something real.
+Our members include engineers, startup founders, VCs, angel investors, and senior operators from all over the world. The common thread: they're all building something real.
 
 ## What events do you run?
 
@@ -35,7 +35,7 @@ Three rules that define everything:
 
 ## How do I join?
 
-1. **Join our WhatsApp** community for updates
+1. **Join at [/join](/join?src=blog-what-is-bstc-inline)** and get the Telegram community link straight after
 2. **RSVP on MeetUp** for the next event
 3. **Show up** and be yourself
 
