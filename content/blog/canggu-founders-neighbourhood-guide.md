@@ -31,6 +31,8 @@ Canggu is a 10km stretch of coastline in southwest Bali that has quietly become 
 
 ## Co-Working Spaces
 
+> **Update, 26 October 2026:** Dojo Bali closed in December 2022 and Outpost no longer lists a Canggu location, though both still appear on some 2026 lists. The descriptions below are kept for reference. For spaces confirmed open, see the [coworking guide](/blog/best-coworking-spaces-bali-founders-2026).
+
 ### Outpost
 **Best for:** Serious builders who want a professional environment.
 Multiple locations in Canggu. Meeting rooms, podcast studios, fast WiFi (150+ Mbps), and a community of tech-focused members. Monthly desk from ~$150.
@@ -94,11 +96,11 @@ The concentration of founders per square kilometre is what makes it work. In a c
 ## Practical Tips
 
 1. **Get a local SIM immediately.** Telkomsel has the best coverage. Data is cheap.
-2. **Set up a local bank account** if staying long-term. BCA or Mandiri for daily expenses.
+2. **Set up a local bank account** if staying long-term. BCA or Mandiri for daily expenses. Both banks ask foreigners for a KITAS or KITAP, so on a visit visa use a multi-currency card instead (see [money and banking in Bali](/blog/banking-in-bali-for-foreigners), checked 26 October 2026).
 3. **Join BSTC's WhatsApp** on day one. It's how the community communicates.
 4. **Explore beyond Canggu.** Ubud (1 hour north) is quieter and cheaper. Sanur (45 min east) has a different vibe. Both have small tech communities.
 5. **Rainy season (Nov-Mar)** brings afternoon downpours but mornings are usually clear. Dry season (Apr-Oct) is the best weather.
 
 ---
 
-*[Join the BSTC community](/join) to plug into Canggu's tech scene from day one.*
+*[Join the BSTC community](/join?src=blog-canggu-founders-neighbourhood-guide-inline) to plug into Canggu's tech scene from day one.*

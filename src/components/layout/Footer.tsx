@@ -1,209 +1,90 @@
 import Link from "next/link";
-import Image from "next/image";
 import { SITE } from "@/lib/constants";
 import NewsletterSignup from "./NewsletterSignup";
 
+type FooterLink = { label: string; href: string; external?: boolean };
+
+// Every link the footer carried before the Global league restyle, plus About,
+// Perks and Remote Builders. External links keep their old targets.
+const COMMUNITY: FooterLink[] = [
+  { label: "Events", href: "/events" },
+  { label: "How I Build with AI", href: "/how-i-build-with-ai" },
+  { label: "About the community", href: "/community" },
+  { label: "About", href: "/about" },
+  { label: "Leadership", href: "/leadership" },
+  { label: "Podcast", href: "/podcast" },
+  { label: "Member directory", href: SITE.memberDirectory, external: true },
+  { label: "Perks", href: "/perks" },
+];
+
+const CONNECT: FooterLink[] = [
+  { label: "Meetup", href: SITE.meetup, external: true },
+  { label: "Join", href: `${SITE.joinForm}?src=footer` },
+  { label: "LinkedIn", href: SITE.linkedin, external: true },
+  { label: "Instagram", href: SITE.instagram, external: true },
+  { label: "Remote Builders", href: "https://remotebuilders.io", external: true },
+];
+
+const PARTNERS: FooterLink[] = [
+  { label: "Become a sponsor", href: "/sponsors" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy policy", href: "/privacy" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Resources", href: "/resources" },
+  { label: "Blog", href: "/blog" },
+];
+
+function FooterColumn({
+  id,
+  title,
+  links,
+}: {
+  id: string;
+  title: string;
+  links: FooterLink[];
+}) {
+  return (
+    <nav className="gl-foot-col" aria-labelledby={id}>
+      <h2 id={id}>{title}</h2>
+      <ul>
+        {links.map((link) => (
+          <li key={link.label}>
+            {link.external ? (
+              <a href={link.href} target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            ) : (
+              <Link href={link.href}>{link.label}</Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
 export default function Footer() {
   return (
-    <footer className="bg-brand-charcoal border-t border-white/5">
-      <div className="max-w-site mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5">
-              <Image
-                src="/images/logo.png"
-                alt="BSTC"
-                width={28}
-                height={28}
-              />
-              <span className="text-brand-red font-bold text-xl tracking-tight">
-                BSTC
-              </span>
-            </div>
-            <p className="mt-3 text-sm text-brand-grey leading-relaxed mb-4">
-              The largest founder-led tech community in Bali and Southeast Asia.
-            </p>
-            <p className="text-xs text-brand-grey mb-2">Stay in the loop:</p>
-            <NewsletterSignup />
-          </div>
-
-          {/* Community */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-grey mb-4">
-              Community
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/events"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/how-i-build-with-ai"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  How I Build with AI
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/community"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  About the Community
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/leadership"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Leadership
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/podcast"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Podcast
-                </Link>
-              </li>
-              <li>
-                <a
-                  href={SITE.memberDirectory}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Member Directory
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Connect */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-grey mb-4">
-              Connect
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href={SITE.meetup}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  MeetUp
-                </a>
-              </li>
-              <li>
-                <a
-                  href={SITE.joinForm}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Join
-                </a>
-              </li>
-              <li>
-                <a
-                  href={SITE.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href={SITE.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Instagram
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Partners */}
-          <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-brand-grey mb-4">
-              Partners
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/sponsors"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Become a Sponsor
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/resources"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Resources
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-sm text-brand-grey hover:text-brand-white transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <footer className="gl-foot">
+      <div className="gl-wrap gl-foot-grid">
+        <div className="gl-foot-id">
+          <Link href="/" className="gl-brand" aria-label="Bali Startup and Tech, home">
+            <span className="gl-crest" aria-hidden="true" />
+            <span className="gl-brand-name">Bali Startup &amp; Tech</span>
+          </Link>
+          {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+          <p>The largest founder-led tech community in Bali and Southeast Asia.</p>
+          <NewsletterSignup />
         </div>
-
-        {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-brand-grey">
-            &copy; {new Date().getFullYear()} {SITE.fullName}. All rights
-            reserved.
-          </p>
-          <p className="text-xs text-brand-grey">
-            Canggu, Bali &middot; Southeast Asia
-          </p>
-        </div>
+        <FooterColumn id="fc-community" title="Community" links={COMMUNITY} />
+        <FooterColumn id="fc-connect" title="Connect" links={CONNECT} />
+        <FooterColumn id="fc-partners" title="Partners" links={PARTNERS} />
+      </div>
+      <div className="gl-wrap gl-foot-base">
+        <p>
+          &copy; {new Date().getFullYear()} {SITE.fullName}. All rights reserved.
+        </p>
+        <p>Canggu, Bali, Southeast Asia</p>
       </div>
     </footer>
   );

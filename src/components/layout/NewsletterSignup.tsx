@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
@@ -24,32 +23,34 @@ export default function NewsletterSignup() {
     }
   }
 
-  if (status === "success") {
-    return (
-      <p className="text-sm text-brand-red">
-        You&apos;re in. Watch your inbox.
-      </p>
-    );
-  }
-
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="you@email.com"
-        required
-        className="flex-1 px-3 py-2 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
-      />
-      <button
-        type="submit"
-        disabled={status === "loading"}
-        className="px-3 py-2 bg-brand-red hover:bg-brand-red-dark text-brand-white rounded transition-colors disabled:opacity-50"
-        aria-label="Subscribe"
-      >
-        <Send size={14} />
-      </button>
+    <form onSubmit={handleSubmit} className="gl-news">
+      <label htmlFor="news-email">Stay in the loop</label>
+      {status === "success" ? (
+        <p className="gl-news-done" role="status">
+          You&apos;re in. Watch your inbox.
+        </p>
+      ) : (
+        <div className="gl-news-row">
+          <input
+            id="news-email"
+            type="email"
+            name="email"
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@email.com"
+            required
+          />
+          <button
+            type="submit"
+            disabled={status === "loading"}
+            className="gl-btn gl-btn-red"
+          >
+            Subscribe
+          </button>
+        </div>
+      )}
     </form>
   );
 }

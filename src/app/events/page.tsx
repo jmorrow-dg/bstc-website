@@ -11,6 +11,10 @@ import {
   EventFrontmatter,
   ContentItem,
 } from "@/lib/content";
+import { getEventState } from "@/lib/event-status";
+
+// Upcoming vs past is derived from the current Bali date, so re-render hourly.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Events",
@@ -34,16 +38,17 @@ export const metadata: Metadata = {
       "Networking nights, founder roundtables, builder sessions, and the How I Build with AI flagship series. Signal over noise.",
     type: "website",
   },
+  alternates: { canonical: "/events" },
 };
 
-function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
+function EventCard({ event, now }: { event: ContentItem<EventFrontmatter>; now: Date }) {
   const { frontmatter: e } = event;
-  const isUpcoming = e.status === "upcoming";
+  const isUpcoming = getEventState(e, now) === "upcoming";
 
   return (
     <Link
       href={`/events/${e.slug}`}
-      className="group block rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all overflow-hidden"
+      className="group block rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all overflow-hidden"
     >
       {/* Cover image */}
       {e.coverImage ? (
@@ -70,7 +75,7 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
           className={`text-xs font-medium uppercase tracking-wider px-2 py-1 rounded ${
             isUpcoming
               ? "bg-brand-red/10 text-brand-red"
-              : "bg-white/5 text-brand-grey"
+              : "bg-ink/5 text-brand-grey"
           }`}
         >
           {isUpcoming ? "Upcoming": "Past Event"}
@@ -106,7 +111,7 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
       </div>
 
       {e.builder && (
-        <div className="mt-4 pt-4 border-t border-white/5 flex items-center gap-3">
+        <div className="mt-4 pt-4 border-t border-ink/10 flex items-center gap-3">
           <div className="w-8 h-8 rounded-full bg-brand-red/20 flex items-center justify-center text-brand-red text-xs font-bold">
             {e.builder.name
               .split(" ")
@@ -128,8 +133,9 @@ function EventCard({ event }: { event: ContentItem<EventFrontmatter> }) {
 
 export default async function EventsPage() {
   const allEvents = await getAllEvents();
-  const upcoming = getUpcomingEvents(allEvents);
-  const past = getPastEvents(allEvents);
+  const now = new Date();
+  const upcoming = getUpcomingEvents(allEvents, now);
+  const past = getPastEvents(allEvents, now);
 
   return (
     <>
@@ -159,7 +165,7 @@ export default async function EventsPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {upcoming.map((event) => (
-                <EventCard key={event.frontmatter.slug} event={event} />
+                <EventCard key={event.frontmatter.slug} event={event} now={now} />
               ))}
             </div>
           </div>
@@ -175,7 +181,7 @@ export default async function EventsPage() {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {past.map((event) => (
-                <EventCard key={event.frontmatter.slug} event={event} />
+                <EventCard key={event.frontmatter.slug} event={event} now={now} />
               ))}
             </div>
           </div>
@@ -183,7 +189,7 @@ export default async function EventsPage() {
       )}
 
       {/* CTA */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
             Never Miss an Event
@@ -195,7 +201,7 @@ export default async function EventsPage() {
             href="https://www.meetup.com/bali-start-ups-tech-community/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
           >
             Join on MeetUp
             <ArrowRight size={16} />

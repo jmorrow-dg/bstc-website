@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X } from "lucide-react";
-import { SITE } from "@/lib/constants";
+import { SITE, STATS } from "@/lib/constants";
 
 export default function WhatsAppCTA() {
   const [show, setShow] = useState(false);
@@ -27,25 +27,23 @@ export default function WhatsAppCTA() {
           className="fixed bottom-8 left-8 z-40 flex items-end gap-3"
         >
           {/* Tooltip */}
-          <div className="hidden sm:block bg-brand-charcoal border border-white/10 rounded-lg p-3 shadow-xl max-w-[200px] relative">
+          <div className="hidden sm:block bg-brand-charcoal border border-ink/15 rounded-lg p-3 shadow-xl max-w-[200px] relative">
             <button
               onClick={() => setDismissed(true)}
-              className="absolute -top-2 -right-2 w-5 h-5 bg-brand-charcoal border border-white/10 rounded-full flex items-center justify-center text-brand-grey hover:text-brand-white transition-colors"
+              className="absolute -top-2 -right-2 w-5 h-5 bg-brand-charcoal border border-ink/15 rounded-full flex items-center justify-center text-brand-grey hover:text-brand-white transition-colors"
               aria-label="Dismiss"
             >
               <X size={10} />
             </button>
             <p className="text-xs text-brand-grey leading-relaxed">
-              Join 2,500+ builders in our community
+              Join {STATS.members.toLocaleString()}+ builders in our community
             </p>
           </div>
 
           {/* Button */}
           <a
-            href={SITE.joinForm}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white flex items-center justify-center shadow-lg hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all"
+            href={`${SITE.joinForm}?src=site-float`}
+            className="w-14 h-14 rounded-full bg-brand-red hover:bg-brand-red-dark text-white flex items-center justify-center shadow-lg transition-colors"
             aria-label="Join the community"
           >
             <MessageCircle size={24} />

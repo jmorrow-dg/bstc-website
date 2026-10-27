@@ -24,7 +24,7 @@ export default function EventCoverImage({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-lg border border-white/10 ${className}`}
+      className={`relative overflow-hidden rounded-lg border border-ink/15 ${className}`}
     >
       {/* Blur placeholder */}
       {!loaded && (

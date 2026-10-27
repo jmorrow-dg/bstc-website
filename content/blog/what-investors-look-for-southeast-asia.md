@@ -120,4 +120,4 @@ If you're fundraising, the best strategy isn't to pitch at events. It's to be kn
 
 ---
 
-*[Join the BSTC community](/join) to connect with founders and investors building across Southeast Asia.*
+*[Join the BSTC community](/join?src=blog-what-investors-look-for-southeast-asia-inline) to connect with founders and investors building across Southeast Asia.*

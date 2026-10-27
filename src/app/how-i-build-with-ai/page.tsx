@@ -10,11 +10,16 @@ import {
   EventFrontmatter,
 } from "@/lib/content";
 import { getFAQSchema } from "@/lib/schema";
+import { getEventState } from "@/lib/event-status";
+
+// Upcoming vs past is derived from the current Bali date, so re-render hourly.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "How I Build with AI",
   description:
     "Watch real builders share their actual AI workflows. Live demos, real tools, real products. BSTC's flagship practitioner-led event series.",
+  alternates: { canonical: "/how-i-build-with-ai" },
 };
 
 const HIWA_FAQS = [
@@ -40,14 +45,15 @@ const HIWA_FAQS = [
   },
 ];
 
-function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
+function EpisodeCard({ event, now }: { event: ContentItem<EventFrontmatter>; now: Date }) {
   const { frontmatter: e } = event;
-  const isUpcoming = e.status === "upcoming";
+  const isUpcoming = getEventState(e, now) === "upcoming";
+  const hasRecording = e.status === "completed" && Boolean(e.recap?.videoUrl);
 
   return (
     <Link
       href={`/how-i-build-with-ai/${e.slug}`}
-      className="group block rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-brand-red/20 transition-all overflow-hidden"
+      className="group block rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all overflow-hidden"
     >
       {/* Cover image */}
       {e.coverImage ? (
@@ -61,11 +67,11 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
           />
         </div>
       ) : (
-        <div className="aspect-[4/3] bg-gradient-to-br from-brand-red/10 to-brand-charcoal flex items-center justify-center border-b border-white/5">
+        <div className="aspect-[4/3] bg-gradient-to-br from-brand-red/10 to-brand-charcoal flex items-center justify-center border-b border-ink/10">
           <div className="text-center">
             <p className="text-brand-red font-bold text-lg">HOW I AI</p>
             <p className="text-brand-grey text-xs mt-1">
-              {isUpcoming ? "Coming Soon" : "Watch Now"}
+              {isUpcoming ? "Coming Soon" : hasRecording ? "Watch Recording" : "Event Details"}
             </p>
           </div>
         </div>
@@ -77,7 +83,7 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
             className={`text-xs font-medium uppercase tracking-wider px-2 py-0.5 rounded ${
               isUpcoming
                 ? "bg-brand-red/10 text-brand-red"
-               : "bg-white/5 text-brand-grey"
+               : "bg-ink/5 text-brand-grey"
             }`}
           >
             {isUpcoming ? "Upcoming": "Episode"}
@@ -111,6 +117,7 @@ function EpisodeCard({ event }: { event: ContentItem<EventFrontmatter> }) {
 
 export default async function HIWAPage() {
   const allEvents = await getAllEvents();
+  const now = new Date();
   const hiwaEvents = getHIWAEvents(allEvents);
 
   return (
@@ -155,11 +162,11 @@ export default async function HIWAPage() {
           {hiwaEvents.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {hiwaEvents.map((event) => (
-                <EpisodeCard key={event.frontmatter.slug} event={event} />
+                <EpisodeCard key={event.frontmatter.slug} event={event} now={now} />
               ))}
             </div>
           ): (
-            <div className="text-center py-16 border border-white/5 rounded-lg bg-white/[0.02]">
+            <div className="text-center py-16 border border-ink/10 rounded-lg bg-white/70">
               <p className="text-brand-red font-bold text-2xl mb-2">
                 Edition #1 Coming Soon
               </p>
@@ -173,7 +180,7 @@ export default async function HIWAPage() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-display font-bold mb-12 text-center">
             What to Expect
@@ -216,7 +223,7 @@ export default async function HIWAPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6">
           <h2 className="text-2xl font-display font-bold mb-8 text-center">
             Frequently Asked Questions
@@ -225,7 +232,7 @@ export default async function HIWAPage() {
             {HIWA_FAQS.map((faq) => (
               <div
                 key={faq.question}
-                className="p-6 rounded-lg border border-white/5 bg-white/[0.02]"
+                className="p-6 rounded-lg border border-ink/10 bg-white/70"
               >
                 <h3 className="font-semibold text-brand-white mb-2">
                   {faq.question}
@@ -240,7 +247,7 @@ export default async function HIWAPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
             Want to Be a Featured Builder?
@@ -251,7 +258,7 @@ export default async function HIWAPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
           >
             Get in Touch
             <ArrowRight size={16} />

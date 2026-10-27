@@ -11,14 +11,14 @@ import {
   Utensils,
   ExternalLink,
 } from "lucide-react";
-import { SITE, STATS, SPONSOR_CONFIG } from "@/lib/constants";
+import { CONTACT_EMAIL, STATS, SPONSOR_CONFIG } from "@/lib/constants";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Sponsor BSTC — Reach Southeast Asia's Top Founder Community",
   description:
     "Reach 100+ SEA founders, operators, and VCs every week. Event, quarterly, and annual sponsor packages from $2,000.",
-  alternates: { canonical: `${SITE.url}/sponsors` },
+  alternates: { canonical: "/sponsors" },
 };
 
 const TIERS = [
@@ -226,7 +226,7 @@ export default function SponsorsPage() {
             <div className="flex flex-wrap items-center gap-4">
               <a
                 href="#tiers"
-                className="inline-flex items-center gap-2 px-5 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm glow-red"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors text-sm glow-red"
               >
                 See sponsor tiers
                 <ArrowRight size={14} />
@@ -235,7 +235,7 @@ export default function SponsorsPage() {
                 href={ctaHref()}
                 target={SPONSOR_CONFIG.calUrl ? "_blank" : undefined}
                 rel={SPONSOR_CONFIG.calUrl ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-2 px-5 py-3 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
+                className="inline-flex items-center gap-2 px-5 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors text-sm"
               >
                 Book an intro call
               </a>
@@ -243,11 +243,12 @@ export default function SponsorsPage() {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-xs text-brand-grey">
               <span className="flex items-center gap-1">
                 <span className="text-brand-red">★★★★★</span>
-                <span>{STATS.rating}/5 from 116 MeetUp reviews</span>
+                <span>{STATS.rating} from {STATS.ratingCount} ratings on Meetup</span>
               </span>
               <span>·</span>
               <span>100+ attendees / week</span>
               <span>·</span>
+              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               <span>{STATS.countries}+ countries represented</span>
             </div>
           </FadeIn>
@@ -262,10 +263,10 @@ export default function SponsorsPage() {
               { num: `${STATS.members.toLocaleString()}+`, label: "Community Members" },
               { num: "1,200+", label: "WhatsApp Members" },
               { num: "100+", label: "Per-Week Attendance" },
-              { num: `${STATS.rating}★`, label: "/116 MeetUp Reviews" },
+              { num: `${STATS.rating}★`, label: `from ${STATS.ratingCount} Meetup ratings` },
             ].map((s) => (
               <FadeInItem key={s.label}>
-                <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02] text-center hover:border-brand-red/20 transition-colors h-full">
+                <div className="p-6 rounded-lg border border-ink/10 bg-white/70 text-center hover:border-brand-red/20 transition-colors h-full">
                   <div className="text-3xl md:text-4xl font-display font-bold text-brand-white">
                     {s.num}
                   </div>
@@ -290,7 +291,7 @@ export default function SponsorsPage() {
                   href={press.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block max-w-2xl mx-auto p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-brand-red/30 transition-colors text-center"
+                  className="block max-w-2xl mx-auto p-6 rounded-lg border border-ink/10 bg-white/70 hover:border-brand-red/30 transition-colors text-center"
                 >
                   {press.quote && (
                     <p className="text-brand-grey italic mb-3 text-sm">
@@ -303,7 +304,7 @@ export default function SponsorsPage() {
                   </span>
                 </a>
               ) : (
-                <div className="block max-w-2xl mx-auto p-6 rounded-lg border border-white/5 bg-white/[0.02] text-center">
+                <div className="block max-w-2xl mx-auto p-6 rounded-lg border border-ink/10 bg-white/70 text-center">
                   {press.quote && (
                     <p className="text-brand-grey italic mb-3 text-sm">
                       &ldquo;{press.quote}&rdquo;
@@ -362,7 +363,7 @@ export default function SponsorsPage() {
       )}
 
       {/* Audience breakdown */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <FadeIn className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
@@ -374,7 +375,7 @@ export default function SponsorsPage() {
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+            <div className="p-6 rounded-lg border border-ink/10 bg-white/70">
               <p className="text-xs uppercase tracking-widest text-brand-red mb-4">
                 Who attends
               </p>
@@ -395,7 +396,7 @@ export default function SponsorsPage() {
               </ul>
             </div>
 
-            <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+            <div className="p-6 rounded-lg border border-ink/10 bg-white/70">
               <p className="text-xs uppercase tracking-widest text-brand-red mb-4">
                 What they do
               </p>
@@ -404,6 +405,7 @@ export default function SponsorsPage() {
                 <li>SaaS, AI, fintech, e-commerce, dev tools</li>
                 <li>$50k–$5M+ MRR brackets</li>
                 <li>Building for SEA + global markets</li>
+                {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
                 <li>Based across {STATS.countries}+ countries</li>
               </ul>
             </div>
@@ -428,7 +430,7 @@ export default function SponsorsPage() {
               const Icon = c.icon;
               return (
                 <FadeInItem key={c.title}>
-                  <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02] hover:border-brand-red/20 transition-colors h-full">
+                  <div className="p-6 rounded-lg border border-ink/10 bg-white/70 hover:border-brand-red/20 transition-colors h-full">
                     <Icon className="w-5 h-5 text-brand-red mb-4" />
                     <h3 className="text-base font-semibold text-brand-white mb-1">
                       {c.title}
@@ -448,7 +450,7 @@ export default function SponsorsPage() {
       </section>
 
       {/* Why BSTC — kept from prior page, reframed */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
@@ -479,7 +481,7 @@ export default function SponsorsPage() {
               },
             ].map((row, i) => (
               <FadeInItem key={i}>
-                <div className="p-5 rounded-lg border border-white/5 bg-white/[0.02] h-full">
+                <div className="p-5 rounded-lg border border-ink/10 bg-white/70 h-full">
                   <p className="text-sm text-brand-grey line-through mb-1">
                     {row.before}
                   </p>
@@ -512,11 +514,11 @@ export default function SponsorsPage() {
                 className={`p-6 rounded-lg border flex flex-col relative ${
                   tier.featured
                     ? "border-brand-red/40 bg-brand-red/5"
-                    : "border-white/5 bg-white/[0.02]"
+                    : "border-ink/10 bg-white/70"
                 }`}
               >
                 {tier.featured && (
-                  <span className="absolute -top-3 left-6 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-brand-white bg-brand-red rounded">
+                  <span className="absolute -top-3 left-6 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-white bg-brand-red rounded">
                     Most Popular
                   </span>
                 )}
@@ -556,8 +558,8 @@ export default function SponsorsPage() {
                   rel={SPONSOR_CONFIG.calUrl ? "noopener noreferrer" : undefined}
                   className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 font-medium rounded transition-colors text-sm ${
                     tier.featured
-                      ? "bg-brand-red hover:bg-brand-red-dark text-brand-white"
-                      : "border border-white/10 hover:border-white/20 text-brand-white"
+                      ? "bg-brand-red hover:bg-brand-red-dark text-white"
+                      : "border border-ink/15 hover:border-ink/30 text-brand-white"
                   }`}
                 >
                   {SPONSOR_CONFIG.calUrl ? "Book a call" : "Inquire"}
@@ -613,7 +615,7 @@ export default function SponsorsPage() {
                 href={ctaHref("hiwa")}
                 target={SPONSOR_CONFIG.calUrl ? "_blank" : undefined}
                 rel={SPONSOR_CONFIG.calUrl ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors text-sm"
               >
                 Enquire about series sponsorship
                 <ArrowRight size={14} />
@@ -624,7 +626,7 @@ export default function SponsorsPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 border-y border-white/5 bg-white/[0.01]">
+      <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6">
           <FadeIn className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
@@ -634,7 +636,7 @@ export default function SponsorsPage() {
           <FadeInStagger className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {TESTIMONIALS.map((t, i) => (
               <FadeInItem key={i}>
-                <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02] h-full flex flex-col">
+                <div className="p-6 rounded-lg border border-ink/10 bg-white/70 h-full flex flex-col">
                   <p className="text-sm text-brand-grey leading-relaxed mb-4 flex-grow">
                     &ldquo;{t.quote}&rdquo;
                   </p>
@@ -661,7 +663,7 @@ export default function SponsorsPage() {
             {FAQS.map((f) => (
               <details
                 key={f.q}
-                className="group p-5 rounded-lg border border-white/5 bg-white/[0.02] hover:border-white/10 transition-colors"
+                className="group p-5 rounded-lg border border-ink/10 bg-white/70 hover:border-ink/20 transition-colors"
               >
                 <summary className="flex items-center justify-between cursor-pointer list-none">
                   <span className="text-sm font-medium text-brand-white">
@@ -681,7 +683,7 @@ export default function SponsorsPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 border-t border-white/5">
+      <section className="py-16 md:py-24 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6">
           <FadeIn className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 leading-tight">
@@ -698,7 +700,7 @@ export default function SponsorsPage() {
                 href={ctaHref()}
                 target={SPONSOR_CONFIG.calUrl ? "_blank" : undefined}
                 rel={SPONSOR_CONFIG.calUrl ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors text-sm glow-red"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors text-sm glow-red"
               >
                 {SPONSOR_CONFIG.calUrl ? "Book an intro call" : "Submit an inquiry"}
                 <ArrowRight size={14} />
@@ -706,7 +708,7 @@ export default function SponsorsPage() {
               {SPONSOR_CONFIG.calUrl && (
                 <Link
                   href="/sponsors/apply"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors text-sm"
                 >
                   Send a detailed brief
                 </Link>
@@ -715,10 +717,10 @@ export default function SponsorsPage() {
             <p className="text-xs text-brand-grey mt-6">
               Or email{" "}
               <a
-                href={`mailto:${SITE.email}`}
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="text-brand-white hover:text-brand-red transition-colors"
               >
-                {SITE.email}
+                {CONTACT_EMAIL}
               </a>
             </p>
           </FadeIn>

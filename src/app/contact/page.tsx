@@ -3,19 +3,22 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Send, Mail, MapPin } from "lucide-react";
+import { CONTACT_EMAIL, SITE } from "@/lib/constants";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const [loading, setLoading] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setFailed(false);
     const form = e.currentTarget;
     const formData = new FormData(form);
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -25,8 +28,10 @@ export default function ContactPage() {
           message: formData.get("message"),
         }),
       });
+      if (!res.ok) throw new Error("Contact form delivery failed");
       setSubmitted(true);
     } catch {
+      setFailed(true);
       setLoading(false);
     }
   }
@@ -44,7 +49,7 @@ export default function ContactPage() {
           </p>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
+            className="inline-flex items-center gap-2 px-5 py-2.5 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors text-sm"
           >
             Back to Home
           </Link>
@@ -80,7 +85,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       required
-                      className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
+                      className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white placeholder:text-brand-grey/80 focus:border-brand-red focus:outline-none transition-colors text-sm"
                       name="name" placeholder="Your name"
                     />
                   </div>
@@ -91,7 +96,7 @@ export default function ContactPage() {
                     <input
                       type="email"
                       required
-                      className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
+                      className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white placeholder:text-brand-grey/80 focus:border-brand-red focus:outline-none transition-colors text-sm"
                       name="email" placeholder="you@email.com"
                     />
                   </div>
@@ -104,7 +109,7 @@ export default function ContactPage() {
                   <select
                     name="subject"
                     required
-                    className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
                   >
                     <option value="">Select a topic</option>
                     <option value="events">Events & Attendance</option>
@@ -126,15 +131,34 @@ export default function ContactPage() {
                   <textarea
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm resize-none"
+                    className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white placeholder:text-brand-grey/80 focus:border-brand-red focus:outline-none transition-colors text-sm resize-none"
                     name="message" placeholder="What's on your mind?"
                   />
                 </div>
 
+                {failed && (
+                  <p className="text-sm text-brand-red">
+                    Sorry, your message couldn&apos;t be sent. Please email{" "}
+                    <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+                      {CONTACT_EMAIL}
+                    </a>{" "}
+                    or message us on{" "}
+                    <a
+                      href={SITE.meetup}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      MeetUp
+                    </a>
+                    .
+                  </p>
+                )}
+
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red disabled:opacity-50"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red disabled:opacity-50"
                 >
                   {loading ? "Sending...": "Send Message"}
                   {!loading && <Send size={16} />}
@@ -144,12 +168,12 @@ export default function ContactPage() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+              <div className="p-6 rounded-lg border border-ink/10 bg-white/70">
                 <Mail className="w-5 h-5 text-brand-red mb-3" />
                 <h3 className="font-semibold text-brand-white mb-1">Email</h3>
-                <p className="text-sm text-brand-grey">hello@bstc.community</p>
+                <p className="text-sm text-brand-grey">{CONTACT_EMAIL}</p>
               </div>
-              <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+              <div className="p-6 rounded-lg border border-ink/10 bg-white/70">
                 <MapPin className="w-5 h-5 text-brand-red mb-3" />
                 <h3 className="font-semibold text-brand-white mb-1">
                   Location
@@ -158,10 +182,11 @@ export default function ContactPage() {
                   Canggu, Bali, Indonesia
                 </p>
                 <p className="text-xs text-brand-grey mt-1">
+                  {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
                   Events across Canggu, Ubud, Sanur & Uluwatu
                 </p>
               </div>
-              <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
+              <div className="p-6 rounded-lg border border-ink/10 bg-white/70">
                 <h3 className="font-semibold text-brand-white mb-2">
                   Response Time
                 </h3>

@@ -1,50 +1,82 @@
+// Single source for the public contact address (site copy, schema, forms).
+// TODO(josh): hello@bstc.community is UNDELIVERABLE as of 25 Oct 2026:
+// bstc.community returns no MX/A/NS records. Replace with a working,
+// BSTC-owned inbox, then update public/llms.txt to match.
+export const CONTACT_EMAIL = "hello@bstc.community";
+
+// Organiser of record for events, used in Event schema `organizer`.
+// Events now run with a local Indonesian host partner as the organiser of
+// record, so BSTC must not be named as organiser.
+// TODO(josh): fill in the host partner's name (and URL). While `name` is
+// empty, Event schema omits `organizer` rather than naming BSTC. An event can
+// override this with an `organizer:` block in its frontmatter.
+export const EVENT_ORGANIZER: { name: string; url?: string } = {
+  name: "",
+  url: "",
+};
+
 export const SITE = {
   name: "BSTC",
   fullName: "Bali Startup & Tech Community",
+  // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
   tagline: "Southeast Asia's Largest Tech Community",
   description:
-    "Southeast Asia's largest founder-led tech community. Built in Bali with 2,500+ members from 40+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.",
+    // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
+    "Southeast Asia's largest founder-led tech community. Built in Bali with 2,700+ members from 40+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.",
   url: "https://balistartupandtech.com",
   domain: "balistartupandtech.com",
   altDomain: "bstc.community",
-  email: "hello@bstc.community",
   meetup: "https://www.meetup.com/bali-start-ups-tech-community/",
-  // Public join gate (Tally). The chat invite lives only on the form's
-  // thank-you page, so it never appears in public code and can't be used to
-  // bypass registration.
-  joinForm: "https://tally.so/r/KY5AMM",
-  memberDirectory: "https://tally.so/r/KY5AMM",
+  // Public join gate: the native /join form (rewritten to bstc-join), which
+  // saves each member before showing the chat link, so the invite never
+  // appears in public code. Call sites add ?src=<placement> for attribution.
+  // Replaced the Tally form (https://tally.so/r/KY5AMM) on 26 Oct 2026.
+  joinForm: "/join",
+  // Public member directory (Remote Builders); joining via /join adds a profile.
+  memberDirectory: "https://remotebuilders.io/directory/",
   linkedin: "https://www.linkedin.com/groups/14424020/",
   instagram: "https://www.instagram.com/bali_tech_community/",
   founded: "2023",
   location: "Canggu, Bali, Indonesia",
 };
 
+// One source for community stats. Hardcoded copy (incl. public/llms.txt) must
+// match these values.
+// Source: the BSTC Meetup group page
+// (https://www.meetup.com/bali-start-ups-tech-community/), fetched 25 Oct 2026
+// (evening WITA): 2,734 members, rating 4.7 from 155 ratings, 54 past events.
+// Shown rounded down: members "2,700+", events "50+".
 export const STATS = {
-  members: 2500,
+  members: 2700,
   events: 50,
-  rating: 4.6,
+  rating: 4.7,
+  ratingCount: 155,
+  // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
   countries: 40,
 };
 
 export const NAV_LINKS = [
   { label: "Events", href: "/events" },
   { label: "How I AI", href: "/how-i-build-with-ai" },
+  { label: "Members", href: "/#members" },
+  { label: "Perks", href: "/perks" },
   { label: "Podcast", href: "/podcast" },
   { label: "Community", href: "/community" },
   { label: "Sponsors", href: "/sponsors" },
   { label: "Blog", href: "/blog" },
 ] as const;
 
+// Global league "Season" kit (25 Oct 2026). Mirrors tailwind.config.ts.
 export const BRAND = {
   colors: {
-    charcoal: "#111111",
-    red: "#C81E1E",
-    redDark: "#8B1A1A",
-    redGlow: "#FF2E2E",
-    white: "#F5F5F5",
-    grey: "#888888",
-    greyDark: "#333333",
+    paper: "#F4F4F1",
+    red: "#B5241F",
+    redDeep: "#7E1714",
+    navy: "#13213C",
+    chalk: "#DCDAD3",
+    crest: "#1A1A1A",
+    white: "#FFFFFF",
+    slate: "#4A5468",
   },
 } as const;
 

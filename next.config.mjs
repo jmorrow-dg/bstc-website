@@ -16,10 +16,26 @@ const nextConfig = {
     { source: "/join", destination: "https://bstc-join.vercel.app/join" },
     { source: "/join/:path*", destination: "https://bstc-join.vercel.app/join/:path*" },
   ],
-  // /chapters is the short link for chapter leads (shared in the WhatsApp and
-  // Telegram groups). The form lives on remotebuilders.io/chapters/, where
-  // ?src=bstc-chapters tags each application as coming from BSTC.
   redirects: async () => [
+    // Duplicate of the 18 Jun 2026 flagship networking night (same date,
+    // time, venue and RSVP link); removed in favour of the fuller listing.
+    {
+      source: "/events/networking-night-june-2026",
+      destination: "/events/flagship-networking-night-june-2026",
+      permanent: true,
+    },
+    // Short link for partners (coworking spaces, visa agents, villa managers)
+    // to hand newcomers: /new-to-bali?src=partner-<slug>. The query string is
+    // kept, and JoinSrcCarry credits a later signup to that partner.
+    // Temporary, so the target can change later.
+    {
+      source: "/new-to-bali",
+      destination: "/blog/new-to-bali-first-week-checklist",
+      permanent: false,
+    },
+    // /chapters is the short link for chapter leads (shared in the WhatsApp and
+    // Telegram groups). The form lives on remotebuilders.io/chapters/, where
+    // ?src=bstc-chapters tags each application as coming from BSTC.
     {
       source: "/chapters",
       destination: "https://remotebuilders.io/chapters/?src=bstc-chapters#host",

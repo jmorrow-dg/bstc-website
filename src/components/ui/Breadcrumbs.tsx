@@ -31,7 +31,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-brand-grey">
         {items.map((item, i) => (
           <span key={i} className="flex items-center gap-1">
-            {i > 0 && <ChevronRight size={10} className="text-brand-grey/50" />}
+            {i > 0 && <ChevronRight size={10} className="text-brand-grey" />}
             {item.href ? (
               <Link
                 href={item.href}
@@ -40,7 +40,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
                 {item.label}
               </Link>
             ): (
-              <span className="text-brand-grey/70">{item.label}</span>
+              <span className="text-brand-grey">{item.label}</span>
             )}
           </span>
         ))}

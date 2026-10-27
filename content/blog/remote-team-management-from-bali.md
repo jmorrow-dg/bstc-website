@@ -33,21 +33,21 @@ After hundreds of conversations with BSTC founders who manage remote teams, here
 
 ## The Time Zone Advantage (It's Real)
 
-Bali sits at UTC+8. This is genuinely one of the best time zones in the world for a remote team:
+Bali sits at UTC+8 (WITA, no daylight saving). For a team spread across Asia-Pacific and Europe it works well; for the US it means early starts. Times below were worked out from the IANA time zone database for January and July 2026, so they include daylight saving at the other end.
 
-**Morning (8am-12pm Bali = afternoon in Europe)**
-- 4-hour overlap with London, Berlin, Amsterdam
+**Morning and midday (8am-3pm Bali = the same hours in Singapore, late morning to evening in Sydney and Melbourne)**
+- Full overlap with Singapore, Kuala Lumpur, Hong Kong and Perth; Sydney and Melbourne are 2 hours ahead (3 hours during Australian daylight saving)
 - Sync calls, collaborative work, real-time decisions
 
-**Afternoon (12pm-4pm Bali = morning in East Coast US)**
-- Overlap with New York, Boston, Toronto
-- Client calls, sales meetings, investor updates
+**Late afternoon and evening (3pm-8pm Bali = morning to lunchtime in Europe)**
+- 3pm Bali is 7am in London in winter and 8am in summer; 8pm Bali is midday to 1pm in London and an hour later in Berlin and Amsterdam
+- Client calls and standups with European teams
 
-**Evening (4pm-8pm Bali = morning in West Coast US)**
-- Overlap with San Francisco, LA, Seattle
-- If needed: but most founders protect this time
+**Early morning (6am-9am Bali = the previous afternoon or evening in the US)**
+- 6am Bali is 2pm to 3pm the previous day in San Francisco and LA, and 5pm to 6pm in New York, Boston and Toronto
+- Investor updates and US client calls, if needed: most founders batch these into two or three early mornings a week
 
-**The unlock:** You can cover European and American business hours in a single Bali workday without working nights. Very few time zones offer this.
+**The unlock:** A Bali workday covers Asia-Pacific all day and Europe in the afternoon without working nights. The US is the one region that costs you an early morning, so plan for it rather than letting it spread across your evenings.
 
 ## What Actually Works
 
@@ -137,4 +137,4 @@ The founders who make it work share one trait: they think of remote management a
 
 ---
 
-*BSTC connects 2,500+ founders managing remote teams from Bali and across Southeast Asia. [Join the community](/join) for events, connections, and shared wisdom from builders who've figured it out.*
+*BSTC connects 2,500+ founders managing remote teams from Bali and across Southeast Asia. [Join the community](/join?src=blog-remote-team-management-from-bali-inline) for events, connections, and shared wisdom from builders who've figured it out.*

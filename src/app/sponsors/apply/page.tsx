@@ -4,6 +4,7 @@ import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ArrowLeft, Send } from "lucide-react";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 function SponsorApplyForm() {
   const searchParams = useSearchParams();
@@ -36,7 +37,7 @@ function SponsorApplyForm() {
       if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
     } catch {
-      setError("Something went wrong. Please email hello@bstc.community.");
+      setError(`Something went wrong. Please email ${CONTACT_EMAIL}.`);
       setLoading(false);
     }
   }
@@ -55,7 +56,7 @@ function SponsorApplyForm() {
           </p>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 hover:border-white/20 text-brand-white font-medium rounded transition-colors text-sm"
+            className="inline-flex items-center gap-2 px-5 py-2.5 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors text-sm"
           >
             Back to Home
           </Link>
@@ -96,7 +97,7 @@ function SponsorApplyForm() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white placeholder:text-brand-grey/80 focus:border-brand-red focus:outline-none transition-colors text-sm"
                     name="name"
                     placeholder="Josh Morrow"
                   />
@@ -108,7 +109,7 @@ function SponsorApplyForm() {
                   <input
                     type="email"
                     required
-                    className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white placeholder:text-brand-grey/80 focus:border-brand-red focus:outline-none transition-colors text-sm"
                     name="email"
                     placeholder="you@company.com"
                   />
@@ -123,7 +124,7 @@ function SponsorApplyForm() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white placeholder:text-brand-grey/80 focus:border-brand-red focus:outline-none transition-colors text-sm"
                     name="company"
                     placeholder="Company name"
                   />
@@ -134,7 +135,7 @@ function SponsorApplyForm() {
                   </label>
                   <input
                     type="url"
-                    className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm"
+                    className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white placeholder:text-brand-grey/80 focus:border-brand-red focus:outline-none transition-colors text-sm"
                     name="website"
                     placeholder="https://company.com"
                   />
@@ -148,7 +149,7 @@ function SponsorApplyForm() {
                 <select
                   name="tier"
                   defaultValue={initialTier}
-                  className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
+                  className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
                 >
                   <option value="">Select a tier</option>
                   <option value="supporting">
@@ -172,7 +173,7 @@ function SponsorApplyForm() {
                 <select
                   name="goal"
                   required
-                  className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
+                  className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
                 >
                   <option value="">Select your goal</option>
                   <option value="brand-awareness">Brand Awareness</option>
@@ -191,7 +192,7 @@ function SponsorApplyForm() {
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full px-4 py-3 rounded bg-white/[0.03] border border-white/10 text-brand-white placeholder:text-brand-grey/50 focus:border-brand-red focus:outline-none transition-colors text-sm resize-none"
+                  className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white placeholder:text-brand-grey/80 focus:border-brand-red focus:outline-none transition-colors text-sm resize-none"
                   name="message"
                   placeholder="Tell us about your company, your audience, or any specific ideas..."
                 />
@@ -204,7 +205,7 @@ function SponsorApplyForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors glow-red disabled:opacity-50"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red disabled:opacity-50"
               >
                 {loading ? "Submitting..." : "Submit Enquiry"}
                 {!loading && <Send size={16} />}
