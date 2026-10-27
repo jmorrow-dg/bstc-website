@@ -212,7 +212,7 @@ Only if you want to operate commercially in Indonesia, hire local staff or invoi
 - **Indonesian Immigration (DGIM):** [Official list of visa types](https://www.imigrasi.go.id/wna/daftar-visa-indonesia), with fees and permitted activities
 - **OSS (Online Single Submission):** Business licensing portal
 - **BKPM (Investment Coordinating Board):** Foreign investment guidance
-- **BSTC Community:** [Join](/join) and ask in the community chat: founders share real-time visa and entity advice
+- **BSTC Community:** [Join](/join?src=blog-indonesia-startup-visa-guide-inline) and ask in the community chat: founders share real-time visa and entity advice
 
 ---
 

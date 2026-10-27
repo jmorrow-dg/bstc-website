@@ -175,7 +175,7 @@ Yes, if you take calls or want to meet other builders. A good coworking space gi
 
 If you want to skip the trial-and-error and meet other founders in Bali immediately, join the BSTC community. Our monthly Networking Night brings 60 to 80 founders into one room, and our Builder Sessions go deeper with 30 to 40 operators sharing what they're shipping.
 
-[See upcoming events](/events), or [join the community](/join) to see where everyone is working this week.
+[See upcoming events](/events), or [join the community](/join?src=blog-best-coworking-spaces-bali-founders-2026-inline) to see where everyone is working this week.
 
 ## Sources (read 25 October 2026)
 
