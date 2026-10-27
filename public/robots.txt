@@ -1,5 +1,5 @@
 # Bali Startup & Tech Community (BSTC) - robots.txt
-# https://balistartupandtech.com
+# https://www.balistartupandtech.com
 
 User-agent: *
 Allow: /
@@ -75,4 +75,4 @@ Allow: /
 User-agent: *
 Disallow: /api/
 
-Sitemap: https://balistartupandtech.com/sitemap.xml
+Sitemap: https://www.balistartupandtech.com/sitemap.xml
