@@ -106,6 +106,7 @@ function FixtureRow({ fixture, isNext }: { fixture: Fixture; isNext: boolean }) 
       <h3 className="gl-fx-title">
         <Link href={`/events/${fixture.slug}`}>{fixture.name}</Link>
       </h3>
+      {fixture.description && <p className="gl-fx-desc">{fixture.description}</p>}
       <p className="gl-fx-where">{fixture.venue}</p>
       <p className="gl-fx-time">{fixture.time ? `${fixture.time}, Bali time` : "Time to be confirmed"}</p>
       <div className="gl-fx-cta">

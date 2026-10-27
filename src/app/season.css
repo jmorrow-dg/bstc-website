@@ -117,7 +117,7 @@
 
 /* Fixture board */
 .gl-board { border-top: 6px solid var(--gl-navy); border-bottom: 6px solid var(--gl-navy); }
-.gl-fx { display: grid; grid-template-columns: 5.5rem 8.5rem minmax(0, 1.1fr) minmax(0, 1fr) 8.5rem auto; grid-template-areas: "num date title where time cta"; align-items: center; column-gap: 22px; padding: 10px 18px; border-top: 2px solid var(--gl-chalk); }
+.gl-fx { display: grid; grid-template-columns: 5.5rem 8.5rem minmax(0, 1.1fr) minmax(0, 1fr) 8.5rem auto; grid-template-areas: "num date title where time cta" "num date desc desc desc cta"; align-items: center; column-gap: 22px; padding: 10px 18px; border-top: 2px solid var(--gl-chalk); }
 .gl-fx:first-child { border-top: 0; }
 .gl-fx-num { grid-area: num; font: 900 60px/0.8 var(--gl-display); font-variant-numeric: tabular-nums; display: flex; flex-direction: column-reverse; align-items: flex-start; gap: 5px; }
 .gl-fx-num small { font: 600 12px/1 var(--gl-text); }
@@ -125,6 +125,7 @@
 .gl-fx-title { grid-area: title; font-size: 26px; font-weight: 800; }
 .gl-fx-title a { text-decoration: none; }
 .gl-fx-title a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.gl-fx-desc { grid-area: desc; font-size: 15px; max-width: 68ch; margin-top: 2px; }
 .gl-fx-where { grid-area: where; font-size: 15px; }
 .gl-fx-time { grid-area: time; font-size: 15px; }
 .gl-fx-cta { grid-area: cta; justify-self: end; }
@@ -134,14 +135,14 @@
 .gl-fx--dinner + .gl-fx { border-top-color: var(--gl-navy); }
 .gl-fx--dinner :focus-visible { outline-color: var(--gl-white); }
 .gl-fx--dinner .gl-btn-line:hover { background: var(--gl-white); border-color: var(--gl-white); color: var(--gl-navy); }
-.gl-fx.gl-is-next { background: var(--gl-red); color: var(--gl-white); border-top-color: var(--gl-red); grid-template-columns: minmax(0, 12rem) minmax(0, 1fr) auto; grid-template-areas: "num flag cta" "num date cta" "num title cta" "num where cta" "num time cta"; padding: clamp(22px, 3vw, 36px); row-gap: 6px; }
+.gl-fx.gl-is-next { background: var(--gl-red); color: var(--gl-white); border-top-color: var(--gl-red); grid-template-columns: minmax(0, 12rem) minmax(0, 1fr) auto; grid-template-areas: "num flag cta" "num date cta" "num title cta" "num desc cta" "num where cta" "num time cta"; padding: clamp(22px, 3vw, 36px); row-gap: 6px; }
 .gl-fx.gl-is-next + .gl-fx { border-top-color: transparent; }
 .gl-fx.gl-is-next .gl-fx-num { font-size: clamp(112px, 12vw, 168px); align-self: end; }
 .gl-fx.gl-is-next .gl-fx-num small { font-size: 15px; }
 .gl-fx.gl-is-next .gl-fx-flag { display: block; grid-area: flag; justify-self: start; background: var(--gl-white); color: var(--gl-red-deep); font: 800 18px/1 var(--gl-display); padding: 6px 10px 5px; margin-bottom: 8px; }
 .gl-fx.gl-is-next .gl-fx-date { font-size: clamp(38px, 4vw, 58px); }
 .gl-fx.gl-is-next .gl-fx-title { font-size: clamp(30px, 2.8vw, 42px); }
-.gl-fx.gl-is-next .gl-fx-where, .gl-fx.gl-is-next .gl-fx-time { font-size: 17px; }
+.gl-fx.gl-is-next .gl-fx-where, .gl-fx.gl-is-next .gl-fx-time, .gl-fx.gl-is-next .gl-fx-desc { font-size: 17px; }
 .gl-fx.gl-is-next .gl-btn { background: var(--gl-white); color: var(--gl-red-deep); border-color: var(--gl-white); min-height: 56px; padding-inline: 30px; font-size: 17px; }
 .gl-fx.gl-is-next .gl-btn:hover { background: var(--gl-navy); border-color: var(--gl-navy); color: var(--gl-white); }
 .gl-fx.gl-is-next :focus-visible { outline-color: var(--gl-white); }
@@ -430,7 +431,7 @@
 }
 /* Tablet */
 @media (max-width: 1080px) {
-  .gl-fx { grid-template-columns: 4.5rem 7.5rem minmax(0, 1fr) auto; grid-template-areas: "num date title cta" "num date where cta" "num date time cta"; row-gap: 2px; }
+  .gl-fx { grid-template-columns: 4.5rem 7.5rem minmax(0, 1fr) auto; grid-template-areas: "num date title cta" "num date desc cta" "num date where cta" "num date time cta"; row-gap: 2px; }
   .gl-fx-num { font-size: 54px; }
   .gl-perks { grid-template-columns: 1fr; }
   .gl-partner .gl-wrap { grid-template-columns: 1fr; justify-items: start; }
@@ -456,13 +457,13 @@
   .gl-duo { height: 300px; }
   .gl-sec-head { grid-template-columns: 1fr; }
   .gl-score dd { font-size: 44px; }
-  .gl-fx { grid-template-columns: 3.75rem minmax(0, 1fr) auto; grid-template-areas: "num date cta" "num title title" "num where where" "num time time"; column-gap: 12px; padding: 12px 10px; }
+  .gl-fx { grid-template-columns: 3.75rem minmax(0, 1fr) auto; grid-template-areas: "num date cta" "num title title" "num desc desc" "num where where" "num time time"; column-gap: 12px; padding: 12px 10px; }
   .gl-fx-num { font-size: 46px; }
   .gl-fx-date { font-size: 24px; }
   .gl-fx-title { font-size: 24px; margin-top: 4px; }
-  .gl-fx-where, .gl-fx-time { font-size: 14px; }
+  .gl-fx-where, .gl-fx-time, .gl-fx-desc { font-size: 14px; }
   .gl-fx .gl-btn { min-width: 0; padding-inline: 14px; }
-  .gl-fx.gl-is-next { grid-template-columns: minmax(0, 1fr); grid-template-areas: "flag" "num" "date" "title" "where" "time" "cta"; padding: 24px 16px; }
+  .gl-fx.gl-is-next { grid-template-columns: minmax(0, 1fr); grid-template-areas: "flag" "num" "date" "title" "desc" "where" "time" "cta"; padding: 24px 16px; }
   .gl-fx.gl-is-next .gl-fx-num { font-size: 108px; flex-direction: row-reverse; justify-content: flex-end; align-items: flex-end; gap: 12px; }
   .gl-fx.gl-is-next .gl-fx-cta { justify-self: stretch; margin-top: 14px; }
   .gl-fx.gl-is-next .gl-btn { width: 100%; }

@@ -27,6 +27,8 @@ export type Fixture = {
   /** "6pm" or "6:30pm"; empty when the frontmatter has no usable time. */
   time: string;
   venue: string;
+  /** The event's frontmatter description, shown under the name (kept from the old homepage cards). */
+  description: string;
   isDinner: boolean;
   rsvpUrl: string | null;
 };
@@ -83,6 +85,7 @@ export function toFixture(event: ContentItem<EventFrontmatter>): Fixture | null 
     isoStart: hhmm ? `${fm.date}T${hhmm}+08:00` : fm.date,
     time,
     venue: fm.venue,
+    description: fm.description || "",
     isDinner,
     rsvpUrl: canRsvpToEvent(fm) ? fm.rsvpUrl : null,
   };
