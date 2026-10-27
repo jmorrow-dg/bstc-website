@@ -205,6 +205,7 @@
 .gl-members .gl-sec-head p { color: var(--gl-chalk); }
 .gl-squad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 24px; }
 .gl-player { display: grid; gap: 8px; align-content: start; min-width: 0; border-top: 6px solid var(--gl-red); padding-top: 20px; }
+.gl-mem-photo { width: 88px; height: 88px; object-fit: cover; background: var(--gl-white); margin-bottom: 8px; }
 .gl-initials { width: 88px; height: 88px; display: grid; place-items: center; background: var(--gl-white); color: var(--gl-red-deep); font: 900 40px/1 var(--gl-display); margin-bottom: 8px; }
 .gl-page .gl-player h3 { font-size: clamp(30px, 2.6vw, 40px); text-wrap: balance; }
 .gl-tier { justify-self: start; background: var(--gl-red); color: var(--gl-white); font: 800 15px/1 var(--gl-display); padding: 4px 7px 3px; }
