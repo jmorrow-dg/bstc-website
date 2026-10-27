@@ -63,8 +63,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  // No site-wide canonical here: a canonical set in the root layout is
+  // inherited by every page that doesn't override it, which canonicalised
+  // every page to the homepage. Each route sets its own self-referencing
+  // `alternates.canonical` (resolved against metadataBase).
   alternates: {
-    canonical: SITE.url,
     types: {
       "application/rss+xml": `${SITE.url}/feed.xml`,
     },

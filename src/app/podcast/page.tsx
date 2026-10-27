@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "BSTC podcast",
     "builder podcast",
   ],
+  alternates: { canonical: "/podcast" },
 };
 
 const PODCAST_FAQS = [

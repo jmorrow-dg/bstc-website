@@ -20,6 +20,10 @@ import {
 } from "@/lib/content";
 import { getEventSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
+import { canRsvpToEvent, getEventState } from "@/lib/event-status";
+
+// Upcoming vs past is derived from the current Bali date, so re-render hourly.
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const allEvents = await getAllEvents();
@@ -39,6 +43,7 @@ export async function generateMetadata({
   return {
     title: e.seo?.title || `${e.title} | How I Build with AI`,
     description: e.seo?.description || e.description,
+    alternates: { canonical: `/how-i-build-with-ai/${e.slug}` },
     keywords: e.seo?.keywords,
     openGraph: {
       title: e.seo?.title || e.title,
@@ -64,7 +69,9 @@ export default async function HIWAEpisodePage({
   if (!event || event.frontmatter.type !== "how-i-build-with-ai") notFound();
 
   const { frontmatter: e, htmlContent } = event;
-  const isUpcoming = e.status === "upcoming";
+  const now = new Date();
+  const eventState = getEventState(e, now);
+  const canRsvp = canRsvpToEvent(e, now);
   const hasRecap = e.status === "completed" && e.recap;
 
   const eventSchema = getEventSchema({
@@ -76,14 +83,18 @@ export default async function HIWAEpisodePage({
     url: `${SITE.url}/how-i-build-with-ai/${e.slug}`,
     image: e.coverImage,
     status: e.status,
-  });
+    rsvpUrl: e.rsvpUrl,
+    organizer: e.organizer,
+  }, now);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
-      />
+      {eventSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }}
+        />
+      )}
 
       {/* Hero Cover Image */}
       {e.coverImage && (
@@ -140,7 +151,7 @@ export default async function HIWAEpisodePage({
                 </span>
               </div>
 
-              {isUpcoming && (
+              {canRsvp && (
                 <a
                   href={e.rsvpUrl}
                   target="_blank"
@@ -293,6 +304,13 @@ export default async function HIWAEpisodePage({
       {/* Content */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-site mx-auto px-6">
+          {eventState === "past" && (
+            <p className="max-w-3xl mb-6 rounded-lg border border-white/10 bg-white/[0.03] p-4 text-sm text-brand-grey">
+              This is an archived event listing. Registration is closed; any
+              RSVP instructions in the original description below are
+              historical.
+            </p>
+          )}
           <div
             className="max-w-3xl prose prose-invert prose-sm prose-headings:font-display prose-headings:text-brand-white prose-p:text-brand-grey prose-strong:text-brand-white prose-li:text-brand-grey prose-a:text-brand-red"
             dangerouslySetInnerHTML={{ __html: htmlContent }}
@@ -304,18 +322,18 @@ export default async function HIWAEpisodePage({
       <section className="py-16 border-t border-white/5">
         <div className="max-w-site mx-auto px-6 text-center">
           <h2 className="text-2xl font-display font-bold mb-4">
-            {isUpcoming ? "Be There": "Catch the Next One"}
+            {canRsvp ? "Be There": "Catch the Next One"}
           </h2>
           <p className="text-brand-grey mb-6">
-            {isUpcoming
+            {canRsvp
               ? "This is live, in-person, and unrepeatable. RSVP now."
              : "Every edition features a different builder, different tools, different build."}
           </p>
           <Link
-            href={isUpcoming ? e.rsvpUrl : "/how-i-build-with-ai"}
+            href={canRsvp ? e.rsvpUrl : "/how-i-build-with-ai"}
             className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-brand-white font-medium rounded transition-colors"
           >
-            {isUpcoming ? "RSVP Now": "See All Episodes"}
+            {canRsvp ? "RSVP Now": "See All Episodes"}
           </Link>
         </div>
       </section>

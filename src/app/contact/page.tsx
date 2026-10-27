@@ -3,19 +3,22 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Send, Mail, MapPin } from "lucide-react";
+import { CONTACT_EMAIL, SITE } from "@/lib/constants";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const [loading, setLoading] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setFailed(false);
     const form = e.currentTarget;
     const formData = new FormData(form);
     try {
-      await fetch("/api/contact", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -25,8 +28,10 @@ export default function ContactPage() {
           message: formData.get("message"),
         }),
       });
+      if (!res.ok) throw new Error("Contact form delivery failed");
       setSubmitted(true);
     } catch {
+      setFailed(true);
       setLoading(false);
     }
   }
@@ -131,6 +136,25 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {failed && (
+                  <p className="text-sm text-brand-red">
+                    Sorry, your message couldn&apos;t be sent. Please email{" "}
+                    <a href={`mailto:${CONTACT_EMAIL}`} className="underline">
+                      {CONTACT_EMAIL}
+                    </a>{" "}
+                    or message us on{" "}
+                    <a
+                      href={SITE.meetup}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      MeetUp
+                    </a>
+                    .
+                  </p>
+                )}
+
                 <button
                   type="submit"
                   disabled={loading}
@@ -147,7 +171,7 @@ export default function ContactPage() {
               <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
                 <Mail className="w-5 h-5 text-brand-red mb-3" />
                 <h3 className="font-semibold text-brand-white mb-1">Email</h3>
-                <p className="text-sm text-brand-grey">hello@bstc.community</p>
+                <p className="text-sm text-brand-grey">{CONTACT_EMAIL}</p>
               </div>
               <div className="p-6 rounded-lg border border-white/5 bg-white/[0.02]">
                 <MapPin className="w-5 h-5 text-brand-red mb-3" />

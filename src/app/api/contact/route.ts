@@ -11,22 +11,22 @@ const contactSchema = z.object({
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const data = contactSchema.parse(body);
+    contactSchema.parse(body); // assign to `data` when delivery is wired up
 
-    // TODO: Send email via Resend
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: "BSTC <noreply@bstc.community>",
-    //   to: "hello@bstc.community",
-    //   subject: `[BSTC Contact] ${data.subject}: ${data.name}`,
-    //   text: `Name: ${data.name}\nEmail: ${data.email}\nSubject: ${data.subject}\n\n${data.message}`,
-    // });
-
-    console.log("Contact form submission:", data);
-
+    // No delivery is wired up yet, so say so instead of reporting a fake
+    // success. TODO(josh): once CONTACT_EMAIL is a working inbox, send via
+    // Resend (already a dependency) and return 200 only after it succeeds:
+    //   const resend = new Resend(process.env.RESEND_API_KEY);
+    //   await resend.emails.send({
+    //     from: "BSTC <noreply@<verified-domain>>",
+    //     to: CONTACT_EMAIL,
+    //     replyTo: data.email,
+    //     subject: `[BSTC Contact] ${data.subject}: ${data.name}`,
+    //     text: `Name: ${data.name}\nEmail: ${data.email}\nSubject: ${data.subject}\n\n${data.message}`,
+    //   });
     return NextResponse.json(
-      { success: true, message: "Message sent successfully" },
-      { status: 200 }
+      { success: false, message: "Contact form delivery is not configured" },
+      { status: 503 }
     );
   } catch (error) {
     if (error instanceof z.ZodError) {

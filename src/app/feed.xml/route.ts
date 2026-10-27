@@ -1,10 +1,12 @@
-import { getAllBlogPosts, getAllEvents } from "@/lib/content";
+import { getAllBlogPosts, getAllEvents, getUpcomingEvents } from "@/lib/content";
 import { SITE } from "@/lib/constants";
+
+export const revalidate = 3600;
 
 export async function GET() {
   const posts = await getAllBlogPosts();
   const events = await getAllEvents();
-  const upcomingEvents = events.filter((e) => e.frontmatter.status === "upcoming");
+  const upcomingEvents = getUpcomingEvents(events);
 
   const postItems = posts.map((post) => {
     const p = post.frontmatter;

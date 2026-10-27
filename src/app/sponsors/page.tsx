@@ -11,14 +11,14 @@ import {
   Utensils,
   ExternalLink,
 } from "lucide-react";
-import { SITE, STATS, SPONSOR_CONFIG } from "@/lib/constants";
+import { CONTACT_EMAIL, STATS, SPONSOR_CONFIG } from "@/lib/constants";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Sponsor BSTC — Reach Southeast Asia's Top Founder Community",
   description:
     "Reach 100+ SEA founders, operators, and VCs every week. Event, quarterly, and annual sponsor packages from $2,000.",
-  alternates: { canonical: `${SITE.url}/sponsors` },
+  alternates: { canonical: "/sponsors" },
 };
 
 const TIERS = [
@@ -715,10 +715,10 @@ export default function SponsorsPage() {
             <p className="text-xs text-brand-grey mt-6">
               Or email{" "}
               <a
-                href={`mailto:${SITE.email}`}
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="text-brand-white hover:text-brand-red transition-colors"
               >
-                {SITE.email}
+                {CONTACT_EMAIL}
               </a>
             </p>
           </FadeIn>
