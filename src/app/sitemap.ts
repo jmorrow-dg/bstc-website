@@ -2,12 +2,18 @@ import { MetadataRoute } from "next";
 import { getAllEvents, getAllBlogPosts } from "@/lib/content";
 import { CITY_COMPARISONS } from "@/data/city-comparisons";
 import { SITE } from "@/lib/constants";
+import { MIN_INDEXABLE_MEMBERS, getBaliMembers } from "@/lib/rb-directory";
 
 const BASE_URL = SITE.url;
+
+// Daily, so /members joins the sitemap once the directory feed has enough Bali members.
+export const revalidate = 86400;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const events = await getAllEvents();
   const posts = await getAllBlogPosts();
+  // /members is listed only once it has enough Bali members to be indexed.
+  const { members } = await getBaliMembers();
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
@@ -20,6 +26,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE_URL}/leadership`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/perks`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
+    ...(members.length >= MIN_INDEXABLE_MEMBERS
+      ? [{ url: `${BASE_URL}/members`, lastModified: new Date(), changeFrequency: "daily" as const, priority: 0.7 }]
+      : []),
     { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/podcast`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },

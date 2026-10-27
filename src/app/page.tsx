@@ -503,6 +503,9 @@ export default async function Home() {
               <Link className="gl-btn gl-btn-paper" href="/join?src=home-members">
                 Join and get your page
               </Link>
+              <Link className="gl-link" href="/members">
+                Meet the Bali members
+              </Link>
               <a className="gl-link" href="https://remotebuilders.io/directory/">
                 See the member directory
               </a>
