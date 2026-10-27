@@ -88,7 +88,7 @@ The all-rounder. Newer than Tropical Nomad, slightly more polished, similar wifi
 - **Vibe:** Balanced. Mix of founders, designers, and freelance engineers.
 - **Downside:** Can get loud near the cafe area in the afternoon.
 
-### 4. Genesis
+### Genesis (coworking discontinued)
 
 *Coworking appears discontinued: its coworking page returns "not found" and its booking portal is suspended (checked 25 October 2026). Kept here for the record.*
 
@@ -98,7 +98,7 @@ The casual option. Cheaper, smaller, less of a "scene." Good if you mostly need 
 - **Founder density:** Moderate.
 - **Vibe:** Relaxed. Younger crowd.
 
-### 5. Dojo Bali
+### Dojo Bali (closed)
 
 *Closed in December 2022, per the "officially closed Dec '22" banner on its own site (checked 25 October 2026). Kept here for the record.*
 
