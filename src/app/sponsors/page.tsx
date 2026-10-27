@@ -110,7 +110,7 @@ const CHANNELS = [
   {
     icon: FileText,
     title: "Blog & SEO",
-    metric: "28 founder guides",
+    metric: "35 founder guides",
     body: "Guides for founders in SEA researching VCs, taxes, visas, hiring and more.",
   },
   {
