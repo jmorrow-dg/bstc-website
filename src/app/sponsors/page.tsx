@@ -11,7 +11,7 @@ import {
   Utensils,
   ExternalLink,
 } from "lucide-react";
-import { CONTACT_EMAIL, STATS, SPONSOR_CONFIG } from "@/lib/constants";
+import { STATS, SPONSOR_CONFIG } from "@/lib/constants";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
@@ -710,10 +710,10 @@ export default function SponsorsPage() {
             <p className="text-xs text-brand-grey mt-6">
               Or email{" "}
               <a
-                href={`mailto:${CONTACT_EMAIL}`}
+                href={`mailto:${SPONSOR_CONFIG.contactEmail}`}
                 className="text-brand-white hover:text-brand-red transition-colors"
               >
-                {CONTACT_EMAIL}
+                {SPONSOR_CONFIG.contactEmail}
               </a>
             </p>
           </FadeIn>
