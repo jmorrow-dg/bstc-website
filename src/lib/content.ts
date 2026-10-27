@@ -84,7 +84,9 @@ export interface ContentItem<T> {
 async function markdownToHtml(markdown: string): Promise<string> {
   // remark-gfm: without it, markdown tables render as raw "| a | b |" text.
   const result = await remark().use(remarkGfm).use(html).process(markdown);
-  return result.toString();
+  // The page template already renders the title as the H1, so a "# " heading
+  // in the body becomes an H2 (one H1 per page).
+  return result.toString().replace(/<(\/?)h1(?=[\s>])/g, "<$1h2");
 }
 
 function getContentFiles(subdir: string): string[] {

@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { getAllEvents, getAllBlogPosts } from "@/lib/content";
 import { CITY_COMPARISONS } from "@/data/city-comparisons";
+import { SITE } from "@/lib/constants";
 
-const BASE_URL = "https://balistartupandtech.com";
+const BASE_URL = SITE.url;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const events = await getAllEvents();
@@ -20,6 +21,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/leadership`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/perks`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/faq`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/podcast`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE_URL}/resources`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
     { url: `${BASE_URL}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
   ];
@@ -31,14 +35,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  const hiwaPages: MetadataRoute.Sitemap = events
-    .filter((e) => e.frontmatter.type === "how-i-build-with-ai")
-    .map((event) => ({
-      url: `${BASE_URL}/how-i-build-with-ai/${event.frontmatter.slug}`,
-      lastModified: new Date(event.frontmatter.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    }));
+  // /how-i-build-with-ai/<slug> repeats /events/<slug> and canonicals to it,
+  // so only the /events URL is listed.
 
   const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${BASE_URL}/blog/${post.frontmatter.slug}`,
@@ -54,5 +52,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...eventPages, ...hiwaPages, ...blogPages, ...comparisonPages];
+  return [...staticPages, ...eventPages, ...blogPages, ...comparisonPages];
 }

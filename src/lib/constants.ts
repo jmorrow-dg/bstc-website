@@ -23,7 +23,10 @@ export const SITE = {
   description:
     // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
     "Southeast Asia's largest founder-led tech community. Built in Bali with 2,700+ members from 40+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.",
-  url: "https://balistartupandtech.com",
+  // The host Vercel serves: the bare domain redirects to www, so canonicals,
+  // the sitemap and schema use www. If the bare domain is ever made primary in
+  // Vercel, change this back in the same release.
+  url: "https://www.balistartupandtech.com",
   domain: "balistartupandtech.com",
   altDomain: "bstc.community",
   meetup: "https://www.meetup.com/bali-start-ups-tech-community/",

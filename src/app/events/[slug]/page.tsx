@@ -1,3 +1,4 @@
+import { pageTitle } from "@/lib/seo";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -41,7 +42,7 @@ export async function generateMetadata({
 
   const { frontmatter: e } = event;
   return {
-    title: e.seo?.title || e.title,
+    title: pageTitle(e.seo?.title || e.title),
     description: e.seo?.description || e.description,
     alternates: { canonical: `/events/${e.slug}` },
     openGraph: {

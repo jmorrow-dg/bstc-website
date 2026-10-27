@@ -1,3 +1,4 @@
+import { pageTitle } from "@/lib/seo";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -41,9 +42,10 @@ export async function generateMetadata({
 
   const { frontmatter: e } = event;
   return {
-    title: e.seo?.title || `${e.title} | How I Build with AI`,
+    title: pageTitle(e.seo?.title || `${e.title} | How I Build with AI`),
     description: e.seo?.description || e.description,
-    alternates: { canonical: `/how-i-build-with-ai/${e.slug}` },
+    // Same content as /events/<slug>, which is the page we rank.
+    alternates: { canonical: `/events/${e.slug}` },
     keywords: e.seo?.keywords,
     openGraph: {
       title: e.seo?.title || e.title,

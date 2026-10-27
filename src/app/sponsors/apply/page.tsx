@@ -1,14 +1,17 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { ArrowLeft, Send } from "lucide-react";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
 function SponsorApplyForm() {
-  const searchParams = useSearchParams();
-  const initialTier = searchParams.get("tier") ?? "";
+  // Read ?tier= after mount rather than with useSearchParams, which would make
+  // the whole page client-only and leave its heading and copy out of the HTML.
+  const [initialTier, setInitialTier] = useState("");
+  useEffect(() => {
+    setInitialTier(new URLSearchParams(window.location.search).get("tier") ?? "");
+  }, []);
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -148,6 +151,7 @@ function SponsorApplyForm() {
                 </label>
                 <select
                   name="tier"
+                  key={initialTier}
                   defaultValue={initialTier}
                   className="w-full px-4 py-3 rounded bg-white border border-ink/15 text-brand-white focus:border-brand-red focus:outline-none transition-colors text-sm"
                 >
@@ -220,8 +224,6 @@ function SponsorApplyForm() {
 
 export default function SponsorApplyPage() {
   return (
-    <Suspense fallback={null}>
-      <SponsorApplyForm />
-    </Suspense>
+    <SponsorApplyForm />
   );
 }

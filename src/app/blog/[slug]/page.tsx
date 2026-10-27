@@ -1,3 +1,4 @@
+import { pageTitle } from "@/lib/seo";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -23,7 +24,7 @@ export async function generateMetadata({
 
   const { frontmatter: p } = post;
   return {
-    title: p.seo?.title || p.title,
+    title: pageTitle(p.seo?.title || p.title),
     description: p.seo?.description || p.excerpt,
     keywords: p.seo?.keywords,
     alternates: { canonical: `/blog/${p.slug}` },
