@@ -15,9 +15,9 @@ import { CONTACT_EMAIL, STATS, SPONSOR_CONFIG } from "@/lib/constants";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Sponsor BSTC — Reach Southeast Asia's Top Founder Community",
+  title: "Sponsor BSTC: Reach Bali's Founder and AI-Builder Community",
   description:
-    "Reach 100+ SEA founders, operators, and VCs every week. Event, quarterly, and annual sponsor packages from $2,000.",
+    "Weekly How I AI nights, monthly networking dinners and 2,700+ Meetup members in Bali. Event, quarterly and annual sponsor packages from US$2,000.",
   alternates: { canonical: "/sponsors" },
 };
 
@@ -51,7 +51,7 @@ const TIERS = [
     includes: [
       "Everything in Supporting",
       "8 events per quarter",
-      "Quarterly value-driven talk (10–15 min)",
+      "Quarterly value-driven talk (10-15 min)",
       "Dedicated social feature post",
       "Founder dinner co-host (1 per quarter)",
       "Co-authored case study on the BSTC blog",
@@ -86,8 +86,8 @@ const CHANNELS = [
   {
     icon: Users,
     title: "Live Events",
-    metric: "2× weekly",
-    body: "100+ founders, operators, and VCs in the room every week — Networking Nights and \"How I AI\" sessions.",
+    metric: "Weekly + monthly",
+    body: "How I AI every Wednesday, plus a monthly networking dinner. The last two dinners had 81 and 82 RSVPs on Meetup.",
   },
   {
     icon: MessageCircle,
@@ -98,26 +98,26 @@ const CHANNELS = [
   {
     icon: Mic,
     title: "Podcast",
-    metric: "Launching Q2 2026",
-    body: "Founder interviews recorded at BSTC events. Pre-roll and per-episode placements available.",
+    metric: "Coming soon",
+    body: "Remote Builders: founder interviews, some recorded live at BSTC events. Pre-roll and per-episode placements available.",
   },
   {
     icon: Mail,
     title: "BSTC Weekly",
-    metric: "Launching Q2 2026",
-    body: "Curated weekly newsletter for the BSTC audience. Sponsor slot in every issue.",
+    metric: "Launching November 2026",
+    body: "A short Sunday email: what's on for builders in Bali, one member win and one ask. One sponsor slot per issue.",
   },
   {
     icon: FileText,
     title: "Blog & SEO",
-    metric: "30+ SEA founder guides",
-    body: "Top-ranking content read by SEA founders researching VCs, taxes, hiring, and more.",
+    metric: "35 founder guides",
+    body: "Guides for founders in SEA researching VCs, taxes, visas, hiring and more.",
   },
   {
     icon: Utensils,
     title: "Founder Dinners",
-    metric: "8–12 / quarter",
-    body: "Invite-only, 12-seat dinners with funded founders. Co-host slots reserved for partners.",
+    metric: "Invite-only",
+    body: "Small dinners with post-revenue founders. Co-host slots reserved for partners.",
   },
 ];
 
@@ -157,7 +157,7 @@ const FAQS = [
   },
   {
     q: "Do you offer category exclusivity?",
-    a: "Yes — included in the Strategic Partner tier. Limited to 2 partners per year, one per vertical.",
+    a: "Yes. It's included in the Strategic Partner tier, limited to 2 partners per year, one per vertical.",
   },
   {
     q: "Can we co-create content?",
@@ -165,7 +165,7 @@ const FAQS = [
   },
   {
     q: "What's the lead time?",
-    a: "2–4 weeks for event sponsorship, 6+ weeks for quarterly partnerships.",
+    a: "2-4 weeks for event sponsorship, 6+ weeks for quarterly partnerships.",
   },
   {
     q: "What are the payment terms?",
@@ -173,12 +173,12 @@ const FAQS = [
   },
   {
     q: "Can we get a custom package?",
-    a: "Anything outside these tiers — book an intro call and we'll tailor it.",
+    a: "Anything outside these tiers: book an intro call and we'll tailor it.",
   },
 ];
 
 const formatPrice = (n: number) =>
-  `$${n.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
+  `${SPONSOR_CONFIG.currency}${n.toLocaleString("en-US", { maximumFractionDigits: 0 })}`;
 
 const ctaHref = (tierSlug?: string) => {
   if (SPONSOR_CONFIG.calUrl) return SPONSOR_CONFIG.calUrl;
@@ -214,14 +214,16 @@ export default function SponsorsPage() {
               Partnerships
             </p>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 leading-[1.05]">
-              Reach Southeast Asia&apos;s
+              Reach Bali&apos;s
               <br />
-              <span className="text-brand-red">Highest-Signal Founder Community.</span>
+              <span className="text-brand-red">Founder and AI-Builder Community.</span>
             </h1>
             <p className="text-lg text-brand-grey leading-relaxed mb-8">
-              Two weekly events. {STATS.members.toLocaleString()}+ community members. 1,200+ operators on
-              WhatsApp. Podcast and newsletter launching Q2 2026. Founders, VCs,
-              and senior engineers building across SEA.
+              How I AI every Wednesday and a monthly networking dinner.{" "}
+              {STATS.members.toLocaleString()}+ Meetup members. 1,200+ on WhatsApp.
+              BSTC Weekly launches in November 2026 and the Remote Builders podcast
+              is coming soon. Founders, engineers and investors building in Bali
+              and across SEA.
             </p>
             <div className="flex flex-wrap items-center gap-4">
               <a
@@ -243,13 +245,10 @@ export default function SponsorsPage() {
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-8 text-xs text-brand-grey">
               <span className="flex items-center gap-1">
                 <span className="text-brand-red">★★★★★</span>
-                <span>{STATS.rating} from {STATS.ratingCount} ratings on Meetup</span>
+                <span>{STATS.rating}/5 from {STATS.ratingCount} Meetup ratings</span>
               </span>
               <span>·</span>
-              <span>100+ attendees / week</span>
-              <span>·</span>
-              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
-              <span>{STATS.countries}+ countries represented</span>
+              <span>80+ RSVPs per networking dinner</span>
             </div>
           </FadeIn>
         </div>
@@ -260,10 +259,10 @@ export default function SponsorsPage() {
         <div className="max-w-site mx-auto px-6">
           <FadeInStagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { num: `${STATS.members.toLocaleString()}+`, label: "Community Members" },
+              { num: `${STATS.members.toLocaleString()}+`, label: "Meetup Members" },
               { num: "1,200+", label: "WhatsApp Members" },
-              { num: "100+", label: "Per-Week Attendance" },
-              { num: `${STATS.rating}★`, label: `from ${STATS.ratingCount} Meetup ratings` },
+              { num: "80+", label: "RSVPs per Dinner" },
+              { num: `${STATS.rating}★`, label: `from ${STATS.ratingCount} Meetup Ratings` },
             ].map((s) => (
               <FadeInItem key={s.label}>
                 <div className="p-6 rounded-lg border border-ink/10 bg-white/70 text-center hover:border-brand-red/20 transition-colors h-full">
@@ -381,16 +380,13 @@ export default function SponsorsPage() {
               </p>
               <ul className="space-y-3 text-sm">
                 {[
-                  { pct: "40%", label: "Startup founders" },
-                  { pct: "25%", label: "Senior engineers / PMs" },
-                  { pct: "15%", label: "Investors & angels" },
-                  { pct: "20%", label: "Operators & advisors" },
-                ].map((row) => (
-                  <li key={row.label} className="flex items-center justify-between">
-                    <span className="text-brand-white">{row.label}</span>
-                    <span className="text-brand-red font-display font-semibold">
-                      {row.pct}
-                    </span>
+                  "Startup founders",
+                  "Engineers and product people",
+                  "Investors and angels",
+                  "Operators and advisors",
+                ].map((label) => (
+                  <li key={label} className="text-brand-white">
+                    {label}
                   </li>
                 ))}
               </ul>
@@ -401,12 +397,9 @@ export default function SponsorsPage() {
                 What they do
               </p>
               <ul className="space-y-3 text-sm text-brand-grey">
-                <li>Pre-seed → Series B founders</li>
+                <li>Founders from first product to scaling</li>
                 <li>SaaS, AI, fintech, e-commerce, dev tools</li>
-                <li>$50k–$5M+ MRR brackets</li>
-                <li>Building for SEA + global markets</li>
-                {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
-                <li>Based across {STATS.countries}+ countries</li>
+                <li>Building for SEA and global markets</li>
               </ul>
             </div>
           </div>
@@ -421,7 +414,7 @@ export default function SponsorsPage() {
               The channels you reach
             </h2>
             <p className="text-brand-grey max-w-xl mx-auto">
-              Six surfaces where your brand can integrate naturally — not as a banner.
+              Six surfaces where your brand can integrate naturally, not as a banner.
             </p>
           </FadeIn>
 
@@ -457,8 +450,8 @@ export default function SponsorsPage() {
               Why sponsor BSTC
             </h2>
             <p className="text-brand-grey max-w-xl mx-auto mb-12">
-              We&apos;re not a conference. We&apos;re a recurring weekly community —
-              52 chances to engage instead of one.
+              We&apos;re not a conference. We&apos;re a recurring weekly community,
+              with dozens of chances a year to engage instead of one.
             </p>
           </FadeIn>
           <FadeInStagger className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto text-left">
@@ -590,14 +583,14 @@ export default function SponsorsPage() {
               <p className="text-brand-grey mb-6 leading-relaxed">
                 Be the presenting sponsor of BSTC&apos;s most content-rich event
                 format. Every session generates video clips, podcast episodes,
-                blog posts, and social content — all co-branded with your logo.
+                blog posts and social content, all co-branded with your logo.
               </p>
               <ul className="space-y-2 mb-6">
                 {[
                   'Presenting sponsor: "How I Build with AI, presented by [You]"',
-                  "Logo on all content — videos, podcast, blog, social",
+                  "Logo on all content: videos, podcast, blog, social",
                   "Product featured in builds (when authentic and relevant)",
-                  "One season = 6–12 sessions of branded content",
+                  "One season = 6-12 sessions of branded content",
                 ].map((item) => (
                   <li
                     key={item}

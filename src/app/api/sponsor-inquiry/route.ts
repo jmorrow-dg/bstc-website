@@ -30,14 +30,19 @@ type SponsorPayload = z.infer<typeof sponsorSchema>;
 //   Message (long text)
 //   Submitted At (date or created time)
 //
-// If env vars are missing, the route returns success and logs the payload —
-// useful for local dev and the period before the Airtable base is created.
+// If env vars are missing, the route returns success and logs the payload in
+// local dev and previews. In production it throws instead, so the form shows the
+// "please email us" error rather than telling a sponsor their inquiry arrived
+// when it went nowhere.
 async function pushToAirtable(data: SponsorPayload) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID;
   const tableName = process.env.AIRTABLE_TABLE_NAME;
 
   if (!apiKey || !baseId || !tableName) {
+    if (process.env.VERCEL_ENV === "production") {
+      throw new Error("Airtable env vars not set in production");
+    }
     console.warn(
       "[sponsor-inquiry] Airtable env vars not set — skipping write. Payload:",
       data,

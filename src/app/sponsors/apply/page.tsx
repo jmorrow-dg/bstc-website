@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Send } from "lucide-react";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { SPONSOR_CONFIG } from "@/lib/constants";
 
 function SponsorApplyForm() {
   // Read ?tier= after mount rather than with useSearchParams, which would make
@@ -40,7 +40,7 @@ function SponsorApplyForm() {
       if (!res.ok) throw new Error("Submission failed");
       setSubmitted(true);
     } catch {
-      setError(`Something went wrong. Please email ${CONTACT_EMAIL}.`);
+      setError(`Something went wrong. Please email ${SPONSOR_CONFIG.contactEmail}.`);
       setLoading(false);
     }
   }
