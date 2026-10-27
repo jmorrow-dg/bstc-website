@@ -131,6 +131,8 @@ A simple first-month playbook:
 4. **Test, then commit.** Try a couple of neighbourhoods and coworking spaces on short passes before locking in.
 5. **Get your visa and insurance right** before you overstay or get caught underinsured.
 
+For the dated, step-by-step version (arrival card, tourist levy, SIM and phone registration, money, getting around and where to meet people), use the [first-week checklist for new arrivals](/blog/new-to-bali-first-week-checklist).
+
 ## Build your Bali life with people who've done it
 
 Everything above is the short version of conversations that happen every day inside our community. If you're moving to Bali - or already here - the single highest-leverage thing you can do is meet the people already building the life you want.

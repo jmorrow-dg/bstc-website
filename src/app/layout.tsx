@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import JoinSrcCarry from "@/components/layout/JoinSrcCarry";
 import PageTransition from "@/components/layout/PageTransition";
 import MotionProvider from "@/components/layout/MotionProvider";
 import ReadingProgress from "@/components/ui/ReadingProgress";
@@ -110,6 +111,7 @@ export default function RootLayout({
           <ScrollToTop />
           <WhatsAppCTA />
           <Footer />
+          <JoinSrcCarry />
         </MotionProvider>
         <Analytics />
         <SpeedInsights />
