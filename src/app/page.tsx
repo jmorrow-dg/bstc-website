@@ -77,7 +77,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "How do I join BSTC?",
     answer:
-      "Three steps. (1) Join the WhatsApp community to get event announcements. (2) RSVP to your first Networking Night on MeetUp. (3) Show up, introduce yourself, and add value. There is no application process and no membership fee.",
+      "Three steps. (1) Sign up at balistartupandtech.com/join and you get the Telegram member chat straight after, where events are announced. (2) RSVP to your first Networking Night on MeetUp. (3) Show up, introduce yourself, and add value. There is no application process and no membership fee.",
   },
 ];
 

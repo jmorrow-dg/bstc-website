@@ -41,7 +41,7 @@ const FAQ_SECTIONS: FAQSection[] = [
         // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
         question: "Is BSTC only for people in Bali?",
         answer:
-          "Our events are in Bali (Canggu, Ubud, Sanur, Uluwatu), but our WhatsApp community includes members from across Southeast Asia and globally. If you're visiting Bali, you're welcome at any event.",
+          "Our events are in Bali (Canggu, Ubud, Sanur, Uluwatu), but our Telegram member chat includes members from across Southeast Asia and globally. If you're visiting Bali, you're welcome at any event.",
       },
       {
         question: "What does 'Signal > Noise' mean?",
@@ -62,12 +62,12 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "How do I join BSTC?",
         answer:
-          "Three steps: (1) Join our WhatsApp community for updates. (2) RSVP on MeetUp for the next event. (3) Show up. There's no application form and no membership fee for joining the community.",
+          "Three steps: (1) Sign up at balistartupandtech.com/join and you get the Telegram member chat straight after. (2) RSVP on MeetUp for the next event. (3) Show up. There's no application form and no membership fee for joining the community.",
       },
       {
         question: "Is BSTC free to join?",
         answer:
-          "Yes. Joining the community (WhatsApp + MeetUp) is free. Most events are free, including our flagship Networking Night. Some premium events like Founder Roundtables and workshops may have a ticket price.",
+          "Yes. Joining the community (/join, the Telegram member chat and MeetUp) is free. Most events are free, including our flagship Networking Night. Some premium events like Founder Roundtables and workshops may have a ticket price.",
       },
       {
         question: "Do I need to be a founder to join?",
@@ -170,7 +170,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Does BSTC have a podcast?",
         answer:
-          "The BSTC podcast is launching soon. It will feature builder interviews, AI Intel Drops (weekly AI news breakdown), and live audio from 'How I Build with AI' sessions. Subscribe to our WhatsApp community to be notified when the first episode drops.",
+          "The BSTC podcast is launching soon. It will feature builder interviews, AI Intel Drops (weekly AI news breakdown), and live audio from 'How I Build with AI' sessions. Sign up at balistartupandtech.com/join to be notified when the first episode drops.",
       },
       {
         question: "How can I be a guest on the BSTC podcast?",
