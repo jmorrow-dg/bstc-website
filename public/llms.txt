@@ -75,4 +75,4 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 - Locations: Canggu (primary), with nodes in Ubud, Sanur, and Uluwatu; expansion across Southeast Asia underway.
 - Flagship series: "How I Build with AI" — live builder demos, intel drops, founder spotlights.
 - Co-founders: Lachlan McRitchie (Primary Organiser), Josh Morrow (Growth Lead, also runs David & Goliath), Matthew Carr (Community Lead).
-- Contact: hello@bstc.community.
+- Contact: hello@remotebuilders.io.

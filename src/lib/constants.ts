@@ -1,8 +1,8 @@
 // Single source for the public contact address (site copy, schema, forms).
-// TODO(josh): hello@bstc.community is UNDELIVERABLE as of 25 Oct 2026:
-// bstc.community returns no MX/A/NS records. Replace with a working,
-// BSTC-owned inbox, then update public/llms.txt to match.
-export const CONTACT_EMAIL = "hello@bstc.community";
+// hello@bstc.community bounced (no MX/A/NS records, checked 25 Oct 2026), so the
+// site (and SPONSOR_CONFIG.contactEmail) uses the Remote Builders inbox.
+// Keep public/llms.txt in step when this changes.
+export const CONTACT_EMAIL = "hello@remotebuilders.io";
 
 // Organiser of record for events, used in Event schema `organizer`.
 // Events now run with a local Indonesian host partner as the organiser of
@@ -102,9 +102,8 @@ export const SPONSOR_CONFIG = {
   // Anthropic pending global-partnership-program approval — do not add until approved.
   partners: [] as { name: string; url?: string; logoSrc?: string }[],
 
-  // Sponsor contact shown on /sponsors and /sponsors/apply. hello@bstc.community has no
-  // mail records (checked 25 Oct 2026), so sponsors who email it bounce.
-  contactEmail: "hello@remotebuilders.io",
+  // Sponsor contact shown on /sponsors and /sponsors/apply.
+  contactEmail: CONTACT_EMAIL,
 
   // Shown before every price. Confirm the currency before merging.
   currency: "US$",
