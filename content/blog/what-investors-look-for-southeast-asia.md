@@ -16,7 +16,7 @@ tags:
   - angel investors
 seo:
   title: "What Investors Look for in SE Asian Startups: VC Insights | BSTC"
-  description: "What VCs and angel investors look for in Southeast Asian startups. Insights from investor conversations at BSTC events in Bali. What makes them invest vs pass."
+  description: "What VCs and angel investors look for in Southeast Asian startups. Insights from investor conversations at Bali's largest tech community. What makes them invest vs pass."
   keywords:
     - VC Southeast Asia
     - raising capital SE Asia

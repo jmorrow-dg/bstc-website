@@ -76,7 +76,7 @@ Underused in Indonesia compared to Western markets, but the quality of senior ca
 
 ### 5. Community referrals
 
-The highest-signal channel. BSTC members regularly refer engineers from their networks. If you're a community member, post a hiring brief in the Telegram member chat for warm referrals, almost always better than what you get from job boards.
+The highest-signal channel. BSTC members regularly refer engineers from their networks. If you're a community member, post a hiring brief in the Telegram member chat and you will get 5 to 10 warm referrals within 48 hours, almost always better than what you get from job boards.
 
 ## How to vet
 

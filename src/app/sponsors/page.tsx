@@ -15,7 +15,7 @@ import { STATS, SPONSOR_CONFIG } from "@/lib/constants";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Sponsor BSTC: Reach Bali's Founder and AI-Builder Community",
+  title: "Sponsor BSTC: Reach Southeast Asia's Top Founder Community",
   description:
     "Weekly How I AI nights, monthly networking dinners and 2,700+ Meetup members in Bali. Event, quarterly and annual sponsor packages from US$2,000.",
   alternates: { canonical: "/sponsors" },
@@ -214,9 +214,9 @@ export default function SponsorsPage() {
               Partnerships
             </p>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 leading-[1.05]">
-              Reach Bali&apos;s
+              Reach Southeast Asia&apos;s
               <br />
-              <span className="text-brand-red">Founder and AI-Builder Community.</span>
+              <span className="text-brand-red">Highest-Signal Founder Community.</span>
             </h1>
             <p className="text-lg text-brand-grey leading-relaxed mb-8">
               How I AI every Wednesday and a monthly networking dinner.{" "}
@@ -249,6 +249,8 @@ export default function SponsorsPage() {
               </span>
               <span>·</span>
               <span>80+ RSVPs per networking dinner</span>
+              <span>·</span>
+              <span>{STATS.countries}+ countries represented</span>
             </div>
           </FadeIn>
         </div>

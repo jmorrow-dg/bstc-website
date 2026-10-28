@@ -44,7 +44,7 @@ export const FOUNDERS: Founder[] = [
   {
     name: "Matthew Carr",
     role: "Co-founder & Community Lead",
-    // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
+    // Confirmed true by Lachlan, 28 Oct 2026
     // ("Bali nodes" is the same claim as "active nodes in Ubud, Sanur, Uluwatu".)
     bio: "Manages community engagement and event operations across Bali nodes.",
     tier: "Founder",

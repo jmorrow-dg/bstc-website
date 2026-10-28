@@ -177,8 +177,8 @@ export default function PodcastPage() {
               <ul className="space-y-3">
                 {[
                   "Startup founders (pre-seed to Series C)",
-                  // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
-                  "Engineers & developers",
+                  // Confirmed true by Lachlan, 28 Oct 2026
+                  "Engineers & developers (including ex-FAANG)",
                   "Investors (VCs, angels, family offices)",
                   "Operators & executives (C-suite, VP-level)",
                   "Based in or connected to Southeast Asia",

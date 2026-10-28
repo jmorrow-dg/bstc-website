@@ -18,11 +18,11 @@ export const EVENT_ORGANIZER: { name: string; url?: string } = {
 export const SITE = {
   name: "BSTC",
   fullName: "Bali Startup & Tech Community",
-  // No "largest", member mix or country claims without a dated source (Lachlan, 27 Oct 2026).
-  tagline: "Where Founders in Bali Meet",
+  // Confirmed true by Lachlan, 28 Oct 2026
+  tagline: "Southeast Asia's Largest Tech Community",
   description:
-    // Meetup showed 2,735 members on 27 Oct 2026; formats as on /sponsors.
-    "Founder-led tech community in Bali with 2,700+ Meetup members. Weekly How I AI nights and monthly founder dinners for founders, engineers and investors.",
+    // Confirmed true by Lachlan, 28 Oct 2026
+    "Southeast Asia's largest founder-led tech community. Built in Bali with 2,700+ members from 100+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.",
   // The host Vercel serves: the bare domain redirects to www, so canonicals,
   // the sitemap and schema use www. If the bare domain is ever made primary in
   // Vercel, change this back in the same release.
@@ -55,6 +55,8 @@ export const STATS = {
   // Meetup group page, read 26 Oct 2026: 4.7 from 155 ratings, 2,734 members.
   rating: 4.7,
   ratingCount: 155,
+  // Confirmed true by Lachlan, 28 Oct 2026
+  countries: 100,
 };
 
 export const NAV_LINKS = [

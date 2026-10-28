@@ -16,7 +16,7 @@ seo:
 
 # How to Find a Technical Co-founder in Bali
 
-The good news: Bali has a deep pool of senior engineers and technical founders. On any given Tuesday in Canggu, there are dozens of people who could build your product sitting in coworking spaces within a 2km radius.
+The good news: Bali has one of the highest concentrations of senior engineers, ex-FAANG builders, and technical founders of any city in Southeast Asia. On any given Tuesday in Canggu, there are dozens of people who could build your product sitting in coworking spaces within a 2km radius.
 
 The bad news: they are all building their own things. And the pitch they hear most often, "I have an idea, I just need a developer," is the one they've learned to walk away from fastest.
 
@@ -47,7 +47,7 @@ The key word is consistently. Dropping in for one day and scanning the room for 
 
 ### 3. Niche online groups
 
-BSTC has 2,700+ members on Meetup (27 Oct 2026) and a Telegram member chat. There are also smaller, higher-signal groups on Telegram and Discord focused on specific stacks (AI/ML, Web3, SaaS infra). These groups are where engineers share what they are working on and occasionally signal openness to new projects.
+BSTC has 2,700+ members and a Telegram member chat. There are also smaller, higher-signal groups on Telegram and Discord focused on specific stacks (AI/ML, Web3, SaaS infra). These groups are where engineers share what they are working on and occasionally signal openness to new projects.
 
 **How to find them:** Ask at BSTC events. The people who know about these groups are the people who attend in person.
 

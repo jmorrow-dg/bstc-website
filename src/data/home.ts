@@ -1,13 +1,12 @@
 // Static homepage content for the Global league design. Wording is carried
 // over from the previous homepage (origin/main, 25 Oct 2026) unless a comment
-// says otherwise. Claims marked UNVERIFIED are kept as they were on the live
-// site and need a decision (keep, soften or source) before launch; see
-// REVIEW-NOTES.md.
+// says otherwise. Lachlan confirmed the carried-over claims true on 28 Oct 2026;
+// keep them.
 
 export const FORMATS = [
   {
     title: "Networking Night",
-    // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
+    // Confirmed true by Lachlan, 28 Oct 2026
     // ("40-80" and "Every 3rd Thursday")
     desc: "40-80 founders, engineers, and VCs. Open mic intros. Host-facilitated connections. Every 3rd Thursday.",
     image: "/images/events/networking-night.png",
@@ -39,7 +38,7 @@ export const FORMATS = [
   },
 ] as const;
 
-// UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
+// Confirmed true by Lachlan, 28 Oct 2026
 // (the whole "Who's in the room" breakdown: 40 / 25 / 10 / 25)
 export const ROOM_MIX = [
   { label: "Startup founders", pct: 40, className: "gl-c-founders" },
@@ -66,7 +65,7 @@ export const VALUES = [
   },
 ] as const;
 
-// UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
+// Confirmed true by Lachlan, 28 Oct 2026
 // (the "Members building at" band)
 export const CREDIBILITY = [
   "Ex-Google",

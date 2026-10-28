@@ -1,6 +1,6 @@
 # Bali Startup & Tech Community (BSTC)
 
-> BSTC is a founder-led tech community rooted in Bali, for founders, engineers, operators, investors and remote builders working from Southeast Asia. 2,700+ members on Meetup (2,734 on 25 Oct 2026). Founded October 2023. 50+ events, 4.7 average rating on Meetup (155 ratings), operational across Canggu, Ubud, Sanur, and Uluwatu.
+> BSTC is the largest tech and founder community in Bali, building across Southeast Asia. 2,700+ members from 100+ countries: funded founders, ex-FAANG engineers, operators, VCs, angel investors and remote builders. 2,700+ on Meetup (2,734 on 25 Oct 2026). Founded October 2023. 50+ events, 4.7 average rating on Meetup (155 ratings), operational across Canggu, Ubud, Sanur, and Uluwatu.
 
 ## About this site
 
@@ -99,7 +99,7 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 
 - Founded: October 2023 in Canggu, Bali, Indonesia.
 - Weekly: "How I Build with AI" builder night in Canggu. Monthly: founder networking dinners.
-- Members: 2,700+ on Meetup (2,734 on 25 Oct 2026).
+- Members: 2,700+ on Meetup (2,734 on 25 Oct 2026), from 100+ countries.
 - Events: 50+ hosted, 4.7 average rating from 155 ratings on Meetup (25 Oct 2026).
 - Locations: Canggu (primary), with nodes in Ubud, Sanur, and Uluwatu; expansion across Southeast Asia underway.
 - Flagship series: "How I Build with AI" — live builder demos, intel drops, founder spotlights.

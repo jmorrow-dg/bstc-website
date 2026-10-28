@@ -41,7 +41,7 @@ We've spent serious time in all three (BSTC members are global, and many of us h
 
 ### What Bali does better than anywhere else
 
-**Founder density.** This is the thing nobody believes until they get here. On any given Tuesday in Canggu, you can walk into Tropical Nomad and meet four founders, two senior engineers, and a senior product person. The BSTC monthly Networking Night routinely brings 60 to 80 operators into one room. Few cities of any size can match this.
+**Founder density.** This is the thing nobody believes until they get here. On any given Tuesday in Canggu, you can walk into Tropical Nomad and meet four funded founders, two ex-FAANG engineers, and a senior product person from a unicorn. The BSTC monthly Networking Night routinely brings 60 to 80 operators into one room. Few cities of any size can match this.
 
 **Lifestyle leverage.** $3,500/month buys you a private villa with a pool, a scooter, daily massages, gym membership, and food that ranks among the best in the world. The cost-to-quality ratio is unbeatable.
 
