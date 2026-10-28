@@ -86,8 +86,8 @@ const CHANNELS = [
   {
     icon: Users,
     title: "Live Events",
-    metric: "Weekly + monthly",
-    body: "How I AI every Wednesday, plus a monthly networking dinner. The last two dinners had 81 and 82 RSVPs on Meetup.",
+    metric: "2× weekly",
+    body: "100+ founders, operators, and VCs in the room every week: Networking Nights and \"How I AI\" sessions.",
   },
   {
     icon: MessageCircle,
@@ -248,7 +248,7 @@ export default function SponsorsPage() {
                 <span>{STATS.rating}/5 from {STATS.ratingCount} Meetup ratings</span>
               </span>
               <span>·</span>
-              <span>80+ RSVPs per networking dinner</span>
+              <span>100+ attendees / week</span>
               <span>·</span>
               <span>{STATS.countries}+ countries represented</span>
             </div>
@@ -263,7 +263,7 @@ export default function SponsorsPage() {
             {[
               { num: `${STATS.members.toLocaleString()}+`, label: "Meetup Members" },
               { num: "1,200+", label: "WhatsApp Members" },
-              { num: "80+", label: "RSVPs per Dinner" },
+              { num: "100+", label: "Per-Week Attendance" },
               { num: `${STATS.rating}★`, label: `from ${STATS.ratingCount} Meetup Ratings` },
             ].map((s) => (
               <FadeInItem key={s.label}>

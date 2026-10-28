@@ -10,7 +10,7 @@ seo:
   description: "An honest directory of Bali's startup and tech communities: BSTC, GDG Bali, Ubud Tech Meetup, AI Tinkerers Canggu, Build Club, Startup Grind, Founder Institute and more. Each with its last dated event, checked 25 Oct 2026."
 faq:
   - question: "What is the biggest startup community in Bali?"
-    answer: "By listed members, GDG Bali's chapter page shows 2,869 and BSTC's Meetup group shows 2,700+ (both checked 25 Oct 2026). Membership isn't the same as activity, so check which groups have a dated event coming up. On 25 October 2026, BSTC was the only group in this list with upcoming in-person Bali events listed."
+    answer: "BSTC has the biggest reach: 2,700+ members on Meetup (2,735 on 27 Oct 2026) plus 1,200+ in its WhatsApp community, 3,900+ across the two. GDG Bali's chapter page lists 2,869 members (checked 25 Oct 2026). Membership isn't the same as activity, so check which groups have a dated event coming up. On 25 October 2026, BSTC was the only group in this list with upcoming in-person Bali events listed."
   - question: "Are there AI meetups in Bali?"
     answer: "Yes. BSTC's How I AI runs weekly in Canggu (Season 2 is Wednesdays, 4 November to 9 December 2026), and GDG Bali runs AI-focused developer events in Denpasar. AI Tinkerers Canggu and Build Club Bali exist but had no dated upcoming events when we checked."
   - question: "Is Startup Grind still active in Bali?"
@@ -52,7 +52,7 @@ All rows last checked 25 Oct 2026. Details and sources below.
 - **Who goes:** founders, engineers, operators and people building with AI. Hosted by Josh Morrow and Lachlan McRitchie.
 - **Where:** Canggu. The weekly How I AI series runs at Seoul Soul Project and the networking dinners at Yema Kitchen ([Meetup group](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026).
 - **How often:** How I AI runs weekly in seasons. Season 2 runs every Wednesday from 4 November to 9 December 2026, 6 to 9pm, free ([event page](/events/how-i-ai-season-2-edition-18)). The networking drinks and dinner runs roughly monthly; #39 is on Thursday 12 November 2026 at 6:30pm ([event page](/events/networking-drinks-dinner-canggu-39)).
-- **Size:** 2,700+ members on Meetup, rated 4.7 from 155 ratings, 54 past Meetup events ([Meetup group](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026).
+- **Size:** 3,900+ across Meetup and WhatsApp: 2,700+ members on Meetup (2,735 on 27 Oct 2026) and 1,200+ in the WhatsApp community, plus a Telegram member chat. Rated 4.7 from 155 ratings, 54 past Meetup events ([Meetup group](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026).
 - **Most recent dated event:** How I AI Edition 17, Wednesday 29 July (2026) at Seoul Soul Project. Meetup also lists six upcoming events, starting with How I AI Season 2 Edition 18 on 4 November 2026 ([Meetup group](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026).
 - **Join:** [balistartupandtech.com/join](/join?src=blog-tech-communities-in-bali-inline). The Telegram link arrives after you sign up.
 - **Last checked 25 Oct 2026.**
@@ -141,7 +141,7 @@ Then read [how to meet founders and tech people in Bali](/blog/meet-founders-in-
 
 ### What is the biggest startup community in Bali?
 
-By listed members, GDG Bali's chapter page shows 2,869 and BSTC's Meetup group shows 2,700+ (both checked 25 Oct 2026). Membership isn't the same as activity, so check which groups have a dated event coming up. On 25 October 2026, BSTC was the only group in this list with upcoming in-person Bali events listed.
+BSTC has the biggest reach: 2,700+ members on Meetup (2,735 on 27 Oct 2026) plus 1,200+ in its WhatsApp community, 3,900+ across the two. GDG Bali's chapter page lists 2,869 members (checked 25 Oct 2026). Membership isn't the same as activity, so check which groups have a dated event coming up. On 25 October 2026, BSTC was the only group in this list with upcoming in-person Bali events listed.
 
 ### Are there AI meetups in Bali?
 
