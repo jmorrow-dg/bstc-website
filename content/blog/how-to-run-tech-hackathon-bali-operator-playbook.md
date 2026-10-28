@@ -59,7 +59,7 @@ This is the realistic sequence. Compress it at your own risk.
 - Lock the venue (see venue section below)
 - Confirm at least one anchor sponsor verbally
 - Open the participant signup landing page, with capacity cap
-- Publish the date and theme publicly (in BSTC WhatsApp, on socials, in coworking space Slacks)
+- Publish the date and theme publicly (in the BSTC Telegram chat, on socials, in coworking space Slacks)
 
 ### Week 6
 

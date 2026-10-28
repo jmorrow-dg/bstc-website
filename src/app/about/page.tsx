@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
-    `BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,700+ members from 40+ countries. ${STATS.events}+ events. Signal over noise. Builders first.`,
+    `BSTC is a founder-led tech community in Bali. Founded in 2023. 2,700+ members on Meetup. ${STATS.events}+ events. Signal over noise. Builders first.`,
   keywords: [
     "Bali Startup and Tech Community",
     "BSTC",
@@ -43,9 +43,9 @@ export default function AboutPage() {
               Building Southeast Asia&apos;s #1 Tech Community
             </h1>
             <p className="text-brand-grey text-lg max-w-2xl">
-              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+              {/* UNVERIFIED: "20 founders" carried over from the live site (25 Oct 2026 audit) */}
               It started with 20 founders in a Canggu restaurant. Today, 2,700+
-              builders from 40+ countries. The goal hasn&apos;t changed: the
+              members on Meetup. The goal hasn&apos;t changed: the
               highest-signal tech community in Southeast Asia.
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
               <span className="text-brand-white font-medium">
                 {STATS.members.toLocaleString()}+ members
               </span>{" "}
-              across MeetUp and WhatsApp,{" "}
+              on Meetup,{" "}
               <span className="text-brand-white font-medium">
                 {STATS.events}+ events
               </span>{" "}
@@ -92,20 +92,16 @@ export default function AboutPage() {
               series.
             </p>
             <p>
-              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
-              Our audience includes ex-FAANG engineers, funded startup founders,
-              VCs, angel investors, and senior operators from{" "}
-              <span className="text-brand-white font-medium">
-                {STATS.countries}+ countries
-              </span>
-              . The community is international, professional, and builder-first.
+              Our audience includes engineers, startup founders, VCs, angel
+              investors, and senior operators from around the world. The
+              community is international, professional, and builder-first.
             </p>
             <p>
               {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
               We&apos;re based in Canggu, Bali with active nodes in Ubud,
-              Sanur, and Uluwatu. We are the largest founder-led tech community
-              in Southeast Asia, and every event we run is built to keep it
-              that way.
+              Sanur, and Uluwatu. We&apos;re building the highest-signal founder
+              community in Southeast Asia, and every event we run is built for
+              that.
             </p>
             <p className="text-brand-white font-medium text-lg">
               Signal over noise. Builders first. Always.

@@ -199,7 +199,7 @@ Many BSTC members run global businesses through Singapore Pte Ltd or Delaware st
 ## What to do next
 
 1. **Clarify your answer to "why PT PMA?"** If the answer is vague, talk to an advisor before committing. An offshore structure plus a long-stay visa may serve you better.
-2. **Get 3 quotes** from reputable setup agents. The [BSTC community WhatsApp](/community) has vetted referrals.
+2. **Get 3 quotes** from reputable setup agents. Ask in the [BSTC member chat](/community) for referrals.
 3. **Budget realistically:** $5K to $10K for year one including setup, compliance, and accountant. Plan for 2 to 3 months before you're fully operational.
 4. **Read the companion guides:** the [Indonesia startup visa setup](/blog/indonesia-startup-visa-guide) and the [Bali founder tax guide](/blog/bali-founder-tax-guide-2026) complete the picture.
 5. **Talk to 3 founders who have done it** before you sign anything. BSTC members who run PT PMAs are generally happy to share what they wish they'd known.

@@ -183,7 +183,7 @@ Based on hundreds of conversations with founders at BSTC events:
 
 1. **Start with a visit visa.** Don't over-commit before you know Bali is right for you. A C1 or C2 gives you up to 180 days with extensions to test the ecosystem, as long as no money comes from anyone in Indonesia.
 
-2. **Use a reputable visa agent.** Don't DIY your visa. A good agent costs $100-200 extra and saves you hours of confusion. Ask in the BSTC WhatsApp group for recommendations.
+2. **Use a reputable visa agent.** Don't DIY your visa. A good agent costs $100-200 extra and saves you hours of confusion. Ask in the BSTC Telegram member chat for recommendations.
 
 3. **Don't set up a PT PMA until you need to.** Many founders operate with an offshore entity for 1-2 years before incorporating locally. Only set up a PT PMA when you have a specific Indonesian business need.
 
@@ -191,7 +191,7 @@ Based on hundreds of conversations with founders at BSTC events:
 
 5. **Budget for professional advice.** Spend $500-1,000 upfront on a good immigration lawyer and tax advisor. It prevents $10,000+ problems later.
 
-6. **Join the community.** The fastest way to navigate Indonesia's legal landscape is to learn from founders who've already done it. BSTC's WhatsApp group regularly shares updated visa information, agent recommendations, and legal advisor referrals.
+6. **Join the community.** The fastest way to navigate Indonesia's legal landscape is to learn from founders who've already done it. The BSTC member chat on Telegram is where members share updated visa information, agent recommendations, and legal advisor referrals.
 
 ## Frequently asked questions
 

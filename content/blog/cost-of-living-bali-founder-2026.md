@@ -203,7 +203,7 @@ A few rules of thumb from BSTC members:
 
 The fastest way to get unfiltered, current numbers is to talk to founders who are already here. The BSTC community is full of operators willing to share exactly what they spend and where they spend it.
 
-- Join the [BSTC community](/community) and ask in WhatsApp
+- Join the [BSTC community](/community) and ask in the Telegram member chat
 - Come to the next [Networking Night](/events) and meet 60+ founders in person
 - Read our companion guides on [why founders are choosing Bali](/blog/why-bali-for-startups) and the [Indonesia startup visa setup](/blog/indonesia-startup-visa-guide)
 

@@ -15,7 +15,7 @@ tags:
   - founder lifestyle
 seo:
   title: "Canggu for Founders: Coworking, Cafes & Tech Scene Guide 2026 | BSTC"
-  description: "The insider guide to Canggu for tech founders. Best coworking spaces, cafes with good WiFi, event venues, and where to live. From Bali's largest tech community."
+  description: "The insider guide to Canggu for tech founders. Best coworking spaces, cafes with good WiFi, event venues, and where to live. From the BSTC founder community."
   keywords:
     - Canggu coworking
     - Canggu for founders
@@ -89,7 +89,7 @@ This is what makes Canggu different from other digital nomad destinations. The t
 - **BSTC events** (monthly networking, How I AI, hackathons) are the anchor
 - **Informal founder dinners** happen weekly at various restaurants
 - **Co-working space events** add another layer of connection
-- **WhatsApp groups** keep the community connected between events
+- **Telegram and WhatsApp groups** keep the community connected between events
 
 The concentration of founders per square kilometre is what makes it work. In a city like London or SF, you might go weeks without bumping into another founder. In Canggu, you'll see them at every cafe, every co-working space, and every event.
 
@@ -97,7 +97,7 @@ The concentration of founders per square kilometre is what makes it work. In a c
 
 1. **Get a local SIM immediately.** Telkomsel has the best coverage. Data is cheap.
 2. **Set up a local bank account** if staying long-term. BCA or Mandiri for daily expenses. Both banks ask foreigners for a KITAS or KITAP, so on a visit visa use a multi-currency card instead (see [money and banking in Bali](/blog/banking-in-bali-for-foreigners), checked 26 October 2026).
-3. **Join BSTC's WhatsApp** on day one. It's how the community communicates.
+3. **Join BSTC** on day one at [/join](/join?src=blog-canggu-founders-neighbourhood-guide-inline). The Telegram member chat is how the community communicates.
 4. **Explore beyond Canggu.** Ubud (1 hour north) is quieter and cheaper. Sanur (45 min east) has a different vibe. Both have small tech communities.
 5. **Rainy season (Nov-Mar)** brings afternoon downpours but mornings are usually clear. Dry season (Apr-Oct) is the best weather.
 

@@ -44,20 +44,20 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 // UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
-// (answers 1, 3, 4 and 5: "Southeast Asia's largest", "2,500+ funded founders",
-// "ex-FAANG", "40+ countries", "40 to 80", "active nodes in Ubud, Sanur, and
-// Uluwatu", "every third Thursday"). Rendered visibly below and as FAQPage
+// (answers 3, 4 and 5: "40 to 80", "active nodes in Ubud, Sanur, and Uluwatu",
+// "every third Thursday"). "Largest", member mix and country claims were replaced
+// with the dated Meetup count on 27 Oct 2026. Rendered visibly below and as FAQPage
 // schema, both from this one list, so they always match.
 const HOMEPAGE_FAQS = [
   {
     question: "What is BSTC?",
     answer:
-      "BSTC (Bali Startup & Tech Community) is Southeast Asia's largest founder-led tech community. Founded in October 2023, it connects 2,500+ funded founders, ex-FAANG engineers, VCs, and operators from 40+ countries through high-signal events across Bali and Southeast Asia.",
+      "BSTC (Bali Startup & Tech Community) is a founder-led tech community in Bali. Founded in October 2023, it has 2,700+ members on Meetup (27 Oct 2026) and connects founders, engineers, VCs, and operators through high-signal events across Bali and Southeast Asia.",
   },
   {
     question: "Is BSTC free to join?",
     answer:
-      "Yes. Joining BSTC is free. You can join the WhatsApp community and RSVP to most networking events at no cost. Some specialised formats like hackathons, founder roundtables, and ticketed editions of How I Build with AI may have a ticket fee to cover venue and operations.",
+      "Yes. Joining BSTC is free. Sign up at balistartupandtech.com/join, get the Telegram community link straight after, and RSVP to most networking events at no cost. Some specialised formats like hackathons, founder roundtables, and ticketed editions of How I Build with AI may have a ticket fee to cover venue and operations.",
   },
   {
     question: "Who should join BSTC?",
@@ -67,7 +67,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "Where does BSTC operate?",
     answer:
-      "BSTC is headquartered in Canggu, Bali with active nodes in Ubud, Sanur, and Uluwatu. We are the largest founder-led tech community in Southeast Asia and expanding across the region. Members attend from 40+ countries and from across Southeast Asia.",
+      "BSTC is headquartered in Canggu, Bali with active nodes in Ubud, Sanur, and Uluwatu. We're expanding across the region, and members come from across Southeast Asia and beyond.",
   },
   {
     question: "What events does BSTC run?",
@@ -263,9 +263,8 @@ export default async function Home() {
               <dd className="gl-red">{STATS.rating}</dd>
             </div>
             <div>
-              {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
-              <dt>countries represented</dt>
-              <dd>{STATS.countries}+</dd>
+              <dt>founder guides on this site, each dated</dt>
+              <dd>{allPosts.length}</dd>
             </div>
           </dl>
           <p className="gl-score-note">

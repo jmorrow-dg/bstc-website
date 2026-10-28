@@ -116,7 +116,7 @@ Here's what makes Southeast Asia especially compelling for AI founders:
 
 **Market proximity.** You're building in the world's fastest-growing digital economy. Your test market has 700 million people.
 
-**Community.** The founder ecosystem in cities like Bali, Singapore, and Ho Chi Minh City is tight-knit and collaborative. At BSTC alone, 2,500+ founders and builders share insights, make introductions, and collaborate regularly.
+**Community.** The founder ecosystem in cities like Bali, Singapore, and Ho Chi Minh City is tight-knit and collaborative. At BSTC alone, 2,700+ members share insights, make introductions, and collaborate regularly.
 
 ## The Challenges (Being Honest)
 
@@ -136,4 +136,4 @@ And many of them are doing it from Bali.
 
 ---
 
-*BSTC connects 2,500+ founders and builders across Southeast Asia. [Join the community](/join?src=blog-state-of-ai-southeast-asia-2026-inline) to be part of the conversation shaping AI in the region.*
+*BSTC connects 2,700+ members across Southeast Asia. [Join the community](/join?src=blog-state-of-ai-southeast-asia-2026-inline) to be part of the conversation shaping AI in the region.*

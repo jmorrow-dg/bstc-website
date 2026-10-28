@@ -73,7 +73,7 @@ export default function Footer() {
             <span className="gl-brand-name">Bali Startup &amp; Tech</span>
           </Link>
           {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
-          <p>The largest founder-led tech community in Bali and Southeast Asia.</p>
+          <p>A founder-led tech community in Bali, for builders across Southeast Asia.</p>
           <NewsletterSignup />
         </div>
         <FooterColumn id="fc-community" title="Community" links={COMMUNITY} />
