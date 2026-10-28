@@ -30,7 +30,7 @@ const FAQ_SECTIONS: FAQSection[] = [
         // Confirmed true by Lachlan, 28 Oct 2026
         question: "What is BSTC?",
         answer:
-          "BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We connect 2,700+ founders, engineers, investors, and operators through high-signal events, a private Telegram member chat, and curated content.",
+          "BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We reach 3,900+ founders, engineers, investors, and operators across Meetup (2,700+) and WhatsApp (1,200+) through high-signal events, a private Telegram member chat, and curated content.",
       },
       {
         question: "Who founded BSTC?",
