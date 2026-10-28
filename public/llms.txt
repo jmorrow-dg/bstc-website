@@ -1,6 +1,6 @@
 # Bali Startup & Tech Community (BSTC)
 
-> BSTC is the largest founder-led tech community building across Southeast Asia, rooted in Bali. 2,700+ members from 40+ countries: funded founders, ex-FAANG engineers, operators, VCs, and angel investors. Founded October 2023. 50+ events, 4.7 average rating on Meetup (155 ratings), operational across Canggu, Ubud, Sanur, and Uluwatu.
+> BSTC is a founder-led tech community rooted in Bali, for founders, engineers, operators, investors and remote builders working from Southeast Asia. 2,700+ members on Meetup (2,734 on 25 Oct 2026). Founded October 2023. 50+ events, 4.7 average rating on Meetup (155 ratings), operational across Canggu, Ubud, Sanur, and Uluwatu.
 
 ## About this site
 
@@ -26,17 +26,33 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 - [Events](https://www.balistartupandtech.com/events): Upcoming events, past events, event formats.
 - [Join](https://www.balistartupandtech.com/join): Join the community. Sign up on this page and the community chat link (Telegram) arrives after signup; events are on Meetup and Luma.
 - [Member perks](https://www.balistartupandtech.com/perks): 66 startup programmes open to apply for now (each checked on the vendor's own page on 25 Oct 2026), plus 62 example member deals BSTC is negotiating, each labelled Example.
-- [Members](https://www.balistartupandtech.com/#members): the co-founders and where each is based. The full member directory is at https://remotebuilders.io/directory/.
+- [Bali members](https://www.balistartupandtech.com/members): members based in Bali, each linking to their profile in the Remote Builders member directory (https://remotebuilders.io/directory/). Refreshed daily.
+- [Community](https://www.balistartupandtech.com/community): values, how membership works, the member directory and FAQs.
+- [FAQ](https://www.balistartupandtech.com/faq): events, membership, sponsorship and Bali's tech scene.
+- [Podcast](https://www.balistartupandtech.com/podcast): founders, engineers and operators building from Bali and Southeast Asia.
+- [Resources](https://www.balistartupandtech.com/resources): the tools and stack BSTC founders use.
+- [Sponsors](https://www.balistartupandtech.com/sponsors): event, quarterly and annual sponsor packages.
 
 ### Founder infrastructure in Bali / Indonesia
 - [Setting Up a PT PMA in Indonesia (2026)](https://www.balistartupandtech.com/blog/pt-pma-indonesia-founder-playbook-2026): Real cost, timeline, KBLI codes, founder traps.
 - [Bali Founder Tax Guide (2026)](https://www.balistartupandtech.com/blog/bali-founder-tax-guide-2026): Residency, structures, compliance.
-- [Indonesia Startup Visa Guide](https://www.balistartupandtech.com/blog/indonesia-startup-visa-guide): KITAS, Golden Visa, B211A.
+- [Indonesia Startup Visa Guide](https://www.balistartupandtech.com/blog/indonesia-startup-visa-guide): KITAS, Golden Visa, C1/C2 visit visas (formerly B211A).
 - [Cost of Living Bali for Founders (2026)](https://www.balistartupandtech.com/blog/cost-of-living-bali-founder-2026): Real founder budgets.
 - [Hiring Developers in Indonesia (2026)](https://www.balistartupandtech.com/blog/hiring-developers-indonesia-founders-guide-2026): Salary ranges, vetting, legal.
 - [Best Coworking Spaces in Bali (2026)](https://www.balistartupandtech.com/blog/best-coworking-spaces-bali-founders-2026): Founder-rated venues.
 - [Best Bali Villas for Founder Retreats (2026)](https://www.balistartupandtech.com/blog/best-bali-villas-founder-retreats-team-offsites-2026): Retreat venue playbook.
 - [Canggu Neighbourhood Guide](https://www.balistartupandtech.com/blog/canggu-founders-neighbourhood-guide): Founder-focused orientation.
+- [Living in Bali (2026)](https://www.balistartupandtech.com/blog/living-in-bali): Costs, pros and cons, neighbourhoods, visas and healthcare.
+- [Why Build Your Startup in Bali](https://www.balistartupandtech.com/blog/why-bali-for-startups): Advantages, trade-offs and who Bali suits.
+
+### New to Bali (checked 25-26 Oct 2026)
+- [First-Week Checklist for Remote Entrepreneurs](https://www.balistartupandtech.com/blog/new-to-bali-first-week-checklist): Visa, All Indonesia arrival card, IDR 150,000 tourist levy, SIM and IMEI, scooter licence, money, coworking.
+- [Bank Account in Bali for Foreigners](https://www.balistartupandtech.com/blog/banking-in-bali-for-foreigners): BCA, Mandiri, CIMB Niaga and Jenius requirements, ATM limits, QRIS, Wise and getting paid from overseas.
+- [Running an Agency from Bali](https://www.balistartupandtech.com/blog/running-an-agency-from-bali): Visa and work rules, entity options, time zone overlap, hiring in Indonesia.
+- [Ecommerce Business from Bali](https://www.balistartupandtech.com/blog/ecommerce-business-from-bali): Shopify Payments and Stripe country rules, exporting without a PT PMA, shipping and duties.
+- [How to Meet Founders in Bali](https://www.balistartupandtech.com/blog/meet-founders-in-bali): A first-week plan built around the weekly How I AI night and monthly founder dinners.
+- [Startup and Tech Communities in Bali](https://www.balistartupandtech.com/blog/tech-communities-in-bali): Every active group, each with its last dated event.
+- [Digital Nomad Community for Builders](https://www.balistartupandtech.com/blog/digital-nomad-community-bali): Where people building businesses meet, with dates.
 
 ### Southeast Asia tech and AI
 - [State of AI in Southeast Asia (2026)](https://www.balistartupandtech.com/blog/state-of-ai-southeast-asia-2026): Market analysis and opportunities.
@@ -45,6 +61,10 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 - [Making Money with AI (2026)](https://www.balistartupandtech.com/blog/making-money-with-ai-2026): Revenue patterns and models.
 - [The Rise of AI Agencies in Bali](https://www.balistartupandtech.com/blog/rise-of-ai-agencies-bali): Service business case studies.
 - [What Investors Look for in Southeast Asian Startups](https://www.balistartupandtech.com/blog/what-investors-look-for-southeast-asia): VC POV.
+- [Bali Angel Investors (2026)](https://www.balistartupandtech.com/blog/bali-angel-investors-2026): Operator angels, Singapore networks, syndicates and cheque sizes.
+- [Singapore VCs (2026)](https://www.balistartupandtech.com/blog/singapore-vcs-guide-southeast-asia-founders-2026): Stage, cheque sizes, thesis and how to get a meeting.
+- [Claude Code Leaves the Pro Plan](https://www.balistartupandtech.com/blog/end-of-subsidised-ai-claude-code-pricing-sea-founders-2026): What it means for SEA founders building on AI APIs.
+- [Founder Spotlight: Building from Bali](https://www.balistartupandtech.com/blog/founder-spotlight-building-from-bali): Three founders on building revenue-generating companies from Bali.
 
 ### Founder hub comparisons (programmatic)
 - [Bali vs Singapore](https://www.balistartupandtech.com/bali-vs/singapore)
@@ -55,6 +75,14 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 - [Bali vs Mexico City](https://www.balistartupandtech.com/bali-vs/mexico-city)
 - [Bali vs Tbilisi](https://www.balistartupandtech.com/bali-vs/tbilisi)
 - [Bali vs Medellin](https://www.balistartupandtech.com/bali-vs/medellin)
+- [Bali vs Bangkok](https://www.balistartupandtech.com/bali-vs/bangkok)
+- [Bali vs Kuala Lumpur](https://www.balistartupandtech.com/bali-vs/kuala-lumpur)
+- [Bali vs Jakarta](https://www.balistartupandtech.com/bali-vs/jakarta)
+- [Bali vs Manila](https://www.balistartupandtech.com/bali-vs/manila)
+- [Bali vs Hanoi](https://www.balistartupandtech.com/bali-vs/hanoi)
+- [Bali vs Da Nang](https://www.balistartupandtech.com/bali-vs/da-nang)
+- [Bali vs Jakarta for Founders (2026)](https://www.balistartupandtech.com/blog/bali-vs-jakarta-for-founders-2026): Cost, VCs, talent and fit by stage.
+- [Bali vs Chiang Mai vs Lisbon (2026)](https://www.balistartupandtech.com/blog/bali-vs-chiang-mai-vs-lisbon-founders-2026): Cost, community density, taxes and time zones.
 
 ### Community operations
 - [How to Run a Tech Hackathon in Bali](https://www.balistartupandtech.com/blog/how-to-run-tech-hackathon-bali-operator-playbook)
@@ -70,7 +98,8 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 ## Key facts, safe to cite
 
 - Founded: October 2023 in Canggu, Bali, Indonesia.
-- Members: 2,700+ on Meetup (2,734 on 25 Oct 2026), from 40+ countries.
+- Weekly: "How I Build with AI" builder night in Canggu. Monthly: founder networking dinners.
+- Members: 2,700+ on Meetup (2,734 on 25 Oct 2026).
 - Events: 50+ hosted, 4.7 average rating from 155 ratings on Meetup (25 Oct 2026).
 - Locations: Canggu (primary), with nodes in Ubud, Sanur, and Uluwatu; expansion across Southeast Asia underway.
 - Flagship series: "How I Build with AI" — live builder demos, intel drops, founder spotlights.
