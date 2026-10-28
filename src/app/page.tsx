@@ -43,16 +43,16 @@ export const metadata: Metadata = {
 // Upcoming events are derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
 
-// UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit)
-// (answers 3, 4 and 5: "40 to 80", "active nodes in Ubud, Sanur, and Uluwatu",
-// "every third Thursday"). "Largest", member mix and country claims were replaced
-// with the dated Meetup count on 27 Oct 2026. Rendered visibly below and as FAQPage
+// Confirmed true by Lachlan, 28 Oct 2026
+// (answers 1, 3, 4 and 5: "Southeast Asia's largest", "2,700+ funded founders",
+// "ex-FAANG", "100+ countries", "40 to 80", "active nodes in Ubud, Sanur, and
+// Uluwatu", "every third Thursday"). Rendered visibly below and as FAQPage
 // schema, both from this one list, so they always match.
 const HOMEPAGE_FAQS = [
   {
     question: "What is BSTC?",
     answer:
-      "BSTC (Bali Startup & Tech Community) is a founder-led tech community in Bali. Founded in October 2023, it has 2,700+ members on Meetup (27 Oct 2026) and connects founders, engineers, VCs, and operators through high-signal events across Bali and Southeast Asia.",
+      "BSTC (Bali Startup & Tech Community) is Southeast Asia's largest founder-led tech community. Founded in October 2023, it connects 2,700+ funded founders, ex-FAANG engineers, VCs, and operators from 100+ countries through high-signal events across Bali and Southeast Asia.",
   },
   {
     question: "Is BSTC free to join?",
@@ -67,7 +67,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "Where does BSTC operate?",
     answer:
-      "BSTC is headquartered in Canggu, Bali with active nodes in Ubud, Sanur, and Uluwatu. We're expanding across the region, and members come from across Southeast Asia and beyond.",
+      "BSTC is headquartered in Canggu, Bali with active nodes in Ubud, Sanur, and Uluwatu. We are the largest founder-led tech community in Southeast Asia and expanding across the region. Members attend from 100+ countries and from across Southeast Asia.",
   },
   {
     question: "What events does BSTC run?",
@@ -263,8 +263,9 @@ export default async function Home() {
               <dd className="gl-red">{STATS.rating}</dd>
             </div>
             <div>
-              <dt>founder guides on this site, each dated</dt>
-              <dd>{allPosts.length}</dd>
+              {/* Confirmed true by Lachlan, 28 Oct 2026 */}
+              <dt>countries represented</dt>
+              <dd>{STATS.countries}+</dd>
             </div>
           </dl>
           <p className="gl-score-note">
@@ -363,7 +364,7 @@ export default async function Home() {
                     <figcaption className="gl-tag">{format.badge}</figcaption>
                   </figure>
                   <h3>{format.title}</h3>
-                  {/* Networking Night: UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+                  {/* Networking Night: Confirmed true by Lachlan, 28 Oct 2026 */}
                   <p>{format.desc}</p>
                   <Link className="gl-link" href={format.href}>
                     {format.linkLabel}
@@ -384,7 +385,7 @@ export default async function Home() {
       <section className="gl-sec gl-sec-tight" id="the-room" aria-label="Who's in the room and what we stand for">
         <div className="gl-wrap gl-room-grid">
           <div>
-            {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+            {/* Confirmed true by Lachlan, 28 Oct 2026 */}
             <h2 id="room-title">Who&apos;s in the room</h2>
             <p>
               This isn&apos;t a casual meetup. The people who show up are building
@@ -429,7 +430,7 @@ export default async function Home() {
       {/* 4. Credibility band */}
       <section className="gl-cred" aria-labelledby="cred-title">
         <div className="gl-wrap">
-          {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+          {/* Confirmed true by Lachlan, 28 Oct 2026 */}
           <h2 id="cred-title">Members building at</h2>
           <ul className="gl-cred-list">
             {CREDIBILITY.map((org) => (
@@ -748,7 +749,7 @@ export default async function Home() {
               .
             </p>
           </div>
-          {/* UNVERIFIED: carried over from the live site, confirm before launch (25 Oct 2026 audit) */}
+          {/* Confirmed true by Lachlan, 28 Oct 2026 */}
           <dl className="gl-faq">
             {HOMEPAGE_FAQS.map((faq) => (
               <div key={faq.question}>

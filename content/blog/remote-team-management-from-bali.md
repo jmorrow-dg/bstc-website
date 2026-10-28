@@ -137,4 +137,4 @@ The founders who make it work share one trait: they think of remote management a
 
 ---
 
-*BSTC connects 2,700+ members, including founders managing remote teams from Bali and across Southeast Asia. [Join the community](/join?src=blog-remote-team-management-from-bali-inline) for events, connections, and shared wisdom from builders who've figured it out.*
+*BSTC connects 2,700+ founders managing remote teams from Bali and across Southeast Asia. [Join the community](/join?src=blog-remote-team-management-from-bali-inline) for events, connections, and shared wisdom from builders who've figured it out.*

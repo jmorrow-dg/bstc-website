@@ -29,7 +29,7 @@ faq:
     answer: "Yes. Most remote workers use a B211A visit visa for shorter stays or Indonesia's Remote Worker Visa (E33G) for longer ones, as long as you earn from a company based outside Indonesia. You only need a KITAS work permit if you're employed by an Indonesian entity such as your own PT PMA."
 seo:
   title: "Living in Bali in 2026: Honest Pros, Cons, Costs & Where to Live"
-  description: "An honest 2026 guide to living in Bali for founders and remote workers - real costs, genuine pros and cons, the best neighbourhoods, visas, healthcare and how to settle in fast. By the BSTC founder community."
+  description: "An honest 2026 guide to living in Bali for founders and remote workers - real costs, genuine pros and cons, the best neighbourhoods, visas, healthcare and how to settle in fast. By Bali's largest tech community."
   keywords:
     - living in bali
     - living in bali pros and cons
@@ -43,7 +43,7 @@ seo:
 
 # Living in Bali in 2026: An Honest Guide
 
-Most articles about living in Bali are written by people passing through for two weeks, or by businesses trying to sell you a villa, a visa, or a retreat. This one is different. It's written by the team behind Bali Startup & Tech - 2,700+ members on Meetup, engineers and operators who actually live and build here - and it's deliberately honest about the trade-offs.
+Most articles about living in Bali are written by people passing through for two weeks, or by businesses trying to sell you a villa, a visa, or a retreat. This one is different. It's written by the team behind Bali's largest tech community - 2,700+ founders, engineers and operators who actually live and build here - and it's deliberately honest about the trade-offs.
 
 If you're a founder, builder or remote worker weighing up **living in Bali**, this is the practical, no-hype version: what it costs, what's genuinely great, what will frustrate you, where to live, and how to settle in without wasting your first three months.
 

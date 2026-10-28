@@ -191,7 +191,7 @@ Based on hundreds of conversations with founders at BSTC events:
 
 5. **Budget for professional advice.** Spend $500-1,000 upfront on a good immigration lawyer and tax advisor. It prevents $10,000+ problems later.
 
-6. **Join the community.** The fastest way to navigate Indonesia's legal landscape is to learn from founders who've already done it. The BSTC member chat on Telegram is where members share updated visa information, agent recommendations, and legal advisor referrals.
+6. **Join the community.** The fastest way to navigate Indonesia's legal landscape is to learn from founders who've already done it. The BSTC member chat on Telegram regularly shares updated visa information, agent recommendations, and legal advisor referrals.
 
 ## Frequently asked questions
 
