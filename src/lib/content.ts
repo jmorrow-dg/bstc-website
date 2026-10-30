@@ -13,6 +13,10 @@ export interface EventFrontmatter {
   slug: string;
   date: string;
   time: string;
+  endTime?: string;
+  venueAddress?: string;
+  series?: string;
+  updated?: string;
   venue: string;
   type: "networking" | "roundtable" | "builder-session" | "how-i-build-with-ai";
   status: "upcoming" | "completed";
@@ -34,7 +38,7 @@ export interface EventFrontmatter {
   };
   // Organiser of record for this event. Falls back to EVENT_ORGANIZER in
   // constants.ts when omitted.
-  organizer?: {
+  organizer?: string | {
     name: string;
     url?: string;
   };

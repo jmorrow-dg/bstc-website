@@ -3,6 +3,9 @@ title: "Bali Startup and Tech Networking Drinks & Dinner - Canggu #39"
 slug: networking-drinks-dinner-canggu-39
 date: "2026-11-12"
 time: "18:30"
+endTime: "20:30"
+venueAddress: "Jl. Tanah Barak No.31, Canggu"
+organizer: "Yema Kitchen"
 venue: Yema Kitchen, Canggu
 type: networking
 status: upcoming

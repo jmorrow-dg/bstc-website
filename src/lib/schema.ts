@@ -100,16 +100,21 @@ export function getEventSchema(event: {
   description: string;
   date: string;
   time: string;
+  endTime?: string;
+  venueAddress?: string;
+  series?: string;
   venue: string;
   url: string;
   image?: string;
   status?: string;
   rsvpUrl?: string;
-  organizer?: { name: string; url?: string };
+  organizer?: string | { name: string; url?: string };
 }, now: Date = new Date()) {
   if (!isValidEventDate(event.date)) return null;
 
-  const organizer = event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
+  const organizer = typeof event.organizer === "string"
+    ? { name: event.organizer }
+    : event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
   const statusMap: Record<string, string> = {
     upcoming: "https://schema.org/EventScheduled",
     completed: "https://schema.org/EventScheduled",
@@ -124,6 +129,14 @@ export function getEventSchema(event: {
     startDate: /^([01]\d|2[0-3]):[0-5]\d$/.test(event.time)
       ? `${event.date}T${event.time}:00+08:00`
       : event.date,
+    ...(event.endTime && /^([01]\d|2[0-3]):[0-5]\d$/.test(event.endTime) && {
+      endDate: `${event.date}T${event.endTime}:00+08:00`,
+    }),
+    isAccessibleForFree: true,
+    contributor: { "@id": `${SITE.url}#organization` },
+    ...(event.series === "how-i-ai-season-2" && {
+      superEvent: { "@id": `${SITE.url}/how-i-build-with-ai#season-2` },
+    }),
     eventStatus: statusMap[event.status || "upcoming"] || statusMap.upcoming,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
@@ -131,6 +144,7 @@ export function getEventSchema(event: {
       name: event.venue,
       address: {
         "@type": "PostalAddress",
+        ...(event.venueAddress && { streetAddress: event.venueAddress }),
         addressLocality: "Canggu",
         addressRegion: "Bali",
         addressCountry: "ID",
@@ -151,7 +165,7 @@ export function getEventSchema(event: {
         "@type": "Offer",
         url: event.rsvpUrl,
         price: "0",
-        priceCurrency: "USD",
+        priceCurrency: "IDR",
         availability: "https://schema.org/InStock",
       },
     }),
