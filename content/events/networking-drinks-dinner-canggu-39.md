@@ -31,6 +31,6 @@ Our 39th Community Networking Dinner/Drinks Event, 6:30 pm on Thursday 12 Novemb
 - 60-second intros max
 - Signal > Noise
 
-Hosted at Yema Kitchen, Canggu · Moderated by Bali Start-Up & Tech Community.
+Locally hosted by Yema Kitchen · Moderated by Bali Startup & Tech Community.
 
 Free entry. [RSVP on Luma](https://luma.com/43kdn9aw?utm_source=website), then [join the BSTC community](https://www.balistartupandtech.com/join?src=event-website) for the community chat and a free member profile.

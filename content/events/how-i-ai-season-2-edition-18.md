@@ -22,7 +22,7 @@ seo:
 
 **How I AI is back.** After 17 editions at Seoul Soul Project, BSTC's weekly builder series returns for a 6-week season, every Wednesday from 4 November to 9 December.
 
-Locally hosted by Seoul Soul Project · Moderated by Bali Start-Up & Tech Community.
+Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community.
 
 Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 

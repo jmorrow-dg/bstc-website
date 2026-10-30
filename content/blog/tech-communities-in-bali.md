@@ -25,7 +25,7 @@ faq:
 
 # Startup and tech communities in Bali (2026)
 
-As of 25 October 2026, three of the Bali tech groups in this directory have a dated in-person event in the last four months: Bali Start-ups and Tech Community (BSTC) in Canggu, GDG Bali in Denpasar and the Ubud Tech Meetup. Several better-known names (Startup Grind Bali, AI Tinkerers Canggu, Build Club Bali, the AI Founders Meetup at BWork) had no recent event we could find on their own pages, so check them before you plan around them.
+As of 25 October 2026, three of the Bali tech groups in this directory have a dated in-person event in the last four months: Bali Startup & Tech Community (BSTC) in Canggu, GDG Bali in Denpasar and the Ubud Tech Meetup. Several better-known names (Startup Grind Bali, AI Tinkerers Canggu, Build Club Bali, the AI Founders Meetup at BWork) had no recent event we could find on their own pages, so check them before you plan around them.
 
 This is a directory, not a ranking. Every group gets the same template: what it's for, who goes, where, how often, the most recent event we could find with a date, and a link to its own page so you can check for yourself. I co-host BSTC, so I've held it to exactly the same template and given it no extra adjectives.
 
@@ -35,7 +35,7 @@ This is a directory, not a ranking. Every group gets the same template: what it'
 
 | Group | Focus | Area | Most recent dated event we found | Upcoming listed |
 |---|---|---|---|---|
-| Bali Start-ups and Tech Community (BSTC) | Founders, builders, AI | Canggu | How I AI Edition 17, Wed 29 July 2026 | Yes, from 4 Nov 2026 |
+| Bali Startup & Tech Community (BSTC) | Founders, builders, AI | Canggu | How I AI Edition 17, Wed 29 July 2026 | Yes, from 4 Nov 2026 |
 | GDG Bali | Developers, Google tech, AI | Denpasar | Monthly meetup, 19 July 2026 | None listed |
 | Ubud Tech Meetup | Tech people in Ubud | Ubud | 30 June 2026 | None listed |
 | Founder Institute (Indonesia / Bali) | Pre-seed accelerator | Online | Online events listed 18 Nov and 2 Dec 2026 | Online only |
@@ -46,7 +46,7 @@ This is a directory, not a ranking. Every group gets the same template: what it'
 
 All rows last checked 25 Oct 2026. Details and sources below.
 
-## Bali Start-ups and Tech Community (BSTC)
+## Bali Startup & Tech Community (BSTC)
 
 - **What it's for:** networking and learning for people building startups, SaaS and AI products in Bali. The Meetup group describes monthly networking lunches and dinners plus access to mentors, investors and startup leaders ([Meetup group](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026).
 - **Who goes:** founders, engineers, operators and people building with AI. Hosted by Josh Morrow and Lachlan McRitchie.
