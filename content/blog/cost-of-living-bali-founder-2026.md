@@ -7,7 +7,7 @@ authorRole: Founder, BSTC
 category: guide
 readTime: "10 min"
 tags: ["bali", "cost of living", "founders", "remote work", "canggu", "ubud", "budget"]
-excerpt: "What does it actually cost to live in Bali in 2026? Three real monthly budgets — lean ($1,800), comfortable ($3,500), and senior operator ($6,500+) — sourced from 30+ builders in the BSTC community. No tourist math."
+excerpt: "What does it actually cost to live in Bali in 2026? Three real monthly budgets: lean ($1,800), comfortable ($3,500), and senior operator ($6,500+): sourced from 30+ builders in the BSTC community. No tourist math."
 faq:
   - question: "How much does it cost to live in Bali per month in 2026?"
     answer: "Most builders and remote workers spend between $1,800 and $6,500 a month depending on lifestyle. A lean budget is around $1,800, a comfortable budget around $3,500 (where most BSTC members sit), and a senior-operator budget $6,500+."

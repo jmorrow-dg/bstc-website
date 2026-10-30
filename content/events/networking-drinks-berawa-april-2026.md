@@ -1,5 +1,5 @@
 ---
-title: "Bali Startup & Tech Networking Drinks & Dinner — Berawa #36"
+title: "Bali Startup & Tech Networking Drinks & Dinner: Berawa #36"
 slug: networking-drinks-berawa-april-2026
 date: "2026-04-30"
 time: "18:30"
@@ -10,7 +10,7 @@ capacity: 80
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/events/313501887/
 description: "The 36th edition of our relaxed networking event. Founders, engineers, and VCs over drinks and dinner. Open mic and short presentations, no rigid agenda."
 seo:
-  title: "Networking Drinks & Dinner — Berawa #36 | BSTC Bali"
+  title: "Networking Drinks & Dinner: Berawa #36 | BSTC Bali"
   description: "Thursday April 30 at Mata Berawa. Relaxed networking among Bali's tech and startup community. Free entry, optional open mic, real connections."
   keywords:
     - Bali networking event
@@ -19,7 +19,7 @@ seo:
     - BSTC networking
 ---
 
-The 36th edition of our relaxed networking gathering — and one of the longest-running tech meetups in Bali.
+The 36th edition of our relaxed networking gathering: and one of the longest-running tech meetups in Bali.
 
 This isn't a structured event. It's the brightest minds in Bali tech and entrepreneurship, in the same room, over drinks and dinner.
 

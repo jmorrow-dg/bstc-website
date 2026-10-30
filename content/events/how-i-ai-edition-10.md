@@ -24,10 +24,10 @@ The tenth edition of **How I AI**: BSTC's builder-focused series about profiting
 Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 
 **Format:**
-- 6:30 PM: Open floor — share what you're shipping with AI
-- 7:00 PM: Intel Drop — the week in AI, broken down
-- 7:30 PM: Builder Spotlight #1 — real product, real revenue
-- 8:00 PM: Builder Spotlight #2 — real product, real revenue
+- 6:30 PM: Open floor: share what you're shipping with AI
+- 7:00 PM: Intel Drop: the week in AI, broken down
+- 7:30 PM: Builder Spotlight #1: real product, real revenue
+- 8:00 PM: Builder Spotlight #2: real product, real revenue
 - 8:30 PM: Open networking & dinner
 
 **Who this is for:**
