@@ -38,14 +38,9 @@ export const FORMATS = [
   },
 ] as const;
 
-// Confirmed true by Lachlan, 28 Oct 2026
-// (the whole "Who's in the room" breakdown: 40 / 25 / 10 / 25)
-export const ROOM_MIX = [
-  { label: "Startup founders", pct: 40, className: "gl-c-founders" },
-  { label: "Engineers & devs", pct: 25, className: "gl-c-engineers" },
-  { label: "Investors & VCs", pct: 10, className: "gl-c-investors" },
-  { label: "Operators", pct: 25, className: "gl-c-operators" },
-] as const;
+// Approved replacement for the retired audience percentages.
+export const ROOM_MIX =
+  "Funded founders, ex-FAANG engineers, operators, VCs, angel investors and remote builders. 100+ founders, operators and VCs in the room every week.";
 
 export const VALUES = [
   {

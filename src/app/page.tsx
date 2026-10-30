@@ -391,26 +391,7 @@ export default async function Home() {
               This isn&apos;t a casual meetup. The people who show up are building
               real things.
             </p>
-            <div className="gl-mix">
-              <div className="gl-mix-bar" aria-hidden="true">
-                {ROOM_MIX.map((role) => (
-                  <span
-                    key={role.label}
-                    className={role.className}
-                    style={{ width: `${role.pct}%` }}
-                  />
-                ))}
-              </div>
-              <ul className="gl-mix-key">
-                {ROOM_MIX.map((role) => (
-                  <li key={role.label}>
-                    <i className={role.className} />
-                    <b>{role.pct}%</b>
-                    <span>{role.label}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="gl-mix">{ROOM_MIX}</p>
           </div>
           <div>
             <h2 id="values-title">What we stand for</h2>
