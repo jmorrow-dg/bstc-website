@@ -32,3 +32,11 @@ seo:
 - Open mic standout: a founder shared real-time lessons from closing a $2M seed round that week
 
 **Feedback score:** 4.5 / 5.0
+
+## More in this series
+
+Previous edition: [BSTC Networking Night: January 2026](/events/networking-night-january-2026).
+
+Next edition: [BSTC Networking Night: March 2026](/events/networking-night-march-2026).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.

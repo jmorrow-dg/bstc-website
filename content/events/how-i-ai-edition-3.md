@@ -36,3 +36,9 @@ Intimate tech dinner meets live demo night. No theory. No hype. No "AI will chan
 - Operators automating workflows with AI
 
 Free entry. Dinner and drinks at the venue are mandatory to support the host. RSVP on MeetUp.
+
+## More in this series
+
+Next edition: [How I AI: Edition #4](/events/how-i-ai-edition-4).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.

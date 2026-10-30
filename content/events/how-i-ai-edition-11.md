@@ -36,3 +36,11 @@ Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 - Operators automating workflows with AI
 
 Free entry. Dinner and drinks at the venue are mandatory to support the host. RSVP on MeetUp.
+
+## More in this series
+
+Previous edition: [How I AI: Edition #10](/events/how-i-ai-edition-10).
+
+Next edition: [How I AI | Season 2 · Edition 18](/events/how-i-ai-season-2-edition-18).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.

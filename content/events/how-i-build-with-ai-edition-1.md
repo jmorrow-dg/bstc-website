@@ -50,3 +50,7 @@ Josh Morrow will share his screen and build a live AI-powered workflow, narratin
 - Anyone curious about practical AI applications
 
 Bring your laptop. Ask tough questions. Share what you're building.
+
+## Explore more events
+
+[Browse the event calendar](/events) and [join BSTC for free](/join?src=event-archive) for upcoming sessions.

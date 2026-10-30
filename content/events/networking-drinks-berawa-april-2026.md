@@ -35,3 +35,11 @@ This isn't a structured event. It's the brightest minds in Bali tech and entrepr
 - Entrepreneurs and investors
 
 Free entry. RSVP on MeetUp to secure your spot. Join the WhatsApp community to stay in the loop between events.
+
+## More in this series
+
+Previous edition: [BSTC Networking Night: April 2026](/events/networking-night-april-2026).
+
+Next edition: [BSTC Flagship Networking Night: May 2026](/events/flagship-networking-night-may-2026).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.

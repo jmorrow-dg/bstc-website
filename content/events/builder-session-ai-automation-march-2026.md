@@ -39,3 +39,7 @@ Our highest-rated event to date. 35 builders spent an afternoon getting hands-on
 - Multiple requests for a follow-up session on advanced workflows
 
 **Feedback score:** 4.8 / 5.0 (highest ever)
+
+## Explore more events
+
+[Browse the event calendar](/events) and [join BSTC for free](/join?src=event-archive) for upcoming sessions.
