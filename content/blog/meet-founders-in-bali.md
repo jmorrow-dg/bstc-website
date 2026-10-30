@@ -1,6 +1,7 @@
 ---
 title: "How to meet founders and tech people in Bali"
 slug: meet-founders-in-bali
+updated: "2026-10-30"
 date: "2026-10-26"
 author: Lachlan McRitchie
 category: guide
@@ -22,6 +23,12 @@ faq:
   - question: "Can I pitch my startup at these events?"
     answer: "Not as a hard sell. BSTC's rules are no hard selling and 60-second intros. How I AI has a one-minute round to share what you've built that week, which is the right place to say what you're working on."
 ---
+
+Meet founders, engineers and remote builders at Bali Startup & Tech Community's free events in Canggu. [Join BSTC for free](/join?src=blog-meet-founders-in-bali-answer) to connect with the community before your first event.
+
+**Upcoming dates, updated 30 October 2026:** [How I AI Season 2](/events/how-i-ai-season-2-edition-18) runs Wednesdays, 4 November to 9 December, 6:00 to 9:00 PM WITA at Seoul Soul Project; [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39) is Thursday 12 November, 6:30 to 8:30 PM WITA at Yema Kitchen. Order and pay for your own food and drinks. The 9 December finale details await confirmation.
+
+
 
 # How to meet founders and tech people in Bali
 

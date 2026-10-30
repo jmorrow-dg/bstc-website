@@ -1,6 +1,7 @@
 ---
 title: "Digital nomad community in Bali for people building a business"
 slug: digital-nomad-community-bali
+updated: "2026-10-30"
 date: "2026-10-26"
 author: Lachlan McRitchie
 category: guide
@@ -20,6 +21,12 @@ faq:
   - question: "Is Canggu or Ubud better for builders?"
     answer: "Canggu has the weekly builder events, and Finns' guide (updated 21 July 2026) lists 15 coworking spaces in and around it (Finns). Ubud has its own monthly tech meetup. The Canggu neighbourhood guide goes deeper."
 ---
+
+Meet founders, engineers and remote builders at Bali Startup & Tech Community's free events in Canggu. [Join BSTC for free](/join?src=blog-digital-nomad-community-bali-answer) to connect with the community before your first event.
+
+**Upcoming dates, updated 30 October 2026:** [How I AI Season 2](/events/how-i-ai-season-2-edition-18) runs Wednesdays, 4 November to 9 December, 6:00 to 9:00 PM WITA at Seoul Soul Project; [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39) is Thursday 12 November, 6:30 to 8:30 PM WITA at Yema Kitchen. Order and pay for your own food and drinks. The 9 December finale details await confirmation.
+
+
 
 # Digital nomad community in Bali for people building a business
 
