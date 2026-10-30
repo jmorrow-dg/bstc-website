@@ -121,7 +121,7 @@ Better wifi (often Biznet fibre at the villa), a higher data plan, and full util
 
 ### Social, travel, buffer: $520
 
-Regular dinners with friends, networking event tickets, weekend trips, the occasional flight to Singapore or Jakarta for meetings. The buffer here is what makes Bali life feel sustainable.
+Regular dinners with friends, food and drinks at free BSTC networking events, weekend trips, the occasional flight to Singapore or Jakarta for meetings. The buffer here is what makes Bali life feel sustainable.
 
 **Comfortable total: ~$3,500/month.** This is the modal BSTC member spend.
 

@@ -12,7 +12,7 @@ coverImage: /images/events/how-i-ai-season-2.jpg
 description: "How I AI is back. Season 2 launch night: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
 seo:
   title: "How I AI | Season 2 · Edition 18 | BSTC Bali"
-  description: "Wednesday 4 November at Seoul Soul Project, Canggu. Season 2 launch of the builder-focused series about making money with AI. Free entry, dinner & drinks at the venue."
+  description: "Wednesday 4 November at Seoul Soul Project, Canggu. Season 2 launch of the builder-focused series about making money with AI. Free entry. Order your own dinner and drinks at the venue."
   keywords:
     - How I AI
     - AI builder event Bali
