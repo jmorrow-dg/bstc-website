@@ -13,6 +13,8 @@ export interface EventFrontmatter {
   slug: string;
   date: string;
   time: string;
+  schema?: boolean;
+  pastList?: boolean;
   endTime?: string;
   venueAddress?: string;
   series?: string;
@@ -179,7 +181,7 @@ export function getPastEvents(
   events: ContentItem<EventFrontmatter>[],
   now: Date = new Date()
 ): ContentItem<EventFrontmatter>[] {
-  return events.filter((e) => getEventState(e.frontmatter, now) === "past");
+  return events.filter((e) => e.frontmatter.pastList !== false && getEventState(e.frontmatter, now) === "past");
 }
 
 export function getHIWAEvents(

@@ -75,7 +75,7 @@ export default async function EventPage({
   const canRsvp = canRsvpToEvent(e, now);
   const hasRecap = e.status === "completed" && e.recap;
 
-  const eventSchema = getEventSchema({
+  const eventSchema = e.schema === false ? null : getEventSchema({
     title: e.title,
     description: e.description,
     date: e.date,
