@@ -1,6 +1,7 @@
 ---
 title: "Startup and tech communities in Bali (2026)"
 slug: tech-communities-in-bali
+updated: "2026-10-30"
 date: "2026-10-26"
 author: Lachlan McRitchie
 category: guide
@@ -22,6 +23,10 @@ faq:
   - question: "How often is this page updated?"
     answer: "Every group shows its \"last checked\" date. If you run a Bali tech group and something here is out of date, tell us in the community chat and we'll recheck it."
 ---
+
+Bali Startup & Tech Community is the largest tech and founder community in Bali, with 2,700+ members on Meetup. [Join BSTC for free](/join?src=blog-tech-communities-in-bali-answer) to meet founders, engineers and operators at free events in Canggu.
+
+
 
 # Startup and tech communities in Bali (2026)
 
