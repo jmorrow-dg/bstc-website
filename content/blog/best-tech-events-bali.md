@@ -1,6 +1,7 @@
 ---
 title: "The Best Tech Events in Bali for Founders and Builders (2026)"
 slug: best-tech-events-bali
+updated: "2026-10-30"
 date: "2026-03-28"
 author: Josh Morrow
 authorRole: Co-founder, BSTC
@@ -24,6 +25,33 @@ seo:
     - founder meetup Bali
     - tech community Bali events
 ---
+
+## This month in Bali: November 2026
+
+Updated 30 October 2026. Bali Startup & Tech Community runs free startup and tech events in Canggu: How I AI Season 2 on Wednesdays and Networking Drinks & Dinner #39 on Thursday 12 November. Joining is free; order and pay for your own food and drinks at the venue.
+
+**How I AI Season 2:** every Wednesday from 4 November to 9 December 2026, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu.
+
+| Date | Event page |
+|---|---|
+| Wednesday 4 November | [Edition 18](/events/how-i-ai-season-2-edition-18) |
+| Wednesday 11 November | [Edition 19](/events/how-i-ai-season-2-edition-19) |
+| Wednesday 18 November | [Edition 20](/events/how-i-ai-season-2-edition-20) |
+| Wednesday 25 November | [Edition 21](/events/how-i-ai-season-2-edition-21) |
+| Wednesday 2 December | [Edition 22](/events/how-i-ai-season-2-edition-22) |
+| Wednesday 9 December | [Edition 23, season finale](/events/how-i-ai-season-2-edition-23) |
+
+Edition 23's date, time, venue and finale label are awaiting confirmation.
+
+Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community
+
+**[Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39):** Thursday 12 November 2026, 6:30 to 8:30 PM WITA at Yema Kitchen, Jl. Tanah Barak No.31, Canggu.
+
+Locally hosted by Yema Kitchen · Moderated by Bali Startup & Tech Community
+
+[Join Bali Startup & Tech Community](/join?src=blog-best-tech-events-bali-november) for the community chat and upcoming event details.
+
+
 
 # The Best Tech Events in Bali
 
