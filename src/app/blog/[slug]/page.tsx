@@ -161,6 +161,7 @@ export default async function BlogPostPage({
 
       <div className="max-w-site mx-auto px-6 pt-8 space-y-3">
         <Breadcrumbs
+          schema={false}
           items={[
             { label: "Home", href: "/" },
             { label: "Blog", href: "/blog" },

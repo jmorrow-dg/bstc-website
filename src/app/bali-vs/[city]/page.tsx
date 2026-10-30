@@ -142,6 +142,7 @@ export default async function BaliVsCityPage({
 
       <div className="max-w-site mx-auto px-6 pt-8">
         <Breadcrumbs
+          schema={false}
           items={[
             { label: "Home", href: "/" },
             { label: "Bali vs", href: "/blog" },

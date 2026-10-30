@@ -116,6 +116,7 @@ export default async function EventPage({
       {/* Navigation */}
       <div className="max-w-site mx-auto px-6 pt-6 space-y-3">
         <Breadcrumbs
+          currentUrl={`/events/${e.slug}`}
           items={[
             { label: "Home", href: "/" },
             { label: "Events", href: "/events" },
