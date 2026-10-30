@@ -91,7 +91,7 @@ export async function crawl(base, output) {
     }
   }));
   rows.sort((a, b) => a.url.localeCompare(b.url));
-  for (const row of rows) row.inboundPages = rows.filter(source => source.url !== row.url && source.internalOutlinks.includes(row.url)).map(source => source.url);
+  for (const row of rows) row.inboundPages = rows.filter(source => new URL(source.url).href !== new URL(row.url).href && source.internalOutlinks.includes(new URL(row.url).href)).map(source => source.url);
   rows.forEach(r => { r.inboundCount = r.inboundPages.length; });
   const count = fn => rows.filter(fn).length;
   const metrics = { urls: rows.length, status200: count(r => r.status === 200), nonSelfCanonical: count(r => r.canonical !== r.url),
