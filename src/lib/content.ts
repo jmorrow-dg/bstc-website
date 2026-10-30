@@ -62,6 +62,7 @@ export interface EventFrontmatter {
 }
 
 export interface BlogFrontmatter {
+  updated?: string;
   title: string;
   slug: string;
   date: string;
