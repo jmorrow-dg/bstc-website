@@ -3,7 +3,7 @@ title: "The End of Subsidised AI: What Claude Code Leaving the Pro Plan Means fo
 slug: end-of-subsidised-ai-claude-code-pricing-sea-founders-2026
 date: "2026-04-23"
 author: Josh Morrow
-authorRole: Co-founder, BSTC & David & Goliath
+authorRole: Co-founder, BSTC
 category: thought-leadership
 readTime: "10 min"
 tags:

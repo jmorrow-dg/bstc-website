@@ -3,7 +3,7 @@ title: "The AI Stack for Founders in 2026: What Builders Are Actually Using"
 slug: ai-tools-founders-2026
 date: "2026-04-03"
 author: Josh Morrow
-authorRole: Co-founder, BSTC & David & Goliath
+authorRole: Co-founder, BSTC
 category: thought-leadership
 excerpt: "We surveyed 50+ founders in the BSTC community about which AI tools they use daily. Not the tools they talk about: the ones they actually ship with. Here's the real stack."
 readTime: "6 min read"

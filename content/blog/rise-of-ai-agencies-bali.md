@@ -3,7 +3,7 @@ title: "The Rise of AI Agencies: How Founders in Bali Are Building Service Busin
 slug: rise-of-ai-agencies-bali
 date: "2026-04-06"
 author: Josh Morrow
-authorRole: Co-founder, BSTC & David & Goliath
+authorRole: Co-founder, BSTC
 category: thought-leadership
 excerpt: "A new breed of agency is emerging from Bali: AI-powered, lean, and generating serious revenue. Here's how founders are building service businesses where AI does the heavy lifting and humans provide the judgment."
 readTime: "7 min read"

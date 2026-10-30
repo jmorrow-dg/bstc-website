@@ -3,7 +3,7 @@ title: "How Founders Are Actually Making Money with AI in 2026"
 slug: making-money-with-ai-2026
 date: "2026-04-02"
 author: Josh Morrow
-authorRole: Co-founder, BSTC & David & Goliath
+authorRole: Co-founder, BSTC
 category: thought-leadership
 excerpt: "Everyone talks about AI. We asked founders who actually generate revenue with it: what did you build, what tools did you use, and how much did it make? Here are the real numbers."
 readTime: "7 min read"

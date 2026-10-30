@@ -13,7 +13,7 @@ description: "The inaugural edition of BSTC's flagship series. Watch a real buil
 builder:
   name: Josh Morrow
   role: Co-founder
-  company: David & Goliath
+  company: BSTC
   bio: "Josh builds AI-powered growth systems for B2B companies. Previously scaled GTM engines across multiple SaaS startups. Now building from Bali."
 tools:
   - Claude
