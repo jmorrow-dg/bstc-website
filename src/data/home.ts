@@ -28,7 +28,7 @@ export const FORMATS = [
   },
   {
     title: "Hackathon",
-    desc: "Build something real in one day. Teams compete to ship products, demo in 3 minutes, and win prizes.",
+    desc: "Coming soon, date TBA",
     image: "/images/events/hackathon-edition-1.png",
     alt: "Illustrated poster for the BSTC Hackathon",
     href: "/events/hackathon-edition-1",

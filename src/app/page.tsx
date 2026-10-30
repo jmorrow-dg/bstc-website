@@ -72,7 +72,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "What events does BSTC run?",
     answer:
-      "Three core formats. (1) Networking Nights: 40 to 80 builders, every third Thursday. (2) How I Build with AI: live AI builds from real practitioners with Intel Drops and Builder Spotlights. (3) Hackathons: one-day builds with team demos and prizes. Cadence is 4 to 6 events per month.",
+      "Three core formats. (1) Networking Nights: 40 to 80 builders, every third Thursday. (2) How I Build with AI: live AI builds from real practitioners with Intel Drops and Builder Spotlights. (3) Hackathons: coming soon, date TBA. Cadence is 4 to 6 events per month.",
   },
   {
     question: "How do I join BSTC?",
@@ -318,7 +318,7 @@ export default async function Home() {
               <h2 id="hg-title">Three ways to connect</h2>
             </div>
             <p>
-              Monthly networking. Live AI builds. Full-day hackathons. Every format
+              Monthly networking. Live AI builds. Hackathons coming soon. Every format
               designed for signal over noise.
             </p>
           </div>
