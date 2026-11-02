@@ -11,7 +11,7 @@ keyTakeaways:
   - "The E33G remote worker visa is the one built for working for an overseas company: one year, IDR 7,000,000, proof of at least US$60,000 a year in income, and no payment from anyone in Indonesia."
   - "A local SIM in a foreign phone needs its IMEI registered: at an operator outlet if you're staying 90 days or less, or with customs (best done in the arrivals hall) if you're staying longer."
   - "Riding without a valid licence can mean up to four months' jail or a fine of up to IDR 1 million, and Australia's NRMA says riding abroad needs a motorcycle licence from home plus an International Driving Permit, or your travel insurance could be void."
-  - "Most newcomers meet people fastest by going to the same weekly event several times; in Canggu that's BSTC's free How I AI night every Wednesday from 4 November to 9 December 2026."
+  - "Most newcomers meet people fastest by going to the same weekly event several times; in Canggu that's BSTC's free How I AI night every Wednesday from 4 November 2026."
 seo:
   title: "Moving to Bali Checklist 2026: Your First Week as a Remote Entrepreneur"
   description: "First week in Bali, step by step: visa, All Indonesia arrival card, IDR 150,000 tourist levy, customs, SIM and IMEI, scooter licence, money, coworking and where founders meet. Sourced and checked 26 Oct 2026."
@@ -27,7 +27,7 @@ faq:
   - question: "Can I ride a scooter in Bali with my car licence?"
     answer: "Don't count on it. Bali's 2025 rules for foreign tourists require a valid international or national driving licence, and Australia's NRMA warns that without an International Driving Permit and a valid motorcycle licence from home, your travel insurance could be void."
   - question: "Where do remote entrepreneurs meet people in Bali?"
-    answer: "In Canggu, BSTC runs How I AI every Wednesday from 4 November to 9 December 2026 at Seoul Soul Project, 6 to 9pm, free, and Networking Drinks & Dinner #39 on Thursday 12 November 2026 at Yema Kitchen. Coworking spaces are where the follow-up coffees happen."
+    answer: "In Canggu, BSTC runs How I AI every Wednesday from 4 November 2026 at Seoul Soul Project, 6 to 9pm, free, and Networking Drinks & Dinner #39 on Thursday 12 November 2026 at Yema Kitchen. Coworking spaces are where the follow-up coffees happen."
 ---
 
 # New to Bali? The first-week checklist for remote entrepreneurs (2026)
@@ -162,7 +162,7 @@ The fastest way to know people is to go to the same weekly event two or three ti
 
 | When | What | Where | Cost |
 |---|---|---|---|
-| Every Wednesday, 4 Nov to 9 Dec 2026, 6 to 9pm | How I AI, Season 2 (BSTC) | Seoul Soul Project, Canggu | Free |
+| Every Wednesday from 4 Nov 2026, 6 to 9pm | How I AI (BSTC) | Seoul Soul Project, Canggu | Free |
 | Thursday 12 Nov 2026, 6:30pm | Networking Drinks & Dinner #39 (BSTC) | Yema Kitchen, Canggu | Free entry |
 
 Bali Startup & Tech (BSTC) is a founder-led community for startup founders, builders and tech people in Bali, with 2,700+ on Meetup (25 Oct 2026). RSVP on the [events page](/events), and [sign up](/join?src=blog-new-to-bali-first-week-checklist-inline) before you land so you can say hello in the community chat. For a day-by-day plan see [how to meet founders in Bali](/blog/meet-founders-in-bali), and for every other group, [startup and tech communities in Bali](/blog/tech-communities-in-bali).
@@ -206,7 +206,7 @@ Don't count on it. Bali's 2025 rules for foreign tourists require a valid intern
 
 ### Where do remote entrepreneurs meet people in Bali?
 
-In Canggu, BSTC runs How I AI every Wednesday from 4 November to 9 December 2026 at Seoul Soul Project, 6 to 9pm, free, and Networking Drinks & Dinner #39 on Thursday 12 November 2026 at Yema Kitchen. Coworking spaces are where the follow-up coffees happen.
+In Canggu, BSTC runs How I AI every Wednesday from 4 November 2026 at Seoul Soul Project, 6 to 9pm, free, and Networking Drinks & Dinner #39 on Thursday 12 November 2026 at Yema Kitchen. Coworking spaces are where the follow-up coffees happen.
 
 ## Join BSTC before you land
 
