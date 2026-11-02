@@ -14,7 +14,7 @@ faq:
   - question: "What's the difference between a nomad group and a founder community?"
     answer: "Nomad groups are mostly social chats for housing, transport and meetups. Founder and builder communities meet on a schedule and talk about building: customers, pricing, hiring and tools. Most people building a business in Bali use both."
   - question: "Where do digital nomads who run businesses meet in Canggu?"
-    answer: "At scheduled builder events and in coworking spaces. In late 2026, BSTC's How I AI runs every Wednesday from 4 November to 9 December, 6 to 9pm at Seoul Soul Project, and BWork lists community events on its own calendar."
+    answer: "At scheduled builder events and in coworking spaces. In late 2026, BSTC's How I AI runs every Wednesday from 4 November, 6 to 9pm at Seoul Soul Project, and BWork lists community events on its own calendar."
   - question: "Do I need a special visa to work on my business from Bali?"
     answer: "We don't give visa advice. Our visa guide covers the main options with sources, and you should confirm your situation with a qualified immigration adviser before you rely on it."
   - question: "Is Canggu or Ubud better for builders?"
@@ -23,7 +23,7 @@ faq:
 
 # Digital nomad community in Bali for people building a business
 
-If you're in Bali to build a business rather than just travel, look past the big nomad chats and go where builders meet in person. Most Bali nomad groups are social Telegram, WhatsApp and Facebook chats. The builder communities are smaller and meet on a schedule: in Canggu in late 2026 that means BSTC's weekly How I AI night (Wednesdays, 4 November to 9 December) and its monthly founder dinner, plus developer meetups like GDG Bali in Denpasar.
+If you're in Bali to build a business rather than just travel, look past the big nomad chats and go where builders meet in person. Most Bali nomad groups are social Telegram, WhatsApp and Facebook chats. The builder communities are smaller and meet on a schedule: in Canggu in late 2026 that means BSTC's weekly How I AI night (Wednesdays from 4 November) and its monthly founder dinner, plus developer meetups like GDG Bali in Denpasar.
 
 Both kinds of community are useful. They're just useful for different things. A social group finds you a scooter, a flatmate or a surf buddy. A builder community finds you a developer, a first customer, an honest read on your pricing, and people at your stage who'll still be answering your messages after you've left the island.
 
@@ -91,7 +91,7 @@ Nomad groups are mostly social chats for housing, transport and meetups. Founder
 
 ### Where do digital nomads who run businesses meet in Canggu?
 
-At scheduled builder events and in coworking spaces. In late 2026, BSTC's How I AI runs every Wednesday from 4 November to 9 December, 6 to 9pm at Seoul Soul Project, and BWork lists community events on its own calendar.
+At scheduled builder events and in coworking spaces. In late 2026, BSTC's How I AI runs every Wednesday from 4 November, 6 to 9pm at Seoul Soul Project, and BWork lists community events on its own calendar.
 
 ### Do I need a special visa to work on my business from Bali?
 
