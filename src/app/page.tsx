@@ -548,9 +548,9 @@ export default async function Home() {
           <div className="gl-sec-head">
             <h2 id="perks-title">Perks that travel with you</h2>
             <p>
-              Software perks work wherever you build from. {OPEN_PERKS.length}{" "}
-              startup programmes are open to apply for now, each checked on the
-              vendor&apos;s own page on {formatChecked(PERKS_CHECKED)}. Another{" "}
+              Most software perks work wherever you build from.{" "}
+              {OPEN_PERKS.length} startup programmes are open, each checked on the
+              vendor&apos;s own page by {formatChecked(PERKS_CHECKED)}. Another{" "}
               {EXAMPLE_PERKS.length} are examples of members-only deals we&apos;re
               negotiating with founder tools and Bali partners. None of those are
               agreed yet, so they&apos;re labelled Example.
@@ -609,7 +609,7 @@ export default async function Home() {
           </div>
           <div className="gl-perk-foot">
             <Link className="gl-perk-all" href="/perks">
-              See all {OPEN_PERKS.length + EXAMPLE_PERKS.length} perks
+              See all {OPEN_PERKS.length} perks
             </Link>
             <Link className="gl-btn gl-btn-red" href="/join?src=home-perks">
               Join to get member deals
