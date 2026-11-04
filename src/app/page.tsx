@@ -493,10 +493,10 @@ export default async function Home() {
             <div>
               <h3>Your spot in Members</h3>
               <p>
-                Join and you get your own page in the member directory: your photo,
-                your company, what you&apos;re building and a link to your site. It
-                goes live once you&apos;ve joined, wherever you&apos;re building
-                from.
+                Join, say you&apos;d like to be featured, and we&apos;ll set up your
+                own page in the member directory: your photo, your company, what
+                you&apos;re building and a link to your site. It goes live once you
+                approve it, wherever you&apos;re building from.
               </p>
               <VisitorClock />
             </div>
