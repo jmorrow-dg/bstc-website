@@ -560,8 +560,8 @@ export default async function Home() {
             <div className="gl-perk-col">
               <h3>Open now</h3>
               <p>
-                Public startup programmes. You apply direct and the vendor decides
-                who&apos;s eligible.
+                Public startup programmes. Most you apply for direct, some through
+                a partner referral, and the vendor decides who&apos;s eligible.
               </p>
               <ul className="gl-perk-list">
                 {teaserOpen.map((perk) => (
