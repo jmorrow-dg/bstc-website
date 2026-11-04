@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { SITE, STATS } from "@/lib/constants";
+import { MEETUP_CHECKED, SITE, STATS } from "@/lib/constants";
 import { getAllBlogPosts, getUpcomingEvents, getAllEvents } from "@/lib/content";
 import { getFAQSchema } from "@/lib/schema";
 import {
@@ -82,7 +82,6 @@ const HOMEPAGE_FAQS = [
   },
 ];
 
-const MEETUP_CHECKED = "25 Oct 2026";
 
 function categoryLabel(category: string): string {
   const text = category.replace(/-/g, " ");
@@ -784,8 +783,8 @@ export default async function Home() {
           <p className="gl-pre">Join from anywhere</p>
           <h2 id="final-title">Ready to join?</h2>
           <p>
-            Join {members} founders, engineers, and operators building the future
-            from Southeast Asia.
+            Join {members} founders, engineers, and operators (Meetup, {MEETUP_CHECKED})
+            building the future from Southeast Asia.
           </p>
           <div className="gl-final-ctas">
             <Link className="gl-btn gl-btn-paper" href="/join?src=home-final">

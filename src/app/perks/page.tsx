@@ -256,7 +256,7 @@ export default function PerksPage() {
               <h2 id={`cat-${g.slug}-h`}>{g.category}</h2>
               <p className="gl-cat-count" data-perk-count="">
                 {[
-                  g.open ? `${g.open} open now` : "",
+                  g.open ? `${g.open} ${g.open === 1 ? "programme" : "programmes"}` : "",
                   g.examples
                     ? `${g.examples} ${g.examples === 1 ? "example" : "examples"}`
                     : "",

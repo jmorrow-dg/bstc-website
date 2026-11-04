@@ -6,7 +6,7 @@ import { ArrowLeft, Calendar, User, Clock, ArrowRight, Check } from "lucide-reac
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import NewsletterSignup from "@/components/layout/NewsletterSignup";
 import { getAllBlogPosts, getBlogPostBySlug, ContentItem, BlogFrontmatter } from "@/lib/content";
-import { SITE } from "@/lib/constants";
+import { MEETUP_CHECKED, SITE } from "@/lib/constants";
 import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schema";
 
 export async function generateStaticParams() {
@@ -312,8 +312,8 @@ export default async function BlogPostPage({
             Join the Conversation
           </h2>
           <p className="text-brand-grey mb-6">
-            2,700+ builders discussing AI, startups, and technology in
-            Southeast Asia.
+            2,700+ builders (Meetup, {MEETUP_CHECKED}) discussing AI, startups, and
+            technology in Southeast Asia.
           </p>
           <Link
             href={`/join?src=blog-${p.slug}`}
