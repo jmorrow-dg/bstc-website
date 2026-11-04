@@ -11,13 +11,13 @@ import {
   Globe,
   Calendar,
 } from "lucide-react";
-import { STATS, SITE } from "@/lib/constants";
+import { MEETUP_CHECKED, STATS, SITE } from "@/lib/constants";
 import { getFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Community",
   description:
-    "Join 2,700+ founders, engineers, and operators in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.",
+    `Join 2,700+ founders, engineers, and operators (Meetup, ${MEETUP_CHECKED}) in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.`,
   alternates: { canonical: "/community" },
 };
 
@@ -112,7 +112,7 @@ export default function CommunityPage() {
             <StatBlock
               value={STATS.members}
               suffix="+"
-              label="Members"
+              label={`Meetup members, ${MEETUP_CHECKED}`}
               icon={Users}
             />
             <StatBlock

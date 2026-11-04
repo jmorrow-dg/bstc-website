@@ -116,7 +116,7 @@ export default function PerkFinder({
       const line = section.querySelector<HTMLElement>("[data-perk-count]");
       if (line) {
         const bits: string[] = [];
-        if (open) bits.push(`${open} open now`);
+        if (open) bits.push(`${open} ${open === 1 ? "programme" : "programmes"}`);
         if (examples) bits.push(`${examples} ${examples === 1 ? "example" : "examples"}`);
         line.textContent = bits.join(", ");
       }

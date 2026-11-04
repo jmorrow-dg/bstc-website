@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
-import { STATS } from "@/lib/constants";
+import { MEETUP_CHECKED, STATS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     // Confirmed true by Lachlan, 28 Oct 2026
-    `BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,700+ members from 100+ countries. ${STATS.events}+ events. Signal over noise. Builders first.`,
+    `BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,700+ members (Meetup, ${MEETUP_CHECKED}) from 100+ countries. ${STATS.events}+ events. Signal over noise. Builders first.`,
   keywords: [
     "Bali Startup and Tech Community",
     "BSTC",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Bali Startup & Tech Community",
     description:
-      "How BSTC grew from 20 founders in Canggu to 2,700+ builders across Southeast Asia. Signal over noise.",
+      `How BSTC grew from 20 founders in Canggu to 2,700+ builders (Meetup, ${MEETUP_CHECKED}) across Southeast Asia. Signal over noise.`,
     type: "website",
   },
   alternates: { canonical: "/about" },
@@ -44,8 +44,8 @@ export default function AboutPage() {
             </h1>
             <p className="text-brand-grey text-lg max-w-2xl">
               {/* Confirmed true by Lachlan, 28 Oct 2026 */}
-              It started with 20 founders in a Canggu restaurant. Today, 2,700+
-              builders from 100+ countries. The goal hasn&apos;t changed: the
+              It started with 20 founders in a Canggu restaurant. Now 2,700+
+              builders (Meetup, {MEETUP_CHECKED}) from 100+ countries. The goal hasn&apos;t changed: the
               highest-signal tech community in Southeast Asia.
             </p>
           </div>
@@ -75,11 +75,11 @@ export default function AboutPage() {
               experience was different: people actually came back.
             </p>
             <p>
-              Today, BSTC has{" "}
+              BSTC has{" "}
               <span className="text-brand-white font-medium">
                 {STATS.members.toLocaleString()}+ members
               </span>{" "}
-              across MeetUp and WhatsApp,{" "}
+              on Meetup ({MEETUP_CHECKED}),{" "}
               <span className="text-brand-white font-medium">
                 {STATS.events}+ events
               </span>{" "}
