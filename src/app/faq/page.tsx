@@ -91,10 +91,11 @@ const FAQ_SECTIONS: FAQSection[] = [
           "We run four core event formats: (1) Networking Night: monthly, 40-80 people, free, open mic + networking. (2) How I Build with AI: live AI demos by real builders. (3) Founder Roundtable: max 20, $20K+ MRR founders only, confidential. (4) Builder Sessions: tactical workshops and talks.",
       },
       {
-        // Confirmed true by Lachlan, 28 Oct 2026
+        // Confirmed true by Lachlan, 28 Oct 2026, except the day:
+        // 2nd Thursday of the month is Meetup's dinner series, read 4 Nov 2026
         question: "When and where are BSTC events?",
         answer:
-          "Our flagship Networking Night is every 3rd Thursday at Yema Kitchen in Canggu. 'How I Build with AI' events are at Seoul Seoul Project in Canggu. Other events rotate across Canggu, Ubud, Sanur, and Uluwatu. All events are listed on our MeetUp page.",
+          "Our flagship Networking Night is on the 2nd Thursday of every month at Yema Kitchen in Canggu. 'How I Build with AI' events are at Seoul Seoul Project in Canggu. Other events rotate across Canggu, Ubud, Sanur, and Uluwatu. All events are listed on our MeetUp page.",
       },
       {
         question: "What is 'How I Build with AI'?",

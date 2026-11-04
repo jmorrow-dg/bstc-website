@@ -9,7 +9,7 @@ status: completed
 capacity: 80
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
 coverImage: /images/events/networking-night.png
-description: "Our 37th community networking drinks & dinner. The room where Bali's best founders, engineers, and VCs come together. 3rd Thursday of every month at Yema Kitchen, Canggu. Free entry, real connections, zero pitching."
+description: "Our 37th community networking drinks & dinner. The room where Bali's best founders, engineers, and VCs come together. Monthly at Yema Kitchen, Canggu. Free entry, real connections, zero pitching."
 seo:
   title: "BSTC Networking Drinks & Dinner #37: June 2026 | Bali Tech Events"
   description: "Join 40-80 founders, engineers, and VCs at BSTC's flagship monthly networking night in Canggu, Bali on Thursday 18 June 2026. Free entry, open mic, high-signal connections."
@@ -23,7 +23,7 @@ seo:
 
 # Networking Drinks & Dinner — Edition #37
 
-Our flagship monthly networking night returns for its **37th edition**. Every 3rd Thursday, 40–80 founders, engineers, investors, and operators gather at Yema Kitchen in Canggu for the highest-signal networking event in Bali.
+Our flagship monthly networking night returns for its **37th edition**. Every month, 40–80 founders, engineers, investors, and operators gather at Yema Kitchen in Canggu for the highest-signal networking event in Bali.
 
 ## What to Expect
 
