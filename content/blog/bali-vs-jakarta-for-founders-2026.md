@@ -117,7 +117,7 @@ The practical pattern for Indonesia-based startups in 2026: hire engineering tal
 This is where Bali wins, and it is not a close call in 2026.
 
 **Bali (Canggu, Ubud, Sanur, Uluwatu):**
-- BSTC Networking Nights every third Thursday (40 to 80 builders).
+- BSTC Networking Nights on the second Thursday of every month (40 to 80 builders).
 - How I Build with AI series (monthly, live AI builds).
 - Hackathons, founder roundtables, retreats, builder dinners.
 - Weekly informal coffee meetups and small group dinners between events.

@@ -46,8 +46,9 @@ export const revalidate = 3600;
 // Confirmed true by Lachlan, 28 Oct 2026
 // (answers 1, 3, 4 and 5: "Southeast Asia's largest", "2,700+ funded founders",
 // "ex-FAANG", "100+ countries", "40 to 80", "active nodes in Ubud, Sanur, and
-// Uluwatu", "every third Thursday"). Rendered visibly below and as FAQPage
-// schema, both from this one list, so they always match.
+// Uluwatu"). Rendered visibly below and as FAQPage schema, both from this one
+// list, so they always match. Second Thursday of the month: Meetup's dinner
+// series, read 4 Nov 2026 (#37 and #38 were on third Thursdays).
 const HOMEPAGE_FAQS = [
   {
     question: "What is BSTC?",
@@ -72,7 +73,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "What events does BSTC run?",
     answer:
-      "Three core formats. (1) Networking Nights: 40 to 80 builders, every third Thursday. (2) How I Build with AI: live AI builds from real practitioners with Intel Drops and Builder Spotlights. (3) Hackathons: one-day builds with team demos and prizes. Cadence is 4 to 6 events per month.",
+      "Three core formats. (1) Networking Nights: 40 to 80 builders, on the second Thursday of every month. (2) How I Build with AI: live AI builds from real practitioners with Intel Drops and Builder Spotlights. (3) Hackathons: one-day builds with team demos and prizes. Cadence is 4 to 6 events per month.",
   },
   {
     question: "How do I join BSTC?",
