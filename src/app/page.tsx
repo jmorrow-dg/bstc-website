@@ -309,13 +309,13 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 5. Three ways to connect, at the home ground */}
+      {/* 5. Two ways to connect, at the home ground */}
       <section className="gl-sec gl-sec-tight" id="home-ground" aria-labelledby="hg-title">
         <div className="gl-wrap">
           <div className="gl-sec-head">
             <div>
               <p className="gl-eyebrow">The home ground</p>
-              <h2 id="hg-title">Three ways to connect</h2>
+              <h2 id="hg-title">Two ways to connect</h2>
             </div>
             <p>
               Monthly networking. Live AI builds. Hackathons coming soon. Every format
@@ -358,7 +358,7 @@ export default async function Home() {
                       src={format.image}
                       alt={format.alt}
                       fill
-                      sizes="(max-width: 760px) 100vw, 33vw"
+                      sizes="(max-width: 760px) 100vw, 50vw"
                       style={{ objectPosition: format.imagePosition }}
                     />
                     <figcaption className="gl-tag">{format.badge}</figcaption>

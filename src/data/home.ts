@@ -26,16 +26,6 @@ export const FORMATS = [
     badge: "New series",
     imagePosition: "50% 60%",
   },
-  {
-    title: "Hackathon",
-    desc: "Coming soon, date TBA",
-    image: "/images/events/hackathon-edition-1.png",
-    alt: "Illustrated poster for the BSTC Hackathon",
-    href: "/events/hackathon-edition-1",
-    linkLabel: "About the Hackathon",
-    badge: "Coming soon",
-    imagePosition: "50% 50%",
-  },
 ] as const;
 
 // Approved replacement for the retired audience percentages.
