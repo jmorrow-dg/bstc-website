@@ -137,16 +137,13 @@ export default async function EventsPage() {
   const now = new Date();
   const upcoming = getUpcomingEvents(allEvents, now);
   const past = getPastEvents(allEvents, now);
-  const upcomingSchema = upcoming.length > 0 && {
-    "@context": "https://schema.org",
-    ...getItemListSchema({
-      name: "Upcoming BSTC events",
-      items: upcoming.map((event) => ({
-        name: event.frontmatter.title,
-        url: `/events/${event.frontmatter.slug}`,
-      })),
-    }),
-  };
+  const upcomingSchema = upcoming.length > 0 && getItemListSchema({
+    name: "Upcoming BSTC events",
+    items: upcoming.map((event) => ({
+      name: event.frontmatter.title,
+      url: `/events/${event.frontmatter.slug}`,
+    })),
+  });
 
   return (
     <>
