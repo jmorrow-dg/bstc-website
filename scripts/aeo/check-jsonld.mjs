@@ -22,7 +22,7 @@ function* nodes(value) {
 export function inspect(html) {
   const errors = [];
   let blocks = 0, breadcrumbs = 0, answers = 0;
-  const visible = visibleText(html);
+  const squashed = visibleText(html).replace(/\s+/g, '');
   for (const match of html.matchAll(/<script\b([^>]*)>([^]*?)<\/script\s*>/gi)) {
     if (!/\btype\s*=\s*(["'])application\/ld\+json\1/i.test(match[1])) continue;
     blocks++;
@@ -40,7 +40,8 @@ export function inspect(html) {
           for (const answer of [].concat(question.acceptedAnswer ?? [])) {
             answers++;
             const text = typeof answer.text === 'string' ? visibleText(answer.text) : '';
-            if (!text || !visible.includes(text)) errors.push(`FAQ answer absent: ${question.name}`);
+            // Tags become spaces in visibleText, so a link inside brackets gains spaces. Compare without whitespace.
+            if (!text || !squashed.includes(text.replace(/\s+/g, ''))) errors.push(`FAQ answer absent: ${question.name}`);
           }
         }
       }
