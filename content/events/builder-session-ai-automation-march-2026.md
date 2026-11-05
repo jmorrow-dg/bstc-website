@@ -3,6 +3,7 @@ title: "Builder Session: AI Automation for Founders"
 slug: builder-session-ai-automation-march-2026
 date: "2026-03-08"
 time: "14:00"
+organizer: "Outpost Coworking"
 venue: Outpost Coworking, Canggu
 type: builder-session
 status: completed

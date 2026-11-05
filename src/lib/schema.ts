@@ -1,6 +1,8 @@
 import { CONTACT_EMAIL, EVENT_ORGANIZER, SITE, STATS } from "./constants";
 import { canRsvpToEvent, isValidEventDate } from "./event-status";
 
+const HOW_I_AI_SERIES_ID = `${SITE.url}/how-i-build-with-ai#how-i-ai`;
+
 export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -124,6 +126,7 @@ export function getEventSchema(event: {
   return {
     "@context": "https://schema.org",
     "@type": "Event",
+    "@id": `${event.url}#event`,
     name: event.title,
     description: event.description,
     startDate: /^([01]\d|2[0-3]):[0-5]\d$/.test(event.time)
@@ -134,8 +137,8 @@ export function getEventSchema(event: {
     }),
     isAccessibleForFree: true,
     contributor: { "@id": `${SITE.url}#organization` },
-    ...(event.series === "how-i-ai-season-2" && {
-      superEvent: { "@id": `${SITE.url}/how-i-build-with-ai#season-2` },
+    ...(event.series === "how-i-ai" && {
+      superEvent: { "@id": HOW_I_AI_SERIES_ID },
     }),
     eventStatus: statusMap[event.status || "upcoming"] || statusMap.upcoming,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
