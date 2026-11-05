@@ -132,4 +132,4 @@ The founders who thrive here aren't the ones who came for the lifestyle. They're
 
 ---
 
-*BSTC connects 2,700+ founders, engineers, and operators building from Bali and Southeast Asia. [Join the community](/join?src=blog-why-bali-for-startups-inline) or [attend an event](/events) to experience the ecosystem firsthand.*
+*BSTC connects 2,700+ founders, engineers, and operators (Meetup, 25 Oct 2026) building from Bali and Southeast Asia. [Join the community](/join?src=blog-why-bali-for-startups-inline) or [attend an event](/events) to experience the ecosystem firsthand.*
