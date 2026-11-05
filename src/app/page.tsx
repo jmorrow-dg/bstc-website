@@ -94,6 +94,7 @@ function FixtureRow({ fixture, isNext }: { fixture: Fixture; isNext: boolean }) 
   if (isNext) classes.push("gl-is-next");
   else if (fixture.isDinner) classes.push("gl-fx--dinner");
   const label = fixtureLabel(fixture).replace(/\.$/, "");
+  const host = fixture.venue.split(",")[0].trim();
   return (
     <li className={classes.join(" ")}>
       <p className="gl-fx-num">
@@ -108,8 +109,20 @@ function FixtureRow({ fixture, isNext }: { fixture: Fixture; isNext: boolean }) 
         <Link href={`/events/${fixture.slug}`}>{fixture.name}</Link>
       </h3>
       {fixture.description && <p className="gl-fx-desc">{fixture.description}</p>}
-      <p className="gl-fx-where">{fixture.venue}</p>
-      <p className="gl-fx-time">{fixture.time ? `${fixture.time}, Bali time` : "Time to be confirmed"}</p>
+      <div className="gl-fx-where">
+        <p>{fixture.venue}</p>
+        {host && !/^tba$/i.test(host) && (
+          <small>
+            Locally hosted by {host} · Moderated by {SITE.fullName}
+          </small>
+        )}
+      </div>
+      <div className="gl-fx-time">
+        <p>{fixture.time ? `${fixture.time}, Bali time` : "Time to be confirmed"}</p>
+        <p>
+          <strong>Free</strong>
+        </p>
+      </div>
       <div className="gl-fx-cta">
         {fixture.rsvpUrl ? (
           <a
@@ -146,7 +159,8 @@ export default async function Home() {
   );
   const fixtures = getUpcomingEvents(allEvents)
     .map(toFixture)
-    .filter((f): f is Fixture => f !== null);
+    .filter((f): f is Fixture => f !== null)
+    .slice(0, 4);
   const next = fixtures[0];
   const faqSchema = getFAQSchema(HOMEPAGE_FAQS);
 
