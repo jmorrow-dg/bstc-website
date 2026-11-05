@@ -3,6 +3,10 @@ title: "How I AI | Edition 20"
 slug: how-i-ai-edition-20
 date: "2026-11-18"
 time: "18:00"
+endTime: "21:00"
+venueAddress: "Jl. Canggu Padang Linjong No.61, Canggu"
+organizer: "Seoul Soul Project"
+series: "how-i-ai"
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: upcoming

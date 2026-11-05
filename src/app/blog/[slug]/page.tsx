@@ -52,13 +52,16 @@ function getArticleSchema(post: BlogFrontmatter) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    dateModified: post.updated || post.date,
     author: {
       "@type": "Person",
       name: post.author,
       ...(post.authorRole && { jobTitle: post.authorRole }),
     },
     publisher: {
+      "@id": `${SITE.url}#organization`,
       "@type": "Organization",
+      logo: { "@type": "ImageObject", "@id": `${SITE.url}#logo`, url: `${SITE.url}/images/logo.svg` },
       name: SITE.fullName,
       url: SITE.url,
     },
@@ -161,6 +164,7 @@ export default async function BlogPostPage({
 
       <div className="max-w-site mx-auto px-6 pt-8 space-y-3">
         <Breadcrumbs
+          schema={false}
           items={[
             { label: "Home", href: "/" },
             { label: "Blog", href: "/blog" },

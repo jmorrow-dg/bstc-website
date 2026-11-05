@@ -3,9 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
-import { CITY_COMPARISONS, type CityComparison } from "@/data/city-comparisons";
+import { CITY_COMPARISONS, getCityComparisonFaqs } from "@/data/city-comparisons";
 import { MEETUP_CHECKED, SITE } from "@/lib/constants";
-import { getBreadcrumbSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schema";
 
 const BALI = {
   monthlyCost: 3500,
@@ -57,47 +57,6 @@ export async function generateMetadata({
   };
 }
 
-function getFaqSchema(c: CityComparison) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: `Is Bali or ${c.city} better for founders in 2026?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `Neither is universally better. Bali wins on founder community density, lifestyle leverage, and cost-to-quality ratio. ${c.city} wins on ${c.whyChooseCity[0].toLowerCase()}. The right choice depends on what you're optimising for.`,
-        },
-      },
-      {
-        "@type": "Question",
-        name: `How much does it cost to live in Bali vs ${c.city} as a founder?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: `A comfortable founder lifestyle in Bali in 2026 costs around $3,500/month. In ${c.city} it's around $${c.monthlyCost.toLocaleString()}/month. These figures include accommodation, coworking, food, transport, and a buffer for social and travel.`,
-        },
-      },
-      {
-        "@type": "Question",
-        name: `Who should choose Bali over ${c.city}?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: c.whoShouldChooseBali,
-        },
-      },
-      {
-        "@type": "Question",
-        name: `Who should choose ${c.city} over Bali?`,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: c.whoShouldChooseCity,
-        },
-      },
-    ],
-  };
-}
-
 function Row({
   label,
   bali,
@@ -124,7 +83,7 @@ export default async function BaliVsCityPage({
   const c = CITY_COMPARISONS.find((x) => x.slug === params.city);
   if (!c) notFound();
 
-  const faqSchema = getFaqSchema(c);
+  const faqSchema = getFAQSchema(getCityComparisonFaqs(c));
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", url: "/" },
     { name: "Bali vs", url: "/blog" },
@@ -142,6 +101,7 @@ export default async function BaliVsCityPage({
 
       <div className="max-w-site mx-auto px-6 pt-8">
         <Breadcrumbs
+          schema={false}
           items={[
             { label: "Home", href: "/" },
             { label: "Bali vs", href: "/blog" },

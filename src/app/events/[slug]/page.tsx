@@ -75,11 +75,14 @@ export default async function EventPage({
   const canRsvp = canRsvpToEvent(e, now);
   const hasRecap = e.status === "completed" && e.recap;
 
-  const eventSchema = getEventSchema({
+  const eventSchema = e.schema === false ? null : getEventSchema({
     title: e.title,
     description: e.description,
     date: e.date,
     time: e.time,
+    endTime: e.endTime,
+    venueAddress: e.venueAddress,
+    series: e.series,
     venue: e.venue,
     url: `${SITE.url}/events/${e.slug}`,
     image: e.coverImage,
@@ -116,6 +119,7 @@ export default async function EventPage({
       {/* Navigation */}
       <div className="max-w-site mx-auto px-6 pt-6 space-y-3">
         <Breadcrumbs
+          currentUrl={`/events/${e.slug}`}
           items={[
             { label: "Home", href: "/" },
             { label: "Events", href: "/events" },

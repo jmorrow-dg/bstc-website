@@ -1,4 +1,6 @@
 ---
+schema: false
+pastList: false
 title: "BSTC Hackathon: Edition #1"
 slug: hackathon-edition-1
 date: "2026-06-14"

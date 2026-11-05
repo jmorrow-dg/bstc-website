@@ -12,6 +12,7 @@ import {
   ContentItem,
 } from "@/lib/content";
 import { getEventState } from "@/lib/event-status";
+import { getItemListSchema } from "@/lib/schema";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
@@ -19,7 +20,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Upcoming and past events from Bali Startup & Tech Community. Networking nights, founder roundtables, builder sessions, hackathons, and our flagship How I Build with AI series across Bali and Southeast Asia.",
+    "Upcoming and past events from Bali Startup & Tech Community: networking nights, founder roundtables, builder sessions and How I Build with AI.",
   keywords: [
     "Bali tech events",
     "startup events Bali",
@@ -136,9 +137,22 @@ export default async function EventsPage() {
   const now = new Date();
   const upcoming = getUpcomingEvents(allEvents, now);
   const past = getPastEvents(allEvents, now);
+  const upcomingSchema = upcoming.length > 0 && getItemListSchema({
+    name: "Upcoming BSTC events",
+    items: upcoming.map((event) => ({
+      name: event.frontmatter.title,
+      url: `/events/${event.frontmatter.slug}`,
+    })),
+  });
 
   return (
     <>
+      {upcomingSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(upcomingSchema) }}
+        />
+      )}
       {/* Hero */}
       <section className="py-16 md:py-24">
         <div className="max-w-site mx-auto px-6">

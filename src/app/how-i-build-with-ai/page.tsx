@@ -9,7 +9,8 @@ import {
   ContentItem,
   EventFrontmatter,
 } from "@/lib/content";
-import { getFAQSchema } from "@/lib/schema";
+import { SITE } from "@/lib/constants";
+import { getFAQSchema, getHowIAISeriesSchema } from "@/lib/schema";
 import { getEventState } from "@/lib/event-status";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
@@ -41,7 +42,7 @@ const HIWA_FAQS = [
   {
     question: "Are 'How I Build with AI' sessions recorded?",
     answer:
-      "Yes. Every session is recorded and published as a podcast episode and video. Transcripts and key takeaways are published on our website.",
+      "No podcast episodes are published yet. Details of past sessions are on each event page.",
   },
 ];
 
@@ -119,6 +120,11 @@ export default async function HIWAPage() {
   const allEvents = await getAllEvents();
   const now = new Date();
   const hiwaEvents = getHIWAEvents(allEvents);
+  const seriesSchema = getHowIAISeriesSchema(
+    hiwaEvents
+      .filter((event) => event.frontmatter.series === "how-i-ai")
+      .map((event) => `${SITE.url}/events/${event.frontmatter.slug}`)
+  );
 
   return (
     <>
@@ -127,6 +133,10 @@ export default async function HIWAPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getFAQSchema(HIWA_FAQS)),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(seriesSchema) }}
       />
 
       {/* Hero */}
@@ -190,7 +200,7 @@ export default async function HIWAPage() {
               {
                 time: "0:00",
                 title: "Welcome",
-                desc: "Host frames the session. Sponsor mention.",
+                desc: "Host frames the session and welcomes the room.",
               },
               {
                 time: "0:05",

@@ -3,6 +3,7 @@ title: "How I AI: Edition #4"
 slug: how-i-ai-edition-4
 date: "2026-05-06"
 time: "18:00"
+organizer: "Seoul Soul Project"
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: completed

@@ -430,3 +430,12 @@ export const CITY_COMPARISONS: CityComparison[] = [
     metaDescription: "Bali vs Medellín for founders in 2026: cost, time zones, community, US access. Which hub fits your stage. Honest founder comparison.",
   },
 ];
+
+// Only mark up answers already rendered in the comparison's quick verdict.
+// Both the visible cards and schema read these same source fields.
+export function getCityComparisonFaqs(city: CityComparison) {
+  return [
+    { question: `Who should choose Bali over ${city.city}?`, answer: city.whoShouldChooseBali },
+    { question: `Who should choose ${city.city} over Bali?`, answer: city.whoShouldChooseCity },
+  ];
+}
