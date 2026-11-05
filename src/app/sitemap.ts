@@ -13,8 +13,9 @@ export const revalidate = 86400;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const today = getBaliDate();
+  // A future event date is not a modification, so it gets no lastmod.
   const eventLastModified = (date: string) =>
-    today && isValidEventDate(date) ? (date > today ? today : date) : undefined;
+    today && isValidEventDate(date) && date <= today ? date : undefined;
   const events = await getAllEvents();
   const posts = await getAllBlogPosts();
   // /members is listed only once it has enough Bali members to be indexed.
