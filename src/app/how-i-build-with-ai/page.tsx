@@ -42,7 +42,7 @@ const HIWA_FAQS = [
   {
     question: "Are 'How I Build with AI' sessions recorded?",
     answer:
-      "Yes. Every session is recorded and published as a podcast episode and video. Transcripts and key takeaways are published on our website.",
+      "No podcast episodes are published yet. Details of past sessions are on each event page.",
   },
 ];
 
@@ -200,7 +200,7 @@ export default async function HIWAPage() {
               {
                 time: "0:00",
                 title: "Welcome",
-                desc: "Host frames the session. Sponsor mention.",
+                desc: "Host frames the session and welcomes the room.",
               },
               {
                 time: "0:05",
