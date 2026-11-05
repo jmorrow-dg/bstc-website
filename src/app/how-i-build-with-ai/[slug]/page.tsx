@@ -21,7 +21,7 @@ import {
 } from "@/lib/content";
 import { getEventSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
-import { canRsvpToEvent, getEventState } from "@/lib/event-status";
+import { canRsvpToEvent, getEventState, rsvpPlatform } from "@/lib/event-status";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
@@ -160,7 +160,7 @@ export default async function HIWAEpisodePage({
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red"
                 >
-                  RSVP on MeetUp
+                  {rsvpPlatform(e.rsvpUrl) ? `RSVP on ${rsvpPlatform(e.rsvpUrl)}` : "RSVP"}
                   <ExternalLink size={16} />
                 </a>
               )}

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check } from "lucide-react";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { CITY_COMPARISONS, type CityComparison } from "@/data/city-comparisons";
-import { SITE } from "@/lib/constants";
+import { MEETUP_CHECKED, SITE } from "@/lib/constants";
 import { getBreadcrumbSchema } from "@/lib/schema";
 
 const BALI = {
@@ -356,8 +356,8 @@ export default async function BaliVsCityPage({
             Talk to founders who have chosen Bali
           </h2>
           <p className="text-brand-grey mb-6">
-            2,700+ builders in the BSTC community can tell you what it&apos;s
-            actually like.
+            2,700+ builders in the BSTC community (Meetup, {MEETUP_CHECKED}) can tell you
+            what it&apos;s actually like.
           </p>
           <Link
             href="/community"
