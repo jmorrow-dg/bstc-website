@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MEETUP_CHECKED, WHATSAPP_CHECKED } from "@/lib/constants";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { getFAQSchema } from "@/lib/schema";
@@ -30,12 +31,12 @@ const FAQ_SECTIONS: FAQSection[] = [
         // Confirmed true by Lachlan, 28 Oct 2026
         question: "What is BSTC?",
         answer:
-          "BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We reach 3,900+ founders, engineers, investors, and operators across Meetup (2,700+) and WhatsApp (1,200+) through high-signal events, a private Telegram member chat, and curated content.",
+          `BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We reach 3,900+ founders, engineers, investors, and operators across Meetup (2,700+ on ${MEETUP_CHECKED}) and WhatsApp (1,200+ on ${WHATSAPP_CHECKED}) through high-signal events, a private Telegram member chat, and curated content.`,
       },
       {
         question: "Who founded BSTC?",
         answer:
-          "BSTC was founded in October 2023 by Lachlan McRitchie, Josh Morrow, and Matthew Carr. It started with a 20-person networking night in Canggu and has grown to 2,700+ members.",
+          `BSTC was founded in October 2023 by Lachlan McRitchie, Josh Morrow, and Matthew Carr. It started with a 20-person networking night in Canggu and has grown to 2,700+ members on Meetup (${MEETUP_CHECKED}).`,
       },
       {
         // Confirmed true by Lachlan, 28 Oct 2026
@@ -91,10 +92,11 @@ const FAQ_SECTIONS: FAQSection[] = [
           "We run four core event formats: (1) Networking Night: monthly, 40-80 people, free, open mic + networking. (2) How I Build with AI: live AI demos by real builders. (3) Founder Roundtable: max 20, $20K+ MRR founders only, confidential. (4) Builder Sessions: tactical workshops and talks.",
       },
       {
-        // Confirmed true by Lachlan, 28 Oct 2026
+        // Confirmed true by Lachlan, 28 Oct 2026, except the day:
+        // 2nd Thursday of the month is Meetup's dinner series, read 4 Nov 2026
         question: "When and where are BSTC events?",
         answer:
-          "Our flagship Networking Night is every 3rd Thursday at Yema Kitchen in Canggu. 'How I Build with AI' events are at Seoul Seoul Project in Canggu. Other events rotate across Canggu, Ubud, Sanur, and Uluwatu. All events are listed on our MeetUp page.",
+          "Our flagship Networking Night is on the 2nd Thursday of every month at Yema Kitchen in Canggu. 'How I Build with AI' events are at Seoul Seoul Project in Canggu. Other events rotate across Canggu, Ubud, Sanur, and Uluwatu. All events are listed on our MeetUp page.",
       },
       {
         question: "What is 'How I Build with AI'?",

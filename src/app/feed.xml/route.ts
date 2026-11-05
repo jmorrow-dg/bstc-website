@@ -1,5 +1,5 @@
 import { getAllBlogPosts, getAllEvents, getUpcomingEvents } from "@/lib/content";
-import { SITE } from "@/lib/constants";
+import { MEETUP_CHECKED, SITE } from "@/lib/constants";
 
 export const revalidate = 3600;
 
@@ -41,7 +41,7 @@ export async function GET() {
   <channel>
     <title>${SITE.fullName} - BSTC Weekly</title>
     <link>${SITE.url}</link>
-    <description>Blog posts, event updates, and founder insights from Bali's largest startup and tech community. 2,700+ members across Southeast Asia.</description>
+    <description>Blog posts, event updates, and founder insights from Bali's largest startup and tech community. 2,700+ Meetup members (${MEETUP_CHECKED}) across Southeast Asia.</description>
     <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE.url}/feed.xml" rel="self" type="application/rss+xml"/>

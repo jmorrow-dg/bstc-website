@@ -15,6 +15,11 @@ export const EVENT_ORGANIZER: { name: string; url?: string } = {
   url: "",
 };
 
+// When the public counts were last read. Shown beside each count, so re-read
+// and update these together. Meetup: its group page. WhatsApp: Lachlan's answer.
+export const MEETUP_CHECKED = "25 Oct 2026";
+export const WHATSAPP_CHECKED = "28 Oct 2026";
+
 export const SITE = {
   name: "BSTC",
   fullName: "Bali Startup & Tech Community",
@@ -22,7 +27,7 @@ export const SITE = {
   tagline: "Southeast Asia's Largest Tech Community",
   description:
     // Confirmed true by Lachlan, 28 Oct 2026
-    "Southeast Asia's largest founder-led tech community. Built in Bali with 2,700+ members from 100+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.",
+    `Southeast Asia's largest founder-led tech community. Built in Bali with 2,700+ members (Meetup, ${MEETUP_CHECKED}) from 100+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.`,
   // The host Vercel serves: the bare domain redirects to www, so canonicals,
   // the sitemap and schema use www. If the bare domain is ever made primary in
   // Vercel, change this back in the same release.

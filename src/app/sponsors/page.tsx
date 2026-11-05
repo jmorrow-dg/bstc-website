@@ -11,13 +11,13 @@ import {
   Utensils,
   ExternalLink,
 } from "lucide-react";
-import { STATS, SPONSOR_CONFIG } from "@/lib/constants";
+import { MEETUP_CHECKED, STATS, SPONSOR_CONFIG, WHATSAPP_CHECKED } from "@/lib/constants";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Sponsor BSTC: Reach Southeast Asia's Top Founder Community",
   description:
-    "Weekly How I AI nights, monthly networking dinners and 2,700+ Meetup members in Bali. Event, quarterly and annual sponsor packages from US$2,000.",
+    `Weekly How I AI nights, monthly networking dinners and 2,700+ Meetup members in Bali (${MEETUP_CHECKED}). Event, quarterly and annual sponsor packages from US$2,000.`,
   alternates: { canonical: "/sponsors" },
 };
 
@@ -92,7 +92,7 @@ const CHANNELS = [
   {
     icon: MessageCircle,
     title: "WhatsApp Community",
-    metric: "1,200+ members",
+    metric: `1,200+ members (${WHATSAPP_CHECKED})`,
     body: "Daily-active group of SEA-based founders, engineers, and investors.",
   },
   {
@@ -220,7 +220,8 @@ export default function SponsorsPage() {
             </h1>
             <p className="text-lg text-brand-grey leading-relaxed mb-8">
               How I AI every Wednesday and a monthly networking dinner.{" "}
-              {STATS.members.toLocaleString()}+ Meetup members. 1,200+ on WhatsApp.
+              {STATS.members.toLocaleString()}+ Meetup members ({MEETUP_CHECKED}). 1,200+ on
+              WhatsApp ({WHATSAPP_CHECKED}).
               BSTC Weekly launches in November 2026 and the Remote Builders podcast
               is coming soon. Founders, engineers and investors building in Bali
               and across SEA.
@@ -261,8 +262,8 @@ export default function SponsorsPage() {
         <div className="max-w-site mx-auto px-6">
           <FadeInStagger className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { num: `${STATS.members.toLocaleString()}+`, label: "Meetup Members" },
-              { num: "1,200+", label: "WhatsApp Members" },
+              { num: `${STATS.members.toLocaleString()}+`, label: `Meetup Members, ${MEETUP_CHECKED}` },
+              { num: "1,200+", label: `WhatsApp Members, ${WHATSAPP_CHECKED}` },
               { num: "100+", label: "Per-Week Attendance" },
               { num: `${STATS.rating}★`, label: `from ${STATS.ratingCount} Meetup Ratings` },
             ].map((s) => (

@@ -136,9 +136,10 @@ export default async function MembersPage() {
             <div>
               <h3>Your spot in Members</h3>
               <p>
-                Join and you get your own page in the member directory: your photo,
-                your company, what you&apos;re building and a link to your site.
-                Bali members show up here too.
+                Join, say you&apos;d like to be featured, and we&apos;ll set up your
+                own page in the member directory: your photo, your company, what
+                you&apos;re building and a link to your site. It goes live once you
+                approve it. Bali members show up here too.
               </p>
             </div>
             <div className="gl-spot-actions">

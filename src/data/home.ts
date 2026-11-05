@@ -7,12 +7,12 @@ export const FORMATS = [
   {
     title: "Networking Night",
     // Confirmed true by Lachlan, 28 Oct 2026
-    // ("40-80" and "Every 3rd Thursday")
-    desc: "40-80 founders, engineers, and VCs. Open mic intros. Host-facilitated connections. Every 3rd Thursday.",
+    // ("40-80"). 2nd Thursday of the month: Meetup's dinner series, read 4 Nov 2026
+    desc: "40-80 founders, engineers, and VCs. Open mic intros. Host-facilitated connections. 2nd Thursday of every month.",
     image: "/images/events/networking-night.png",
     alt: "Illustrated poster for a BSTC Networking Night",
-    href: "/events/flagship-networking-night-may-2026",
-    linkLabel: "About Networking Night",
+    href: "/events",
+    linkLabel: "See upcoming dinners",
     badge: "Monthly",
     imagePosition: "50% 50%",
   },
