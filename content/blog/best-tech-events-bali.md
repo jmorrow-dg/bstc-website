@@ -75,7 +75,7 @@ The flagship event of Bali Startup & Tech Community. What makes it different: th
 ## How I Build with AI
 
 **Frequency:** Monthly
-**Location:** Seoul Seoul Project, Canggu
+**Location:** Seoul Soul Project, Canggu
 **Capacity:** 30-60
 **Cost:** Free. Order and pay for your own food and drinks.
 **Vibe:** Technical, practitioner-led, interactive
