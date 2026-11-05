@@ -23,6 +23,7 @@ import { CITY_COMPARISONS } from "@/data/city-comparisons";
 import { FOUNDERS, initials } from "@/data/founders";
 import {
   CREDIBILITY,
+  ENTITY,
   FORMATS,
   GUIDE_TOPICS,
   ROOM_MIX,
@@ -249,6 +250,9 @@ export default async function Home() {
           <h2 className="gl-vh" id="score-title">
             The community in numbers
           </h2>
+          <p className="gl-entity">
+            {ENTITY.text} <Link href={ENTITY.joinHref}>{ENTITY.joinLabel}</Link>.
+          </p>
           <dl className="gl-score">
             <div>
               <dt>members on Meetup</dt>

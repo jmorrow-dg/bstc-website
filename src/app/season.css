@@ -97,6 +97,8 @@
 
 /* Scoreboard */
 .gl-score-sec { padding-block: clamp(40px, 5vw, 64px) 0; }
+.gl-entity { font-size: clamp(19px, 1.9vw, 26px); font-weight: 600; line-height: 1.35; max-width: 62ch; margin-bottom: clamp(24px, 3vw, 36px); }
+.gl-entity a { color: var(--gl-red-deep); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .gl-score { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 6px solid var(--gl-navy); border-bottom: 6px solid var(--gl-navy); }
 .gl-score > div { padding: 18px clamp(12px, 1.6vw, 22px) 16px; border-left: 2px solid var(--gl-chalk); display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 8px; }
 .gl-score > div:first-child { border-left: 0; padding-left: 0; }

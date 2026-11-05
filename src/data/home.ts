@@ -3,6 +3,16 @@
 // says otherwise. Lachlan confirmed the carried-over claims true on 28 Oct 2026;
 // keep them.
 
+import { SITE, STATS } from "@/lib/constants";
+
+// Answer-first summary under the hero, held for Josh's yes. The 3,900+ total
+// isn't in STATS yet: lane 2 owns constants.ts and has the request.
+export const ENTITY = {
+  text: `${SITE.fullName} (${SITE.name}) is Southeast Asia's largest tech community, built in Bali: ${STATS.members.toLocaleString("en-US")}+ members on Meetup and 3,900+ across Meetup and WhatsApp. Every event is free. Join at`,
+  joinLabel: `${SITE.domain}/join`,
+  joinHref: `${SITE.joinForm}?src=home-entity`,
+};
+
 export const FORMATS = [
   {
     title: "Networking Night",
