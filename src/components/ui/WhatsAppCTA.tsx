@@ -36,7 +36,7 @@ export default function WhatsAppCTA() {
               <X size={10} />
             </button>
             <p className="text-xs text-brand-grey leading-relaxed">
-              Join {STATS.members.toLocaleString()}+ builders in our community
+              Join builders from {STATS.countries}+ countries in our community
             </p>
           </div>
 

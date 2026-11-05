@@ -27,7 +27,7 @@ faq:
   - question: "Is it cheaper to ship from Bali or use a 3PL?"
     answer: "It depends on order volume and where your customers are. Shipping each order from Bali avoids holding stock abroad but adds transit time and destination duties per parcel. Bulk shipping to a 3PL in your customer market means one customs entry and faster local delivery, but you pay for storage."
   - question: "Where can I meet other ecommerce operators in Bali?"
-    answer: "BSTC's free events in Canggu: How I AI every Wednesday from 4 November to 9 December 2026, 6 to 9pm at Seoul Soul Project, and networking drinks and dinner #39 on Thursday 12 November 2026 at 6:30pm at Yema Kitchen. Sign up at /join to get the community chat."
+    answer: "BSTC's free events in Canggu: How I AI every Wednesday from 4 November 2026, 6 to 9pm at Seoul Soul Project, and networking drinks and dinner #39 on Thursday 12 November 2026 at 6:30pm at Yema Kitchen. Sign up at /join to get the community chat."
 ---
 
 # Running an ecommerce business from Bali: payments, sourcing, shipping and visas
@@ -137,7 +137,7 @@ You're surrounded by good light and backdrops, which is a real advantage for lif
 
 BSTC's events are free and open to ecom operators as well as tech founders and agency owners:
 
-- **How I AI, every Wednesday from 4 November to 9 December 2026,** 6 to 9pm at Seoul Soul Project, Canggu. Useful if you're automating listings, customer service or creative.
+- **How I AI, every Wednesday from 4 November 2026,** 6 to 9pm at Seoul Soul Project, Canggu. Useful if you're automating listings, customer service or creative.
 - **Networking drinks and dinner #39, Thursday 12 November 2026,** 6:30pm at Yema Kitchen, Canggu.
 
 RSVP on the [events page](/events), and see [how to meet founders in Bali](/blog/meet-founders-in-bali) for a first-week plan. BSTC's Meetup group has 2,700+ members (25 Oct 2026). To get the community chat before you land, [sign up here](/join?src=blog-ecommerce-business-from-bali-inline). For tax, start with the [Bali tax guide](/blog/bali-founder-tax-guide-2026) and [tax residency for remote founders](https://remotebuilders.io/guides/tax-residency-for-remote-founders/?src=bstc-ecommerce-business-from-bali).
@@ -166,7 +166,7 @@ It depends on order volume and where your customers are. Shipping each order fro
 
 ### Where can I meet other ecommerce operators in Bali?
 
-BSTC's free events in Canggu: How I AI every Wednesday from 4 November to 9 December 2026, 6 to 9pm at Seoul Soul Project, and networking drinks and dinner #39 on Thursday 12 November 2026 at 6:30pm at Yema Kitchen. Sign up at /join to get the community chat.
+BSTC's free events in Canggu: How I AI every Wednesday from 4 November 2026, 6 to 9pm at Seoul Soul Project, and networking drinks and dinner #39 on Thursday 12 November 2026 at 6:30pm at Yema Kitchen. Sign up at /join to get the community chat.
 
 ## Join BSTC
 

@@ -3,7 +3,6 @@ import Link from "next/link";
 import PerkFinder from "@/components/perks/PerkFinder";
 import { getBreadcrumbSchema } from "@/lib/schema";
 import {
-  ALL_PERKS,
   EXAMPLE_PERKS,
   LOCAL_EXAMPLES,
   OPEN_PERKS,
@@ -19,19 +18,19 @@ import {
   type Perk,
 } from "@/lib/perks";
 
-const TOTAL = ALL_PERKS.length;
 const OPEN = OPEN_PERKS.length;
+const PARTNER = OPEN_PERKS.filter((p) => p.claim_route === "partner").length;
 const EXAMPLES = EXAMPLE_PERKS.length;
 const LOCAL = LOCAL_EXAMPLES.length;
 const CHECKED = formatChecked(PERKS_CHECKED);
 
 export const metadata: Metadata = {
   title: "Member perks for founders and remote builders",
-  description: `${OPEN} startup programmes open to apply for now, each checked on the vendor's own page on ${CHECKED}, plus ${EXAMPLES} example member deals Bali Startup & Tech is negotiating. Credits and discounts for founders and remote builders in Bali and beyond.`,
+  description: `${OPEN} open startup programmes, each checked on the vendor's own page by ${CHECKED}, plus ${EXAMPLES} example member deals Bali Startup & Tech is negotiating. Credits and discounts for founders and remote builders in Bali and beyond.`,
   alternates: { canonical: "/perks" },
   openGraph: {
     title: "Member perks for founders and remote builders | BSTC",
-    description: `${OPEN} open startup programmes and ${EXAMPLES} example member deals, checked ${CHECKED}.`,
+    description: `${OPEN} open startup programmes and ${EXAMPLES} example member deals, checked by ${CHECKED}.`,
     url: "/perks",
   },
 };
@@ -81,6 +80,12 @@ function PerkCard({ perk }: { perk: Perk }) {
               <dd>{tidy(perk.notes)}</dd>
             </div>
           )}
+          {perk.indonesia && (
+            <div>
+              <dt>From Bali</dt>
+              <dd>{perk.indonesia.note}</dd>
+            </div>
+          )}
         </dl>
         <p className="gl-pk-tags">
           {perk.bootstrapped_ok && <span className="gl-boot">Bootstrapped OK</span>}
@@ -97,7 +102,8 @@ function PerkCard({ perk }: { perk: Perk }) {
             target="_blank"
             rel="noopener"
           >
-            Apply on {claimDomain(perk.claim_url)}
+            {perk.claim_route === "partner" ? "See how on" : "Apply on"}{" "}
+            {claimDomain(perk.claim_url)}
             <span className="gl-vh">
               {" "}
               for {perk.programme || perk.company} (opens in a new tab)
@@ -164,14 +170,13 @@ export default function PerksPage() {
       <section className="gl-head gl-on-red" aria-labelledby="page-title">
         <div className="gl-wrap">
           <div className="gl-head-copy">
-            <p className="gl-est">Member perks, checked {CHECKED}</p>
+            <p className="gl-est">Member perks, checked by {CHECKED}</p>
             <h1 id="page-title">Member perks for founders and remote builders</h1>
             <p className="gl-lede">
               Bali Startup &amp; Tech is the community for founders, entrepreneurs
               and remote builders in Bali, and wherever you build from next.
-              Here&apos;s every perk on our list, in one place: startup programmes
-              you can apply for today, and the members-only deals we&apos;re
-              working on.
+              Here are the startup programmes on our list, in one place, and the
+              members-only deals we&apos;re working on.
             </p>
             <div className="gl-head-ctas">
               <Link className="gl-btn gl-btn-paper" href="/join?src=perks-head">
@@ -188,8 +193,9 @@ export default function PerksPage() {
               <h2>Open now</h2>
               <p className="gl-k-sub">Public startup programmes</p>
               <p>
-                Read on each vendor&apos;s own page on {CHECKED}. You apply direct
-                and the vendor decides who gets in. Each one links to its page.
+                Read on each vendor&apos;s own page by {CHECKED}. You apply direct
+                for {OPEN - PARTNER} and through a partner referral for {PARTNER}.
+                The vendor decides who gets in. Each one links to its page.
               </p>
             </div>
             <div className="gl-kind-tile gl-kind-ex">
@@ -215,7 +221,7 @@ export default function PerksPage() {
           <div className="gl-finder-head">
             <h2 id="find-title">Find a perk</h2>
             <p>
-              All {TOTAL} perks, grouped by category. Values are in US dollars, as
+              Everything on our list, grouped by category. Values are in US dollars, as
               each vendor states them, and only open programmes show one.
             </p>
           </div>
@@ -250,7 +256,7 @@ export default function PerksPage() {
               <h2 id={`cat-${g.slug}-h`}>{g.category}</h2>
               <p className="gl-cat-count" data-perk-count="">
                 {[
-                  g.open ? `${g.open} open now` : "",
+                  g.open ? `${g.open} ${g.open === 1 ? "programme" : "programmes"}` : "",
                   g.examples
                     ? `${g.examples} ${g.examples === 1 ? "example" : "examples"}`
                     : "",
@@ -273,7 +279,7 @@ export default function PerksPage() {
             categories, or turn off Bootstrapped OK.
           </p>
           <button className="gl-btn gl-btn-line" type="button" id="perk-empty-clear">
-            Clear filters and show all {TOTAL}
+            Clear filters and show everything
           </button>
         </div>
       </div>

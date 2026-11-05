@@ -22,7 +22,7 @@ import {
 } from "@/lib/content";
 import { getEventSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
-import { canRsvpToEvent, getEventState } from "@/lib/event-status";
+import { canRsvpToEvent, getEventState, rsvpPlatform } from "@/lib/event-status";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
@@ -192,7 +192,7 @@ export default async function EventPage({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors glow-red"
               >
-                RSVP on MeetUp
+                {rsvpPlatform(e.rsvpUrl) ? `RSVP on ${rsvpPlatform(e.rsvpUrl)}` : "RSVP"}
                 <ExternalLink size={16} />
               </a>
             )}
@@ -376,7 +376,7 @@ export default async function EventPage({
           </h2>
           <p className="text-brand-grey mb-6">
             {canRsvp
-              ? "RSVP on MeetUp to secure your spot."
+              ? `RSVP${rsvpPlatform(e.rsvpUrl) ? ` on ${rsvpPlatform(e.rsvpUrl)}` : ""} to secure your spot.`
              : "Don't miss the next BSTC event."}
           </p>
           <Link
