@@ -1,5 +1,5 @@
 import { CONTACT_EMAIL, EVENT_ORGANIZER, SITE, STATS } from "./constants";
-import { canRsvpToEvent, isValidEventDate } from "./event-status";
+import { EVENT_TIME_ZONE, canRsvpToEvent, isValidEventDate } from "./event-status";
 
 const HOW_I_AI_SERIES_ID = `${SITE.url}/how-i-build-with-ai#how-i-ai`;
 
@@ -172,6 +172,45 @@ export function getEventSchema(event: {
         availability: "https://schema.org/InStock",
       },
     }),
+  };
+}
+
+// Weekly schedule and venue as stated on the edition pages. No end date: the
+// series has none on main.
+export function getHowIAISeriesSchema(editionUrls: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "EventSeries",
+    "@id": HOW_I_AI_SERIES_ID,
+    name: "How I AI",
+    alternateName: "How I Build with AI",
+    description:
+      "BSTC's weekly builder night: builders share the AI tools, workflows and revenue behind what they ship.",
+    url: `${SITE.url}/how-i-build-with-ai`,
+    isAccessibleForFree: true,
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventSchedule: {
+      "@type": "Schedule",
+      byDay: "https://schema.org/Wednesday",
+      repeatFrequency: "P1W",
+      startTime: "18:00",
+      endTime: "21:00",
+      scheduleTimezone: EVENT_TIME_ZONE,
+    },
+    location: {
+      "@type": "Place",
+      name: "Seoul Soul Project",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Jl. Canggu Padang Linjong No.61, Canggu",
+        addressLocality: "Canggu",
+        addressRegion: "Bali",
+        addressCountry: "ID",
+      },
+    },
+    organizer: { "@type": "Organization", name: "Seoul Soul Project" },
+    contributor: { "@id": `${SITE.url}#organization` },
+    subEvent: editionUrls.map((url) => ({ "@id": `${url}#event` })),
   };
 }
 

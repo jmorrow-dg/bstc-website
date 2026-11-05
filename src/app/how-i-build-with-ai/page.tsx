@@ -9,7 +9,8 @@ import {
   ContentItem,
   EventFrontmatter,
 } from "@/lib/content";
-import { getFAQSchema } from "@/lib/schema";
+import { SITE } from "@/lib/constants";
+import { getFAQSchema, getHowIAISeriesSchema } from "@/lib/schema";
 import { getEventState } from "@/lib/event-status";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
@@ -119,6 +120,11 @@ export default async function HIWAPage() {
   const allEvents = await getAllEvents();
   const now = new Date();
   const hiwaEvents = getHIWAEvents(allEvents);
+  const seriesSchema = getHowIAISeriesSchema(
+    hiwaEvents
+      .filter((event) => event.frontmatter.series === "how-i-ai")
+      .map((event) => `${SITE.url}/events/${event.frontmatter.slug}`)
+  );
 
   return (
     <>
@@ -127,6 +133,10 @@ export default async function HIWAPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(getFAQSchema(HIWA_FAQS)),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(seriesSchema) }}
       />
 
       {/* Hero */}

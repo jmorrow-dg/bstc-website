@@ -12,6 +12,7 @@ import {
   ContentItem,
 } from "@/lib/content";
 import { getEventState } from "@/lib/event-status";
+import { getItemListSchema } from "@/lib/schema";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
@@ -136,9 +137,25 @@ export default async function EventsPage() {
   const now = new Date();
   const upcoming = getUpcomingEvents(allEvents, now);
   const past = getPastEvents(allEvents, now);
+  const upcomingSchema = upcoming.length > 0 && {
+    "@context": "https://schema.org",
+    ...getItemListSchema({
+      name: "Upcoming BSTC events",
+      items: upcoming.map((event) => ({
+        name: event.frontmatter.title,
+        url: `/events/${event.frontmatter.slug}`,
+      })),
+    }),
+  };
 
   return (
     <>
+      {upcomingSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(upcomingSchema) }}
+        />
+      )}
       {/* Hero */}
       <section className="py-16 md:py-24">
         <div className="max-w-site mx-auto px-6">
