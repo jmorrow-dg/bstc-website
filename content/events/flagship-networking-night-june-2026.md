@@ -53,6 +53,6 @@ On any given night you're rubbing shoulders with ex-Facebook and Amazon engineer
 
 Previous edition: [BSTC Flagship Networking Night: May 2026](/events/flagship-networking-night-may-2026).
 
-Next edition: [Bali Startup and Tech Networking Drinks & Dinner - Canggu #39](/events/networking-drinks-dinner-canggu-39).
+Next edition: [Bali Startup & Tech Community Networking Drinks & Dinner - Canggu #39](/events/networking-drinks-dinner-canggu-39).
 
 [Join BSTC for free](/join?src=event-series) for community and event updates.

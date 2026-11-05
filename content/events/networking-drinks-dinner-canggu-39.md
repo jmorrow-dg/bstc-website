@@ -1,5 +1,5 @@
 ---
-title: "Bali Startup and Tech Networking Drinks & Dinner - Canggu #39"
+title: "Bali Startup & Tech Community Networking Drinks & Dinner - Canggu #39"
 slug: networking-drinks-dinner-canggu-39
 date: "2026-11-12"
 time: "18:30"

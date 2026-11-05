@@ -22,7 +22,7 @@ seo:
 
 **How I AI, Edition 21.** BSTC's weekly builder series at Seoul Soul Project, every Wednesday.
 
-Locally hosted by Seoul Soul Project · Moderated by Bali Start-Up & Tech Community.
+Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community.
 
 Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 

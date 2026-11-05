@@ -1,5 +1,5 @@
 ---
-title: "Bali Startup and Tech Networking Drinks & Dinner - Canggu #40"
+title: "Bali Startup & Tech Community Networking Drinks & Dinner - Canggu #40"
 slug: networking-drinks-dinner-canggu-40
 date: "2026-12-10"
 time: "18:30"
@@ -31,6 +31,6 @@ Our 40th Community Networking Dinner/Drinks Event, 6:30 pm on Thursday 10 Decemb
 - 60-second intros max
 - Signal > Noise
 
-Hosted at Yema Kitchen, Canggu · Moderated by Bali Start-Up & Tech Community.
+Locally hosted by Yema Kitchen · Moderated by Bali Startup & Tech Community.
 
 Free entry. [RSVP on Meetup](https://www.meetup.com/bali-start-ups-tech-community/events/clrtbvyjcqbnb/), then [join the BSTC community](https://www.balistartupandtech.com/join?src=event-website) for the community chat and a free member profile.
