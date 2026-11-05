@@ -23,6 +23,7 @@ import { CITY_COMPARISONS } from "@/data/city-comparisons";
 import { FOUNDERS, initials } from "@/data/founders";
 import {
   CREDIBILITY,
+  ENTITY,
   FORMATS,
   GUIDE_TOPICS,
   ROOM_MIX,
@@ -58,7 +59,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "Is BSTC free to join?",
     answer:
-      "Yes. Joining BSTC is free. Sign up at balistartupandtech.com/join, get the Telegram community link straight after, and RSVP to most networking events at no cost. Some specialised formats like hackathons, founder roundtables, and ticketed editions of How I Build with AI may have a ticket fee to cover venue and operations.",
+      "Yes. Joining BSTC is free and every BSTC event is free. Sign up at balistartupandtech.com/join, get the Telegram member chat link straight after, and RSVP to any event.",
   },
   {
     question: "Who should join BSTC?",
@@ -73,7 +74,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "What events does BSTC run?",
     answer:
-      "Three core formats. (1) Networking Nights: 40 to 80 builders, on the second Thursday of every month. (2) How I Build with AI: live AI builds from real practitioners with Intel Drops and Builder Spotlights. (3) Hackathons: one-day builds with team demos and prizes. Cadence is 4 to 6 events per month.",
+      "Three core formats. (1) Networking Nights: 40 to 80 builders, on the second Thursday of every month. (2) How I Build with AI: live AI builds from real practitioners with Intel Drops and Builder Spotlights. (3) Hackathons: coming soon, date TBA. Cadence is 4 to 6 events per month.",
   },
   {
     question: "How do I join BSTC?",
@@ -93,6 +94,7 @@ function FixtureRow({ fixture, isNext }: { fixture: Fixture; isNext: boolean }) 
   if (isNext) classes.push("gl-is-next");
   else if (fixture.isDinner) classes.push("gl-fx--dinner");
   const label = fixtureLabel(fixture).replace(/\.$/, "");
+  const host = fixture.venue.split(",")[0].trim();
   return (
     <li className={classes.join(" ")}>
       <p className="gl-fx-num">
@@ -107,8 +109,20 @@ function FixtureRow({ fixture, isNext }: { fixture: Fixture; isNext: boolean }) 
         <Link href={`/events/${fixture.slug}`}>{fixture.name}</Link>
       </h3>
       {fixture.description && <p className="gl-fx-desc">{fixture.description}</p>}
-      <p className="gl-fx-where">{fixture.venue}</p>
-      <p className="gl-fx-time">{fixture.time ? `${fixture.time}, Bali time` : "Time to be confirmed"}</p>
+      <div className="gl-fx-where">
+        <p>{fixture.venue}</p>
+        {host && !/^tba$/i.test(host) && (
+          <small>
+            Locally hosted by {host} · Moderated by {SITE.fullName}
+          </small>
+        )}
+      </div>
+      <div className="gl-fx-time">
+        <p>{fixture.time ? `${fixture.time}, Bali time` : "Time to be confirmed"}</p>
+        <p>
+          <strong>Free</strong>
+        </p>
+      </div>
       <div className="gl-fx-cta">
         {fixture.rsvpUrl ? (
           <a
@@ -145,7 +159,8 @@ export default async function Home() {
   );
   const fixtures = getUpcomingEvents(allEvents)
     .map(toFixture)
-    .filter((f): f is Fixture => f !== null);
+    .filter((f): f is Fixture => f !== null)
+    .slice(0, 4);
   const next = fixtures[0];
   const faqSchema = getFAQSchema(HOMEPAGE_FAQS);
 
@@ -249,6 +264,9 @@ export default async function Home() {
           <h2 className="gl-vh" id="score-title">
             The community in numbers
           </h2>
+          <p className="gl-entity">
+            {ENTITY.text} <Link href={ENTITY.joinHref}>{ENTITY.joinLabel}</Link>.
+          </p>
           <dl className="gl-score">
             <div>
               <dt>members on Meetup</dt>
@@ -309,16 +327,16 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 5. Three ways to connect, at the home ground */}
+      {/* 5. Two ways to connect, at the home ground */}
       <section className="gl-sec gl-sec-tight" id="home-ground" aria-labelledby="hg-title">
         <div className="gl-wrap">
           <div className="gl-sec-head">
             <div>
               <p className="gl-eyebrow">The home ground</p>
-              <h2 id="hg-title">Three ways to connect</h2>
+              <h2 id="hg-title">Two ways to connect</h2>
             </div>
             <p>
-              Monthly networking. Live AI builds. Full-day hackathons. Every format
+              Monthly networking. Live AI builds. Hackathons coming soon. Every format
               designed for signal over noise.
             </p>
           </div>
@@ -358,7 +376,7 @@ export default async function Home() {
                       src={format.image}
                       alt={format.alt}
                       fill
-                      sizes="(max-width: 760px) 100vw, 33vw"
+                      sizes="(max-width: 760px) 100vw, 50vw"
                       style={{ objectPosition: format.imagePosition }}
                     />
                     <figcaption className="gl-tag">{format.badge}</figcaption>
@@ -391,26 +409,7 @@ export default async function Home() {
               This isn&apos;t a casual meetup. The people who show up are building
               real things.
             </p>
-            <div className="gl-mix">
-              <div className="gl-mix-bar" aria-hidden="true">
-                {ROOM_MIX.map((role) => (
-                  <span
-                    key={role.label}
-                    className={role.className}
-                    style={{ width: `${role.pct}%` }}
-                  />
-                ))}
-              </div>
-              <ul className="gl-mix-key">
-                {ROOM_MIX.map((role) => (
-                  <li key={role.label}>
-                    <i className={role.className} />
-                    <b>{role.pct}%</b>
-                    <span>{role.label}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <p className="gl-mix">{ROOM_MIX}</p>
           </div>
           <div>
             <h2 id="values-title">What we stand for</h2>
