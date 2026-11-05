@@ -9,10 +9,11 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     "@id": `${SITE.url}#organization`,
     name: SITE.fullName,
-    alternateName: [SITE.name, "Bali Tech Community", "BSTC Community"],
+    alternateName: [SITE.name, "Bali Tech Community", "BSTC Community", "Bali Startup & Tech"],
     url: SITE.url,
     logo: {
       "@type": "ImageObject",
+      "@id": `${SITE.url}#logo`,
       url: `${SITE.url}/images/logo.svg`,
       width: 512,
       height: 512,
@@ -20,7 +21,7 @@ export function getOrganizationSchema() {
     image: `${SITE.url}/og-image.png`,
     description: SITE.description,
     slogan: "Signal over noise. Builders first.",
-    foundingDate: SITE.founded,
+    foundingDate: "2023-10",
     founders: [
       { "@type": "Person", name: "Lachlan McRitchie", jobTitle: "Co-founder & Primary Organiser" },
       { "@type": "Person", name: "Josh Morrow", jobTitle: "Co-founder & Growth Lead" },
@@ -51,7 +52,7 @@ export function getOrganizationSchema() {
       "Bali founder taxation",
       "Hiring developers in Indonesia",
       "AI-native company building",
-      "Founder events and hackathons",
+      "Founder events (hackathons coming soon)",
       "Remote team management",
       "Coworking spaces in Bali",
       "Venture capital in Southeast Asia",
@@ -65,19 +66,18 @@ export function getOrganizationSchema() {
       "AI founders Bali",
       "tech events Bali",
     ].join(", "),
-    sameAs: [SITE.meetup, SITE.linkedin, SITE.instagram].filter(
-      (url) => url !== "#"
-    ),
+    sameAs: [
+      SITE.meetup,
+      SITE.linkedin,
+      SITE.instagram,
+      "https://luma.com/balistartuptech",
+      "https://t.me/balistartuptech",
+    ].filter((url) => url !== "#"),
     interactionStatistic: [
       {
         "@type": "InteractionCounter",
         interactionType: "https://schema.org/JoinAction",
         userInteractionCount: STATS.members,
-      },
-      {
-        "@type": "InteractionCounter",
-        interactionType: "https://schema.org/AttendEvent",
-        userInteractionCount: STATS.events,
       },
     ],
   };
