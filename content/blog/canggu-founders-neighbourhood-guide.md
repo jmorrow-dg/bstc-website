@@ -14,8 +14,8 @@ tags:
   - Bali neighbourhood
   - founder lifestyle
 seo:
-  title: "Canggu for Founders: Coworking, Cafes & Tech Scene Guide 2026 | BSTC"
-  description: "The insider guide to Canggu for tech founders. Best coworking spaces, cafes with good WiFi, event venues, and where to live. From Bali's largest tech community."
+  title: "Canggu for Founders: Coworking and Tech Scene 2026 | BSTC"
+  description: "The insider guide to Canggu for tech founders: coworking, cafes with good WiFi, event venues and where to live. From Bali's largest tech community."
   keywords:
     - Canggu coworking
     - Canggu for founders
@@ -86,7 +86,7 @@ North of Echo Beach. Even quieter, surrounded by rice fields. Best for founders 
 
 This is what makes Canggu different from other digital nomad destinations. The tech community here is organised and active.
 
-- **BSTC events** (monthly networking, How I AI, hackathons) are the anchor
+- **BSTC events** (monthly networking and How I AI, with hackathons coming soon, date TBA) are the anchor
 - **Informal founder dinners** happen weekly at various restaurants
 - **Co-working space events** add another layer of connection
 - **Telegram and WhatsApp groups** keep the community connected between events

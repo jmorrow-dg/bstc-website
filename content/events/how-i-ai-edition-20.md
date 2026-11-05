@@ -12,7 +12,7 @@ coverImage: /images/events/how-i-ai-season-2.jpg
 description: "BSTC's weekly builder night: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
 seo:
   title: "How I AI | Edition 20 | BSTC Bali"
-  description: "Wednesday 18 November, 6pm at Seoul Soul Project, Canggu. Edition 20 of BSTC's weekly builder night about making money with AI. Free entry, dinner & drinks at the venue."
+  description: "Wed 18 Nov, 6pm, Seoul Soul Project, Canggu. How I AI Edition 20, BSTC's weekly builder night. Free entry. Order your own dinner and drinks at the venue."
   keywords:
     - How I AI
     - AI builder event Bali
@@ -22,7 +22,7 @@ seo:
 
 **How I AI, Edition 20.** BSTC's weekly builder series at Seoul Soul Project, every Wednesday.
 
-Locally hosted by Seoul Soul Project · Moderated by Bali Start-Up & Tech Community.
+Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community.
 
 Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 

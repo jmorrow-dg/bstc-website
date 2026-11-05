@@ -3,7 +3,7 @@ title: "The State of AI in Southeast Asia: Where the Opportunities Are in 2026"
 slug: state-of-ai-southeast-asia-2026
 date: "2026-04-04"
 author: Josh Morrow
-authorRole: Co-founder, BSTC & David & Goliath
+authorRole: Co-founder, BSTC
 category: thought-leadership
 excerpt: "Southeast Asia is emerging as one of the most exciting AI markets in the world. 700 million people, rapidly digitising economies, and a founder ecosystem that's building AI-native companies from day one. Here's where the real opportunities are."
 readTime: "9 min read"
@@ -15,8 +15,8 @@ tags:
   - startup ecosystem
   - AI market
 seo:
-  title: "State of AI in Southeast Asia 2026: Opportunities for Founders | BSTC"
-  description: "Where the real AI opportunities are in Southeast Asia in 2026. Market analysis, founder insights, and why the region is producing some of the world's most interesting AI companies."
+  title: "State of AI in Southeast Asia 2026 | BSTC"
+  description: "Where the real AI opportunities are in Southeast Asia in 2026: market analysis, founder insights and why the region produces such interesting companies."
   keywords:
     - AI Southeast Asia
     - AI market Indonesia
@@ -116,7 +116,7 @@ Here's what makes Southeast Asia especially compelling for AI founders:
 
 **Market proximity.** You're building in the world's fastest-growing digital economy. Your test market has 700 million people.
 
-**Community.** The founder ecosystem in cities like Bali, Singapore, and Ho Chi Minh City is tight-knit and collaborative. At BSTC alone, 2,700+ founders and builders share insights, make introductions, and collaborate regularly.
+**Community.** The founder ecosystem in cities like Bali, Singapore, and Ho Chi Minh City is tight-knit and collaborative. At BSTC alone, 2,700+ founders and builders (Meetup, 25 Oct 2026) share insights, make introductions, and collaborate regularly.
 
 ## The Challenges (Being Honest)
 
@@ -136,4 +136,4 @@ And many of them are doing it from Bali.
 
 ---
 
-*BSTC connects 2,700+ founders and builders across Southeast Asia. [Join the community](/join?src=blog-state-of-ai-southeast-asia-2026-inline) to be part of the conversation shaping AI in the region.*
+*BSTC connects 2,700+ founders and builders across Southeast Asia (Meetup, 25 Oct 2026). [Join the community](/join?src=blog-state-of-ai-southeast-asia-2026-inline) to be part of the conversation shaping AI in the region.*

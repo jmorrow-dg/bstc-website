@@ -7,10 +7,10 @@ authorRole: Founder, BSTC
 category: guide
 readTime: "10 min"
 tags: ["hackathon", "bali", "events", "operator playbook", "community", "BSTC", "tech events"]
-excerpt: "The operator playbook for running a tech hackathon in Bali. Venue, sponsors, judging, prizes, food, AV, and the timeline that actually works. Drawn from the prep behind BSTC Hackathon Edition #1 in June 2026."
+excerpt: "The operator playbook for running a tech hackathon in Bali. Venue, sponsors, judging, prizes, food, AV, and the timeline that actually works. Drawn from the prep behind BSTC Hackathon Edition #1, coming soon, date TBA."
 seo:
-  title: "How to Run a Tech Hackathon in Bali (2026): Operator Playbook"
-  description: "The full operator playbook for running a tech hackathon in Bali: venue selection, sponsor outreach, judging panel, prize structure, food, AV, and the 8 week run-up timeline that works."
+  title: "How to Run a Tech Hackathon in Bali (2026) | BSTC"
+  description: "The operator playbook for running a tech hackathon in Bali: venue, sponsors, judging, prizes, food, AV and the 8 week run-up timeline that works."
   keywords: ["how to run hackathon bali", "bali hackathon", "tech hackathon indonesia", "organise hackathon bali", "hackathon operator playbook", "bali tech events", "BSTC hackathon"]
 ---
 
@@ -18,7 +18,7 @@ seo:
 
 A great hackathon in Bali takes 8 to 12 weeks of preparation, between USD $5,000 and $25,000 in budget depending on scale, and a clear answer to one question: what is this hackathon actually for?
 
-This post is the operator playbook we built while planning BSTC Hackathon Edition #1 (June 2026). It is the version of this guide we wished existed when we started, and it pulls from conversations with operators who have run hackathons in Singapore, Jakarta, Ho Chi Minh City, and Berlin.
+This post is the operator playbook we built while planning BSTC Hackathon Edition #1 (coming soon, date TBA). It is the version of this guide we wished existed when we started, and it pulls from conversations with operators who have run hackathons in Singapore, Jakarta, Ho Chi Minh City, and Berlin.
 
 If you are thinking about running a hackathon in Bali, this is the full sequence: what to decide first, who to call, what to budget, and the mistakes that have killed Bali hackathons before they shipped.
 
@@ -195,6 +195,6 @@ AV vendors in Bali have improved dramatically since 2024. For a stage with scree
 4. **Read the related guides:** [why Bali for startups](/blog/why-bali-for-startups) for the broader ecosystem context, and [the rise of AI agencies in Bali](/blog/rise-of-ai-agencies-bali) for a sense of who is actually building locally.
 5. **Plug into the [BSTC community](/community)** for venue and sponsor referrals. Most of the venues and vendors above came from BSTC member recommendations.
 
-A great Bali hackathon is a flywheel for the entire ecosystem: founders meet engineers, sponsors discover talent, the wider region notices Bali as a serious tech hub. Edition #1 is in June 2026. Edition #2 will follow because the first one will be worth doing again.
+A great Bali hackathon is a flywheel for the entire ecosystem: founders meet engineers, sponsors discover talent, the wider region notices Bali as a serious tech hub. BSTC Hackathon Edition #1 is coming soon, date TBA. Further editions depend on the first event and will need their own confirmed dates.
 
 If you are running one yourself, share your prep notes back with the community. Every operator who has done this in Bali has wished for a playbook like this. Now there is one.
