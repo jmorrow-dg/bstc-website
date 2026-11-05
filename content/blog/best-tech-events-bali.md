@@ -133,4 +133,4 @@ The signal-to-noise ratio matters. Your time is valuable. Choose events where th
 
 ---
 
-*BSTC runs the highest-signal tech events in Bali. [See our event calendar](/events) or [join the community](/join?src=blog-best-tech-events-bali-inline): 2,700+ founders and builders across Southeast Asia.*
+*BSTC runs the highest-signal tech events in Bali. [See our event calendar](/events) or [join the community](/join?src=blog-best-tech-events-bali-inline): 2,700+ founders and builders across Southeast Asia (Meetup, 25 Oct 2026).*
