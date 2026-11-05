@@ -1,6 +1,9 @@
 import { CONTACT_EMAIL, EVENT_ORGANIZER, SITE, STATS } from "./constants";
 import { EVENT_TIME_ZONE, canRsvpToEvent, isValidEventDate } from "./event-status";
 
+const personId = (name: string) =>
+  `${SITE.url}/leadership#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
 const HOW_I_AI_SERIES_ID = `${SITE.url}/how-i-build-with-ai#how-i-ai`;
 
 export function getOrganizationSchema() {
@@ -23,9 +26,9 @@ export function getOrganizationSchema() {
     slogan: "Signal over noise. Builders first.",
     foundingDate: "2023-10",
     founders: [
-      { "@type": "Person", name: "Lachlan McRitchie", jobTitle: "Co-founder & Primary Organiser" },
-      { "@type": "Person", name: "Josh Morrow", jobTitle: "Co-founder & Growth Lead" },
-      { "@type": "Person", name: "Matthew Carr", jobTitle: "Co-founder & Community Lead" },
+      { "@type": "Person", "@id": personId("Lachlan McRitchie"), name: "Lachlan McRitchie", jobTitle: "Co-founder & Primary Organiser" },
+      { "@type": "Person", "@id": personId("Josh Morrow"), name: "Josh Morrow", jobTitle: "Co-founder & Growth Lead" },
+      { "@type": "Person", "@id": personId("Matthew Carr"), name: "Matthew Carr", jobTitle: "Co-founder & Community Lead" },
     ],
     email: CONTACT_EMAIL,
     address: {
@@ -256,6 +259,7 @@ export function getPersonSchema(person: {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": personId(person.name),
     name: person.name,
     jobTitle: person.role,
     ...(person.bio && { description: person.bio }),
@@ -263,6 +267,7 @@ export function getPersonSchema(person: {
     ...(person.email && { email: person.email }),
     worksFor: {
       "@type": "Organization",
+      "@id": `${SITE.url}#organization`,
       name: SITE.fullName,
       url: SITE.url,
     },
