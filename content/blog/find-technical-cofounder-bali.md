@@ -53,7 +53,7 @@ BSTC has 2,700+ members and a Telegram member chat. There are also smaller, high
 
 ### 4. Open source and hackathons
 
-Engineers who contribute to open source or show up to hackathons are self-selecting for the "I like building things" trait. The BSTC Hackathon (first edition June 2026) is designed specifically for this. Hackathons compress a month of co-founder chemistry testing into a single weekend.
+Engineers who contribute to open source or show up to hackathons are self-selecting for the "I like building things" trait. The BSTC Hackathon (coming soon, date TBA) is designed specifically for this. Hackathons compress a month of co-founder chemistry testing into a single weekend.
 
 ### Where they are NOT
 
