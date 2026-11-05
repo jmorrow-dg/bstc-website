@@ -40,7 +40,7 @@ Both kinds of community are useful. They're just useful for different things. A 
 
 **Builder communities.** These meet in person on a schedule and the conversation is about what people are building. The ones with dated events in 2026:
 
-- **Bali Start-ups and Tech Community (BSTC), Canggu.** Weekly How I AI nights and a roughly monthly networking drinks and dinner. 2,700+ members on Meetup, rated 4.7 from 155 ratings, 54 past Meetup events ([Meetup](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026). Hosted by Josh Morrow and Lachlan McRitchie.
+- **Bali Startup & Tech Community (BSTC), Canggu.** Weekly How I AI nights and a roughly monthly networking drinks and dinner. 2,700+ members on Meetup, rated 4.7 from 155 ratings, 54 past Meetup events ([Meetup](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026). Hosted by Josh Morrow and Lachlan McRitchie.
 - **GDG Bali, Denpasar.** Developer meetups and AI workshops; last listed meetup 19 July 2026 ([GDG Bali](https://gdg.community.dev/gdg-bali/), checked 25 Oct 2026).
 - **Ubud Tech Meetup, Ubud.** Last Tuesday of the month; last listed event 30 June 2026 ([Luma](https://luma.com/bp7doqpy), checked 25 Oct 2026).
 
