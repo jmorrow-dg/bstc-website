@@ -19,7 +19,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Upcoming and past events from Bali Startup & Tech Community. Networking nights, founder roundtables, builder sessions, hackathons, and our flagship How I Build with AI series across Bali and Southeast Asia.",
+    "Upcoming and past events from Bali Startup & Tech Community: networking nights, founder roundtables, builder sessions and How I Build with AI.",
   keywords: [
     "Bali tech events",
     "startup events Bali",

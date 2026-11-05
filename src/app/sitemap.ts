@@ -43,7 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/privacy`, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  const eventPages: MetadataRoute.Sitemap = events.map((event) => ({
+  const eventPages: MetadataRoute.Sitemap = events.filter((event) => event.frontmatter.pastList !== false).map((event) => ({
     url: `${BASE_URL}/events/${event.frontmatter.slug}`,
     lastModified: eventLastModified(event.frontmatter.updated || event.frontmatter.date),
     changeFrequency: event.frontmatter.status === "upcoming" ? "weekly" as const : "monthly" as const,
