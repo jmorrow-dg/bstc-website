@@ -9,6 +9,8 @@ type FooterLink = { label: string; href: string; external?: boolean };
 const COMMUNITY: FooterLink[] = [
   { label: "Events", href: "/events" },
   { label: "How I Build with AI", href: "/how-i-build-with-ai" },
+  { label: "Tech events in Bali", href: "/blog/best-tech-events-bali" },
+  { label: "Tech communities in Bali", href: "/blog/tech-communities-in-bali" },
   { label: "About the community", href: "/community" },
   { label: "About", href: "/about" },
   { label: "Leadership", href: "/leadership" },
