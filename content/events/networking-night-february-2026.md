@@ -20,7 +20,7 @@ recap:
     - /images/photos/events/2024-08_bstc_full-venue-wide.jpg
     - /images/photos/events/2024-07_bstc_crowd-watching-speaker.jpg
 seo:
-  title: "BSTC Networking Night Recap: February 2026 | Bali Tech Events"
+  title: "BSTC Networking Night Recap: February 2026"
   description: "48 founders, engineers, and VCs gathered at Yema Kitchen for BSTC's February networking night. Developer-heavy crowd with Singapore VC attendance."
 ---
 

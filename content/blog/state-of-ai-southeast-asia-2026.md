@@ -15,8 +15,8 @@ tags:
   - startup ecosystem
   - AI market
 seo:
-  title: "State of AI in Southeast Asia 2026: Opportunities for Founders | BSTC"
-  description: "Where the real AI opportunities are in Southeast Asia in 2026. Market analysis, founder insights, and why the region is producing some of the world's most interesting AI companies."
+  title: "State of AI in Southeast Asia 2026 | BSTC"
+  description: "Where the real AI opportunities are in Southeast Asia in 2026: market analysis, founder insights and why the region produces such interesting companies."
   keywords:
     - AI Southeast Asia
     - AI market Indonesia

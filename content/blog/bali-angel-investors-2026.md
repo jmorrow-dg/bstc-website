@@ -10,8 +10,8 @@ readTime: "9 min"
 tags: ["angel investors", "bali", "fundraising", "southeast asia", "pre-seed", "founders", "angel networks"]
 excerpt: "Where Bali founders actually find angel cheques in 2026: the operator angels in Canggu, the Singapore networks that fund the region, and the syndicates writing 25,000 to 250,000 dollar tickets. Who to approach, how, and what they expect."
 seo:
-  title: "Bali Angel Investors 2026: Who's Writing Cheques and How to Reach Them"
-  description: "A practical 2026 guide to angel investors for Bali founders. Operator angels, Singapore angel networks, syndicates, cheque sizes, what they look for, and how to actually get in front of them."
+  title: "Bali Angel Investors 2026: Who's Writing Cheques | BSTC"
+  description: "A practical 2026 guide to angel investors for Bali founders: operator angels, Singapore networks, syndicates, cheque sizes and how to reach them."
   keywords: ["bali angel investors", "angel investors southeast asia", "pre-seed bali", "angel networks singapore", "BANSEA", "AngelCentral", "raise angel round bali", "indonesia angel investors", "canggu founders funding"]
 ---
 

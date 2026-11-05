@@ -7,8 +7,8 @@ author: Lachlan McRitchie
 category: guide
 excerpt: "Bali has plenty of digital nomad groups, but most are social chats. If you're building a business rather than just travelling, here's where the builders actually meet, what to look for in a community, and how to set yourself up."
 seo:
-  title: "Digital Nomad Community in Bali for Builders and Founders (2026)"
-  description: "Most Bali digital nomad groups are social chats. Here's where people building businesses meet in 2026: weekly builder nights, founder dinners and developer meetups, with dates checked 25 Oct 2026."
+  title: "Digital Nomad Community in Bali for Founders | BSTC"
+  description: "Most Bali digital nomad groups are social chats. Here's where people building businesses meet in 2026: builder nights, founder dinners and dev meetups."
 faq:
   - question: "Is there a digital nomad community in Bali for entrepreneurs?"
     answer: "Yes. Beyond the social nomad chats, Bali has in-person builder communities: BSTC in Canggu (weekly How I AI nights and a roughly monthly founder dinner), GDG Bali for developers in Denpasar, and the Ubud Tech Meetup. See our directory for each group's last dated event."

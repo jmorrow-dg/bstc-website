@@ -14,8 +14,8 @@ tags:
   - Bali founders
   - AI automation
 seo:
-  title: "AI Agencies in Bali: How Founders Build Service Businesses with AI | BSTC"
-  description: "How founders in Bali are building AI-powered agencies and consulting practices. Real models, real revenue, and why Bali is the perfect base for this new breed of service business."
+  title: "AI Agencies in Bali: Service Businesses Built on AI | BSTC"
+  description: "How founders in Bali build AI-powered agencies and consulting practices: real models, real revenue, and why Bali suits this new kind of service business."
   keywords:
     - AI agency
     - AI consulting Bali

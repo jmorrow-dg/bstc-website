@@ -7,8 +7,8 @@ author: Lachlan McRitchie
 category: guide
 excerpt: "Every startup, founder and tech group we could find in Bali, checked on 25 October 2026: what each one is for, who goes, where and how often it meets, and the last event we could actually find."
 seo:
-  title: "Startup and Tech Communities in Bali (2026): Every Active Group, Checked"
-  description: "An honest directory of Bali's startup and tech communities: BSTC, GDG Bali, Ubud Tech Meetup, AI Tinkerers Canggu, Build Club, Startup Grind, Founder Institute and more. Each with its last dated event, checked 25 Oct 2026."
+  title: "Startup and Tech Communities in Bali (2026) | BSTC"
+  description: "Directory of Bali's startup and tech communities: BSTC, GDG Bali, Ubud Tech Meetup, AI Tinkerers, Build Club, Startup Grind and more. Checked 25 Oct 2026."
 faq:
   - question: "What is the biggest startup community in Bali?"
     answer: "BSTC has the biggest reach: 2,700+ members on Meetup (2,735 on 27 Oct 2026) plus 1,200+ in its WhatsApp community, 3,900+ across the two. GDG Bali's chapter page lists 2,869 members (checked 25 Oct 2026). Membership isn't the same as activity, so check which groups have a dated event coming up. On 25 October 2026, BSTC was the only group in this list with upcoming in-person Bali events listed."

@@ -14,8 +14,8 @@ tags:
   - founder case studies
   - AI automation
 seo:
-  title: "How Founders Make Money with AI in 2026: Real Revenue, Real Numbers | BSTC"
-  description: "Real founders share how they generate revenue with AI. Case studies with actual numbers from Bali's tech community. Not theory: real businesses, real tools, real money."
+  title: "How Founders Make Money with AI in 2026 | BSTC"
+  description: "Real founders share how they generate revenue with AI: case studies with actual numbers from Bali's tech community. Real businesses, tools and money."
   keywords:
     - making money with AI
     - AI revenue 2026

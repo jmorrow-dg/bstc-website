@@ -9,8 +9,8 @@ readTime: "8 min"
 tags: ["co-founder", "bali", "founders", "hiring", "technical", "startup"]
 excerpt: "Bali has one of the highest concentrations of senior engineers and technical founders in Southeast Asia. Here's where to find them, how to approach them, and what they're actually looking for."
 seo:
-  title: "How to Find a Technical Co-founder in Bali (2026): The Real Playbook"
-  description: "Where senior engineers and technical founders actually hang out in Bali, how to approach them, what they want, and the mistakes non-technical founders keep making."
+  title: "Find a Technical Co-founder in Bali (2026) | BSTC"
+  description: "Where senior engineers and technical founders hang out in Bali, how to approach them, what they want, and the mistakes non-technical founders make."
   keywords: ["find technical co-founder bali", "bali co-founder", "technical co-founder southeast asia", "find CTO bali", "startup co-founder bali", "engineer bali", "co-founder matching"]
 ---
 

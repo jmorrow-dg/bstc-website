@@ -18,8 +18,8 @@ faq:
   - question: "What is a realistic monthly budget for a founder living in Bali?"
     answer: "Budget around $3,000-$4,000/month for a comfortable, productive setup with a private-pool villa, premium coworking, good food and a health/wellness buffer. Add international health insurance ($80-$300) and tax/accounting costs, which most cheap guides leave out."
 seo:
-  title: "Cost of Living in Bali 2026: Real Monthly Numbers & 3 Honest Budgets"
-  description: "What it actually costs to live in Bali in 2026 - three real monthly budgets ($1,800 / $3,500 / $6,500+) covering villa, food, scooter, coworking, visa & healthcare. Sourced from 30+ builders in the BSTC community."
+  title: "Cost of Living in Bali 2026: Real Monthly Budgets | BSTC"
+  description: "What it costs to live in Bali in 2026: three monthly budgets ($1,800, $3,500, $6,500+) for villa, food, scooter, coworking, visa and healthcare."
   keywords: ["cost of living in bali", "cost of living bali", "cost of living in bali 2026", "living in bali cost", "bali cost of living", "cost of living bali per month", "bali monthly budget", "canggu cost of living"]
 ---
 

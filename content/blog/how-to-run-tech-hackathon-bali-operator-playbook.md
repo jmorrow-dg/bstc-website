@@ -9,8 +9,8 @@ readTime: "10 min"
 tags: ["hackathon", "bali", "events", "operator playbook", "community", "BSTC", "tech events"]
 excerpt: "The operator playbook for running a tech hackathon in Bali. Venue, sponsors, judging, prizes, food, AV, and the timeline that actually works. Drawn from the prep behind BSTC Hackathon Edition #1, coming soon, date TBA."
 seo:
-  title: "How to Run a Tech Hackathon in Bali (2026): Operator Playbook"
-  description: "The full operator playbook for running a tech hackathon in Bali: venue selection, sponsor outreach, judging panel, prize structure, food, AV, and the 8 week run-up timeline that works."
+  title: "How to Run a Tech Hackathon in Bali (2026) | BSTC"
+  description: "The operator playbook for running a tech hackathon in Bali: venue, sponsors, judging, prizes, food, AV and the 8 week run-up timeline that works."
   keywords: ["how to run hackathon bali", "bali hackathon", "tech hackathon indonesia", "organise hackathon bali", "hackathon operator playbook", "bali tech events", "BSTC hackathon"]
 ---
 

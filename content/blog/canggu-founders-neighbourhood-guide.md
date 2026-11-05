@@ -14,8 +14,8 @@ tags:
   - Bali neighbourhood
   - founder lifestyle
 seo:
-  title: "Canggu for Founders: Coworking, Cafes & Tech Scene Guide 2026 | BSTC"
-  description: "The insider guide to Canggu for tech founders. Best coworking spaces, cafes with good WiFi, event venues, and where to live. From Bali's largest tech community."
+  title: "Canggu for Founders: Coworking and Tech Scene 2026 | BSTC"
+  description: "The insider guide to Canggu for tech founders: coworking, cafes with good WiFi, event venues and where to live. From Bali's largest tech community."
   keywords:
     - Canggu coworking
     - Canggu for founders

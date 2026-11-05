@@ -7,8 +7,8 @@ author: Lachlan McRitchie
 category: guide
 excerpt: "A first-week plan for meeting founders and tech people in Bali: which weekly events to go to, where people actually work, how to behave in the room, and how to follow up. Dates checked 25 October 2026."
 seo:
-  title: "How to Meet Founders and Tech People in Bali (2026 First-Week Plan)"
-  description: "Meet founders in Bali in your first week: the weekly How I AI night in Canggu, monthly founder dinners, coworking spaces confirmed open, local etiquette and a day-by-day plan. Checked 25 Oct 2026."
+  title: "How to Meet Founders and Tech People in Bali | BSTC"
+  description: "Meet founders in Bali in your first week: the weekly How I AI night in Canggu, monthly founder dinners, coworking spaces, etiquette and a daily plan."
 faq:
   - question: "What's the best way to meet other founders in Bali?"
     answer: "Go to the same weekly event several times and follow up with the people you talked to. In Canggu in late 2026 that's BSTC's How I AI every Wednesday from 4 November, 6 to 9pm at Seoul Soul Project, free entry."

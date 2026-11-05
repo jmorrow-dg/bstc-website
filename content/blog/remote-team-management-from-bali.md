@@ -15,7 +15,7 @@ tags:
   - distributed teams
 seo:
   title: "Managing a Remote Team from Bali: What Actually Works | BSTC"
-  description: "How founders in Bali manage distributed teams across time zones. Real strategies from BSTC's community: async communication, time zone leverage, and avoiding the traps."
+  description: "How founders in Bali manage distributed teams across time zones: async communication, time zone leverage and avoiding the traps. From BSTC's community."
   keywords:
     - remote team management Bali
     - managing team from Bali

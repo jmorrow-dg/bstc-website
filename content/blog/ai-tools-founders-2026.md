@@ -15,7 +15,7 @@ tags:
   - AI automation
   - builder tools
 seo:
-  title: "AI Tools Founders Actually Use in 2026: The Real Builder Stack | BSTC"
+  title: "AI Tools Founders Actually Use in 2026 | BSTC"
   description: "50+ founders reveal the AI tools they ship with daily. Not hype: real usage data from Bali's largest tech community. Claude, Cursor, n8n, and more."
   keywords:
     - AI tools for founders

@@ -11,8 +11,8 @@ rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/events/clrtbvykccb
 coverImage: /images/events/networking-night.png
 description: "Our 41st community networking drinks & dinner at Yema Kitchen, Canggu. Real founders, builders and operators in Bali. A quick open mic, a couple of short founder talks, then easy, no-pressure networking. Free, new faces welcome."
 seo:
-  title: "Bali Startup and Tech Networking Drinks & Dinner - Canggu #41 | Bali Tech Events"
-  description: "Thursday 14 January, 6:30pm at Yema Kitchen, Canggu. Join Bali's founders, engineers and operators at BSTC's 41st networking drinks & dinner. Free entry, zero pitching."
+  title: "BSTC Networking Drinks & Dinner, Canggu #41"
+  description: "Thu 14 Jan, 6:30pm, Yema Kitchen, Canggu. Bali's founders, engineers and operators at BSTC's 41st networking drinks and dinner. Free entry, zero pitching."
   keywords:
     - Bali networking event
     - tech meetup Bali

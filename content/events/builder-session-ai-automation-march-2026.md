@@ -20,7 +20,7 @@ recap:
     - /images/photos/events/2024-08_bstc_startup-pitch.jpg
     - /images/photos/events/2024-08_bstc_audience-engagement.jpg
 seo:
-  title: "Builder Session Recap: AI Automation for Founders | BSTC Bali"
+  title: "Builder Session Recap: AI Automation | BSTC Bali"
   description: "35 founders and engineers built AI automation workflows live at BSTC's March builder session. n8n, Claude API, and real business use cases."
 ---
 
