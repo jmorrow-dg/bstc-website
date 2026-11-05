@@ -1,7 +1,7 @@
 ---
 title: "The Best Tech Events in Bali for Founders and Builders (2026)"
 slug: best-tech-events-bali
-updated: "2026-10-30"
+updated: "2026-11-05"
 date: "2026-03-28"
 author: Josh Morrow
 authorRole: Co-founder, BSTC
@@ -28,20 +28,15 @@ seo:
 
 ## This month in Bali: November 2026
 
-Updated 30 October 2026. Bali Startup & Tech Community runs free startup and tech events in Canggu: How I AI Season 2 on Wednesdays and Networking Drinks & Dinner #39 on Thursday 12 November. Joining is free; order and pay for your own food and drinks at the venue.
+Updated 5 November 2026. Bali Startup & Tech Community runs two free event series in Canggu this month: How I AI every Wednesday, and Networking Drinks & Dinner #39 on Thursday 12 November. Joining is free; order and pay for your own food and drinks at the venue.
 
-**How I AI Season 2:** every Wednesday from 4 November to 9 December 2026, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu.
+**How I AI:** every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu.
 
 | Date | Event page |
 |---|---|
-| Wednesday 4 November | [Edition 18](/events/how-i-ai-season-2-edition-18) |
-| Wednesday 11 November | [Edition 19](/events/how-i-ai-season-2-edition-19) |
-| Wednesday 18 November | [Edition 20](/events/how-i-ai-season-2-edition-20) |
-| Wednesday 25 November | [Edition 21](/events/how-i-ai-season-2-edition-21) |
-| Wednesday 2 December | [Edition 22](/events/how-i-ai-season-2-edition-22) |
-| Wednesday 9 December | [Edition 23, season finale](/events/how-i-ai-season-2-edition-23) |
-
-Edition 23's date, time, venue and finale label are awaiting confirmation.
+| Wednesday 11 November | [How I AI, Edition 19](/events/how-i-ai-edition-19) |
+| Wednesday 18 November | [How I AI, Edition 20](/events/how-i-ai-edition-20) |
+| Wednesday 25 November | [How I AI, Edition 21](/events/how-i-ai-edition-21) |
 
 Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community
 
