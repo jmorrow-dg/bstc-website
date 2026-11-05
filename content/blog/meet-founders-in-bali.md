@@ -1,7 +1,7 @@
 ---
 title: "How to meet founders and tech people in Bali"
 slug: meet-founders-in-bali
-updated: "2026-10-30"
+updated: "2026-11-05"
 date: "2026-10-26"
 author: Lachlan McRitchie
 category: guide
@@ -26,7 +26,7 @@ faq:
 
 Meet founders, engineers and remote builders at Bali Startup & Tech Community's free events in Canggu. [Join BSTC for free](/join?src=blog-meet-founders-in-bali-answer) to connect with the community before your first event.
 
-**Upcoming dates, updated 30 October 2026:** [How I AI Season 2](/events/how-i-ai-season-2-edition-18) runs Wednesdays, 4 November to 9 December, 6:00 to 9:00 PM WITA at Seoul Soul Project; [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39) is Thursday 12 November, 6:30 to 8:30 PM WITA at Yema Kitchen. Order and pay for your own food and drinks. The 9 December finale details await confirmation.
+**Upcoming dates, updated 5 November 2026:** [How I AI](/events/how-i-ai-edition-19) runs every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project; [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39) is Thursday 12 November, 6:30 to 8:30 PM WITA at Yema Kitchen. Both are free; order and pay for your own food and drinks.
 
 
 
