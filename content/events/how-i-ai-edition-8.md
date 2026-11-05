@@ -11,7 +11,7 @@ rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
 description: "Builders share the AI tools, workflows, and revenue behind their products. Open floor, Intel Drop, and two Builder Spotlights. Real numbers, no theory."
 seo:
   title: "How I AI: Edition #8 | BSTC Bali"
-  description: "Wednesday June 3 at Seoul Soul Project, Canggu. The builder-focused series about profiting from AI. Free entry. Order your own dinner and drinks at the venue."
+  description: "Wed June 3 at Seoul Soul Project, Canggu. The builder-focused series about profiting from AI. Free entry. Order your own dinner and drinks at the venue."
   keywords:
     - How I AI
     - AI builder event Bali
