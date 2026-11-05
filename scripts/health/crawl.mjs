@@ -50,6 +50,19 @@ export function inspect(html, url, headers = {}) {
     dashCount: [...text.matchAll(/[\u2013\u2014]/g)].length, internalOutlinks: [...outlinks].sort(),
     visibleText: text };
 }
+// WITA is the working timezone for every dated evidence folder and lastmod check.
+export function witaDate(date = new Date()) {
+  return new Date(date.getTime() + 8 * 3600 * 1000).toISOString().slice(0, 10);
+}
+export function sitemapEntries(xml) {
+  return [...xml.matchAll(/<url\b[^>]*>([\s\S]*?)<\/url>/gi)].map(m => ({
+    loc: decode(m[1].match(/<loc\b[^>]*>([\s\S]*?)<\/loc>/i)?.[1].trim() ?? ''),
+    lastmod: m[1].match(/<lastmod\b[^>]*>([\s\S]*?)<\/lastmod>/i)?.[1].trim() ?? '',
+  }));
+}
+export function isFutureLastmod(lastmod, now = new Date()) {
+  return Boolean(lastmod) && !Number.isNaN(Date.parse(lastmod)) && witaDate(new Date(lastmod)) > witaDate(now);
+}
 export function csv(rows, columns) {
   const cell = value => '"' + String(Array.isArray(value) ? JSON.stringify(value) : value ?? '').replaceAll('"', '""') + '"';
   return [columns, ...rows.map(r => columns.map(c => r[c]))].map(r => r.map(cell).join(',')).join('\n') + '\n';
@@ -66,7 +79,7 @@ async function get(url) {
 }
 export async function crawl(base, output) {
   await mkdir(output, { recursive: true });
-  const startedAt = new Date().toISOString(), seen = new Set(), urls = new Set();
+  const startedAt = new Date().toISOString(), seen = new Set(), urls = new Set(), lastmods = new Map();
   async function sitemap(url) {
     if (seen.has(url)) return;
     seen.add(url);
@@ -75,7 +88,7 @@ export async function crawl(base, output) {
     await writeFile(resolve(output, `sitemap-${seen.size}.xml`), body);
     const locations = [...body.matchAll(/<loc\b[^>]*>([\s\S]*?)<\/loc>/gi)].map(m => decode(m[1].trim()));
     if (/<sitemapindex\b/i.test(body)) { for (const location of locations) await sitemap(location); }
-    else locations.forEach(location => urls.add(location));
+    else { locations.forEach(location => urls.add(location)); sitemapEntries(body).forEach(e => lastmods.set(e.loc, e.lastmod)); }
   }
   await sitemap(new URL('/sitemap.xml', base).href);
   const rows = [];
@@ -92,17 +105,18 @@ export async function crawl(base, output) {
   }));
   rows.sort((a, b) => a.url.localeCompare(b.url));
   for (const row of rows) row.inboundPages = rows.filter(source => new URL(source.url).href !== new URL(row.url).href && source.internalOutlinks.includes(new URL(row.url).href)).map(source => source.url);
-  rows.forEach(r => { r.inboundCount = r.inboundPages.length; });
+  rows.forEach(r => { r.inboundCount = r.inboundPages.length; r.lastmod = lastmods.get(r.url) ?? ''; r.futureLastmod = isFutureLastmod(r.lastmod); });
   const count = fn => rows.filter(fn).length;
   const metrics = { urls: rows.length, status200: count(r => r.status === 200), nonSelfCanonical: count(r => r.canonical !== r.url),
     parseErrorPages: count(r => r.jsonldParseErrors?.length), longTitles: count(r => r.titleLength > 60), longDescriptions: count(r => r.descriptionLength > 155),
-    duplicateBreadcrumbPages: count(r => r.breadcrumbCount > 1), dashPages: count(r => r.dashCount > 0), weakInlinks: count(r => r.inboundCount <= 1) };
-  const baseline = { urls: 85, status200: 85, nonSelfCanonical: 0, parseErrorPages: 0, longTitles: 51, longDescriptions: 49, duplicateBreadcrumbPages: 49, dashPages: 50, weakInlinks: 17 };
+    duplicateBreadcrumbPages: count(r => r.breadcrumbCount > 1), dashPages: count(r => r.dashCount > 0), weakInlinks: count(r => r.inboundCount <= 1), futureLastmods: count(r => r.futureLastmod) };
+  // Baseline: 5 Nov 2026, 6:24am WITA. futureLastmods is new, so it has no baseline figure.
+  const baseline = { urls: 91, status200: 91, nonSelfCanonical: 0, parseErrorPages: 0, longTitles: 53, longDescriptions: 57, duplicateBreadcrumbPages: 49, dashPages: 50, weakInlinks: 17 };
   await writeFile(resolve(output, 'crawl.json'), JSON.stringify({ startedAt, finishedAt: new Date().toISOString(), base, metrics, rows }, null, 2));
-  await writeFile(resolve(output, 'crawl.csv'), csv(rows, ['url','sampledAt','status','finalUrl','redirected','title','titleLength','description','descriptionLength','canonical','noindex','h1Count','jsonldTypes','jsonldParseErrors','breadcrumbCount','dashCount','internalOutlinks','inboundCount','error']));
-  await writeFile(resolve(output, 'summary.md'), `# Sitemap health\n\nStarted: ${startedAt}\n\n| Metric | Baseline | Observed | Delta |\n| --- | ---: | ---: | ---: |\n` + Object.entries(metrics).map(([k,v]) => `| ${k} | ${baseline[k]} | ${v} | ${v-baseline[k]} |`).join('\n') + '\n\nInlinks count distinct other sitemap pages, with query strings and fragments removed. Visible-text checks use server HTML excluding script, style and template elements; CSS-hidden text can remain. Network errors have status 0 and are not passes.\n');
+  await writeFile(resolve(output, 'crawl.csv'), csv(rows, ['url','sampledAt','status','finalUrl','redirected','title','titleLength','description','descriptionLength','canonical','noindex','h1Count','jsonldTypes','jsonldParseErrors','breadcrumbCount','dashCount','internalOutlinks','inboundCount','lastmod','futureLastmod','error']));
+  await writeFile(resolve(output, 'summary.md'), `# Sitemap health\n\nStarted: ${startedAt}\n\n| Metric | Baseline | Observed | Delta |\n| --- | ---: | ---: | ---: |\n` + Object.entries(metrics).map(([k,v]) => `| ${k} | ${baseline[k] ?? 'n/a'} | ${v} | ${k in baseline ? v - baseline[k] : 'n/a'} |`).join('\n') + '\n\nInlinks count distinct other sitemap pages, with query strings and fragments removed. Visible-text checks use server HTML excluding script, style and template elements; CSS-hidden text can remain. Network errors have status 0 and are not passes.\n');
   console.log(JSON.stringify({ output, metrics }, null, 2));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  await crawl(process.argv[2] ?? 'https://www.balistartupandtech.com', resolve(process.argv[3] ?? `${homedir()}/orca/evidence/bstc/health-${new Date().toISOString().slice(0, 10)}`));
+  await crawl(process.argv[2] ?? 'https://www.balistartupandtech.com', resolve(process.argv[3] ?? `${homedir()}/orca/evidence/bstc/health-${witaDate()}`));
 }
