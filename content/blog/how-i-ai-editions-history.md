@@ -41,6 +41,7 @@ Every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang L
 | [How I AI, Edition 20](/events/how-i-ai-edition-20) | 2026-11-18 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 21](/events/how-i-ai-edition-21) | 2026-11-25 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 22](/events/how-i-ai-edition-22) | 2026-12-02 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 23](/events/how-i-ai-edition-23) | 2026-12-09 | Seoul Soul Project, Canggu |
 
 Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community
 
