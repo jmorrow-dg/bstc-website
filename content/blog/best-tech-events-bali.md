@@ -63,7 +63,7 @@ Here's the honest guide to what's worth your time.
 
 ## BSTC Networking Night
 
-**Frequency:** Monthly (3rd Thursday)
+**Frequency:** Monthly (2nd Thursday)
 **Location:** Yema Kitchen, Canggu
 **Capacity:** 40-80
 **Cost:** Free

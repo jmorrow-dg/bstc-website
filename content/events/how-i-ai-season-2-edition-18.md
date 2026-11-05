@@ -1,5 +1,5 @@
 ---
-title: "How I AI | Season 2 · Edition 18"
+title: "How I AI | Edition 18"
 slug: how-i-ai-season-2-edition-18
 date: "2026-11-04"
 time: "18:00"
@@ -9,10 +9,10 @@ status: upcoming
 capacity: 50
 rsvpUrl: https://luma.com/nf8gu11f?utm_source=website
 coverImage: /images/events/how-i-ai-season-2.jpg
-description: "How I AI is back. Season 2 launch night: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
+description: "How I AI is back at Seoul Soul Project, every Wednesday: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
 seo:
-  title: "How I AI | Season 2 · Edition 18 | BSTC Bali"
-  description: "Wednesday 4 November at Seoul Soul Project, Canggu. Season 2 launch of the builder-focused series about making money with AI. Free entry. Order your own dinner and drinks at the venue."
+  title: "How I AI | Edition 18 | BSTC Bali"
+  description: "Wednesday 4 November at Seoul Soul Project, Canggu. Edition 18 of the weekly builder series about making money with AI. Free entry. Order your own dinner and drinks at the venue."
   keywords:
     - How I AI
     - AI builder event Bali
@@ -20,7 +20,7 @@ seo:
     - Canggu AI meetup
 ---
 
-**How I AI is back.** After 17 editions at Seoul Soul Project, BSTC's weekly builder series returns for a 6-week season, every Wednesday from 4 November to 9 December.
+**How I AI is back.** After 17 editions at Seoul Soul Project, BSTC's weekly builder series is back, every Wednesday from 4 November.
 
 Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community.
 

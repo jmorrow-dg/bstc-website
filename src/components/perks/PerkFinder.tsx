@@ -45,7 +45,7 @@ export default function PerkFinder({
   const [cat, setCat] = useState("all");
   const [boot, setBoot] = useState(false);
   const [query, setQuery] = useState("");
-  const [announce, setAnnounce] = useState(`Showing ${total} of ${total} perks`);
+  const [announce, setAnnounce] = useState(`Showing ${total} of ${total} listings`);
   const searchRef = useRef<HTMLInputElement>(null);
 
   const state: FilterState = useMemo(
@@ -116,7 +116,7 @@ export default function PerkFinder({
       const line = section.querySelector<HTMLElement>("[data-perk-count]");
       if (line) {
         const bits: string[] = [];
-        if (open) bits.push(`${open} open now`);
+        if (open) bits.push(`${open} ${open === 1 ? "programme" : "programmes"}`);
         if (examples) bits.push(`${examples} ${examples === 1 ? "example" : "examples"}`);
         line.textContent = bits.join(", ");
       }
@@ -127,7 +127,7 @@ export default function PerkFinder({
 
   // Debounced status line for screen readers.
   useEffect(() => {
-    const t = setTimeout(() => setAnnounce(`Showing ${shown} of ${total} perks`), 250);
+    const t = setTimeout(() => setAnnounce(`Showing ${shown} of ${total} listings`), 250);
     return () => clearTimeout(t);
   }, [shown, total]);
 
@@ -194,7 +194,7 @@ export default function PerkFinder({
                     onChange={() => setKind(value)}
                   />
                   <span>
-                    {label} <b>{kindCounts[value]}</b>
+                    {label} {value !== "all" && <b>{kindCounts[value]}</b>}
                   </span>
                 </label>
               ))}

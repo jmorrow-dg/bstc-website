@@ -9,7 +9,7 @@ status: completed
 capacity: 80
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
 coverImage: /images/events/networking-night.png
-description: "Our flagship monthly networking night. The room where Bali's best founders, engineers, and VCs come together. 3rd Thursday of every month. Free entry, real connections, zero pitching."
+description: "Our flagship monthly networking night. The room where Bali's best founders, engineers, and VCs come together. Free entry, real connections, zero pitching."
 seo:
   title: "BSTC Flagship Networking Night: May 2026 | Bali Tech Events"
   description: "Join 40-80 founders, engineers, and VCs at BSTC's flagship monthly networking night in Canggu, Bali. Free entry, open mic, high-signal connections."
@@ -22,7 +22,7 @@ seo:
 
 # The Room Where Builders Meet
 
-Our flagship monthly networking night is the beating heart of BSTC. Every 3rd Thursday, 40-80 founders, engineers, investors, and operators gather at Yema Kitchen in Canggu for the highest-signal networking event in Bali.
+Our flagship monthly networking night is the beating heart of BSTC. Every month, 40-80 founders, engineers, investors, and operators gather at Yema Kitchen in Canggu for the highest-signal networking event in Bali.
 
 ## What to Expect
 

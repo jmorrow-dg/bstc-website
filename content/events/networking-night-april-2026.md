@@ -8,7 +8,7 @@ type: networking
 status: completed
 capacity: 80
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
-description: "Our monthly networking night. Relaxed vibes, optional open mic, and the highest-signal room in Bali. 3rd Thursday of every month."
+description: "Our monthly networking night. Relaxed vibes, optional open mic, and the highest-signal room in Bali."
 seo:
   title: "BSTC Networking Night: April 2026 | Bali Tech Events"
   description: "Join 40-80 founders, engineers, and VCs at BSTC's monthly networking night in Canggu, Bali. Free entry, real connections, zero pitching."

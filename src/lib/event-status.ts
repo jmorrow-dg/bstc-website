@@ -60,3 +60,15 @@ export function canRsvpToEvent(
     return false;
   }
 }
+
+/** "Luma" or "Meetup" from an RSVP link, for the button label; "" for anything else. */
+export function rsvpPlatform(rsvpUrl?: string): string {
+  try {
+    const host = new URL(rsvpUrl || "").hostname.replace(/^www\./, "");
+    if (host === "luma.com" || host === "lu.ma") return "Luma";
+    if (host === "meetup.com") return "Meetup";
+  } catch {
+    // Not a URL: no platform name.
+  }
+  return "";
+}

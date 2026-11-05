@@ -1,12 +1,12 @@
 // Member perks data and helpers.
 //
-// src/data/perks.json is a copy of the Remote Builders perks file
-// (content/perks.json, 25 Oct 2026), where perks are edited. Its own note:
-// open programmes were read on each vendor's page on 25 Oct 2026 and anyone
-// eligible can apply via claim_url; "exclusive" and "local" entries are
+// Open programmes in src/data/perks.json come from the Remote Builders feed,
+// where perks are edited (scripts/refresh-perks.mjs). Each was read on the
+// vendor's page on its own "checked" date, and claim_route says whether you
+// apply direct or through a partner. "exclusive" and "local" entries are
 // EXAMPLES of members-only deals still being negotiated, so every one shows a
 // visible "Example" stamp, no link and no value. Local partners are unnamed on
-// purpose.
+// purpose. Examples never count as perks in copy.
 import perksFile from "@/data/perks.json";
 
 export type PerkType = "open" | "exclusive" | "local";
@@ -27,6 +27,8 @@ export type Perk = {
   eligibility?: string;
   bootstrapped_ok?: boolean;
   claim_url?: string;
+  claim_route?: string;
+  indonesia?: { status: string; note: string };
   notes?: string;
   featured?: boolean;
   checked?: string;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { SITE, STATS } from "@/lib/constants";
+import { MEETUP_CHECKED, SITE, STATS } from "@/lib/constants";
 import { getAllBlogPosts, getUpcomingEvents, getAllEvents } from "@/lib/content";
 import { getFAQSchema } from "@/lib/schema";
 import {
@@ -46,8 +46,9 @@ export const revalidate = 3600;
 // Confirmed true by Lachlan, 28 Oct 2026
 // (answers 1, 3, 4 and 5: "Southeast Asia's largest", "2,700+ funded founders",
 // "ex-FAANG", "100+ countries", "40 to 80", "active nodes in Ubud, Sanur, and
-// Uluwatu", "every third Thursday"). Rendered visibly below and as FAQPage
-// schema, both from this one list, so they always match.
+// Uluwatu"). Rendered visibly below and as FAQPage schema, both from this one
+// list, so they always match. Second Thursday of the month: Meetup's dinner
+// series, read 4 Nov 2026 (#37 and #38 were on third Thursdays).
 const HOMEPAGE_FAQS = [
   {
     question: "What is BSTC?",
@@ -72,7 +73,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "What events does BSTC run?",
     answer:
-      "Three core formats. (1) Networking Nights: 40 to 80 builders, every third Thursday. (2) How I Build with AI: live AI builds from real practitioners with Intel Drops and Builder Spotlights. (3) Hackathons: one-day builds with team demos and prizes. Cadence is 4 to 6 events per month.",
+      "Three core formats. (1) Networking Nights: 40 to 80 builders, on the second Thursday of every month. (2) How I Build with AI: live AI builds from real practitioners with Intel Drops and Builder Spotlights. (3) Hackathons: one-day builds with team demos and prizes. Cadence is 4 to 6 events per month.",
   },
   {
     question: "How do I join BSTC?",
@@ -81,7 +82,6 @@ const HOMEPAGE_FAQS = [
   },
 ];
 
-const MEETUP_CHECKED = "25 Oct 2026";
 
 function categoryLabel(category: string): string {
   const text = category.replace(/-/g, " ");
@@ -492,10 +492,10 @@ export default async function Home() {
             <div>
               <h3>Your spot in Members</h3>
               <p>
-                Join and you get your own page in the member directory: your photo,
-                your company, what you&apos;re building and a link to your site. It
-                goes live once you&apos;ve joined, wherever you&apos;re building
-                from.
+                Join, say you&apos;d like to be featured, and we&apos;ll set up your
+                own page in the member directory: your photo, your company, what
+                you&apos;re building and a link to your site. It goes live once you
+                approve it, wherever you&apos;re building from.
               </p>
               <VisitorClock />
             </div>
@@ -547,9 +547,9 @@ export default async function Home() {
           <div className="gl-sec-head">
             <h2 id="perks-title">Perks that travel with you</h2>
             <p>
-              Software perks work wherever you build from. {OPEN_PERKS.length}{" "}
-              startup programmes are open to apply for now, each checked on the
-              vendor&apos;s own page on {formatChecked(PERKS_CHECKED)}. Another{" "}
+              Most software perks work wherever you build from.{" "}
+              {OPEN_PERKS.length} startup programmes are open, each checked on the
+              vendor&apos;s own page by {formatChecked(PERKS_CHECKED)}. Another{" "}
               {EXAMPLE_PERKS.length} are examples of members-only deals we&apos;re
               negotiating with founder tools and Bali partners. None of those are
               agreed yet, so they&apos;re labelled Example.
@@ -559,8 +559,8 @@ export default async function Home() {
             <div className="gl-perk-col">
               <h3>Open now</h3>
               <p>
-                Public startup programmes. You apply direct and the vendor decides
-                who&apos;s eligible.
+                Public startup programmes. Most you apply for direct, some through
+                a partner referral, and the vendor decides who&apos;s eligible.
               </p>
               <ul className="gl-perk-list">
                 {teaserOpen.map((perk) => (
@@ -608,7 +608,7 @@ export default async function Home() {
           </div>
           <div className="gl-perk-foot">
             <Link className="gl-perk-all" href="/perks">
-              See all {OPEN_PERKS.length + EXAMPLE_PERKS.length} perks
+              See all {OPEN_PERKS.length} perks
             </Link>
             <Link className="gl-btn gl-btn-red" href="/join?src=home-perks">
               Join to get member deals
@@ -783,8 +783,8 @@ export default async function Home() {
           <p className="gl-pre">Join from anywhere</p>
           <h2 id="final-title">Ready to join?</h2>
           <p>
-            Join {members} founders, engineers, and operators building the future
-            from Southeast Asia.
+            Join {members} founders, engineers, and operators (Meetup, {MEETUP_CHECKED})
+            building the future from Southeast Asia.
           </p>
           <div className="gl-final-ctas">
             <Link className="gl-btn gl-btn-paper" href="/join?src=home-final">

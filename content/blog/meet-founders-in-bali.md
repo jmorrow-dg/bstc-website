@@ -11,7 +11,7 @@ seo:
   description: "Meet founders in Bali in your first week: the weekly How I AI night in Canggu, monthly founder dinners, coworking spaces confirmed open, local etiquette and a day-by-day plan. Checked 25 Oct 2026."
 faq:
   - question: "What's the best way to meet other founders in Bali?"
-    answer: "Go to the same weekly event several times and follow up with the people you talked to. In Canggu in late 2026 that's BSTC's How I AI every Wednesday from 4 November to 9 December, 6 to 9pm at Seoul Soul Project, free entry."
+    answer: "Go to the same weekly event several times and follow up with the people you talked to. In Canggu in late 2026 that's BSTC's How I AI every Wednesday from 4 November, 6 to 9pm at Seoul Soul Project, free entry."
   - question: "Are there networking events for founders in Canggu?"
     answer: "Yes. BSTC runs a free networking drinks and dinner roughly monthly; #39 is on Thursday 12 November 2026 at 6:30pm at Yema Kitchen, Canggu. BWork also lists community events on its own calendar."
   - question: "Do I need to be a member to go to BSTC events?"
@@ -42,12 +42,12 @@ All dates checked against the event pages on 25 October 2026.
 
 | When | What | Where | Cost |
 |---|---|---|---|
-| Every Wednesday, 4 Nov to 9 Dec 2026, 6 to 9pm | How I AI, Season 2 (BSTC) | Seoul Soul Project, Canggu | Free entry, order dinner or drinks |
+| Every Wednesday from 4 Nov 2026, 6 to 9pm | How I AI (BSTC) | Seoul Soul Project, Canggu | Free entry, order dinner or drinks |
 | Thursday 12 Nov 2026, 6:30pm | Networking Drinks & Dinner #39 (BSTC) | Yema Kitchen, Canggu | Free entry |
 | Last Tuesday of the month, 6:30pm | Ubud Tech Meetup | Last held at Outpost Ubud Penestanan | Check its calendar |
 | Roughly monthly, weekends | GDG Bali developer meetups | Denpasar | Check its chapter page |
 
-**How I AI** is BSTC's weekly builder night. The format is a one-minute "Money Round" where people share what they've built or shipped with AI that week, a short AI news rundown from Josh Morrow, then two builder spotlights of ten minutes each with Q&A, and open networking over dinner ([event page](/events/how-i-ai-season-2-edition-18); [Meetup listing](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026). Season 1 ran 17 editions at the same venue. Season 2 runs six Wednesdays.
+**How I AI** is BSTC's weekly builder night. The format is a one-minute "Money Round" where people share what they've built or shipped with AI that week, a short AI news rundown from Josh Morrow, then two builder spotlights of ten minutes each with Q&A, and open networking over dinner ([event page](/events/how-i-ai-season-2-edition-18); [Meetup listing](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026). The first 17 editions ran at the same venue, and it now runs every Wednesday.
 
 **The networking drinks and dinner** is the broader room: founders, indie hackers, agency owners, solo devs and a few investors. A short open mic, a couple of founder talks, then networking. #39 is on Thursday 12 November 2026 at 6:30pm ([event page](/events/networking-drinks-dinner-canggu-39)).
 
@@ -107,7 +107,7 @@ More detail in [how to network at tech events](/blog/how-to-network-at-tech-even
 
 ### What's the best way to meet other founders in Bali?
 
-Go to the same weekly event several times and follow up with the people you talked to. In Canggu in late 2026 that's BSTC's How I AI every Wednesday from 4 November to 9 December, 6 to 9pm at Seoul Soul Project, free entry.
+Go to the same weekly event several times and follow up with the people you talked to. In Canggu in late 2026 that's BSTC's How I AI every Wednesday from 4 November, 6 to 9pm at Seoul Soul Project, free entry.
 
 ### Are there networking events for founders in Canggu?
 
