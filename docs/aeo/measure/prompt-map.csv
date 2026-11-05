@@ -1,0 +1,19 @@
+question_id,prompt,owner_page,secondary_owner_page,hub_prompt,purpose
+Q01,What is the biggest startup community in Bali?,/blog/tech-communities-in-bali,,TODO(lachlan),discovery
+Q02,What are the best tech communities in Bali for founders?,/blog/tech-communities-in-bali,,TODO(lachlan),discovery
+Q03,Is there a startup or founder community in Canggu?,/blog/tech-communities-in-bali,,TODO(lachlan),discovery
+Q04,Where do tech people and software engineers meet in Bali?,/blog/tech-communities-in-bali,,TODO(lachlan),discovery
+Q05,What tech events are on in Bali this week?,/events,/blog/best-tech-events-bali,TODO(lachlan),discovery
+Q06,Are there any AI meetups in Bali?,/events,/blog/best-tech-events-bali,TODO(lachlan),discovery
+Q07,Is there a founder networking event in Canggu this week?,/events,/blog/best-tech-events-bali,TODO(lachlan),discovery
+Q08,Are there free startup events in Bali?,/events,/blog/best-tech-events-bali,TODO(lachlan),discovery
+Q09,Where do digital nomads network in Bali?,/blog/digital-nomad-community-bali,/blog/meet-founders-in-bali,TODO(lachlan),discovery
+Q10,I'm a remote founder moving to Bali. How do I meet other founders?,/blog/digital-nomad-community-bali,/blog/meet-founders-in-bali,TODO(lachlan),discovery
+Q11,Which coworking spaces in Canggu have founder events?,/blog/digital-nomad-community-bali,/blog/meet-founders-in-bali,TODO(lachlan),discovery
+Q12,What's the best community for remote entrepreneurs in Bali?,/blog/digital-nomad-community-bali,/blog/meet-founders-in-bali,TODO(lachlan),discovery
+Q13,How can I meet angel investors in Bali?,/blog/bali-angel-investors-2026,,TODO(lachlan),discovery
+Q14,Are there VCs or investor events in Bali?,/blog/bali-angel-investors-2026,,TODO(lachlan),discovery
+Q15,Where can I pitch my startup in Bali?,/blog/bali-angel-investors-2026,,TODO(lachlan),discovery
+Q16,How do I join Bali Startup & Tech Community?,/faq,,TODO(lachlan),accuracy
+Q17,Is BSTC free?,/faq,,TODO(lachlan),accuracy
+Q18,What is How I AI in Canggu?,/how-i-build-with-ai,,TODO(lachlan),accuracy
