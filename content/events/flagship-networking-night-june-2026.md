@@ -11,8 +11,8 @@ rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
 coverImage: /images/events/networking-night.png
 description: "Our 37th community networking drinks & dinner. The room where Bali's best founders, engineers, and VCs come together. Monthly at Yema Kitchen, Canggu. Free entry, real connections, zero pitching."
 seo:
-  title: "BSTC Networking Drinks & Dinner #37: June 2026 | Bali Tech Events"
-  description: "Join 40-80 founders, engineers, and VCs at BSTC's flagship monthly networking night in Canggu, Bali on Thursday 18 June 2026. Free entry, open mic, high-signal connections."
+  title: "BSTC Networking Drinks & Dinner #37: June 2026"
+  description: "40 to 80 founders, engineers and VCs at BSTC's flagship monthly networking night in Canggu, Bali on 18 June 2026. Free entry and an open mic."
   keywords:
     - Bali networking event
     - tech meetup Bali

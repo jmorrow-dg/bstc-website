@@ -15,8 +15,8 @@ tags:
   - networking Bali
   - founder events
 seo:
-  title: "Best Tech Events in Bali 2026: The Definitive Guide for Founders | BSTC"
-  description: "The definitive guide to tech events in Bali for 2026. Which meetups are worth your time, which ones to skip, and how to get the most value from Bali's tech scene."
+  title: "Best Tech Events in Bali 2026: Founder Guide | BSTC"
+  description: "The definitive guide to tech events in Bali for 2026: free BSTC events this month, which meetups are worth your time and which ones to skip."
   keywords:
     - best tech events Bali
     - tech meetup Bali
