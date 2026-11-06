@@ -45,7 +45,7 @@ const COMMUNITY_FAQS = [
   {
     question: "Are events free?",
     answer:
-      "Core networking nights are always free. Some premium events like Founder Roundtables and workshops may have a ticket price. It's always listed on the event page.",
+      "Yes. Every BSTC event is free entry. Food and drinks are on you.",
   },
 ];
 

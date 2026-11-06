@@ -68,7 +68,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Is BSTC free to join?",
         answer:
-          "Yes. Joining the community (/join, the Telegram member chat and MeetUp) is free. Most events are free, including our flagship Networking Night. Some premium events like Founder Roundtables and workshops may have a ticket price.",
+          "Yes. Joining the community (/join, the Telegram member chat and MeetUp) is free. Every BSTC event is free entry, including our flagship Networking Night. Food and drinks are on you.",
       },
       {
         question: "Do I need to be a founder to join?",

@@ -38,7 +38,7 @@ Here's the honest guide to what's worth your time.
 **Frequency:** Monthly (2nd Thursday)
 **Location:** Yema Kitchen, Canggu
 **Capacity:** 40-80
-**Cost:** Free
+**Cost:** Free entry
 **Vibe:** Professional, relaxed, high-signal
 
 The flagship event of Bali Startup & Tech Community. What makes it different: the "no hard selling" rule is actively enforced. The host floats the room making introductions, not letting people corner each other with pitches. 60-second intro format keeps energy high.
@@ -54,7 +54,7 @@ The flagship event of Bali Startup & Tech Community. What makes it different: th
 **Frequency:** Monthly
 **Location:** Seoul Seoul Project, Canggu
 **Capacity:** 30-60
-**Cost:** Free (initially)
+**Cost:** Free entry
 **Vibe:** Technical, practitioner-led, interactive
 
 BSTC's flagship builder series. A real founder shares their screen and shows how they actually build with AI tools: live, unscripted, with Q&A. Not a talk about AI. A demonstration of AI in action.
@@ -70,7 +70,7 @@ BSTC's flagship builder series. A real founder shares their screen and shows how
 **Frequency:** Monthly
 **Location:** Various (curated venues)
 **Capacity:** Max 20 (application-based)
-**Cost:** Ticketed
+**Cost:** Free entry
 **Vibe:** Confidential, deep-dive, no spectators
 
 For founders with $20K+ MRR only. Single topic. Facilitated discussion. No pitching. What's shared stays in the room. This is where founders discuss the hard stuff: hiring, firing, pricing, fundraising, mental health.

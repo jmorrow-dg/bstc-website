@@ -58,7 +58,7 @@ const HOMEPAGE_FAQS = [
   {
     question: "Is BSTC free to join?",
     answer:
-      "Yes. Joining BSTC is free. Sign up at balistartupandtech.com/join, get the Telegram community link straight after, and RSVP to most networking events at no cost. Some specialised formats like hackathons, founder roundtables, and ticketed editions of How I Build with AI may have a ticket fee to cover venue and operations.",
+      "Yes. Joining BSTC is free. Sign up at balistartupandtech.com/join, get the Telegram community link straight after, and RSVP to any event. Every BSTC event is free entry. Food and drinks are on you.",
   },
   {
     question: "Who should join BSTC?",
