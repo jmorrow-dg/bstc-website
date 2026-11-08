@@ -53,7 +53,7 @@ function EpisodeCard({ event, now }: { event: ContentItem<EventFrontmatter>; now
 
   return (
     <Link
-      href={`/how-i-build-with-ai/${e.slug}`}
+      href={`/events/${e.slug}`}
       className="group block rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all overflow-hidden"
     >
       {/* Cover image */}
