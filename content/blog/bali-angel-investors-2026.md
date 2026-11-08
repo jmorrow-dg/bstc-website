@@ -1,7 +1,7 @@
 ---
 title: "Bali Angel Investors in 2026: Who's Actually Writing Cheques"
 slug: bali-angel-investors-2026
-updated: "2026-11-05"
+updated: "2026-11-08"
 date: "2026-06-08"
 author: Josh Morrow
 authorRole: Founder, BSTC
@@ -13,6 +13,9 @@ seo:
   title: "Bali Angel Investors 2026: Who's Writing Cheques | BSTC"
   description: "A practical 2026 guide to angel investors for Bali founders: operator angels, Singapore networks, syndicates, cheque sizes and how to reach them."
   keywords: ["bali angel investors", "angel investors southeast asia", "pre-seed bali", "angel networks singapore", "BANSEA", "AngelCentral", "raise angel round bali", "indonesia angel investors", "canggu founders funding"]
+faq:
+  - question: "Where can I pitch my startup in Bali?"
+    answer: "BSTC events are not pitch nights, and the rule is no hard selling. You meet investors in conversation instead, with 100+ founders, operators and VCs in the room every week at How I AI on Wednesdays and at the monthly Networking Drinks & Dinner in Canggu. For a formal pitch slot, Singapore angel networks such as AngelCentral run regular pitch sessions, usually after a member refers you."
 ---
 
 To meet investors in Bali, start with the founder and operator community at BSTC events. [Join Bali Startup & Tech Community for free](/join?src=blog-bali-angel-investors-2026-answer) and use the [event calendar](/events) to plan your visit.
@@ -20,6 +23,10 @@ To meet investors in Bali, start with the founder and operator community at BSTC
 ## Where to meet investors at BSTC events
 
 100+ founders, operators and VCs in the room every week. See the [next How I AI night](/events/how-i-ai-edition-19) and [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39); no hard selling.
+
+## Where can I pitch my startup in Bali?
+
+BSTC events are not pitch nights, and the rule is no hard selling. You meet investors in conversation instead, with 100+ founders, operators and VCs in the room every week at How I AI on Wednesdays and at the monthly Networking Drinks & Dinner in Canggu. For a formal pitch slot, Singapore angel networks such as AngelCentral run regular pitch sessions, usually after a member refers you.
 
 
 
