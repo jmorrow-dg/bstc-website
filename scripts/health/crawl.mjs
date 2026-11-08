@@ -110,8 +110,8 @@ export async function crawl(base, output) {
   const metrics = { urls: rows.length, status200: count(r => r.status === 200), nonSelfCanonical: count(r => r.canonical !== r.url),
     parseErrorPages: count(r => r.jsonldParseErrors?.length), longTitles: count(r => r.titleLength > 60), longDescriptions: count(r => r.descriptionLength > 155),
     duplicateBreadcrumbPages: count(r => r.breadcrumbCount > 1), dashPages: count(r => r.dashCount > 0), weakInlinks: count(r => r.inboundCount <= 1), futureLastmods: count(r => r.futureLastmod) };
-  // Baseline: 5 Nov 2026, 6:24am WITA. futureLastmods is new, so it has no baseline figure.
-  const baseline = { urls: 91, status200: 91, nonSelfCanonical: 0, parseErrorPages: 0, longTitles: 53, longDescriptions: 57, duplicateBreadcrumbPages: 49, dashPages: 50, weakInlinks: 17 };
+  // Baseline: 8 Nov 2026, about 6:27am WITA.
+  const baseline = { urls: 91, status200: 91, nonSelfCanonical: 0, parseErrorPages: 0, longTitles: 53, longDescriptions: 57, duplicateBreadcrumbPages: 49, dashPages: 50, weakInlinks: 18, futureLastmods: 7 };
   await writeFile(resolve(output, 'crawl.json'), JSON.stringify({ startedAt, finishedAt: new Date().toISOString(), base, metrics, rows }, null, 2));
   await writeFile(resolve(output, 'crawl.csv'), csv(rows, ['url','sampledAt','status','finalUrl','redirected','title','titleLength','description','descriptionLength','canonical','noindex','h1Count','jsonldTypes','jsonldParseErrors','breadcrumbCount','dashCount','internalOutlinks','inboundCount','lastmod','futureLastmod','error']));
   await writeFile(resolve(output, 'summary.md'), `# Sitemap health\n\nStarted: ${startedAt}\n\n| Metric | Baseline | Observed | Delta |\n| --- | ---: | ---: | ---: |\n` + Object.entries(metrics).map(([k,v]) => `| ${k} | ${baseline[k] ?? 'n/a'} | ${v} | ${k in baseline ? v - baseline[k] : 'n/a'} |`).join('\n') + '\n\nInlinks count distinct other sitemap pages, with query strings and fragments removed. Visible-text checks use server HTML excluding script, style and template elements; CSS-hidden text can remain. Network errors have status 0 and are not passes.\n');
