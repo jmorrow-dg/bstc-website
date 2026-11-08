@@ -1,7 +1,10 @@
-// Refreshes src/data/perks.json from the Remote Builders feed, where perks are
-// edited. Takes open programmes only: signed member deals stay off this site
-// until members can claim them here, and the examples stay as they are.
-// Run: node scripts/refresh-perks.mjs, then update the perks line in public/llms.txt.
+// Refreshes open programmes in src/data/perks.json from the Remote Builders
+// feed. Example listings already in this file are kept, including any marked
+// unavailable. Community offers live in src/data/member-offers.json and this
+// script does not read or write that file.
+// Run: node scripts/refresh-perks.mjs, then update the perks line in public/llms.txt
+// so it matches the counts from both files. Do not describe agreed offers as
+// claimable while their claim route is still pending.
 import { readFileSync, writeFileSync } from "node:fs";
 
 const FEED = "https://remotebuilders.io/perks/perks.json";
@@ -35,7 +38,7 @@ writeFileSync(
   JSON.stringify(
     {
       checked: open.map((p) => p.checked).sort().at(-1),
-      note: `Open programmes come from ${FEED} (scripts/refresh-perks.mjs), each read on the vendor's own page on its 'checked' date. 'exclusive' and 'local' entries are EXAMPLES of members-only deals BSTC is negotiating: none are agreed, every one shown must carry a visible 'Example' label, no claim links, no values. Local partners are unnamed on purpose.`,
+      note: `Open programmes come from ${FEED} (scripts/refresh-perks.mjs), each read on the vendor's own page on its 'checked' date. Community offers with agreed or in-progress terms live in src/data/member-offers.json and are kept off this file so a refresh cannot drop them. 'exclusive' and 'local' entries are example listings. Entries still marked example are members-only deals BSTC is negotiating: every one shown must carry a visible 'Example' label, no claim links, no values. Entries marked unavailable are not currently available and must not be described as in negotiation. Local partners are unnamed on purpose.`,
       categories,
       perks: [...open, ...examples],
     },

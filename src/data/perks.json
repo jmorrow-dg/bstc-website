@@ -1,6 +1,6 @@
 {
  "checked": "2026-10-28",
- "note": "Open programmes come from https://remotebuilders.io/perks/perks.json (scripts/refresh-perks.mjs), each read on the vendor's own page on its 'checked' date. 'exclusive' and 'local' entries are EXAMPLES of members-only deals BSTC is negotiating: none are agreed, every one shown must carry a visible 'Example' label, no claim links, no values. Local partners are unnamed on purpose.",
+ "note": "Open programmes come from https://remotebuilders.io/perks/perks.json (scripts/refresh-perks.mjs), each read on the vendor's own page on its 'checked' date. Community offers with agreed or in-progress terms live in src/data/member-offers.json and are kept off this file so a refresh cannot drop them. 'exclusive' and 'local' entries are example listings. Entries still marked example are members-only deals BSTC is negotiating: every one shown must carry a visible 'Example' label, no claim links, no values. Entries marked unavailable are not currently available and must not be described as in negotiation. Local partners are unnamed on purpose.",
  "categories": [
   "AI tools",
   "Dev & infrastructure",
@@ -3515,7 +3515,8 @@
    "company": "ChatGPT (OpenAI)",
    "website": "https://chatgpt.com",
    "type": "exclusive",
-   "status": "example",
+   "status": "unavailable",
+   "status_note": "OpenAI declined on 4 Nov 2026 while revamping its programme. This listing is not currently available.",
    "verified": false,
    "category": "AI tools",
    "offer": "2 Years Business Free",
