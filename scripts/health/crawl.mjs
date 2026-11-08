@@ -42,13 +42,34 @@ export function inspect(html, url, headers = {}) {
   }
   const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? html;
   const text = visibleText(body);
+  const a11y = staticA11y(html, body);
   return { title, titleLength: [...title].length, description, descriptionLength: [...description].length,
     canonical: links.find(l => l.rel?.toLowerCase().split(/\s+/).includes('canonical'))?.href ?? '',
     noindex: /\bnoindex\b/i.test([headers['x-robots-tag'] ?? '', ...metas.filter(m => /^(robots|googlebot)$/i.test(m.name ?? '')).map(m => m.content)].join(' ')),
     h1Count: [...body.matchAll(/<h1\b/gi)].length, jsonldTypes: types, jsonldParseErrors: parseErrors,
     breadcrumbCount: types.filter(t => t === 'BreadcrumbList').length,
     dashCount: [...text.matchAll(/[\u2013\u2014]/g)].length, internalOutlinks: [...outlinks].sort(),
+    htmlKiB: Math.round(Buffer.byteLength(html) / 1024), ...a11y,
     visibleText: text };
+}
+// Server HTML checks only, not an audit: no contrast, focus or ARIA state. Lighthouse covers those when disk allows.
+export function staticA11y(html, body = html) {
+  const named = (tag, inner) => {
+    const a = attrs(tag);
+    if (a['aria-label']?.trim() || a['aria-labelledby'] || a.title?.trim()) return true;
+    const imgAlt = [...inner.matchAll(/<img\b[^>]*>/gi)].some(m => attrs(m[0]).alt?.trim());
+    const svgTitle = /<title\b[^>]*>\s*\S/i.test(inner);
+    return Boolean(visibleText(inner)) || imgAlt || svgTitle;
+  };
+  const unnamed = name => [...body.matchAll(new RegExp(`(<${name}\\b[^>]*>)([\\s\\S]*?)<\\/${name}>`, 'gi'))].filter(m => !named(m[1], m[2])).length;
+  const levels = [...body.matchAll(/<h([1-6])\b/gi)].map(m => Number(m[1]));
+  return {
+    htmlLang: attrs(html.match(/<html\b[^>]*>/i)?.[0] ?? '').lang ?? '',
+    imgNoAlt: [...body.matchAll(/<img\b[^>]*>/gi)].filter(m => !('alt' in attrs(m[0]))).length,
+    unnamedLinks: unnamed('a'), unnamedButtons: unnamed('button'),
+    headingSkips: levels.filter((level, i) => i > 0 && level > levels[i - 1] + 1).length,
+    hiddenOnLoad: [...body.matchAll(/style="[^"]*\bopacity:\s*0(?:[;\s"]|$)/gi)].length,
+  };
 }
 // WITA is the working timezone for every dated evidence folder and lastmod check.
 export function witaDate(date = new Date()) {
@@ -109,12 +130,15 @@ export async function crawl(base, output) {
   const count = fn => rows.filter(fn).length;
   const metrics = { urls: rows.length, status200: count(r => r.status === 200), nonSelfCanonical: count(r => r.canonical !== r.url),
     parseErrorPages: count(r => r.jsonldParseErrors?.length), longTitles: count(r => r.titleLength > 60), longDescriptions: count(r => r.descriptionLength > 155),
-    duplicateBreadcrumbPages: count(r => r.breadcrumbCount > 1), dashPages: count(r => r.dashCount > 0), weakInlinks: count(r => r.inboundCount <= 1), futureLastmods: count(r => r.futureLastmod) };
+    duplicateBreadcrumbPages: count(r => r.breadcrumbCount > 1), dashPages: count(r => r.dashCount > 0), weakInlinks: count(r => r.inboundCount <= 1), futureLastmods: count(r => r.futureLastmod),
+    missingLang: count(r => r.status === 200 && !r.htmlLang), imgNoAltPages: count(r => r.imgNoAlt > 0), unnamedLinkPages: count(r => r.unnamedLinks > 0),
+    unnamedButtonPages: count(r => r.unnamedButtons > 0), headingSkipPages: count(r => r.headingSkips > 0), hiddenOnLoadPages: count(r => r.hiddenOnLoad > 0),
+    htmlOver500KiB: count(r => r.htmlKiB > 500) };
   // Baseline: 8 Nov 2026, about 6:27am WITA.
   const baseline = { urls: 91, status200: 91, nonSelfCanonical: 0, parseErrorPages: 0, longTitles: 53, longDescriptions: 57, duplicateBreadcrumbPages: 49, dashPages: 50, weakInlinks: 18, futureLastmods: 7 };
   await writeFile(resolve(output, 'crawl.json'), JSON.stringify({ startedAt, finishedAt: new Date().toISOString(), base, metrics, rows }, null, 2));
-  await writeFile(resolve(output, 'crawl.csv'), csv(rows, ['url','sampledAt','status','finalUrl','redirected','title','titleLength','description','descriptionLength','canonical','noindex','h1Count','jsonldTypes','jsonldParseErrors','breadcrumbCount','dashCount','internalOutlinks','inboundCount','lastmod','futureLastmod','error']));
-  await writeFile(resolve(output, 'summary.md'), `# Sitemap health\n\nStarted: ${startedAt}\n\n| Metric | Baseline | Observed | Delta |\n| --- | ---: | ---: | ---: |\n` + Object.entries(metrics).map(([k,v]) => `| ${k} | ${baseline[k] ?? 'n/a'} | ${v} | ${k in baseline ? v - baseline[k] : 'n/a'} |`).join('\n') + '\n\nInlinks count distinct other sitemap pages, with query strings and fragments removed. Visible-text checks use server HTML excluding script, style and template elements; CSS-hidden text can remain. Network errors have status 0 and are not passes.\n');
+  await writeFile(resolve(output, 'crawl.csv'), csv(rows, ['url','sampledAt','status','finalUrl','redirected','title','titleLength','description','descriptionLength','canonical','noindex','h1Count','jsonldTypes','jsonldParseErrors','breadcrumbCount','dashCount','internalOutlinks','inboundCount','lastmod','futureLastmod','htmlKiB','htmlLang','imgNoAlt','unnamedLinks','unnamedButtons','headingSkips','hiddenOnLoad','error']));
+  await writeFile(resolve(output, 'summary.md'), `# Sitemap health\n\nStarted: ${startedAt}\n\n| Metric | Baseline | Observed | Delta |\n| --- | ---: | ---: | ---: |\n` + Object.entries(metrics).map(([k,v]) => `| ${k} | ${baseline[k] ?? 'n/a'} | ${v} | ${k in baseline ? v - baseline[k] : 'n/a'} |`).join('\n') + '\n\nInlinks count distinct other sitemap pages, with query strings and fragments removed. Visible-text checks use server HTML excluding script, style and template elements; CSS-hidden text can remain. Network errors have status 0 and are not passes. The accessibility and hiddenOnLoad columns read server HTML only; they are not a Lighthouse or browser audit.\n');
   console.log(JSON.stringify({ output, metrics }, null, 2));
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

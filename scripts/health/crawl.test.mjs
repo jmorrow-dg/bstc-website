@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { crawl, inspect, isFutureLastmod, sitemapEntries, witaDate } from './crawl.mjs';
+import { crawl, inspect, isFutureLastmod, sitemapEntries, staticA11y, witaDate } from './crawl.mjs';
 
 test('extracts SEO, structured data and normalised outlinks', () => {
   const row = inspect(`<title>A &amp; B</title><meta content='A &quot;description&quot;' name='description'><meta name="robots" content="noindex"><link rel="canonical" href="https://example.com/"><body><h1>Heading</h1><script type="application/ld+json">{"@graph":[{"@type":"BreadcrumbList"},{"@type":["Article","Thing"]}]}</script><script>invisible \u2014</script><p>Visible &ndash; text</p><a href="/target?q=1#part">Target</a><a href="/target">Duplicate</a></body>`, 'https://example.com/');
@@ -62,4 +62,9 @@ test('reads sitemap lastmod and flags dates after today in WITA', () => {
   assert.equal(isFutureLastmod('2026-11-06', now), false);
   assert.equal(isFutureLastmod('2026-11-07T00:00:00Z', now), true);
   assert.equal(isFutureLastmod('', now), false);
+});
+test('static accessibility checks count unnamed controls, missing alts, heading skips and hidden content', () => {
+  const body = '<div style="opacity:0;transform:none"><h1>A</h1><h3>B</h3><h2>C</h2><a href="/x"></a><a href="/y" aria-label="Y"></a><a href="/z"><img src="a" alt="Zed"></a><a href="/w"><svg><title>W</title></svg></a><button><svg></svg></button><button>Go</button><img src="b"><img src="c" alt=""><p style="opacity:0.5">x</p></div>';
+  assert.deepEqual(staticA11y(`<html lang="en"><body>${body}</body></html>`, body), { htmlLang: 'en', imgNoAlt: 1, unnamedLinks: 1, unnamedButtons: 1, headingSkips: 1, hiddenOnLoad: 1 });
+  assert.equal(staticA11y('<html><body></body></html>').htmlLang, '');
 });
