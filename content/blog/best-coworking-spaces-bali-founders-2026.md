@@ -17,6 +17,8 @@ faq:
     answer: "The highest founder density is at Tropical Nomad and BWork. Dojo Bali closed in December 2022, and Outpost no longer lists a Canggu location, although both still appear on some 2026 lists. Many founders mix two or three days at a coworking space with cafe days at Crate, Milu or Quince."
   - question: "Is coworking in Bali worth it versus working from a cafe?"
     answer: "Yes, if you take calls or want to meet other builders. A good coworking space gives you reliable redundant wifi, quiet call booths and high founder density - the main reasons to pay for one over a cafe."
+  - question: "Which coworking spaces in Canggu have founder events?"
+    answer: "BWork lists community events at its Canggu and Uluwatu spaces on its own community calendar (checked 25 October 2026). Bali Startup & Tech Community runs its founder events at venues rather than coworking spaces: How I AI every Wednesday at Seoul Soul Project and a monthly Networking Drinks & Dinner at Yema Kitchen, both in Canggu and both free."
 seo:
   title: "Best Coworking Spaces in Bali 2026: Rankings and Wifi Speeds"
   description: "Bali coworking spaces tested by founders over 6 months: wifi speeds, monthly costs, founder density and ones to avoid in Canggu, Ubud, Sanur and Uluwatu."
@@ -102,7 +104,7 @@ The casual option. Cheaper, smaller, less of a "scene." Good if you mostly need 
 
 *Closed in December 2022, per the "officially closed Dec '22" banner on its own site (checked 25 October 2026). Kept here for the record.*
 
-The original. Dojo built the Bali coworking scene and still runs the best community programming (events, intros, talks). Less suited for deep focus, more suited for the social side of building.
+The original. Dojo built the Bali coworking scene and, until it closed, ran the best community programming (events, intros, talks). Less suited for deep focus, more suited for the social side of building.
 
 - **Wifi:** Good.
 - **Founder density:** Moderate to high.
@@ -171,6 +173,9 @@ The highest founder density is at Tropical Nomad and BWork. Dojo Bali closed in 
 ### Is coworking in Bali worth it versus working from a cafe?
 Yes, if you take calls or want to meet other builders. A good coworking space gives you reliable redundant wifi, quiet call booths and high founder density - the main reasons to pay for one over a cafe.
 
+### Which coworking spaces in Canggu have founder events?
+BWork lists community events at its Canggu and Uluwatu spaces on its own community calendar (checked 25 October 2026). Bali Startup & Tech Community runs its founder events at venues rather than coworking spaces: How I AI every Wednesday at Seoul Soul Project and a monthly Networking Drinks & Dinner at Yema Kitchen, both in Canggu and both free.
+
 ## Come work with us
 
 If you want to skip the trial-and-error and meet other founders in Bali immediately, join the BSTC community. Our monthly Networking Night brings 60 to 80 founders into one room, and our Builder Sessions go deeper with 30 to 40 operators sharing what they're shipping.
@@ -179,7 +184,7 @@ If you want to skip the trial-and-error and meet other founders in Bali immediat
 
 ## Sources (read 25 October 2026)
 
-- BWork: [bwork.id](https://bwork.id/), [Canggu prices](https://bwork.id/membership/canggu), [Uluwatu opening, Industry.co.id, 12 Feb 2026](https://www.industry.co.id/read/147945/dari-canggu-ke-uluwatu-bwork-bali-rayakan-5-tahun-perjalanan-dan-perluas-komunitas-digital-nomad)
+- BWork: [bwork.id](https://bwork.id/), [community calendar](https://bwork.id/community), [Canggu prices](https://bwork.id/membership/canggu), [Uluwatu opening, Industry.co.id, 12 Feb 2026](https://www.industry.co.id/read/147945/dari-canggu-ke-uluwatu-bwork-bali-rayakan-5-tahun-perjalanan-dan-perluas-komunitas-digital-nomad)
 - Outpost: [Ubud prices](https://destinationoutpost.co/cowork-in-ubud/), [locations](https://destinationoutpost.co/location/)
 - Tropical Nomad: [own site](https://www.tropicalnomad.org/) (not loading); [Finns Beach Club, updated 21 Jul 2026](https://finnsbeachclub.com/guides/best-coworking-in-canggu/)
 - Biliq: [biliqbali.com](https://www.biliqbali.com/)
