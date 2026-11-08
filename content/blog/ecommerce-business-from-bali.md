@@ -13,8 +13,8 @@ keyTakeaways:
   - "The US ended duty-free de minimis entry for all countries on 29 August 2025, so orders shipped from Bali to US customers no longer enter duty-free, whatever their value."
   - "Plan production around March 2027: Nyepi is on 8 March and Idul Fitri on 10 and 11 March, with collective leave days on 9, 12 and 15 March."
 seo:
-  title: "Ecommerce Business from Bali (2026): Shopify, Stripe, Amazon, Export"
-  description: "Run a Shopify, Amazon or DTC ecommerce business from Bali: visa limits from imigrasi, Shopify Payments and Stripe country rules, exporting from Indonesia without a PT PMA, shipping and duties. Checked 26 Oct 2026."
+  title: "Ecommerce Business from Bali 2026: Shopify, Stripe, Export"
+  description: "Run a Shopify, Amazon or DTC business from Bali: visa limits, Shopify Payments and Stripe rules, export without a PT PMA, shipping. Checked 26 Oct 2026."
 faq:
   - question: "Can I run a Shopify store from Bali?"
     answer: "Yes, if the store's business is registered in a country Shopify Payments supports, or you use a third-party payment provider. Shopify's list of 41 supported countries doesn't include Indonesia. Your visa is the other half: check what it allows before you start trading from here."

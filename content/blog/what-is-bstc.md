@@ -6,8 +6,8 @@ author: Josh Morrow
 category: guide
 excerpt: "2,700+ founders, engineers, and VCs. Monthly events. Zero noise. Here's what BSTC is, how it works, and why builders keep coming back."
 seo:
-  title: "What is BSTC? Bali's Largest Startup & Tech Community Explained"
-  description: "Discover BSTC: Bali Startup & Tech Community. 2,700+ members, monthly events, and the highest-signal founder network in Southeast Asia."
+  title: "What is BSTC? Bali's Largest Startup & Tech Community"
+  description: "BSTC is Bali Startup & Tech Community: 2,700+ members (Meetup, 25 Oct 2026), monthly events and the highest-signal founder network in Southeast Asia."
 ---
 
 # What is BSTC?

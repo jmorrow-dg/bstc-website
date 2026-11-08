@@ -9,8 +9,8 @@ readTime: "9 min"
 tags: ["bali", "founder retreat", "team offsite", "villas", "remote team", "company retreat", "uluwatu", "canggu", "ubud"]
 excerpt: "Where BSTC members actually book their team offsites in Bali. Real villa names, real prices, capacity by team size, and the location and logistics decisions that make or break a week-long retreat."
 seo:
-  title: "Best Bali Villas for Founder Retreats and Team Offsites in 2026"
-  description: "The honest guide to picking a Bali villa for a founder retreat or team offsite. Locations compared, real villa recommendations by team size, pricing in 2026, and the logistics traps to avoid."
+  title: "Best Bali Villas for Founder Retreats and Team Offsites 2026"
+  description: "How to pick a Bali villa for a founder retreat or team offsite: locations compared, villa picks by team size, 2026 pricing and logistics traps to avoid."
   keywords: ["bali villas team offsite", "founder retreat bali", "company offsite bali", "best bali villas for groups", "uluwatu villa retreat", "canggu villa team", "ubud villa offsite", "bali corporate retreat"]
 ---
 

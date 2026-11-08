@@ -9,8 +9,8 @@ readTime: "12 min"
 tags: ["singapore vcs", "fundraising", "southeast asia", "venture capital", "founders", "seed", "series a"]
 excerpt: "The practical 2026 playbook for Southeast Asia founders raising from Singapore-based VCs. Who is writing cheques, at what stage, and how to get a warm intro that actually converts, from BSTC operators who have raised from them."
 seo:
-  title: "Singapore VCs 2026: Who Invests, Cheque Sizes, and How to Pitch Them (Founder Guide)"
-  description: "The Southeast Asia founder's 2026 guide to Singapore VCs. Peak XV, Jungle, Monk's Hill, Openspace, Insignia, East Ventures, Wavemaker, and more. Stage, cheque sizes, thesis, and how to actually get in."
+  title: "Singapore VCs 2026: Who Invests, Cheque Sizes, How to Pitch"
+  description: "Singapore VCs for SEA founders in 2026: Peak XV, Jungle, Monk's Hill, Openspace, Insignia, East Ventures, Wavemaker, cheque sizes and how to get in."
   keywords: ["singapore vcs", "southeast asia VC list", "peak XV", "jungle ventures", "monks hill", "openspace ventures", "insignia ventures", "how to raise from singapore VCs", "SEA fundraising", "singapore venture capital"]
 ---
 

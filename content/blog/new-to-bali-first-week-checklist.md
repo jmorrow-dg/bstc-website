@@ -13,8 +13,8 @@ keyTakeaways:
   - "Riding without a valid licence can mean up to four months' jail or a fine of up to IDR 1 million, and Australia's NRMA says riding abroad needs a motorcycle licence from home plus an International Driving Permit, or your travel insurance could be void."
   - "Most newcomers meet people fastest by going to the same weekly event several times; in Canggu that's BSTC's free How I AI night every Wednesday from 4 November 2026."
 seo:
-  title: "Moving to Bali Checklist 2026: Your First Week as a Remote Entrepreneur"
-  description: "First week in Bali, step by step: visa, All Indonesia arrival card, IDR 150,000 tourist levy, customs, SIM and IMEI, scooter licence, money, coworking and where founders meet. Sourced and checked 26 Oct 2026."
+  title: "Moving to Bali 2026: First Week Checklist for Founders"
+  description: "First week in Bali: visa, arrival card, IDR 150,000 levy, SIM and IMEI, scooter licence, money, coworking and where founders meet. Checked 26 Oct 2026."
 faq:
   - question: "What do I need to do before flying to Bali?"
     answer: "Check your passport has at least six months left and blank pages, choose and apply for your visa (an e-VOA, a C1 visit visa or the E33G remote worker visa), fill in the free All Indonesia arrival card in the three days before you land, and pay the IDR 150,000 Bali tourist levy on the Love Bali website. Sign up at /join too, so you're in the community chat when you land."

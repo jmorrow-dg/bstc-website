@@ -13,8 +13,8 @@ keyTakeaways:
   - "Only change cash at licensed money changers, which display a Bank Indonesia logo with a permit number and QR code."
   - "Visit visas and the E33G remote worker visa bar you from taking pay from people or companies in Indonesia, so get paid by overseas clients into an overseas account or company."
 seo:
-  title: "Bank Account in Bali for Foreigners (2026): Cards, Wise, QRIS & Local Banks"
-  description: "Can a foreigner open a bank account in Bali? What BCA, Mandiri, CIMB Niaga and Jenius ask for, ATM limits and fees, QRIS for visitors, Wise, money changers and getting paid from overseas. Checked 26 Oct 2026."
+  title: "Bank Account in Bali for Foreigners 2026: Wise, QRIS, Banks"
+  description: "Can a foreigner open a bank account in Bali? What BCA, Mandiri, CIMB Niaga and Jenius ask for, ATM fees, QRIS, Wise and getting paid. Checked 26 Oct 2026."
 faq:
   - question: "Can a foreigner open a bank account in Bali?"
     answer: "Usually only once you hold a stay permit. On 26 October 2026, Mandiri's and CIMB Niaga's own pages asked foreigners for a passport plus a KITAS or KITAP (Mandiri also accepts a Golden Visa), and BCA asks foreigners living in Indonesia for a KITAS or KITAP. Jenius only accepts Indonesian citizens with a KTP."

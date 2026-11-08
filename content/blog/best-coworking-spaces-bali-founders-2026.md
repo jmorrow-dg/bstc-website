@@ -18,8 +18,8 @@ faq:
   - question: "Is coworking in Bali worth it versus working from a cafe?"
     answer: "Yes, if you take calls or want to meet other builders. A good coworking space gives you reliable redundant wifi, quiet call booths and high founder density - the main reasons to pay for one over a cafe."
 seo:
-  title: "Best Coworking Spaces in Bali (2026): Honest Rankings & Real Wifi Speeds"
-  description: "The best coworking spaces in Bali, tested by founders over 6 months. Real wifi speeds, monthly costs, founder density and which spaces to avoid across Canggu, Ubud, Sanur & Uluwatu."
+  title: "Best Coworking Spaces in Bali 2026: Rankings and Wifi Speeds"
+  description: "Bali coworking spaces tested by founders over 6 months: wifi speeds, monthly costs, founder density and ones to avoid in Canggu, Ubud, Sanur and Uluwatu."
   keywords: ["coworking space bali", "coworking bali", "best coworking space bali", "coworking spaces bali", "coworking canggu", "coworking ubud", "bali coworking", "coworking space canggu bali"]
 ---
 

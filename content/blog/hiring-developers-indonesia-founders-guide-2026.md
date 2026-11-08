@@ -9,7 +9,7 @@ readTime: "10 min"
 tags: ["hiring", "indonesia", "engineering", "remote teams", "founders", "talent"]
 excerpt: "Salary ranges, where to source, what to pay, how to vet, and the legal structures that actually work. From founders who have hired 100+ engineers in Indonesia."
 seo:
-  title: "Hiring Developers in Indonesia 2026: Salaries, Sourcing, Legal Setup"
+  title: "Hiring Developers in Indonesia 2026: Pay, Sourcing, Setup"
   description: "The complete founder's guide to hiring software engineers in Indonesia in 2026. Real salary ranges, sourcing channels, vetting playbook, and PT PMA setup."
   keywords: ["hiring developers indonesia", "indonesia engineering salary", "hire indonesian developer", "indonesia tech talent", "PT PMA hiring", "remote developer indonesia", "jakarta engineers", "bandung engineers"]
 ---

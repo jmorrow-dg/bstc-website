@@ -25,8 +25,8 @@ faq:
   - question: "Do I need a PT PMA to live and work in Bali?"
     answer: "Only if you want to operate commercially in Indonesia, hire local staff or invoice Indonesian clients. Many founders run an offshore entity (Singapore, US, Australia) for 1-2 years and only set up a PT PMA when they have a specific local business need."
 seo:
-  title: "Bali Digital Nomad Visa Guide 2026: Remote Worker Visa, C1 Visit Visa, KITAS & Golden Visa | BSTC"
-  description: "The complete 2026 guide to Bali visas for digital nomads and founders - the Remote Worker (digital nomad) Visa, C1 and C2 visit visas, KITAS, Golden Visa, Second Home Visa and PT PMA. Practical advice from Bali's tech community."
+  title: "Bali Nomad Visa Guide 2026: Remote Worker, C1, KITAS | BSTC"
+  description: "The 2026 guide to Bali visas for nomads and founders: Remote Worker Visa, C1 and C2 visit visas, KITAS, Golden Visa, Second Home Visa and PT PMA."
   keywords:
     - bali digital nomad visa
     - digital nomad visa bali

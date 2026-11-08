@@ -15,8 +15,8 @@ tags:
   - digital nomads
   - Indonesia tech
 seo:
-  title: "Bali Tech Ecosystem 2026: Why Top Founders Are Building Here | BSTC"
-  description: "Inside Bali's growing tech ecosystem: world-class founders, improving infrastructure, VC interest, and a builder culture that rivals Austin and Lisbon. The complete guide."
+  title: "Bali Tech Ecosystem 2026: Why Top Founders Build Here | BSTC"
+  description: "Inside Bali's growing tech ecosystem: world-class founders, better infrastructure, VC interest and a builder culture that rivals Austin and Lisbon."
   keywords:
     - Bali tech ecosystem
     - tech scene Bali 2026

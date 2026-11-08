@@ -9,8 +9,8 @@ readTime: "11 min"
 tags: ["bali", "chiang mai", "lisbon", "founders", "remote work", "founder hubs"]
 excerpt: "Three of the most-hyped founder hubs of the decade. We've spent serious time in all three. Here's the unvarnished truth about cost, community, infrastructure, and which one actually fits which kind of founder."
 seo:
-  title: "Bali vs Chiang Mai vs Lisbon for Founders 2026: Which Hub Wins?"
-  description: "An honest, founder-written comparison of Bali, Chiang Mai, and Lisbon in 2026. Cost, community density, infrastructure, taxes, time zones, and which hub fits your stage."
+  title: "Bali vs Chiang Mai vs Lisbon for Founders 2026: Which Wins?"
+  description: "A founder-written comparison of Bali, Chiang Mai and Lisbon in 2026: cost, community, infrastructure, taxes, time zones and which hub fits your stage."
   keywords: ["bali vs chiang mai", "bali vs lisbon", "best founder hubs 2026", "digital nomad cities founders", "where to live as a founder", "chiang mai vs lisbon", "founder city comparison", "startup hubs southeast asia"]
 ---
 

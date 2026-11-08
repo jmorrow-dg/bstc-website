@@ -13,8 +13,8 @@ keyTakeaways:
   - "Employer of record services such as Deel and Remote list EOR pricing from US$599 per employee per month (checked 26 Oct 2026), so price that in before you compare it with setting up a PT PMA."
   - "Plan for outages: Starlink stopped taking new Indonesian customers in July 2025, and mobile data in Bali was set to be switched off for 24 hours over Nyepi in 2026. Nyepi 2027 is on Monday 8 March."
 seo:
-  title: "Running an Agency from Bali (2026): Visas, Clients, Hiring, Time Zones"
-  description: "Run a digital agency from Bali: E33G vs local work rules from imigrasi, entity options, a time zone overlap table for Sydney, Singapore, London, New York and SF, hiring in Indonesia and internet backups. Checked 26 Oct 2026."
+  title: "Running an Agency from Bali 2026: Visas, Clients, Hiring"
+  description: "Run an agency from Bali: E33G vs local work rules, entity options, time zones for Sydney, London, New York and SF, hiring. Checked 26 Oct 2026."
 faq:
   - question: "Can I run my agency from Bali on the E33G remote worker visa?"
     answer: "The E33G is for working in Indonesia for a company established outside Indonesia, with an employment agreement and income of at least US$60,000 a year. Imigrasi's page doesn't say how that applies to an owner contracting with their own overseas agency, so confirm your case with an immigration lawyer."
