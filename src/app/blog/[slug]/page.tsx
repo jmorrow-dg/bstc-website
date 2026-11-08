@@ -7,7 +7,8 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import NewsletterSignup from "@/components/layout/NewsletterSignup";
 import { getAllBlogPosts, getBlogPostBySlug, ContentItem, BlogFrontmatter } from "@/lib/content";
 import { MEETUP_CHECKED, SITE } from "@/lib/constants";
-import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getFAQSchema, personId } from "@/lib/schema";
+import { FOUNDERS } from "@/data/founders";
 
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
@@ -55,6 +56,10 @@ function getArticleSchema(post: BlogFrontmatter) {
     dateModified: post.updated || post.date,
     author: {
       "@type": "Person",
+      ...(FOUNDERS.some((f) => f.name === post.author) && {
+        "@id": personId(post.author),
+        url: `${SITE.url}/leadership`,
+      }),
       name: post.author,
       ...(post.authorRole && { jobTitle: post.authorRole }),
     },

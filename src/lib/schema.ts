@@ -1,7 +1,7 @@
 import { CONTACT_EMAIL, EVENT_ORGANIZER, SITE, STATS } from "./constants";
 import { EVENT_TIME_ZONE, canRsvpToEvent, isValidEventDate } from "./event-status";
 
-const personId = (name: string) =>
+export const personId = (name: string) =>
   `${SITE.url}/leadership#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
 const HOW_I_AI_SERIES_ID = `${SITE.url}/how-i-build-with-ai#how-i-ai`;
