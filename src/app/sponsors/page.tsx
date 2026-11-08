@@ -130,7 +130,7 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      "Thank you very much Bali Startup and Tech for being one of the best tech communities in Bali. Super social and community vibe — so needed especially when everyone is scaling with AI.",
+      "Thank you very much Bali Startup and Tech for being one of the best tech communities in Bali. Super social and community vibe, so needed especially when everyone is scaling with AI.",
     name: "Mia",
     role: "Founder / CEO",
   },
@@ -280,7 +280,7 @@ export default function SponsorsPage() {
         </div>
       </section>
 
-      {/* As featured in (press) — only renders if configured */}
+      {/* As featured in (press): only renders if configured */}
       {press.title && (
         <section className="pb-16">
           <div className="max-w-site mx-auto px-6">
@@ -445,7 +445,7 @@ export default function SponsorsPage() {
         </div>
       </section>
 
-      {/* Why BSTC — kept from prior page, reframed */}
+      {/* Why BSTC: kept from prior page, reframed */}
       <section className="py-16 md:py-24 border-y border-ink/10 bg-white/40">
         <div className="max-w-site mx-auto px-6 text-center">
           <FadeIn>
@@ -572,7 +572,7 @@ export default function SponsorsPage() {
         </div>
       </section>
 
-      {/* HIWA Series Sponsor — premium spotlight */}
+      {/* HIWA Series Sponsor: premium spotlight */}
       <section className="py-16 md:py-24">
         <div className="max-w-site mx-auto px-6">
           <FadeIn>
