@@ -9,8 +9,8 @@ readTime: "11 min"
 tags: ["bali", "jakarta", "indonesia", "founders", "southeast asia", "tech ecosystem", "comparison"]
 excerpt: "Bali or Jakarta for your Indonesian startup in 2026? A BSTC operator's honest comparison on cost, capital access, talent pools, lifestyle, and the stage at which each city actually makes sense."
 seo:
-  title: "Bali vs Jakarta for Founders 2026: Cost, VCs, Talent, and Which Hub Fits Your Stage"
-  description: "Bali or Jakarta for your 2026 Indonesian startup? Honest comparison on cost of living, VC access, engineering talent, enterprise customers, and lifestyle, from BSTC founders operating in both."
+  title: "Bali vs Jakarta for Founders 2026: Cost, VCs and Talent"
+  description: "Bali or Jakarta for your 2026 startup? An honest comparison of cost of living, VC access, talent, enterprise customers and lifestyle from BSTC founders."
   keywords: ["bali vs jakarta", "jakarta vs bali for founders", "indonesia startup city", "jakarta tech ecosystem", "bali startup community", "indonesian VCs", "PT PMA jakarta", "indonesia founder hubs"]
 ---
 
@@ -119,7 +119,8 @@ This is where Bali wins, and it is not a close call in 2026.
 **Bali (Canggu, Ubud, Sanur, Uluwatu):**
 - BSTC Networking Nights on the second Thursday of every month (40 to 80 builders).
 - How I Build with AI series (monthly, live AI builds).
-- Hackathons, founder roundtables, retreats, builder dinners.
+- How I AI, BSTC's free weekly builder night, every Wednesday at Seoul Soul Project, Canggu.
+- Hackathons (coming soon, date TBA), founder roundtables, retreats, builder dinners.
 - Weekly informal coffee meetups and small group dinners between events.
 - Walking between villa, coworking, cafe, and dinner spot means more unplanned collisions in a week than a Jakarta founder has in a month.
 
@@ -185,6 +186,6 @@ Either way, you are in Indonesia, and Indonesia is the largest digital economy i
 
 ## Next steps
 
-Want to talk to founders who have actually built in both Bali and Jakarta in 2025 and 2026? The BSTC community has 2,700+ members across Southeast Asia, including funded founders, engineers, and investors operating in both cities. [Join the community](/join?src=blog-bali-vs-jakarta-for-founders-2026-inline) to get weekly intel on who is doing what, where, and what is actually working.
+Want to talk to founders who have actually built in both Bali and Jakarta in 2025 and 2026? The BSTC community has 2,700+ members (Meetup, 25 Oct 2026) across Southeast Asia, including funded founders, engineers, and investors operating in both cities. [Join the community](/join?src=blog-bali-vs-jakarta-for-founders-2026-inline) to get weekly intel on who is doing what, where, and what is actually working.
 
 If you are specifically weighing Bali against other SEA hubs, see our ongoing comparison series at [Bali vs Jakarta](/bali-vs/jakarta), [Bali vs Singapore](/bali-vs/singapore), [Bali vs Ho Chi Minh City](/bali-vs/ho-chi-minh-city), and [Bali vs Bangkok](/bali-vs/bangkok).
