@@ -70,7 +70,7 @@ export default function Footer() {
     <footer className="gl-foot">
       <div className="gl-wrap gl-foot-grid">
         <div className="gl-foot-id">
-          <Link href="/" className="gl-brand" aria-label="Bali Startup and Tech, home">
+          <Link href="/" className="gl-brand" aria-label="Bali Startup & Tech, home">
             <span className="gl-crest" aria-hidden="true" />
             <span className="gl-brand-name">Bali Startup &amp; Tech</span>
           </Link>
