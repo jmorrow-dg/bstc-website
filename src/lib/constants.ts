@@ -55,6 +55,8 @@ export const SITE = {
 // Shown rounded down: members "2,700+", events "50+".
 export const STATS = {
   members: 2700,
+  // Meetup plus WhatsApp reach, approved figure (PR #28): 3,900+.
+  totalMembers: 3900,
   events: 50,
   // Meetup group page, read 26 Oct 2026: 4.7 from 155 ratings, 2,734 members.
   rating: 4.7,
