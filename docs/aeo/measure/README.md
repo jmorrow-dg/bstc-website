@@ -64,3 +64,17 @@ node scripts/measure/citation-summary.mjs "$HOME/orca/evidence/bstc/citations/ci
 CSV goes to stdout; coverage counts and limitations go to stderr. The output includes every question and engine, including missing slots. The script validates recorded fields but does not independently verify transcript truth or fetch cited pages. Review the source evidence before reporting.
 
 Use `weekly-note-template.md` to place citation results next to owned signups. Until Lachlan shares the scoreboard path, report **no scoreboard figure yet**. Never substitute estimates, invent a target or claim causal signup improvement from citation changes. Search Console and GA4 may be read once Josh grants access (Josh, 1 Nov 2026). Never submit a sitemap, URL or IndexNow ping.
+
+## Daily site health run
+
+Read-only checks of the live site, plain Node, no dependencies. Evidence goes to `~/orca/evidence/bstc/health-YYYY-MM-DD/` (WITA date) and is never committed.
+
+```sh
+node scripts/health/crawl.mjs                 # every sitemap URL: summary.md, crawl.csv, crawl.json
+node scripts/health/live-checks.mjs           # endpoints, known live issues, perks and member offer counts
+node scripts/health/crawl-diff.mjs OLD/crawl.json NEW/crawl.json NEW/crawl-diff.md
+```
+
+Run the crawl first; live checks read its `crawl.json`. `summary.md` compares each metric with the baseline in `crawl.mjs`; update that baseline only when the daily prompt gives a new one. The diff lists added and removed URLs and every changed field, including the inbound pages each URL lost or gained. Expect many `lastmod` rows after a deploy: static pages carry the build time.
+
+The accessibility columns (`htmlLang`, `imgNoAlt`, `unnamedLinks`, `unnamedButtons`, `headingSkips`) and `hiddenOnLoad` come from server HTML. They catch missing names and structure, not contrast, focus order or anything that needs a browser. They don't replace Lighthouse, which needs 10 GiB or more free disk.
