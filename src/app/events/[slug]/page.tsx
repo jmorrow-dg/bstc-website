@@ -75,6 +75,16 @@ export default async function EventPage({
   const canRsvp = canRsvpToEvent(e, now);
   const hasRecap = e.status === "completed" && e.recap;
 
+  const timeline = (await getAllEvents())
+    .filter((x) => x.frontmatter.pastList !== false)
+    .reverse();
+  const position = timeline.findIndex((x) => x.frontmatter.slug === e.slug);
+  const prevEvent = position > 0 ? timeline[position - 1].frontmatter : null;
+  const nextEvent =
+    position >= 0 && position < timeline.length - 1
+      ? timeline[position + 1].frontmatter
+      : null;
+
   const eventSchema = e.schema === false ? null : getEventSchema({
     title: e.title,
     description: e.description,
@@ -367,6 +377,37 @@ export default async function EventPage({
           />
         </div>
       </section>
+
+      {(prevEvent || nextEvent) && (
+        <nav aria-label="More events" className="pb-12">
+          <div className="max-w-site mx-auto px-6 grid gap-4 sm:grid-cols-2">
+            {prevEvent ? (
+              <Link
+                href={`/events/${prevEvent.slug}`}
+                className="block rounded-lg border border-ink/10 p-4 hover:border-brand-red/30 transition-colors"
+              >
+                <span className="block text-xs uppercase tracking-wider text-brand-grey mb-1">
+                  Previous event
+                </span>
+                <span className="font-medium text-brand-white">{prevEvent.title}</span>
+              </Link>
+            ) : (
+              <span />
+            )}
+            {nextEvent && (
+              <Link
+                href={`/events/${nextEvent.slug}`}
+                className="block rounded-lg border border-ink/10 p-4 hover:border-brand-red/30 transition-colors sm:text-right"
+              >
+                <span className="block text-xs uppercase tracking-wider text-brand-grey mb-1">
+                  Next event
+                </span>
+                <span className="font-medium text-brand-white">{nextEvent.title}</span>
+              </Link>
+            )}
+          </div>
+        </nav>
+      )}
 
       {/* CTA */}
       <section className="py-16 border-t border-ink/10">
