@@ -28,9 +28,9 @@ export async function generateMetadata({
   const c = CITY_COMPARISONS.find((x) => x.slug === params.city);
   if (!c) return { title: "Comparison Not Found" };
 
-  const title = `Bali vs ${c.city} for Founders (2026): Honest Comparison`;
+  const title = `Bali vs ${c.city}: Honest Founder Comparison (2026)`;
   return {
-    title,
+    title: { absolute: title },
     description: c.metaDescription,
     keywords: [
       `bali vs ${c.city.toLowerCase()}`,
