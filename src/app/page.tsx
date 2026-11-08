@@ -13,10 +13,9 @@ import {
   type Fixture,
 } from "@/lib/fixtures";
 import {
-  EXAMPLE_PERKS,
-  OPEN_PERKS,
   PERKS_CHECKED,
   formatChecked,
+  perkFacts,
   pickPerks,
 } from "@/lib/perks";
 import { CITY_COMPARISONS } from "@/data/city-comparisons";
@@ -164,6 +163,7 @@ export default async function Home() {
 
   const teaserOpen = pickPerks(TEASER_OPEN_PERKS);
   const teaserExamples = pickPerks(TEASER_EXAMPLE_PERKS);
+  const perks = perkFacts();
   const members = `${STATS.members.toLocaleString("en-US")}+`;
 
   return (
@@ -548,11 +548,39 @@ export default async function Home() {
             <h2 id="perks-title">Perks that travel with you</h2>
             <p>
               Most software perks work wherever you build from.{" "}
-              {OPEN_PERKS.length} startup programmes are open, each checked on the
-              vendor&apos;s own page by {formatChecked(PERKS_CHECKED)}. Another{" "}
-              {EXAMPLE_PERKS.length} are examples of members-only deals we&apos;re
-              negotiating with founder tools and Bali partners. None of those are
-              agreed yet, so they&apos;re labelled Example.
+              {perks.open} startup programmes are open, each checked on the
+              vendor&apos;s own page by {formatChecked(PERKS_CHECKED)}.{" "}
+              {perks.withTerms}{" "}
+              {perks.withTerms === 1 ? "offer has" : "offers have"} agreed
+              terms, and claiming is not open on this page yet.
+              {perks.activation > 0 && (
+                <>
+                  {" "}
+                  {perks.activation}{" "}
+                  {perks.activation === 1 ? "more is" : "more are"} agreed and
+                  waiting on activation.
+                </>
+              )}
+              {perks.terms > 0 && (
+                <>
+                  {" "}
+                  {perks.terms}{" "}
+                  {perks.terms === 1 ? "offer has" : "offers have"} been
+                  received, with terms still being confirmed.
+                </>
+              )}{" "}
+              {perks.negotiating}{" "}
+              {perks.negotiating === 1 ? "listing is an example" : "listings are examples"}{" "}
+              of deals still being negotiated with founder tools and Bali partners,
+              each labelled Example.
+              {perks.unavailable > 0 && (
+                <>
+                  {" "}
+                  {perks.unavailable}{" "}
+                  {perks.unavailable === 1 ? "example is" : "examples are"} not
+                  currently available.
+                </>
+              )}
             </p>
           </div>
           <div className="gl-perks">
@@ -588,7 +616,29 @@ export default async function Home() {
             </div>
             <div className="gl-ex-box">
               <h3>Member deals</h3>
-              <p>Examples of the members-only deals we&apos;re negotiating. None are live yet.</p>
+              <p>
+                {perks.withTerms}{" "}
+                {perks.withTerms === 1 ? "offer has" : "offers have"} agreed
+                terms. Claiming is not open on the perks page yet.
+                {perks.activation > 0 && (
+                  <>
+                    {" "}
+                    {perks.activation}{" "}
+                    {perks.activation === 1 ? "is" : "are"} agreed and waiting
+                    on activation.
+                  </>
+                )}
+                {perks.terms > 0 && (
+                  <>
+                    {" "}
+                    {perks.terms}{" "}
+                    {perks.terms === 1 ? "offer has" : "offers have"} terms still
+                    being confirmed.
+                  </>
+                )}{" "}
+                The {teaserExamples.length} below are examples still being
+                negotiated, labelled Example.
+              </p>
               <ul className="gl-perk-list">
                 {teaserExamples.map((perk) => (
                   <li className="gl-perk gl-perk--ex" key={perk.id}>
@@ -608,7 +658,7 @@ export default async function Home() {
           </div>
           <div className="gl-perk-foot">
             <Link className="gl-perk-all" href="/perks">
-              See all {OPEN_PERKS.length} perks
+              See open programmes and member offers
             </Link>
             <Link className="gl-btn gl-btn-red" href="/join?src=home-perks">
               Join to get member deals

@@ -68,7 +68,7 @@ const FAQ_SECTIONS: FAQSection[] = [
       {
         question: "Is BSTC free to join?",
         answer:
-          "Yes. Joining the community (/join, the Telegram member chat and MeetUp) is free. Most events are free, including our flagship Networking Night. Some premium events like Founder Roundtables and workshops may have a ticket price.",
+          "Yes. Joining the community (/join, the Telegram member chat and MeetUp) is free. Every BSTC event is free too, including our flagship Networking Night. You order and pay for your own food and drinks at the venue.",
       },
       {
         question: "Do I need to be a founder to join?",
@@ -89,14 +89,14 @@ const FAQ_SECTIONS: FAQSection[] = [
         // Confirmed true by Lachlan, 28 Oct 2026
         question: "What events does BSTC run?",
         answer:
-          "We run four core event formats: (1) Networking Night: monthly, 40-80 people, free, open mic + networking. (2) How I Build with AI: live AI demos by real builders. (3) Founder Roundtable: max 20, $20K+ MRR founders only, confidential. (4) Builder Sessions: tactical workshops and talks.",
+          "We run four core event formats: (1) Networking Night: monthly, free, open mic + networking. (2) How I Build with AI: live AI demos by real builders. (3) Founder Dinners, once per month. (4) Builder Sessions: tactical workshops and talks.",
       },
       {
         // Confirmed true by Lachlan, 28 Oct 2026, except the day:
         // 2nd Thursday of the month is Meetup's dinner series, read 4 Nov 2026
         question: "When and where are BSTC events?",
         answer:
-          "Our flagship Networking Night is on the 2nd Thursday of every month at Yema Kitchen in Canggu. 'How I Build with AI' events are at Seoul Seoul Project in Canggu. Other events rotate across Canggu, Ubud, Sanur, and Uluwatu. All events are listed on our MeetUp page.",
+          "Our flagship Networking Night is on the 2nd Thursday of every month at Yema Kitchen in Canggu. 'How I Build with AI' events are at Seoul Soul Project in Canggu. Other events rotate across Canggu, Ubud, Sanur, and Uluwatu. All events are listed on our MeetUp page.",
       },
       {
         question: "What is 'How I Build with AI'?",
