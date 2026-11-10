@@ -43,6 +43,41 @@ test("counts on a platform, in a chat or across both are member counts too", () 
   assert.deepEqual(found('excerpt: "2,700+ founders, engineers, and VCs. Here is what BSTC is."'), ["2,700+"]);
 });
 
+test("catches the -member, -plus, others and strong forms, and counts after connect with or we're", () => {
+  for (const [line, figure] of [
+    ["BSTC is a 2,700-member community of founders.", "2,700"],
+    ["BSTC has 2,700-plus members.", "2,700-plus"],
+    ["Join 2,700+ others at the next BSTC night.", "2,700+"],
+    ["BSTC is 2,700 strong and growing.", "2,700"],
+    ["BSTC is a 2,700-strong community.", "2,700"],
+    ["Connect with 2,700+ founders building from Bali.", "2,700+"],
+    ["We're 2,700+ founders across Southeast Asia.", "2,700+"],
+    ["BSTC has over 2.7 thousand members.", "2.7 thousand"],
+  ]) {
+    assert.deepEqual(found(line), [figure], line);
+  }
+});
+
+test("a month and year in brackets dates a count; a founding month elsewhere in the sentence doesn't", () => {
+  assert.deepEqual(found("BSTC has 2,700+ members on Meetup (October 2026)."), []);
+  assert.deepEqual(found("BSTC has 2,700+ members (Meetup, Oct 2026)."), []);
+  assert.deepEqual(found("Founded in October 2023, we've grown to 2,700+ members on Meetup."), ["2,700+"]);
+  assert.deepEqual(found("BSTC has 2,700+ members (see our Marketing 2026 deck)."), ["2,700+"], "only a real month name");
+});
+
+test("a figure after the chat or the community that counts something else isn't a member count", () => {
+  assert.deepEqual(found("A group chat hit 1,500 messages last week, and the community loves it."), []);
+  assert.deepEqual(found("The BSTC community reached 2,700 in October."), ["2,700"]);
+});
+
+test("a sentence hard-wrapped over two lines is read as one", () => {
+  assert.deepEqual(found("BSTC has 2,700+ members on Meetup\n(25 Oct 2026), plus a Telegram member chat."), []);
+  const wrapped = undatedCounts("Intro.\n\nBSTC has 2,700+ members on Meetup\nand a Telegram member chat.\n");
+  assert.deepEqual(wrapped.map((f) => [f.line, f.figure]), [[3, "2,700+"]], "reported on the line the figure is on");
+  assert.deepEqual(found("- BSTC: 2,700+ members\n- GDG Bali: 2,869 members (checked 25 Oct 2026)"), ["2,700+"], "a list item starts its own");
+  assert.deepEqual(found("## BSTC has 2,700+ members\n(25 Oct 2026) is when we checked."), ["2,700+"], "so does the line after a heading");
+});
+
 test("money, years, event sizes and figures with no community in the line are left alone", () => {
   for (const line of [
     "| **BANSEA** | Business Angel Network | 100,000 to 500,000 dollars across members |",
@@ -78,6 +113,21 @@ test("the command fails with the file and line, and passes once the count is dat
     writeFileSync(join(dir, "post.md"), "Intro.\n\nThe BSTC community has 2,700+ members on Meetup (25 Oct 2026).\n");
     const good = spawnSync(process.execPath, [script, dir], { encoding: "utf8" });
     assert.equal(good.status, 0, good.stdout + good.stderr);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("the failure says what to do with a figure that isn't a member count, and what the check can't see", () => {
+  const dir = mkdtempSync(join(tmpdir(), "blog-counts-"));
+  try {
+    writeFileSync(join(dir, "post.md"), "The town has 4,000+ digital nomads, and the community keeps growing.\n");
+    const run = spawnSync(process.execPath, [script, dir], { encoding: "utf8" });
+    assert.equal(run.status, 1);
+    assert.match(run.stderr, /isn't a member count/);
+    assert.match(run.stderr, /source and date/);
+    assert.match(run.stderr, /under 1,000/);
+    assert.match(run.stderr, /in words/);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
