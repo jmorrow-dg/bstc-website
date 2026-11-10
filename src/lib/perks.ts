@@ -1,15 +1,26 @@
 // Member perks data and helpers.
 //
 // Open programmes in src/data/perks.json come from the Remote Builders feed,
-// where perks are edited (scripts/refresh-perks.mjs). Each was read on the
-// vendor's page on its own "checked" date, and claim_route says whether you
-// apply direct or through a partner. "exclusive" and "local" entries are
-// EXAMPLES of members-only deals still being negotiated, so every one shows a
-// visible "Example" stamp, no link and no value. Local partners are unnamed on
-// purpose. Examples never count as perks in copy.
+// where those programmes are edited (scripts/refresh-perks.mjs). Each was read
+// on the vendor's page on its own "checked" date, and claim_route says whether
+// you apply direct or through a partner.
+//
+// "exclusive" and "local" entries are example listings. Ones still marked
+// example are members-only deals being negotiated, so every one shows a visible
+// "Example" stamp, no link and no value. Local partners are unnamed on purpose.
+// An example marked unavailable is not currently available and must not be
+// described as in negotiation.
+//
+// Community offers in src/data/member-offers.json are separate. confirmed and
+// approved entries have terms we can state. activation_pending is agreed and
+// not active. terms_pending has an offer in, without confirmed terms. None of
+// them render a claim link. Counts below are derived from these entries.
 import perksFile from "@/data/perks.json";
+import memberOffersFile from "@/data/member-offers.json";
 
-export type PerkType = "open" | "exclusive" | "local";
+export type PerkType = "open" | "exclusive" | "local" | "member";
+
+export type MemberStatus = "confirmed" | "approved" | "activation_pending" | "terms_pending";
 
 export type Perk = {
   id: string;
@@ -28,6 +39,10 @@ export type Perk = {
   bootstrapped_ok?: boolean;
   claim_url?: string;
   claim_route?: string;
+  claim_status?: string;
+  status_note?: string;
+  member_status?: MemberStatus;
+  agreed_on?: string;
   indonesia?: { status: string; note: string };
   notes?: string;
   featured?: boolean;
@@ -41,19 +56,187 @@ type PerksFile = {
   perks: Perk[];
 };
 
+type MemberOffersFile = {
+  note: string;
+  perks: Perk[];
+};
+
 const DATA = perksFile as PerksFile;
+const MEMBER_DATA = memberOffersFile as MemberOffersFile;
 
 export const PERKS_CHECKED = DATA.checked;
 export const PERK_CATEGORIES = DATA.categories;
-export const ALL_PERKS = DATA.perks;
+export const ALL_PERKS: Perk[] = [...DATA.perks, ...MEMBER_DATA.perks];
 
 export function isOpen(perk: Perk): boolean {
   return perk.type === "open";
 }
 
+export function isExample(perk: Perk): boolean {
+  return perk.type === "exclusive" || perk.type === "local";
+}
+
+export function isMember(perk: Perk): boolean {
+  return perk.type === "member";
+}
+
+export function isUnavailable(perk: Perk): boolean {
+  return isExample(perk) && perk.status === "unavailable";
+}
+
 export const OPEN_PERKS = ALL_PERKS.filter(isOpen);
-export const EXAMPLE_PERKS = ALL_PERKS.filter((p) => !isOpen(p));
+export const EXAMPLE_PERKS = ALL_PERKS.filter(isExample);
 export const LOCAL_EXAMPLES = ALL_PERKS.filter((p) => p.type === "local");
+export const MEMBER_PERKS = ALL_PERKS.filter(isMember);
+
+export type PerkFacts = {
+  open: number;
+  direct: number;
+  partner: number;
+  examples: number;
+  negotiating: number;
+  negotiatingLocal: number;
+  negotiatingTools: number;
+  unavailable: number;
+  local: number;
+  confirmed: number;
+  approved: number;
+  withTerms: number;
+  activation: number;
+  terms: number;
+  pending: number;
+};
+
+export function perkFacts(): PerkFacts {
+  const partner = OPEN_PERKS.filter((p) => p.claim_route === "partner").length;
+  const negotiating = EXAMPLE_PERKS.filter((p) => !isUnavailable(p));
+  const unavailable = EXAMPLE_PERKS.filter(isUnavailable);
+  const confirmed = MEMBER_PERKS.filter((p) => p.member_status === "confirmed");
+  const approved = MEMBER_PERKS.filter((p) => p.member_status === "approved");
+  const activation = MEMBER_PERKS.filter((p) => p.member_status === "activation_pending");
+  const terms = MEMBER_PERKS.filter((p) => p.member_status === "terms_pending");
+  const negotiatingLocal = negotiating.filter((p) => p.type === "local").length;
+  return {
+    open: OPEN_PERKS.length,
+    direct: OPEN_PERKS.length - partner,
+    partner,
+    examples: EXAMPLE_PERKS.length,
+    negotiating: negotiating.length,
+    negotiatingLocal,
+    negotiatingTools: negotiating.length - negotiatingLocal,
+    unavailable: unavailable.length,
+    local: LOCAL_EXAMPLES.length,
+    confirmed: confirmed.length,
+    approved: approved.length,
+    withTerms: confirmed.length + approved.length,
+    activation: activation.length,
+    terms: terms.length,
+    pending: activation.length + terms.length,
+  };
+}
+
+export function perksMetaDescription(checkedLabel: string): string {
+  const f = perkFacts();
+  const offer = f.withTerms === 1 ? "offer has" : "offers have";
+  const claim = f.withTerms === 1 ? "is" : "are";
+  const parts = [
+    `${f.open} open startup programmes, each checked on the vendor's own page by ${checkedLabel}.`,
+    `${f.withTerms} ${offer} agreed terms and ${claim} not claimable on this page yet.`,
+  ];
+  if (f.activation) {
+    parts.push(
+      `${f.activation} ${f.activation === 1 ? "is" : "are"} agreed and waiting on activation.`
+    );
+  }
+  if (f.terms) {
+    parts.push(
+      `${f.terms} ${f.terms === 1 ? "offer has" : "offers have"} been received, with terms still being confirmed.`
+    );
+  }
+  parts.push(
+    `${f.negotiating} example ${f.negotiating === 1 ? "listing is" : "listings are"} still being negotiated.`
+  );
+  if (f.unavailable) {
+    parts.push(
+      `${f.unavailable} example ${f.unavailable === 1 ? "is" : "are"} not currently available.`
+    );
+  }
+  return parts.join(" ");
+}
+
+export type MemberGroup = {
+  id: string;
+  title: string;
+  intro: string;
+  perks: Perk[];
+};
+
+export function memberGroups(perks: Perk[] = MEMBER_PERKS): MemberGroup[] {
+  const confirmed = perks.filter((p) => p.member_status === "confirmed").length;
+  const approved = perks.filter((p) => p.member_status === "approved").length;
+  const agreed = perks.filter(
+    (p) => p.member_status === "confirmed" || p.member_status === "approved"
+  );
+  const activation = perks.filter((p) => p.member_status === "activation_pending");
+  const terms = perks.filter((p) => p.member_status === "terms_pending");
+  const groups: MemberGroup[] = [
+    {
+      id: "agreed-terms",
+      title: "Agreed terms",
+      intro: [
+        confirmed
+          ? `${confirmed} ${confirmed === 1 ? "confirmed member offer" : "confirmed member offers"}`
+          : "",
+        approved
+          ? `${approved} ${approved === 1 ? "approved partner programme" : "approved partner programmes"}`
+          : "",
+      ]
+        .filter(Boolean)
+        .join(" and ") +
+        ". The terms are stated on each card. None of these can be claimed from this page. Codes stay private, and partner or application links are not published here.",
+      perks: agreed,
+    },
+    {
+      id: "activation-pending",
+      title: "Agreed, activation pending",
+      intro: `${activation.length} ${activation.length === 1 ? "offer is" : "offers are"} agreed and not active yet, so ${activation.length === 1 ? "it is" : "they are"} not claimable.`,
+      perks: activation,
+    },
+    {
+      id: "terms-pending",
+      title: "Offer received, terms being confirmed",
+      intro: `${terms.length} ${terms.length === 1 ? "offer has" : "offers have"} been received and the terms are still being confirmed. ${terms.length === 1 ? "It is" : "They are"} not a confirmed discount and not claimable.`,
+      perks: terms,
+    },
+  ];
+  return groups.filter((group) => group.perks.length > 0);
+}
+
+export function memberStamp(status: MemberStatus): string {
+  switch (status) {
+    case "confirmed":
+      return "Confirmed";
+    case "approved":
+      return "Approved";
+    case "activation_pending":
+      return "Not active";
+    case "terms_pending":
+      return "Terms pending";
+  }
+}
+
+export function memberDateLabel(status: MemberStatus): string {
+  switch (status) {
+    case "confirmed":
+      return "Confirmed";
+    case "approved":
+      return "Approved";
+    case "activation_pending":
+      return "Agreed";
+    case "terms_pending":
+      return "Offer received";
+  }
+}
 
 export function slugify(value: string): string {
   return value
@@ -91,7 +274,7 @@ export function tidy(text: string): string {
 }
 
 // Within a category: open programmes first, then examples; featured first
-// inside each kind; otherwise data order.
+// inside each kind; otherwise data order. Member offers are not in this list.
 function rank(perk: Perk): number {
   return (isOpen(perk) ? 0 : 2) + (perk.featured ? 0 : 1);
 }
@@ -102,32 +285,51 @@ export type PerkGroup = {
   perks: Perk[];
   open: number;
   examples: number;
+  unavailable: number;
 };
 
 export function groupPerks(perks: Perk[] = ALL_PERKS): PerkGroup[] {
   return PERK_CATEGORIES.map((category) => {
     const inCat = perks
       .map((perk, index) => ({ perk, index }))
-      .filter(({ perk }) => perk.category === category)
+      .filter(({ perk }) => perk.category === category && (isOpen(perk) || isExample(perk)))
       .sort((a, b) => rank(a.perk) - rank(b.perk) || a.index - b.index)
       .map(({ perk }) => perk);
     const open = inCat.filter(isOpen).length;
+    const unavailable = inCat.filter(isUnavailable).length;
+    const examples = inCat.filter((p) => isExample(p) && !isUnavailable(p)).length;
     return {
       category,
       slug: slugify(category),
       perks: inCat,
       open,
-      examples: inCat.length - open,
+      examples,
+      unavailable,
     };
   }).filter((group) => group.perks.length > 0);
 }
 
+export function catalogueCount(group: Pick<PerkGroup, "open" | "examples" | "unavailable">): string {
+  const bits: string[] = [];
+  if (group.open) bits.push(`${group.open} ${group.open === 1 ? "programme" : "programmes"}`);
+  if (group.examples) bits.push(`${group.examples} ${group.examples === 1 ? "example" : "examples"}`);
+  if (group.unavailable) bits.push(`${group.unavailable} not available`);
+  return bits.join(", ");
+}
+
+export function memberCount(perks: Perk[]): string {
+  return `${perks.length} ${perks.length === 1 ? "member offer" : "member offers"}`;
+}
+
 /** The minimal index the client-side finder needs. */
+export type PerkKind = "open" | "member" | "example";
+
 export type PerkIndexEntry = {
   id: string;
-  kind: "open" | "example";
+  kind: PerkKind;
   category: string;
   bootstrappedOk: boolean | null;
+  unavailable: boolean;
   hay: string;
 };
 
@@ -138,14 +340,32 @@ function normalise(value: string): string {
     .replace(/[̀-ͯ]/g, "");
 }
 
+export function perkKind(perk: Perk): PerkKind {
+  if (isOpen(perk)) return "open";
+  if (isMember(perk)) return "member";
+  return "example";
+}
+
 export function perkIndex(perks: Perk[] = ALL_PERKS): PerkIndexEntry[] {
   return perks.map((p) => ({
     id: p.id,
-    kind: isOpen(p) ? "open" : "example",
+    kind: perkKind(p),
     category: p.category,
     bootstrappedOk: typeof p.bootstrapped_ok === "boolean" ? p.bootstrapped_ok : null,
+    unavailable: isUnavailable(p),
     hay: normalise(
-      [p.company, p.programme, p.headline, p.offer, p.one_line, p.category]
+      [
+        p.company,
+        p.programme,
+        p.headline,
+        p.offer,
+        p.one_line,
+        p.eligibility,
+        p.claim_status,
+        p.status_note,
+        p.notes,
+        p.category,
+      ]
         .filter(Boolean)
         .join(" ")
     ),
