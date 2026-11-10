@@ -100,7 +100,7 @@ export function getWebSiteSchema() {
   };
 }
 
-export function getEventSchema(event: {
+export type EventSchemaSource = {
   title: string;
   description: string;
   date: string;
@@ -114,19 +114,48 @@ export function getEventSchema(event: {
   status?: string;
   rsvpUrl?: string;
   organizer?: string | { name: string; url?: string };
-}, now: Date = new Date()) {
+};
+
+// Organiser comes from the event file, then EVENT_ORGANIZER, then the host
+// named in that file's venue line ("Yema Kitchen, Canggu" -> "Yema Kitchen").
+// BSTC stays the contributor, never the organiser. "TBA" is not a host.
+function organizerOfRecord(event: EventSchemaSource): { name: string; url?: string } {
+  if (typeof event.organizer === "string") {
+    const name = event.organizer.trim();
+    if (name) return { name };
+  } else if (event.organizer?.name?.trim()) {
+    return {
+      name: event.organizer.name.trim(),
+      ...(event.organizer.url ? { url: event.organizer.url } : {}),
+    };
+  }
+  if (EVENT_ORGANIZER.name.trim()) return EVENT_ORGANIZER;
+  const venueName = event.venue.split(",")[0]?.trim() ?? "";
+  const blocked = new Set([
+    "",
+    "tba",
+    SITE.name.toLowerCase(),
+    SITE.fullName.toLowerCase(),
+  ]);
+  if (blocked.has(venueName.toLowerCase())) return { name: "" };
+  return { name: venueName };
+}
+
+export function getEventSchema(
+  event: EventSchemaSource,
+  now: Date = new Date(),
+  options?: { embedded?: boolean },
+) {
   if (!isValidEventDate(event.date)) return null;
 
-  const organizer = typeof event.organizer === "string"
-    ? { name: event.organizer }
-    : event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
+  const organizer = organizerOfRecord(event);
   const statusMap: Record<string, string> = {
     upcoming: "https://schema.org/EventScheduled",
     completed: "https://schema.org/EventScheduled",
     cancelled: "https://schema.org/EventCancelled",
     postponed: "https://schema.org/EventPostponed",
   };
-  return {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "Event",
     "@id": `${event.url}#event`,
@@ -176,6 +205,24 @@ export function getEventSchema(event: {
       },
     }),
   };
+  if (!options?.embedded) return schema;
+  const embedded: Partial<typeof schema> = { ...schema };
+  delete embedded["@context"];
+  return embedded;
+}
+
+// Event page and /events listing both call this, so the ItemList uses the
+// same fields as the page it links to.
+export function getEventPageSchema(
+  event: Omit<EventSchemaSource, "url" | "image"> & { slug: string; coverImage?: string },
+  now: Date = new Date(),
+  options?: { embedded?: boolean },
+) {
+  return getEventSchema({
+    ...event,
+    url: `${SITE.url}/events/${event.slug}`,
+    image: event.coverImage,
+  }, now, options);
 }
 
 // Weekly schedule and venue as stated on the edition pages. No end date: the
@@ -280,7 +327,7 @@ export function getPersonSchema(person: {
 export function getItemListSchema(params: {
   name: string;
   description?: string;
-  items: { name: string; url: string; description?: string }[];
+  items: { name: string; url: string; description?: string; item?: object }[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -293,6 +340,7 @@ export function getItemListSchema(params: {
       url: item.url.startsWith("http") ? item.url : `${SITE.url}${item.url}`,
       name: item.name,
       ...(item.description && { description: item.description }),
+      ...(item.item && { item: item.item }),
     })),
   };
 }

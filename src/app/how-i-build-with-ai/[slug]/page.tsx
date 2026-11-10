@@ -19,8 +19,7 @@ import {
   getHIWAEvents,
   formatEventDate,
 } from "@/lib/content";
-import { getEventSchema } from "@/lib/schema";
-import { SITE } from "@/lib/constants";
+import { getEventPageSchema } from "@/lib/schema";
 import { canRsvpToEvent, getEventState, rsvpPlatform } from "@/lib/event-status";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
@@ -76,22 +75,8 @@ export default async function HIWAEpisodePage({
   const canRsvp = canRsvpToEvent(e, now);
   const hasRecap = e.status === "completed" && e.recap;
 
-  const eventSchema = getEventSchema({
-    title: e.title,
-    description: e.description,
-    date: e.date,
-    time: e.time,
-    endTime: e.endTime,
-    venueAddress: e.venueAddress,
-    series: e.series,
-    venue: e.venue,
-    // Same Event node as the canonical /events/<slug> page.
-    url: `${SITE.url}/events/${e.slug}`,
-    image: e.coverImage,
-    status: e.status,
-    rsvpUrl: e.rsvpUrl,
-    organizer: e.organizer,
-  }, now);
+  // Same Event node as the canonical /events/<slug> page.
+  const eventSchema = getEventPageSchema(e, now);
 
   return (
     <>
