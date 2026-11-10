@@ -81,8 +81,12 @@ export default async function HIWAEpisodePage({
     description: e.description,
     date: e.date,
     time: e.time,
+    endTime: e.endTime,
+    venueAddress: e.venueAddress,
+    series: e.series,
     venue: e.venue,
-    url: `${SITE.url}/how-i-build-with-ai/${e.slug}`,
+    // Same Event node as the canonical /events/<slug> page.
+    url: `${SITE.url}/events/${e.slug}`,
     image: e.coverImage,
     status: e.status,
     rsvpUrl: e.rsvpUrl,

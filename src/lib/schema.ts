@@ -1,5 +1,10 @@
 import { CONTACT_EMAIL, EVENT_ORGANIZER, SITE, STATS } from "./constants";
-import { canRsvpToEvent, isValidEventDate } from "./event-status";
+import { EVENT_TIME_ZONE, canRsvpToEvent, isValidEventDate } from "./event-status";
+
+export const personId = (name: string) =>
+  `${SITE.url}/leadership#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
+const HOW_I_AI_SERIES_ID = `${SITE.url}/how-i-build-with-ai#how-i-ai`;
 
 export function getOrganizationSchema() {
   return {
@@ -7,10 +12,11 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     "@id": `${SITE.url}#organization`,
     name: SITE.fullName,
-    alternateName: [SITE.name, "Bali Tech Community", "BSTC Community"],
+    alternateName: [SITE.name, "Bali Tech Community", "BSTC Community", "Bali Startup & Tech"],
     url: SITE.url,
     logo: {
       "@type": "ImageObject",
+      "@id": `${SITE.url}#logo`,
       url: `${SITE.url}/images/logo.svg`,
       width: 512,
       height: 512,
@@ -18,11 +24,11 @@ export function getOrganizationSchema() {
     image: `${SITE.url}/og-image.png`,
     description: SITE.description,
     slogan: "Signal over noise. Builders first.",
-    foundingDate: SITE.founded,
+    foundingDate: "2023-10",
     founders: [
-      { "@type": "Person", name: "Lachlan McRitchie", jobTitle: "Co-founder & Primary Organiser" },
-      { "@type": "Person", name: "Josh Morrow", jobTitle: "Co-founder & Growth Lead" },
-      { "@type": "Person", name: "Matthew Carr", jobTitle: "Co-founder & Community Lead" },
+      { "@type": "Person", "@id": personId("Lachlan McRitchie"), name: "Lachlan McRitchie", jobTitle: "Co-founder & Primary Organiser" },
+      { "@type": "Person", "@id": personId("Josh Morrow"), name: "Josh Morrow", jobTitle: "Co-founder & Growth Lead" },
+      { "@type": "Person", "@id": personId("Matthew Carr"), name: "Matthew Carr", jobTitle: "Co-founder & Community Lead" },
     ],
     email: CONTACT_EMAIL,
     address: {
@@ -49,7 +55,7 @@ export function getOrganizationSchema() {
       "Bali founder taxation",
       "Hiring developers in Indonesia",
       "AI-native company building",
-      "Founder events and hackathons",
+      "Founder events (hackathons coming soon)",
       "Remote team management",
       "Coworking spaces in Bali",
       "Venture capital in Southeast Asia",
@@ -63,19 +69,18 @@ export function getOrganizationSchema() {
       "AI founders Bali",
       "tech events Bali",
     ].join(", "),
-    sameAs: [SITE.meetup, SITE.linkedin, SITE.instagram].filter(
-      (url) => url !== "#"
-    ),
+    sameAs: [
+      SITE.meetup,
+      SITE.linkedin,
+      SITE.instagram,
+      "https://luma.com/balistartuptech",
+      "https://t.me/balistartuptech",
+    ].filter((url) => url !== "#"),
     interactionStatistic: [
       {
         "@type": "InteractionCounter",
         interactionType: "https://schema.org/JoinAction",
         userInteractionCount: STATS.members,
-      },
-      {
-        "@type": "InteractionCounter",
-        interactionType: "https://schema.org/AttendEvent",
-        userInteractionCount: STATS.events,
       },
     ],
   };
@@ -100,16 +105,21 @@ export function getEventSchema(event: {
   description: string;
   date: string;
   time: string;
+  endTime?: string;
+  venueAddress?: string;
+  series?: string;
   venue: string;
   url: string;
   image?: string;
   status?: string;
   rsvpUrl?: string;
-  organizer?: { name: string; url?: string };
+  organizer?: string | { name: string; url?: string };
 }, now: Date = new Date()) {
   if (!isValidEventDate(event.date)) return null;
 
-  const organizer = event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
+  const organizer = typeof event.organizer === "string"
+    ? { name: event.organizer }
+    : event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
   const statusMap: Record<string, string> = {
     upcoming: "https://schema.org/EventScheduled",
     completed: "https://schema.org/EventScheduled",
@@ -119,11 +129,20 @@ export function getEventSchema(event: {
   return {
     "@context": "https://schema.org",
     "@type": "Event",
+    "@id": `${event.url}#event`,
     name: event.title,
     description: event.description,
     startDate: /^([01]\d|2[0-3]):[0-5]\d$/.test(event.time)
       ? `${event.date}T${event.time}:00+08:00`
       : event.date,
+    ...(event.endTime && /^([01]\d|2[0-3]):[0-5]\d$/.test(event.endTime) && {
+      endDate: `${event.date}T${event.endTime}:00+08:00`,
+    }),
+    isAccessibleForFree: true,
+    contributor: { "@id": `${SITE.url}#organization` },
+    ...(event.series === "how-i-ai" && {
+      superEvent: { "@id": HOW_I_AI_SERIES_ID },
+    }),
     eventStatus: statusMap[event.status || "upcoming"] || statusMap.upcoming,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
@@ -131,6 +150,7 @@ export function getEventSchema(event: {
       name: event.venue,
       address: {
         "@type": "PostalAddress",
+        ...(event.venueAddress && { streetAddress: event.venueAddress }),
         addressLocality: "Canggu",
         addressRegion: "Bali",
         addressCountry: "ID",
@@ -151,10 +171,49 @@ export function getEventSchema(event: {
         "@type": "Offer",
         url: event.rsvpUrl,
         price: "0",
-        priceCurrency: "USD",
+        priceCurrency: "IDR",
         availability: "https://schema.org/InStock",
       },
     }),
+  };
+}
+
+// Weekly schedule and venue as stated on the edition pages. No end date: the
+// series has none on main.
+export function getHowIAISeriesSchema(editionUrls: string[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "EventSeries",
+    "@id": HOW_I_AI_SERIES_ID,
+    name: "How I AI",
+    alternateName: "How I Build with AI",
+    description:
+      "BSTC's weekly builder night: builders share the AI tools, workflows and revenue behind what they ship.",
+    url: `${SITE.url}/how-i-build-with-ai`,
+    isAccessibleForFree: true,
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventSchedule: {
+      "@type": "Schedule",
+      byDay: "https://schema.org/Wednesday",
+      repeatFrequency: "P1W",
+      startTime: "18:00",
+      endTime: "21:00",
+      scheduleTimezone: EVENT_TIME_ZONE,
+    },
+    location: {
+      "@type": "Place",
+      name: "Seoul Soul Project",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Jl. Canggu Padang Linjong No.61, Canggu",
+        addressLocality: "Canggu",
+        addressRegion: "Bali",
+        addressCountry: "ID",
+      },
+    },
+    organizer: { "@type": "Organization", name: "Seoul Soul Project" },
+    contributor: { "@id": `${SITE.url}#organization` },
+    subEvent: editionUrls.map((url) => ({ "@id": `${url}#event` })),
   };
 }
 
@@ -200,6 +259,7 @@ export function getPersonSchema(person: {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": personId(person.name),
     name: person.name,
     jobTitle: person.role,
     ...(person.bio && { description: person.bio }),
@@ -207,6 +267,7 @@ export function getPersonSchema(person: {
     ...(person.email && { email: person.email }),
     worksFor: {
       "@type": "Organization",
+      "@id": `${SITE.url}#organization`,
       name: SITE.fullName,
       url: SITE.url,
     },
