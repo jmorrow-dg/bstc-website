@@ -5,12 +5,13 @@
 export const CONTACT_EMAIL = "hello@remotebuilders.io";
 
 // Organiser of record for events, used in Event schema `organizer`.
-// Default: the BSTC Organization. An event overrides this with an `organizer:`
-// value in its frontmatter (for example the host venue). Keep in step with
-// SITE.fullName and SITE.url below (a test checks they match).
+// Josh, 10 Nov 2026: the venue is the organiser on every event and the BSTC
+// team is the moderator (schema `contributor`, see getEventSchema). The venue is
+// derived per event by getEventOrganizer() in schema.ts, so this default stays
+// empty: an event with no venue data omits `organizer` rather than naming BSTC.
 export const EVENT_ORGANIZER: { name: string; url?: string } = {
-  name: "Bali Startup & Tech Community",
-  url: "https://www.balistartupandtech.com",
+  name: "",
+  url: "",
 };
 
 // When the public counts were last read. Shown beside each count, so re-read

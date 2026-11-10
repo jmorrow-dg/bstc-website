@@ -25,8 +25,8 @@ for (const name of ["schema", "constants", "event-status"]) {
   out = out.replace(/require\("\.\/([\w-]+)"\)/g, 'require("./$1.cjs")');
   fs.writeFileSync(path.join(tmp, `${name}.cjs`), out);
 }
-const { getEventSchema, isIsoDateTimeWithZone } = require(path.join(tmp, "schema.cjs"));
-const { EVENT_ORGANIZER, SITE } = require(path.join(tmp, "constants.cjs"));
+const { getEventSchema, getEventOrganizer, isIsoDateTimeWithZone } = require(path.join(tmp, "schema.cjs"));
+const { SITE } = require(path.join(tmp, "constants.cjs"));
 
 const dir = path.join(root, "content/events");
 const events = fs
@@ -53,29 +53,46 @@ function schemaFor(e, now = NOW) {
       status: e.status,
       rsvpUrl: e.rsvpUrl,
       announced: e.announced,
-      organizer: e.organizer,
+      organizer: getEventOrganizer(e),
     },
     now
   );
 }
 
-test("EVENT_ORGANIZER matches the BSTC Organization name and url", () => {
-  assert.equal(EVENT_ORGANIZER.name, SITE.fullName);
-  assert.equal(EVENT_ORGANIZER.url, SITE.url);
-});
+// Josh, 10 Nov 2026: the venue is the organiser of every event, the BSTC team is
+// the moderator (schema `contributor`). An event whose venue is still TBA has no
+// venue data, so it gets no organiser (never an invented one, never BSTC).
+const hasVenue = (e) => !/^(tba|tbc|tbd)$/i.test(String(e.venue).split(",")[0].trim());
+const isBstc = (o) => /bali start-?up (&|and) tech|bstc/i.test(o?.name ?? "") || String(o?.url ?? "").includes("balistartupandtech.com");
 
-test("every event has an Event schema with organizer (name and, for BSTC, url)", () => {
+test("every event with venue data has an Organization organizer that is the venue, never BSTC", () => {
   assert.ok(events.length > 0);
-  for (const e of events) {
+  for (const e of events.filter(hasVenue)) {
     const s = schemaFor(e);
     assert.ok(s, `${e.slug}: no Event schema`);
     assert.equal(s["@type"], "Event");
     assert.equal(s.organizer?.["@type"], "Organization", `${e.slug}: organizer missing`);
     assert.ok(s.organizer.name, `${e.slug}: organizer.name empty`);
-    if (!e.organizer) {
-      assert.equal(s.organizer.name, "Bali Startup & Tech Community");
-      assert.equal(s.organizer.url, SITE.url);
-    }
+    assert.ok(!isBstc(s.organizer), `${e.slug}: organizer must be the venue, not BSTC`);
+    const venueName = String(e.venue).split(",")[0].trim();
+    const own = typeof e.organizer === "string" ? e.organizer : e.organizer?.name;
+    assert.equal(s.organizer.name, own || venueName, `${e.slug}: organizer is not the venue`);
+  }
+});
+
+test("events with no venue data (TBA) get no organizer, not an invented one", () => {
+  for (const e of events.filter((x) => !hasVenue(x))) {
+    assert.equal(schemaFor(e).organizer, undefined, `${e.slug}`);
+  }
+});
+
+test("every Event has the BSTC team as contributor (Organization, name and url)", () => {
+  for (const e of events) {
+    const s = schemaFor(e);
+    assert.equal(s.contributor?.["@type"], "Organization", `${e.slug}: contributor missing`);
+    assert.equal(s.contributor.name, "Bali Startup & Tech Community");
+    assert.equal(s.contributor.url, SITE.url);
+    assert.equal(s.contributor.name, SITE.fullName);
   }
 });
 

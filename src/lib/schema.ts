@@ -104,6 +104,42 @@ export function isIsoDateTimeWithZone(value?: string): value is string {
   );
 }
 
+// Josh, 10 Nov 2026: the venue is the organiser of every event. Take the event's
+// own `organizer` frontmatter (string or { name, url }) when present, otherwise
+// the venue name (the text before the first comma of `venue`, e.g.
+// "Yema Kitchen, Canggu" gives "Yema Kitchen"). A venue still marked TBA, or an
+// empty one, gives undefined: no organiser is invented and BSTC is never named.
+export function getEventOrganizer(event: {
+  organizer?: string | { name: string; url?: string };
+  venue?: string;
+}): { name: string; url?: string } | undefined {
+  const own = typeof event.organizer === "string" ? { name: event.organizer } : event.organizer;
+  if (own?.name?.trim()) {
+    return { name: own.name.trim(), ...(own.url && { url: own.url }) };
+  }
+  const name = event.venue?.split(",")[0].trim();
+  if (!name || /^(tba|tbc|tbd)$/i.test(name)) return undefined;
+  return { name };
+}
+
+// The BSTC team moderates every event. schema.org has no `moderator` property,
+// so it is a plain `contributor` Organization. (A Role with roleName
+// "Moderator" was not used: it could not be checked in the Rich Results Test or
+// the schema.org validator from here, and the visible credit line already says
+// "Moderated by".)
+// Typed as optional so it can be spread into the Event node even where another
+// branch (#42) sets a bare `contributor` reference; the full Organization wins.
+export function getEventModeratorContributor(): {
+  contributor?: { "@type": "Organization"; "@id": string; name: string; url: string };
+} {
+  return { contributor: {
+    "@type": "Organization",
+    "@id": `${SITE.url}#organization`,
+    name: SITE.fullName,
+    url: SITE.url,
+  } };
+}
+
 export function getEventSchema(event: {
   title: string;
   description: string;
@@ -153,6 +189,7 @@ export function getEventSchema(event: {
         ...(organizer.url && { url: organizer.url }),
       },
     }),
+    ...getEventModeratorContributor(),
     image: event.image ? `${SITE.url}${event.image}` : undefined,
     url: event.url,
     // Only open, future events advertise an available (free) ticket.
