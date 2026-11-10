@@ -33,7 +33,7 @@ export default function Navbar() {
         <Link
           href="/"
           className="gl-brand"
-          aria-label="Bali Startup and Tech, home"
+          aria-label="Bali Startup & Tech, home"
         >
           <span className="gl-crest" aria-hidden="true" />
           <span className="gl-brand-name">Bali Startup &amp; Tech</span>

@@ -24,6 +24,12 @@ const nextConfig = {
       destination: "/events/flagship-networking-night-june-2026",
       permanent: true,
     },
+    // No hackathon has run, so the page is removed (Josh, 1 Nov 2026).
+    {
+      source: "/events/hackathon-edition-1",
+      destination: "/events",
+      permanent: true,
+    },
     // Short link for partners (coworking spaces, visa agents, villa managers)
     // to hand newcomers: /new-to-bali?src=partner-<slug>. The query string is
     // kept, and JoinSrcCarry credits a later signup to that partner.
