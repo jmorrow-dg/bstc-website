@@ -104,4 +104,4 @@ If you want to see how founders are actually building these stacks, join us at t
 
 ---
 
-*[See upcoming "How I Build with AI" sessions](/how-i-build-with-ai) or [join the BSTC community](/join?src=blog-ai-tools-founders-2026-inline) to connect with 2,700+ founders and builders.*
+*[See upcoming "How I Build with AI" sessions](/how-i-build-with-ai) or [join the BSTC community](/join?src=blog-ai-tools-founders-2026-inline) to connect with 2,700+ founders and builders (Meetup, 25 Oct 2026).*
