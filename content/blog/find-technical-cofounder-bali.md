@@ -47,7 +47,7 @@ The key word is consistently. Dropping in for one day and scanning the room for 
 
 ### 3. Niche online groups
 
-BSTC has 2,700+ members and a Telegram member chat. There are also smaller, higher-signal groups on Telegram and Discord focused on specific stacks (AI/ML, Web3, SaaS infra). These groups are where engineers share what they are working on and occasionally signal openness to new projects.
+BSTC has 2,700+ members on Meetup (25 Oct 2026) and a Telegram member chat. There are also smaller, higher-signal groups on Telegram and Discord focused on specific stacks (AI/ML, Web3, SaaS infra). These groups are where engineers share what they are working on and occasionally signal openness to new projects.
 
 **How to find them:** Ask at BSTC events. The people who know about these groups are the people who attend in person.
 
