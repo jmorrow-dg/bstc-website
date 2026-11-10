@@ -20,8 +20,7 @@ import {
   formatEventDate,
   formatEventType,
 } from "@/lib/content";
-import { getEventSchema } from "@/lib/schema";
-import { SITE } from "@/lib/constants";
+import { getEventPageSchema } from "@/lib/schema";
 import { canRsvpToEvent, getEventState, rsvpPlatform } from "@/lib/event-status";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
@@ -85,21 +84,7 @@ export default async function EventPage({
       ? timeline[position + 1].frontmatter
       : null;
 
-  const eventSchema = e.schema === false ? null : getEventSchema({
-    title: e.title,
-    description: e.description,
-    date: e.date,
-    time: e.time,
-    endTime: e.endTime,
-    venueAddress: e.venueAddress,
-    series: e.series,
-    venue: e.venue,
-    url: `${SITE.url}/events/${e.slug}`,
-    image: e.coverImage,
-    status: e.status,
-    rsvpUrl: e.rsvpUrl,
-    organizer: e.organizer,
-  }, now);
+  const eventSchema = e.schema === false ? null : getEventPageSchema(e, now);
 
   return (
     <>

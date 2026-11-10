@@ -38,8 +38,8 @@ export interface EventFrontmatter {
     name: string;
     logo: string;
   };
-  // Organiser of record for this event. Falls back to EVENT_ORGANIZER in
-  // constants.ts when omitted.
+  // Organiser of record for this event. Schema uses this value when set.
+  // Otherwise it uses EVENT_ORGANIZER, then the host named in `venue`.
   organizer?: string | {
     name: string;
     url?: string;
