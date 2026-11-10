@@ -13,8 +13,8 @@ keyTakeaways:
   - "The US ended duty-free de minimis entry for all countries on 29 August 2025, so orders shipped from Bali to US customers no longer enter duty-free, whatever their value."
   - "Plan production around March 2027: Nyepi is on 8 March and Idul Fitri on 10 and 11 March, with collective leave days on 9, 12 and 15 March."
 seo:
-  title: "Ecommerce Business from Bali (2026): Shopify, Stripe, Amazon, Export"
-  description: "Run a Shopify, Amazon or DTC ecommerce business from Bali: visa limits from imigrasi, Shopify Payments and Stripe country rules, exporting from Indonesia without a PT PMA, shipping and duties. Checked 26 Oct 2026."
+  title: "Ecommerce Business from Bali: Register Abroad | BSTC"
+  description: "Ecommerce business from Bali: register the store abroad. Your visa limits selling in Indonesia. Exports need a registered exporter. Checked 26 Oct 2026."
 faq:
   - question: "Can I run a Shopify store from Bali?"
     answer: "Yes, if the store's business is registered in a country Shopify Payments supports, or you use a third-party payment provider. Shopify's list of 41 supported countries doesn't include Indonesia. Your visa is the other half: check what it allows before you start trading from here."
@@ -32,7 +32,7 @@ faq:
 
 # Running an ecommerce business from Bali: payments, sourcing, shipping and visas
 
-You can run an ecommerce business from Bali when the store's business is registered abroad, because Shopify Payments and Stripe start from where the business is registered, not where you sit (though Stripe also checks where the people behind the account live). The Bali-specific parts are your visa, which limits selling in Indonesia, and Indonesian export rules, which need a registered exporter, so without a local company you export through your supplier or a forwarder. Get those two right and the rest is ordinary ecommerce.
+You can run an ecommerce business from Bali when the store is registered abroad, because Shopify Payments and Stripe look at the business's country, and Stripe also checks where the people live. Your visa limits selling in Indonesia. Without a local company you export through your supplier or a forwarder. Checked 26 October 2026.
 
 This page is for Shopify, Amazon and DTC operators. It isn't legal, tax or immigration advice: read our [visa guide](/blog/indonesia-startup-visa-guide) and [tax guide](/blog/bali-founder-tax-guide-2026), then check your own case with a lawyer.
 

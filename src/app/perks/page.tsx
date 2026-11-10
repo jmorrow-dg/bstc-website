@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PerkFinder from "@/components/perks/PerkFinder";
+import { pageTitle } from "@/lib/seo";
 import { getBreadcrumbSchema } from "@/lib/schema";
 import {
   catalogueCount,
@@ -27,13 +28,14 @@ const FACTS = perkFacts();
 const CHECKED = formatChecked(PERKS_CHECKED);
 const DESCRIPTION = perksMetaDescription(CHECKED);
 const GROUPS = memberGroups();
+const PERKS_TITLE = "Member Perks: Open Programmes You Apply For | BSTC";
 
 export const metadata: Metadata = {
-  title: "Member perks for founders and remote builders",
+  title: pageTitle(PERKS_TITLE),
   description: DESCRIPTION,
   alternates: { canonical: "/perks" },
   openGraph: {
-    title: "Member perks for founders and remote builders | BSTC",
+    title: PERKS_TITLE,
     description: DESCRIPTION,
     url: "/perks",
   },
@@ -282,12 +284,14 @@ export default function PerksPage() {
             <p className="gl-est">Open programmes checked by {CHECKED}</p>
             <h1 id="page-title">Member perks for founders and remote builders</h1>
             <p className="gl-lede">
-              Bali Startup &amp; Tech is the community for founders, entrepreneurs
-              and remote builders in Bali, and wherever you build from next.
-              Public startup programmes are listed with a link to each vendor.
-              Member offers with agreed terms are listed separately, and they are
-              not claimable from this page while a code or partner link is still
-              being set up.
+              Member perks for founders and remote builders are in two groups.{" "}
+              {FACTS.open} public startup programmes are open, each checked on the
+              vendor&apos;s own page by {CHECKED}. You apply direct or through a
+              partner referral. {FACTS.withTerms}{" "}
+              {FACTS.withTerms === 1 ? "offer has" : "offers have"} agreed terms
+              and {FACTS.withTerms === 1 ? "is" : "are"} listed separately, and{" "}
+              {FACTS.withTerms === 1 ? "it is" : "they are"} not claimable from
+              this page yet.
             </p>
             <div className="gl-head-ctas">
               <Link className="gl-btn gl-btn-paper" href="/join?src=perks-head">

@@ -139,29 +139,14 @@ export function perksMetaDescription(checkedLabel: string): string {
   const f = perkFacts();
   const offer = f.withTerms === 1 ? "offer has" : "offers have";
   const claim = f.withTerms === 1 ? "is" : "are";
-  const parts = [
-    `${f.open} open startup programmes, each checked on the vendor's own page by ${checkedLabel}.`,
-    `${f.withTerms} ${offer} agreed terms and ${claim} not claimable on this page yet.`,
-  ];
-  if (f.activation) {
-    parts.push(
-      `${f.activation} ${f.activation === 1 ? "is" : "are"} agreed and waiting on activation.`
-    );
-  }
-  if (f.terms) {
-    parts.push(
-      `${f.terms} ${f.terms === 1 ? "offer has" : "offers have"} been received, with terms still being confirmed.`
-    );
-  }
-  parts.push(
-    `${f.negotiating} example ${f.negotiating === 1 ? "listing is" : "listings are"} still being negotiated.`
-  );
-  if (f.unavailable) {
-    parts.push(
-      `${f.unavailable} example ${f.unavailable === 1 ? "is" : "are"} not currently available.`
-    );
-  }
-  return parts.join(" ");
+  const dated = `${f.open} open founder perks, checked on each vendor's page by ${checkedLabel}.`;
+  const terms = `${f.withTerms} ${offer} agreed terms and ${claim} not claimable on this page yet.`;
+  const full = `${dated} ${terms}`;
+  // Search titles stay at 155 characters or fewer. The page still lists the
+  // activation, terms and example counts in the body.
+  if (full.length <= 155) return full;
+  const shorter = `${f.open} open founder perks, checked by ${checkedLabel}. ${terms}`;
+  return shorter.length <= 155 ? shorter : dated;
 }
 
 export type MemberGroup = {
