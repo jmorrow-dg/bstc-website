@@ -113,8 +113,8 @@ export function getEventSchema(event: {
   url: string;
   image?: string;
   status?: string;
-  rsvpUrl?: string;
   announced?: string;
+  rsvpUrl?: string;
   organizer?: { name: string; url?: string };
 }, now: Date = new Date()) {
   if (!isValidEventDate(event.date)) return null;
