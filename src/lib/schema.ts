@@ -95,6 +95,15 @@ export function getWebSiteSchema() {
   };
 }
 
+// ISO 8601 date-time with an explicit offset, as schema.org validFrom expects.
+export function isIsoDateTimeWithZone(value?: string): value is string {
+  return (
+    typeof value === "string" &&
+    /^\d{4}-\d{2}-\d{2}T([01]\d|2[0-3]):[0-5]\d(:[0-5]\d(\.\d+)?)?(Z|[+-]([01]\d|2[0-3]):[0-5]\d)$/.test(value) &&
+    !Number.isNaN(Date.parse(value))
+  );
+}
+
 export function getEventSchema(event: {
   title: string;
   description: string;
@@ -105,6 +114,7 @@ export function getEventSchema(event: {
   image?: string;
   status?: string;
   rsvpUrl?: string;
+  announced?: string;
   organizer?: { name: string; url?: string };
 }, now: Date = new Date()) {
   if (!isValidEventDate(event.date)) return null;
@@ -149,6 +159,7 @@ export function getEventSchema(event: {
     ...(canRsvpToEvent(event, now) && {
       offers: {
         "@type": "Offer",
+        ...(isIsoDateTimeWithZone(event.announced) && { validFrom: event.announced }),
         url: event.rsvpUrl,
         price: "0",
         priceCurrency: "USD",

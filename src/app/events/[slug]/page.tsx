@@ -85,6 +85,7 @@ export default async function EventPage({
     image: e.coverImage,
     status: e.status,
     rsvpUrl: e.rsvpUrl,
+    announced: e.announced,
     organizer: e.organizer,
   }, now);
 
