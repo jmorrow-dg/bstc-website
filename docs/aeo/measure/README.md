@@ -2,7 +2,9 @@
 
 Tags: medium | immediate | create new | measurement | Q01 to Q18.
 
-Run every Monday. The next check is 9 November 2026. Josh's assistant collects the answers. Sunday preparation does not count as a citation check. This workflow uses manual public answers, plain Node and no API calls, keys, paid tools or analytics changes.
+Run every Monday. Josh's assistant collects the answers. Sunday preparation does not count as a citation check. This workflow uses manual public answers, plain Node and no API calls, keys, paid tools or analytics changes.
+
+The 9 November 2026 check was missed. On 10 November 2026 the 90 slots were logged in `citation-log-2026-11-10.csv`: 0 complete answers. Every engine is `unavailable` with the note `not collected: no engine access`. That is not a negative answer. The next Monday check is 16 November 2026. `~/orca/evidence/bstc/citations` was not available on that run, so the dated log is in this folder until it can be copied. The header-only `citation-log.csv` template is unchanged.
 
 ## Frozen questions and ownership
 
@@ -75,6 +77,6 @@ node scripts/health/live-checks.mjs           # endpoints, known live issues, pe
 node scripts/health/crawl-diff.mjs OLD/crawl.json NEW/crawl.json NEW/crawl-diff.md
 ```
 
-Run the crawl first; live checks read its `crawl.json`. `summary.md` compares each metric with the baseline in `crawl.mjs`; update that baseline only when the daily prompt gives a new one. The diff lists added and removed URLs and every changed field, including the inbound pages each URL lost or gained. Expect many `lastmod` rows after a deploy: static pages carry the build time.
+Run the crawl first; live checks read its `crawl.json`. `summary.md` compares each metric with the baseline in `crawl.mjs`; update that baseline only when the daily prompt gives a new one. The baseline is the 10 Nov 2026 crawl: 100 URLs, all HTTP 200, 62 titles over 60 characters, 66 descriptions over 155 characters, 16 `lastmod` values after that day. The diff lists added and removed URLs and every changed field, including the inbound pages each URL lost or gained. Expect many `lastmod` rows after a deploy: static pages carry the build time.
 
 The accessibility columns (`htmlLang`, `imgNoAlt`, `unnamedLinks`, `unnamedButtons`, `headingSkips`) and `hiddenOnLoad` come from server HTML. They catch missing names and structure, not contrast, focus order or anything that needs a browser. They don't replace Lighthouse, which needs 10 GiB or more free disk.

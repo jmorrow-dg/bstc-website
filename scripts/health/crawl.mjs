@@ -84,6 +84,9 @@ export function sitemapEntries(xml) {
 export function isFutureLastmod(lastmod, now = new Date()) {
   return Boolean(lastmod) && !Number.isNaN(Date.parse(lastmod)) && witaDate(new Date(lastmod)) > witaDate(now);
 }
+// Baseline: 10 Nov 2026, 15:47 WITA. Live crawl of https://www.balistartupandtech.com/sitemap.xml.
+// Same counts as the box crawl summary that day, plus futureLastmods from this crawl.mjs run (the box summary did not report it).
+export const BASELINE = { urls: 100, status200: 100, nonSelfCanonical: 0, parseErrorPages: 0, longTitles: 62, longDescriptions: 66, duplicateBreadcrumbPages: 49, dashPages: 50, weakInlinks: 18, futureLastmods: 16 };
 export function csv(rows, columns) {
   const cell = value => '"' + String(Array.isArray(value) ? JSON.stringify(value) : value ?? '').replaceAll('"', '""') + '"';
   return [columns, ...rows.map(r => columns.map(c => r[c]))].map(r => r.map(cell).join(',')).join('\n') + '\n';
@@ -134,8 +137,7 @@ export async function crawl(base, output) {
     missingLang: count(r => r.status === 200 && !r.htmlLang), imgNoAltPages: count(r => r.imgNoAlt > 0), unnamedLinkPages: count(r => r.unnamedLinks > 0),
     unnamedButtonPages: count(r => r.unnamedButtons > 0), headingSkipPages: count(r => r.headingSkips > 0), hiddenOnLoadPages: count(r => r.hiddenOnLoad > 0),
     htmlOver500KiB: count(r => r.htmlKiB > 500) };
-  // Baseline: 8 Nov 2026, about 6:27am WITA.
-  const baseline = { urls: 91, status200: 91, nonSelfCanonical: 0, parseErrorPages: 0, longTitles: 53, longDescriptions: 57, duplicateBreadcrumbPages: 49, dashPages: 50, weakInlinks: 18, futureLastmods: 7 };
+  const baseline = BASELINE;
   await writeFile(resolve(output, 'crawl.json'), JSON.stringify({ startedAt, finishedAt: new Date().toISOString(), base, metrics, rows }, null, 2));
   await writeFile(resolve(output, 'crawl.csv'), csv(rows, ['url','sampledAt','status','finalUrl','redirected','title','titleLength','description','descriptionLength','canonical','noindex','h1Count','jsonldTypes','jsonldParseErrors','breadcrumbCount','dashCount','internalOutlinks','inboundCount','lastmod','futureLastmod','htmlKiB','htmlLang','imgNoAlt','unnamedLinks','unnamedButtons','headingSkips','hiddenOnLoad','error']));
   await writeFile(resolve(output, 'summary.md'), `# Sitemap health\n\nStarted: ${startedAt}\n\n| Metric | Baseline | Observed | Delta |\n| --- | ---: | ---: | ---: |\n` + Object.entries(metrics).map(([k,v]) => `| ${k} | ${baseline[k] ?? 'n/a'} | ${v} | ${k in baseline ? v - baseline[k] : 'n/a'} |`).join('\n') + '\n\nInlinks count distinct other sitemap pages, with query strings and fragments removed. Visible-text checks use server HTML excluding script, style and template elements; CSS-hidden text can remain. Network errors have status 0 and are not passes. The accessibility and hiddenOnLoad columns read server HTML only; they are not a Lighthouse or browser audit.\n');

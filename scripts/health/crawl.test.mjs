@@ -3,8 +3,22 @@ import assert from 'node:assert/strict';
 import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { crawl, inspect, isFutureLastmod, sitemapEntries, staticA11y, witaDate } from './crawl.mjs';
+import { BASELINE, crawl, inspect, isFutureLastmod, sitemapEntries, staticA11y, witaDate } from './crawl.mjs';
 
+test('10 Nov 2026 baseline is the 100 URL crawl', () => {
+  assert.deepEqual(BASELINE, {
+    urls: 100,
+    status200: 100,
+    nonSelfCanonical: 0,
+    parseErrorPages: 0,
+    longTitles: 62,
+    longDescriptions: 66,
+    duplicateBreadcrumbPages: 49,
+    dashPages: 50,
+    weakInlinks: 18,
+    futureLastmods: 16,
+  });
+});
 test('extracts SEO, structured data and normalised outlinks', () => {
   const row = inspect(`<title>A &amp; B</title><meta content='A &quot;description&quot;' name='description'><meta name="robots" content="noindex"><link rel="canonical" href="https://example.com/"><body><h1>Heading</h1><script type="application/ld+json">{"@graph":[{"@type":"BreadcrumbList"},{"@type":["Article","Thing"]}]}</script><script>invisible \u2014</script><p>Visible &ndash; text</p><a href="/target?q=1#part">Target</a><a href="/target">Duplicate</a></body>`, 'https://example.com/');
   assert.equal(row.title, 'A & B');
