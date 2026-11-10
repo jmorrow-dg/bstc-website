@@ -7,8 +7,8 @@ author: Lachlan McRitchie
 category: guide
 excerpt: "Bali has plenty of digital nomad groups, but most are social chats. If you're building a business rather than just travelling, here's where the builders actually meet, what to look for in a community, and how to set yourself up."
 seo:
-  title: "Digital Nomad Community in Bali for Founders | BSTC"
-  description: "Most Bali digital nomad groups are social chats. Here's where people building businesses meet in 2026: builder nights, founder dinners and dev meetups."
+  title: "Digital Nomad Community in Bali: Meet in Person | BSTC"
+  description: "Digital nomad community in Bali: skip the social chats. Builders meet in person at BSTC's free Wednesday night in Canggu. Updated 5 Nov 2026."
 faq:
   - question: "Is there a digital nomad community in Bali for entrepreneurs?"
     answer: "Yes. Beyond the social nomad chats, Bali has in-person builder communities: BSTC in Canggu (weekly How I AI nights and a roughly monthly founder dinner), GDG Bali for developers in Denpasar, and the Ubud Tech Meetup. See our directory for each group's last dated event."
@@ -22,9 +22,9 @@ faq:
     answer: "Canggu has the weekly builder events, and Finns' guide (updated 21 July 2026) lists 15 coworking spaces in and around it (Finns). Ubud has its own monthly tech meetup. The Canggu neighbourhood guide goes deeper."
 ---
 
-Meet founders, engineers and remote builders at Bali Startup & Tech Community's free events in Canggu. [Join BSTC for free](/join?src=blog-digital-nomad-community-bali-answer) to connect with the community before your first event.
+The digital nomad community in Bali is the builder room in person, not the social chats. [How I AI](/events/how-i-ai-edition-19) is free every Wednesday from 4 November 2026, 6 to 9pm at Seoul Soul Project, Canggu. [Dinner #39](/events/networking-drinks-dinner-canggu-39) is Thursday 12 November 2026, 6:30 to 8:30pm at Yema Kitchen. Both are free. Order and pay for your own food and drinks.
 
-**Upcoming dates, updated 5 November 2026:** [How I AI](/events/how-i-ai-edition-19) runs every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project; [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39) is Thursday 12 November, 6:30 to 8:30 PM WITA at Yema Kitchen. Both are free; order and pay for your own food and drinks.
+[Join BSTC for free](/join?src=blog-digital-nomad-community-bali-answer).
 
 
 

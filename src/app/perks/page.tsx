@@ -1,39 +1,111 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PerkFinder from "@/components/perks/PerkFinder";
+import { pageTitle } from "@/lib/seo";
 import { getBreadcrumbSchema } from "@/lib/schema";
 import {
-  EXAMPLE_PERKS,
-  LOCAL_EXAMPLES,
-  OPEN_PERKS,
-  PERKS_CHECKED,
-  PERK_CATEGORIES,
+  catalogueCount,
   claimDomain,
   formatChecked,
   formatUsd,
   groupPerks,
   isOpen,
+  isUnavailable,
+  memberCount,
+  memberDateLabel,
+  memberGroups,
+  memberStamp,
+  perkFacts,
   perkIndex,
+  PERKS_CHECKED,
+  PERK_CATEGORIES,
+  perksMetaDescription,
   tidy,
   type Perk,
 } from "@/lib/perks";
 
-const OPEN = OPEN_PERKS.length;
-const PARTNER = OPEN_PERKS.filter((p) => p.claim_route === "partner").length;
-const EXAMPLES = EXAMPLE_PERKS.length;
-const LOCAL = LOCAL_EXAMPLES.length;
+const FACTS = perkFacts();
 const CHECKED = formatChecked(PERKS_CHECKED);
+const DESCRIPTION = perksMetaDescription(CHECKED);
+const GROUPS = memberGroups();
+const PERKS_TITLE = "Member Perks: Open Programmes You Apply For | BSTC";
 
 export const metadata: Metadata = {
-  title: "Member perks for founders and remote builders",
-  description: `${OPEN} open startup programmes, each checked on the vendor's own page by ${CHECKED}, plus ${EXAMPLES} example member deals Bali Startup & Tech is negotiating. Credits and discounts for founders and remote builders in Bali and beyond.`,
+  title: pageTitle(PERKS_TITLE),
+  description: DESCRIPTION,
   alternates: { canonical: "/perks" },
   openGraph: {
-    title: "Member perks for founders and remote builders | BSTC",
-    description: `${OPEN} open startup programmes and ${EXAMPLES} example member deals, checked by ${CHECKED}.`,
+    title: PERKS_TITLE,
+    description: DESCRIPTION,
     url: "/perks",
   },
 };
+
+function MemberCard({ perk }: { perk: Perk }) {
+  const status = perk.member_status;
+  if (!status) return null;
+  const headingId = `perk-${perk.id}-h`;
+  const letter = perk.company.trim().charAt(0).toUpperCase();
+  const stamp = memberStamp(status);
+  const waiting = status === "activation_pending" || status === "terms_pending";
+
+  return (
+    <article
+      className={`gl-pk gl-pk--member${waiting ? " gl-pk--wait" : ""}`}
+      id={`perk-${perk.id}`}
+      data-perk-id={perk.id}
+      aria-labelledby={headingId}
+    >
+      <span className={`gl-stamp${stamp.length > 10 ? " gl-stamp--long" : ""}`}>{stamp}</span>
+      <div className="gl-pk-top">
+        <span className="gl-mark" aria-hidden="true">
+          {letter}
+        </span>
+        <div>
+          <h3 className="gl-pk-co" id={headingId}>
+            {perk.company}
+          </h3>
+          {perk.programme && <p className="gl-pk-prog">{perk.programme}</p>}
+        </div>
+      </div>
+      {perk.headline && <p className="gl-pk-headline">{perk.headline}</p>}
+      {perk.one_line && <p className="gl-pk-one">{perk.one_line}</p>}
+      <dl className="gl-pk-facts">
+        <div>
+          <dt>The offer</dt>
+          <dd>{tidy(perk.offer)}</dd>
+        </div>
+        {perk.eligibility && (
+          <div>
+            <dt>Who qualifies</dt>
+            <dd>{tidy(perk.eligibility)}</dd>
+          </div>
+        )}
+        {perk.claim_status && (
+          <div>
+            <dt>Status</dt>
+            <dd>{perk.claim_status}</dd>
+          </div>
+        )}
+        {perk.notes && (
+          <div>
+            <dt>Worth knowing</dt>
+            <dd>{tidy(perk.notes)}</dd>
+          </div>
+        )}
+      </dl>
+      <p className="gl-pk-tags">
+        {perk.bootstrapped_ok && <span className="gl-boot">Bootstrapped OK</span>}
+        {perk.agreed_on && (
+          <span className="gl-checked">
+            {memberDateLabel(status)}{" "}
+            <time dateTime={perk.agreed_on}>{formatChecked(perk.agreed_on)}</time>
+          </span>
+        )}
+      </p>
+    </article>
+  );
+}
 
 function PerkCard({ perk }: { perk: Perk }) {
   const headingId = `perk-${perk.id}-h`;
@@ -114,6 +186,45 @@ function PerkCard({ perk }: { perk: Perk }) {
     );
   }
 
+  if (isUnavailable(perk)) {
+    return (
+      <article
+        className="gl-pk gl-pk--ex gl-pk--off"
+        id={`perk-${perk.id}`}
+        data-perk-id={perk.id}
+        aria-labelledby={headingId}
+      >
+        <span className="gl-stamp gl-stamp--long">Not available</span>
+        <div className="gl-pk-top">
+          <span className="gl-mark" aria-hidden="true">
+            {letter}
+          </span>
+          <div>
+            <h3 className="gl-pk-co" id={headingId}>
+              {perk.company}
+            </h3>
+            <p className="gl-pk-prog">Not currently available</p>
+          </div>
+        </div>
+        <p className="gl-pk-headline">Not currently available</p>
+        {perk.one_line && <p className="gl-pk-one">{perk.one_line}</p>}
+        <dl className="gl-pk-facts">
+          <div>
+            <dt>Listed example</dt>
+            <dd>{perk.offer}</dd>
+          </div>
+          {perk.eligibility && (
+            <div>
+              <dt>Who the example was for</dt>
+              <dd>{perk.eligibility}</dd>
+            </div>
+          )}
+        </dl>
+        {perk.status_note && <p className="gl-pk-not">{perk.status_note}</p>}
+      </article>
+    );
+  }
+
   // Examples: no link, no value, a visible stamp on every one.
   return (
     <article
@@ -170,46 +281,101 @@ export default function PerksPage() {
       <section className="gl-head gl-on-red" aria-labelledby="page-title">
         <div className="gl-wrap">
           <div className="gl-head-copy">
-            <p className="gl-est">Member perks, checked by {CHECKED}</p>
+            <p className="gl-est">Open programmes checked by {CHECKED}</p>
             <h1 id="page-title">Member perks for founders and remote builders</h1>
             <p className="gl-lede">
-              Bali Startup &amp; Tech is the community for founders, entrepreneurs
-              and remote builders in Bali, and wherever you build from next.
-              Here are the startup programmes on our list, in one place, and the
-              members-only deals we&apos;re working on.
+              Member perks for founders and remote builders are in two groups.{" "}
+              {FACTS.open} public startup programmes are open, each checked on the
+              vendor&apos;s own page by {CHECKED}. You apply direct or through a
+              partner referral. {FACTS.withTerms}{" "}
+              {FACTS.withTerms === 1 ? "offer has" : "offers have"} agreed terms
+              and {FACTS.withTerms === 1 ? "is" : "are"} listed separately, and{" "}
+              {FACTS.withTerms === 1 ? "it is" : "they are"} not claimable from
+              this page yet.
             </p>
             <div className="gl-head-ctas">
               <Link className="gl-btn gl-btn-paper" href="/join?src=perks-head">
                 Join the community
               </Link>
-              <a className="gl-link" href="#finder">
-                Find a perk
+              <a className="gl-link" href="#member-offers">
+                Member offers
               </a>
             </div>
           </div>
-          <div className="gl-kinds">
+          <div className="gl-kinds gl-kinds--split">
             <div className="gl-kind-tile gl-kind-open">
-              <b>{OPEN}</b>
+              <b>{FACTS.open}</b>
               <h2>Open now</h2>
               <p className="gl-k-sub">Public startup programmes</p>
               <p>
                 Read on each vendor&apos;s own page by {CHECKED}. You apply direct
-                for {OPEN - PARTNER} and through a partner referral for {PARTNER}.
+                for {FACTS.direct} and through a partner referral for {FACTS.partner}.
                 The vendor decides who gets in. Each one links to its page.
               </p>
             </div>
+            <div className="gl-kind-tile gl-kind-terms">
+              <b>{FACTS.withTerms}</b>
+              <h2>Agreed terms</h2>
+              <p className="gl-k-sub">
+                {FACTS.confirmed} confirmed, {FACTS.approved} approved
+              </p>
+              <p>
+                Terms are stated on each card. Claiming is not open on this page.
+                Codes stay private, and partner or application links are not
+                published here.
+              </p>
+            </div>
+            {FACTS.pending > 0 && (
+              <div className="gl-kind-tile gl-kind-wait">
+                <b>{FACTS.pending}</b>
+                <h2>Not claimable yet</h2>
+                <p className="gl-k-sub">
+                  {[
+                    FACTS.activation ? `${FACTS.activation} activation pending` : "",
+                    FACTS.terms ? `${FACTS.terms} terms pending` : "",
+                  ]
+                    .filter(Boolean)
+                    .join(", ")}
+                </p>
+                <p>
+                  {FACTS.activation > 0 && (
+                    <>
+                      {FACTS.activation} {FACTS.activation === 1 ? "is" : "are"} agreed
+                      and waiting on activation.{" "}
+                    </>
+                  )}
+                  {FACTS.terms > 0 && (
+                    <>
+                      {FACTS.terms} {FACTS.terms === 1 ? "has" : "have"} an offer in,
+                      with terms still being confirmed.
+                    </>
+                  )}
+                </p>
+              </div>
+            )}
             <div className="gl-kind-tile gl-kind-ex">
               <span className="gl-stamp" aria-hidden="true">
                 Example
               </span>
-              <b>{EXAMPLES}</b>
-              <h2>Example member deals</h2>
+              <b>{FACTS.examples}</b>
+              <h2>Example listings</h2>
               <p className="gl-k-sub">
-                {EXAMPLES - LOCAL} founder tools, {LOCAL} Bali partners
+                {FACTS.negotiatingTools} founder tools, {FACTS.negotiatingLocal} Bali
+                partners
+                {FACTS.unavailable > 0 ? `, ${FACTS.unavailable} not available` : ""}
               </p>
               <p>
-                Members-only deals we&apos;re negotiating. None are agreed yet, so
-                each one is stamped Example and has no link and no value.
+                {FACTS.negotiating} are examples of members-only deals we are
+                negotiating. Each one is stamped Example and has no link and no
+                value.
+                {FACTS.unavailable > 0 && (
+                  <>
+                    {" "}
+                    {FACTS.unavailable}{" "}
+                    {FACTS.unavailable === 1 ? "listing is" : "listings are"} not
+                    currently available.
+                  </>
+                )}
               </p>
             </div>
           </div>
@@ -221,16 +387,25 @@ export default function PerksPage() {
           <div className="gl-finder-head">
             <h2 id="find-title">Find a perk</h2>
             <p>
-              Everything on our list, grouped by category. Values are in US dollars, as
-              each vendor states them, and only open programmes show one.
+              Member offers sit in their own sections. Public programmes and example
+              listings follow, grouped by category. Values on open programmes are in
+              US dollars, as each vendor states them. Member offers do not link out
+              to a claim page.
             </p>
           </div>
 
           <PerkFinder index={perkIndex()} categories={PERK_CATEGORIES} />
 
           <nav className="gl-jump" id="perk-jump" aria-labelledby="jump-title">
-            <h3 id="jump-title">Jump to a category</h3>
+            <h3 id="jump-title">Jump to a section</h3>
             <ul>
+              {GROUPS.map((g) => (
+                <li key={g.id}>
+                  <a href={`#cat-${g.id}`}>
+                    {g.title} ({g.perks.length})
+                  </a>
+                </li>
+              ))}
               {groups.map((g) => (
                 <li key={g.slug}>
                   <a href={`#cat-${g.slug}`}>
@@ -244,6 +419,30 @@ export default function PerksPage() {
       </section>
 
       <div className="gl-results gl-wrap" id="results">
+        <div id="member-offers">
+          {GROUPS.map((g) => (
+            <section
+              className="gl-cat"
+              id={`cat-${g.id}`}
+              data-perk-cat={g.id}
+              aria-labelledby={`cat-${g.id}-h`}
+              key={g.id}
+            >
+              <div className="gl-cat-head">
+                <h2 id={`cat-${g.id}-h`}>{g.title}</h2>
+                <p className="gl-cat-count" data-perk-count="">
+                  {memberCount(g.perks)}
+                </p>
+              </div>
+              <p className="gl-cat-intro">{g.intro}</p>
+              <div className="gl-grid">
+                {g.perks.map((perk) => (
+                  <MemberCard perk={perk} key={perk.id} />
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
         {groups.map((g) => (
           <section
             className="gl-cat"
@@ -255,14 +454,7 @@ export default function PerksPage() {
             <div className="gl-cat-head">
               <h2 id={`cat-${g.slug}-h`}>{g.category}</h2>
               <p className="gl-cat-count" data-perk-count="">
-                {[
-                  g.open ? `${g.open} ${g.open === 1 ? "programme" : "programmes"}` : "",
-                  g.examples
-                    ? `${g.examples} ${g.examples === 1 ? "example" : "examples"}`
-                    : "",
-                ]
-                  .filter(Boolean)
-                  .join(", ")}
+                {catalogueCount(g)}
               </p>
             </div>
             <div className="gl-grid">
@@ -319,8 +511,9 @@ export default function PerksPage() {
           <span className="gl-crest" aria-hidden="true" />
           <h2 id="perks-final-title">Perks come with membership</h2>
           <p>
-            Join free. You get the chat, every event, and each member deal as soon
-            as it&apos;s signed.
+            Join free. You get the chat and every event. Member offers are listed
+            once the terms are agreed, and claiming opens when the code or partner
+            link is ready.
           </p>
           <Link className="gl-btn gl-btn-paper" href="/join?src=perks-foot">
             Join the community
