@@ -66,7 +66,10 @@
 .gl-menu-panel li a { display: block; padding: 12px 0; border-bottom: 2px solid var(--gl-chalk); font-weight: 600; text-decoration: none; color: var(--gl-navy); }
 .gl-menu-panel li a[aria-current="page"] { color: var(--gl-red-deep); }
 .gl-menu-panel .gl-btn { width: 100%; margin-top: 16px; }
-/* Sign in (src/lib/members-app.mjs): only rendered once its address is set. */
+/* Sign in (src/lib/members-app.mjs): only rendered once its address is set. It
+   adds about 70px to the one-row header, so while it shows (gl-top-row--signin)
+   the nav takes its own row up to 1340px rather than 1240px, keeping the same
+   room to spare. */
 .gl-top-signin { text-decoration: none; padding: 6px 0; border-bottom: var(--gl-rule) solid transparent; color: var(--gl-navy); font-size: 15px; font-weight: 600; white-space: nowrap; }
 .gl-top-signin:hover { border-bottom-color: var(--gl-red); }
 @media (max-width: 1240px) { .gl-nav { order: 3; width: 100%; } }
