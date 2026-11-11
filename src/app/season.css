@@ -66,9 +66,14 @@
 .gl-menu-panel li a { display: block; padding: 12px 0; border-bottom: 2px solid var(--gl-chalk); font-weight: 600; text-decoration: none; color: var(--gl-navy); }
 .gl-menu-panel li a[aria-current="page"] { color: var(--gl-red-deep); }
 .gl-menu-panel .gl-btn { width: 100%; margin-top: 16px; }
+/* Sign in (src/lib/members-app.mjs): only rendered once its address is set. */
+.gl-top-signin { text-decoration: none; padding: 6px 0; border-bottom: var(--gl-rule) solid transparent; color: var(--gl-navy); font-size: 15px; font-weight: 600; white-space: nowrap; }
+.gl-top-signin:hover { border-bottom-color: var(--gl-red); }
 @media (max-width: 1240px) { .gl-nav { order: 3; width: 100%; } }
+@media (max-width: 1340px) { .gl-top-row--signin .gl-nav { order: 3; width: 100%; } }
 @media (max-width: 767px) {
   .gl-nav, .gl-top-join { display: none; }
+  .gl-top-signin { display: none; }
   .gl-menu-btn { display: inline-flex; }
   .gl-brand-name { font-size: 22px; }
   .gl-top-row { gap: 10px 16px; }
