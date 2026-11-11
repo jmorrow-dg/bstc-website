@@ -18,6 +18,9 @@ export interface EventFrontmatter {
   status: "upcoming" | "completed";
   capacity: number;
   rsvpUrl: string;
+  // When the event page first went live on main (ISO 8601 with offset). Used as
+  // Event schema `offers.validFrom`. Required on upcoming events with an RSVP link.
+  announced?: string;
   coverImage?: string;
   description: string;
   builder?: {

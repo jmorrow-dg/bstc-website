@@ -20,7 +20,7 @@ import {
   formatEventDate,
   formatEventType,
 } from "@/lib/content";
-import { getEventSchema } from "@/lib/schema";
+import { getEventOrganizer, getEventSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
 import { canRsvpToEvent, getEventState, rsvpPlatform } from "@/lib/event-status";
 
@@ -85,7 +85,8 @@ export default async function EventPage({
     image: e.coverImage,
     status: e.status,
     rsvpUrl: e.rsvpUrl,
-    organizer: e.organizer,
+    announced: e.announced,
+    organizer: getEventOrganizer(e),
   }, now);
 
   return (

@@ -7,6 +7,7 @@ venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: upcoming
 capacity: 50
+announced: "2026-10-25T19:34:21+08:00"
 rsvpUrl: https://luma.com/nf8gu11f?utm_source=website
 coverImage: /images/events/how-i-ai-season-2.jpg
 description: "How I AI is back at Seoul Soul Project, every Wednesday: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
