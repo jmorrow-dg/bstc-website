@@ -13,6 +13,10 @@ export interface EventFrontmatter {
   slug: string;
   date: string;
   time: string;
+  // Finish time (HH:MM, Bali time), copied from the night's own RSVP listing
+  // (Meetup or Luma) with the listing named in a comment beside it. Leave it
+  // out when the listing gives none: the page and Event schema then omit it.
+  endTime?: string;
   venue: string;
   type: "networking" | "roundtable" | "builder-session" | "how-i-build-with-ai";
   status: "upcoming" | "completed";

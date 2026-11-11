@@ -12,14 +12,19 @@ import {
   ContentItem,
 } from "@/lib/content";
 import { getEventState } from "@/lib/event-status";
+import PhotoGallery from "@/components/events/PhotoGallery";
+import EventProof from "@/components/events/EventProof";
+import { getEventPhotos } from "@/lib/event-photos";
+import { HISTORY_CHECKED, getHistoryStats, shortDate } from "@/lib/event-history";
+
+const HISTORY = getHistoryStats();
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Events",
-  description:
-    "Upcoming and past events from Bali Startup & Tech Community. Networking nights, founder roundtables, builder sessions, hackathons, and our flagship How I Build with AI series across Bali and Southeast Asia.",
+  title: "Startup and Tech Events in Bali",
+  description: `Free startup and tech events in Canggu, Bali: Drinks & Dinner, the monthly founder dinner at Yema Kitchen, and How I AI every Wednesday at Seoul Soul Project. ${HISTORY.nights} nights since ${shortDate(HISTORY.firstDate)} (Meetup, ${HISTORY_CHECKED}).`,
   keywords: [
     "Bali tech events",
     "startup events Bali",
@@ -33,9 +38,9 @@ export const metadata: Metadata = {
     "AI events Southeast Asia",
   ],
   openGraph: {
-    title: "Events | Bali Startup & Tech Community",
+    title: "Startup and tech events in Bali | Bali Startup & Tech Community",
     description:
-      "Networking nights, founder roundtables, builder sessions, and the How I Build with AI flagship series. Signal over noise.",
+      "Free founder and builder nights in Canggu, Bali: the monthly Drinks & Dinner and How I AI every Wednesday.",
     type: "website",
   },
   alternates: { canonical: "/events" },
@@ -143,16 +148,55 @@ export default async function EventsPage() {
       <section className="py-16 md:py-24">
         <div className="max-w-site mx-auto px-6">
           <p className="text-brand-red text-sm font-medium uppercase tracking-widest mb-4">
-            Events
+            Where Builders Gather
           </p>
           <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Where Builders Gather
+            Startup and tech events in Bali
           </h1>
           <p className="text-brand-grey max-w-2xl text-lg">
-            Monthly networking nights, founder roundtables, builder sessions,
-            and our flagship &ldquo;How I Build with AI&rdquo; series. Every
-            event is designed for signal over noise.
+            Free nights for founders and builders in Canggu. Drinks &amp;
+            Dinner is the monthly founder dinner at Yema Kitchen, and How I AI
+            runs every Wednesday at Seoul Soul Project. Come to one, meet the
+            room, then join the community.
           </p>
+        </div>
+      </section>
+
+      {/* The two series */}
+      <section className="pb-16 md:pb-20">
+        <div className="max-w-site mx-auto px-6 grid gap-6 md:grid-cols-2">
+          {[
+            {
+              href: "/drinks-and-dinner",
+              kicker: "Monthly, usually a Thursday",
+              title: "Drinks & Dinner",
+              text: "The monthly founder night at Yema Kitchen, Canggu. A couple of short founder talks, then open networking. Free; you pay for your own food and drinks.",
+              count: `${HISTORY.dinners} nights since ${shortDate(HISTORY.firstDate)}`,
+            },
+            {
+              href: "/how-i-build-with-ai",
+              kicker: "Every Wednesday",
+              title: "How I AI",
+              text: "The weekly AI builder night at Seoul Soul Project, Canggu. Builders show the AI tools and workflows behind what they ship. Free.",
+              count: `${HISTORY.howIAi} editions since ${shortDate(getHistoryStats("how-i-ai").firstDate)}`,
+            },
+          ].map((s) => (
+            <Link
+              key={s.href}
+              href={s.href}
+              className="group block min-w-0 rounded-lg border border-ink/10 bg-white/70 p-6 hover:bg-white hover:border-brand-red/20 transition-colors"
+            >
+              <p className="text-xs font-medium uppercase tracking-wider text-brand-red mb-2">{s.kicker}</p>
+              <h2 className="text-2xl font-display font-bold mb-3 group-hover:text-brand-red">{s.title}</h2>
+              <p className="text-sm text-brand-grey mb-4">{s.text}</p>
+              <p className="text-xs text-brand-grey">
+                {s.count} (Meetup, {HISTORY_CHECKED})
+              </p>
+              <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-red">
+                Dates, photos and every past night <ArrowRight size={14} aria-hidden="true" />
+              </span>
+            </Link>
+          ))}
         </div>
       </section>
 
@@ -172,13 +216,28 @@ export default async function EventsPage() {
         </section>
       )}
 
+      {/* Proof and photos */}
+      <section className="pb-16 md:pb-24">
+        <div className="max-w-site mx-auto px-6 space-y-16">
+          <EventProof title="Every BSTC night since 2023" />
+          <PhotoGallery photos={getEventPhotos("all").slice(0, 12)} />
+        </div>
+      </section>
+
       {/* Past Events */}
       {past.length > 0 && (
         <section className="pb-16 md:pb-24">
           <div className="max-w-site mx-auto px-6">
-            <h2 className="text-2xl font-display font-bold mb-8">
+            <h2 className="text-2xl font-display font-bold mb-3">
               Past Events
             </h2>
+            <p className="text-sm text-brand-grey mb-8 max-w-3xl">
+              The listings below go back to 2026. For every night since{" "}
+              {shortDate(HISTORY.firstDate)}, see the full history on{" "}
+              <Link href="/drinks-and-dinner#history" className="gl-link">Drinks &amp; Dinner</Link>{" "}
+              and{" "}
+              <Link href="/how-i-build-with-ai#history" className="gl-link">How I AI</Link>.
+            </p>
             <div className="grid md:grid-cols-2 gap-6">
               {past.map((event) => (
                 <EventCard key={event.frontmatter.slug} event={event} now={now} />

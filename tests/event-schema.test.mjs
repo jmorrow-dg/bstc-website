@@ -17,7 +17,7 @@ const require = createRequire(import.meta.url);
 
 // Transpile the three schema modules to CommonJS in a temp dir (no build needed).
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "bstc-schema-test-"));
-for (const name of ["schema", "constants", "event-status"]) {
+for (const name of ["schema", "constants", "event-status", "venues"]) {
   const src = fs.readFileSync(path.join(root, "src/lib", `${name}.ts`), "utf8");
   let out = ts.transpileModule(src, {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },

@@ -65,6 +65,7 @@ export const STATS = {
 
 export const NAV_LINKS = [
   { label: "Events", href: "/events" },
+  { label: "Drinks & Dinner", href: "/drinks-and-dinner" },
   { label: "How I AI", href: "/how-i-build-with-ai" },
   { label: "Members", href: "/#members" },
   { label: "Perks", href: "/perks" },

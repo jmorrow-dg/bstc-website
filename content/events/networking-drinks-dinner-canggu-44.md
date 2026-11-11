@@ -3,6 +3,7 @@ title: "Bali Startup and Tech Networking Drinks & Dinner - Canggu #44"
 slug: networking-drinks-dinner-canggu-44
 date: "2027-04-08"
 time: "18:30"
+endTime: "22:00" # from the Luma r2g32j0y listing, read 11 Nov 2026
 venue: Yema Kitchen, Canggu
 type: networking
 status: upcoming

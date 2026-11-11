@@ -1,5 +1,6 @@
 import { CONTACT_EMAIL, EVENT_ORGANIZER, SITE, STATS } from "./constants";
 import { canRsvpToEvent, isValidEventDate } from "./event-status";
+import { getVenue } from "./venues";
 
 export function getOrganizationSchema() {
   return {
@@ -152,6 +153,11 @@ export function getEventSchema(event: {
   announced?: string;
   rsvpUrl?: string;
   organizer?: { name: string; url?: string };
+  // Finish time (HH:MM, Bali time) from the night's own RSVP listing. Left out
+  // when the listing has none: endDate is then omitted, never guessed.
+  endTime?: string;
+  // A real photo from a BSTC night, listed in `image` before the cover graphic.
+  photo?: string;
 }, now: Date = new Date()) {
   if (!isValidEventDate(event.date)) return null;
 
@@ -162,26 +168,52 @@ export function getEventSchema(event: {
     cancelled: "https://schema.org/EventCancelled",
     postponed: "https://schema.org/EventPostponed",
   };
+  const hhmm = /^([01]\d|2[0-3]):[0-5]\d$/;
+  const hasStart = hhmm.test(event.time);
+  // Same Bali day, finishing after the start. Anything else is left out.
+  const hasEnd = hasStart && hhmm.test(event.endTime ?? "") && event.endTime! > event.time;
+  const venue = getVenue(event.venue);
+  const images = [event.photo, event.image]
+    .filter((src): src is string => Boolean(src))
+    .map((src) => (src.startsWith("http") ? src : `${SITE.url}${src}`));
   return {
     "@context": "https://schema.org",
     "@type": "Event",
     name: event.title,
     description: event.description,
-    startDate: /^([01]\d|2[0-3]):[0-5]\d$/.test(event.time)
-      ? `${event.date}T${event.time}:00+08:00`
-      : event.date,
+    startDate: hasStart ? `${event.date}T${event.time}:00+08:00` : event.date,
+    ...(hasEnd && { endDate: `${event.date}T${event.endTime}:00+08:00` }),
     eventStatus: statusMap[event.status || "upcoming"] || statusMap.upcoming,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    location: {
-      "@type": "Place",
-      name: event.venue,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Canggu",
-        addressRegion: "Bali",
-        addressCountry: "ID",
-      },
-    },
+    isAccessibleForFree: true,
+    location: venue
+      ? {
+          "@type": "Place",
+          name: venue.name,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: venue.streetAddress,
+            addressLocality: venue.addressLocality,
+            addressRegion: venue.addressRegion,
+            postalCode: venue.postalCode,
+            addressCountry: venue.addressCountry,
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: venue.latitude,
+            longitude: venue.longitude,
+          },
+        }
+      : {
+          "@type": "Place",
+          name: event.venue,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Canggu",
+            addressRegion: "Bali",
+            addressCountry: "ID",
+          },
+        },
     ...(organizer.name && {
       organizer: {
         "@type": "Organization",
@@ -190,7 +222,7 @@ export function getEventSchema(event: {
       },
     }),
     ...getEventModeratorContributor(),
-    image: event.image ? `${SITE.url}${event.image}` : undefined,
+    image: images.length ? images : undefined,
     url: event.url,
     // Only open, future events advertise an available (free) ticket.
     ...(canRsvpToEvent(event, now) && {
