@@ -36,6 +36,17 @@ test("the value the site ships with is empty or a full https address", () => {
   assert.doesNotThrow(() => signInLink(MEMBERS_APP_URL));
 });
 
+// The link ships off. Switching it on is its own PR, which sets MEMBERS_APP_URL
+// and changes this test to expect that address, so the link never goes on as a
+// side effect of some other change.
+test("it ships off: MEMBERS_APP_URL is empty", () => {
+  assert.equal(
+    MEMBERS_APP_URL,
+    "",
+    "Sign in is switched on. That's its own PR, which changes this test to expect the address.",
+  );
+});
+
 // The header checks.
 const require = createRequire(import.meta.url);
 const optional = (name) => {

@@ -7,6 +7,9 @@
 // Plain JavaScript, so scripts/sign-in-link.test.mjs can import it with no
 // build step.
 
+// Switching it on is its own PR: set this, and change the "it ships off" test
+// in scripts/sign-in-link.test.mjs to expect the same address. Open the address
+// first: only the https check below runs on it, so a wrong host still builds.
 /** @type {string} */
 export const MEMBERS_APP_URL = "";
 
