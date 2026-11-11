@@ -63,13 +63,13 @@ function run(file, imports) {
       esModuleInterop: true,
     },
   });
-  const module = { exports: {} };
+  const compiled = { exports: {} };
   const importer = (id) => {
     if (!(id in imports)) throw new Error(`${file} imports ${id}, which this test doesn't provide`);
     return imports[id];
   };
-  new Function("require", "module", "exports", outputText)(importer, module, module.exports);
-  return module.exports;
+  new Function("require", "module", "exports", outputText)(importer, compiled, compiled.exports);
+  return compiled.exports;
 }
 
 // The real Navbar as HTML, with MEMBERS_APP_URL set to `address`. menuOpen
