@@ -1,7 +1,7 @@
 ---
 title: "How I AI Editions: Event History and Upcoming Dates"
 slug: how-i-ai-editions-history
-updated: "2026-11-05"
+updated: "2026-11-13"
 date: "2026-10-30"
 author: Bali Startup & Tech Community
 category: guide
@@ -30,6 +30,7 @@ Dates and venues below come from the linked event pages. This is an index of ava
 | [How I AI: Edition #10](/events/how-i-ai-edition-10) | 2026-06-17 | Seoul Soul Project, Canggu |
 | [How I AI: Edition #11](/events/how-i-ai-edition-11) | 2026-06-24 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 18](/events/how-i-ai-season-2-edition-18) | 2026-11-04 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 19](/events/how-i-ai-edition-19) | 2026-11-11 | Seoul Soul Project, Canggu |
 
 ## Upcoming editions
 
@@ -37,7 +38,6 @@ Every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang L
 
 | Edition | Date | Venue |
 |---|---|---|
-| [How I AI, Edition 19](/events/how-i-ai-edition-19) | 2026-11-11 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 20](/events/how-i-ai-edition-20) | 2026-11-18 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 21](/events/how-i-ai-edition-21) | 2026-11-25 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 22](/events/how-i-ai-edition-22) | 2026-12-02 | Seoul Soul Project, Canggu |

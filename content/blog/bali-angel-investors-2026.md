@@ -1,7 +1,7 @@
 ---
 title: "Bali Angel Investors in 2026: Who's Actually Writing Cheques"
 slug: bali-angel-investors-2026
-updated: "2026-11-08"
+updated: "2026-11-13"
 date: "2026-06-08"
 author: Josh Morrow
 authorRole: Founder, BSTC
@@ -22,7 +22,7 @@ To meet investors in Bali, start with the founder and operator community at BSTC
 
 ## Where to meet investors at BSTC events
 
-100+ founders, operators and VCs in the room every week. See the [next How I AI night](/events/how-i-ai-edition-19) and [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39); no hard selling.
+100+ founders, operators and VCs in the room every week. See the [next How I AI night](/events/how-i-ai-edition-20) and [Networking Drinks & Dinner #40](/events/networking-drinks-dinner-canggu-40); no hard selling.
 
 ## Where can I pitch my startup in Bali?
 
