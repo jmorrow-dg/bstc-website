@@ -9,9 +9,11 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
+  schema?: boolean;
+  currentUrl?: string;
 }
 
-export default function Breadcrumbs({ items }: BreadcrumbsProps) {
+export default function Breadcrumbs({ items, schema: includeSchema = true, currentUrl }: BreadcrumbsProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -19,16 +21,16 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
       "@type": "ListItem",
       position: i + 1,
       name: item.label,
-      ...(item.href && { item: `${SITE.url}${item.href}` }),
+      ...((item.href || currentUrl) && { item: `${SITE.url}${item.href || currentUrl}` }),
     })),
   };
 
   return (
     <>
-      <script
+      {includeSchema && <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
+      />}
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-xs text-brand-grey">
         {items.map((item, i) => (
           <span key={i} className="flex items-center gap-1">

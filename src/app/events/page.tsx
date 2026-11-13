@@ -12,6 +12,7 @@ import {
   ContentItem,
 } from "@/lib/content";
 import { getEventState } from "@/lib/event-status";
+import { getItemListSchema } from "@/lib/schema";
 import PhotoGallery from "@/components/events/PhotoGallery";
 import EventProof from "@/components/events/EventProof";
 import { getEventPhotos } from "@/lib/event-photos";
@@ -141,9 +142,22 @@ export default async function EventsPage() {
   const now = new Date();
   const upcoming = getUpcomingEvents(allEvents, now);
   const past = getPastEvents(allEvents, now);
+  const upcomingSchema = upcoming.length > 0 && getItemListSchema({
+    name: "Upcoming BSTC events",
+    items: upcoming.map((event) => ({
+      name: event.frontmatter.title,
+      url: `/events/${event.frontmatter.slug}`,
+    })),
+  });
 
   return (
     <>
+      {upcomingSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(upcomingSchema) }}
+        />
+      )}
       {/* Hero */}
       <section className="py-16 md:py-24">
         <div className="max-w-site mx-auto px-6">
@@ -254,17 +268,26 @@ export default async function EventsPage() {
             Never Miss an Event
           </h2>
           <p className="text-brand-grey mb-8">
-            Join our MeetUp group to get notified when new events are posted.
+            Join the community for free, or join our MeetUp group to get
+            notified when new events are posted.
           </p>
-          <a
-            href="https://www.meetup.com/bali-start-ups-tech-community/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
-          >
-            Join on MeetUp
-            <ArrowRight size={16} />
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/join?src=events-cta"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
+            >
+              Join the Community
+              <ArrowRight size={16} />
+            </Link>
+            <a
+              href="https://www.meetup.com/bali-start-ups-tech-community/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
+            >
+              Join on MeetUp
+            </a>
+          </div>
         </div>
       </section>
     </>

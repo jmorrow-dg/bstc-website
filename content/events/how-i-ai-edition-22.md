@@ -4,6 +4,7 @@ slug: how-i-ai-edition-22
 date: "2026-12-02"
 time: "18:00"
 endTime: "21:00" # from the Meetup 317128211 listing, read 11 Nov 2026
+series: "how-i-ai"
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: upcoming

@@ -8,7 +8,7 @@ BSTC publishes original, first-party research and operator-written guides on wha
 
 - Bali and Indonesia founder infrastructure (PT PMA, KITAS, Golden Visa, taxation, banking, hiring)
 - Southeast Asia tech ecosystem dynamics (AI, fintech, B2B SaaS, marketplaces)
-- Founder community operations (running events, hackathons, retreats)
+- Founder community operations (running events and retreats; hackathons coming soon, date TBA)
 - Hub comparisons (Bali vs Singapore, HCMC, Bangkok, Chiang Mai, Lisbon, Dubai, Tbilisi, Medellin, Mexico City)
 
 All guides are written by Josh Morrow (Co-founder, BSTC) or named community leaders. Figures are sourced from BSTC member surveys, recorded event data, and verified 2026 operator experience.
@@ -102,9 +102,25 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 - Founded: October 2023 in Canggu, Bali, Indonesia.
 - Weekly: "How I Build with AI" builder night in Canggu. Monthly: founder networking dinners.
 - Event record (BSTC Meetup group, checked 11 Nov 2026): 53 nights since 9 Nov 2023 (37 Drinks & Dinner nights, including Melbourne #1 and Berawa #36, and 16 How I AI editions), 2,620 RSVPs on Meetup (many people register on Luma instead), 4.65 out of 5 from 155 Meetup ratings, 2,788 Meetup group members.
-- Members: 2,700+ on Meetup (2,735 on 27 Oct 2026), from 100+ countries, plus 1,200+ in the WhatsApp community: 3,900+ reach across the two, the biggest of any tech community in Bali.
+- Members: 2,700+ members on Meetup (Meetup, 25 Oct 2026), from 100+ countries, plus 1,200+ in the WhatsApp community: 3,900+ reach across the two, the biggest of any tech community in Bali.
 - Events: 50+ hosted, 4.7 average rating from 155 ratings on Meetup (25 Oct 2026).
 - Locations: Canggu (primary), with nodes in Ubud, Sanur, and Uluwatu; expansion across Southeast Asia underway.
-- Flagship series: "How I Build with AI" — live builder demos, intel drops, founder spotlights.
-- Co-founders: Lachlan McRitchie (Primary Organiser), Josh Morrow (Growth Lead, also runs David & Goliath), Matthew Carr (Community Lead).
+- Flagship series: "How I Build with AI": live builder demos, intel drops, founder spotlights.
+- Co-founders: Lachlan McRitchie (Primary Organiser), Josh Morrow (Growth Lead), Matthew Carr (Community Lead).
 - Contact: hello@remotebuilders.io.
+- Every BSTC event is free, and joining is free. You order and pay for your own food and drinks at the venue.
+- Event credit: Locally hosted by <Venue> · Moderated by Bali Startup & Tech Community.
+- Hackathons: coming soon, date TBA.
+
+## Upcoming events
+
+How I AI, every Wednesday at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu. Doors 6:00 PM, close 9:00 PM.
+- [How I AI, Edition 20](https://www.balistartupandtech.com/events/how-i-ai-edition-20): Wednesday 18 November 2026.
+- [How I AI, Edition 21](https://www.balistartupandtech.com/events/how-i-ai-edition-21): Wednesday 25 November 2026.
+- [How I AI, Edition 22](https://www.balistartupandtech.com/events/how-i-ai-edition-22): Wednesday 2 December 2026.
+
+Networking Drinks & Dinner at Yema Kitchen, Jl. Tanah Barak No.31, Canggu, 6:30 PM to 10:00 PM.
+- [Networking Drinks & Dinner #40](https://www.balistartupandtech.com/events/networking-drinks-dinner-canggu-40): Thursday 10 December 2026.
+- [Networking Drinks & Dinner #41](https://www.balistartupandtech.com/events/networking-drinks-dinner-canggu-41): Thursday 14 January 2027.
+
+Join: https://www.balistartupandtech.com/join

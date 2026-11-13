@@ -4,6 +4,7 @@ slug: how-i-ai-season-2-edition-18
 date: "2026-11-04"
 time: "18:00"
 endTime: "21:00" # from the Luma nf8gu11f and Meetup 317128078 listing, read 11 Nov 2026
+series: "how-i-ai"
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: upcoming
