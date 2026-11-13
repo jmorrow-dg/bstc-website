@@ -37,12 +37,13 @@ export default function NotFound() {
           >
             Read the Blog
           </Link>
-          <Link
+          {/* /join is another app behind a rewrite, so it takes a plain link, not a Next Link. */}
+          <a
             href="/join?src=404"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
           >
             Join the community
-          </Link>
+          </a>
         </div>
       </div>
     </section>
