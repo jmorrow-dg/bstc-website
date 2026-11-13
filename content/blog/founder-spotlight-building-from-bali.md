@@ -101,4 +101,4 @@ Every BSTC event features founders like these: building real companies, sharing 
 
 ---
 
-*[See upcoming events](/events) or [join the community](/join?src=blog-founder-spotlight-building-from-bali-inline) to connect with 2,700+ founders building from Bali and Southeast Asia (Meetup, 25 Oct 2026).*
+*[See upcoming events](/events) or [join the community](/join?src=blog-founder-spotlight-building-from-bali-inline) to connect with 2,700+ founders (Meetup, 25 Oct 2026) building from Bali and Southeast Asia.*

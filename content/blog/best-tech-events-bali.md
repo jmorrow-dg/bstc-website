@@ -40,7 +40,7 @@ Updated 8 November 2026. Bali Startup & Tech Community runs two free event serie
 
 Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community
 
-**[Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39):** Thursday 12 November 2026, 6:30 to 8:30 PM WITA at Yema Kitchen, Jl. Tanah Barak No.31, Canggu.
+**[Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39):** Thursday 12 November 2026, from 6:30 PM WITA at Yema Kitchen, Jl. Tanah Barak No.31, Canggu.
 
 Locally hosted by Yema Kitchen · Moderated by Bali Startup & Tech Community
 
@@ -135,4 +135,4 @@ The signal-to-noise ratio matters. Your time is valuable. Choose events where th
 
 ---
 
-*BSTC runs the highest-signal tech events in Bali. [See our event calendar](/events) or [join the community](/join?src=blog-best-tech-events-bali-inline): 2,700+ founders and builders across Southeast Asia (Meetup, 25 Oct 2026).*
+*BSTC runs the highest-signal tech events in Bali. [See our event calendar](/events) or [join the community](/join?src=blog-best-tech-events-bali-inline): 2,700+ founders and builders (Meetup, 25 Oct 2026) across Southeast Asia.*

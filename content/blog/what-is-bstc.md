@@ -4,15 +4,15 @@ slug: what-is-bstc
 date: "2026-04-04"
 author: Josh Morrow
 category: guide
-excerpt: "2,700+ founders, engineers, and VCs. Monthly events. Zero noise. Here's what BSTC is, how it works, and why builders keep coming back."
+excerpt: "2,700+ founders, engineers, and VCs (Meetup, 25 Oct 2026). Monthly events. Zero noise. Here's what BSTC is, how it works, and why builders keep coming back."
 seo:
   title: "What is BSTC? Bali's Largest Startup & Tech Community"
-  description: "BSTC is Bali Startup & Tech Community: 2,700+ members (Meetup, 25 Oct 2026), monthly events and the highest-signal founder network in Southeast Asia."
+  description: "BSTC is Bali Startup & Tech Community: 2,700+ members on Meetup (25 Oct 2026), monthly events and the highest-signal founder network in Southeast Asia."
 ---
 
 # What is BSTC?
 
-**BSTC (Bali Startup & Tech Community)** is the largest founder-led tech community in Bali and Southeast Asia. Founded in October 2023, we've grown to 2,700+ members across MeetUp, WhatsApp and Telegram.
+**BSTC (Bali Startup & Tech Community)** is the largest founder-led tech community in Bali and Southeast Asia. Founded in October 2023, we've grown to 2,700+ members on Meetup (25 Oct 2026), plus our WhatsApp community and Telegram member chat.
 
 ## Who's in the community?
 
