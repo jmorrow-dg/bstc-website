@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { KNOWN_ISSUES, checkIssues, offerCounts, perksConsistent, perksCounts, robotsSummary } from './live-checks.mjs';
+import { KNOWN_ISSUES, SOFT_404_PROBES, checkIssues, offerCounts, perksConsistent, perksCounts, robotsSummary, soft404 } from './live-checks.mjs';
 
 test('summarises robots groups and Claude agents', () => {
   const r = robotsSummary('User-agent: *\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\nUSER-AGENT: *\nDisallow: /api/\nSitemap: https://x/s.xml');
@@ -29,4 +29,11 @@ test('own-name check needs the hyphen, so the correct name is not a hit', () => 
   assert.equal(pattern.test('Bali Startup & Tech Community'), false);
   assert.equal(pattern.test('Bali Start-Up & Tech Community'), true);
   assert.equal(pattern.test('Bali Start-ups and Tech Community'), true);
+});
+test('a made-up slug that answers 200 is a soft 404', () => {
+  assert.equal(soft404(404), 'real 404');
+  assert.equal(soft404(410), 'real 410');
+  assert.equal(soft404(200), 'soft 404 (200)');
+  assert.equal(soft404(308), 'soft 404 (308)');
+  assert.deepEqual(SOFT_404_PROBES.map(p => p.split('/')[1]), ['events', 'how-i-build-with-ai']);
 });

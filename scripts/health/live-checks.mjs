@@ -47,6 +47,7 @@ export const KNOWN_ISSUES = [
   { id: 'home-audience-percentages', owner: 'lane 4', pages: ['/'], pattern: /40\s*%\s*Startup founders/i },
   { id: 'home-cadence-and-room-size', owner: 'lane 4', pages: ['/'], pattern: /4 to 6 events per month|40 to 80/ },
   { id: 'ticket-price', owner: 'lane 2', pages: ['/faq', '/community'], pattern: /ticket price/i },
+  { id: 'community-most-events', owner: 'lane 2', pages: ['/community'], pattern: /attend most events/i },
   { id: 'ticketed-blog', owner: 'lane 3', pages: ['/blog/best-tech-events-bali'], pattern: /Cost:\s*Ticketed/i },
   { id: 'agency-mention', owner: 'lanes 2, 3, 4', pattern: /goliath/i },
   { id: 'retired-2500', owner: 'lane 3', pages: ['/blog/how-to-network-at-tech-events'], pattern: /2,500\+/ },
@@ -59,6 +60,11 @@ export function checkIssues(rows, base, issues = KNOWN_ISSUES) {
     const hits = pool.filter(r => issue.pattern.test(r.visibleText ?? '')).map(path);
     return { id: issue.id, owner: issue.owner, status: hits.length ? 'still live' : 'fixed', hits };
   });
+}
+// Made-up slugs under the two dynamic routes. A page that answers 200 for a slug that doesn't exist is a soft 404.
+export const SOFT_404_PROBES = ['/events/no-such-event-health-check', '/how-i-build-with-ai/no-such-edition-health-check'];
+export function soft404(status) {
+  return status === 404 || status === 410 ? `real ${status}` : `soft 404 (${status})`;
 }
 function eventNode(html) {
   for (const m of html.matchAll(/<script[^>]*application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)) {
@@ -79,6 +85,8 @@ async function run(base, output) {
   const get = async path => { const { response, body } = await head(base + path); return { status: response.status, location: response.headers.get('location'), robots: response.headers.get('x-robots-tag'), body }; };
   const [robots, sitemap, llms, llmsFull, articles, members, hackathon, join, slash] = await Promise.all(['/robots.txt', '/sitemap.xml', '/llms.txt', '/llms-full.txt', '/articles', '/members', '/events/hackathon-edition-1', '/join', '/events/'].map(get));
   const bare = await head(base.replace('://www.', '://'));
+  const probes = await Promise.all(SOFT_404_PROBES.map(async path => ({ path, status: (await get(path)).status })));
+  const hub = await get('/drinks-and-dinner');
   const entries = sitemapEntries(sitemap.body);
   const future = entries.filter(e => isFutureLastmod(e.lastmod));
   const linksToArticles = rows.filter(r => (r.internalOutlinks ?? []).some(l => l.replace(/\/$/, '').endsWith('/articles'))).length;
@@ -88,17 +96,22 @@ async function run(base, output) {
   const perksRow = rows.find(r => r.url.replace(base, '') === '/perks');
   const perks = perksCounts({ perksText: text('/perks'), homeText: text('/'), llmsText: llms.body, perksDescription: perksRow?.description ?? '' });
   const issues = checkIssues(rows, base);
+  // Every event page in the sitemap, so new and past events are covered without a slug list.
   const events = [];
-  for (const slug of ['how-i-ai-edition-19', 'how-i-ai-edition-20', 'how-i-ai-edition-21', 'how-i-ai-edition-22', 'networking-drinks-dinner-canggu-40', 'networking-drinks-dinner-canggu-41']) {
+  for (const row of rows.filter(r => /\/events\/[^/]+$/.test(r.url))) {
+    const slug = row.url.split('/').pop();
     const { body } = await get(`/events/${slug}`);
-    const e = eventNode(body) ?? {};
-    const offers = [e.offers].flat()[0] ?? {};
-    events.push({ slug, endDate: Boolean(e.endDate), organizer: Boolean(e.organizer), contributor: Boolean(e.contributor), isAccessibleForFree: e.isAccessibleForFree ?? false, priceCurrency: offers.priceCurrency ?? '', moderatedLine: visibleText(body).match(/Moderated by [^.]{0,40}Community/)?.[0] ?? '' });
+    const e = eventNode(body);
+    const offers = [e?.offers].flat()[0] ?? {};
+    events.push({ slug, hasEvent: Boolean(e), endDate: Boolean(e?.endDate), organizer: Boolean(e?.organizer), contributor: Boolean(e?.contributor), isAccessibleForFree: e?.isAccessibleForFree === true, priceCurrency: offers.priceCurrency ?? '', moderatedLine: visibleText(body).match(/Moderated by [^.]{0,40}Community/)?.[0] ?? '' });
   }
-  const result = { checkedAt, robots: { status: robots.status, ...robot }, sitemap: { status: sitemap.status, urls: entries.length, joinListed: entries.some(e => e.loc.endsWith('/join')), hackathonListed: entries.some(e => e.loc.endsWith('/events/hackathon-edition-1')), future }, llms: llms.status, llmsFull: llmsFull.status, articles: articles.status, linksToArticles, members: members.status, hackathon: { status: hackathon.status, location: hackathon.location }, bare: { status: bare.response.status, location: bare.response.headers.get('location') }, trailingSlash: { status: slash.status, location: slash.location }, join: { status: join.status, noindex: joinNoindex }, perks, perksConsistent: perksConsistent(perks), issues, events };
+  const eventFields = ['endDate', 'organizer', 'contributor', 'isAccessibleForFree'];
+  const eventGaps = events.filter(e => e.hasEvent && eventFields.some(f => !e[f]));
+  const tally = key => Object.entries(events.reduce((m, e) => ({ ...m, [e[key] || 'none']: (m[e[key] || 'none'] ?? 0) + 1 }), {})).map(([k, n]) => `${k} ${n}`).join('; ');
+  const result = { checkedAt, robots: { status: robots.status, ...robot }, sitemap: { status: sitemap.status, urls: entries.length, joinListed: entries.some(e => e.loc.endsWith('/join')), hackathonListed: entries.some(e => e.loc.endsWith('/events/hackathon-edition-1')), future }, llms: llms.status, llmsFull: llmsFull.status, articles: articles.status, linksToArticles, members: members.status, hackathon: { status: hackathon.status, location: hackathon.location }, bare: { status: bare.response.status, location: bare.response.headers.get('location') }, trailingSlash: { status: slash.status, location: slash.location }, join: { status: join.status, noindex: joinNoindex }, drinksAndDinner: hub.status, soft404: probes.map(p => ({ ...p, result: soft404(p.status) })), perks, perksConsistent: perksConsistent(perks), issues, events };
   await writeFile(resolve(output, 'live-checks.json'), JSON.stringify(result, null, 2));
   const yn = v => (v ? 'yes' : 'no');
-  const md = `# Live checks, ${checkedAt}\n\n## Endpoints\n\n| Check | Result |\n| --- | --- |\n| /robots.txt | ${robots.status}; ${robot.wildcardGroups} \`User-agent: *\` groups; Claude-SearchBot ${yn(robot.claudeSearchBot)}; Claude-User ${yn(robot.claudeUser)}; Sitemap line ${yn(robot.sitemapLine)} |\n| /sitemap.xml | ${sitemap.status}; ${entries.length} URLs; /join listed ${yn(result.sitemap.joinListed)}; hackathon listed ${yn(result.sitemap.hackathonListed)}; ${future.length} lastmod after today |\n| /llms.txt | ${llms.status} |\n| /llms-full.txt | ${llmsFull.status} |\n| /articles | ${articles.status}; ${linksToArticles} sitemap pages link to it |\n| /members | ${members.status} |\n| /events/hackathon-edition-1 | ${hackathon.status}${hackathon.location ? ` to ${hackathon.location}` : ''} |\n| Bare domain | ${bare.response.status} to ${bare.response.headers.get('location')} |\n| /events/ (trailing slash) | ${slash.status} to ${slash.location} |\n| /join | ${join.status}; noindex ${yn(joinNoindex)} |\n\n## Sitemap lastmod after today (lane 2)\n\n${future.map(e => `- ${e.loc.replace(base, '')}: ${e.lastmod}`).join('\n') || 'None.'}\n\n## Perks counts (measure only)\n\n/perks ${perks.perksPage}; home ${perks.home}; llms.txt ${perks.llms} (${perks.llmsDirect} direct, ${perks.llmsPartner} partner referral). Member offers, /perks description then llms.txt: ${Object.entries(perks.offersPage).map(([k, v]) => `${k} ${v}/${perks.offersLlms[k]}`).join('; ')}. Consistent: ${yn(result.perksConsistent)}.\n\n## Known live issues\n\n| Issue | Owner | Status | Pages |\n| --- | --- | --- | --- |\n${issues.map(i => `| ${i.id} | ${i.owner} | ${i.status} | ${i.hits.join(', ')} |`).join('\n')}\n\n## Upcoming event schema (lane 2)\n\n| Page | endDate | organizer | contributor | isAccessibleForFree | priceCurrency | Credit line |\n| --- | --- | --- | --- | --- | --- | --- |\n${events.map(e => `| ${e.slug} | ${yn(e.endDate)} | ${yn(e.organizer)} | ${yn(e.contributor)} | ${e.isAccessibleForFree} | ${e.priceCurrency} | ${e.moderatedLine} |`).join('\n')}\n`;
+  const md = `# Live checks, ${checkedAt}\n\n## Endpoints\n\n| Check | Result |\n| --- | --- |\n| /robots.txt | ${robots.status}; ${robot.wildcardGroups} \`User-agent: *\` groups; Claude-SearchBot ${yn(robot.claudeSearchBot)}; Claude-User ${yn(robot.claudeUser)}; Sitemap line ${yn(robot.sitemapLine)} |\n| /sitemap.xml | ${sitemap.status}; ${entries.length} URLs; /join listed ${yn(result.sitemap.joinListed)}; hackathon listed ${yn(result.sitemap.hackathonListed)}; ${future.length} lastmod after today |\n| /llms.txt | ${llms.status} |\n| /llms-full.txt | ${llmsFull.status} |\n| /articles | ${articles.status}; ${linksToArticles} sitemap pages link to it |\n| /members | ${members.status} |\n| /events/hackathon-edition-1 | ${hackathon.status}${hackathon.location ? ` to ${hackathon.location}` : ''} |\n| Bare domain | ${bare.response.status} to ${bare.response.headers.get('location')} |\n| /events/ (trailing slash) | ${slash.status} to ${slash.location} |\n| /join | ${join.status}; noindex ${yn(joinNoindex)} |\n| /drinks-and-dinner | ${hub.status} |\n${probes.map(p => `| ${p.path} (made-up slug) | ${soft404(p.status)} |`).join('\n')}\n\n## Sitemap lastmod after today (lane 2)\n\n${future.map(e => `- ${e.loc.replace(base, '')}: ${e.lastmod}`).join('\n') || 'None.'}\n\n## Perks counts (measure only)\n\n/perks ${perks.perksPage}; home ${perks.home}; llms.txt ${perks.llms} (${perks.llmsDirect} direct, ${perks.llmsPartner} partner referral). Member offers, /perks description then llms.txt: ${Object.entries(perks.offersPage).map(([k, v]) => `${k} ${v}/${perks.offersLlms[k]}`).join('; ')}. Consistent: ${yn(result.perksConsistent)}.\n\n## Known live issues\n\n| Issue | Owner | Status | Pages |\n| --- | --- | --- | --- |\n${issues.map(i => `| ${i.id} | ${i.owner} | ${i.status} | ${i.hits.join(', ')} |`).join('\n')}\n\n## Event schema, every event page (lane 2)\n\n${events.length} event pages, ${events.filter(e => e.hasEvent).length} with an Event node. ${eventFields.map(f => `${f} ${events.filter(e => e[f]).length}`).join('; ')}.\n\nMissing a field: ${eventGaps.map(e => `${e.slug} (${eventFields.filter(f => !e[f]).join(', ')})`).join('; ') || 'none'}.\n\nNo Event node: ${events.filter(e => !e.hasEvent).map(e => e.slug).join(', ') || 'none'}.\n\nOffer priceCurrency: ${tally('priceCurrency')}.\n\nCredit line: ${tally('moderatedLine')}.\n`;
   await writeFile(resolve(output, 'live-checks.md'), md);
   console.log(md);
 }
