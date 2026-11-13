@@ -91,6 +91,9 @@ function pageScript() {
     area.addEventListener('input', function () { record(card, area.value, slot(card.dataset.key).anchors); });
     card.querySelector('.status').addEventListener('change', function (event) {
       var s = slot(card.dataset.key); s.status = event.target.value;
+      // Complete needs a pasted answer, and no_overview explains itself.
+      if (s.status === 'complete' && !s.text.trim()) s.status = 'pending';
+      if (s.status === 'no_overview' && !s.note.trim()) s.note = 'no AI Overview shown';
       if (s.status !== 'pending' && !s.observed_at) s.observed_at = now();
       if (s.status !== 'complete') s.named_bstc = '';
       save(); paint(card);
@@ -112,6 +115,14 @@ function pageScript() {
     });
   });
   document.getElementById('export').addEventListener('click', function () {
+    // The import rejects a run with no locale or an unexplained gap, so stop here instead.
+    var locale = document.querySelector('.setting[data-field=locale]');
+    var unexplained = Object.keys(state.slots).filter(function (k) { var s = state.slots[k]; return (s.status === 'unavailable' || s.status === 'no_overview') && !s.note.trim(); });
+    if (!locale.value.trim() || unexplained.length) {
+      document.getElementById('progress').textContent = !locale.value.trim() ? 'Fill in "Locale used" before exporting' : unexplained.length + (unexplained.length === 1 ? ' unavailable box needs' : ' unavailable boxes need') + ' a note before exporting';
+      (locale.value.trim() ? document.querySelector('.card[data-key="' + unexplained[0] + '"] .note') : locale).focus();
+      return;
+    }
     var out = { run_date: RUN.run_date, exported_at: now(), locale: document.querySelector('.setting[data-field=locale]').value, engines: {}, slots: state.slots };
     document.querySelectorAll('.setting[data-engine]').forEach(function (input) {
       out.engines[input.dataset.engine] = out.engines[input.dataset.engine] || {}; out.engines[input.dataset.engine][input.dataset.field] = input.value;
@@ -147,6 +158,7 @@ button,select,input,textarea{font:inherit}button{padding:4px 10px;cursor:pointer
 table{border-collapse:collapse;margin:8px 0}th,td{text-align:left;padding:2px 8px 2px 0}td input{width:260px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:8px}
 .card{border:2px solid #bbb;border-radius:6px;padding:8px}.card.complete{border-color:#1f7a3a}.card.unavailable,.card.no_overview{border-color:#a15c00}
+.card.unavailable .note:placeholder-shown,.card.no_overview .note:placeholder-shown{outline:2px solid #b00020}
 .head{display:flex;justify-content:space-between;gap:8px;margin-bottom:4px}textarea{width:100%;box-sizing:border-box}
 .row{font-size:13px;margin-top:4px}.note{width:100%;box-sizing:border-box;margin-top:4px}.meta{font-size:12px;color:#444;min-height:16px}
 </style></head><body>
