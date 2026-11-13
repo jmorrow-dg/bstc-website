@@ -3,7 +3,6 @@ title: "How I Build with AI: Edition #1"
 slug: how-i-build-with-ai-edition-1
 date: "2026-05-15"
 time: "18:30"
-organizer: "Yema Kitchen"
 venue: Yema Kitchen, Canggu
 type: how-i-build-with-ai
 status: completed

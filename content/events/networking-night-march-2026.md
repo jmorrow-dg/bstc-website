@@ -3,7 +3,6 @@ title: "BSTC Networking Night: March 2026"
 slug: networking-night-march-2026
 date: "2026-03-20"
 time: "18:30"
-organizer: "Yema Kitchen"
 venue: Yema Kitchen, Canggu
 type: networking
 status: completed
