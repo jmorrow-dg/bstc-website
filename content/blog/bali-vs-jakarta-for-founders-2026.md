@@ -9,7 +9,7 @@ readTime: "11 min"
 tags: ["bali", "jakarta", "indonesia", "founders", "southeast asia", "tech ecosystem", "comparison"]
 excerpt: "Bali or Jakarta for your Indonesian startup in 2026? A BSTC operator's honest comparison on cost, capital access, talent pools, lifestyle, and the stage at which each city actually makes sense."
 seo:
-  title: "Bali vs Jakarta for Founders 2026: Cost, VCs and Talent"
+  title: "Bali vs Jakarta for Founders 2026: Cost, VCs, Talent"
   description: "Bali or Jakarta for your 2026 startup? An honest comparison of cost of living, VC access, talent, enterprise customers and lifestyle from BSTC founders."
   keywords: ["bali vs jakarta", "jakarta vs bali for founders", "indonesia startup city", "jakarta tech ecosystem", "bali startup community", "indonesian VCs", "PT PMA jakarta", "indonesia founder hubs"]
 ---

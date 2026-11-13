@@ -28,7 +28,7 @@ faq:
   - question: "Can you work remotely from Bali legally?"
     answer: "Yes. Most remote workers use a B211A visit visa for shorter stays or Indonesia's Remote Worker Visa (E33G) for longer ones, as long as you earn from a company based outside Indonesia. You only need a KITAS work permit if you're employed by an Indonesian entity such as your own PT PMA."
 seo:
-  title: "Living in Bali in 2026: Pros, Cons, Costs and Where to Live"
+  title: "Living in Bali 2026: Pros, Cons, Costs, Where to Live"
   description: "Living in Bali in 2026 for founders and remote workers: real costs, pros and cons, neighbourhoods, visas and healthcare, by Bali's largest tech community."
   keywords:
     - living in bali

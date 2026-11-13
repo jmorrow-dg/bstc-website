@@ -9,7 +9,7 @@ readTime: "11 min"
 tags: ["bali", "tax", "founders", "indonesia", "residency", "PT PMA", "compliance"]
 excerpt: "The honest, founder-written guide to tax in Bali in 2026. Indonesian tax residency rules, the structures BSTC members actually use, the NHR-replacement options, and the mistakes that get expensive."
 seo:
-  title: "Bali Founder Tax Guide 2026: Residency, PT PMA, Compliance"
+  title: "Bali Founder Tax Guide 2026: Residency, PT PMA, Rules"
   description: "How founders in Bali handle tax in 2026: Indonesian tax residency, PT PMA, offshore structures, US, UK and EU founder points, and what to actually do."
   keywords: ["bali tax founder", "indonesia tax residency", "PT PMA tax", "expat tax bali", "indonesia 183 day rule", "founder tax indonesia", "bali tax 2026", "offshore structure bali"]
 ---

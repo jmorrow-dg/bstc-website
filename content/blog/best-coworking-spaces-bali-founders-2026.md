@@ -20,7 +20,7 @@ faq:
   - question: "Which coworking spaces in Canggu have founder events?"
     answer: "BWork lists community events at its Canggu and Uluwatu spaces on its own community calendar (checked 25 October 2026). Bali Startup & Tech Community runs its founder events at venues rather than coworking spaces: How I AI every Wednesday at Seoul Soul Project and a monthly Networking Drinks & Dinner at Yema Kitchen, both in Canggu and both free."
 seo:
-  title: "Best Coworking Spaces in Bali 2026: Rankings and Wifi Speeds"
+  title: "Best Coworking Spaces in Bali 2026: Rankings, Wifi"
   description: "Bali coworking spaces tested by founders over 6 months: wifi speeds, monthly costs, founder density and ones to avoid in Canggu, Ubud, Sanur and Uluwatu."
   keywords: ["coworking space bali", "coworking bali", "best coworking space bali", "coworking spaces bali", "coworking canggu", "coworking ubud", "bali coworking", "coworking space canggu bali"]
 ---

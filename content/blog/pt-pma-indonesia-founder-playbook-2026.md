@@ -9,7 +9,7 @@ readTime: "10 min"
 tags: ["PT PMA", "indonesia", "founders", "incorporation", "bali", "legal", "company setup"]
 excerpt: "The step-by-step playbook for foreign founders setting up an Indonesian PT PMA in 2026. Capital requirements, timelines, KBLI codes, the pitfalls that catch everyone, and when PT PMA is actually the right answer."
 seo:
-  title: "PT PMA Indonesia 2026: Founder Setup, Cost and Timeline"
+  title: "PT PMA Indonesia 2026: Founder Setup, Cost, Timeline"
   description: "How to set up a PT PMA in Indonesia in 2026: capital requirements, KBLI codes, the step-by-step process, real costs, timelines and when it's the right fit."
   keywords: ["PT PMA setup", "indonesia company registration", "PT PMA cost", "foreign company indonesia", "bali incorporation", "PT PMA timeline", "KBLI codes", "indonesia business license"]
 ---
