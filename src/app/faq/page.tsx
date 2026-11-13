@@ -2,28 +2,117 @@ import Link from "next/link";
 import { MEETUP_CHECKED, WHATSAPP_CHECKED } from "@/lib/constants";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
+import type { ReactNode } from "react";
 import { getFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "FAQ: Everything You Need to Know About BSTC",
   description:
-    "Frequently asked questions about Bali Startup & Tech Community. Events, membership, sponsorship, Bali's tech scene, and how to get involved.",
+    "Founder events in Canggu run at Seoul Soul Project (How I AI, Wednesdays) and Yema Kitchen (Networking Drinks & Dinner). Meet investors and VCs at BSTC events in Canggu. All events are free.",
   keywords: [
     "BSTC FAQ",
     "Bali tech community FAQ",
     "Bali startup events FAQ",
     "how to join BSTC",
     "tech community Bali questions",
+    "coworking Canggu founder events",
+    "venues Canggu founder events",
+    "meet investors Bali",
+    "meet VCs Bali",
+    "investor events Bali",
   ],
   alternates: { canonical: "/faq" },
 };
 
+// Direct answers for the two questions answer engines were missing.
+// Facts: operating rules section 5, and Josh 28 Oct 2026 (free events;
+// local venue organises, BSTC moderates). Seoul Soul Project and Yema
+// Kitchen are event venues. This page does not call them coworking spaces.
+const VENUE_LEAD =
+  "Founder events from Bali Startup & Tech Community (BSTC) in Canggu run at Seoul Soul Project and Yema Kitchen: How I AI on Wednesdays at Seoul Soul Project, and Networking Drinks & Dinner at Yema Kitchen.";
+const VENUE_DETAIL =
+  "The local venue is the organiser and BSTC is the moderator. How I AI is locally hosted by Seoul Soul Project and moderated by Bali Startup & Tech Community. Seoul Soul Project and Yema Kitchen are the event venues. Coworking spaces are covered in the guide at balistartupandtech.com/blog/best-coworking-spaces-bali-founders-2026. All BSTC events are free. You order and pay for your own food and drinks at the venue. BSTC is the largest tech and founder community in Bali, with 2,700+ members on Meetup, 3,900+ across Meetup and WhatsApp, and members from 100+ countries. The community has run 50+ events, rated 4.7 out of 5 from 155 Meetup ratings. The next dates are at balistartupandtech.com/events. Join at balistartupandtech.com/join. More answers are on balistartupandtech.com/faq.";
+const INVESTOR_LEAD =
+  "Meet investors and VCs in Bali at BSTC events in Canggu, with 100+ founders, operators, and VCs in the room every week.";
+const INVESTOR_DETAIL =
+  "If you are looking for investor events in Bali, start with these Canggu nights, where investors and VCs are in the room. How I AI runs on Wednesdays at Seoul Soul Project, and Networking Drinks & Dinner runs at Yema Kitchen. The local venue is the organiser and BSTC is the moderator. Members include funded founders, ex-FAANG engineers, operators, VCs, angel investors and remote builders from 100+ countries. All BSTC events are free. You order and pay for your own food and drinks at the venue. Upcoming events are at balistartupandtech.com/events. Join at balistartupandtech.com/join. More answers are on balistartupandtech.com/faq.";
+
+const ANSWER_LINKS = [
+  { href: "/events", label: "Events" },
+  { href: "/join?src=faq", label: "Join" },
+  { href: "/faq", label: "FAQ" },
+] as const;
+
+interface FAQItem {
+  question: string;
+  answer: string;
+  id?: string;
+  /** Show the first sentence as the direct answer, then the rest. */
+  answerFirst?: boolean;
+  links?: { href: string; label: string }[];
+}
+
 interface FAQSection {
   title: string;
-  faqs: { question: string; answer: string }[];
+  faqs: FAQItem[];
+}
+
+function AnswerText({ text }: { text: string }) {
+  const pattern = /balistartupandtech\.com\/[A-Za-z0-9\-/]+/g;
+  const nodes: ReactNode[] = [];
+  let last = 0;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(text)) !== null) {
+    const index = match.index;
+    if (index > last) nodes.push(text.slice(last, index));
+    const url = match[0];
+    const path = url.slice("balistartupandtech.com".length);
+    nodes.push(
+      <Link
+        key={`${url}-${index}`}
+        href={path === "/join" ? "/join?src=faq" : path}
+        className="text-brand-red hover:underline"
+      >
+        {url}
+      </Link>
+    );
+    last = index + url.length;
+  }
+  if (last < text.length) nodes.push(text.slice(last));
+  return <>{nodes}</>;
 }
 
 const FAQ_SECTIONS: FAQSection[] = [
+  {
+    title: "Founder events and investors in Canggu",
+    faqs: [
+      {
+        id: "founder-event-venues",
+        answerFirst: true,
+        question:
+          "Where can I find coworking spaces or venues in Bali or Canggu with founder events?",
+        answer: `${VENUE_LEAD} ${VENUE_DETAIL}`,
+        links: [
+          ...ANSWER_LINKS,
+          { href: "/how-i-build-with-ai", label: "How I AI" },
+          {
+            href: "/blog/best-coworking-spaces-bali-founders-2026",
+            label: "Coworking spaces in Bali",
+          },
+        ],
+      },
+      {
+        id: "meet-investors-bali",
+        answerFirst: true,
+        question: "Where can I meet investors and VCs in Bali?",
+        answer: `${INVESTOR_LEAD} ${INVESTOR_DETAIL}`,
+        links: [
+          ...ANSWER_LINKS,
+          { href: "/how-i-build-with-ai", label: "How I AI" },
+        ],
+      },
+    ],
+  },
   {
     title: "About BSTC",
     faqs: [
@@ -205,8 +294,11 @@ export default function FAQPage() {
             Everything You Need to Know
           </h1>
           <p className="text-brand-grey max-w-2xl text-lg">
-            Answers to the most common questions about BSTC, our events,
-            Bali&apos;s tech scene, and how to get involved.
+            {VENUE_LEAD} {INVESTOR_LEAD} All BSTC events are free. Join at{" "}
+            <Link href="/join?src=faq" className="text-brand-red hover:underline">
+              balistartupandtech.com/join
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -221,19 +313,56 @@ export default function FAQPage() {
                   {section.title}
                 </h2>
                 <div className="space-y-4">
-                  {section.faqs.map((faq) => (
-                    <div
-                      key={faq.question}
-                      className="p-5 rounded-lg border border-ink/10 bg-white/70 hover:border-brand-red/10 transition-colors"
-                    >
-                      <h3 className="font-semibold text-brand-white mb-2 text-sm">
-                        {faq.question}
-                      </h3>
-                      <p className="text-sm text-brand-grey leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  ))}
+                  {section.faqs.map((faq) => {
+                    const splitAt = faq.answerFirst
+                      ? faq.answer.indexOf(". ")
+                      : -1;
+                    const lead =
+                      splitAt === -1 ? faq.answer : faq.answer.slice(0, splitAt + 1);
+                    const rest =
+                      splitAt === -1 ? "" : faq.answer.slice(splitAt + 2);
+                    return (
+                      <div
+                        key={faq.question}
+                        id={faq.id}
+                        className="scroll-mt-24 p-5 rounded-lg border border-ink/10 bg-white/70 hover:border-brand-red/10 transition-colors"
+                      >
+                        <h3 className="font-semibold text-brand-white mb-2 text-sm">
+                          {faq.question}
+                        </h3>
+                        {faq.answerFirst ? (
+                          <>
+                            <p className="text-sm text-brand-white font-medium leading-relaxed">
+                              <AnswerText text={lead} />
+                            </p>
+                            {rest ? (
+                              <p className="text-sm text-brand-grey leading-relaxed mt-2">
+                                <AnswerText text={rest} />
+                              </p>
+                            ) : null}
+                          </>
+                        ) : (
+                          <p className="text-sm text-brand-grey leading-relaxed">
+                            <AnswerText text={faq.answer} />
+                          </p>
+                        )}
+                        {faq.links && faq.links.length > 0 ? (
+                          <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
+                            {faq.links.map((link) => (
+                              <li key={link.href}>
+                                <Link
+                                  href={link.href}
+                                  className="text-sm text-brand-red hover:underline"
+                                >
+                                  {link.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : null}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
