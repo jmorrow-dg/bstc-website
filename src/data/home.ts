@@ -3,6 +3,16 @@
 // says otherwise. Lachlan confirmed the carried-over claims true on 28 Oct 2026;
 // keep them.
 
+import { SITE, STATS } from "@/lib/constants";
+
+// Answer-first summary under the hero, held for Josh's yes. The 3,900+ total
+// isn't in STATS yet: lane 2 owns constants.ts and has the request.
+export const ENTITY = {
+  text: `${SITE.fullName} (${SITE.name}) is Southeast Asia's largest tech community, built in Bali: ${STATS.members.toLocaleString("en-US")}+ members on Meetup and 3,900+ across Meetup and WhatsApp. Every event is free. Join at`,
+  joinLabel: `${SITE.domain}/join`,
+  joinHref: `${SITE.joinForm}?src=home-entity`,
+};
+
 export const FORMATS = [
   {
     title: "Networking Night",
@@ -26,26 +36,11 @@ export const FORMATS = [
     badge: "New series",
     imagePosition: "50% 60%",
   },
-  {
-    title: "Hackathon",
-    desc: "Build something real in one day. Teams compete to ship products, demo in 3 minutes, and win prizes.",
-    image: "/images/events/hackathon-edition-1.png",
-    alt: "Illustrated poster for the BSTC Hackathon",
-    href: "/events/hackathon-edition-1",
-    linkLabel: "About the Hackathon",
-    badge: "Coming soon",
-    imagePosition: "50% 50%",
-  },
 ] as const;
 
-// Confirmed true by Lachlan, 28 Oct 2026
-// (the whole "Who's in the room" breakdown: 40 / 25 / 10 / 25)
-export const ROOM_MIX = [
-  { label: "Startup founders", pct: 40, className: "gl-c-founders" },
-  { label: "Engineers & devs", pct: 25, className: "gl-c-engineers" },
-  { label: "Investors & VCs", pct: 10, className: "gl-c-investors" },
-  { label: "Operators", pct: 25, className: "gl-c-operators" },
-] as const;
+// Approved replacement for the retired audience percentages.
+export const ROOM_MIX =
+  "Funded founders, ex-FAANG engineers, operators, VCs, angel investors and remote builders. 100+ founders, operators and VCs in the room every week.";
 
 export const VALUES = [
   {
