@@ -27,7 +27,7 @@ faq:
   - question: "Is the internet in Bali good enough for client calls?"
     answer: "It can be, but don't rely on one connection. Keep a fixed line plus mobile data on a different network, and a coworking space as a fallback. Starlink stopped taking new Indonesian customers in July 2025, and mobile data was switched off over Nyepi in 2026."
   - question: "Where can I meet other agency owners in Bali?"
-    answer: "BSTC's How I AI runs every Wednesday from 4 November 2026, 6 to 9pm at Seoul Soul Project in Canggu, and it's free. The next networking drinks and dinner, #39, is on Thursday 12 November 2026 at 6:30pm at Yema Kitchen, Canggu."
+    answer: "BSTC's How I AI runs every Wednesday from 4 November 2026, 6 to 9pm at Seoul Soul Project in Canggu, and it's free. The next networking drinks and dinner, #40, is on Thursday 10 December 2026 at 6:30pm at Yema Kitchen, Canggu."
 ---
 
 # Running an agency from Bali: visas, clients, hiring and time zones
@@ -129,7 +129,7 @@ An agency lives on calls and deadlines, so plan for the connection to fail.
 Most clients will be overseas, but Bali is good for collaborators, subcontractors and referrals.
 
 - **How I AI, every Wednesday from 4 November 2026,** 6 to 9pm at Seoul Soul Project, Canggu, free. Builders share what they've shipped with AI that week, so it's a useful room if you sell AI automation. RSVP on the [events page](/events).
-- **Networking drinks and dinner #39, Thursday 12 November 2026,** 6:30pm at Yema Kitchen, Canggu. A broader room of founders, operators and agency owners.
+- **Networking drinks and dinner #40, Thursday 10 December 2026,** 6:30pm at Yema Kitchen, Canggu. A broader room of founders, operators and agency owners.
 - **Read the playbooks.** [The rise of AI agencies in Bali](/blog/rise-of-ai-agencies-bali) covers the models people run here, and Remote Builders' [AI automation agency guide](https://remotebuilders.io/guides/ai-automation-agency/?src=bstc-running-an-agency-from-bali) covers packaging, pricing and contracts.
 
 BSTC's Meetup group has 2,700+ members (25 Oct 2026). Don't pitch at the table. Ask what people are building and go back the next week; referrals come from people who've seen you more than once. For the community chat before you land, [sign up here](/join?src=blog-running-an-agency-from-bali-inline).
@@ -162,7 +162,7 @@ It can be, but don't rely on one connection. Keep a fixed line plus mobile data 
 
 ### Where can I meet other agency owners in Bali?
 
-BSTC's How I AI runs every Wednesday from 4 November 2026, 6 to 9pm at Seoul Soul Project in Canggu, and it's free. The next networking drinks and dinner, #39, is on Thursday 12 November 2026 at 6:30pm at Yema Kitchen, Canggu.
+BSTC's How I AI runs every Wednesday from 4 November 2026, 6 to 9pm at Seoul Soul Project in Canggu, and it's free. The next networking drinks and dinner, #40, is on Thursday 10 December 2026 at 6:30pm at Yema Kitchen, Canggu.
 
 ## Join BSTC
 
