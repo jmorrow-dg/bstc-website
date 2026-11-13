@@ -49,7 +49,7 @@ All dates checked against the event pages on 25 October 2026.
 
 **How I AI** is BSTC's weekly builder night. The format is a one-minute "Money Round" where people share what they've built or shipped with AI that week, a short AI news rundown from Josh Morrow, then two builder spotlights of ten minutes each with Q&A, and open networking over dinner ([event page](/events/how-i-ai-season-2-edition-18); [Meetup listing](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026). The first 17 editions ran at the same venue, and it now runs every Wednesday.
 
-**The networking drinks and dinner** is the broader room: founders, indie hackers, agency owners, solo devs and a few investors. A short open mic, a couple of founder talks, then networking. #40 is on Thursday 10 December 2026 at 6:30pm ([event page](/events/networking-drinks-dinner-canggu-40)).
+**The networking drinks and dinner** is the broader room: founders, indie hackers, agency owners, solo devs and a few investors. A short open mic, a couple of founder talks, then networking. #40 is on Thursday 10 December 2026 at 6:30pm ([event page](/events/networking-drinks-dinner-canggu-40)). Every date is on the [Drinks & Dinner page](/drinks-and-dinner).
 
 **Outside Canggu:** the Ubud Tech Meetup says it meets on the last Tuesday of every month, but its most recent listed event was 30 June 2026 ([Luma](https://luma.com/bp7doqpy), checked 25 Oct 2026), so check before you ride up. GDG Bali's last listed meetup was 19 July 2026 in Denpasar and none was listed as upcoming ([GDG Bali](https://gdg.community.dev/gdg-bali/), checked 25 Oct 2026). For every other group and its last dated event, see [startup and tech communities in Bali](/blog/tech-communities-in-bali).
 

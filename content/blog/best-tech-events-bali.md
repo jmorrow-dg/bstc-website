@@ -28,7 +28,7 @@ seo:
 
 ## This month in Bali: November 2026
 
-Updated 13 November 2026. Bali Startup & Tech Community runs two free event series in Canggu: How I AI every Wednesday, and Networking Drinks & Dinner on the second Thursday of every month. Still to come in November: How I AI on Wednesday 18 and Wednesday 25 November. Joining is free; order and pay for your own food and drinks at the venue.
+Updated 13 November 2026. Bali Startup & Tech Community runs two free event series in Canggu: How I AI every Wednesday, and [Networking Drinks & Dinner](/drinks-and-dinner) on the second Thursday of every month. Still to come in November: How I AI on Wednesday 18 and Wednesday 25 November. Joining is free; order and pay for your own food and drinks at the venue.
 
 **How I AI:** every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu.
 
