@@ -10,6 +10,8 @@ const COMMUNITY: FooterLink[] = [
   { label: "Events", href: "/events" },
   { label: "Drinks & Dinner", href: "/drinks-and-dinner" },
   { label: "How I Build with AI", href: "/how-i-build-with-ai" },
+  { label: "Tech events in Bali", href: "/blog/best-tech-events-bali" },
+  { label: "Tech communities in Bali", href: "/blog/tech-communities-in-bali" },
   { label: "About the community", href: "/community" },
   { label: "About", href: "/about" },
   { label: "Leadership", href: "/leadership" },
@@ -69,7 +71,7 @@ export default function Footer() {
     <footer className="gl-foot">
       <div className="gl-wrap gl-foot-grid">
         <div className="gl-foot-id">
-          <Link href="/" className="gl-brand" aria-label="Bali Startup and Tech, home">
+          <Link href="/" className="gl-brand" aria-label="Bali Startup & Tech, home">
             <span className="gl-crest" aria-hidden="true" />
             <span className="gl-brand-name">Bali Startup &amp; Tech</span>
           </Link>

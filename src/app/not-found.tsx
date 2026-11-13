@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+
+export const metadata: Metadata = { title: "Page not found" };
 
 export default function NotFound() {
   return (
@@ -14,7 +17,7 @@ export default function NotFound() {
         <p className="text-brand-grey max-w-md mx-auto mb-10 text-lg">
           This page doesn&apos;t exist. Maybe it moved, maybe it never did. Either way, the signal is elsewhere.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 justify-center">
           <Link
             href="/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-red-dark text-white font-medium rounded transition-colors"
@@ -28,6 +31,19 @@ export default function NotFound() {
           >
             See Events
           </Link>
+          <Link
+            href="/blog"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
+          >
+            Read the Blog
+          </Link>
+          {/* /join is another app behind a rewrite, so it takes a plain link, not a Next Link. */}
+          <a
+            href="/join?src=404"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-ink/15 hover:border-ink/30 text-brand-white font-medium rounded transition-colors"
+          >
+            Join the community
+          </a>
         </div>
       </div>
     </section>
