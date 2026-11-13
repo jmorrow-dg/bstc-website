@@ -22,7 +22,7 @@ seo:
     - founder meetup Southeast Asia
 ---
 
-Our 39th Community Networking Dinner/Drinks Event, 6:30 to 8:30 PM on Thursday 12 November 2026 at Yema Kitchen, Jl. Tanah Barak No.31, Canggu. Free to attend. New faces welcome.
+Our 39th Community Networking Dinner/Drinks Event, 6:30 PM on Thursday 12 November 2026 at Yema Kitchen, Jl. Tanah Barak No.31, Canggu. Free to attend. New faces welcome.
 
 **Who's in the room:** real founders, builders and operators in Bali. Indie hackers, agency owners, solo devs, digital nomads and a few investors, all genuinely shipping something. No suits, no hard pitches.
 

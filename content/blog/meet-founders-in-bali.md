@@ -26,7 +26,7 @@ faq:
 
 Meet founders, engineers and remote builders at Bali Startup & Tech Community's free events in Canggu. [Join BSTC for free](/join?src=blog-meet-founders-in-bali-answer) to connect with the community before your first event.
 
-**Upcoming dates, updated 5 November 2026:** [How I AI](/events/how-i-ai-edition-19) runs every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project; [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39) is Thursday 12 November, 6:30 to 8:30 PM WITA at Yema Kitchen. Both are free; order and pay for your own food and drinks.
+**Upcoming dates, updated 5 November 2026:** [How I AI](/events/how-i-ai-edition-19) runs every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project; [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39) is Thursday 12 November, from 6:30 PM WITA at Yema Kitchen. Both are free; order and pay for your own food and drinks.
 
 
 
