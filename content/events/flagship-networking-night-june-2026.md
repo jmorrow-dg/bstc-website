@@ -3,6 +3,7 @@ title: "BSTC Flagship Networking Night: June 2026"
 slug: flagship-networking-night-june-2026
 date: "2026-06-18"
 time: "18:30"
+endTime: "20:30" # from the Meetup 313760697 listing, read 11 Nov 2026
 venue: Yema Kitchen, Canggu
 type: networking
 status: completed
