@@ -218,7 +218,7 @@ export default async function BaliVsCityPage({
               For the full picture on Bali tax structures, read our{" "}
               <Link
                 href="/blog/bali-founder-tax-guide-2026"
-                className="text-brand-red hover:text-brand-white"
+                className="text-brand-red underline hover:text-brand-white"
               >
                 Bali Founder Tax Guide (2026)
               </Link>
