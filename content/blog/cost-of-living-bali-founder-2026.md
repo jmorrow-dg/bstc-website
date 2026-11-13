@@ -7,7 +7,7 @@ authorRole: Founder, BSTC
 category: guide
 readTime: "10 min"
 tags: ["bali", "cost of living", "founders", "remote work", "canggu", "ubud", "budget"]
-excerpt: "What does it actually cost to live in Bali in 2026? Three real monthly budgets — lean ($1,800), comfortable ($3,500), and senior operator ($6,500+) — sourced from 30+ builders in the BSTC community. No tourist math."
+excerpt: "What does it actually cost to live in Bali in 2026? Three real monthly budgets: lean ($1,800), comfortable ($3,500), and senior operator ($6,500+): sourced from 30+ builders in the BSTC community. No tourist math."
 faq:
   - question: "How much does it cost to live in Bali per month in 2026?"
     answer: "Most builders and remote workers spend between $1,800 and $6,500 a month depending on lifestyle. A lean budget is around $1,800, a comfortable budget around $3,500 (where most BSTC members sit), and a senior-operator budget $6,500+."
@@ -18,8 +18,8 @@ faq:
   - question: "What is a realistic monthly budget for a founder living in Bali?"
     answer: "Budget around $3,000-$4,000/month for a comfortable, productive setup with a private-pool villa, premium coworking, good food and a health/wellness buffer. Add international health insurance ($80-$300) and tax/accounting costs, which most cheap guides leave out."
 seo:
-  title: "Cost of Living in Bali 2026: Real Monthly Numbers & 3 Honest Budgets"
-  description: "What it actually costs to live in Bali in 2026 - three real monthly budgets ($1,800 / $3,500 / $6,500+) covering villa, food, scooter, coworking, visa & healthcare. Sourced from 30+ builders in the BSTC community."
+  title: "Cost of Living in Bali 2026: Real Monthly Budgets | BSTC"
+  description: "What it costs to live in Bali in 2026: three monthly budgets ($1,800, $3,500, $6,500+) for villa, food, scooter, coworking, visa and healthcare."
   keywords: ["cost of living in bali", "cost of living bali", "cost of living in bali 2026", "living in bali cost", "bali cost of living", "cost of living bali per month", "bali monthly budget", "canggu cost of living"]
 ---
 
@@ -121,7 +121,7 @@ Better wifi (often Biznet fibre at the villa), a higher data plan, and full util
 
 ### Social, travel, buffer: $520
 
-Regular dinners with friends, networking event tickets, weekend trips, the occasional flight to Singapore or Jakarta for meetings. The buffer here is what makes Bali life feel sustainable.
+Regular dinners with friends, food and drinks at free BSTC networking events, weekend trips, the occasional flight to Singapore or Jakarta for meetings. The buffer here is what makes Bali life feel sustainable.
 
 **Comfortable total: ~$3,500/month.** This is the modal BSTC member spend.
 

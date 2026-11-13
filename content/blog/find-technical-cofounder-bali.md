@@ -9,8 +9,8 @@ readTime: "8 min"
 tags: ["co-founder", "bali", "founders", "hiring", "technical", "startup"]
 excerpt: "Bali has one of the highest concentrations of senior engineers and technical founders in Southeast Asia. Here's where to find them, how to approach them, and what they're actually looking for."
 seo:
-  title: "How to Find a Technical Co-founder in Bali (2026): The Real Playbook"
-  description: "Where senior engineers and technical founders actually hang out in Bali, how to approach them, what they want, and the mistakes non-technical founders keep making."
+  title: "Find a Technical Co-founder in Bali (2026) | BSTC"
+  description: "Where senior engineers and technical founders hang out in Bali, how to approach them, what they want, and the mistakes non-technical founders make."
   keywords: ["find technical co-founder bali", "bali co-founder", "technical co-founder southeast asia", "find CTO bali", "startup co-founder bali", "engineer bali", "co-founder matching"]
 ---
 
@@ -53,7 +53,7 @@ BSTC has 2,700+ members on Meetup (25 Oct 2026) and a Telegram member chat. Ther
 
 ### 4. Open source and hackathons
 
-Engineers who contribute to open source or show up to hackathons are self-selecting for the "I like building things" trait. The BSTC Hackathon (first edition June 2026) is designed specifically for this. Hackathons compress a month of co-founder chemistry testing into a single weekend.
+Engineers who contribute to open source or show up to hackathons are self-selecting for the "I like building things" trait. The BSTC Hackathon (coming soon, date TBA) is designed specifically for this. Hackathons compress a month of co-founder chemistry testing into a single weekend.
 
 ### Where they are NOT
 

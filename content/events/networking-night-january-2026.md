@@ -32,3 +32,9 @@ The first BSTC event of 2026. New year energy in the room.
 - First test of a structured networking segment where the host paired people based on what they're building
 
 **Feedback score:** 4.6 / 5.0
+
+## More in this series
+
+Next edition: [BSTC Networking Night: February 2026](/events/networking-night-february-2026).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.

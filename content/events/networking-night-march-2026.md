@@ -34,3 +34,11 @@ seo:
 **Feedback score:** 4.7 / 5.0
 
 See you at the April edition.
+
+## More in this series
+
+Previous edition: [BSTC Networking Night: February 2026](/events/networking-night-february-2026).
+
+Next edition: [BSTC Networking Night: April 2026](/events/networking-night-april-2026).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.

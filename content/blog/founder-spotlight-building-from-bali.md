@@ -3,7 +3,7 @@ title: "Founder Spotlight: What It's Really Like Building a Tech Company from Ba
 slug: founder-spotlight-building-from-bali
 date: "2026-03-30"
 author: Josh Morrow
-authorRole: Co-founder, BSTC & David & Goliath
+authorRole: Co-founder, BSTC
 category: founder-story
 excerpt: "We sat down with three founders from the BSTC community who've built revenue-generating companies from Bali. Their honest take on the advantages, the challenges, and why they're not going back to traditional tech hubs."
 readTime: "8 min read"
@@ -14,8 +14,8 @@ tags:
   - remote founder
   - building from Bali
 seo:
-  title: "Founder Spotlight: Building a Tech Company from Bali: Real Stories | BSTC"
-  description: "Three founders share what it's really like building revenue-generating tech companies from Bali. The honest advantages, challenges, and why they chose Bali over SF, London, and Singapore."
+  title: "Founder Spotlight: Building from Bali | BSTC"
+  description: "Three founders on building revenue-generating tech companies from Bali: the advantages, the challenges, and why they chose it over SF and Singapore."
   keywords:
     - founder stories Bali
     - building startup from Bali

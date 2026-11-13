@@ -3,7 +3,7 @@ title: "Managing a Remote Team from Bali: What Actually Works"
 slug: remote-team-management-from-bali
 date: "2026-03-22"
 author: Josh Morrow
-authorRole: Co-founder, BSTC & David & Goliath
+authorRole: Co-founder, BSTC
 category: thought-leadership
 excerpt: "You've moved to Bali. Your team is in three time zones. Your investors are in San Francisco. Here's how founders in the BSTC community actually make remote team management work: without the productivity theatre."
 readTime: "7 min read"
@@ -15,7 +15,7 @@ tags:
   - distributed teams
 seo:
   title: "Managing a Remote Team from Bali: What Actually Works | BSTC"
-  description: "How founders in Bali manage distributed teams across time zones. Real strategies from BSTC's community: async communication, time zone leverage, and avoiding the traps."
+  description: "How founders in Bali manage distributed teams across time zones: async communication, time zone leverage and avoiding the traps. From BSTC's community."
   keywords:
     - remote team management Bali
     - managing team from Bali

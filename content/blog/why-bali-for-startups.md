@@ -3,7 +3,7 @@ title: "Why Bali? The Honest Case for Building Your Startup from Indonesia"
 slug: why-bali-for-startups
 date: "2026-04-01"
 author: Josh Morrow
-authorRole: Co-founder, BSTC & David & Goliath
+authorRole: Co-founder, BSTC
 category: bali-tech-scene
 excerpt: "Every founder asks the same question: can I actually build a serious company from Bali? After two years embedded in the ecosystem, here's the honest answer: the advantages, the trade-offs, and who it's actually right for."
 readTime: "7 min read"
@@ -16,7 +16,7 @@ tags:
   - Southeast Asia
 seo:
   title: "Why Build Your Startup in Bali? The Honest Case | BSTC"
-  description: "Can you build a real company from Bali? Honest breakdown of the advantages, trade-offs, and who Bali is right for. From the founders of Bali's largest tech community."
+  description: "Can you build a real company from Bali? The advantages, trade-offs, and who Bali is right for. From the founders of Bali's largest tech community."
   keywords:
     - why Bali for startups
     - build startup from Bali
