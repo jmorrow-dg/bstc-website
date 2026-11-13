@@ -11,6 +11,18 @@ import {
 } from "@/lib/content";
 import { getFAQSchema } from "@/lib/schema";
 import { getEventState } from "@/lib/event-status";
+import PhotoGallery from "@/components/events/PhotoGallery";
+import EventProof from "@/components/events/EventProof";
+import HistoryTable from "@/components/events/HistoryTable";
+import { EventVenueLine } from "@/components/events/EventPageExtras";
+import { getEventPhotos } from "@/lib/event-photos";
+import {
+  HISTORY_CHECKED,
+  findEventPageForNight,
+  getHistoryStats,
+  getNights,
+  shortDate,
+} from "@/lib/event-history";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
@@ -119,6 +131,9 @@ export default async function HIWAPage() {
   const allEvents = await getAllEvents();
   const now = new Date();
   const hiwaEvents = getHIWAEvents(allEvents);
+  const nights = getNights("how-i-ai");
+  const stats = getHistoryStats("how-i-ai");
+  const frontmatters = allEvents.map((e) => e.frontmatter);
 
   return (
     <>
@@ -146,6 +161,9 @@ export default async function HIWAPage() {
               Real tools. Real products. No slides, no theory: just
               practitioners showing how they ship.
             </p>
+            <div className="text-sm text-brand-grey mb-4">
+              <EventVenueLine venue="Seoul Soul Project, Canggu" iconSize={14} />
+            </div>
             <p className="text-sm text-brand-grey">
               Presented by{" "}
               <span className="text-brand-white">
@@ -176,6 +194,14 @@ export default async function HIWAPage() {
               </p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Proof and photos */}
+      <section className="py-16 md:py-20 border-t border-ink/10">
+        <div className="max-w-site mx-auto px-6 space-y-16">
+          <EventProof series="how-i-ai" title="Every edition so far" />
+          <PhotoGallery photos={getEventPhotos("talks").slice(0, 12)} />
         </div>
       </section>
 
@@ -219,6 +245,21 @@ export default async function HIWAPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* History */}
+      <section className="py-16 md:py-20 border-t border-ink/10" id="history">
+        <div className="max-w-site mx-auto px-6">
+          <HistoryTable
+            nights={nights}
+            pageFor={(n) => {
+              const page = findEventPageForNight(n, frontmatters);
+              return page ? `/events/${page.slug}` : undefined;
+            }}
+            title="Every past How I AI"
+            caption={`All ${nights.length} editions on Meetup since ${shortDate(stats.firstDate)}, newest first. RSVPs on Meetup, checked ${HISTORY_CHECKED}. Many people register on Luma instead, so these are Meetup RSVPs only.`}
+          />
         </div>
       </section>
 

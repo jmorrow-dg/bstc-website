@@ -13,11 +13,18 @@ export interface EventFrontmatter {
   slug: string;
   date: string;
   time: string;
+  // Finish time (HH:MM, Bali time), copied from the night's own RSVP listing
+  // (Meetup or Luma) with the listing named in a comment beside it. Leave it
+  // out when the listing gives none: the page and Event schema then omit it.
+  endTime?: string;
   venue: string;
   type: "networking" | "roundtable" | "builder-session" | "how-i-build-with-ai";
   status: "upcoming" | "completed";
   capacity: number;
   rsvpUrl: string;
+  // When the event page first went live on main (ISO 8601 with offset). Used as
+  // Event schema `offers.validFrom`. Required on upcoming events with an RSVP link.
+  announced?: string;
   coverImage?: string;
   description: string;
   builder?: {

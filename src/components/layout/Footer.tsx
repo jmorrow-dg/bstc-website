@@ -8,6 +8,7 @@ type FooterLink = { label: string; href: string; external?: boolean };
 // Perks and Remote Builders. External links keep their old targets.
 const COMMUNITY: FooterLink[] = [
   { label: "Events", href: "/events" },
+  { label: "Drinks & Dinner", href: "/drinks-and-dinner" },
   { label: "How I Build with AI", href: "/how-i-build-with-ai" },
   { label: "About the community", href: "/community" },
   { label: "About", href: "/about" },

@@ -3,10 +3,12 @@ title: "How I AI | Edition 19"
 slug: how-i-ai-edition-19
 date: "2026-11-11"
 time: "18:00"
+endTime: "21:00" # from the Meetup 317128200 listing, read 11 Nov 2026
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: upcoming
 capacity: 50
+announced: "2026-11-02T13:01:00+08:00"
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/events/317128200/
 coverImage: /images/events/how-i-ai-season-2.jpg
 description: "BSTC's weekly builder night: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
