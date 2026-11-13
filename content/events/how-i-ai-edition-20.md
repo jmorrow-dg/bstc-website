@@ -3,13 +3,13 @@ title: "How I AI | Edition 20"
 slug: how-i-ai-edition-20
 date: "2026-11-18"
 time: "18:00"
-endTime: "21:00" # from the Meetup 317128203 listing, read 11 Nov 2026
+endTime: "21:00" # from the Luma 0zzumvch listing, read 13 Nov 2026
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: upcoming
 capacity: 50
 announced: "2026-11-02T13:01:00+08:00"
-rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/events/317128203/
+rsvpUrl: https://luma.com/0zzumvch
 coverImage: /images/events/how-i-ai-season-2.jpg
 description: "BSTC's weekly builder night: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
 seo:
@@ -42,4 +42,4 @@ Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 - Operators automating workflows with AI
 - Anyone who wants to stop reading about AI and start profiting from it
 
-Free entry. Please order dinner and/or drinks to support the venue that supports the community. [RSVP on Meetup](https://www.meetup.com/bali-start-ups-tech-community/events/317128203/), then [join the BSTC community](https://www.balistartupandtech.com/join?src=event-website) for the community chat and a free member profile.
+Free entry. Please order dinner and/or drinks to support the venue that supports the community. [RSVP on Luma](https://luma.com/0zzumvch), then [join the BSTC community](https://www.balistartupandtech.com/join?src=event-website) for the community chat and a free member profile.
