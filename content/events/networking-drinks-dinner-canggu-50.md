@@ -3,10 +3,12 @@ title: "Bali Startup and Tech Networking Drinks & Dinner - Canggu #50"
 slug: networking-drinks-dinner-canggu-50
 date: "2027-10-14"
 time: "18:30"
+endTime: "22:00" # from the Luma jf592nbs listing, read 11 Nov 2026
 venue: Yema Kitchen, Canggu
 type: networking
 status: upcoming
 capacity: 80
+announced: "2026-11-09T08:59:55+08:00"
 rsvpUrl: https://luma.com/jf592nbs?utm_source=website
 coverImage: /images/events/networking-night.png
 description: "Our 50th community networking drinks & dinner at Yema Kitchen, Canggu. Real founders, builders and operators in Bali. A quick open mic, a couple of short founder talks, then easy, no-pressure networking. Free, new faces welcome."

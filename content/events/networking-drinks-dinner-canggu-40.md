@@ -3,13 +3,12 @@ title: "Bali Startup and Tech Networking Drinks & Dinner - Canggu #40"
 slug: networking-drinks-dinner-canggu-40
 date: "2026-12-10"
 time: "18:30"
-endTime: "20:30"
-venueAddress: "Jl. Tanah Barak No.31, Canggu"
-organizer: "Yema Kitchen"
+endTime: "22:00" # from the Meetup 317309542 listing, read 11 Nov 2026
 venue: Yema Kitchen, Canggu
 type: networking
 status: upcoming
 capacity: 80
+announced: "2026-11-02T13:01:00+08:00"
 rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/events/clrtbvyjcqbnb/
 coverImage: /images/events/networking-night.png
 description: "Our 40th community networking drinks & dinner at Yema Kitchen, Canggu. Real founders, builders and operators in Bali. A quick open mic, a couple of short founder talks, then easy, no-pressure networking. Free, new faces welcome."

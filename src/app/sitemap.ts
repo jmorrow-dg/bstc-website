@@ -24,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE_URL, changeFrequency: "weekly", priority: 1 },
     { url: `${BASE_URL}/events`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE_URL}/drinks-and-dinner`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/how-i-build-with-ai`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/community`, changeFrequency: "monthly", priority: 0.8 },
     // /join is left out: the join form it proxies serves noindex.

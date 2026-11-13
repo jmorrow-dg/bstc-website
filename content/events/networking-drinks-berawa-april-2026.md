@@ -3,7 +3,7 @@ title: "Bali Startup & Tech Networking Drinks & Dinner — Berawa #36"
 slug: networking-drinks-berawa-april-2026
 date: "2026-04-30"
 time: "18:30"
-organizer: "Mata Berawa"
+endTime: "21:30" # from the Meetup 313501887 listing, read 11 Nov 2026
 venue: Mata Berawa, Berawa
 type: networking
 status: completed

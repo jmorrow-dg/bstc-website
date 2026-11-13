@@ -5,7 +5,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   Calendar,
-  MapPin,
   Clock,
   ArrowLeft,
   ExternalLink,
@@ -19,12 +18,22 @@ import {
   getHIWAEvents,
   formatEventDate,
 } from "@/lib/content";
-import { getEventSchema } from "@/lib/schema";
+import { getEventOrganizer, getEventSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
 import { canRsvpToEvent, getEventState, rsvpPlatform } from "@/lib/event-status";
+import {
+  EventPageProof,
+  EventVenueLine,
+  eventSchemaPhoto,
+  eventTimeRange,
+} from "@/components/events/EventPageExtras";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
+
+// Only the event files are pages: any other slug is a real 404, not a 200
+// "not found" page (the loading boundary used to stream a 200 first).
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const allEvents = await getAllEvents();
@@ -81,8 +90,6 @@ export default async function HIWAEpisodePage({
     description: e.description,
     date: e.date,
     time: e.time,
-    endTime: e.endTime,
-    venueAddress: e.venueAddress,
     series: e.series,
     venue: e.venue,
     // Same Event node as the canonical /events/<slug> page.
@@ -90,7 +97,10 @@ export default async function HIWAEpisodePage({
     image: e.coverImage,
     status: e.status,
     rsvpUrl: e.rsvpUrl,
-    organizer: e.organizer,
+    announced: e.announced,
+    organizer: getEventOrganizer(e),
+    endTime: e.endTime,
+    photo: eventSchemaPhoto(e.type),
   }, now);
 
   return (
@@ -149,12 +159,9 @@ export default async function HIWAEpisodePage({
                 </span>
                 <span className="flex items-center gap-2">
                   <Clock size={14} className="text-brand-red" />
-                  {e.time} WITA
+                  {eventTimeRange(e)}
                 </span>
-                <span className="flex items-center gap-2">
-                  <MapPin size={14} className="text-brand-red" />
-                  {e.venue}
-                </span>
+                <EventVenueLine venue={e.venue} iconSize={14} />
               </div>
 
               {canRsvp && (
@@ -306,6 +313,8 @@ export default async function HIWAEpisodePage({
           </div>
         </section>
       )}
+
+      <EventPageProof type={e.type} />
 
       {/* Content */}
       <section className="pb-16 md:pb-24">
