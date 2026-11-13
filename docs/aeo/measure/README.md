@@ -2,7 +2,7 @@
 
 Tags: medium | immediate | create new | measurement | Q01 to Q18.
 
-Run every Monday. The next check is 9 November 2026. Josh's assistant collects the answers. Sunday preparation does not count as a citation check. This workflow uses manual public answers, plain Node and no API calls, keys, paid tools or analytics changes.
+Run every Monday. The next check is 16 November 2026; the 9 and 10 November checks collected nothing (no engine access). Josh's assistant collects the answers. Sunday preparation does not count as a citation check. This workflow uses manual public answers, plain Node and no API calls, keys, paid tools or analytics changes.
 
 ## Frozen questions and ownership
 
@@ -18,7 +18,34 @@ From the repository root:
 node scripts/measure/prepare-run.mjs 2026-11-09 "$HOME/orca/evidence/bstc/citations"
 ```
 
-This writes a run sheet and CSV with 90 pending slots. It refuses to overwrite existing files. `citation-log.csv` is a header-only template; do not commit real observations or full answers. If the evidence directory is not writable, prepare under ignored `.aeo/daily/handoffs/` and record that transfer is pending.
+This writes a run sheet, a CSV with 90 pending slots and `collector-YYYY-MM-DD.html`, the page the collector works from. It refuses to overwrite existing files. `citation-log.csv` is a header-only template; do not commit real observations or full answers. If the evidence directory is not writable, prepare under ignored `.aeo/daily/handoffs/` and record that transfer is pending.
+
+## Engine access (checked 13 November 2026)
+
+The engines stop automated clients, so a person collects the answers in a normal browser. On 13 November each engine was asked Q01 once with a plain request and once in signed-out headless Chrome, with no login:
+
+| Engine | Automated result | For the person collecting |
+| --- | --- | --- |
+| ChatGPT with search | App shell, then a Cloudflare verification page | Opens signed out. The link `https://chatgpt.com/?q=QUESTION&hints=search` runs the question |
+| Perplexity | Cloudflare challenge (403) | `https://www.perplexity.ai/search/new?q=QUESTION` runs the question |
+| Gemini | App shell; the signed-out page loads and offers a chat | No question link. Open `https://gemini.google.com/app` and paste the question |
+| Claude | Cloudflare challenge (403) | Needs a signed-in account. `https://claude.ai/new?q=QUESTION` fills in the question |
+| Google AI Overview | No results without a browser; headless Chrome got the "unusual traffic" page | `https://www.google.com/search?q=QUESTION&hl=en&gl=id` (English, Indonesia) |
+
+Never script the engines, and never try to get past a bot check. A blocked engine is logged as `unavailable` with the reason. Which engines answer without an account can change, so the first question of every run doubles as an access check. Engines answer by location: write the location and any VPN in the Locale box and keep it the same each week.
+
+## Collect with the collector page
+
+Open `collector-YYYY-MM-DD.html` in the browser. Each question has a link into each engine and a box per engine. Paste the whole answer into its box: the page stamps the time, keeps the answer's links, and suggests whether BSTC is named (check it against what you read). Set a box to `unavailable` or `no_overview` with a note when there is no answer. The page works offline, loads nothing from pasted answers, and saves progress in the browser. Export writes `collected-YYYY-MM-DD.json`.
+
+Then, from the repository root:
+
+```sh
+node scripts/health/crawl.mjs
+node scripts/measure/collector.mjs import "$HOME/Downloads/collected-2026-11-16.json" "$HOME/orca/evidence/bstc/citations" "$HOME/orca/evidence/bstc/health-2026-11-16/crawl.json"
+```
+
+The import fills the log, writes each answer to `answers/YYYY-MM-DD/`, and takes `links_to_join` from the crawl: the cited page's own outlinks, with no extra request. A cited page that isn't in the crawl is `unknown`. It rejects any row the summary would reject and never replaces a row that already holds an observation. The rules below still apply; the page only removes the typing.
 
 ## Collect consistently
 
