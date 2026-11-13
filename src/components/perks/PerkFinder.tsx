@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { PerkIndexEntry } from "@/lib/perks";
 
-type Kind = "all" | "open" | "example";
+type Kind = "all" | "open" | "member" | "example";
 
 type FilterState = {
   kind: Kind;
@@ -66,7 +66,7 @@ export default function PerkFinder({
   );
 
   const kindCounts = useMemo(() => {
-    const c = { all: 0, open: 0, example: 0 };
+    const c: Record<Kind, number> = { all: 0, open: 0, member: 0, example: 0 };
     index.forEach((p) => {
       if (matches(p, state, "kind")) {
         c.all += 1;
@@ -106,18 +106,26 @@ export default function PerkFinder({
     });
     document.querySelectorAll<HTMLElement>("[data-perk-cat]").forEach((section) => {
       let open = 0;
+      let member = 0;
       let examples = 0;
+      let unavailable = 0;
       section.querySelectorAll<HTMLElement>("[data-perk-id]").forEach((card) => {
         if (card.hidden) return;
-        if (byId.get(card.dataset.perkId || "")?.kind === "open") open += 1;
+        const entry = byId.get(card.dataset.perkId || "");
+        if (!entry) return;
+        if (entry.unavailable) unavailable += 1;
+        else if (entry.kind === "open") open += 1;
+        else if (entry.kind === "member") member += 1;
         else examples += 1;
       });
-      section.hidden = open + examples === 0;
+      section.hidden = open + member + examples + unavailable === 0;
       const line = section.querySelector<HTMLElement>("[data-perk-count]");
       if (line) {
         const bits: string[] = [];
         if (open) bits.push(`${open} ${open === 1 ? "programme" : "programmes"}`);
+        if (member) bits.push(`${member} ${member === 1 ? "member offer" : "member offers"}`);
         if (examples) bits.push(`${examples} ${examples === 1 ? "example" : "examples"}`);
+        if (unavailable) bits.push(`${unavailable} not available`);
         line.textContent = bits.join(", ");
       }
     });
@@ -182,6 +190,7 @@ export default function PerkFinder({
                 [
                   ["all", "All"],
                   ["open", "Open now"],
+                  ["member", "Member offers"],
                   ["example", "Examples"],
                 ] as [Kind, string][]
               ).map(([value, label]) => (

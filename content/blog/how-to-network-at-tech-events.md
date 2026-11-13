@@ -120,4 +120,4 @@ The best networking doesn't feel like networking. It feels like conversation.
 
 ---
 
-*[See upcoming BSTC events](/events) or [join the community](/join?src=blog-how-to-network-at-tech-events-inline) to connect with 2,700+ members (Meetup, 25 Oct 2026).*
+*[See upcoming BSTC events](/events) or [join the community](/join?src=blog-how-to-network-at-tech-events-inline) to connect with 2,700+ builders (Meetup, 25 Oct 2026) across Southeast Asia.*

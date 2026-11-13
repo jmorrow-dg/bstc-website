@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-blog-counts.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --test scripts/*.test.mjs tests/*.test.mjs"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",

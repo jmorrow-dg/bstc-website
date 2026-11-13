@@ -350,7 +350,12 @@
 .gl-kind-tile .gl-k-sub { font-weight: 600; font-size: 15px; }
 .gl-kind-tile > p:last-child { grid-column: 1 / -1; font-size: 15px; margin-top: 8px; max-width: 52ch; }
 .gl-kind-open { background: var(--gl-navy); color: var(--gl-white); }
+.gl-kind-terms { background: var(--gl-paper); color: var(--gl-navy); }
+.gl-kind-wait { background: var(--gl-white); color: var(--gl-navy); border: var(--gl-rule) dashed var(--gl-navy); }
 .gl-kind-ex { background: var(--gl-chalk); color: var(--gl-navy); border: var(--gl-rule) dashed var(--gl-navy); position: relative; }
+.gl-kinds--split { grid-template-columns: 1fr 1fr; column-gap: 16px; row-gap: 36px; }
+.gl-kinds--split .gl-kind-tile b { font-size: clamp(48px, 4.6vw, 76px); }
+.gl-page .gl-kinds--split .gl-kind-tile h2 { font-size: clamp(22px, 1.7vw, 30px); }
 .gl-on-red .gl-kind-ex :focus-visible { outline-color: var(--gl-navy); }
 .gl-finder { padding-block: clamp(36px, 5vw, 64px) 0; }
 .gl-finder-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 20px; }
@@ -387,6 +392,7 @@
 .gl-cat-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; border-bottom: var(--gl-rule) solid var(--gl-navy); padding-bottom: 12px; margin-bottom: 18px; }
 .gl-page .gl-cat-head h2 { font-size: clamp(36px, 4.2vw, 60px); font-weight: 900; }
 .gl-cat-count { font-weight: 600; font-size: 15px; }
+.gl-cat-intro { max-width: 68ch; margin: 0 0 16px; font-size: 15px; }
 .gl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); gap: 16px; align-items: stretch; }
 .gl-pk { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 18px; border: var(--gl-rule) solid var(--gl-navy); background: var(--gl-white); overflow-wrap: anywhere; min-width: 0; }
 .gl-pk[hidden], .gl-cat[hidden], .gl-ff[hidden], .gl-empty[hidden], [data-gl-hidden="true"] { display: none !important; }
@@ -407,10 +413,14 @@
 .gl-pk--open .gl-pk-go:hover { background: var(--gl-red); border-color: var(--gl-red); }
 .gl-pk--ex { background: var(--gl-chalk); border-style: dashed; }
 .gl-pk--ex .gl-pk-top { padding-right: 96px; }
+.gl-pk--member { background: var(--gl-paper); }
+.gl-pk--member .gl-pk-top { padding-right: 112px; }
+.gl-pk--wait { background: var(--gl-white); border-style: dashed; }
 .gl-pk--ex .gl-mark { background: transparent; color: var(--gl-navy); border: 2px dashed var(--gl-navy); }
 .gl-pk--local .gl-mark { color: var(--gl-red-deep); border-color: var(--gl-red-deep); }
 .gl-pk--ex .gl-pk-facts { border-top-color: rgba(19, 33, 60, 0.25); }
 .gl-stamp { position: absolute; top: 14px; right: 14px; transform: rotate(-5deg); border: var(--gl-rule) solid var(--gl-red-deep); color: var(--gl-red-deep); background: var(--gl-paper); font: 900 22px/1 var(--gl-display); padding: 5px 9px 3px; }
+.gl-stamp--long { font-size: 16px; line-height: 0.95; max-width: 9ch; text-align: center; }
 .gl-kind-ex .gl-stamp { top: -14px; right: 16px; }
 .gl-pk-not { margin-top: auto; align-self: flex-start; border: 2px dashed var(--gl-navy); padding: 9px 14px; font-weight: 600; font-size: 15px; }
 .gl-empty { border: var(--gl-rule) dashed var(--gl-navy); padding: clamp(24px, 4vw, 48px); display: grid; gap: 16px; justify-items: start; }
@@ -488,12 +498,12 @@
   .gl-perk-offer { font-size: 22px; }
   .gl-faq { grid-template-columns: 1fr; }
   .gl-foot-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
-  .gl-kinds { grid-template-columns: 1fr; }
+  .gl-kinds, .gl-kinds--split { grid-template-columns: 1fr; }
   .gl-ff-row { grid-template-columns: 1fr; }
   .gl-ff-cats .gl-chips { flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scrollbar-width: thin; padding-bottom: 12px; }
   .gl-status { font-size: 22px; }
   .gl-pk { padding: 16px; }
-  .gl-pk--ex .gl-pk-top { padding-right: 0; }
+  .gl-pk--ex .gl-pk-top, .gl-pk--member .gl-pk-top { padding-right: 0; }
   .gl-pk .gl-stamp { position: static; align-self: flex-start; transform: rotate(-3deg); font-size: 20px; }
   .gl-suggest-cols { grid-template-columns: 1fr; }
 }
