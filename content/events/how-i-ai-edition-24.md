@@ -11,6 +11,8 @@ capacity: 50
 announced: "2026-11-13T19:30:00+08:00"
 rsvpUrl: https://luma.com/n966ij43
 coverImage: /images/events/how-i-ai-season-2.jpg
+cardImage: /images/events/how-i-ai/e24-2026-12-16-card.webp
+cardImageAlt: "How I AI Edition 24, Wed 16 Dec 2026, 6pm at Seoul Soul Project, Canggu"
 description: "BSTC's weekly builder night: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
 seo:
   title: "How I AI | Edition 24 | BSTC Bali"
