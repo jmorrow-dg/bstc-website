@@ -4,22 +4,31 @@ import { useState } from "react";
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [error, setError] = useState("");
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!email) return;
     setStatus("loading");
+    const companySite = new FormData(e.currentTarget).get("company_site") || "";
     try {
-      await fetch("/api/newsletter", {
+      const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, company_site: companySite }),
       });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success !== true) {
+        setError(data.message || "Please check the email and try again.");
+        setStatus("error");
+        return;
+      }
       setStatus("success");
       setEmail("");
     } catch {
-      setStatus("idle");
+      setError("We couldn't reach the server. Please try again.");
+      setStatus("error");
     }
   }
 
@@ -31,25 +40,40 @@ export default function NewsletterSignup() {
           You&apos;re in. Watch your inbox.
         </p>
       ) : (
-        <div className="gl-news-row">
-          <input
-            id="news-email"
-            type="email"
-            name="email"
-            autoComplete="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@email.com"
-            required
-          />
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="gl-btn gl-btn-red"
-          >
-            Subscribe
-          </button>
-        </div>
+        <>
+          <div className="gl-news-row">
+            <input
+              id="news-email"
+              type="email"
+              name="email"
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@email.com"
+              required
+            />
+            <input
+              type="text"
+              name="company_site"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ position: "absolute", left: "-9999px" }}
+            />
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="gl-btn gl-btn-red"
+            >
+              Subscribe
+            </button>
+          </div>
+          {status === "error" && (
+            <p className="gl-news-done" role="alert">
+              {error}
+            </p>
+          )}
+        </>
       )}
     </form>
   );
