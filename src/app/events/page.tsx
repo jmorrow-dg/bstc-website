@@ -57,11 +57,11 @@ function EventCard({ event, now }: { event: ContentItem<EventFrontmatter>; now: 
       className="group block rounded-lg border border-ink/10 bg-white/70 hover:bg-white hover:border-brand-red/20 transition-all overflow-hidden"
     >
       {/* Cover image */}
-      {e.coverImage ? (
+      {e.cardImage || e.coverImage ? (
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
-            src={e.coverImage}
-            alt={e.title}
+            src={(e.cardImage || e.coverImage)!}
+            alt={e.cardImage ? e.cardImageAlt || e.title : e.title}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, 50vw"

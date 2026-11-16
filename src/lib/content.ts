@@ -30,6 +30,11 @@ export interface EventFrontmatter {
   // Event schema `offers.validFrom`. Required on upcoming events with an RSVP link.
   announced?: string;
   coverImage?: string;
+  // An image for this night's card on /events only, so the list tells the nights
+  // apart (a How I AI edition's own image: its number, day and venue, 15 Nov 2026).
+  // The event page and the series page keep coverImage. Give cardImageAlt with it.
+  cardImage?: string;
+  cardImageAlt?: string;
   description: string;
   builder?: {
     name: string;
