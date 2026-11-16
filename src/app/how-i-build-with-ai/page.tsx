@@ -187,6 +187,7 @@ export default async function HIWAPage() {
       {/* Episodes Grid */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-site mx-auto px-6">
+          <h2 className="sr-only">Editions</h2>
           {hiwaEvents.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {hiwaEvents.map((event) => (
