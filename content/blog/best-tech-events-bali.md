@@ -35,7 +35,7 @@ Updated 5 November 2026. Bali Startup & Tech Community runs two free event serie
 | Date | Event page |
 |---|---|
 | Wednesday 11 November | [How I AI, Edition 19](/events/how-i-ai-edition-19) |
-| Wednesday 18 November | [How I AI, Edition 20](/events/how-i-ai-edition-20) |
+| Tuesday 17 November (this week only, not Wednesday) | [How I AI, Edition 20](/events/how-i-ai-edition-20) |
 | Wednesday 25 November | [How I AI, Edition 21](/events/how-i-ai-edition-21) |
 
 Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community
