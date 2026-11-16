@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Usage: node scripts/aeo/check-jsonld.mjs --base http://localhost:3000 / /faq
 // --sitemap checks all routes in the base URL's sitemap. Exit 1 means QA failed.
-// Event nodes are counted by field (endDate, isAccessibleForFree, organizer, contributor, offers).
+// Event nodes are counted by field (endDate, isAccessibleForFree, organizer and its url, contributor, offers).
 // --strict-events also fails an Event that is not free, has no contributor or has a priced offer.
 import { pathToFileURL } from 'node:url';
 
@@ -44,6 +44,7 @@ export function inspect(html) {
           endDate: Boolean(node.endDate),
           free: node.isAccessibleForFree === true,
           organizer: Boolean(node.organizer?.name),
+          organizerUrl: /^https?:\/\//.test(node.organizer?.url ?? ''),
           contributor: Boolean(node.contributor),
           offers: offers.length > 0,
           priceZero: offers.length > 0 && offers.every(offer => String(offer.price) === '0'),
@@ -87,7 +88,7 @@ async function main() {
   }
   if (!routes.length) routes.push('/', '/events', '/blog', '/faq', '/community', '/how-i-build-with-ai', '/leadership');
   const rows = [];
-  const eventTotals = { nodes: 0, routes: 0, endDate: 0, free: 0, organizer: 0, contributor: 0, offers: 0, priceZero: 0 };
+  const eventTotals = { nodes: 0, routes: 0, endDate: 0, free: 0, organizer: 0, organizerUrl: 0, contributor: 0, offers: 0, priceZero: 0 };
   const currencies = {};
   let failed = 0;
   for (const route of [...new Set(routes)]) {
@@ -99,7 +100,7 @@ async function main() {
       if (result.events.length) eventTotals.routes++;
       for (const event of result.events) {
         eventTotals.nodes++;
-        for (const key of ['endDate', 'free', 'organizer', 'contributor', 'offers', 'priceZero']) if (event[key]) eventTotals[key]++;
+        for (const key of ['endDate', 'free', 'organizer', 'organizerUrl', 'contributor', 'offers', 'priceZero']) if (event[key]) eventTotals[key]++;
         for (const currency of event.currencies) currencies[currency] = (currencies[currency] ?? 0) + 1;
         if (strictEvents && !event.free) result.errors.push('Event is not isAccessibleForFree');
         if (strictEvents && !event.contributor) result.errors.push('Event has no contributor');
@@ -113,7 +114,7 @@ async function main() {
   console.table(rows);
   if (eventTotals.nodes) {
     const t = eventTotals;
-    console.log(`Events: ${t.nodes} nodes on ${t.routes} routes; endDate ${t.endDate}, isAccessibleForFree ${t.free}, organizer ${t.organizer}, contributor ${t.contributor}, offers ${t.offers} (price 0: ${t.priceZero}; currency ${JSON.stringify(currencies)})`);
+    console.log(`Events: ${t.nodes} nodes on ${t.routes} routes; endDate ${t.endDate}, isAccessibleForFree ${t.free}, organizer ${t.organizer} (with url ${t.organizerUrl}), contributor ${t.contributor}, offers ${t.offers} (price 0: ${t.priceZero}; currency ${JSON.stringify(currencies)})`);
   }
   console.log(`${new Date().toISOString()}: ${rows.length} routes; ${failed} failed`);
   if (failed) process.exitCode = 1;
