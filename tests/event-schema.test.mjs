@@ -108,7 +108,8 @@ test("every event that offers an RSVP has offers.validFrom (ISO 8601 with offset
       `${e.slug}: validFrom is after startDate`
     );
     assert.ok(
-      Date.parse(s.offers.validFrom) <= NOW.getTime(),
+      // Against the real clock: NOW is pinned to 10 Nov for the upcoming/past split, but a listing announced later is still not "in the future".
+      Date.parse(s.offers.validFrom) <= Date.now(),
       `${e.slug}: validFrom is in the future`
     );
   }

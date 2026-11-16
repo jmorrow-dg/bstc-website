@@ -36,7 +36,7 @@ Intimate tech dinner meets live demo night. No theory. No hype. No "AI will chan
 - Engineers building AI-powered features
 - Operators automating workflows with AI
 
-Free entry. Dinner and drinks at the venue are mandatory to support the host. RSVP on MeetUp.
+Free entry. You order and pay for your own food and drinks at the venue, which supports the host. RSVP on MeetUp.
 
 ## More in this series
 
