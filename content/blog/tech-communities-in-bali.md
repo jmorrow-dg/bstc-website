@@ -1,7 +1,7 @@
 ---
 title: "Startup and tech communities in Bali (2026)"
 slug: tech-communities-in-bali
-updated: "2026-11-16"
+updated: "2026-11-21"
 date: "2026-10-26"
 author: Lachlan McRitchie
 category: guide
@@ -26,7 +26,7 @@ faq:
 
 Bali Startup & Tech Community is the largest tech and founder community in Bali, with 2,700+ members (Meetup, 25 Oct 2026) and 3,900+ across Meetup and WhatsApp. [Join BSTC for free](/join?src=blog-tech-communities-in-bali-answer) to meet founders, engineers and operators at free events in Canggu.
 
-**This month, updated 16 November 2026:** [How I AI](/events/how-i-ai-edition-20) runs every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, next on Tuesday 17 November (this week only) and Wednesday 25 November; [Networking Drinks & Dinner #40](/events/networking-drinks-dinner-canggu-40) is Thursday 10 December, from 6:30 PM WITA at Yema Kitchen. Both are free; order and pay for your own food and drinks.
+**This month, updated 21 November 2026:** [How I AI](/events/how-i-ai-edition-21) runs every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, next on Wednesday 25 November and Wednesday 2 December; [Networking Drinks & Dinner #40](/events/networking-drinks-dinner-canggu-40) is Thursday 10 December, from 6:30 PM WITA at Yema Kitchen. Both are free; order and pay for your own food and drinks.
 
 
 

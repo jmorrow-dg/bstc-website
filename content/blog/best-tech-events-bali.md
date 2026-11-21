@@ -1,7 +1,7 @@
 ---
 title: "The Best Tech Events in Bali for Founders and Builders (2026)"
 slug: best-tech-events-bali
-updated: "2026-11-16"
+updated: "2026-11-21"
 date: "2026-03-28"
 author: Josh Morrow
 authorRole: Co-founder, BSTC
@@ -28,14 +28,14 @@ seo:
 
 ## This month in Bali: November 2026
 
-Updated 16 November 2026. Bali Startup & Tech Community runs two free event series in Canggu: How I AI every Wednesday, and [Networking Drinks & Dinner](/drinks-and-dinner) on the second Thursday of every month. Still to come in November: How I AI on Tuesday 17 November (this week only, not Wednesday) and Wednesday 25 November. Joining is free; order and pay for your own food and drinks at the venue.
+Updated 21 November 2026. Bali Startup & Tech Community runs two free event series in Canggu: How I AI every Wednesday, and [Networking Drinks & Dinner](/drinks-and-dinner) on the second Thursday of every month. Still to come in November: How I AI on Wednesday 25 November. Joining is free; order and pay for your own food and drinks at the venue.
 
 **How I AI:** every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu.
 
 | Date | Event page |
 |---|---|
 | Wednesday 11 November (past) | [How I AI, Edition 19](/events/how-i-ai-edition-19) |
-| Tuesday 17 November (this week only, not Wednesday) | [How I AI, Edition 20](/events/how-i-ai-edition-20) |
+| Tuesday 17 November (past) | [How I AI, Edition 20](/events/how-i-ai-edition-20) |
 | Wednesday 25 November | [How I AI, Edition 21](/events/how-i-ai-edition-21) |
 
 Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community
