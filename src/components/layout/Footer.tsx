@@ -56,6 +56,9 @@ function FooterColumn({
               <a href={link.href} target="_blank" rel="noopener noreferrer">
                 {link.label}
               </a>
+            ) : link.href.startsWith(SITE.joinForm) ? (
+              // /join is another app behind a rewrite: a Next Link would prefetch it and get a 404.
+              <a href={link.href}>{link.label}</a>
             ) : (
               <Link href={link.href}>{link.label}</Link>
             )}
