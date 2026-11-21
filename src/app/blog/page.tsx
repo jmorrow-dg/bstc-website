@@ -4,7 +4,7 @@ import { Calendar, ArrowRight, Clock } from "lucide-react";
 import { getAllBlogPosts, ContentItem, BlogFrontmatter } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Blog: Insights on Bali's Tech Scene, AI, and Startup Culture",
+  title: "Blog: Bali's Tech Scene, AI and Startup Culture",
   description:
     // Confirmed true by Lachlan, 28 Oct 2026
     "Thought leadership on Bali's growing tech ecosystem, AI trends, founder stories, and community insights from Southeast Asia's largest startup community.",

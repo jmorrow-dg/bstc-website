@@ -3,6 +3,7 @@
 
 User-agent: *
 Allow: /
+# Block paths that add no citation or ranking value
 Disallow: /api/
 
 # Explicitly welcome search engines
@@ -71,8 +72,22 @@ Allow: /
 User-agent: DiffBot
 Allow: /
 
-# Block paths that add no citation or ranking value
-User-agent: *
-Disallow: /api/
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
 
 Sitemap: https://www.balistartupandtech.com/sitemap.xml

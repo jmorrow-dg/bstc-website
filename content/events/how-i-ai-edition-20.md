@@ -4,6 +4,7 @@ slug: how-i-ai-edition-20
 date: "2026-11-17"
 time: "18:00"
 endTime: "21:00" # from the Luma 0zzumvch listing, read 13 Nov 2026
+series: "how-i-ai"
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: upcoming

@@ -34,7 +34,7 @@ export const FOUNDERS: Founder[] = [
   {
     name: "Josh Morrow",
     role: "Co-founder & Growth Lead",
-    bio: "Leads revenue, sponsorships, and the 'How I Build with AI' flagship series. Also runs David & Goliath, an AI growth agency.",
+    bio: "Leads revenue, sponsorships, and the 'How I Build with AI' flagship series.",
     tier: "Founder",
     city: "Melbourne, Australia",
     timeZone: "Australia/Melbourne",
