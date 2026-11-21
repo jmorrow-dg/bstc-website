@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
+import { MEMBERS_APP_URL, signInLink } from "@/lib/members-app.mjs";
 
 // Mobile menu keeps the two extra links the old mobile menu carried.
 const MOBILE_LINKS = [
@@ -12,6 +13,10 @@ const MOBILE_LINKS = [
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
 ];
+
+// Sign in to the members' area. Null, so no link anywhere in the header,
+// until MEMBERS_APP_URL is set in src/lib/members-app.mjs.
+const SIGN_IN = signInLink(MEMBERS_APP_URL);
 
 function isActive(pathname: string, href: string) {
   if (href.includes("#")) return false;
@@ -29,7 +34,7 @@ export default function Navbar() {
 
   return (
     <header className="gl-top">
-      <div className="gl-wrap gl-top-row">
+      <div className={SIGN_IN ? "gl-wrap gl-top-row gl-top-row--signin" : "gl-wrap gl-top-row"}>
         <Link
           href="/"
           className="gl-brand"
@@ -50,6 +55,12 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
+
+        {SIGN_IN && (
+          <a href={SIGN_IN.href} className="gl-top-signin">
+            {SIGN_IN.label}
+          </a>
+        )}
 
         <Link href="/join?src=nav" className="gl-btn gl-btn-red gl-top-join">
           Join the community
@@ -93,6 +104,15 @@ export default function Navbar() {
           >
             Join the community
           </Link>
+          {SIGN_IN && (
+            <a
+              href={SIGN_IN.href}
+              className="gl-btn gl-btn-line"
+              onClick={() => setMobileOpen(false)}
+            >
+              {SIGN_IN.label}
+            </a>
+          )}
         </nav>
       )}
     </header>
