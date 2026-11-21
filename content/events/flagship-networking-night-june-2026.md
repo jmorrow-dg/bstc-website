@@ -12,8 +12,8 @@ rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/
 coverImage: /images/events/networking-night.png
 description: "Our 37th community networking drinks & dinner. The room where Bali's best founders, engineers, and VCs come together. Monthly at Yema Kitchen, Canggu. Free entry, real connections, zero pitching."
 seo:
-  title: "BSTC Networking Drinks & Dinner #37: June 2026 | Bali Tech Events"
-  description: "Join 40-80 founders, engineers, and VCs at BSTC's flagship monthly networking night in Canggu, Bali on Thursday 18 June 2026. Free entry, open mic, high-signal connections."
+  title: "BSTC Networking Drinks & Dinner #37: June 2026"
+  description: "40 to 80 founders, engineers and VCs at BSTC's flagship monthly networking night in Canggu, Bali on 18 June 2026. Free entry and an open mic."
   keywords:
     - Bali networking event
     - tech meetup Bali
@@ -22,21 +22,21 @@ seo:
     - Bali tech event June 2026
 ---
 
-# Networking Drinks & Dinner — Edition #37
+# Networking Drinks & Dinner: Edition #37
 
-Our flagship monthly networking night returns for its **37th edition**. Every month, 40–80 founders, engineers, investors, and operators gather at Yema Kitchen in Canggu for the highest-signal networking event in Bali.
+Our flagship monthly networking night returns for its **37th edition**. Every month, 40 to 80 founders, engineers, investors, and operators gather at Yema Kitchen in Canggu for the highest-signal networking event in Bali.
 
 ## What to Expect
 
-**6:00 PM** — Doors open. Grab a drink. Find your name tag.
+**6:00 PM**: Doors open. Grab a drink. Find your name tag.
 
-**6:30 PM** — Welcome from the host. Quick housekeeping: *"No hard selling. Signal over noise. Builder-first."*
+**6:30 PM**: Welcome from the host. Quick housekeeping: *"No hard selling. Signal over noise. Builder-first."*
 
-**6:40 PM** — Open-mic intros. 60 seconds each. Name, what you're building, what you need.
+**6:40 PM**: Open-mic intros. 60 seconds each. Name, what you're building, what you need.
 
-**7:10 PM** — Open networking. The host floats, makes introductions, connects the right people. This is where the magic happens.
+**7:10 PM**: Open networking. The host floats, makes introductions, connects the right people. This is where the magic happens.
 
-**8:00 PM** — Close. Thank the venue. Tease next month's event.
+**8:00 PM**: Close. Thank the venue. Tease next month's event.
 
 ## Who's in the Room
 
@@ -49,3 +49,11 @@ On any given night you're rubbing shoulders with ex-Facebook and Amazon engineer
 - **Signal > noise.** Every conversation should add value.
 
 **Free entry. Always.** RSVP on Meetup to secure your spot.
+
+## More in this series
+
+Previous edition: [BSTC Flagship Networking Night: May 2026](/events/flagship-networking-night-may-2026).
+
+Next edition: [Bali Startup & Tech Community Networking Drinks & Dinner - Canggu #39](/events/networking-drinks-dinner-canggu-39).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.

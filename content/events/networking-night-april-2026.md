@@ -30,3 +30,11 @@ Our flagship monthly gathering. Come as you are, meet who you need to meet.
 - Signal > Noise
 
 Free entry. RSVP to secure your spot.
+
+## More in this series
+
+Previous edition: [BSTC Networking Night: March 2026](/events/networking-night-march-2026).
+
+Next edition: [Bali Startup & Tech Networking Drinks & Dinner: Berawa #36](/events/networking-drinks-berawa-april-2026).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.

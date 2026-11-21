@@ -12,7 +12,7 @@ rsvpUrl: https://www.meetup.com/bali-start-ups-tech-community/events/314360289/
 description: "Builders share the AI tools, workflows, and revenue behind their products. Open floor, Intel Drop, and two Builder Spotlights. Real numbers, no theory."
 seo:
   title: "How I AI: Edition #4 | BSTC Bali"
-  description: "Wednesday May 6 at Seoul Soul Project, Canggu. The builder-focused series about profiting from AI. Free entry, dinner & drinks at the venue."
+  description: "Wed May 6 at Seoul Soul Project, Canggu. The builder-focused series about profiting from AI. Free entry. Order your own dinner and drinks at the venue."
   keywords:
     - How I AI
     - AI builder event Bali
@@ -25,10 +25,10 @@ The fourth edition of **How I AI**: BSTC's builder-focused series about profitin
 Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 
 **Format:**
-- 6:30 PM: Open floor — share what you're shipping with AI
-- 7:00 PM: Intel Drop — the week in AI, broken down
-- 7:30 PM: Builder Spotlight #1 — real product, real revenue
-- 8:00 PM: Builder Spotlight #2 — real product, real revenue
+- 6:30 PM: Open floor: share what you're shipping with AI
+- 7:00 PM: Intel Drop: the week in AI, broken down
+- 7:30 PM: Builder Spotlight #1: real product, real revenue
+- 8:00 PM: Builder Spotlight #2: real product, real revenue
 - 8:30 PM: Open networking & dinner
 
 **Who this is for:**
@@ -36,4 +36,12 @@ Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 - Engineers building AI-powered features
 - Operators automating workflows with AI
 
-Free entry. Dinner and drinks at the venue are mandatory to support the host. RSVP on MeetUp.
+Free entry. You order and pay for your own food and drinks at the venue, which supports the host. RSVP on MeetUp.
+
+## More in this series
+
+Previous edition: [How I AI: Edition #3](/events/how-i-ai-edition-3).
+
+Next edition: [How I AI: Edition #5](/events/how-i-ai-edition-5).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.
