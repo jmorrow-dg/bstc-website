@@ -100,7 +100,10 @@ Read-only checks of the live site, plain Node, no dependencies. Evidence goes to
 node scripts/health/crawl.mjs                 # every sitemap URL: summary.md, crawl.csv, crawl.json
 node scripts/health/live-checks.mjs           # endpoints, known live issues, perks and member offer counts
 node scripts/health/crawl-diff.mjs OLD/crawl.json NEW/crawl.json NEW/crawl-diff.md
+node scripts/health/check-lists.mjs ~/orca/evidence/bstc/site-health-titles-DATE.md NEW/crawl.json title
 ```
+
+`check-lists.mjs` fails a titles or metas list whose "Current" lines no longer match live, whose options misstate their length or run over the limit, or which leaves out a page that is over the limit today. Name every page by its path, even inside a pattern group.
 
 Run the crawl first; live checks read its `crawl.json`. `summary.md` compares each metric with the baseline in `crawl.mjs`; update that baseline only when the daily prompt gives a new one. The diff lists added and removed URLs and every changed field, including the inbound pages each URL lost or gained. Expect many `lastmod` rows after a deploy: static pages carry the build time.
 
