@@ -1,6 +1,6 @@
 import { CONTACT_EMAIL, EVENT_ORGANIZER, SITE, STATS } from "./constants";
 import { canRsvpToEvent, isValidEventDate } from "./event-status";
-import { getVenue } from "./venues";
+import { getVenue, organizerWebsite } from "./venues";
 
 export function getOrganizationSchema() {
   return {
@@ -110,17 +110,23 @@ export function isIsoDateTimeWithZone(value?: string): value is string {
 // the venue name (the text before the first comma of `venue`, e.g.
 // "Yema Kitchen, Canggu" gives "Yema Kitchen"). A venue still marked TBA, or an
 // empty one, gives undefined: no organiser is invented and BSTC is never named.
+// When the event does not give a url, use the organiser's official site from
+// organizerWebsite(). An explicit url wins. Nothing is invented, and the
+// community homepage is not used as a stand-in.
 export function getEventOrganizer(event: {
   organizer?: string | { name: string; url?: string };
   venue?: string;
 }): { name: string; url?: string } | undefined {
   const own = typeof event.organizer === "string" ? { name: event.organizer } : event.organizer;
-  if (own?.name?.trim()) {
-    return { name: own.name.trim(), ...(own.url && { url: own.url }) };
+  let name = own?.name?.trim() ?? "";
+  let url = typeof own?.url === "string" ? own.url.trim() : "";
+  if (!name) {
+    name = event.venue?.split(",")[0].trim() ?? "";
+    url = "";
+    if (!name || /^(tba|tbc|tbd)$/i.test(name)) return undefined;
   }
-  const name = event.venue?.split(",")[0].trim();
-  if (!name || /^(tba|tbc|tbd)$/i.test(name)) return undefined;
-  return { name };
+  if (!url) url = organizerWebsite(name) ?? "";
+  return url ? { name, url } : { name };
 }
 
 // The BSTC team moderates every event. schema.org has no `moderator` property,
@@ -161,7 +167,11 @@ export function getEventSchema(event: {
 }, now: Date = new Date()) {
   if (!isValidEventDate(event.date)) return null;
 
-  const organizer = event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
+  const named = event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
+  // Same lookup as getEventOrganizer, so a caller that passes only a name
+  // still gets the official site. An explicit url wins.
+  const organizerUrl = (named.url && named.url.trim()) || (named.name ? organizerWebsite(named.name) : "") || "";
+  const organizer = { name: named.name, ...(organizerUrl && { url: organizerUrl }) };
   const statusMap: Record<string, string> = {
     upcoming: "https://schema.org/EventScheduled",
     completed: "https://schema.org/EventScheduled",
