@@ -25,7 +25,7 @@ const COMMUNITY_FAQS = [
   {
     question: "How do I join BSTC?",
     answer:
-      "Sign up at balistartupandtech.com/join and you'll get the Telegram community link straight after. Then RSVP on Meetup for events and show up. It's free to join and attend most events.",
+      "Sign up at balistartupandtech.com/join and you'll get the Telegram community link straight after. Then RSVP on Meetup for events and show up. Joining is free, and every BSTC event is free. You order and pay for your own food and drinks at the venue.",
   },
   {
     question: "Is BSTC only for people in Bali?",

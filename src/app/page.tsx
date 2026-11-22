@@ -448,8 +448,8 @@ export default async function Home() {
           <div className="gl-sec-head">
             <h2 id="mem-title">Members</h2>
             <p>
-              The co-founders who run Bali Startup &amp; Tech, with the time where
-              each one is based right now. Members find each other in the member
+              The co-founders who run Bali Startup &amp; Tech, with their local
+              times where listed. Members find each other in the member
               directory after the night ends, wherever they&apos;ve moved since.
             </p>
           </div>
@@ -463,19 +463,21 @@ export default async function Home() {
                 <span className="gl-tier">{person.tier}</span>
                 <h3>{person.name}</h3>
                 <p className="gl-role">{person.role}</p>
-                <div className="gl-p-city">
-                  <span>{person.city}</span>
-                  <p className="gl-clock">
-                    <LiveClock tz={person.timeZone} fallback={person.utcLabel} />
-                  </p>
-                  {person.homeGround ? (
-                    <span className="gl-home-tag">Home ground</span>
-                  ) : (
-                    <span className="gl-diff">
-                      <TimeDiff tz={person.timeZone} fallback="Local time" />
-                    </span>
-                  )}
-                </div>
+                {person.city && person.timeZone ? (
+                  <div className="gl-p-city">
+                    <span>{person.city}</span>
+                    <p className="gl-clock">
+                      <LiveClock tz={person.timeZone} fallback={person.utcLabel ?? ""} />
+                    </p>
+                    {person.homeGround ? (
+                      <span className="gl-home-tag">Home ground</span>
+                    ) : (
+                      <span className="gl-diff">
+                        <TimeDiff tz={person.timeZone} fallback="Local time" />
+                      </span>
+                    )}
+                  </div>
+                ) : null}
                 <p className="gl-bio">{person.bio}</p>
                 <p className="gl-p-links">
                   <a href={person.profileUrl} aria-label={`${person.name}'s full profile`}>
