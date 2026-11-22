@@ -24,7 +24,7 @@ faq:
 
 Meet founders, engineers and remote builders at Bali Startup & Tech Community's free events in Canggu. [Join BSTC for free](/join?src=blog-digital-nomad-community-bali-answer) to connect with the community before your first event.
 
-**Upcoming dates, updated 5 November 2026:** [How I AI](/events/how-i-ai-edition-19) runs every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project; [Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39) is Thursday 12 November, from 6:30 PM WITA at Yema Kitchen. Both are free; order and pay for your own food and drinks.
+**BSTC's regular events:** How I AI runs every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, and Networking Drinks & Dinner runs on the second Thursday of every month, from 6:30 PM WITA at Yema Kitchen. Both are free; order and pay for your own food and drinks. Every upcoming date is on the [events page](/events).
 
 
 
@@ -81,7 +81,7 @@ It depends on what you're building and who you sell to. Bali runs on WITA (UTC+8
 1. Sign up at [/join](/join?src=blog-digital-nomad-community-bali-inline) before you land so you're in the chat on day one.
 2. Go to How I AI on Wednesday. Go again the next Wednesday.
 3. Work from a coworking space a few days a week rather than your villa.
-4. Go to the next monthly dinner (Thursday 12 November 2026 at Yema Kitchen, Canggu, 6:30pm, per the [event page](/events/networking-drinks-dinner-canggu-39)).
+4. Go to the next monthly dinner (the second Thursday of the month at Yema Kitchen, Canggu, 6:30pm; dates on the [Drinks & Dinner page](/drinks-and-dinner)).
 5. Post one specific ask in the chat: a question, an intro you need, or feedback on something you've shipped.
 
 The day-by-day version is in [how to meet founders and tech people in Bali](/blog/meet-founders-in-bali).

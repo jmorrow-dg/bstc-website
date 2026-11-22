@@ -22,7 +22,7 @@ To meet investors in Bali, start with the founder and operator community at BSTC
 
 ## Where to meet investors at BSTC events
 
-100+ founders, operators and VCs in the room every week. See the [next How I AI night](/events/how-i-ai-edition-21) and [Networking Drinks & Dinner #40](/events/networking-drinks-dinner-canggu-40); no hard selling.
+100+ founders, operators and VCs in the room every week. See the [next How I AI night](/events) and the [next Networking Drinks & Dinner](/drinks-and-dinner); no hard selling.
 
 ## Where can I pitch my startup in Bali?
 

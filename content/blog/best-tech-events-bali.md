@@ -26,25 +26,17 @@ seo:
     - tech community Bali events
 ---
 
-## This month in Bali: November 2026
+## BSTC's regular events in Bali
 
-Updated 21 November 2026. Bali Startup & Tech Community runs two free event series in Canggu: How I AI every Wednesday, and [Networking Drinks & Dinner](/drinks-and-dinner) on the second Thursday of every month. Still to come in November: How I AI on Wednesday 25 November. Joining is free; order and pay for your own food and drinks at the venue.
+Bali Startup & Tech Community runs two free event series in Canggu: How I AI every Wednesday, and [Networking Drinks & Dinner](/drinks-and-dinner) on the second Thursday of every month. Joining is free; order and pay for your own food and drinks at the venue. Every upcoming date, with its RSVP link, is on the [events page](/events).
 
-**How I AI:** every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu.
-
-| Date | Event page |
-|---|---|
-| Wednesday 11 November (past) | [How I AI, Edition 19](/events/how-i-ai-edition-19) |
-| Tuesday 17 November (past) | [How I AI, Edition 20](/events/how-i-ai-edition-20) |
-| Wednesday 25 November | [How I AI, Edition 21](/events/how-i-ai-edition-21) |
+**How I AI:** every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu. See the [next How I AI night](/events).
 
 Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community
 
-**[Networking Drinks & Dinner #39](/events/networking-drinks-dinner-canggu-39):** ran on Thursday 12 November 2026 at Yema Kitchen, Jl. Tanah Barak No.31, Canggu. The next one is [#40](/events/networking-drinks-dinner-canggu-40) on Thursday 10 December 2026, from 6:30 PM WITA.
+**Networking Drinks & Dinner:** the second Thursday of every month, from 6:30 PM WITA at Yema Kitchen, Jl. Tanah Barak No.31, Canggu. See the [next dinner](/drinks-and-dinner).
 
 Locally hosted by Yema Kitchen · Moderated by Bali Startup & Tech Community
-
-**Coming up in December:** [How I AI, Edition 22](/events/how-i-ai-edition-22) on Wednesday 2 December, and [Networking Drinks & Dinner #40](/events/networking-drinks-dinner-canggu-40) on Thursday 10 December 2026 from 6:30 PM WITA at Yema Kitchen, Canggu. Both are free.
 
 [Join Bali Startup & Tech Community](/join?src=blog-best-tech-events-bali-november) for the community chat and upcoming event details.
 
