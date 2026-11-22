@@ -50,7 +50,7 @@ export const CITY_COMPARISONS: CityComparison[] = [
     ],
     whoShouldChooseBali: "Funded or revenue-generating founders who value community, lifestyle leverage, and being around other serious operators in person.",
     whoShouldChooseCity: "Bootstrapped solo founders or small remote teams optimising for low burn and deep focus over networking density.",
-    metaDescription: "Bali vs Chiang Mai for founders in 2026: cost, community, infrastructure, time zones, and which hub fits your stage. Honest comparison from operators who've lived in both.",
+    metaDescription: "Bali vs Chiang Mai for founders in 2026: cost, community, infrastructure, time zones and fit by stage. Honest comparison from operators in both.",
   },
   {
     slug: "lisbon",
@@ -79,7 +79,7 @@ export const CITY_COMPARISONS: CityComparison[] = [
     ],
     whoShouldChooseBali: "Founders selling globally or to Asia, building AI products, prioritising community density and lifestyle over EU access.",
     whoShouldChooseCity: "Funded founders selling to EU customers, founders pursuing EU residency or citizenship, founders who need the time zone overlap.",
-    metaDescription: "Bali vs Lisbon for founders in 2026: cost, community, time zones, taxes. Which European or Southeast Asian hub fits your startup stage. Honest founder comparison.",
+    metaDescription: "Bali vs Lisbon for founders in 2026: cost, community, time zones, taxes. Which European or Southeast Asian hub fits your stage, compared honestly.",
   },
   {
     slug: "singapore",
@@ -108,7 +108,7 @@ export const CITY_COMPARISONS: CityComparison[] = [
     ],
     whoShouldChooseBali: "Pre-PMF founders, bootstrapped operators, founders prioritising community and lifestyle over corporate infrastructure.",
     whoShouldChooseCity: "Funded founders raising from SEA VCs, founders selling to enterprises, founders who need the credibility of a Singapore base.",
-    metaDescription: "Bali vs Singapore for founders in 2026: cost, community, talent, infrastructure, tax. Which Southeast Asian hub fits your stage. Honest comparison from operators in both.",
+    metaDescription: "Bali vs Singapore for founders in 2026: cost, community, talent, infrastructure, tax. Which hub fits your stage. Honest comparison from operators in both.",
   },
   {
     slug: "ho-chi-minh-city",
@@ -137,7 +137,7 @@ export const CITY_COMPARISONS: CityComparison[] = [
     ],
     whoShouldChooseBali: "Founders building globally-facing products, prioritising founder community density, and valuing English-language operations.",
     whoShouldChooseCity: "Founders specifically targeting the Vietnamese market, hiring Vietnamese engineering talent locally, or pursuing Vietnam-specific opportunities.",
-    metaDescription: "Bali vs Ho Chi Minh City for founders in 2026: cost, community, talent, infrastructure. Which Southeast Asian hub fits your startup. Honest founder comparison.",
+    metaDescription: "Bali vs Ho Chi Minh City for founders in 2026: cost, community, talent, infrastructure. Which Southeast Asian hub fits your startup, compared honestly.",
   },
   {
     slug: "jakarta",
@@ -195,7 +195,7 @@ export const CITY_COMPARISONS: CityComparison[] = [
     ],
     whoShouldChooseBali: "Founders prioritising community density, focus, and lifestyle. Pre-PMF or revenue-positive operators who do not need a corporate APAC base.",
     whoShouldChooseCity: "Funded founders needing APAC airport connectivity, founders qualifying for LTR visa tax treatment, enterprise-focused operators.",
-    metaDescription: "Bali vs Bangkok for founders in 2026: cost, visas, community, tax, infrastructure. Two Southeast Asian hubs compared. Honest founder comparison from BSTC operators.",
+    metaDescription: "Bali vs Bangkok for founders in 2026: cost, visas, community, tax, infrastructure. Two Southeast Asian hubs in an honest comparison from BSTC operators.",
   },
   {
     slug: "manila",
@@ -369,7 +369,7 @@ export const CITY_COMPARISONS: CityComparison[] = [
     ],
     whoShouldChooseBali: "Founders selling globally or to Asia, prioritising founder community density, building AI or B2B SaaS for non-US-only markets.",
     whoShouldChooseCity: "Founders selling primarily to US customers, US founders who need to fly home regularly, founders prioritising US time zone overlap.",
-    metaDescription: "Bali vs Mexico City for founders in 2026: cost, time zones, community, US access. Which hub fits your startup stage. Honest comparison from operators in both.",
+    metaDescription: "Bali vs Mexico City for founders in 2026: cost, time zones, community, US access. Which hub fits your stage. Honest comparison from operators in both.",
   },
   {
     slug: "tbilisi",
@@ -430,3 +430,12 @@ export const CITY_COMPARISONS: CityComparison[] = [
     metaDescription: "Bali vs Medellín for founders in 2026: cost, time zones, community, US access. Which hub fits your stage. Honest founder comparison.",
   },
 ];
+
+// Only mark up answers already rendered in the comparison's quick verdict.
+// Both the visible cards and schema read these same source fields.
+export function getCityComparisonFaqs(city: CityComparison) {
+  return [
+    { question: `Who should choose Bali over ${city.city}?`, answer: city.whoShouldChooseBali },
+    { question: `Who should choose ${city.city} over Bali?`, answer: city.whoShouldChooseCity },
+  ];
+}
