@@ -3,12 +3,12 @@
 // says otherwise. Lachlan confirmed the carried-over claims true on 28 Oct 2026;
 // keep them.
 
-import { SITE, STATS } from "@/lib/constants";
+import { MEETUP_CHECKED, SITE, STATS, WHATSAPP_CHECKED } from "@/lib/constants";
 
-// Answer-first summary under the hero, held for Josh's yes. The 3,900+ total
-// isn't in STATS yet: lane 2 owns constants.ts and has the request.
+// Answer-first summary under the hero. Each member count carries the date it was
+// read, as everywhere else on the site. The 3,900+ total isn't in STATS on main yet.
 export const ENTITY = {
-  text: `${SITE.fullName} (${SITE.name}) is Southeast Asia's largest tech community, built in Bali: ${STATS.members.toLocaleString("en-US")}+ members on Meetup and 3,900+ across Meetup and WhatsApp. Every event is free. Join at`,
+  text: `${SITE.fullName} (${SITE.name}) is Southeast Asia's largest tech community, built in Bali: ${STATS.members.toLocaleString("en-US")}+ members on Meetup (${MEETUP_CHECKED}) and 3,900+ across Meetup and WhatsApp (${WHATSAPP_CHECKED}). Every event is free. Join at`,
   joinLabel: `${SITE.domain}/join`,
   joinHref: `${SITE.joinForm}?src=home-entity`,
 };
