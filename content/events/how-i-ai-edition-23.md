@@ -3,16 +3,20 @@ title: "How I AI | Edition 23"
 slug: how-i-ai-edition-23
 date: "2026-12-09"
 time: "18:00"
+endTime: "21:00" # from the Luma irlzzq3t listing, read 13 Nov 2026
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: upcoming
 capacity: 50
-rsvpUrl: ""
+announced: "2026-11-13T19:30:00+08:00"
+rsvpUrl: https://luma.com/irlzzq3t
 coverImage: /images/events/how-i-ai-season-2.jpg
+cardImage: /images/events/how-i-ai/e23-2026-12-09-card.webp
+cardImageAlt: "How I AI Edition 23, Wed 9 Dec 2026, 6pm at Seoul Soul Project, Canggu"
 description: "BSTC's weekly builder night: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
 seo:
   title: "How I AI | Edition 23 | BSTC Bali"
-  description: "Wed 9 Dec, 6pm, Seoul Soul Project, Canggu. How I AI Edition 23, BSTC's weekly builder night. Free entry. Order your own dinner and drinks at the venue."
+  description: "Wednesday 9 December, 6pm at Seoul Soul Project, Canggu. Edition 23 of BSTC's weekly builder night about making money with AI. Free entry, dinner & drinks at the venue."
   keywords:
     - How I AI
     - AI builder event Bali
@@ -22,7 +26,7 @@ seo:
 
 **How I AI, Edition 23.** BSTC's weekly builder series at Seoul Soul Project, every Wednesday.
 
-Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community.
+Locally hosted by Seoul Soul Project · Moderated by Bali Start-Up & Tech Community.
 
 Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 
@@ -40,4 +44,4 @@ Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 - Operators automating workflows with AI
 - Anyone who wants to stop reading about AI and start profiting from it
 
-Free entry. Please order dinner and/or drinks to support the venue that supports the community. RSVP: `source needed`. [Join the BSTC community](https://www.balistartupandtech.com/join?src=event-website) for the community chat and a free member profile.
+Free entry. Please order dinner and/or drinks to support the venue that supports the community. [RSVP on Luma](https://luma.com/irlzzq3t), then [join the BSTC community](https://www.balistartupandtech.com/join?src=event-website) for the community chat and a free member profile.

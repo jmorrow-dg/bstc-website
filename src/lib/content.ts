@@ -13,12 +13,28 @@ export interface EventFrontmatter {
   slug: string;
   date: string;
   time: string;
+  schema?: boolean;
+  pastList?: boolean;
+  // Finish time (HH:MM, Bali time), copied from the night's own RSVP listing
+  // (Meetup or Luma) with the listing named in a comment beside it. Leave it
+  // out when the listing gives none: the page and Event schema then omit it.
+  endTime?: string;
+  series?: string;
+  updated?: string;
   venue: string;
   type: "networking" | "roundtable" | "builder-session" | "how-i-build-with-ai";
   status: "upcoming" | "completed";
   capacity: number;
   rsvpUrl: string;
+  // When the event page first went live on main (ISO 8601 with offset). Used as
+  // Event schema `offers.validFrom`. Required on upcoming events with an RSVP link.
+  announced?: string;
   coverImage?: string;
+  // An image for this night's card on /events only, so the list tells the nights
+  // apart (a How I AI edition's own image: its number, day and venue, 15 Nov 2026).
+  // The event page and the series page keep coverImage. Give cardImageAlt with it.
+  cardImage?: string;
+  cardImageAlt?: string;
   description: string;
   builder?: {
     name: string;
@@ -34,7 +50,7 @@ export interface EventFrontmatter {
   };
   // Organiser of record for this event. Falls back to EVENT_ORGANIZER in
   // constants.ts when omitted.
-  organizer?: {
+  organizer?: string | {
     name: string;
     url?: string;
   };
@@ -56,6 +72,7 @@ export interface EventFrontmatter {
 }
 
 export interface BlogFrontmatter {
+  updated?: string;
   title: string;
   slug: string;
   date: string;
@@ -175,7 +192,7 @@ export function getPastEvents(
   events: ContentItem<EventFrontmatter>[],
   now: Date = new Date()
 ): ContentItem<EventFrontmatter>[] {
-  return events.filter((e) => getEventState(e.frontmatter, now) === "past");
+  return events.filter((e) => e.frontmatter.pastList !== false && getEventState(e.frontmatter, now) === "past");
 }
 
 export function getHIWAEvents(

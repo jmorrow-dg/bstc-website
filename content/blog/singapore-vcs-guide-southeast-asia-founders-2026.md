@@ -9,8 +9,8 @@ readTime: "12 min"
 tags: ["singapore vcs", "fundraising", "southeast asia", "venture capital", "founders", "seed", "series a"]
 excerpt: "The practical 2026 playbook for Southeast Asia founders raising from Singapore-based VCs. Who is writing cheques, at what stage, and how to get a warm intro that actually converts, from BSTC operators who have raised from them."
 seo:
-  title: "Singapore VCs 2026: Who Invests, Cheque Sizes, and How to Pitch Them (Founder Guide)"
-  description: "The Southeast Asia founder's 2026 guide to Singapore VCs. Peak XV, Jungle, Monk's Hill, Openspace, Insignia, East Ventures, Wavemaker, and more. Stage, cheque sizes, thesis, and how to actually get in."
+  title: "Singapore VCs 2026: Who Invests, Cheques, Pitching"
+  description: "Singapore VCs for SEA founders in 2026: Peak XV, Jungle, Monk's Hill, Openspace, Insignia, East Ventures, Wavemaker, cheque sizes and how to get in."
   keywords: ["singapore vcs", "southeast asia VC list", "peak XV", "jungle ventures", "monks hill", "openspace ventures", "insignia ventures", "how to raise from singapore VCs", "SEA fundraising", "singapore venture capital"]
 ---
 
@@ -155,7 +155,7 @@ This pattern works. It requires willingness to travel and discipline in the pre-
 
 ## Next steps
 
-If you are preparing to raise from Singapore VCs in the next 12 months, the highest-leverage work is not the deck. It is the 10-to-15 warm-intro pipeline you build in the 12 months before the raise. BSTC has 2,700+ members across Southeast Asia including founders who have raised from every fund listed above, operators who can make warm intros, and angel investors writing SEA cheques in 2026.
+If you are preparing to raise from Singapore VCs in the next 12 months, the highest-leverage work is not the deck. It is the 10-to-15 warm-intro pipeline you build in the 12 months before the raise. BSTC has 2,700+ members (Meetup, 25 Oct 2026) across Southeast Asia including founders who have raised from every fund listed above, operators who can make warm intros, and angel investors writing SEA cheques in 2026.
 
 [Join the community](/join?src=blog-singapore-vcs-guide-southeast-asia-founders-2026-inline) to get access to the weekly intel, warm-intro asks, and pre-raise prep sessions that happen across our WhatsApp groups and in-person events.
 

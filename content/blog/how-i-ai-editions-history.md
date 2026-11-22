@@ -1,7 +1,7 @@
 ---
 title: "How I AI Editions: Event History and Upcoming Dates"
 slug: how-i-ai-editions-history
-updated: "2026-11-05"
+updated: "2026-11-21"
 date: "2026-10-30"
 author: Bali Startup & Tech Community
 category: guide
@@ -30,6 +30,8 @@ Dates and venues below come from the linked event pages. This is an index of ava
 | [How I AI: Edition #10](/events/how-i-ai-edition-10) | 2026-06-17 | Seoul Soul Project, Canggu |
 | [How I AI: Edition #11](/events/how-i-ai-edition-11) | 2026-06-24 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 18](/events/how-i-ai-season-2-edition-18) | 2026-11-04 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 19](/events/how-i-ai-edition-19) | 2026-11-11 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 20](/events/how-i-ai-edition-20) | 2026-11-17 (Tuesday) | Seoul Soul Project, Canggu |
 
 ## Upcoming editions
 
@@ -37,11 +39,23 @@ Every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang L
 
 | Edition | Date | Venue |
 |---|---|---|
-| [How I AI, Edition 19](/events/how-i-ai-edition-19) | 2026-11-11 | Seoul Soul Project, Canggu |
-| [How I AI, Edition 20](/events/how-i-ai-edition-20) | 2026-11-18 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 21](/events/how-i-ai-edition-21) | 2026-11-25 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 22](/events/how-i-ai-edition-22) | 2026-12-02 | Seoul Soul Project, Canggu |
 | [How I AI, Edition 23](/events/how-i-ai-edition-23) | 2026-12-09 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 24](/events/how-i-ai-edition-24) | 2026-12-16 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 25](/events/how-i-ai-edition-25) | 2027-01-06 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 26](/events/how-i-ai-edition-26) | 2027-01-13 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 27](/events/how-i-ai-edition-27) | 2027-01-20 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 28](/events/how-i-ai-edition-28) | 2027-01-27 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 29](/events/how-i-ai-edition-29) | 2027-02-03 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 30](/events/how-i-ai-edition-30) | 2027-02-10 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 31](/events/how-i-ai-edition-31) | 2027-02-17 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 32](/events/how-i-ai-edition-32) | 2027-02-24 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 33](/events/how-i-ai-edition-33) | 2027-03-03 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 34](/events/how-i-ai-edition-34) | 2027-03-10 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 35](/events/how-i-ai-edition-35) | 2027-03-17 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 36](/events/how-i-ai-edition-36) | 2027-03-24 | Seoul Soul Project, Canggu |
+| [How I AI, Edition 37](/events/how-i-ai-edition-37) | 2027-03-31 | Seoul Soul Project, Canggu |
 
 Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community
 

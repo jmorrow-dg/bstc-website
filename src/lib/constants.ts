@@ -5,11 +5,10 @@
 export const CONTACT_EMAIL = "hello@remotebuilders.io";
 
 // Organiser of record for events, used in Event schema `organizer`.
-// Events now run with a local Indonesian host partner as the organiser of
-// record, so BSTC must not be named as organiser.
-// TODO(josh): fill in the host partner's name (and URL). While `name` is
-// empty, Event schema omits `organizer` rather than naming BSTC. An event can
-// override this with an `organizer:` block in its frontmatter.
+// Josh, 10 Nov 2026: the venue is the organiser on every event and the BSTC
+// team is the moderator (schema `contributor`, see getEventSchema). The venue is
+// derived per event by getEventOrganizer() in schema.ts, so this default stays
+// empty: an event with no venue data omits `organizer` rather than naming BSTC.
 export const EVENT_ORGANIZER: { name: string; url?: string } = {
   name: "",
   url: "",
@@ -44,7 +43,6 @@ export const SITE = {
   memberDirectory: "https://remotebuilders.io/directory/",
   linkedin: "https://www.linkedin.com/groups/14424020/",
   instagram: "https://www.instagram.com/bali_tech_community/",
-  founded: "2023",
   location: "Canggu, Bali, Indonesia",
 };
 
@@ -56,6 +54,8 @@ export const SITE = {
 // Shown rounded down: members "2,700+", events "50+".
 export const STATS = {
   members: 2700,
+  // Meetup plus WhatsApp reach, approved figure (PR #28): 3,900+.
+  totalMembers: 3900,
   events: 50,
   // Meetup group page, read 26 Oct 2026: 4.7 from 155 ratings, 2,734 members.
   rating: 4.7,
@@ -66,6 +66,7 @@ export const STATS = {
 
 export const NAV_LINKS = [
   { label: "Events", href: "/events" },
+  { label: "Drinks & Dinner", href: "/drinks-and-dinner" },
   { label: "How I AI", href: "/how-i-build-with-ai" },
   { label: "Members", href: "/#members" },
   { label: "Perks", href: "/perks" },
@@ -90,7 +91,7 @@ export const BRAND = {
 } as const;
 
 // TODO(josh): fill these in as links/keys become available.
-// All values are safe placeholders — the page renders gracefully when empty.
+// All values are safe placeholders: the page renders gracefully when empty.
 export const SPONSOR_CONFIG = {
   // Cal.com booking URL for sponsor intro calls. Leave "" to fall back to /sponsors/apply.
   // Example: "https://cal.com/josh-morrow/sponsor-intro"
@@ -104,7 +105,7 @@ export const SPONSOR_CONFIG = {
   },
 
   // Logo wall. Add objects to render. Empty until partners are confirmed.
-  // Anthropic pending global-partnership-program approval — do not add until approved.
+  // Anthropic pending global-partnership-program approval: do not add until approved.
   partners: [] as { name: string; url?: string; logoSrc?: string }[],
 
   // Sponsor contact shown on /sponsors and /sponsors/apply.

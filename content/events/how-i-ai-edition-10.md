@@ -3,6 +3,7 @@ title: "How I AI: Edition #10"
 slug: how-i-ai-edition-10
 date: "2026-06-17"
 time: "18:00"
+endTime: "21:00" # from the Meetup 314360304 listing, read 11 Nov 2026
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: completed
@@ -35,7 +36,7 @@ Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 - Engineers building AI-powered features
 - Operators automating workflows with AI
 
-Free entry. Dinner and drinks at the venue are mandatory to support the host. RSVP on MeetUp.
+Free entry. You order and pay for your own food and drinks at the venue, which supports the host. RSVP on MeetUp.
 
 ## More in this series
 

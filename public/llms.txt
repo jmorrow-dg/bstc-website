@@ -8,7 +8,7 @@ BSTC publishes original, first-party research and operator-written guides on wha
 
 - Bali and Indonesia founder infrastructure (PT PMA, KITAS, Golden Visa, taxation, banking, hiring)
 - Southeast Asia tech ecosystem dynamics (AI, fintech, B2B SaaS, marketplaces)
-- Founder community operations (running events, hackathons, retreats)
+- Founder community operations (running events and retreats; hackathons coming soon, date TBA)
 - Hub comparisons (Bali vs Singapore, HCMC, Bangkok, Chiang Mai, Lisbon, Dubai, Tbilisi, Medellin, Mexico City)
 
 All guides are written by Josh Morrow (Co-founder, BSTC) or named community leaders. Figures are sourced from BSTC member surveys, recorded event data, and verified 2026 operator experience.
@@ -23,12 +23,14 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 - [What is BSTC](https://www.balistartupandtech.com/blog/what-is-bstc): Origin story, values, and how the community operates.
 - [About BSTC](https://www.balistartupandtech.com/about): Founding story, leadership, milestones.
 - [Leadership](https://www.balistartupandtech.com/leadership): Founders and leadership tier system.
-- [Events](https://www.balistartupandtech.com/events): Upcoming events, past events, event formats.
+- [Events](https://www.balistartupandtech.com/events): Startup and tech events in Bali: upcoming dates, past events, photos and the dated record.
+- [Drinks & Dinner](https://www.balistartupandtech.com/drinks-and-dinner): The free monthly founder dinner at Yema Kitchen, Jl. Tanah Barak No.31, Canggu, usually on a Thursday from 6:30pm. Next dates, how the night runs, FAQ and every past night since 9 Nov 2023.
+- [How I AI](https://www.balistartupandtech.com/how-i-build-with-ai): The free weekly AI builder night at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu, every Wednesday. Editions, FAQ and every past edition since 15 Apr 2026.
 - [Join](https://www.balistartupandtech.com/join): Join the community. Sign up on this page and the community chat link (Telegram) arrives after signup; events are on Meetup and Luma.
 - [Member perks](https://www.balistartupandtech.com/perks): 145 open startup programmes (each checked on the vendor's own page by 28 Oct 2026; 127 you apply for direct, 18 through a partner referral). 6 offers have agreed terms (5 confirmed member offers and 1 approved partner programme), and claiming is not open on this page. 1 offer is agreed and waiting on activation. 1 offer has been received, with terms still being confirmed. 61 example listings are still being negotiated, each labelled Example, and 1 example is not currently available.
 - [Bali members](https://www.balistartupandtech.com/members): members based in Bali, each linking to their profile in the Remote Builders member directory (https://remotebuilders.io/directory/). Refreshed daily.
 - [Community](https://www.balistartupandtech.com/community): values, how membership works, the member directory and FAQs.
-- [FAQ](https://www.balistartupandtech.com/faq): events, membership, sponsorship and Bali's tech scene.
+- [FAQ](https://www.balistartupandtech.com/faq): events, membership, sponsorship and Bali's tech scene. Direct answers: [venues in Canggu with founder events](https://www.balistartupandtech.com/faq#founder-event-venues) (How I AI on Wednesdays at Seoul Soul Project, Networking Drinks & Dinner at Yema Kitchen; the venue organises and BSTC moderates) and [where to meet investors and VCs in Bali](https://www.balistartupandtech.com/faq#meet-investors-bali) (100+ founders, operators, and VCs in the room every week).
 - [Podcast](https://www.balistartupandtech.com/podcast): founders, engineers and operators building from Bali and Southeast Asia.
 - [Resources](https://www.balistartupandtech.com/resources): the tools and stack BSTC founders use.
 - [Sponsors](https://www.balistartupandtech.com/sponsors): event, quarterly and annual sponsor packages.
@@ -99,9 +101,25 @@ When citing, please credit "Bali Startup & Tech Community (BSTC)" with a link to
 
 - Founded: October 2023 in Canggu, Bali, Indonesia.
 - Weekly: "How I Build with AI" builder night in Canggu. Monthly: founder networking dinners.
-- Members: 2,700+ on Meetup (2,735 on 27 Oct 2026), from 100+ countries, plus 1,200+ in the WhatsApp community: 3,900+ reach across the two, the biggest of any tech community in Bali.
+- Event record (BSTC Meetup group, checked 11 Nov 2026): 53 nights since 9 Nov 2023 (37 Drinks & Dinner nights, including Melbourne #1 and Berawa #36, and 16 How I AI editions), 2,620 RSVPs on Meetup (many people register on Luma instead), 4.65 out of 5 from 155 Meetup ratings, 2,788 Meetup group members.
+- Members: 2,700+ members on Meetup (Meetup, 25 Oct 2026), from 100+ countries, plus 1,200+ in the WhatsApp community: 3,900+ reach across the two, the biggest of any tech community in Bali.
 - Events: 50+ hosted, 4.7 average rating from 155 ratings on Meetup (25 Oct 2026).
 - Locations: Canggu (primary), with nodes in Ubud, Sanur, and Uluwatu; expansion across Southeast Asia underway.
-- Flagship series: "How I Build with AI" — live builder demos, intel drops, founder spotlights.
-- Co-founders: Lachlan McRitchie (Primary Organiser), Josh Morrow (Growth Lead, also runs David & Goliath), Matthew Carr (Community Lead).
+- Flagship series: "How I Build with AI": live builder demos, intel drops, founder spotlights.
+- Co-founders: Lachlan McRitchie (Primary Organiser), Josh Morrow (Growth Lead), Matthew Carr (Community Lead).
 - Contact: hello@remotebuilders.io.
+- Every BSTC event is free, and joining is free. You order and pay for your own food and drinks at the venue.
+- Event credit: Locally hosted by <Venue> · Moderated by Bali Startup & Tech Community.
+- Hackathons: coming soon, date TBA.
+
+## Upcoming events
+
+How I AI, every Wednesday at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu. Doors 6:00 PM, close 9:00 PM.
+- [How I AI, Edition 21](https://www.balistartupandtech.com/events/how-i-ai-edition-21): Wednesday 25 November 2026.
+- [How I AI, Edition 22](https://www.balistartupandtech.com/events/how-i-ai-edition-22): Wednesday 2 December 2026.
+
+Networking Drinks & Dinner at Yema Kitchen, Jl. Tanah Barak No.31, Canggu, 6:30 PM to 10:00 PM.
+- [Networking Drinks & Dinner #40](https://www.balistartupandtech.com/events/networking-drinks-dinner-canggu-40): Thursday 10 December 2026.
+- [Networking Drinks & Dinner #41](https://www.balistartupandtech.com/events/networking-drinks-dinner-canggu-41): Thursday 14 January 2027.
+
+Join: https://www.balistartupandtech.com/join

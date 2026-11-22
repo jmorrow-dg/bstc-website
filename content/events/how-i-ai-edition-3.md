@@ -3,6 +3,7 @@ title: "How I AI: Edition #3"
 slug: how-i-ai-edition-3
 date: "2026-04-29"
 time: "18:00"
+endTime: "21:00" # from the Meetup 314360277 listing, read 11 Nov 2026
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: completed
@@ -35,7 +36,7 @@ Intimate tech dinner meets live demo night. No theory. No hype. No "AI will chan
 - Engineers building AI-powered features
 - Operators automating workflows with AI
 
-Free entry. Dinner and drinks at the venue are mandatory to support the host. RSVP on MeetUp.
+Free entry. You order and pay for your own food and drinks at the venue, which supports the host. RSVP on MeetUp.
 
 ## More in this series
 

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   Calendar,
-  MapPin,
   Users,
   Clock,
   ArrowLeft,
@@ -20,12 +19,22 @@ import {
   formatEventDate,
   formatEventType,
 } from "@/lib/content";
-import { getEventSchema } from "@/lib/schema";
+import { getEventOrganizer, getEventSchema } from "@/lib/schema";
 import { SITE } from "@/lib/constants";
 import { canRsvpToEvent, getEventState, rsvpPlatform } from "@/lib/event-status";
+import {
+  EventPageProof,
+  EventVenueLine,
+  eventSchemaPhoto,
+  eventTimeRange,
+} from "@/components/events/EventPageExtras";
 
 // Upcoming vs past is derived from the current Bali date, so re-render hourly.
 export const revalidate = 3600;
+
+// Only the event files are pages: any other slug is a real 404, not a 200
+// "not found" page (the loading boundary used to stream a 200 first).
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const events = await getAllEvents();
@@ -75,17 +84,31 @@ export default async function EventPage({
   const canRsvp = canRsvpToEvent(e, now);
   const hasRecap = e.status === "completed" && e.recap;
 
-  const eventSchema = getEventSchema({
+  const timeline = (await getAllEvents())
+    .filter((x) => x.frontmatter.pastList !== false)
+    .reverse();
+  const position = timeline.findIndex((x) => x.frontmatter.slug === e.slug);
+  const prevEvent = position > 0 ? timeline[position - 1].frontmatter : null;
+  const nextEvent =
+    position >= 0 && position < timeline.length - 1
+      ? timeline[position + 1].frontmatter
+      : null;
+
+  const eventSchema = e.schema === false ? null : getEventSchema({
     title: e.title,
     description: e.description,
     date: e.date,
     time: e.time,
+    series: e.series,
     venue: e.venue,
     url: `${SITE.url}/events/${e.slug}`,
     image: e.coverImage,
     status: e.status,
     rsvpUrl: e.rsvpUrl,
-    organizer: e.organizer,
+    announced: e.announced,
+    organizer: getEventOrganizer(e),
+    endTime: e.endTime,
+    photo: eventSchemaPhoto(e.type),
   }, now);
 
   return (
@@ -116,6 +139,7 @@ export default async function EventPage({
       {/* Navigation */}
       <div className="max-w-site mx-auto px-6 pt-6 space-y-3">
         <Breadcrumbs
+          currentUrl={`/events/${e.slug}`}
           items={[
             { label: "Home", href: "/" },
             { label: "Events", href: "/events" },
@@ -164,12 +188,9 @@ export default async function EventPage({
               </span>
               <span className="flex items-center gap-2">
                 <Clock size={16} className="text-brand-red" />
-                {e.time} WITA
+                {eventTimeRange(e)}
               </span>
-              <span className="flex items-center gap-2">
-                <MapPin size={16} className="text-brand-red" />
-                {e.venue}
-              </span>
+              <EventVenueLine venue={e.venue} />
               {(hasRecap || isUpcoming) && (
                 <span className="flex items-center gap-2">
                   <Users size={16} className="text-brand-red" />
@@ -347,6 +368,8 @@ export default async function EventPage({
         </section>
       )}
 
+      <EventPageProof type={e.type} />
+
       {/* Content Body */}
       <section className="pb-16 md:pb-24">
         <div className="max-w-site mx-auto px-6">
@@ -363,6 +386,37 @@ export default async function EventPage({
           />
         </div>
       </section>
+
+      {(prevEvent || nextEvent) && (
+        <nav aria-label="More events" className="pb-12">
+          <div className="max-w-site mx-auto px-6 grid gap-4 sm:grid-cols-2">
+            {prevEvent ? (
+              <Link
+                href={`/events/${prevEvent.slug}`}
+                className="block rounded-lg border border-ink/10 p-4 hover:border-brand-red/30 transition-colors"
+              >
+                <span className="block text-xs uppercase tracking-wider text-brand-grey mb-1">
+                  Previous event
+                </span>
+                <span className="font-medium text-brand-white">{prevEvent.title}</span>
+              </Link>
+            ) : (
+              <span />
+            )}
+            {nextEvent && (
+              <Link
+                href={`/events/${nextEvent.slug}`}
+                className="block rounded-lg border border-ink/10 p-4 hover:border-brand-red/30 transition-colors sm:text-right"
+              >
+                <span className="block text-xs uppercase tracking-wider text-brand-grey mb-1">
+                  Next event
+                </span>
+                <span className="font-medium text-brand-white">{nextEvent.title}</span>
+              </Link>
+            )}
+          </div>
+        </nav>
+      )}
 
       {/* CTA */}
       <section className="py-16 border-t border-ink/10">

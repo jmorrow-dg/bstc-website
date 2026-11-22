@@ -7,7 +7,8 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import NewsletterSignup from "@/components/layout/NewsletterSignup";
 import { getAllBlogPosts, getBlogPostBySlug, ContentItem, BlogFrontmatter } from "@/lib/content";
 import { MEETUP_CHECKED, SITE } from "@/lib/constants";
-import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schema";
+import { getBreadcrumbSchema, getFAQSchema, personId } from "@/lib/schema";
+import { FOUNDERS } from "@/data/founders";
 
 export async function generateStaticParams() {
   const posts = await getAllBlogPosts();
@@ -52,13 +53,20 @@ function getArticleSchema(post: BlogFrontmatter) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    dateModified: post.updated || post.date,
     author: {
       "@type": "Person",
+      ...(FOUNDERS.some((f) => f.name === post.author) && {
+        "@id": personId(post.author),
+        url: `${SITE.url}/leadership`,
+      }),
       name: post.author,
       ...(post.authorRole && { jobTitle: post.authorRole }),
     },
     publisher: {
+      "@id": `${SITE.url}#organization`,
       "@type": "Organization",
+      logo: { "@type": "ImageObject", "@id": `${SITE.url}#logo`, url: `${SITE.url}/images/logo.svg` },
       name: SITE.fullName,
       url: SITE.url,
     },
@@ -161,6 +169,7 @@ export default async function BlogPostPage({
 
       <div className="max-w-site mx-auto px-6 pt-8 space-y-3">
         <Breadcrumbs
+          schema={false}
           items={[
             { label: "Home", href: "/" },
             { label: "Blog", href: "/blog" },
@@ -232,7 +241,7 @@ export default async function BlogPostPage({
               {p.excerpt}
             </p>
 
-            {/* Key Takeaways — AEO answer block */}
+            {/* Key Takeaways: AEO answer block */}
             {p.keyTakeaways && p.keyTakeaways.length > 0 && (
               <div className="mb-10 p-6 rounded-lg border border-brand-red/20 bg-brand-red/5">
                 <p className="text-xs font-medium uppercase tracking-wider text-brand-red mb-3">
@@ -279,7 +288,7 @@ export default async function BlogPostPage({
         </div>
       </article>
 
-      {/* Newsletter capture — email conversion path */}
+      {/* Newsletter capture: email conversion path */}
       <section className="py-12 border-t border-ink/10">
         <div className="max-w-site mx-auto px-6">
           <div className="max-w-xl mx-auto text-center">
@@ -287,7 +296,7 @@ export default async function BlogPostPage({
               Get the BSTC briefing
             </h2>
             <p className="text-sm text-brand-grey mb-5">
-              The Bali tech scene, founder resources, and event invites —
+              The Bali tech scene, founder resources, and event invites,
               straight to your inbox. No spam, unsubscribe anytime.
             </p>
             <div className="max-w-md mx-auto">

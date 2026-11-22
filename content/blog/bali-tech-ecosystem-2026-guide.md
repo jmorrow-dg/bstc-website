@@ -15,8 +15,8 @@ tags:
   - digital nomads
   - Indonesia tech
 seo:
-  title: "Bali Tech Ecosystem 2026: Why Top Founders Are Building Here | BSTC"
-  description: "Inside Bali's growing tech ecosystem: world-class founders, improving infrastructure, VC interest, and a builder culture that rivals Austin and Lisbon. The complete guide."
+  title: "Bali Tech Ecosystem 2026: Why Top Founders Build Here | BSTC"
+  description: "Inside Bali's growing tech ecosystem: world-class founders, better infrastructure, VC interest and a builder culture that rivals Austin and Lisbon."
   keywords:
     - Bali tech ecosystem
     - tech scene Bali 2026
@@ -90,7 +90,7 @@ The good news: these gaps are being actively addressed. The Indonesian governmen
 This is Bali's real unfair advantage. The tech community here isn't passive: it's active, organised, and high-signal.
 
 **What exists:**
-- **BSTC (Bali Startup & Tech Community)**: 2,700+ members. Monthly networking nights, founder roundtables, builder sessions, and the "How I Build with AI" series. The largest founder-led tech community on the island.
+- **BSTC (Bali Startup & Tech Community)**: 2,700+ members on Meetup (25 Oct 2026). Monthly networking nights, founder roundtables, builder sessions, and the "How I Build with AI" series. The largest founder-led tech community on the island.
 - **Co-working communities**: Outpost, Dojo, and Hubud each have their own ecosystems of events, workshops, and member networks.
 - **Informal founder dinners**: Weekly gatherings where funded founders share deal flow, hiring leads, and strategic advice.
 - **VC visits**: Singapore, Jakarta, and Australian VCs regularly visit Bali specifically to attend community events and meet founders.

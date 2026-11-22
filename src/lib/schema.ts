@@ -1,5 +1,11 @@
 import { CONTACT_EMAIL, EVENT_ORGANIZER, SITE, STATS } from "./constants";
-import { canRsvpToEvent, isValidEventDate } from "./event-status";
+import { EVENT_TIME_ZONE, canRsvpToEvent, isValidEventDate } from "./event-status";
+import { getVenue, organizerWebsite } from "./venues";
+
+export const personId = (name: string) =>
+  `${SITE.url}/leadership#${name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
+const HOW_I_AI_SERIES_ID = `${SITE.url}/how-i-build-with-ai#how-i-ai`;
 
 export function getOrganizationSchema() {
   return {
@@ -7,10 +13,11 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     "@id": `${SITE.url}#organization`,
     name: SITE.fullName,
-    alternateName: [SITE.name, "Bali Tech Community", "BSTC Community"],
+    alternateName: [SITE.name, "Bali Tech Community", "BSTC Community", "Bali Startup & Tech"],
     url: SITE.url,
     logo: {
       "@type": "ImageObject",
+      "@id": `${SITE.url}#logo`,
       url: `${SITE.url}/images/logo.svg`,
       width: 512,
       height: 512,
@@ -18,11 +25,11 @@ export function getOrganizationSchema() {
     image: `${SITE.url}/og-image.png`,
     description: SITE.description,
     slogan: "Signal over noise. Builders first.",
-    foundingDate: SITE.founded,
+    foundingDate: "2023-10",
     founders: [
-      { "@type": "Person", name: "Lachlan McRitchie", jobTitle: "Co-founder & Primary Organiser" },
-      { "@type": "Person", name: "Josh Morrow", jobTitle: "Co-founder & Growth Lead" },
-      { "@type": "Person", name: "Matthew Carr", jobTitle: "Co-founder & Community Lead" },
+      { "@type": "Person", "@id": personId("Lachlan McRitchie"), name: "Lachlan McRitchie", jobTitle: "Co-founder & Primary Organiser" },
+      { "@type": "Person", "@id": personId("Josh Morrow"), name: "Josh Morrow", jobTitle: "Co-founder & Growth Lead" },
+      { "@type": "Person", "@id": personId("Matthew Carr"), name: "Matthew Carr", jobTitle: "Co-founder & Community Lead" },
     ],
     email: CONTACT_EMAIL,
     address: {
@@ -49,7 +56,7 @@ export function getOrganizationSchema() {
       "Bali founder taxation",
       "Hiring developers in Indonesia",
       "AI-native company building",
-      "Founder events and hackathons",
+      "Founder events (hackathons coming soon)",
       "Remote team management",
       "Coworking spaces in Bali",
       "Venture capital in Southeast Asia",
@@ -63,19 +70,18 @@ export function getOrganizationSchema() {
       "AI founders Bali",
       "tech events Bali",
     ].join(", "),
-    sameAs: [SITE.meetup, SITE.linkedin, SITE.instagram].filter(
-      (url) => url !== "#"
-    ),
+    sameAs: [
+      SITE.meetup,
+      SITE.linkedin,
+      SITE.instagram,
+      "https://luma.com/balistartuptech",
+      "https://t.me/balistartuptech",
+    ].filter((url) => url !== "#"),
     interactionStatistic: [
       {
         "@type": "InteractionCounter",
         interactionType: "https://schema.org/JoinAction",
         userInteractionCount: STATS.members,
-      },
-      {
-        "@type": "InteractionCounter",
-        interactionType: "https://schema.org/AttendEvent",
-        userInteractionCount: STATS.events,
       },
     ],
   };
@@ -95,6 +101,57 @@ export function getWebSiteSchema() {
   };
 }
 
+// ISO 8601 date-time with an explicit offset, as schema.org validFrom expects.
+export function isIsoDateTimeWithZone(value?: string): value is string {
+  return (
+    typeof value === "string" &&
+    /^\d{4}-\d{2}-\d{2}T([01]\d|2[0-3]):[0-5]\d(:[0-5]\d(\.\d+)?)?(Z|[+-]([01]\d|2[0-3]):[0-5]\d)$/.test(value) &&
+    !Number.isNaN(Date.parse(value))
+  );
+}
+
+// Josh, 10 Nov 2026: the venue is the organiser of every event. Take the event's
+// own `organizer` frontmatter (string or { name, url }) when present, otherwise
+// the venue name (the text before the first comma of `venue`, e.g.
+// "Yema Kitchen, Canggu" gives "Yema Kitchen"). A venue still marked TBA, or an
+// empty one, gives undefined: no organiser is invented and BSTC is never named.
+// When the event does not give a url, use the organiser's official site from
+// organizerWebsite(). An explicit url wins. Nothing is invented, and the
+// community homepage is not used as a stand-in.
+export function getEventOrganizer(event: {
+  organizer?: string | { name: string; url?: string };
+  venue?: string;
+}): { name: string; url?: string } | undefined {
+  const own = typeof event.organizer === "string" ? { name: event.organizer } : event.organizer;
+  let name = own?.name?.trim() ?? "";
+  let url = typeof own?.url === "string" ? own.url.trim() : "";
+  if (!name) {
+    name = event.venue?.split(",")[0].trim() ?? "";
+    url = "";
+    if (!name || /^(tba|tbc|tbd)$/i.test(name)) return undefined;
+  }
+  if (!url) url = organizerWebsite(name) ?? "";
+  return url ? { name, url } : { name };
+}
+
+// The BSTC team moderates every event. schema.org has no `moderator` property,
+// so it is a plain `contributor` Organization. (A Role with roleName
+// "Moderator" was not used: it could not be checked in the Rich Results Test or
+// the schema.org validator from here, and the visible credit line already says
+// "Moderated by".)
+// Typed as optional so it can be spread into the Event node even where another
+// branch (#42) sets a bare `contributor` reference; the full Organization wins.
+export function getEventModeratorContributor(): {
+  contributor?: { "@type": "Organization"; "@id": string; name: string; url: string };
+} {
+  return { contributor: {
+    "@type": "Organization",
+    "@id": `${SITE.url}#organization`,
+    name: SITE.fullName,
+    url: SITE.url,
+  } };
+}
+
 export function getEventSchema(event: {
   title: string;
   description: string;
@@ -104,38 +161,77 @@ export function getEventSchema(event: {
   url: string;
   image?: string;
   status?: string;
+  announced?: string;
   rsvpUrl?: string;
   organizer?: { name: string; url?: string };
+  // Finish time (HH:MM, Bali time) from the night's own RSVP listing. Left out
+  // when the listing has none: endDate is then omitted, never guessed.
+  endTime?: string;
+  // A real photo from a BSTC night, listed in `image` before the cover graphic.
+  photo?: string;
+  // "how-i-ai" links the edition to the How I AI EventSeries.
+  series?: string;
 }, now: Date = new Date()) {
   if (!isValidEventDate(event.date)) return null;
 
-  const organizer = event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
+  const named = event.organizer?.name ? event.organizer : EVENT_ORGANIZER;
+  // Same lookup as getEventOrganizer, so a caller that passes only a name
+  // still gets the official site. An explicit url wins.
+  const organizerUrl = (named.url && named.url.trim()) || (named.name ? organizerWebsite(named.name) : "") || "";
+  const organizer = { name: named.name, ...(organizerUrl && { url: organizerUrl }) };
   const statusMap: Record<string, string> = {
     upcoming: "https://schema.org/EventScheduled",
     completed: "https://schema.org/EventScheduled",
     cancelled: "https://schema.org/EventCancelled",
     postponed: "https://schema.org/EventPostponed",
   };
+  const hhmm = /^([01]\d|2[0-3]):[0-5]\d$/;
+  const hasStart = hhmm.test(event.time);
+  // Same Bali day, finishing after the start. Anything else is left out.
+  const hasEnd = hasStart && hhmm.test(event.endTime ?? "") && event.endTime! > event.time;
+  const venue = getVenue(event.venue);
+  const images = [event.photo, event.image]
+    .filter((src): src is string => Boolean(src))
+    .map((src) => (src.startsWith("http") ? src : `${SITE.url}${src}`));
   return {
     "@context": "https://schema.org",
     "@type": "Event",
+    "@id": `${event.url}#event`,
     name: event.title,
     description: event.description,
-    startDate: /^([01]\d|2[0-3]):[0-5]\d$/.test(event.time)
-      ? `${event.date}T${event.time}:00+08:00`
-      : event.date,
+    startDate: hasStart ? `${event.date}T${event.time}:00+08:00` : event.date,
+    ...(hasEnd && { endDate: `${event.date}T${event.endTime}:00+08:00` }),
     eventStatus: statusMap[event.status || "upcoming"] || statusMap.upcoming,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    location: {
-      "@type": "Place",
-      name: event.venue,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Canggu",
-        addressRegion: "Bali",
-        addressCountry: "ID",
-      },
-    },
+    isAccessibleForFree: true,
+    location: venue
+      ? {
+          "@type": "Place",
+          name: venue.name,
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: venue.streetAddress,
+            addressLocality: venue.addressLocality,
+            addressRegion: venue.addressRegion,
+            postalCode: venue.postalCode,
+            addressCountry: venue.addressCountry,
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: venue.latitude,
+            longitude: venue.longitude,
+          },
+        }
+      : {
+          "@type": "Place",
+          name: event.venue,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Canggu",
+            addressRegion: "Bali",
+            addressCountry: "ID",
+          },
+        },
     ...(organizer.name && {
       organizer: {
         "@type": "Organization",
@@ -143,18 +239,68 @@ export function getEventSchema(event: {
         ...(organizer.url && { url: organizer.url }),
       },
     }),
-    image: event.image ? `${SITE.url}${event.image}` : undefined,
+    ...getEventModeratorContributor(),
+    ...(event.series === "how-i-ai" && {
+      superEvent: { "@id": HOW_I_AI_SERIES_ID },
+    }),
+    image: images.length ? images : undefined,
     url: event.url,
     // Only open, future events advertise an available (free) ticket.
     ...(canRsvpToEvent(event, now) && {
       offers: {
         "@type": "Offer",
+        ...(isIsoDateTimeWithZone(event.announced) && { validFrom: event.announced }),
         url: event.rsvpUrl,
         price: "0",
-        priceCurrency: "USD",
+        priceCurrency: "IDR",
         availability: "https://schema.org/InStock",
       },
     }),
+  };
+}
+
+// Weekly schedule and venue as stated on the edition pages. No end date: the
+// series has none on main.
+export function getHowIAISeriesSchema(editionUrls: string[]) {
+  const venue = getVenue("Seoul Soul Project");
+  return {
+    "@context": "https://schema.org",
+    "@type": "EventSeries",
+    "@id": HOW_I_AI_SERIES_ID,
+    name: "How I AI",
+    alternateName: "How I Build with AI",
+    description:
+      "BSTC's weekly builder night: builders share the AI tools, workflows and revenue behind what they ship.",
+    url: `${SITE.url}/how-i-build-with-ai`,
+    isAccessibleForFree: true,
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    eventSchedule: {
+      "@type": "Schedule",
+      byDay: "https://schema.org/Wednesday",
+      repeatFrequency: "P1W",
+      startTime: "18:00",
+      endTime: "21:00",
+      scheduleTimezone: EVENT_TIME_ZONE,
+    },
+    location: {
+      "@type": "Place",
+      name: "Seoul Soul Project",
+      address: {
+        "@type": "PostalAddress",
+        ...(venue && { streetAddress: venue.streetAddress, postalCode: venue.postalCode }),
+        addressLocality: "Canggu",
+        addressRegion: "Bali",
+        addressCountry: "ID",
+      },
+    },
+    // Google needs organizer.url whenever organizer is present (#62's check).
+    organizer: {
+      "@type": "Organization",
+      name: "Seoul Soul Project",
+      ...(venue?.url && { url: venue.url }),
+    },
+    ...getEventModeratorContributor(),
+    subEvent: editionUrls.map((url) => ({ "@id": `${url}#event` })),
   };
 }
 
@@ -200,6 +346,7 @@ export function getPersonSchema(person: {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": personId(person.name),
     name: person.name,
     jobTitle: person.role,
     ...(person.bio && { description: person.bio }),
@@ -207,6 +354,7 @@ export function getPersonSchema(person: {
     ...(person.email && { email: person.email }),
     worksFor: {
       "@type": "Organization",
+      "@id": `${SITE.url}#organization`,
       name: SITE.fullName,
       url: SITE.url,
     },
