@@ -78,7 +78,7 @@ Here's what the builders in our community are actually using, and why.
 
 ### DALL-E / Midjourney
 **What it is:** AI image generation.
-**Why founders love it:** Event graphics, social media assets, product mockups: generated in minutes instead of hours. BSTC uses DALL-E for our GTA-style event cover art.
+**Why founders love it:** Event graphics, social media assets, product mockups: generated in minutes instead of hours.
 
 ### Descript
 **What it is:** AI-powered audio/video editor.

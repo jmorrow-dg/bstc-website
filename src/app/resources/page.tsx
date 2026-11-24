@@ -166,7 +166,7 @@ const TOOL_CATEGORIES = [
       {
         name: "DALL-E",
         description:
-          "AI image generation. BSTC uses it for our GTA-style event cover art. Great for social media visuals.",
+          "AI image generation. Great for social media visuals.",
         url: "https://openai.com/dall-e",
       },
       {
