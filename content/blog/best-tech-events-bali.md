@@ -1,6 +1,7 @@
 ---
 title: "The Best Tech Events in Bali for Founders and Builders (2026)"
 slug: best-tech-events-bali
+updated: "2026-11-21"
 date: "2026-03-28"
 author: Josh Morrow
 authorRole: Co-founder, BSTC
@@ -14,8 +15,8 @@ tags:
   - networking Bali
   - founder events
 seo:
-  title: "Best Tech Events in Bali 2026: The Definitive Guide for Founders | BSTC"
-  description: "The definitive guide to tech events in Bali for 2026. Which meetups are worth your time, which ones to skip, and how to get the most value from Bali's tech scene."
+  title: "Best Tech Events in Bali 2026: Founder Guide | BSTC"
+  description: "The definitive guide to tech events in Bali for 2026: free BSTC events this month, which meetups are worth your time and which ones to skip."
   keywords:
     - best tech events Bali
     - tech meetup Bali
@@ -24,6 +25,22 @@ seo:
     - founder meetup Bali
     - tech community Bali events
 ---
+
+## BSTC's regular events in Bali
+
+Bali Startup & Tech Community runs two free event series in Canggu: How I AI every Wednesday, and [Networking Drinks & Dinner](/drinks-and-dinner) on the second Thursday of every month. Joining is free; order and pay for your own food and drinks at the venue. Every upcoming date, with its RSVP link, is on the [events page](/events).
+
+**How I AI:** every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, Jl. Canggu Padang Linjong No.61, Canggu. See the [next How I AI night](/events).
+
+Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community
+
+**Networking Drinks & Dinner:** the second Thursday of every month, from 6:30 PM WITA at Yema Kitchen, Jl. Tanah Barak No.31, Canggu. See the [next dinner](/drinks-and-dinner).
+
+Locally hosted by Yema Kitchen · Moderated by Bali Startup & Tech Community
+
+[Join Bali Startup & Tech Community](/join?src=blog-best-tech-events-bali-november) for the community chat and upcoming event details.
+
+
 
 # The Best Tech Events in Bali
 
@@ -52,9 +69,9 @@ The flagship event of Bali Startup & Tech Community. What makes it different: th
 ## How I Build with AI
 
 **Frequency:** Monthly
-**Location:** Seoul Seoul Project, Canggu
+**Location:** Seoul Soul Project, Canggu
 **Capacity:** 30-60
-**Cost:** Free (initially)
+**Cost:** Free. Order and pay for your own food and drinks.
 **Vibe:** Technical, practitioner-led, interactive
 
 BSTC's flagship builder series. A real founder shares their screen and shows how they actually build with AI tools: live, unscripted, with Q&A. Not a talk about AI. A demonstration of AI in action.
@@ -70,7 +87,7 @@ BSTC's flagship builder series. A real founder shares their screen and shows how
 **Frequency:** Monthly
 **Location:** Various (curated venues)
 **Capacity:** Max 20 (application-based)
-**Cost:** Ticketed
+**Cost:** Free. Order and pay for your own food and drinks.
 **Vibe:** Confidential, deep-dive, no spectators
 
 For founders with $20K+ MRR only. Single topic. Facilitated discussion. No pitching. What's shared stays in the room. This is where founders discuss the hard stuff: hiring, firing, pricing, fundraising, mental health.

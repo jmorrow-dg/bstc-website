@@ -27,7 +27,7 @@ faq:
   - question: "Can I ride a scooter in Bali with my car licence?"
     answer: "Don't count on it. Bali's 2025 rules for foreign tourists require a valid international or national driving licence, and Australia's NRMA warns that without an International Driving Permit and a valid motorcycle licence from home, your travel insurance could be void."
   - question: "Where do remote entrepreneurs meet people in Bali?"
-    answer: "In Canggu, BSTC runs How I AI every Wednesday from 4 November 2026 at Seoul Soul Project, 6 to 9pm, free, and Networking Drinks & Dinner #39 on Thursday 12 November 2026 at Yema Kitchen. Coworking spaces are where the follow-up coffees happen."
+    answer: "In Canggu, BSTC runs How I AI every Wednesday from 4 November 2026 at Seoul Soul Project, 6 to 9pm, free, and Networking Drinks & Dinner on the second Thursday of every month at Yema Kitchen (dates at /drinks-and-dinner). Coworking spaces are where the follow-up coffees happen."
 ---
 
 # New to Bali? The first-week checklist for remote entrepreneurs (2026)
@@ -158,12 +158,12 @@ Sort it before you need it, and make sure it covers scooter accidents and medica
 
 ### Where founders and builders meet
 
-The fastest way to know people is to go to the same weekly event two or three times in a row. In Canggu in November and December 2026:
+The fastest way to know people is to go to the same weekly event two or three times in a row. In Canggu:
 
 | When | What | Where | Cost |
 |---|---|---|---|
 | Every Wednesday from 4 Nov 2026, 6 to 9pm | How I AI (BSTC) | Seoul Soul Project, Canggu | Free |
-| Thursday 12 Nov 2026, 6:30pm | Networking Drinks & Dinner #39 (BSTC) | Yema Kitchen, Canggu | Free entry |
+| Second Thursday of the month, 6:30pm ([dates](/drinks-and-dinner)) | Networking Drinks & Dinner (BSTC) | Yema Kitchen, Canggu | Free entry |
 
 Bali Startup & Tech (BSTC) is a founder-led community for startup founders, builders and tech people in Bali, with 2,700+ on Meetup (25 Oct 2026). RSVP on the [events page](/events), and [sign up](/join?src=blog-new-to-bali-first-week-checklist-inline) before you land so you can say hello in the community chat. For a day-by-day plan see [how to meet founders in Bali](/blog/meet-founders-in-bali), and for every other group, [startup and tech communities in Bali](/blog/tech-communities-in-bali).
 
@@ -206,7 +206,7 @@ Don't count on it. Bali's 2025 rules for foreign tourists require a valid intern
 
 ### Where do remote entrepreneurs meet people in Bali?
 
-In Canggu, BSTC runs How I AI every Wednesday from 4 November 2026 at Seoul Soul Project, 6 to 9pm, free, and Networking Drinks & Dinner #39 on Thursday 12 November 2026 at Yema Kitchen. Coworking spaces are where the follow-up coffees happen.
+In Canggu, BSTC runs How I AI every Wednesday from 4 November 2026 at Seoul Soul Project, 6 to 9pm, free, and Networking Drinks & Dinner on the second Thursday of every month at Yema Kitchen (dates at /drinks-and-dinner). Coworking spaces are where the follow-up coffees happen.
 
 ## Join BSTC before you land
 

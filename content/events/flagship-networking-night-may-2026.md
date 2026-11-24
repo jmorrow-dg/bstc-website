@@ -48,3 +48,11 @@ Our flagship monthly networking night is the beating heart of BSTC. Every month,
 This isn't a generic meetup. The people in this room are building real things: funded startups, AI products, SaaS platforms, dev tools. The conversations are substantive. The connections are genuine. The "no hard selling" rule makes all the difference.
 
 **Free entry. Always.** RSVP on MeetUp to secure your spot.
+
+## More in this series
+
+Previous edition: [Bali Startup & Tech Networking Drinks & Dinner: Berawa #36](/events/networking-drinks-berawa-april-2026).
+
+Next edition: [BSTC Flagship Networking Night: June 2026](/events/flagship-networking-night-june-2026).
+
+[Join BSTC for free](/join?src=event-series) for community and event updates.

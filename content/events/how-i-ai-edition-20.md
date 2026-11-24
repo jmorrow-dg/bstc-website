@@ -4,6 +4,7 @@ slug: how-i-ai-edition-20
 date: "2026-11-17"
 time: "18:00"
 endTime: "21:00" # from the Luma 0zzumvch listing, read 13 Nov 2026
+series: "how-i-ai"
 venue: Seoul Soul Project, Canggu
 type: how-i-build-with-ai
 status: upcoming
@@ -16,7 +17,7 @@ cardImageAlt: "How I AI Edition 20, Tue 17 Nov 2026, 6pm at Seoul Soul Project, 
 description: "BSTC's weekly builder night: builders share the AI tools, workflows and revenue behind what they ship. Money Round, AI Intel Drop and two Builder Spotlights. Real numbers, no theory."
 seo:
   title: "How I AI | Edition 20 | BSTC Bali"
-  description: "Tuesday 17 November, 6pm at Seoul Soul Project, Canggu. Edition 20 of BSTC's weekly builder night about making money with AI. Free entry, dinner & drinks at the venue."
+  description: "Tue 17 Nov, 6pm, Seoul Soul Project, Canggu. How I AI Edition 20, BSTC's weekly builder night. Free entry. Order your own dinner and drinks at the venue."
   keywords:
     - How I AI
     - AI builder event Bali
@@ -26,7 +27,7 @@ seo:
 
 **How I AI, Edition 20.** BSTC's weekly builder series at Seoul Soul Project. This week only it's on **Tuesday 17 November**, not Wednesday, at Seoul Soul Project's request.
 
-Locally hosted by Seoul Soul Project · Moderated by Bali Start-Up & Tech Community.
+Locally hosted by Seoul Soul Project · Moderated by Bali Startup & Tech Community.
 
 Signal > Noise. No theory. No hype. No "AI will change everything" keynotes.
 

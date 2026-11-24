@@ -1,13 +1,14 @@
 ---
 title: "Digital nomad community in Bali for people building a business"
 slug: digital-nomad-community-bali
+updated: "2026-11-05"
 date: "2026-10-26"
 author: Lachlan McRitchie
 category: guide
 excerpt: "Bali has plenty of digital nomad groups, but most are social chats. If you're building a business rather than just travelling, here's where the builders actually meet, what to look for in a community, and how to set yourself up."
 seo:
-  title: "Digital Nomad Community in Bali for Builders and Founders (2026)"
-  description: "Most Bali digital nomad groups are social chats. Here's where people building businesses meet in 2026: weekly builder nights, founder dinners and developer meetups, with dates checked 25 Oct 2026."
+  title: "Digital Nomad Community in Bali for Founders | BSTC"
+  description: "Most Bali digital nomad groups are social chats. Here's where people building businesses meet in 2026: builder nights, founder dinners and dev meetups."
 faq:
   - question: "Is there a digital nomad community in Bali for entrepreneurs?"
     answer: "Yes. Beyond the social nomad chats, Bali has in-person builder communities: BSTC in Canggu (weekly How I AI nights and a roughly monthly founder dinner), GDG Bali for developers in Denpasar, and the Ubud Tech Meetup. See our directory for each group's last dated event."
@@ -21,6 +22,12 @@ faq:
     answer: "Canggu has the weekly builder events, and Finns' guide (updated 21 July 2026) lists 15 coworking spaces in and around it (Finns). Ubud has its own monthly tech meetup. The Canggu neighbourhood guide goes deeper."
 ---
 
+Meet founders, engineers and remote builders at Bali Startup & Tech Community's free events in Canggu. [Join BSTC for free](/join?src=blog-digital-nomad-community-bali-answer) to connect with the community before your first event.
+
+**BSTC's regular events:** How I AI runs every Wednesday, 6:00 to 9:00 PM WITA at Seoul Soul Project, and Networking Drinks & Dinner runs on the second Thursday of every month, from 6:30 PM WITA at Yema Kitchen. Both are free; order and pay for your own food and drinks. Every upcoming date is on the [events page](/events).
+
+
+
 # Digital nomad community in Bali for people building a business
 
 If you're in Bali to build a business rather than just travel, look past the big nomad chats and go where builders meet in person. Most Bali nomad groups are social Telegram, WhatsApp and Facebook chats. The builder communities are smaller and meet on a schedule: in Canggu in late 2026 that means BSTC's weekly How I AI night (Wednesdays from 4 November) and its monthly founder dinner, plus developer meetups like GDG Bali in Denpasar.
@@ -33,7 +40,7 @@ Both kinds of community are useful. They're just useful for different things. A 
 
 **Builder communities.** These meet in person on a schedule and the conversation is about what people are building. The ones with dated events in 2026:
 
-- **Bali Start-ups and Tech Community (BSTC), Canggu.** Weekly How I AI nights and a roughly monthly networking drinks and dinner. 2,700+ members on Meetup, rated 4.7 from 155 ratings, 54 past Meetup events ([Meetup](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026). Hosted by Josh Morrow and Lachlan McRitchie.
+- **Bali Startup & Tech Community (BSTC), Canggu.** Weekly How I AI nights and a roughly monthly networking drinks and dinner. 2,700+ members on Meetup, rated 4.7 from 155 ratings, 54 past Meetup events ([Meetup](https://www.meetup.com/bali-start-ups-tech-community/), checked 25 Oct 2026). Hosted by Josh Morrow and Lachlan McRitchie.
 - **GDG Bali, Denpasar.** Developer meetups and AI workshops; last listed meetup 19 July 2026 ([GDG Bali](https://gdg.community.dev/gdg-bali/), checked 25 Oct 2026).
 - **Ubud Tech Meetup, Ubud.** Last Tuesday of the month; last listed event 30 June 2026 ([Luma](https://luma.com/bp7doqpy), checked 25 Oct 2026).
 
@@ -74,7 +81,7 @@ It depends on what you're building and who you sell to. Bali runs on WITA (UTC+8
 1. Sign up at [/join](/join?src=blog-digital-nomad-community-bali-inline) before you land so you're in the chat on day one.
 2. Go to How I AI on Wednesday. Go again the next Wednesday.
 3. Work from a coworking space a few days a week rather than your villa.
-4. Go to the next monthly dinner (Thursday 12 November 2026 at Yema Kitchen, Canggu, 6:30pm, per the [event page](/events/networking-drinks-dinner-canggu-39)).
+4. Go to the next monthly dinner (the second Thursday of the month at Yema Kitchen, Canggu, 6:30pm; dates on the [Drinks & Dinner page](/drinks-and-dinner)).
 5. Post one specific ask in the chat: a question, an intro you need, or feedback on something you've shipped.
 
 The day-by-day version is in [how to meet founders and tech people in Bali](/blog/meet-founders-in-bali).

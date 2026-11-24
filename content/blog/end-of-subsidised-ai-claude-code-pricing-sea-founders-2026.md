@@ -3,7 +3,7 @@ title: "The End of Subsidised AI: What Claude Code Leaving the Pro Plan Means fo
 slug: end-of-subsidised-ai-claude-code-pricing-sea-founders-2026
 date: "2026-04-23"
 author: Josh Morrow
-authorRole: Co-founder, BSTC & David & Goliath
+authorRole: Co-founder, BSTC
 category: thought-leadership
 readTime: "10 min"
 tags:
@@ -16,8 +16,8 @@ tags:
   - AI economics
 excerpt: "On 21 April 2026 Anthropic quietly pulled Claude Code from the $20 Pro plan, pushing users to the $100 Max tier. Framed as a 2% test, executed as a global rollout. The signal is not the price hike. It is the admission that flat-rate frontier AI was never sustainable, and that changes the calculation for every SEA founder building on top of it."
 seo:
-  title: "Anthropic Pulls Claude Code From Pro: What It Means for SEA Founders | BSTC"
-  description: "Anthropic removed Claude Code from the $20 Pro plan. What changed, why it matters, and the 5-step margin stress test every Southeast Asia founder building on AI APIs should run this week."
+  title: "Anthropic Pulls Claude Code From Pro: SEA Founders | BSTC"
+  description: "Anthropic removed Claude Code from the $20 Pro plan. What changed, why it matters, and the 5-step margin stress test for founders building on AI APIs."
   keywords:
     - Claude Code pricing
     - Anthropic Pro plan
