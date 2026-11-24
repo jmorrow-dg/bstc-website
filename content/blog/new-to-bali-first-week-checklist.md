@@ -13,8 +13,8 @@ keyTakeaways:
   - "Riding without a valid licence can mean up to four months' jail or a fine of up to IDR 1 million, and Australia's NRMA says riding abroad needs a motorcycle licence from home plus an International Driving Permit, or your travel insurance could be void."
   - "Most newcomers meet people fastest by going to the same weekly event several times; in Canggu that's BSTC's free How I AI night every Wednesday from 4 November 2026."
 seo:
-  title: "Moving to Bali Checklist 2026: Your First Week as a Remote Entrepreneur"
-  description: "First week in Bali, step by step: visa, All Indonesia arrival card, IDR 150,000 tourist levy, customs, SIM and IMEI, scooter licence, money, coworking and where founders meet. Sourced and checked 26 Oct 2026."
+  title: "New to Bali First Week Checklist: Five Jobs | BSTC"
+  description: "New to Bali? Your first week is five jobs: visa, arrival card, IDR 150,000 levy, SIM and IMEI, scooter licence, then a builder event. Checked 26 Oct 2026."
 faq:
   - question: "What do I need to do before flying to Bali?"
     answer: "Check your passport has at least six months left and blank pages, choose and apply for your visa (an e-VOA, a C1 visit visa or the E33G remote worker visa), fill in the free All Indonesia arrival card in the three days before you land, and pay the IDR 150,000 Bali tourist levy on the Love Bali website. Sign up at /join too, so you're in the community chat when you land."
@@ -32,7 +32,9 @@ faq:
 
 # New to Bali? The first-week checklist for remote entrepreneurs (2026)
 
-Your first week in Bali comes down to five jobs: arrive on the right visa, get through the airport with the arrival card and tourist levy done, get a working phone and a legal way to get around, set up money that doesn't bleed fees, and get into a room with people building what you're building. This moving to Bali checklist puts those jobs in order, with every rule and fee linked to the page we checked it on (26 October 2026). It's for SaaS founders, agency owners, ecom operators, freelancers turning into businesses and creators with products, not just startup founders.
+Your first week in Bali comes down to five jobs: arrive on the right visa, clear the airport with the arrival card and tourist levy done, get a working phone and a legal way around, set up money that limits fees, and meet people who are building. This new to Bali first week checklist was checked on 26 October 2026.
+
+It's for SaaS founders, agency owners, ecom operators, freelancers turning into businesses and creators with products, not just startup founders.
 
 Rules here change often, sometimes with little notice. This guide isn't legal, tax or immigration advice; for that, start with our [visa guide](/blog/indonesia-startup-visa-guide) and [tax guide](/blog/bali-founder-tax-guide-2026), then talk to a licensed agent or adviser.
 

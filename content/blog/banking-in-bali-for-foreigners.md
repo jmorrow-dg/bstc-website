@@ -13,8 +13,8 @@ keyTakeaways:
   - "Only change cash at licensed money changers, which display a Bank Indonesia logo with a permit number and QR code."
   - "Visit visas and the E33G remote worker visa bar you from taking pay from people or companies in Indonesia, so get paid by overseas clients into an overseas account or company."
 seo:
-  title: "Bank Account in Bali for Foreigners (2026): Cards, Wise, QRIS & Local Banks"
-  description: "Can a foreigner open a bank account in Bali? What BCA, Mandiri, CIMB Niaga and Jenius ask for, ATM limits and fees, QRIS for visitors, Wise, money changers and getting paid from overseas. Checked 26 Oct 2026."
+  title: "Banking in Bali for Foreigners: Cards First | BSTC"
+  description: "Banking in Bali for foreigners: cards and ATMs cover daily life. A local account usually waits for a KITAS or KITAP. Checked 26 Oct 2026."
 faq:
   - question: "Can a foreigner open a bank account in Bali?"
     answer: "Usually only once you hold a stay permit. On 26 October 2026, Mandiri's and CIMB Niaga's own pages asked foreigners for a passport plus a KITAS or KITAP (Mandiri also accepts a Golden Visa), and BCA asks foreigners living in Indonesia for a KITAS or KITAP. Jenius only accepts Indonesian citizens with a KTP."
@@ -32,7 +32,9 @@ faq:
 
 # Money and banking in Bali for foreigners: cards, Wise, QRIS and local accounts (2026)
 
-Most foreigners in Bali don't need an Indonesian bank account: a multi-currency card, a backup card and rupiah from bank-owned ATMs cover daily life. You generally can't open a bank account in Bali as a foreigner until you hold a KITAS or KITAP, because that's what BCA, Mandiri and CIMB Niaga ask for on their own pages (checked 26 October 2026). QRIS, the national QR code, works for visitors only if their home app is linked to it, which covers six countries so far.
+Most foreigners banking in Bali don't need a local bank account. A multi-currency card, a backup card and rupiah from bank-owned ATMs cover daily life. You generally can't open an account until you hold a KITAS or KITAP, which is what BCA, Mandiri and CIMB Niaga ask for on their own pages (checked 26 October 2026).
+
+QRIS, the national QR code, works for visitors only if their home app is linked to it, which covers six countries so far.
 
 This guide is for anyone running a business from Bali: SaaS and agency founders, ecom operators, freelancers and creators. It isn't financial, tax or legal advice. For the bigger picture, see our [first-week checklist](/blog/new-to-bali-first-week-checklist), the [Bali tax guide](/blog/bali-founder-tax-guide-2026) and the [PT PMA playbook](/blog/pt-pma-indonesia-founder-playbook-2026).
 

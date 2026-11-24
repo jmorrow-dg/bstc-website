@@ -1,5 +1,5 @@
 ---
-title: "Bali Startup and Tech Networking Drinks & Dinner - Canggu #46"
+title: "Bali Startup & Tech Community Networking Drinks & Dinner - Canggu #46"
 slug: networking-drinks-dinner-canggu-46
 date: "2027-06-10"
 time: "18:30"
@@ -13,8 +13,8 @@ rsvpUrl: https://luma.com/f18e0qe7?utm_source=website
 coverImage: /images/events/networking-night.png
 description: "Our 46th community networking drinks & dinner at Yema Kitchen, Canggu. Real founders, builders and operators in Bali. A quick open mic, a couple of short founder talks, then easy, no-pressure networking. Free, new faces welcome."
 seo:
-  title: "Bali Startup and Tech Networking Drinks & Dinner - Canggu #46 | Bali Tech Events"
-  description: "Thursday 10 June, 6:30pm at Yema Kitchen, Canggu. Join Bali's founders, engineers and operators at BSTC's 46th networking drinks & dinner. Free entry, zero pitching."
+  title: "BSTC Networking Drinks & Dinner, Canggu #46"
+  description: "Thu 10 Jun, 6:30pm, Yema Kitchen, Canggu. Bali's founders, engineers and operators at BSTC's 46th networking drinks and dinner. Free entry, zero pitching."
   keywords:
     - Bali networking event
     - tech meetup Bali
@@ -33,6 +33,6 @@ Our 46th Community Networking Dinner/Drinks Event, 6:30 pm on Thursday 10 June 2
 - 60-second intros max
 - Signal > Noise
 
-Hosted at Yema Kitchen, Canggu · Moderated by Bali Start-Up & Tech Community.
+Locally hosted by Yema Kitchen · Moderated by Bali Startup & Tech Community.
 
 Free entry. [RSVP on Luma](https://luma.com/f18e0qe7?utm_source=website), then [join the BSTC community](https://www.balistartupandtech.com/join?src=event-website) for the community chat and a free member profile.
