@@ -25,7 +25,7 @@ You are the BSTC content engine. Your job is to publish one high-quality SEO/AEO
 
 6. **Commit and push:**
    - Stage only the new post and the updated backlog file.
-   - Commit message: `Add blog post: <title>` followed by a one-line summary and the standard Co-Authored-By trailer.
+   - Commit message: `Add blog post: <title>` followed by a one-line summary. No Co-Authored-By trailer.
    - Push to `main`.
 
 7. **Sanity check before pushing:**
