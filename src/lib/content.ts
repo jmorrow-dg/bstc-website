@@ -13,10 +13,14 @@ export interface EventFrontmatter {
   slug: string;
   date: string;
   time: string;
+  schema?: boolean;
+  pastList?: boolean;
   // Finish time (HH:MM, Bali time), copied from the night's own RSVP listing
   // (Meetup or Luma) with the listing named in a comment beside it. Leave it
   // out when the listing gives none: the page and Event schema then omit it.
   endTime?: string;
+  series?: string;
+  updated?: string;
   venue: string;
   type: "networking" | "roundtable" | "builder-session" | "how-i-build-with-ai";
   status: "upcoming" | "completed";
@@ -46,7 +50,7 @@ export interface EventFrontmatter {
   };
   // Organiser of record for this event. Falls back to EVENT_ORGANIZER in
   // constants.ts when omitted.
-  organizer?: {
+  organizer?: string | {
     name: string;
     url?: string;
   };
@@ -68,6 +72,7 @@ export interface EventFrontmatter {
 }
 
 export interface BlogFrontmatter {
+  updated?: string;
   title: string;
   slug: string;
   date: string;
@@ -187,7 +192,7 @@ export function getPastEvents(
   events: ContentItem<EventFrontmatter>[],
   now: Date = new Date()
 ): ContentItem<EventFrontmatter>[] {
-  return events.filter((e) => getEventState(e.frontmatter, now) === "past");
+  return events.filter((e) => e.frontmatter.pastList !== false && getEventState(e.frontmatter, now) === "past");
 }
 
 export function getHIWAEvents(

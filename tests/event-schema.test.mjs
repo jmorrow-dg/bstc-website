@@ -25,7 +25,7 @@ for (const name of ["schema", "constants", "event-status", "venues"]) {
   out = out.replace(/require\("\.\/([\w-]+)"\)/g, 'require("./$1.cjs")');
   fs.writeFileSync(path.join(tmp, `${name}.cjs`), out);
 }
-const { getEventSchema, getEventOrganizer, isIsoDateTimeWithZone } = require(path.join(tmp, "schema.cjs"));
+const { getEventSchema, getEventOrganizer, getHowIAISeriesSchema, isIsoDateTimeWithZone } = require(path.join(tmp, "schema.cjs"));
 const { SITE } = require(path.join(tmp, "constants.cjs"));
 const { organizerWebsite } = require(path.join(tmp, "venues.cjs"));
 
@@ -170,6 +170,14 @@ test("validFrom is omitted, never invented, when no valid announced date is give
   assert.equal(s.offers.validFrom, undefined);
   const s2 = schemaFor({ ...e, announced: "2026-11-02" });
   assert.equal(s2.offers.validFrom, undefined);
+});
+
+test("the How I AI EventSeries organiser is the venue with its url, so the built-page check passes", async () => {
+  const { organizerProblems } = await import("../scripts/check-event-jsonld.mjs");
+  const series = getHowIAISeriesSchema([`${SITE.url}/events/how-i-ai-edition-21`]);
+  assert.equal(series.organizer.name, "Seoul Soul Project");
+  assert.equal(series.organizer.url, ORGANIZER_URLS["Seoul Soul Project"]);
+  assert.deepEqual(organizerProblems(series, { requireName: true }), []);
 });
 
 test.after(() => fs.rmSync(tmp, { recursive: true, force: true }));
