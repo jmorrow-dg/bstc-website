@@ -38,7 +38,7 @@ export default function Navbar() {
         <Link
           href="/"
           className="gl-brand"
-          aria-label="Bali Startup and Tech, home"
+          aria-label="Bali Startup & Tech, home"
         >
           <span className="gl-crest" aria-hidden="true" />
           <span className="gl-brand-name">Bali Startup &amp; Tech</span>
@@ -62,9 +62,11 @@ export default function Navbar() {
           </a>
         )}
 
-        <Link href="/join?src=nav" className="gl-btn gl-btn-red gl-top-join">
+        {/* /join is another app behind a rewrite: a plain link loads it in full.
+            A Next Link would prefetch it and get a 404. */}
+        <a href="/join?src=nav" className="gl-btn gl-btn-red gl-top-join">
           Join the community
-        </Link>
+        </a>
 
         <button
           type="button"
@@ -97,13 +99,13 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <Link
+          <a
             href="/join?src=nav-mobile"
             className="gl-btn gl-btn-red"
             onClick={() => setMobileOpen(false)}
           >
             Join the community
-          </Link>
+          </a>
           {SIGN_IN && (
             <a
               href={SIGN_IN.href}
