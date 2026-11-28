@@ -45,7 +45,7 @@ function MemberCard({ perk }: { perk: Perk }) {
   const headingId = `perk-${perk.id}-h`;
   const letter = perk.company.trim().charAt(0).toUpperCase();
   const stamp = memberStamp(status);
-  const waiting = status === "activation_pending" || status === "terms_pending";
+  const waiting = status !== "available_now";
 
   return (
     <article
@@ -285,9 +285,9 @@ export default function PerksPage() {
               Bali Startup &amp; Tech is the community for founders, entrepreneurs
               and remote builders in Bali, and wherever you build from next.
               Public startup programmes are listed with a link to each vendor.
-              Member offers with agreed terms are listed separately, and they are
-              not claimable from this page while a code or partner link is still
-              being set up.
+              Community offers are listed separately as Available now, Coming
+              soon or In discussion. None can be claimed from this page yet:
+              member codes and unique partner links stay off it.
             </p>
             <div className="gl-head-ctas">
               <Link className="gl-btn gl-btn-paper" href="/join?src=perks-head">
@@ -310,42 +310,26 @@ export default function PerksPage() {
               </p>
             </div>
             <div className="gl-kind-tile gl-kind-terms">
-              <b>{FACTS.withTerms}</b>
-              <h2>Agreed terms</h2>
-              <p className="gl-k-sub">
-                {FACTS.confirmed} confirmed, {FACTS.approved} approved
-              </p>
+              <b>{FACTS.availableNow}</b>
+              <h2>Available now</h2>
+              <p className="gl-k-sub">Community offers with agreed terms</p>
               <p>
                 Terms are stated on each card. Claiming is not open on this page.
-                Codes stay private, and partner or application links are not
-                published here.
+                Member codes and unique partner links are not published here.
               </p>
             </div>
-            {FACTS.pending > 0 && (
+            {FACTS.comingSoon + FACTS.inDiscussion > 0 && (
               <div className="gl-kind-tile gl-kind-wait">
-                <b>{FACTS.pending}</b>
-                <h2>Not claimable yet</h2>
+                <b>{FACTS.comingSoon + FACTS.inDiscussion}</b>
+                <h2>Coming soon and in discussion</h2>
                 <p className="gl-k-sub">
-                  {[
-                    FACTS.activation ? `${FACTS.activation} activation pending` : "",
-                    FACTS.terms ? `${FACTS.terms} terms pending` : "",
-                  ]
-                    .filter(Boolean)
-                    .join(", ")}
+                  {FACTS.comingSoon} coming soon, {FACTS.inDiscussion} in discussion
                 </p>
                 <p>
-                  {FACTS.activation > 0 && (
-                    <>
-                      {FACTS.activation} {FACTS.activation === 1 ? "is" : "are"} agreed
-                      and waiting on activation.{" "}
-                    </>
-                  )}
-                  {FACTS.terms > 0 && (
-                    <>
-                      {FACTS.terms} {FACTS.terms === 1 ? "has" : "have"} an offer in,
-                      with terms still being confirmed.
-                    </>
-                  )}
+                  {FACTS.comingSoon} {FACTS.comingSoon === 1 ? "benefit is" : "benefits are"}{" "}
+                  agreed and still being set up. {FACTS.inDiscussion}{" "}
+                  {FACTS.inDiscussion === 1 ? "is a conversation" : "are conversations"} with
+                  no agreed benefit yet, so no discount is stated.
                 </p>
               </div>
             )}
@@ -507,9 +491,9 @@ export default function PerksPage() {
           <span className="gl-crest" aria-hidden="true" />
           <h2 id="perks-final-title">Perks come with membership</h2>
           <p>
-            Join free. You get the chat and every event. Member offers are listed
-            once the terms are agreed, and claiming opens when the code or partner
-            link is ready.
+            Join free. You get the chat and every event. Community offers are
+            labelled Available now, Coming soon or In discussion, and claiming
+            opens once a member claim path is ready.
           </p>
           <Link className="gl-btn gl-btn-paper" href="/join?src=perks-foot">
             Join the community

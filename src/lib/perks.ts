@@ -11,16 +11,19 @@
 // An example marked unavailable is not currently available and must not be
 // described as in negotiation.
 //
-// Community offers in src/data/member-offers.json are separate. confirmed and
-// approved entries have terms we can state. activation_pending is agreed and
-// not active. terms_pending has an offer in, without confirmed terms. None of
-// them render a claim link. Counts below are derived from these entries.
+// Community offers in src/data/member-offers.json are separate, in three
+// groups. available_now: terms are agreed and members claim through a member
+// link or code that stays off this page (Sign in is not live, so claiming is
+// not open here). coming_soon: a benefit is agreed and the claim route or a
+// remaining detail is still being set up. in_discussion: a live conversation
+// with no agreed benefit, so no figure is stated. None of them render a claim
+// link. Counts below are derived from these entries.
 import perksFile from "@/data/perks.json";
 import memberOffersFile from "@/data/member-offers.json";
 
 export type PerkType = "open" | "exclusive" | "local" | "member";
 
-export type MemberStatus = "confirmed" | "approved" | "activation_pending" | "terms_pending";
+export type MemberStatus = "available_now" | "coming_soon" | "in_discussion";
 
 export type Perk = {
   id: string;
@@ -99,22 +102,17 @@ export type PerkFacts = {
   negotiatingTools: number;
   unavailable: number;
   local: number;
-  confirmed: number;
-  approved: number;
-  withTerms: number;
-  activation: number;
-  terms: number;
-  pending: number;
+  availableNow: number;
+  comingSoon: number;
+  inDiscussion: number;
 };
 
 export function perkFacts(): PerkFacts {
   const partner = OPEN_PERKS.filter((p) => p.claim_route === "partner").length;
   const negotiating = EXAMPLE_PERKS.filter((p) => !isUnavailable(p));
   const unavailable = EXAMPLE_PERKS.filter(isUnavailable);
-  const confirmed = MEMBER_PERKS.filter((p) => p.member_status === "confirmed");
-  const approved = MEMBER_PERKS.filter((p) => p.member_status === "approved");
-  const activation = MEMBER_PERKS.filter((p) => p.member_status === "activation_pending");
-  const terms = MEMBER_PERKS.filter((p) => p.member_status === "terms_pending");
+  const withStatus = (status: MemberStatus) =>
+    MEMBER_PERKS.filter((p) => p.member_status === status).length;
   const negotiatingLocal = negotiating.filter((p) => p.type === "local").length;
   return {
     open: OPEN_PERKS.length,
@@ -126,36 +124,19 @@ export function perkFacts(): PerkFacts {
     negotiatingTools: negotiating.length - negotiatingLocal,
     unavailable: unavailable.length,
     local: LOCAL_EXAMPLES.length,
-    confirmed: confirmed.length,
-    approved: approved.length,
-    withTerms: confirmed.length + approved.length,
-    activation: activation.length,
-    terms: terms.length,
-    pending: activation.length + terms.length,
+    availableNow: withStatus("available_now"),
+    comingSoon: withStatus("coming_soon"),
+    inDiscussion: withStatus("in_discussion"),
   };
 }
 
 export function perksMetaDescription(checkedLabel: string): string {
   const f = perkFacts();
-  const offer = f.withTerms === 1 ? "offer has" : "offers have";
-  const claim = f.withTerms === 1 ? "is" : "are";
   const parts = [
     `${f.open} open startup programmes, each checked on the vendor's own page by ${checkedLabel}.`,
-    `${f.withTerms} ${offer} agreed terms and ${claim} not claimable on this page yet.`,
+    `Community offers: ${f.availableNow} available now, ${f.comingSoon} coming soon and ${f.inDiscussion} in discussion. None can be claimed on this page yet.`,
+    `${f.negotiating} example ${f.negotiating === 1 ? "listing is" : "listings are"} still being negotiated.`,
   ];
-  if (f.activation) {
-    parts.push(
-      `${f.activation} ${f.activation === 1 ? "is" : "are"} agreed and waiting on activation.`
-    );
-  }
-  if (f.terms) {
-    parts.push(
-      `${f.terms} ${f.terms === 1 ? "offer has" : "offers have"} been received, with terms still being confirmed.`
-    );
-  }
-  parts.push(
-    `${f.negotiating} example ${f.negotiating === 1 ? "listing is" : "listings are"} still being negotiated.`
-  );
   if (f.unavailable) {
     parts.push(
       `${f.unavailable} example ${f.unavailable === 1 ? "is" : "are"} not currently available.`
@@ -172,41 +153,28 @@ export type MemberGroup = {
 };
 
 export function memberGroups(perks: Perk[] = MEMBER_PERKS): MemberGroup[] {
-  const confirmed = perks.filter((p) => p.member_status === "confirmed").length;
-  const approved = perks.filter((p) => p.member_status === "approved").length;
-  const agreed = perks.filter(
-    (p) => p.member_status === "confirmed" || p.member_status === "approved"
-  );
-  const activation = perks.filter((p) => p.member_status === "activation_pending");
-  const terms = perks.filter((p) => p.member_status === "terms_pending");
+  const pick = (status: MemberStatus) => perks.filter((p) => p.member_status === status);
+  const now = pick("available_now");
+  const soon = pick("coming_soon");
+  const talks = pick("in_discussion");
   const groups: MemberGroup[] = [
     {
-      id: "agreed-terms",
-      title: "Agreed terms",
-      intro: [
-        confirmed
-          ? `${confirmed} ${confirmed === 1 ? "confirmed member offer" : "confirmed member offers"}`
-          : "",
-        approved
-          ? `${approved} ${approved === 1 ? "approved partner programme" : "approved partner programmes"}`
-          : "",
-      ]
-        .filter(Boolean)
-        .join(" and ") +
-        ". The terms are stated on each card. None of these can be claimed from this page. Codes stay private, and partner or application links are not published here.",
-      perks: agreed,
+      id: "available-now",
+      title: "Available now",
+      intro: `${now.length} ${now.length === 1 ? "offer has" : "offers have"} agreed terms, stated on each card. Members claim through a member link or code, and those stay off this public page, so claiming is not open here yet.`,
+      perks: now,
     },
     {
-      id: "activation-pending",
-      title: "Agreed, activation pending",
-      intro: `${activation.length} ${activation.length === 1 ? "offer is" : "offers are"} agreed and not active yet, so ${activation.length === 1 ? "it is" : "they are"} not claimable.`,
-      perks: activation,
+      id: "coming-soon",
+      title: "Coming soon",
+      intro: `${soon.length} ${soon.length === 1 ? "benefit is" : "benefits are"} agreed, and the claim route or a remaining detail, such as the plan or who qualifies, is still being set up. Not claimable yet.`,
+      perks: soon,
     },
     {
-      id: "terms-pending",
-      title: "Offer received, terms being confirmed",
-      intro: `${terms.length} ${terms.length === 1 ? "offer has" : "offers have"} been received and the terms are still being confirmed. ${terms.length === 1 ? "It is" : "They are"} not a confirmed discount and not claimable.`,
-      perks: terms,
+      id: "in-discussion",
+      title: "In discussion",
+      intro: `${talks.length} ${talks.length === 1 ? "conversation is" : "conversations are"} under way. No member benefit has been agreed, so these cards state no discount and there is nothing to claim.`,
+      perks: talks,
     },
   ];
   return groups.filter((group) => group.perks.length > 0);
@@ -214,27 +182,22 @@ export function memberGroups(perks: Perk[] = MEMBER_PERKS): MemberGroup[] {
 
 export function memberStamp(status: MemberStatus): string {
   switch (status) {
-    case "confirmed":
-      return "Confirmed";
-    case "approved":
-      return "Approved";
-    case "activation_pending":
-      return "Not active";
-    case "terms_pending":
-      return "Terms pending";
+    case "available_now":
+      return "Available now";
+    case "coming_soon":
+      return "Coming soon";
+    case "in_discussion":
+      return "In discussion";
   }
 }
 
 export function memberDateLabel(status: MemberStatus): string {
   switch (status) {
-    case "confirmed":
-      return "Confirmed";
-    case "approved":
-      return "Approved";
-    case "activation_pending":
+    case "available_now":
+    case "coming_soon":
       return "Agreed";
-    case "terms_pending":
-      return "Offer received";
+    case "in_discussion":
+      return "Offer recorded";
   }
 }
 

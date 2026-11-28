@@ -559,25 +559,9 @@ export default async function Home() {
               Most software perks work wherever you build from.{" "}
               {perks.open} startup programmes are open, each checked on the
               vendor&apos;s own page by {formatChecked(PERKS_CHECKED)}.{" "}
-              {perks.withTerms}{" "}
-              {perks.withTerms === 1 ? "offer has" : "offers have"} agreed
-              terms, and claiming is not open on this page yet.
-              {perks.activation > 0 && (
-                <>
-                  {" "}
-                  {perks.activation}{" "}
-                  {perks.activation === 1 ? "more is" : "more are"} agreed and
-                  waiting on activation.
-                </>
-              )}
-              {perks.terms > 0 && (
-                <>
-                  {" "}
-                  {perks.terms}{" "}
-                  {perks.terms === 1 ? "offer has" : "offers have"} been
-                  received, with terms still being confirmed.
-                </>
-              )}{" "}
+              Community offers: {perks.availableNow} available now,{" "}
+              {perks.comingSoon} coming soon and {perks.inDiscussion} in
+              discussion, and claiming is not open on the perks page yet.{" "}
               {perks.negotiating}{" "}
               {perks.negotiating === 1 ? "listing is an example" : "listings are examples"}{" "}
               of deals still being negotiated with founder tools and Bali partners,
@@ -626,25 +610,10 @@ export default async function Home() {
             <div className="gl-ex-box">
               <h3>Member deals</h3>
               <p>
-                {perks.withTerms}{" "}
-                {perks.withTerms === 1 ? "offer has" : "offers have"} agreed
-                terms. Claiming is not open on the perks page yet.
-                {perks.activation > 0 && (
-                  <>
-                    {" "}
-                    {perks.activation}{" "}
-                    {perks.activation === 1 ? "is" : "are"} agreed and waiting
-                    on activation.
-                  </>
-                )}
-                {perks.terms > 0 && (
-                  <>
-                    {" "}
-                    {perks.terms}{" "}
-                    {perks.terms === 1 ? "offer has" : "offers have"} terms still
-                    being confirmed.
-                  </>
-                )}{" "}
+                {perks.availableNow} community{" "}
+                {perks.availableNow === 1 ? "offer is" : "offers are"} available
+                now, {perks.comingSoon} coming soon and {perks.inDiscussion} in
+                discussion. Claiming is not open on the perks page yet.{" "}
                 The {teaserExamples.length} below are examples still being
                 negotiated, labelled Example.
               </p>

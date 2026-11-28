@@ -200,4 +200,4 @@ export const GUIDE_TOPICS: { title: string; slugs: string[] }[] = [
 
 // Perks teaser: six open programmes and three examples, by id in perks.json.
 export const TEASER_OPEN_PERKS = ["cloudflare", "vercel", "posthog", "elevenlabs", "notion", "airwallex"];
-export const TEASER_EXAMPLE_PERKS = ["lovable", "granola", "wispr-flow"];
+export const TEASER_EXAMPLE_PERKS = ["lovable", "readwise", "wispr-flow"];
