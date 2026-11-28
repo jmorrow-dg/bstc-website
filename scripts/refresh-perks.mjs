@@ -22,6 +22,28 @@ const open = feed.perks
     verified: true,
   }));
 if (!open.length) throw new Error("The feed has no open programmes, so nothing was written");
+
+// BSTC wording the feed does not carry yet (28 Nov 2026). Until the Remote
+// Builders feed matches, keep these fields from the current file: Carta Launch
+// says "under 25 stakeholders", and Amplitude names the annual Plus plan in
+// year 2 with BSTC's funded-startup framing. Fibery is kept while the feed
+// does not list it.
+const PRESERVE = {
+  amplitude: ["headline", "offer", "eligibility", "notes", "checked"],
+  carta: ["offer", "eligibility", "notes"],
+};
+const KEEP_IF_MISSING = ["fibery"];
+const byId = new Map(current.perks.map((p) => [p.id, p]));
+for (const row of open) {
+  const kept = byId.get(row.id);
+  for (const field of PRESERVE[row.id] || []) {
+    if (kept && kept[field] !== undefined) row[field] = kept[field];
+  }
+}
+for (const id of KEEP_IF_MISSING) {
+  const kept = byId.get(id);
+  if (kept && !open.some((p) => p.id === id)) open.push(kept);
+}
 const examples = current.perks.filter((p) => p.type !== "open");
 
 // A category missing from this list would hide its perks while the count still
