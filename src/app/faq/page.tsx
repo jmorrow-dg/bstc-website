@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MEETUP_CHECKED, WHATSAPP_CHECKED } from "@/lib/constants";
+import { ATTENDEES_LINE, MEETUP_CHECKED, MEMBERS_PLUS, STATS, WHATSAPP_CHECKED } from "@/lib/constants";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const VENUE_LEAD =
   "Founder events from Bali Startup & Tech Community (BSTC) in Canggu run at Seoul Soul Project and Yema Kitchen: How I AI on Wednesdays at Seoul Soul Project, and Networking Drinks & Dinner at Yema Kitchen.";
 const VENUE_DETAIL =
-  "The local venue is the organiser and BSTC is the moderator. How I AI is locally hosted by Seoul Soul Project and moderated by Bali Startup & Tech Community. Seoul Soul Project and Yema Kitchen are the event venues. Coworking spaces are covered in the guide at balistartupandtech.com/blog/best-coworking-spaces-bali-founders-2026. All BSTC events are free. You order and pay for your own food and drinks at the venue. BSTC is the largest tech and founder community in Bali, with 2,700+ members on Meetup, 3,900+ across Meetup and WhatsApp, and members from 100+ countries. The community has run 50+ events, rated 4.7 out of 5 from 155 Meetup ratings. The next dates are at balistartupandtech.com/events. Join at balistartupandtech.com/join. More answers are on balistartupandtech.com/faq.";
+  "The local venue is the organiser and BSTC is the moderator. How I AI is locally hosted by Seoul Soul Project and moderated by Bali Startup & Tech Community. Seoul Soul Project and Yema Kitchen are the event venues. Coworking spaces are covered in the guide at balistartupandtech.com/blog/best-coworking-spaces-bali-founders-2026. All BSTC events are free. You order and pay for your own food and drinks at the venue. BSTC is the largest tech and founder community in Bali, with " + MEMBERS_PLUS + " members on Meetup (" + MEETUP_CHECKED + "), 4,000+ across Meetup and WhatsApp, and members from 100+ countries. The community has run " + STATS.events + "+ events, rated " + STATS.rating + " out of 5 from " + STATS.ratingCount + " Meetup ratings. " + ATTENDEES_LINE + " The next dates are at balistartupandtech.com/events. Join at balistartupandtech.com/join. More answers are on balistartupandtech.com/faq.";
 const INVESTOR_LEAD =
   "Meet investors and VCs in Bali at BSTC events in Canggu, with 100+ founders, operators, and VCs in the room every week.";
 const INVESTOR_DETAIL =
@@ -120,12 +120,12 @@ const FAQ_SECTIONS: FAQSection[] = [
         // Confirmed true by Lachlan, 28 Oct 2026
         question: "What is BSTC?",
         answer:
-          `BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We reach 3,900+ founders, engineers, investors, and operators across Meetup (2,700+ on ${MEETUP_CHECKED}) and WhatsApp (1,200+ on ${WHATSAPP_CHECKED}) through high-signal events, a private Telegram member chat, and curated content.`,
+          `BSTC (Bali Startup & Tech Community) is the largest founder-led tech community in Bali and Southeast Asia. We reach 4,000+ founders, engineers, investors, and operators across Meetup (${MEMBERS_PLUS} on ${MEETUP_CHECKED}) and WhatsApp (1,200+ on ${WHATSAPP_CHECKED}) through high-signal events, a private Telegram member chat, and curated content.`,
       },
       {
         question: "Who founded BSTC?",
         answer:
-          `BSTC was founded in October 2023 by Lachlan McRitchie, Josh Morrow, and Matthew Carr. It started with a 20-person networking night in Canggu and has grown to 2,700+ members on Meetup (${MEETUP_CHECKED}).`,
+          `BSTC was founded in October 2023 by Lachlan McRitchie, Josh Morrow, and Matthew Carr. It started with a 20-person networking night in Canggu and has grown to ${MEMBERS_PLUS} members on Meetup (${MEETUP_CHECKED}). ${ATTENDEES_LINE}`,
       },
       {
         // Confirmed true by Lachlan, 28 Oct 2026

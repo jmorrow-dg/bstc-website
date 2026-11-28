@@ -108,15 +108,15 @@ test("past pages that match a Meetup night use that night's end time", () => {
   }
 });
 
-test("the dated record matches the Meetup group check of 11 Nov 2026", () => {
+test("the dated record matches the Meetup group check of 28 Nov 2026", () => {
   const all = H.getHistoryStats();
-  assert.equal(H.HISTORY_CHECKED, "11 Nov 2026");
-  assert.equal(all.nights, 53);
-  assert.equal(all.dinners, 37);
-  assert.equal(all.howIAi, 16);
-  assert.equal(all.rsvps, 2620);
+  assert.equal(H.HISTORY_CHECKED, "28 Nov 2026");
+  assert.equal(all.nights, 56);
+  assert.equal(all.dinners, 38);
+  assert.equal(all.howIAi, 18);
+  assert.equal(all.rsvps, 2702);
   assert.equal(all.firstDate, "2023-11-09");
-  assert.deepEqual(H.EVENT_HISTORY.group, { members: 2788, ratingAverage: 4.65, ratingCount: 155 });
+  assert.deepEqual(H.EVENT_HISTORY.group, { members: 2858, ratingAverage: 4.66, ratingCount: 158 });
 });
 
 test("history labels are consistent and newest first", () => {
@@ -126,7 +126,7 @@ test("history labels are consistent and newest first", () => {
   assert.equal(label("2026-06-18"), "Drinks & Dinner #37");
   assert.equal(label("2026-04-30"), "Drinks & Dinner #36");
   assert.equal(label("2026-03-24"), "Melbourne Drinks & Dinner #1");
-  assert.equal(H.nightLabel(H.getNights("how-i-ai")[0]), "How I AI Edition 18");
+  assert.equal(H.nightLabel(H.getNights("how-i-ai")[0]), "How I AI Edition 21");
 });
 
 test("a history row links this site's page only for the same series, date and number", () => {

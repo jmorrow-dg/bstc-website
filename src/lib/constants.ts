@@ -16,7 +16,10 @@ export const EVENT_ORGANIZER: { name: string; url?: string } = {
 
 // When the public counts were last read. Shown beside each count, so re-read
 // and update these together. Meetup: its group page. WhatsApp: Lachlan's answer.
-export const MEETUP_CHECKED = "25 Oct 2026";
+export const MEETUP_CHECKED = "28 Nov 2026";
+// Meetup members as shown on the site (rounded down from 2,858, read 28 Nov 2026).
+// Keep in step with STATS.members.
+export const MEMBERS_PLUS = "2,850+";
 export const WHATSAPP_CHECKED = "28 Oct 2026";
 
 export const SITE = {
@@ -26,7 +29,7 @@ export const SITE = {
   tagline: "Southeast Asia's Largest Tech Community",
   description:
     // Confirmed true by Lachlan, 28 Oct 2026
-    `Southeast Asia's largest founder-led tech community. Built in Bali with 2,700+ members (Meetup, ${MEETUP_CHECKED}) from 100+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.`,
+    `Southeast Asia's largest founder-led tech community. Built in Bali with ${MEMBERS_PLUS} members (Meetup, ${MEETUP_CHECKED}) from 100+ countries. Funded founders, ex-FAANG engineers, and investors. Signal over noise.`,
   // The host Vercel serves: the bare domain redirects to www, so canonicals,
   // the sitemap and schema use www. If the bare domain is ever made primary in
   // Vercel, change this back in the same release.
@@ -50,18 +53,25 @@ export const SITE = {
 // One source for community stats. Hardcoded copy (incl. public/llms.txt) must
 // match these values.
 // Source: the BSTC Meetup group page
-// (https://www.meetup.com/bali-start-ups-tech-community/), fetched 25 Oct 2026
-// (evening WITA): 2,734 members, rating 4.7 from 155 ratings, 54 past events.
-// Shown rounded down: members "2,700+", events "50+".
+// (https://www.meetup.com/bali-start-ups-tech-community/), read 28 Nov 2026:
+// 2,858 members, rating 4.66 (shown 4.7) from 158 ratings; 56 nights held
+// (Meetup event history, src/data/event-history.json, checked 28 Nov 2026).
+// Shown rounded down: members "2,850+", events "55+".
 export const STATS = {
-  members: 2700,
-  events: 50,
-  // Meetup group page, read 26 Oct 2026: 4.7 from 155 ratings, 2,734 members.
+  members: 2850,
+  events: 55,
+  // Meetup group page, read 28 Nov 2026: 4.66 shown as 4.7, from 158 ratings.
   rating: 4.7,
-  ratingCount: 155,
+  ratingCount: 158,
   // Confirmed true by Lachlan, 28 Oct 2026
   countries: 100,
 };
+
+// About 4,500 people have come to BSTC nights since October 2023: the
+// organisers' own approximate count (Lachlan, 28 Nov 2026). Always say "about"
+// and credit it to the organisers.
+export const ATTENDEES_LINE =
+  "About 4,500 people at our nights since October 2023 (organisers' count, 28 Nov 2026).";
 
 // The home page's "community in numbers" block, read 28 Nov 2026 (Lachlan, who
 // asked for the current, dated figures). Kept apart from STATS above, which other

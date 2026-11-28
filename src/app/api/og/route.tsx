@@ -1,5 +1,5 @@
 import { ImageResponse } from "@vercel/og";
-import { MEETUP_CHECKED } from "@/lib/constants";
+import { MEETUP_CHECKED, MEMBERS_PLUS } from "@/lib/constants";
 import { NextRequest } from "next/server";
 
 export const runtime = "edge";
@@ -139,7 +139,7 @@ export async function GET(request: NextRequest) {
             &middot;
           </span>
           <span style={{ color: greyColor, fontSize: "16px" }}>
-            2,700+ Members (Meetup, {MEETUP_CHECKED})
+            {MEMBERS_PLUS} Members (Meetup, {MEETUP_CHECKED})
           </span>
           <span style={{ color: greyColor, fontSize: "16px" }}>
             &middot;
