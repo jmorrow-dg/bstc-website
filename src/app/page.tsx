@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { MEETUP_CHECKED, SITE, STATS } from "@/lib/constants";
+import { HOME_COUNTS, HOME_COUNTS_CHECKED, SITE, STATS } from "@/lib/constants";
 import { getAllBlogPosts, getUpcomingEvents, getAllEvents } from "@/lib/content";
 import { getFAQSchema } from "@/lib/schema";
 import {
@@ -164,7 +164,6 @@ export default async function Home() {
   const teaserOpen = pickPerks(TEASER_OPEN_PERKS);
   const teaserExamples = pickPerks(TEASER_EXAMPLE_PERKS);
   const perks = perkFacts();
-  const members = `${STATS.members.toLocaleString("en-US")}+`;
 
   return (
     <div className="gl-page">
@@ -251,16 +250,20 @@ export default async function Home() {
           </h2>
           <dl className="gl-score">
             <div>
+              <dt>people at our nights since October 2023</dt>
+              <dd>{HOME_COUNTS.attendees.toLocaleString("en-US")}</dd>
+            </div>
+            <div>
               <dt>members on Meetup</dt>
-              <dd>{members}</dd>
+              <dd>{HOME_COUNTS.members.toLocaleString("en-US")}</dd>
             </div>
             <div>
-              <dt>events hosted since October 2023</dt>
-              <dd>{STATS.events}+</dd>
+              <dt>nights held since October 2023</dt>
+              <dd>{HOME_COUNTS.nights}</dd>
             </div>
             <div>
-              <dt>average rating on Meetup, from {STATS.ratingCount} ratings</dt>
-              <dd className="gl-red">{STATS.rating}</dd>
+              <dt>average rating on Meetup, from {HOME_COUNTS.ratingCount} ratings</dt>
+              <dd className="gl-red">{HOME_COUNTS.rating}</dd>
             </div>
             <div>
               {/* Confirmed true by Lachlan, 28 Oct 2026 */}
@@ -269,8 +272,12 @@ export default async function Home() {
             </div>
           </dl>
           <p className="gl-score-note">
-            Meetup figures checked {MEETUP_CHECKED}: 2,734 members, rated{" "}
-            {STATS.rating} from {STATS.ratingCount} ratings.
+            Meetup figures checked {HOME_COUNTS_CHECKED}:{" "}
+            {HOME_COUNTS.members.toLocaleString("en-US")} members, rated{" "}
+            {HOME_COUNTS.rating} from {HOME_COUNTS.ratingCount} ratings. Nights
+            held come from the Meetup event history, checked {HOME_COUNTS_CHECKED}.
+            People at our nights is the organisers&apos; approximate count,{" "}
+            {HOME_COUNTS_CHECKED}.
           </p>
         </div>
       </section>
@@ -331,8 +338,8 @@ export default async function Home() {
                 sizes="(max-width: 760px) 100vw, 66vw"
               />
               <figcaption className="gl-stat">
-                <b>{STATS.events}+</b>
-                <span>events since October 2023</span>
+                <b>{HOME_COUNTS.nights}</b>
+                <span>nights since October 2023</span>
               </figcaption>
             </figure>
             <figure className="gl-room gl-room-b">
@@ -343,8 +350,8 @@ export default async function Home() {
                 sizes="(max-width: 760px) 100vw, 33vw"
               />
               <figcaption className="gl-stat">
-                <b>{STATS.rating}</b>
-                <span>on Meetup, from {STATS.ratingCount} ratings</span>
+                <b>{HOME_COUNTS.rating}</b>
+                <span>on Meetup, from {HOME_COUNTS.ratingCount} ratings</span>
               </figcaption>
             </figure>
           </div>
@@ -522,8 +529,8 @@ export default async function Home() {
           <div className="gl-sec-head">
             <h2 id="rev-title">From the community</h2>
             <p className="gl-rating">
-              <b>{STATS.rating}</b>
-              <span>from {STATS.ratingCount} ratings on Meetup</span>
+              <b>{HOME_COUNTS.rating}</b>
+              <span>from {HOME_COUNTS.ratingCount} ratings on Meetup</span>
             </p>
           </div>
           <ul className="gl-quotes">
@@ -835,7 +842,7 @@ export default async function Home() {
           <p className="gl-pre">Join from anywhere</p>
           <h2 id="final-title">Ready to join?</h2>
           <p>
-            Join {members} founders, engineers, and operators (Meetup, {MEETUP_CHECKED})
+            Join {HOME_COUNTS.members.toLocaleString("en-US")} founders, engineers, and operators (Meetup, {HOME_COUNTS_CHECKED})
             building the future from Southeast Asia.
           </p>
           <div className="gl-final-ctas">

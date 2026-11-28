@@ -63,6 +63,25 @@ export const STATS = {
   countries: 100,
 };
 
+// The home page's "community in numbers" block, read 28 Nov 2026 (Lachlan, who
+// asked for the current, dated figures). Kept apart from STATS above, which other
+// pages and public/llms.txt still quote at their own 25 Oct dates.
+// - members, rating, ratingCount: Meetup's public group stats (GraphQL), read
+//   28 Nov 2026: 2,858 members, 4.66 average (shown 4.7) from 158 ratings.
+// - nights: 56 BSTC nights held since October 2023, from the Meetup event
+//   history (remote-builders content/event-history.json), checked 28 Nov 2026.
+// - attendees: about 4,500 people at BSTC nights since October 2023, the
+//   organisers' own approximate count given 28 Nov 2026. Never shown as exact.
+// - countries stays "100+" (STATS.countries): another site reads that phrase.
+export const HOME_COUNTS_CHECKED = "28 Nov 2026";
+export const HOME_COUNTS = {
+  attendees: 4500,
+  members: 2858,
+  nights: 56,
+  rating: 4.7,
+  ratingCount: 158,
+};
+
 export const NAV_LINKS = [
   { label: "Events", href: "/events" },
   { label: "Drinks & Dinner", href: "/drinks-and-dinner" },
