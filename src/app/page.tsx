@@ -20,6 +20,8 @@ import {
 } from "@/lib/perks";
 import { CITY_COMPARISONS } from "@/data/city-comparisons";
 import { FOUNDERS, initials } from "@/data/founders";
+import { MEET_CHECKED, MEET_MEMBERS, MEET_SOURCE } from "@/data/meet-members";
+import { getGrowth, growthDate } from "@/lib/rb-growth";
 import {
   CREDIBILITY,
   FORMATS,
@@ -134,9 +136,10 @@ function FixtureRow({ fixture, isNext }: { fixture: Fixture; isNext: boolean }) 
 }
 
 export default async function Home() {
-  const [allPosts, allEvents] = await Promise.all([
+  const [allPosts, allEvents, growth] = await Promise.all([
     getAllBlogPosts(),
     getAllEvents(),
+    getGrowth(),
   ]);
   const latestPosts = allPosts.slice(0, 3);
   const latestSignal = allPosts.find(
@@ -187,6 +190,14 @@ export default async function Home() {
               Meet at our events in Canggu, join the chat, and keep your place in
               it when you move on. High-signal events. Zero noise.
             </p>
+            <p className="gl-hero-ai">
+              <b>How I AI runs every Wednesday</b> at Seoul Soul Project in
+              Canggu. Builders show the AI tools, workflows and revenue behind
+              what they ship. Free to come.{" "}
+              <Link className="gl-link" href="/how-i-build-with-ai">
+                See How I AI
+              </Link>
+            </p>
             <div className="gl-hero-ctas">
               <Link className="gl-btn gl-btn-paper" href="/join?src=home-hero">
                 Join the community
@@ -232,7 +243,7 @@ export default async function Home() {
               </>
             ) : (
               <>
-                <p>New fixtures are on the way. Join the community to hear first.</p>
+                <p>Every new event lands in the community chat first. Join to see it.</p>
                 <Link className="gl-link" href="/join?src=home-fixtures-empty">
                   Join to hear first
                 </Link>
@@ -278,6 +289,61 @@ export default async function Home() {
             held come from the Meetup event history, checked {HOME_COUNTS_CHECKED}.
             People at our nights is the organisers&apos; approximate count,{" "}
             {HOME_COUNTS_CHECKED}.
+          </p>
+          {growth && (
+            <p className="gl-score-note gl-growth">
+              <b>+{growth.count.toLocaleString("en-US")} new members</b> in the
+              last 30 days, signed up with Remote Builders or Bali Startup &amp;
+              Tech ({growthDate(growth.asOf)}).
+            </p>
+          )}
+        </div>
+      </section>
+
+      {/* Members you'll meet: public Remote Builders profiles, with their photos */}
+      <section className="gl-sec gl-meet" id="meet" aria-labelledby="meet-title">
+        <div className="gl-wrap">
+          <div className="gl-sec-head">
+            <div>
+              <p className="gl-eyebrow">Real people</p>
+              <h2 id="meet-title">Members you&apos;ll meet</h2>
+            </div>
+            <p>
+              Founders and builders from the community, in their own words.{" "}
+              {MEET_SOURCE} Checked {MEET_CHECKED}.
+            </p>
+          </div>
+          <ul className="gl-meet-grid">
+            {MEET_MEMBERS.map((m) => (
+              <li key={m.slug}>
+                <a
+                  href={`https://remotebuilders.io/directory/${m.slug}/`}
+                  aria-label={`${m.name}, ${m.company}: public profile on Remote Builders`}
+                >
+                  <Image
+                    src={`/images/members/${m.slug}.webp`}
+                    alt={`Portrait of ${m.name}`}
+                    width={480}
+                    height={480}
+                    unoptimized
+                  />
+                  <span className="gl-meet-text">
+                    <strong>{m.name}</strong>
+                    <span className="gl-meet-co">{m.company}</span>
+                    <span className="gl-meet-line">{m.line}</span>
+                    {m.city && <span className="gl-meet-city">{m.city}</span>}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="gl-meet-foot">
+            <a className="gl-btn gl-btn-line" href="https://remotebuilders.io/directory/">
+              Meet more members in the directory
+            </a>
+            <Link className="gl-link" href="/join?src=home-meet">
+              Join and add your profile
+            </Link>
           </p>
         </div>
       </section>
