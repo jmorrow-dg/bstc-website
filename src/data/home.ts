@@ -23,7 +23,7 @@ export const FORMATS = [
     alt: "Illustrated poster for How I AI",
     href: "/how-i-build-with-ai",
     linkLabel: "About How I AI",
-    badge: "New series",
+    badge: "Every Wednesday",
     imagePosition: "50% 60%",
   },
   {
@@ -33,7 +33,7 @@ export const FORMATS = [
     alt: "Illustrated poster for the BSTC Hackathon",
     href: "/events/hackathon-edition-1",
     linkLabel: "About the Hackathon",
-    badge: "Coming soon",
+    badge: "One day",
     imagePosition: "50% 50%",
   },
 ] as const;
