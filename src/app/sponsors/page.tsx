@@ -11,13 +11,13 @@ import {
   Utensils,
   ExternalLink,
 } from "lucide-react";
-import { MEETUP_CHECKED, STATS, SPONSOR_CONFIG, WHATSAPP_CHECKED } from "@/lib/constants";
+import { MEETUP_CHECKED, STATS, SPONSOR_CONFIG, WHATSAPP_CHECKED, MEMBERS_PLUS } from "@/lib/constants";
 import { FadeIn, FadeInStagger, FadeInItem } from "@/components/ui/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Sponsor BSTC: Reach Southeast Asia's Top Founder Community",
   description:
-    `Weekly How I AI nights, monthly networking dinners and 2,700+ Meetup members in Bali (${MEETUP_CHECKED}). Event, quarterly and annual sponsor packages from US$2,000.`,
+    `Weekly How I AI nights, monthly networking dinners and ${MEMBERS_PLUS} Meetup members in Bali (${MEETUP_CHECKED}). Event, quarterly and annual sponsor packages from US$2,000.`,
   alternates: { canonical: "/sponsors" },
 };
 

@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
-import { MEETUP_CHECKED, STATS } from "@/lib/constants";
+import { ATTENDEES_LINE, MEETUP_CHECKED, STATS, MEMBERS_PLUS } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     // Confirmed true by Lachlan, 28 Oct 2026
-    `BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. 2,700+ members (Meetup, ${MEETUP_CHECKED}) from 100+ countries. ${STATS.events}+ events. Signal over noise. Builders first.`,
+    `BSTC is the largest founder-led tech community in Bali and Southeast Asia. Founded in 2023. ${MEMBERS_PLUS} members (Meetup, ${MEETUP_CHECKED}) from 100+ countries. ${STATS.events}+ events. Signal over noise. Builders first.`,
   keywords: [
     "Bali Startup and Tech Community",
     "BSTC",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Bali Startup & Tech Community",
     description:
-      `How BSTC grew from 20 founders in Canggu to 2,700+ builders (Meetup, ${MEETUP_CHECKED}) across Southeast Asia. Signal over noise.`,
+      `How BSTC grew from 20 founders in Canggu to ${MEMBERS_PLUS} builders (Meetup, ${MEETUP_CHECKED}) across Southeast Asia. Signal over noise.`,
     type: "website",
   },
   alternates: { canonical: "/about" },
@@ -44,7 +44,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-brand-grey text-lg max-w-2xl">
               {/* Confirmed true by Lachlan, 28 Oct 2026 */}
-              It started with 20 founders in a Canggu restaurant. Now 2,700+
+              It started with 20 founders in a Canggu restaurant. Now {MEMBERS_PLUS}
               builders (Meetup, {MEETUP_CHECKED}) from 100+ countries. The goal hasn&apos;t changed: the
               highest-signal tech community in Southeast Asia.
             </p>
@@ -87,7 +87,7 @@ export default function AboutPage() {
               <span className="text-brand-white font-medium">
                 {STATS.rating}/5.0 average rating
               </span>
-              . We run monthly networking nights, founder roundtables, builder
+              . {ATTENDEES_LINE} We run monthly networking nights, founder roundtables, builder
               sessions, and our flagship &ldquo;How I Build with AI&rdquo;
               series.
             </p>

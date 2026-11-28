@@ -11,13 +11,13 @@ import {
   Globe,
   Calendar,
 } from "lucide-react";
-import { MEETUP_CHECKED, STATS, SITE } from "@/lib/constants";
+import { ATTENDEES_LINE, MEETUP_CHECKED, STATS, SITE, MEMBERS_PLUS } from "@/lib/constants";
 import { getFAQSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Community",
   description:
-    `Join 2,700+ founders, engineers, and operators (Meetup, ${MEETUP_CHECKED}) in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.`,
+    `Join ${MEMBERS_PLUS} founders, engineers, and operators (Meetup, ${MEETUP_CHECKED}) in Southeast Asia's most active tech community. Learn about our values, events, and how to get involved.`,
   alternates: { canonical: "/community" },
 };
 
@@ -99,7 +99,8 @@ export default function CommunityPage() {
               BSTC is the largest founder-led tech community in Bali and
               Southeast Asia. We connect founders, engineers, investors, and
               operators through high-signal events and a private community
-              network. No fluff. No noise. Just builders helping builders.
+              network. No fluff. No noise. Just builders helping builders.{" "}
+              {ATTENDEES_LINE}
             </p>
           </div>
         </div>

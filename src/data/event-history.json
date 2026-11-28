@@ -1,13 +1,13 @@
 {
-  "checked": "2026-11-11",
+  "checked": "2026-11-28",
   "source": {
     "title": "Bali Startup & Tech on Meetup",
     "url": "https://www.meetup.com/bali-start-ups-tech-community/events/?type=past"
   },
   "group": {
-    "members": 2788,
-    "ratingAverage": 4.65,
-    "ratingCount": 155
+    "members": 2858,
+    "ratingAverage": 4.66,
+    "ratingCount": 158
   },
   "nights": [
     {
@@ -645,6 +645,42 @@
       "locality": "Canggu",
       "rsvps": 9,
       "url": "https://www.meetup.com/bali-start-ups-tech-community/events/317128078/"
+    },
+    {
+      "date": "2026-11-12",
+      "starts": "2026-11-12T18:30:00+08:00",
+      "ends": "2026-11-12T22:00:00+08:00",
+      "series": "drinks-and-dinner",
+      "number": 39,
+      "title": "Bali Startup and Tech Networking Drinks & Dinner - Canggu #39",
+      "venue": "Yema Kitchen",
+      "locality": "Canggu",
+      "rsvps": 41,
+      "url": "https://www.meetup.com/bali-start-ups-tech-community/events/317128684/"
+    },
+    {
+      "date": "2026-11-17",
+      "starts": "2026-11-17T18:00:00+08:00",
+      "ends": "2026-11-17T21:00:00+08:00",
+      "series": "how-i-ai",
+      "number": 20,
+      "title": "How I AI #20: Free AI Meetup in Canggu, Bali",
+      "venue": "Seoul Soul Project",
+      "locality": "Canggu",
+      "rsvps": 19,
+      "url": "https://www.meetup.com/bali-start-ups-tech-community/events/317128203/"
+    },
+    {
+      "date": "2026-11-25",
+      "starts": "2026-11-25T18:00:00+08:00",
+      "ends": "2026-11-25T21:00:00+08:00",
+      "series": "how-i-ai",
+      "number": 21,
+      "title": "How I AI #21: Free AI Meetup in Canggu, Bali",
+      "venue": "Seoul Soul Project",
+      "locality": "Canggu",
+      "rsvps": 22,
+      "url": "https://www.meetup.com/bali-start-ups-tech-community/events/317128209/"
     }
   ]
 }
